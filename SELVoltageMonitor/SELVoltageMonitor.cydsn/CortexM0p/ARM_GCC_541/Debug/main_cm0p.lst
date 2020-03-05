@@ -1,0 +1,1156 @@
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main_cm0p.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.main,"ax",%progbits
+  20              		.align	2
+  21              		.global	main
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	main, %function
+  25              	main:
+  26              	.LFB236:
+  27              		.file 1 "main_cm0p.c"
+   1:main_cm0p.c   **** /* ========================================
+   2:main_cm0p.c   ****  *
+   3:main_cm0p.c   ****  * Copyright YOUR COMPANY, THE YEAR
+   4:main_cm0p.c   ****  * All Rights Reserved
+   5:main_cm0p.c   ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:main_cm0p.c   ****  *
+   7:main_cm0p.c   ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:main_cm0p.c   ****  * WHICH IS THE PROPERTY OF your company.
+   9:main_cm0p.c   ****  *
+  10:main_cm0p.c   ****  * ========================================
+  11:main_cm0p.c   **** */
+  12:main_cm0p.c   **** #include "project.h"
+  13:main_cm0p.c   **** #include "ble_monitor.h"
+  14:main_cm0p.c   **** 
+  15:main_cm0p.c   **** int main(void)
+  16:main_cm0p.c   **** {
+  28              		.loc 1 16 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33 0000 10B5     		push	{r4, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37              	.LBB4:
+  38              	.LBB5:
+  39              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
+   1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 2
+
+
+   3:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
+   4:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @version  V5.0.1
+   5:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @date     02. February 2017
+   6:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  ******************************************************************************/
+   7:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /*
+   8:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Copyright (c) 2009-2017 ARM Limited. All rights reserved.
+   9:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  10:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * SPDX-License-Identifier: Apache-2.0
+  11:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  12:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Licensed under the Apache License, Version 2.0 (the License); you may
+  13:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * not use this file except in compliance with the License.
+  14:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * You may obtain a copy of the License at
+  15:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  16:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * www.apache.org/licenses/LICENSE-2.0
+  17:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  *
+  18:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * Unless required by applicable law or agreed to in writing, software
+  19:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * distributed under the License is distributed on an AS IS BASIS, WITHOUT
+  20:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  21:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * See the License for the specific language governing permissions and
+  22:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * limitations under the License.
+  23:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  24:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  25:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef __CMSIS_GCC_H
+  26:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #define __CMSIS_GCC_H
+  27:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  28:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ignore some GCC warnings */
+  29:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  30:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wsign-conversion"
+  31:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wconversion"
+  32:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wunused-parameter"
+  33:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  34:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* CMSIS compiler specific defines */
+  35:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ASM
+  36:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ASM                     __asm
+  37:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  38:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __INLINE
+  39:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __INLINE                  inline
+  40:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  41:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __STATIC_INLINE
+  42:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __STATIC_INLINE           static inline
+  43:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  44:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __NO_RETURN
+  45:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __NO_RETURN               __attribute__((noreturn))
+  46:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  47:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __USED
+  48:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                    __attribute__((used))
+  49:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  50:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
+  51:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                    __attribute__((weak))
+  52:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  53:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32
+  54:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
+  55:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wpacked"
+  56:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic ignored "-Wattributes"
+  57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
+  58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic pop
+  59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)     (((struct T_UINT32 *)(x))->v)
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 3
+
+
+  60:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  61:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ALIGNED
+  62:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ALIGNED(x)              __attribute__((aligned(x)))
+  63:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  64:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED
+  65:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED                  __attribute__((packed, aligned(1)))
+  66:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  67:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
+  68:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __PACKED_STRUCT           struct __attribute__((packed, aligned(1)))
+  69:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
+  70:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  71:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  72:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /* ###########################  Core Function Access  ########################### */
+  73:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /** \ingroup  CMSIS_Core_FunctionInterface
+  74:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
+  75:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   @{
+  76:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  77:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
+  78:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**
+  79:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \brief   Enable IRQ Interrupts
+  80:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   \details Enables IRQ interrupts by clearing the I-bit in the CPSR.
+  81:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****            Can only be executed in Privileged modes.
+  82:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  */
+  83:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** __attribute__((always_inline)) __STATIC_INLINE void __enable_irq(void)
+  84:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** {
+  85:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   __ASM volatile ("cpsie i" : : : "memory");
+  40              		.loc 2 85 0
+  41              		.syntax divided
+  42              	@ 85 "Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h" 1
+  43 0002 62B6     		cpsie i
+  44              	@ 0 "" 2
+  45              		.thumb
+  46              		.syntax unified
+  47              	.LBE5:
+  48              	.LBE4:
+  17:main_cm0p.c   ****     __enable_irq(); /* Enable global interrupts. */
+  18:main_cm0p.c   **** 
+  19:main_cm0p.c   ****     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+  20:main_cm0p.c   ****     Cy_BLE_Start(GenericEventHandler);
+  49              		.loc 1 20 0
+  50 0004 0848     		ldr	r0, .L5
+  51 0006 FFF7FEFF 		bl	Cy_BLE_Start
+  52              	.LVL0:
+  21:main_cm0p.c   ****     
+  22:main_cm0p.c   ****     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
+  53              		.loc 1 22 0
+  54 000a 01E0     		b	.L2
+  55              	.L3:
+  23:main_cm0p.c   ****     {
+  24:main_cm0p.c   ****         Cy_BLE_ProcessEvents();
+  56              		.loc 1 24 0
+  57 000c FFF7FEFF 		bl	Cy_BLE_ProcessEvents
+  58              	.LVL1:
+  59              	.L2:
+  22:main_cm0p.c   ****     {
+  60              		.loc 1 22 0
+  61 0010 064B     		ldr	r3, .L5+4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 4
+
+
+  62 0012 1B78     		ldrb	r3, [r3]
+  63 0014 022B     		cmp	r3, #2
+  64 0016 F9D1     		bne	.L3
+  25:main_cm0p.c   ****     }
+  26:main_cm0p.c   ****     
+  27:main_cm0p.c   ****     /* Enable CM4.  CY_CORTEX_M4_APPL_ADDR must be updated if CM4 memory layout is changed. */
+  28:main_cm0p.c   ****     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR); 
+  65              		.loc 1 28 0
+  66 0018 0548     		ldr	r0, .L5+8
+  67 001a FFF7FEFF 		bl	Cy_SysEnableCM4
+  68              	.LVL2:
+  69              	.L4:
+  29:main_cm0p.c   **** 
+  30:main_cm0p.c   ****     for(;;)
+  31:main_cm0p.c   ****     {
+  32:main_cm0p.c   ****         /* Place your application code here. */
+  33:main_cm0p.c   ****         Cy_BLE_ProcessEvents();
+  70              		.loc 1 33 0 discriminator 1
+  71 001e FFF7FEFF 		bl	Cy_BLE_ProcessEvents
+  72              	.LVL3:
+  34:main_cm0p.c   ****         updateNextEvent();
+  73              		.loc 1 34 0 discriminator 1
+  74 0022 FFF7FEFF 		bl	updateNextEvent
+  75              	.LVL4:
+  76 0026 FAE7     		b	.L4
+  77              	.L6:
+  78              		.align	2
+  79              	.L5:
+  80 0028 00000000 		.word	GenericEventHandler
+  81 002c 00000000 		.word	cy_ble_state
+  82 0030 00000810 		.word	268959744
+  83              		.cfi_endproc
+  84              	.LFE236:
+  85              		.size	main, .-main
+  86              		.text
+  87              	.Letext0:
+  88              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  89              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  90              		.file 5 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack_host_main.h"
+  91              		.file 6 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_gap.h"
+  92              		.file 7 "Generated_Source\\PSoC6/BLE.h"
+  93              		.file 8 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack.h"
+  94              		.file 9 "./system_psoc63.h"
+  95              		.file 10 "ble_monitor.h"
+  96              		.section	.debug_info,"",%progbits
+  97              	.Ldebug_info0:
+  98 0000 70020000 		.4byte	0x270
+  99 0004 0400     		.2byte	0x4
+ 100 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 101 000a 04       		.byte	0x4
+ 102 000b 01       		.uleb128 0x1
+ 103 000c AA030000 		.4byte	.LASF47
+ 104 0010 0C       		.byte	0xc
+ 105 0011 D8010000 		.4byte	.LASF48
+ 106 0015 75020000 		.4byte	.LASF49
+ 107 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 108 001d 00000000 		.4byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 5
+
+
+ 109 0021 00000000 		.4byte	.Ldebug_line0
+ 110 0025 02       		.uleb128 0x2
+ 111 0026 02       		.byte	0x2
+ 112 0027 05       		.byte	0x5
+ 113 0028 28030000 		.4byte	.LASF0
+ 114 002c 02       		.uleb128 0x2
+ 115 002d 01       		.byte	0x1
+ 116 002e 08       		.byte	0x8
+ 117 002f 27010000 		.4byte	.LASF1
+ 118 0033 02       		.uleb128 0x2
+ 119 0034 01       		.byte	0x1
+ 120 0035 06       		.byte	0x6
+ 121 0036 3C040000 		.4byte	.LASF2
+ 122 003a 03       		.uleb128 0x3
+ 123 003b 00000000 		.4byte	.LASF9
+ 124 003f 03       		.byte	0x3
+ 125 0040 1D       		.byte	0x1d
+ 126 0041 2C000000 		.4byte	0x2c
+ 127 0045 02       		.uleb128 0x2
+ 128 0046 02       		.byte	0x2
+ 129 0047 07       		.byte	0x7
+ 130 0048 47010000 		.4byte	.LASF3
+ 131 004c 02       		.uleb128 0x2
+ 132 004d 04       		.byte	0x4
+ 133 004e 05       		.byte	0x5
+ 134 004f 95030000 		.4byte	.LASF4
+ 135 0053 02       		.uleb128 0x2
+ 136 0054 04       		.byte	0x4
+ 137 0055 07       		.byte	0x7
+ 138 0056 35010000 		.4byte	.LASF5
+ 139 005a 02       		.uleb128 0x2
+ 140 005b 08       		.byte	0x8
+ 141 005c 05       		.byte	0x5
+ 142 005d D1020000 		.4byte	.LASF6
+ 143 0061 02       		.uleb128 0x2
+ 144 0062 08       		.byte	0x8
+ 145 0063 07       		.byte	0x7
+ 146 0064 15020000 		.4byte	.LASF7
+ 147 0068 04       		.uleb128 0x4
+ 148 0069 04       		.byte	0x4
+ 149 006a 05       		.byte	0x5
+ 150 006b 696E7400 		.ascii	"int\000"
+ 151 006f 02       		.uleb128 0x2
+ 152 0070 04       		.byte	0x4
+ 153 0071 07       		.byte	0x7
+ 154 0072 E4010000 		.4byte	.LASF8
+ 155 0076 03       		.uleb128 0x3
+ 156 0077 9C000000 		.4byte	.LASF10
+ 157 007b 04       		.byte	0x4
+ 158 007c 18       		.byte	0x18
+ 159 007d 3A000000 		.4byte	0x3a
+ 160 0081 02       		.uleb128 0x2
+ 161 0082 04       		.byte	0x4
+ 162 0083 07       		.byte	0x7
+ 163 0084 C8020000 		.4byte	.LASF11
+ 164 0088 02       		.uleb128 0x2
+ 165 0089 08       		.byte	0x8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 6
+
+
+ 166 008a 04       		.byte	0x4
+ 167 008b 9E030000 		.4byte	.LASF12
+ 168 008f 02       		.uleb128 0x2
+ 169 0090 01       		.byte	0x1
+ 170 0091 08       		.byte	0x8
+ 171 0092 DF020000 		.4byte	.LASF13
+ 172 0096 02       		.uleb128 0x2
+ 173 0097 04       		.byte	0x4
+ 174 0098 04       		.byte	0x4
+ 175 0099 F4000000 		.4byte	.LASF14
+ 176 009d 02       		.uleb128 0x2
+ 177 009e 08       		.byte	0x8
+ 178 009f 04       		.byte	0x4
+ 179 00a0 BF010000 		.4byte	.LASF15
+ 180 00a4 02       		.uleb128 0x2
+ 181 00a5 01       		.byte	0x1
+ 182 00a6 02       		.byte	0x2
+ 183 00a7 48040000 		.4byte	.LASF16
+ 184 00ab 05       		.uleb128 0x5
+ 185 00ac 02       		.byte	0x2
+ 186 00ad 05       		.byte	0x5
+ 187 00ae 5B01     		.2byte	0x15b
+ 188 00b0 CF000000 		.4byte	0xcf
+ 189 00b4 06       		.uleb128 0x6
+ 190 00b5 23000000 		.4byte	.LASF17
+ 191 00b9 05       		.byte	0x5
+ 192 00ba 6501     		.2byte	0x165
+ 193 00bc 76000000 		.4byte	0x76
+ 194 00c0 00       		.byte	0
+ 195 00c1 06       		.uleb128 0x6
+ 196 00c2 C2020000 		.4byte	.LASF18
+ 197 00c6 05       		.byte	0x5
+ 198 00c7 6901     		.2byte	0x169
+ 199 00c9 76000000 		.4byte	0x76
+ 200 00cd 01       		.byte	0x1
+ 201 00ce 00       		.byte	0
+ 202 00cf 07       		.uleb128 0x7
+ 203 00d0 57000000 		.4byte	.LASF19
+ 204 00d4 05       		.byte	0x5
+ 205 00d5 6B01     		.2byte	0x16b
+ 206 00d7 AB000000 		.4byte	0xab
+ 207 00db 08       		.uleb128 0x8
+ 208 00dc 01       		.byte	0x1
+ 209 00dd 2C000000 		.4byte	0x2c
+ 210 00e1 06       		.byte	0x6
+ 211 00e2 69       		.byte	0x69
+ 212 00e3 FA000000 		.4byte	0xfa
+ 213 00e7 09       		.uleb128 0x9
+ 214 00e8 80030000 		.4byte	.LASF20
+ 215 00ec 00       		.byte	0
+ 216 00ed 09       		.uleb128 0x9
+ 217 00ee 70000000 		.4byte	.LASF21
+ 218 00f2 01       		.byte	0x1
+ 219 00f3 09       		.uleb128 0x9
+ 220 00f4 B2020000 		.4byte	.LASF22
+ 221 00f8 02       		.byte	0x2
+ 222 00f9 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 7
+
+
+ 223 00fa 03       		.uleb128 0x3
+ 224 00fb 5A010000 		.4byte	.LASF23
+ 225 00ff 06       		.byte	0x6
+ 226 0100 70       		.byte	0x70
+ 227 0101 DB000000 		.4byte	0xdb
+ 228 0105 08       		.uleb128 0x8
+ 229 0106 01       		.byte	0x1
+ 230 0107 2C000000 		.4byte	0x2c
+ 231 010b 06       		.byte	0x6
+ 232 010c 7E       		.byte	0x7e
+ 233 010d 2A010000 		.4byte	0x12a
+ 234 0111 09       		.uleb128 0x9
+ 235 0112 0A000000 		.4byte	.LASF24
+ 236 0116 00       		.byte	0
+ 237 0117 09       		.uleb128 0x9
+ 238 0118 56020000 		.4byte	.LASF25
+ 239 011c 01       		.byte	0x1
+ 240 011d 09       		.uleb128 0x9
+ 241 011e 32030000 		.4byte	.LASF26
+ 242 0122 02       		.byte	0x2
+ 243 0123 09       		.uleb128 0x9
+ 244 0124 07010000 		.4byte	.LASF27
+ 245 0128 03       		.byte	0x3
+ 246 0129 00       		.byte	0
+ 247 012a 03       		.uleb128 0x3
+ 248 012b CE000000 		.4byte	.LASF28
+ 249 012f 06       		.byte	0x6
+ 250 0130 83       		.byte	0x83
+ 251 0131 05010000 		.4byte	0x105
+ 252 0135 08       		.uleb128 0x8
+ 253 0136 01       		.byte	0x1
+ 254 0137 2C000000 		.4byte	0x2c
+ 255 013b 06       		.byte	0x6
+ 256 013c 87       		.byte	0x87
+ 257 013d 72010000 		.4byte	0x172
+ 258 0141 09       		.uleb128 0x9
+ 259 0142 F9020000 		.4byte	.LASF29
+ 260 0146 00       		.byte	0
+ 261 0147 09       		.uleb128 0x9
+ 262 0148 4F030000 		.4byte	.LASF30
+ 263 014c 01       		.byte	0x1
+ 264 014d 09       		.uleb128 0x9
+ 265 014e A3010000 		.4byte	.LASF31
+ 266 0152 02       		.byte	0x2
+ 267 0153 09       		.uleb128 0x9
+ 268 0154 A4000000 		.4byte	.LASF32
+ 269 0158 03       		.byte	0x3
+ 270 0159 09       		.uleb128 0x9
+ 271 015a 2C020000 		.4byte	.LASF33
+ 272 015e 04       		.byte	0x4
+ 273 015f 09       		.uleb128 0x9
+ 274 0160 79010000 		.4byte	.LASF34
+ 275 0164 05       		.byte	0x5
+ 276 0165 09       		.uleb128 0x9
+ 277 0166 2C000000 		.4byte	.LASF35
+ 278 016a 06       		.byte	0x6
+ 279 016b 09       		.uleb128 0x9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 8
+
+
+ 280 016c F1010000 		.4byte	.LASF36
+ 281 0170 07       		.byte	0x7
+ 282 0171 00       		.byte	0
+ 283 0172 03       		.uleb128 0x3
+ 284 0173 88040000 		.4byte	.LASF37
+ 285 0177 06       		.byte	0x6
+ 286 0178 90       		.byte	0x90
+ 287 0179 35010000 		.4byte	0x135
+ 288 017d 0A       		.uleb128 0xa
+ 289 017e FA000000 		.4byte	.LASF50
+ 290 0182 02       		.byte	0x2
+ 291 0183 53       		.byte	0x53
+ 292 0184 03       		.byte	0x3
+ 293 0185 0B       		.uleb128 0xb
+ 294 0186 D3010000 		.4byte	.LASF51
+ 295 018a 01       		.byte	0x1
+ 296 018b 0F       		.byte	0xf
+ 297 018c 68000000 		.4byte	0x68
+ 298 0190 00000000 		.4byte	.LFB236
+ 299 0194 34000000 		.4byte	.LFE236-.LFB236
+ 300 0198 01       		.uleb128 0x1
+ 301 0199 9C       		.byte	0x9c
+ 302 019a E9010000 		.4byte	0x1e9
+ 303 019e 0C       		.uleb128 0xc
+ 304 019f 7D010000 		.4byte	0x17d
+ 305 01a3 02000000 		.4byte	.LBB4
+ 306 01a7 02000000 		.4byte	.LBE4-.LBB4
+ 307 01ab 01       		.byte	0x1
+ 308 01ac 11       		.byte	0x11
+ 309 01ad 0D       		.uleb128 0xd
+ 310 01ae 0A000000 		.4byte	.LVL0
+ 311 01b2 45020000 		.4byte	0x245
+ 312 01b6 0D       		.uleb128 0xd
+ 313 01b7 10000000 		.4byte	.LVL1
+ 314 01bb 50020000 		.4byte	0x250
+ 315 01bf 0E       		.uleb128 0xe
+ 316 01c0 1E000000 		.4byte	.LVL2
+ 317 01c4 5C020000 		.4byte	0x25c
+ 318 01c8 D6010000 		.4byte	0x1d6
+ 319 01cc 0F       		.uleb128 0xf
+ 320 01cd 01       		.uleb128 0x1
+ 321 01ce 50       		.byte	0x50
+ 322 01cf 05       		.uleb128 0x5
+ 323 01d0 0C       		.byte	0xc
+ 324 01d1 00000810 		.4byte	0x10080000
+ 325 01d5 00       		.byte	0
+ 326 01d6 0D       		.uleb128 0xd
+ 327 01d7 22000000 		.4byte	.LVL3
+ 328 01db 50020000 		.4byte	0x250
+ 329 01df 0D       		.uleb128 0xd
+ 330 01e0 26000000 		.4byte	.LVL4
+ 331 01e4 68020000 		.4byte	0x268
+ 332 01e8 00       		.byte	0
+ 333 01e9 10       		.uleb128 0x10
+ 334 01ea C6010000 		.4byte	.LASF38
+ 335 01ee 06       		.byte	0x6
+ 336 01ef 1B02     		.2byte	0x21b
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 9
+
+
+ 337 01f1 FA000000 		.4byte	0xfa
+ 338 01f5 10       		.uleb128 0x10
+ 339 01f6 18030000 		.4byte	.LASF39
+ 340 01fa 06       		.byte	0x6
+ 341 01fb 2202     		.2byte	0x222
+ 342 01fd 2A010000 		.4byte	0x12a
+ 343 0201 11       		.uleb128 0x11
+ 344 0202 CF000000 		.4byte	0xcf
+ 345 0206 11020000 		.4byte	0x211
+ 346 020a 12       		.uleb128 0x12
+ 347 020b 81000000 		.4byte	0x81
+ 348 020f 00       		.byte	0
+ 349 0210 00       		.byte	0
+ 350 0211 10       		.uleb128 0x10
+ 351 0212 8A000000 		.4byte	.LASF40
+ 352 0216 06       		.byte	0x6
+ 353 0217 2C02     		.2byte	0x22c
+ 354 0219 01020000 		.4byte	0x201
+ 355 021d 11       		.uleb128 0x11
+ 356 021e 72010000 		.4byte	0x172
+ 357 0222 2D020000 		.4byte	0x22d
+ 358 0226 12       		.uleb128 0x12
+ 359 0227 81000000 		.4byte	0x81
+ 360 022b 00       		.byte	0
+ 361 022c 00       		.byte	0
+ 362 022d 10       		.uleb128 0x10
+ 363 022e 4E040000 		.4byte	.LASF41
+ 364 0232 06       		.byte	0x6
+ 365 0233 2D02     		.2byte	0x22d
+ 366 0235 1D020000 		.4byte	0x21d
+ 367 0239 10       		.uleb128 0x10
+ 368 023a 5F040000 		.4byte	.LASF42
+ 369 023e 06       		.byte	0x6
+ 370 023f 5202     		.2byte	0x252
+ 371 0241 76000000 		.4byte	0x76
+ 372 0245 13       		.uleb128 0x13
+ 373 0246 6C010000 		.4byte	.LASF43
+ 374 024a 6C010000 		.4byte	.LASF43
+ 375 024e 07       		.byte	0x7
+ 376 024f 24       		.byte	0x24
+ 377 0250 14       		.uleb128 0x14
+ 378 0251 E4020000 		.4byte	.LASF44
+ 379 0255 E4020000 		.4byte	.LASF44
+ 380 0259 08       		.byte	0x8
+ 381 025a B107     		.2byte	0x7b1
+ 382 025c 14       		.uleb128 0x14
+ 383 025d 78040000 		.4byte	.LASF45
+ 384 0261 78040000 		.4byte	.LASF45
+ 385 0265 09       		.byte	0x9
+ 386 0266 FE01     		.2byte	0x1fe
+ 387 0268 13       		.uleb128 0x13
+ 388 0269 E4000000 		.4byte	.LASF46
+ 389 026d E4000000 		.4byte	.LASF46
+ 390 0271 0A       		.byte	0xa
+ 391 0272 12       		.byte	0x12
+ 392 0273 00       		.byte	0
+ 393              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 10
+
+
+ 394              	.Ldebug_abbrev0:
+ 395 0000 01       		.uleb128 0x1
+ 396 0001 11       		.uleb128 0x11
+ 397 0002 01       		.byte	0x1
+ 398 0003 25       		.uleb128 0x25
+ 399 0004 0E       		.uleb128 0xe
+ 400 0005 13       		.uleb128 0x13
+ 401 0006 0B       		.uleb128 0xb
+ 402 0007 03       		.uleb128 0x3
+ 403 0008 0E       		.uleb128 0xe
+ 404 0009 1B       		.uleb128 0x1b
+ 405 000a 0E       		.uleb128 0xe
+ 406 000b 55       		.uleb128 0x55
+ 407 000c 17       		.uleb128 0x17
+ 408 000d 11       		.uleb128 0x11
+ 409 000e 01       		.uleb128 0x1
+ 410 000f 10       		.uleb128 0x10
+ 411 0010 17       		.uleb128 0x17
+ 412 0011 00       		.byte	0
+ 413 0012 00       		.byte	0
+ 414 0013 02       		.uleb128 0x2
+ 415 0014 24       		.uleb128 0x24
+ 416 0015 00       		.byte	0
+ 417 0016 0B       		.uleb128 0xb
+ 418 0017 0B       		.uleb128 0xb
+ 419 0018 3E       		.uleb128 0x3e
+ 420 0019 0B       		.uleb128 0xb
+ 421 001a 03       		.uleb128 0x3
+ 422 001b 0E       		.uleb128 0xe
+ 423 001c 00       		.byte	0
+ 424 001d 00       		.byte	0
+ 425 001e 03       		.uleb128 0x3
+ 426 001f 16       		.uleb128 0x16
+ 427 0020 00       		.byte	0
+ 428 0021 03       		.uleb128 0x3
+ 429 0022 0E       		.uleb128 0xe
+ 430 0023 3A       		.uleb128 0x3a
+ 431 0024 0B       		.uleb128 0xb
+ 432 0025 3B       		.uleb128 0x3b
+ 433 0026 0B       		.uleb128 0xb
+ 434 0027 49       		.uleb128 0x49
+ 435 0028 13       		.uleb128 0x13
+ 436 0029 00       		.byte	0
+ 437 002a 00       		.byte	0
+ 438 002b 04       		.uleb128 0x4
+ 439 002c 24       		.uleb128 0x24
+ 440 002d 00       		.byte	0
+ 441 002e 0B       		.uleb128 0xb
+ 442 002f 0B       		.uleb128 0xb
+ 443 0030 3E       		.uleb128 0x3e
+ 444 0031 0B       		.uleb128 0xb
+ 445 0032 03       		.uleb128 0x3
+ 446 0033 08       		.uleb128 0x8
+ 447 0034 00       		.byte	0
+ 448 0035 00       		.byte	0
+ 449 0036 05       		.uleb128 0x5
+ 450 0037 13       		.uleb128 0x13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 11
+
+
+ 451 0038 01       		.byte	0x1
+ 452 0039 0B       		.uleb128 0xb
+ 453 003a 0B       		.uleb128 0xb
+ 454 003b 3A       		.uleb128 0x3a
+ 455 003c 0B       		.uleb128 0xb
+ 456 003d 3B       		.uleb128 0x3b
+ 457 003e 05       		.uleb128 0x5
+ 458 003f 01       		.uleb128 0x1
+ 459 0040 13       		.uleb128 0x13
+ 460 0041 00       		.byte	0
+ 461 0042 00       		.byte	0
+ 462 0043 06       		.uleb128 0x6
+ 463 0044 0D       		.uleb128 0xd
+ 464 0045 00       		.byte	0
+ 465 0046 03       		.uleb128 0x3
+ 466 0047 0E       		.uleb128 0xe
+ 467 0048 3A       		.uleb128 0x3a
+ 468 0049 0B       		.uleb128 0xb
+ 469 004a 3B       		.uleb128 0x3b
+ 470 004b 05       		.uleb128 0x5
+ 471 004c 49       		.uleb128 0x49
+ 472 004d 13       		.uleb128 0x13
+ 473 004e 38       		.uleb128 0x38
+ 474 004f 0B       		.uleb128 0xb
+ 475 0050 00       		.byte	0
+ 476 0051 00       		.byte	0
+ 477 0052 07       		.uleb128 0x7
+ 478 0053 16       		.uleb128 0x16
+ 479 0054 00       		.byte	0
+ 480 0055 03       		.uleb128 0x3
+ 481 0056 0E       		.uleb128 0xe
+ 482 0057 3A       		.uleb128 0x3a
+ 483 0058 0B       		.uleb128 0xb
+ 484 0059 3B       		.uleb128 0x3b
+ 485 005a 05       		.uleb128 0x5
+ 486 005b 49       		.uleb128 0x49
+ 487 005c 13       		.uleb128 0x13
+ 488 005d 00       		.byte	0
+ 489 005e 00       		.byte	0
+ 490 005f 08       		.uleb128 0x8
+ 491 0060 04       		.uleb128 0x4
+ 492 0061 01       		.byte	0x1
+ 493 0062 0B       		.uleb128 0xb
+ 494 0063 0B       		.uleb128 0xb
+ 495 0064 49       		.uleb128 0x49
+ 496 0065 13       		.uleb128 0x13
+ 497 0066 3A       		.uleb128 0x3a
+ 498 0067 0B       		.uleb128 0xb
+ 499 0068 3B       		.uleb128 0x3b
+ 500 0069 0B       		.uleb128 0xb
+ 501 006a 01       		.uleb128 0x1
+ 502 006b 13       		.uleb128 0x13
+ 503 006c 00       		.byte	0
+ 504 006d 00       		.byte	0
+ 505 006e 09       		.uleb128 0x9
+ 506 006f 28       		.uleb128 0x28
+ 507 0070 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 12
+
+
+ 508 0071 03       		.uleb128 0x3
+ 509 0072 0E       		.uleb128 0xe
+ 510 0073 1C       		.uleb128 0x1c
+ 511 0074 0B       		.uleb128 0xb
+ 512 0075 00       		.byte	0
+ 513 0076 00       		.byte	0
+ 514 0077 0A       		.uleb128 0xa
+ 515 0078 2E       		.uleb128 0x2e
+ 516 0079 00       		.byte	0
+ 517 007a 03       		.uleb128 0x3
+ 518 007b 0E       		.uleb128 0xe
+ 519 007c 3A       		.uleb128 0x3a
+ 520 007d 0B       		.uleb128 0xb
+ 521 007e 3B       		.uleb128 0x3b
+ 522 007f 0B       		.uleb128 0xb
+ 523 0080 27       		.uleb128 0x27
+ 524 0081 19       		.uleb128 0x19
+ 525 0082 20       		.uleb128 0x20
+ 526 0083 0B       		.uleb128 0xb
+ 527 0084 00       		.byte	0
+ 528 0085 00       		.byte	0
+ 529 0086 0B       		.uleb128 0xb
+ 530 0087 2E       		.uleb128 0x2e
+ 531 0088 01       		.byte	0x1
+ 532 0089 3F       		.uleb128 0x3f
+ 533 008a 19       		.uleb128 0x19
+ 534 008b 03       		.uleb128 0x3
+ 535 008c 0E       		.uleb128 0xe
+ 536 008d 3A       		.uleb128 0x3a
+ 537 008e 0B       		.uleb128 0xb
+ 538 008f 3B       		.uleb128 0x3b
+ 539 0090 0B       		.uleb128 0xb
+ 540 0091 27       		.uleb128 0x27
+ 541 0092 19       		.uleb128 0x19
+ 542 0093 49       		.uleb128 0x49
+ 543 0094 13       		.uleb128 0x13
+ 544 0095 8701     		.uleb128 0x87
+ 545 0097 19       		.uleb128 0x19
+ 546 0098 11       		.uleb128 0x11
+ 547 0099 01       		.uleb128 0x1
+ 548 009a 12       		.uleb128 0x12
+ 549 009b 06       		.uleb128 0x6
+ 550 009c 40       		.uleb128 0x40
+ 551 009d 18       		.uleb128 0x18
+ 552 009e 9742     		.uleb128 0x2117
+ 553 00a0 19       		.uleb128 0x19
+ 554 00a1 01       		.uleb128 0x1
+ 555 00a2 13       		.uleb128 0x13
+ 556 00a3 00       		.byte	0
+ 557 00a4 00       		.byte	0
+ 558 00a5 0C       		.uleb128 0xc
+ 559 00a6 1D       		.uleb128 0x1d
+ 560 00a7 00       		.byte	0
+ 561 00a8 31       		.uleb128 0x31
+ 562 00a9 13       		.uleb128 0x13
+ 563 00aa 11       		.uleb128 0x11
+ 564 00ab 01       		.uleb128 0x1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 13
+
+
+ 565 00ac 12       		.uleb128 0x12
+ 566 00ad 06       		.uleb128 0x6
+ 567 00ae 58       		.uleb128 0x58
+ 568 00af 0B       		.uleb128 0xb
+ 569 00b0 59       		.uleb128 0x59
+ 570 00b1 0B       		.uleb128 0xb
+ 571 00b2 00       		.byte	0
+ 572 00b3 00       		.byte	0
+ 573 00b4 0D       		.uleb128 0xd
+ 574 00b5 898201   		.uleb128 0x4109
+ 575 00b8 00       		.byte	0
+ 576 00b9 11       		.uleb128 0x11
+ 577 00ba 01       		.uleb128 0x1
+ 578 00bb 31       		.uleb128 0x31
+ 579 00bc 13       		.uleb128 0x13
+ 580 00bd 00       		.byte	0
+ 581 00be 00       		.byte	0
+ 582 00bf 0E       		.uleb128 0xe
+ 583 00c0 898201   		.uleb128 0x4109
+ 584 00c3 01       		.byte	0x1
+ 585 00c4 11       		.uleb128 0x11
+ 586 00c5 01       		.uleb128 0x1
+ 587 00c6 31       		.uleb128 0x31
+ 588 00c7 13       		.uleb128 0x13
+ 589 00c8 01       		.uleb128 0x1
+ 590 00c9 13       		.uleb128 0x13
+ 591 00ca 00       		.byte	0
+ 592 00cb 00       		.byte	0
+ 593 00cc 0F       		.uleb128 0xf
+ 594 00cd 8A8201   		.uleb128 0x410a
+ 595 00d0 00       		.byte	0
+ 596 00d1 02       		.uleb128 0x2
+ 597 00d2 18       		.uleb128 0x18
+ 598 00d3 9142     		.uleb128 0x2111
+ 599 00d5 18       		.uleb128 0x18
+ 600 00d6 00       		.byte	0
+ 601 00d7 00       		.byte	0
+ 602 00d8 10       		.uleb128 0x10
+ 603 00d9 34       		.uleb128 0x34
+ 604 00da 00       		.byte	0
+ 605 00db 03       		.uleb128 0x3
+ 606 00dc 0E       		.uleb128 0xe
+ 607 00dd 3A       		.uleb128 0x3a
+ 608 00de 0B       		.uleb128 0xb
+ 609 00df 3B       		.uleb128 0x3b
+ 610 00e0 05       		.uleb128 0x5
+ 611 00e1 49       		.uleb128 0x49
+ 612 00e2 13       		.uleb128 0x13
+ 613 00e3 3F       		.uleb128 0x3f
+ 614 00e4 19       		.uleb128 0x19
+ 615 00e5 3C       		.uleb128 0x3c
+ 616 00e6 19       		.uleb128 0x19
+ 617 00e7 00       		.byte	0
+ 618 00e8 00       		.byte	0
+ 619 00e9 11       		.uleb128 0x11
+ 620 00ea 01       		.uleb128 0x1
+ 621 00eb 01       		.byte	0x1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 14
+
+
+ 622 00ec 49       		.uleb128 0x49
+ 623 00ed 13       		.uleb128 0x13
+ 624 00ee 01       		.uleb128 0x1
+ 625 00ef 13       		.uleb128 0x13
+ 626 00f0 00       		.byte	0
+ 627 00f1 00       		.byte	0
+ 628 00f2 12       		.uleb128 0x12
+ 629 00f3 21       		.uleb128 0x21
+ 630 00f4 00       		.byte	0
+ 631 00f5 49       		.uleb128 0x49
+ 632 00f6 13       		.uleb128 0x13
+ 633 00f7 2F       		.uleb128 0x2f
+ 634 00f8 0B       		.uleb128 0xb
+ 635 00f9 00       		.byte	0
+ 636 00fa 00       		.byte	0
+ 637 00fb 13       		.uleb128 0x13
+ 638 00fc 2E       		.uleb128 0x2e
+ 639 00fd 00       		.byte	0
+ 640 00fe 3F       		.uleb128 0x3f
+ 641 00ff 19       		.uleb128 0x19
+ 642 0100 3C       		.uleb128 0x3c
+ 643 0101 19       		.uleb128 0x19
+ 644 0102 6E       		.uleb128 0x6e
+ 645 0103 0E       		.uleb128 0xe
+ 646 0104 03       		.uleb128 0x3
+ 647 0105 0E       		.uleb128 0xe
+ 648 0106 3A       		.uleb128 0x3a
+ 649 0107 0B       		.uleb128 0xb
+ 650 0108 3B       		.uleb128 0x3b
+ 651 0109 0B       		.uleb128 0xb
+ 652 010a 00       		.byte	0
+ 653 010b 00       		.byte	0
+ 654 010c 14       		.uleb128 0x14
+ 655 010d 2E       		.uleb128 0x2e
+ 656 010e 00       		.byte	0
+ 657 010f 3F       		.uleb128 0x3f
+ 658 0110 19       		.uleb128 0x19
+ 659 0111 3C       		.uleb128 0x3c
+ 660 0112 19       		.uleb128 0x19
+ 661 0113 6E       		.uleb128 0x6e
+ 662 0114 0E       		.uleb128 0xe
+ 663 0115 03       		.uleb128 0x3
+ 664 0116 0E       		.uleb128 0xe
+ 665 0117 3A       		.uleb128 0x3a
+ 666 0118 0B       		.uleb128 0xb
+ 667 0119 3B       		.uleb128 0x3b
+ 668 011a 05       		.uleb128 0x5
+ 669 011b 00       		.byte	0
+ 670 011c 00       		.byte	0
+ 671 011d 00       		.byte	0
+ 672              		.section	.debug_aranges,"",%progbits
+ 673 0000 1C000000 		.4byte	0x1c
+ 674 0004 0200     		.2byte	0x2
+ 675 0006 00000000 		.4byte	.Ldebug_info0
+ 676 000a 04       		.byte	0x4
+ 677 000b 00       		.byte	0
+ 678 000c 0000     		.2byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 15
+
+
+ 679 000e 0000     		.2byte	0
+ 680 0010 00000000 		.4byte	.LFB236
+ 681 0014 34000000 		.4byte	.LFE236-.LFB236
+ 682 0018 00000000 		.4byte	0
+ 683 001c 00000000 		.4byte	0
+ 684              		.section	.debug_ranges,"",%progbits
+ 685              	.Ldebug_ranges0:
+ 686 0000 00000000 		.4byte	.LFB236
+ 687 0004 34000000 		.4byte	.LFE236
+ 688 0008 00000000 		.4byte	0
+ 689 000c 00000000 		.4byte	0
+ 690              		.section	.debug_line,"",%progbits
+ 691              	.Ldebug_line0:
+ 692 0000 34020000 		.section	.debug_str,"MS",%progbits,1
+ 692      02000502 
+ 692      00000201 
+ 692      FB0E0D00 
+ 692      01010101 
+ 693              	.LASF9:
+ 694 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 694      6E74385F 
+ 694      7400
+ 695              	.LASF24:
+ 696 000a 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
+ 696      4C455F41 
+ 696      44565F53 
+ 696      54415445 
+ 696      5F53544F 
+ 697              	.LASF17:
+ 698 0023 62644861 		.ascii	"bdHandle\000"
+ 698      6E646C65 
+ 698      00
+ 699              	.LASF35:
+ 700 002c 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 700      4C455F43 
+ 700      4F4E4E5F 
+ 700      53544154 
+ 700      455F434C 
+ 701              	.LASF19:
+ 702 0057 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 702      74635F62 
+ 702      6C655F63 
+ 702      6F6E6E5F 
+ 702      68616E64 
+ 703              	.LASF21:
+ 704 0070 43595F42 		.ascii	"CY_BLE_STATE_INITIALIZING\000"
+ 704      4C455F53 
+ 704      54415445 
+ 704      5F494E49 
+ 704      5449414C 
+ 705              	.LASF40:
+ 706 008a 63795F62 		.ascii	"cy_ble_connHandle\000"
+ 706      6C655F63 
+ 706      6F6E6E48 
+ 706      616E646C 
+ 706      6500
+ 707              	.LASF10:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 16
+
+
+ 708 009c 75696E74 		.ascii	"uint8_t\000"
+ 708      385F7400 
+ 709              	.LASF32:
+ 710 00a4 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 710      4C455F43 
+ 710      4F4E4E5F 
+ 710      53544154 
+ 710      455F434C 
+ 711              	.LASF28:
+ 712 00ce 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
+ 712      6E5F626C 
+ 712      655F6164 
+ 712      765F7374 
+ 712      6174655F 
+ 713              	.LASF46:
+ 714 00e4 75706461 		.ascii	"updateNextEvent\000"
+ 714      74654E65 
+ 714      78744576 
+ 714      656E7400 
+ 715              	.LASF14:
+ 716 00f4 666C6F61 		.ascii	"float\000"
+ 716      7400
+ 717              	.LASF50:
+ 718 00fa 5F5F656E 		.ascii	"__enable_irq\000"
+ 718      61626C65 
+ 718      5F697271 
+ 718      00
+ 719              	.LASF27:
+ 720 0107 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 720      4C455F41 
+ 720      44565F53 
+ 720      54415445 
+ 720      5F53544F 
+ 721              	.LASF1:
+ 722 0127 756E7369 		.ascii	"unsigned char\000"
+ 722      676E6564 
+ 722      20636861 
+ 722      7200
+ 723              	.LASF5:
+ 724 0135 6C6F6E67 		.ascii	"long unsigned int\000"
+ 724      20756E73 
+ 724      69676E65 
+ 724      6420696E 
+ 724      7400
+ 725              	.LASF3:
+ 726 0147 73686F72 		.ascii	"short unsigned int\000"
+ 726      7420756E 
+ 726      7369676E 
+ 726      65642069 
+ 726      6E7400
+ 727              	.LASF23:
+ 728 015a 63795F65 		.ascii	"cy_en_ble_state_t\000"
+ 728      6E5F626C 
+ 728      655F7374 
+ 728      6174655F 
+ 728      7400
+ 729              	.LASF43:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 17
+
+
+ 730 016c 43795F42 		.ascii	"Cy_BLE_Start\000"
+ 730      4C455F53 
+ 730      74617274 
+ 730      00
+ 731              	.LASF34:
+ 732 0179 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 732      4C455F43 
+ 732      4F4E4E5F 
+ 732      53544154 
+ 732      455F434C 
+ 733              	.LASF31:
+ 734 01a3 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 734      4C455F43 
+ 734      4F4E4E5F 
+ 734      53544154 
+ 734      455F434F 
+ 735              	.LASF15:
+ 736 01bf 646F7562 		.ascii	"double\000"
+ 736      6C6500
+ 737              	.LASF38:
+ 738 01c6 63795F62 		.ascii	"cy_ble_state\000"
+ 738      6C655F73 
+ 738      74617465 
+ 738      00
+ 739              	.LASF51:
+ 740 01d3 6D61696E 		.ascii	"main\000"
+ 740      00
+ 741              	.LASF48:
+ 742 01d8 6D61696E 		.ascii	"main_cm0p.c\000"
+ 742      5F636D30 
+ 742      702E6300 
+ 743              	.LASF8:
+ 744 01e4 756E7369 		.ascii	"unsigned int\000"
+ 744      676E6564 
+ 744      20696E74 
+ 744      00
+ 745              	.LASF36:
+ 746 01f1 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 746      4C455F43 
+ 746      4F4E4E5F 
+ 746      53544154 
+ 746      455F434C 
+ 747              	.LASF7:
+ 748 0215 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 748      206C6F6E 
+ 748      6720756E 
+ 748      7369676E 
+ 748      65642069 
+ 749              	.LASF33:
+ 750 022c 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 750      4C455F43 
+ 750      4F4E4E5F 
+ 750      53544154 
+ 750      455F434C 
+ 751              	.LASF25:
+ 752 0256 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 752      4C455F41 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 18
+
+
+ 752      44565F53 
+ 752      54415445 
+ 752      5F414456 
+ 753              	.LASF49:
+ 754 0275 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\SELVoltageMonitor\\SELVoltageM"
+ 754      536F4320 
+ 754      36205072 
+ 754      6F6A6563 
+ 754      74735C53 
+ 755 02a5 6F6E6974 		.ascii	"onitor.cydsn\000"
+ 755      6F722E63 
+ 755      7964736E 
+ 755      00
+ 756              	.LASF22:
+ 757 02b2 43595F42 		.ascii	"CY_BLE_STATE_ON\000"
+ 757      4C455F53 
+ 757      54415445 
+ 757      5F4F4E00 
+ 758              	.LASF18:
+ 759 02c2 61747449 		.ascii	"attId\000"
+ 759      6400
+ 760              	.LASF11:
+ 761 02c8 73697A65 		.ascii	"sizetype\000"
+ 761      74797065 
+ 761      00
+ 762              	.LASF6:
+ 763 02d1 6C6F6E67 		.ascii	"long long int\000"
+ 763      206C6F6E 
+ 763      6720696E 
+ 763      7400
+ 764              	.LASF13:
+ 765 02df 63686172 		.ascii	"char\000"
+ 765      00
+ 766              	.LASF44:
+ 767 02e4 43795F42 		.ascii	"Cy_BLE_ProcessEvents\000"
+ 767      4C455F50 
+ 767      726F6365 
+ 767      73734576 
+ 767      656E7473 
+ 768              	.LASF29:
+ 769 02f9 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 769      4C455F43 
+ 769      4F4E4E5F 
+ 769      53544154 
+ 769      455F4449 
+ 770              	.LASF39:
+ 771 0318 63795F62 		.ascii	"cy_ble_advState\000"
+ 771      6C655F61 
+ 771      64765374 
+ 771      61746500 
+ 772              	.LASF0:
+ 773 0328 73686F72 		.ascii	"short int\000"
+ 773      7420696E 
+ 773      7400
+ 774              	.LASF26:
+ 775 0332 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 775      4C455F41 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 19
+
+
+ 775      44565F53 
+ 775      54415445 
+ 775      5F414456 
+ 776              	.LASF30:
+ 777 034f 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 777      4C455F43 
+ 777      4F4E4E5F 
+ 777      53544154 
+ 777      455F434C 
+ 778              	.LASF20:
+ 779 0380 43595F42 		.ascii	"CY_BLE_STATE_STOPPED\000"
+ 779      4C455F53 
+ 779      54415445 
+ 779      5F53544F 
+ 779      50504544 
+ 780              	.LASF4:
+ 781 0395 6C6F6E67 		.ascii	"long int\000"
+ 781      20696E74 
+ 781      00
+ 782              	.LASF12:
+ 783 039e 6C6F6E67 		.ascii	"long double\000"
+ 783      20646F75 
+ 783      626C6500 
+ 784              	.LASF47:
+ 785 03aa 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 785      43313120 
+ 785      352E342E 
+ 785      31203230 
+ 785      31363036 
+ 786 03dd 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 786      20726576 
+ 786      6973696F 
+ 786      6E203233 
+ 786      37373135 
+ 787 0410 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 787      67202D66 
+ 787      66756E63 
+ 787      74696F6E 
+ 787      2D736563 
+ 788              	.LASF2:
+ 789 043c 7369676E 		.ascii	"signed char\000"
+ 789      65642063 
+ 789      68617200 
+ 790              	.LASF16:
+ 791 0448 5F426F6F 		.ascii	"_Bool\000"
+ 791      6C00
+ 792              	.LASF41:
+ 793 044e 63795F62 		.ascii	"cy_ble_connState\000"
+ 793      6C655F63 
+ 793      6F6E6E53 
+ 793      74617465 
+ 793      00
+ 794              	.LASF42:
+ 795 045f 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 795      6C655F70 
+ 795      656E6469 
+ 795      6E67466C 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccrV8cak.s 			page 20
+
+
+ 795      61736857 
+ 796              	.LASF45:
+ 797 0478 43795F53 		.ascii	"Cy_SysEnableCM4\000"
+ 797      7973456E 
+ 797      61626C65 
+ 797      434D3400 
+ 798              	.LASF37:
+ 799 0488 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 799      6E5F626C 
+ 799      655F636F 
+ 799      6E6E5F73 
+ 799      74617465 
+ 800              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -1,0 +1,1707 @@
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"retarget.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.syntax divided
+  20              		.global _printf_float
+  21              		.global _scanf_float
+  22              		.thumb
+  23              		.syntax unified
+  24              		.section	.text._write,"ax",%progbits
+  25              		.align	2
+  26              		.weak	_write
+  27              		.code	16
+  28              		.thumb_func
+  29              		.type	_write, %function
+  30              	_write:
+  31              	.LFB389:
+  32              		.file 1 "Generated_Source\\PSoC6\\pdl\\utilities\\retarget_io\\retarget.c"
+   1:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** /***************************************************************************//**
+   2:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * \file retarget.c
+   3:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * \version 1.10
+   4:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** *
+   5:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * \brief
+   6:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * 'Retarget' layer for target-dependent low level function.
+   7:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** *
+   8:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** ********************************************************************************
+   9:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * \copyright
+  10:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * Copyright 2016-2018, Cypress Semiconductor Corporation. All rights reserved.
+  11:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** * the software package with which this file was provided.
+  14:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** *******************************************************************************/
+  15:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+  16:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #include <stdio.h>
+  17:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #include "stdio_user.h"
+  18:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+  19:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #if defined(__cplusplus)
+  20:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** extern "C" {
+  21:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #endif
+  22:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+  23:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #ifdef IO_STDOUT_ENABLE
+  24:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+  25:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #if defined(__ARMCC_VERSION) /* ARM-MDK */
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 2
+
+
+  26:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     /***************************************************************************
+  27:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     * Function Name: fputc
+  28:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     ***************************************************************************/
+  29:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __attribute__((weak)) int fputc(int ch, FILE *f)
+  30:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     {
+  31:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         (void)f;
+  32:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     #if (STDOUT_CR_LF != 0)
+  33:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         if ((char)ch == '\n')
+  34:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+  35:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             STDIO_PutChar('\r');
+  36:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+  37:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     #endif /* STDOUT_CR_LF != 0 */
+  38:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         STDIO_PutChar(ch);
+  39:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         return (ch);
+  40:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     }
+  41:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #elif defined (__ICCARM__) /* IAR */
+  42:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     #include <yfuns.h>
+  43:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+  44:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     /***************************************************************************
+  45:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     * Function Name: __write
+  46:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     ***************************************************************************/
+  47:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __weak size_t __write(int handle, const unsigned char * buffer, size_t size)
+  48:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     {
+  49:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         size_t nChars = 0;
+  50:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         /* This template only writes to "standard out", for all other file
+  51:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         * handles it returns failure. */
+  52:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         if (handle != _LLIO_STDOUT)
+  53:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+  54:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             return (_LLIO_ERROR);
+  55:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+  56:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         if (buffer != NULL)
+  57:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+  58:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             for (/* Empty */; nChars < size; ++nChars)
+  59:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+  60:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             #if (STDOUT_CR_LF != 0)
+  61:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 if(*buffer == '\n')
+  62:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 {
+  63:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                     STDIO_PutChar('\r');
+  64:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 }
+  65:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             #endif /* STDOUT_CR_LF != 0 */
+  66:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 STDIO_PutChar(*buffer);
+  67:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 ++buffer;
+  68:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             }
+  69:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+  70:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         return (nChars);
+  71:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     }
+  72:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #else /* (__GNUC__)  GCC */    
+  73:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     /* Add an explicit reference to the floating point printf library to allow
+  74:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     the usage of floating point conversion specifier. */
+  75:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __asm (".global _printf_float");
+  76:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     /***************************************************************************
+  77:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     * Function Name: _write
+  78:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     ***************************************************************************/
+  79:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __attribute__((weak)) int _write (int fd, const char *ptr, int len)
+  80:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     {
+  33              		.loc 1 80 0
+  34              		.cfi_startproc
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 3
+
+
+  35              		@ args = 0, pretend = 0, frame = 0
+  36              		@ frame_needed = 0, uses_anonymous_args = 0
+  37              	.LVL0:
+  38 0000 70B5     		push	{r4, r5, r6, lr}
+  39              		.cfi_def_cfa_offset 16
+  40              		.cfi_offset 4, -16
+  41              		.cfi_offset 5, -12
+  42              		.cfi_offset 6, -8
+  43              		.cfi_offset 14, -4
+  44 0002 0D00     		movs	r5, r1
+  45 0004 1600     		movs	r6, r2
+  46              	.LVL1:
+  81:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         int nChars = 0;
+  82:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         (void)fd;
+  83:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         if (ptr != NULL)
+  47              		.loc 1 83 0
+  48 0006 0029     		cmp	r1, #0
+  49 0008 07D1     		bne	.L5
+  81:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         int nChars = 0;
+  50              		.loc 1 81 0
+  51 000a 0024     		movs	r4, #0
+  52 000c 08E0     		b	.L3
+  53              	.LVL2:
+  54              	.L4:
+  84:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+  85:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             for (/* Empty */; nChars < len; ++nChars)
+  86:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+  87:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             #if (STDOUT_CR_LF != 0)
+  88:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 if(*ptr == '\n')
+  89:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 {
+  90:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                     STDIO_PutChar('\r');
+  91:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 }
+  92:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             #endif /* STDOUT_CR_LF != 0 */
+  93:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 STDIO_PutChar((uint32_t)*ptr);
+  55              		.loc 1 93 0 discriminator 2
+  56 000e 2878     		ldrb	r0, [r5]
+  57 0010 FFF7FEFF 		bl	STDIO_PutChar
+  58              	.LVL3:
+  94:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 ++ptr;
+  59              		.loc 1 94 0 discriminator 2
+  60 0014 0135     		adds	r5, r5, #1
+  61              	.LVL4:
+  85:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+  62              		.loc 1 85 0 discriminator 2
+  63 0016 0134     		adds	r4, r4, #1
+  64              	.LVL5:
+  65 0018 00E0     		b	.L2
+  66              	.LVL6:
+  67              	.L5:
+  68 001a 0024     		movs	r4, #0
+  69              	.LVL7:
+  70              	.L2:
+  85:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+  71              		.loc 1 85 0 is_stmt 0 discriminator 1
+  72 001c B442     		cmp	r4, r6
+  73 001e F6DB     		blt	.L4
+  74              	.LVL8:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 4
+
+
+  75              	.L3:
+  95:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             }
+  96:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+  97:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         return (nChars);
+  98:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     }
+  76              		.loc 1 98 0 is_stmt 1
+  77 0020 2000     		movs	r0, r4
+  78              		@ sp needed
+  79              	.LVL9:
+  80              	.LVL10:
+  81              	.LVL11:
+  82 0022 70BD     		pop	{r4, r5, r6, pc}
+  83              		.cfi_endproc
+  84              	.LFE389:
+  85              		.size	_write, .-_write
+  86              		.section	.text._read,"ax",%progbits
+  87              		.align	2
+  88              		.weak	_read
+  89              		.code	16
+  90              		.thumb_func
+  91              		.type	_read, %function
+  92              	_read:
+  93              	.LFB390:
+  99:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #endif
+ 100:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+ 101:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #endif /* IO_STDOUT_ENABLE */
+ 102:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+ 103:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #if defined(IO_STDIN_ENABLE)
+ 104:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** 
+ 105:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #if defined(__ARMCC_VERSION) /* ARM-MDK */
+ 106:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     /***************************************************************************
+ 107:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     * Function Name: fgetc
+ 108:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     ***************************************************************************/
+ 109:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __attribute__((weak)) int fgetc(FILE *f) 
+ 110:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     {
+ 111:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         (void)f;
+ 112:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         return (STDIO_GetChar());
+ 113:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     }
+ 114:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #elif defined (__ICCARM__) /* IAR */
+ 115:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __weak size_t __read(int handle, unsigned char * buffer, size_t size)
+ 116:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     {
+ 117:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         /* This template only reads from "standard in", for all other file
+ 118:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         handles it returns failure. */
+ 119:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         if ((handle != _LLIO_STDIN) || (buffer == NULL))
+ 120:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+ 121:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             return (_LLIO_ERROR);
+ 122:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+ 123:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         else
+ 124:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+ 125:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             *buffer = STDIO_GetChar();
+ 126:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             return (1);
+ 127:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+ 128:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     }
+ 129:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c **** #else /* (__GNUC__)  GCC */
+ 130:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     /* Add an explicit reference to the floating point scanf library to allow
+ 131:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     the usage of floating point conversion specifier. */
+ 132:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __asm (".global _scanf_float");
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 5
+
+
+ 133:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     __attribute__((weak)) int _read (int fd, char *ptr, int len)
+ 134:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     {
+  94              		.loc 1 134 0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              	.LVL12:
+  99 0000 70B5     		push	{r4, r5, r6, lr}
+ 100              		.cfi_def_cfa_offset 16
+ 101              		.cfi_offset 4, -16
+ 102              		.cfi_offset 5, -12
+ 103              		.cfi_offset 6, -8
+ 104              		.cfi_offset 14, -4
+ 105 0002 0D00     		movs	r5, r1
+ 106 0004 1600     		movs	r6, r2
+ 107              	.LVL13:
+ 135:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         int nChars = 0;
+ 136:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         (void)fd;
+ 137:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         if (ptr != NULL)
+ 108              		.loc 1 137 0
+ 109 0006 0029     		cmp	r1, #0
+ 110 0008 0AD1     		bne	.L10
+ 135:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         int nChars = 0;
+ 111              		.loc 1 135 0
+ 112 000a 0024     		movs	r4, #0
+ 113 000c 0BE0     		b	.L8
+ 114              	.LVL14:
+ 115              	.L9:
+ 138:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         {
+ 139:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             for(/* Empty */;nChars < len;++ptr)
+ 140:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+ 141:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 *ptr = (char)STDIO_GetChar();
+ 116              		.loc 1 141 0
+ 117 000e FFF7FEFF 		bl	STDIO_GetChar
+ 118              	.LVL15:
+ 119 0012 C0B2     		uxtb	r0, r0
+ 120 0014 2870     		strb	r0, [r5]
+ 142:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 ++nChars;
+ 121              		.loc 1 142 0
+ 122 0016 0134     		adds	r4, r4, #1
+ 123              	.LVL16:
+ 143:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 if(*ptr == '\n')
+ 124              		.loc 1 143 0
+ 125 0018 0A28     		cmp	r0, #10
+ 126 001a 04D0     		beq	.L8
+ 139:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+ 127              		.loc 1 139 0
+ 128 001c 0135     		adds	r5, r5, #1
+ 129              	.LVL17:
+ 130 001e 00E0     		b	.L7
+ 131              	.LVL18:
+ 132              	.L10:
+ 133 0020 0024     		movs	r4, #0
+ 134              	.LVL19:
+ 135              	.L7:
+ 139:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             {
+ 136              		.loc 1 139 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 6
+
+
+ 137 0022 B442     		cmp	r4, r6
+ 138 0024 F3DB     		blt	.L9
+ 139              	.LVL20:
+ 140              	.L8:
+ 144:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 {
+ 145:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                     break;
+ 146:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****                 }
+ 147:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****             }
+ 148:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         }
+ 149:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****         return (nChars);
+ 150:Generated_Source\PSoC6\pdl\utilities\retarget_io/retarget.c ****     }
+ 141              		.loc 1 150 0 is_stmt 1
+ 142 0026 2000     		movs	r0, r4
+ 143              		@ sp needed
+ 144              	.LVL21:
+ 145              	.LVL22:
+ 146              	.LVL23:
+ 147 0028 70BD     		pop	{r4, r5, r6, pc}
+ 148              		.cfi_endproc
+ 149              	.LFE390:
+ 150              		.size	_read, .-_read
+ 151 002a C046     		.text
+ 152              	.Letext0:
+ 153              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 154              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 155              		.file 4 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_uart.h"
+ 156              		.file 5 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack_host_main.h"
+ 157              		.file 6 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_gap.h"
+ 158              		.file 7 "Generated_Source\\PSoC6/UART.h"
+ 159              		.file 8 "./stdio_user.h"
+ 160              		.section	.debug_info,"",%progbits
+ 161              	.Ldebug_info0:
+ 162 0000 98030000 		.4byte	0x398
+ 163 0004 0400     		.2byte	0x4
+ 164 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 165 000a 04       		.byte	0x4
+ 166 000b 01       		.uleb128 0x1
+ 167 000c CC000000 		.4byte	.LASF62
+ 168 0010 0C       		.byte	0xc
+ 169 0011 28050000 		.4byte	.LASF63
+ 170 0015 CB030000 		.4byte	.LASF64
+ 171 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 172 001d 00000000 		.4byte	0
+ 173 0021 00000000 		.4byte	.Ldebug_line0
+ 174 0025 02       		.uleb128 0x2
+ 175 0026 01       		.byte	0x1
+ 176 0027 06       		.byte	0x6
+ 177 0028 53030000 		.4byte	.LASF0
+ 178 002c 03       		.uleb128 0x3
+ 179 002d C7020000 		.4byte	.LASF5
+ 180 0031 02       		.byte	0x2
+ 181 0032 1D       		.byte	0x1d
+ 182 0033 37000000 		.4byte	0x37
+ 183 0037 02       		.uleb128 0x2
+ 184 0038 01       		.byte	0x1
+ 185 0039 08       		.byte	0x8
+ 186 003a 35030000 		.4byte	.LASF1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 7
+
+
+ 187 003e 02       		.uleb128 0x2
+ 188 003f 02       		.byte	0x2
+ 189 0040 05       		.byte	0x5
+ 190 0041 69000000 		.4byte	.LASF2
+ 191 0045 02       		.uleb128 0x2
+ 192 0046 02       		.byte	0x2
+ 193 0047 07       		.byte	0x7
+ 194 0048 B2030000 		.4byte	.LASF3
+ 195 004c 02       		.uleb128 0x2
+ 196 004d 04       		.byte	0x4
+ 197 004e 05       		.byte	0x5
+ 198 004f F1040000 		.4byte	.LASF4
+ 199 0053 03       		.uleb128 0x3
+ 200 0054 81010000 		.4byte	.LASF6
+ 201 0058 02       		.byte	0x2
+ 202 0059 41       		.byte	0x41
+ 203 005a 5E000000 		.4byte	0x5e
+ 204 005e 02       		.uleb128 0x2
+ 205 005f 04       		.byte	0x4
+ 206 0060 07       		.byte	0x7
+ 207 0061 60040000 		.4byte	.LASF7
+ 208 0065 02       		.uleb128 0x2
+ 209 0066 08       		.byte	0x8
+ 210 0067 05       		.byte	0x5
+ 211 0068 61020000 		.4byte	.LASF8
+ 212 006c 02       		.uleb128 0x2
+ 213 006d 08       		.byte	0x8
+ 214 006e 07       		.byte	0x7
+ 215 006f 5F030000 		.4byte	.LASF9
+ 216 0073 04       		.uleb128 0x4
+ 217 0074 04       		.byte	0x4
+ 218 0075 05       		.byte	0x5
+ 219 0076 696E7400 		.ascii	"int\000"
+ 220 007a 02       		.uleb128 0x2
+ 221 007b 04       		.byte	0x4
+ 222 007c 07       		.byte	0x7
+ 223 007d 7F030000 		.4byte	.LASF10
+ 224 0081 02       		.uleb128 0x2
+ 225 0082 08       		.byte	0x8
+ 226 0083 04       		.byte	0x4
+ 227 0084 F5020000 		.4byte	.LASF11
+ 228 0088 05       		.uleb128 0x5
+ 229 0089 04       		.byte	0x4
+ 230 008a 02       		.uleb128 0x2
+ 231 008b 04       		.byte	0x4
+ 232 008c 07       		.byte	0x7
+ 233 008d 81000000 		.4byte	.LASF12
+ 234 0091 06       		.uleb128 0x6
+ 235 0092 04       		.byte	0x4
+ 236 0093 97000000 		.4byte	0x97
+ 237 0097 02       		.uleb128 0x2
+ 238 0098 01       		.byte	0x1
+ 239 0099 08       		.byte	0x8
+ 240 009a 1C040000 		.4byte	.LASF13
+ 241 009e 06       		.uleb128 0x6
+ 242 009f 04       		.byte	0x4
+ 243 00a0 A4000000 		.4byte	0xa4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 8
+
+
+ 244 00a4 07       		.uleb128 0x7
+ 245 00a5 97000000 		.4byte	0x97
+ 246 00a9 03       		.uleb128 0x3
+ 247 00aa 00020000 		.4byte	.LASF14
+ 248 00ae 03       		.byte	0x3
+ 249 00af 18       		.byte	0x18
+ 250 00b0 2C000000 		.4byte	0x2c
+ 251 00b4 03       		.uleb128 0x3
+ 252 00b5 76030000 		.4byte	.LASF15
+ 253 00b9 03       		.byte	0x3
+ 254 00ba 30       		.byte	0x30
+ 255 00bb 53000000 		.4byte	0x53
+ 256 00bf 08       		.uleb128 0x8
+ 257 00c0 B4000000 		.4byte	0xb4
+ 258 00c4 02       		.uleb128 0x2
+ 259 00c5 04       		.byte	0x4
+ 260 00c6 04       		.byte	0x4
+ 261 00c7 45020000 		.4byte	.LASF16
+ 262 00cb 02       		.uleb128 0x2
+ 263 00cc 08       		.byte	0x8
+ 264 00cd 04       		.byte	0x4
+ 265 00ce 72040000 		.4byte	.LASF17
+ 266 00d2 02       		.uleb128 0x2
+ 267 00d3 01       		.byte	0x1
+ 268 00d4 02       		.byte	0x2
+ 269 00d5 2A040000 		.4byte	.LASF18
+ 270 00d9 06       		.uleb128 0x6
+ 271 00da 04       		.byte	0x4
+ 272 00db DF000000 		.4byte	0xdf
+ 273 00df 09       		.uleb128 0x9
+ 274 00e0 EA000000 		.4byte	0xea
+ 275 00e4 0A       		.uleb128 0xa
+ 276 00e5 B4000000 		.4byte	0xb4
+ 277 00e9 00       		.byte	0
+ 278 00ea 0B       		.uleb128 0xb
+ 279 00eb 34000000 		.4byte	.LASF19
+ 280 00ef 04       		.byte	0x4
+ 281 00f0 AB01     		.2byte	0x1ab
+ 282 00f2 D9000000 		.4byte	0xd9
+ 283 00f6 0C       		.uleb128 0xc
+ 284 00f7 8A000000 		.4byte	.LASF65
+ 285 00fb 38       		.byte	0x38
+ 286 00fc 04       		.byte	0x4
+ 287 00fd 4702     		.2byte	0x247
+ 288 00ff BA010000 		.4byte	0x1ba
+ 289 0103 0D       		.uleb128 0xd
+ 290 0104 8C010000 		.4byte	.LASF20
+ 291 0108 04       		.byte	0x4
+ 292 0109 4A02     		.2byte	0x24a
+ 293 010b BF000000 		.4byte	0xbf
+ 294 010f 00       		.byte	0
+ 295 0110 0D       		.uleb128 0xd
+ 296 0111 2C030000 		.4byte	.LASF21
+ 297 0115 04       		.byte	0x4
+ 298 0116 4B02     		.2byte	0x24b
+ 299 0118 BF000000 		.4byte	0xbf
+ 300 011c 04       		.byte	0x4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 9
+
+
+ 301 011d 0D       		.uleb128 0xd
+ 302 011e 43030000 		.4byte	.LASF22
+ 303 0122 04       		.byte	0x4
+ 304 0123 4D02     		.2byte	0x24d
+ 305 0125 88000000 		.4byte	0x88
+ 306 0129 08       		.byte	0x8
+ 307 012a 0D       		.uleb128 0xd
+ 308 012b AB020000 		.4byte	.LASF23
+ 309 012f 04       		.byte	0x4
+ 310 0130 4E02     		.2byte	0x24e
+ 311 0132 B4000000 		.4byte	0xb4
+ 312 0136 0C       		.byte	0xc
+ 313 0137 0D       		.uleb128 0xd
+ 314 0138 37020000 		.4byte	.LASF24
+ 315 013c 04       		.byte	0x4
+ 316 013d 4F02     		.2byte	0x24f
+ 317 013f BF000000 		.4byte	0xbf
+ 318 0143 10       		.byte	0x10
+ 319 0144 0D       		.uleb128 0xd
+ 320 0145 00000000 		.4byte	.LASF25
+ 321 0149 04       		.byte	0x4
+ 322 014a 5002     		.2byte	0x250
+ 323 014c BF000000 		.4byte	0xbf
+ 324 0150 14       		.byte	0x14
+ 325 0151 0D       		.uleb128 0xd
+ 326 0152 C5030000 		.4byte	.LASF26
+ 327 0156 04       		.byte	0x4
+ 328 0157 5202     		.2byte	0x252
+ 329 0159 88000000 		.4byte	0x88
+ 330 015d 18       		.byte	0x18
+ 331 015e 0D       		.uleb128 0xd
+ 332 015f 2A000000 		.4byte	.LASF27
+ 333 0163 04       		.byte	0x4
+ 334 0164 5302     		.2byte	0x253
+ 335 0166 B4000000 		.4byte	0xb4
+ 336 016a 1C       		.byte	0x1c
+ 337 016b 0D       		.uleb128 0xd
+ 338 016c F7010000 		.4byte	.LASF28
+ 339 0170 04       		.byte	0x4
+ 340 0171 5402     		.2byte	0x254
+ 341 0173 BF000000 		.4byte	0xbf
+ 342 0177 20       		.byte	0x20
+ 343 0178 0D       		.uleb128 0xd
+ 344 0179 5B020000 		.4byte	.LASF29
+ 345 017d 04       		.byte	0x4
+ 346 017e 5602     		.2byte	0x256
+ 347 0180 88000000 		.4byte	0x88
+ 348 0184 24       		.byte	0x24
+ 349 0185 0D       		.uleb128 0xd
+ 350 0186 5E010000 		.4byte	.LASF30
+ 351 018a 04       		.byte	0x4
+ 352 018b 5702     		.2byte	0x257
+ 353 018d B4000000 		.4byte	0xb4
+ 354 0191 28       		.byte	0x28
+ 355 0192 0D       		.uleb128 0xd
+ 356 0193 FA040000 		.4byte	.LASF31
+ 357 0197 04       		.byte	0x4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 10
+
+
+ 358 0198 5802     		.2byte	0x258
+ 359 019a BF000000 		.4byte	0xbf
+ 360 019e 2C       		.byte	0x2c
+ 361 019f 0D       		.uleb128 0xd
+ 362 01a0 21040000 		.4byte	.LASF32
+ 363 01a4 04       		.byte	0x4
+ 364 01a5 5D02     		.2byte	0x25d
+ 365 01a7 EA000000 		.4byte	0xea
+ 366 01ab 30       		.byte	0x30
+ 367 01ac 0D       		.uleb128 0xd
+ 368 01ad 92040000 		.4byte	.LASF33
+ 369 01b1 04       		.byte	0x4
+ 370 01b2 6002     		.2byte	0x260
+ 371 01b4 B4000000 		.4byte	0xb4
+ 372 01b8 34       		.byte	0x34
+ 373 01b9 00       		.byte	0
+ 374 01ba 0B       		.uleb128 0xb
+ 375 01bb 9A040000 		.4byte	.LASF34
+ 376 01bf 04       		.byte	0x4
+ 377 01c0 6302     		.2byte	0x263
+ 378 01c2 F6000000 		.4byte	0xf6
+ 379 01c6 0E       		.uleb128 0xe
+ 380 01c7 02       		.byte	0x2
+ 381 01c8 05       		.byte	0x5
+ 382 01c9 5B01     		.2byte	0x15b
+ 383 01cb EA010000 		.4byte	0x1ea
+ 384 01cf 0D       		.uleb128 0xd
+ 385 01d0 2E020000 		.4byte	.LASF35
+ 386 01d4 05       		.byte	0x5
+ 387 01d5 6501     		.2byte	0x165
+ 388 01d7 A9000000 		.4byte	0xa9
+ 389 01db 00       		.byte	0
+ 390 01dc 0D       		.uleb128 0xd
+ 391 01dd AC030000 		.4byte	.LASF36
+ 392 01e1 05       		.byte	0x5
+ 393 01e2 6901     		.2byte	0x169
+ 394 01e4 A9000000 		.4byte	0xa9
+ 395 01e8 01       		.byte	0x1
+ 396 01e9 00       		.byte	0
+ 397 01ea 0B       		.uleb128 0xb
+ 398 01eb D8040000 		.4byte	.LASF37
+ 399 01ef 05       		.byte	0x5
+ 400 01f0 6B01     		.2byte	0x16b
+ 401 01f2 C6010000 		.4byte	0x1c6
+ 402 01f6 0F       		.uleb128 0xf
+ 403 01f7 01       		.byte	0x1
+ 404 01f8 37000000 		.4byte	0x37
+ 405 01fc 06       		.byte	0x6
+ 406 01fd 7E       		.byte	0x7e
+ 407 01fe 1B020000 		.4byte	0x21b
+ 408 0202 10       		.uleb128 0x10
+ 409 0203 79040000 		.4byte	.LASF38
+ 410 0207 00       		.byte	0
+ 411 0208 10       		.uleb128 0x10
+ 412 0209 41040000 		.4byte	.LASF39
+ 413 020d 01       		.byte	0x1
+ 414 020e 10       		.uleb128 0x10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 11
+
+
+ 415 020f 0B050000 		.4byte	.LASF40
+ 416 0213 02       		.byte	0x2
+ 417 0214 10       		.uleb128 0x10
+ 418 0215 8C030000 		.4byte	.LASF41
+ 419 0219 03       		.byte	0x3
+ 420 021a 00       		.byte	0
+ 421 021b 03       		.uleb128 0x3
+ 422 021c 53000000 		.4byte	.LASF42
+ 423 0220 06       		.byte	0x6
+ 424 0221 83       		.byte	0x83
+ 425 0222 F6010000 		.4byte	0x1f6
+ 426 0226 0F       		.uleb128 0xf
+ 427 0227 01       		.byte	0x1
+ 428 0228 37000000 		.4byte	0x37
+ 429 022c 06       		.byte	0x6
+ 430 022d 87       		.byte	0x87
+ 431 022e 63020000 		.4byte	0x263
+ 432 0232 10       		.uleb128 0x10
+ 433 0233 08020000 		.4byte	.LASF43
+ 434 0237 00       		.byte	0
+ 435 0238 10       		.uleb128 0x10
+ 436 0239 9C010000 		.4byte	.LASF44
+ 437 023d 01       		.byte	0x1
+ 438 023e 10       		.uleb128 0x10
+ 439 023f 0E000000 		.4byte	.LASF45
+ 440 0243 02       		.byte	0x2
+ 441 0244 10       		.uleb128 0x10
+ 442 0245 A2000000 		.4byte	.LASF46
+ 443 0249 03       		.byte	0x3
+ 444 024a 10       		.uleb128 0x10
+ 445 024b 81020000 		.4byte	.LASF47
+ 446 024f 04       		.byte	0x4
+ 447 0250 10       		.uleb128 0x10
+ 448 0251 CD010000 		.4byte	.LASF48
+ 449 0255 05       		.byte	0x5
+ 450 0256 10       		.uleb128 0x10
+ 451 0257 01030000 		.4byte	.LASF49
+ 452 025b 06       		.byte	0x6
+ 453 025c 10       		.uleb128 0x10
+ 454 025d D1020000 		.4byte	.LASF50
+ 455 0261 07       		.byte	0x7
+ 456 0262 00       		.byte	0
+ 457 0263 03       		.uleb128 0x3
+ 458 0264 B4040000 		.4byte	.LASF51
+ 459 0268 06       		.byte	0x6
+ 460 0269 90       		.byte	0x90
+ 461 026a 26020000 		.4byte	0x226
+ 462 026e 11       		.uleb128 0x11
+ 463 026f 27020000 		.4byte	.LASF52
+ 464 0273 01       		.byte	0x1
+ 465 0274 4F       		.byte	0x4f
+ 466 0275 73000000 		.4byte	0x73
+ 467 0279 00000000 		.4byte	.LFB389
+ 468 027d 24000000 		.4byte	.LFE389-.LFB389
+ 469 0281 01       		.uleb128 0x1
+ 470 0282 9C       		.byte	0x9c
+ 471 0283 CC020000 		.4byte	0x2cc
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 12
+
+
+ 472 0287 12       		.uleb128 0x12
+ 473 0288 666400   		.ascii	"fd\000"
+ 474 028b 01       		.byte	0x1
+ 475 028c 4F       		.byte	0x4f
+ 476 028d 73000000 		.4byte	0x73
+ 477 0291 00000000 		.4byte	.LLST0
+ 478 0295 12       		.uleb128 0x12
+ 479 0296 70747200 		.ascii	"ptr\000"
+ 480 029a 01       		.byte	0x1
+ 481 029b 4F       		.byte	0x4f
+ 482 029c 9E000000 		.4byte	0x9e
+ 483 02a0 3A000000 		.4byte	.LLST1
+ 484 02a4 12       		.uleb128 0x12
+ 485 02a5 6C656E00 		.ascii	"len\000"
+ 486 02a9 01       		.byte	0x1
+ 487 02aa 4F       		.byte	0x4f
+ 488 02ab 73000000 		.4byte	0x73
+ 489 02af 6E000000 		.4byte	.LLST2
+ 490 02b3 13       		.uleb128 0x13
+ 491 02b4 95010000 		.4byte	.LASF54
+ 492 02b8 01       		.byte	0x1
+ 493 02b9 51       		.byte	0x51
+ 494 02ba 73000000 		.4byte	0x73
+ 495 02be B0000000 		.4byte	.LLST3
+ 496 02c2 14       		.uleb128 0x14
+ 497 02c3 14000000 		.4byte	.LVL3
+ 498 02c7 85030000 		.4byte	0x385
+ 499 02cb 00       		.byte	0
+ 500 02cc 11       		.uleb128 0x11
+ 501 02cd 4D030000 		.4byte	.LASF53
+ 502 02d1 01       		.byte	0x1
+ 503 02d2 85       		.byte	0x85
+ 504 02d3 73000000 		.4byte	0x73
+ 505 02d7 00000000 		.4byte	.LFB390
+ 506 02db 2A000000 		.4byte	.LFE390-.LFB390
+ 507 02df 01       		.uleb128 0x1
+ 508 02e0 9C       		.byte	0x9c
+ 509 02e1 2A030000 		.4byte	0x32a
+ 510 02e5 12       		.uleb128 0x12
+ 511 02e6 666400   		.ascii	"fd\000"
+ 512 02e9 01       		.byte	0x1
+ 513 02ea 85       		.byte	0x85
+ 514 02eb 73000000 		.4byte	0x73
+ 515 02ef F1000000 		.4byte	.LLST4
+ 516 02f3 12       		.uleb128 0x12
+ 517 02f4 70747200 		.ascii	"ptr\000"
+ 518 02f8 01       		.byte	0x1
+ 519 02f9 85       		.byte	0x85
+ 520 02fa 91000000 		.4byte	0x91
+ 521 02fe 2B010000 		.4byte	.LLST5
+ 522 0302 12       		.uleb128 0x12
+ 523 0303 6C656E00 		.ascii	"len\000"
+ 524 0307 01       		.byte	0x1
+ 525 0308 85       		.byte	0x85
+ 526 0309 73000000 		.4byte	0x73
+ 527 030d 5F010000 		.4byte	.LLST6
+ 528 0311 13       		.uleb128 0x13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 13
+
+
+ 529 0312 95010000 		.4byte	.LASF54
+ 530 0316 01       		.byte	0x1
+ 531 0317 87       		.byte	0x87
+ 532 0318 73000000 		.4byte	0x73
+ 533 031c A1010000 		.4byte	.LLST7
+ 534 0320 14       		.uleb128 0x14
+ 535 0321 12000000 		.4byte	.LVL15
+ 536 0325 90030000 		.4byte	0x390
+ 537 0329 00       		.byte	0
+ 538 032a 15       		.uleb128 0x15
+ 539 032b 4B020000 		.4byte	.LASF55
+ 540 032f 06       		.byte	0x6
+ 541 0330 2202     		.2byte	0x222
+ 542 0332 1B020000 		.4byte	0x21b
+ 543 0336 16       		.uleb128 0x16
+ 544 0337 EA010000 		.4byte	0x1ea
+ 545 033b 46030000 		.4byte	0x346
+ 546 033f 17       		.uleb128 0x17
+ 547 0340 8A000000 		.4byte	0x8a
+ 548 0344 00       		.byte	0
+ 549 0345 00       		.byte	0
+ 550 0346 15       		.uleb128 0x15
+ 551 0347 6F020000 		.4byte	.LASF56
+ 552 034b 06       		.byte	0x6
+ 553 034c 2C02     		.2byte	0x22c
+ 554 034e 36030000 		.4byte	0x336
+ 555 0352 16       		.uleb128 0x16
+ 556 0353 63020000 		.4byte	0x263
+ 557 0357 62030000 		.4byte	0x362
+ 558 035b 17       		.uleb128 0x17
+ 559 035c 8A000000 		.4byte	0x8a
+ 560 0360 00       		.byte	0
+ 561 0361 00       		.byte	0
+ 562 0362 15       		.uleb128 0x15
+ 563 0363 30040000 		.4byte	.LASF57
+ 564 0367 06       		.byte	0x6
+ 565 0368 2D02     		.2byte	0x22d
+ 566 036a 52030000 		.4byte	0x352
+ 567 036e 15       		.uleb128 0x15
+ 568 036f 68010000 		.4byte	.LASF58
+ 569 0373 06       		.byte	0x6
+ 570 0374 5202     		.2byte	0x252
+ 571 0376 A9000000 		.4byte	0xa9
+ 572 037a 18       		.uleb128 0x18
+ 573 037b CB040000 		.4byte	.LASF59
+ 574 037f 07       		.byte	0x7
+ 575 0380 87       		.byte	0x87
+ 576 0381 BA010000 		.4byte	0x1ba
+ 577 0385 19       		.uleb128 0x19
+ 578 0386 B9020000 		.4byte	.LASF60
+ 579 038a B9020000 		.4byte	.LASF60
+ 580 038e 08       		.byte	0x8
+ 581 038f AE       		.byte	0xae
+ 582 0390 19       		.uleb128 0x19
+ 583 0391 73000000 		.4byte	.LASF61
+ 584 0395 73000000 		.4byte	.LASF61
+ 585 0399 08       		.byte	0x8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 14
+
+
+ 586 039a B2       		.byte	0xb2
+ 587 039b 00       		.byte	0
+ 588              		.section	.debug_abbrev,"",%progbits
+ 589              	.Ldebug_abbrev0:
+ 590 0000 01       		.uleb128 0x1
+ 591 0001 11       		.uleb128 0x11
+ 592 0002 01       		.byte	0x1
+ 593 0003 25       		.uleb128 0x25
+ 594 0004 0E       		.uleb128 0xe
+ 595 0005 13       		.uleb128 0x13
+ 596 0006 0B       		.uleb128 0xb
+ 597 0007 03       		.uleb128 0x3
+ 598 0008 0E       		.uleb128 0xe
+ 599 0009 1B       		.uleb128 0x1b
+ 600 000a 0E       		.uleb128 0xe
+ 601 000b 55       		.uleb128 0x55
+ 602 000c 17       		.uleb128 0x17
+ 603 000d 11       		.uleb128 0x11
+ 604 000e 01       		.uleb128 0x1
+ 605 000f 10       		.uleb128 0x10
+ 606 0010 17       		.uleb128 0x17
+ 607 0011 00       		.byte	0
+ 608 0012 00       		.byte	0
+ 609 0013 02       		.uleb128 0x2
+ 610 0014 24       		.uleb128 0x24
+ 611 0015 00       		.byte	0
+ 612 0016 0B       		.uleb128 0xb
+ 613 0017 0B       		.uleb128 0xb
+ 614 0018 3E       		.uleb128 0x3e
+ 615 0019 0B       		.uleb128 0xb
+ 616 001a 03       		.uleb128 0x3
+ 617 001b 0E       		.uleb128 0xe
+ 618 001c 00       		.byte	0
+ 619 001d 00       		.byte	0
+ 620 001e 03       		.uleb128 0x3
+ 621 001f 16       		.uleb128 0x16
+ 622 0020 00       		.byte	0
+ 623 0021 03       		.uleb128 0x3
+ 624 0022 0E       		.uleb128 0xe
+ 625 0023 3A       		.uleb128 0x3a
+ 626 0024 0B       		.uleb128 0xb
+ 627 0025 3B       		.uleb128 0x3b
+ 628 0026 0B       		.uleb128 0xb
+ 629 0027 49       		.uleb128 0x49
+ 630 0028 13       		.uleb128 0x13
+ 631 0029 00       		.byte	0
+ 632 002a 00       		.byte	0
+ 633 002b 04       		.uleb128 0x4
+ 634 002c 24       		.uleb128 0x24
+ 635 002d 00       		.byte	0
+ 636 002e 0B       		.uleb128 0xb
+ 637 002f 0B       		.uleb128 0xb
+ 638 0030 3E       		.uleb128 0x3e
+ 639 0031 0B       		.uleb128 0xb
+ 640 0032 03       		.uleb128 0x3
+ 641 0033 08       		.uleb128 0x8
+ 642 0034 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 15
+
+
+ 643 0035 00       		.byte	0
+ 644 0036 05       		.uleb128 0x5
+ 645 0037 0F       		.uleb128 0xf
+ 646 0038 00       		.byte	0
+ 647 0039 0B       		.uleb128 0xb
+ 648 003a 0B       		.uleb128 0xb
+ 649 003b 00       		.byte	0
+ 650 003c 00       		.byte	0
+ 651 003d 06       		.uleb128 0x6
+ 652 003e 0F       		.uleb128 0xf
+ 653 003f 00       		.byte	0
+ 654 0040 0B       		.uleb128 0xb
+ 655 0041 0B       		.uleb128 0xb
+ 656 0042 49       		.uleb128 0x49
+ 657 0043 13       		.uleb128 0x13
+ 658 0044 00       		.byte	0
+ 659 0045 00       		.byte	0
+ 660 0046 07       		.uleb128 0x7
+ 661 0047 26       		.uleb128 0x26
+ 662 0048 00       		.byte	0
+ 663 0049 49       		.uleb128 0x49
+ 664 004a 13       		.uleb128 0x13
+ 665 004b 00       		.byte	0
+ 666 004c 00       		.byte	0
+ 667 004d 08       		.uleb128 0x8
+ 668 004e 35       		.uleb128 0x35
+ 669 004f 00       		.byte	0
+ 670 0050 49       		.uleb128 0x49
+ 671 0051 13       		.uleb128 0x13
+ 672 0052 00       		.byte	0
+ 673 0053 00       		.byte	0
+ 674 0054 09       		.uleb128 0x9
+ 675 0055 15       		.uleb128 0x15
+ 676 0056 01       		.byte	0x1
+ 677 0057 27       		.uleb128 0x27
+ 678 0058 19       		.uleb128 0x19
+ 679 0059 01       		.uleb128 0x1
+ 680 005a 13       		.uleb128 0x13
+ 681 005b 00       		.byte	0
+ 682 005c 00       		.byte	0
+ 683 005d 0A       		.uleb128 0xa
+ 684 005e 05       		.uleb128 0x5
+ 685 005f 00       		.byte	0
+ 686 0060 49       		.uleb128 0x49
+ 687 0061 13       		.uleb128 0x13
+ 688 0062 00       		.byte	0
+ 689 0063 00       		.byte	0
+ 690 0064 0B       		.uleb128 0xb
+ 691 0065 16       		.uleb128 0x16
+ 692 0066 00       		.byte	0
+ 693 0067 03       		.uleb128 0x3
+ 694 0068 0E       		.uleb128 0xe
+ 695 0069 3A       		.uleb128 0x3a
+ 696 006a 0B       		.uleb128 0xb
+ 697 006b 3B       		.uleb128 0x3b
+ 698 006c 05       		.uleb128 0x5
+ 699 006d 49       		.uleb128 0x49
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 16
+
+
+ 700 006e 13       		.uleb128 0x13
+ 701 006f 00       		.byte	0
+ 702 0070 00       		.byte	0
+ 703 0071 0C       		.uleb128 0xc
+ 704 0072 13       		.uleb128 0x13
+ 705 0073 01       		.byte	0x1
+ 706 0074 03       		.uleb128 0x3
+ 707 0075 0E       		.uleb128 0xe
+ 708 0076 0B       		.uleb128 0xb
+ 709 0077 0B       		.uleb128 0xb
+ 710 0078 3A       		.uleb128 0x3a
+ 711 0079 0B       		.uleb128 0xb
+ 712 007a 3B       		.uleb128 0x3b
+ 713 007b 05       		.uleb128 0x5
+ 714 007c 01       		.uleb128 0x1
+ 715 007d 13       		.uleb128 0x13
+ 716 007e 00       		.byte	0
+ 717 007f 00       		.byte	0
+ 718 0080 0D       		.uleb128 0xd
+ 719 0081 0D       		.uleb128 0xd
+ 720 0082 00       		.byte	0
+ 721 0083 03       		.uleb128 0x3
+ 722 0084 0E       		.uleb128 0xe
+ 723 0085 3A       		.uleb128 0x3a
+ 724 0086 0B       		.uleb128 0xb
+ 725 0087 3B       		.uleb128 0x3b
+ 726 0088 05       		.uleb128 0x5
+ 727 0089 49       		.uleb128 0x49
+ 728 008a 13       		.uleb128 0x13
+ 729 008b 38       		.uleb128 0x38
+ 730 008c 0B       		.uleb128 0xb
+ 731 008d 00       		.byte	0
+ 732 008e 00       		.byte	0
+ 733 008f 0E       		.uleb128 0xe
+ 734 0090 13       		.uleb128 0x13
+ 735 0091 01       		.byte	0x1
+ 736 0092 0B       		.uleb128 0xb
+ 737 0093 0B       		.uleb128 0xb
+ 738 0094 3A       		.uleb128 0x3a
+ 739 0095 0B       		.uleb128 0xb
+ 740 0096 3B       		.uleb128 0x3b
+ 741 0097 05       		.uleb128 0x5
+ 742 0098 01       		.uleb128 0x1
+ 743 0099 13       		.uleb128 0x13
+ 744 009a 00       		.byte	0
+ 745 009b 00       		.byte	0
+ 746 009c 0F       		.uleb128 0xf
+ 747 009d 04       		.uleb128 0x4
+ 748 009e 01       		.byte	0x1
+ 749 009f 0B       		.uleb128 0xb
+ 750 00a0 0B       		.uleb128 0xb
+ 751 00a1 49       		.uleb128 0x49
+ 752 00a2 13       		.uleb128 0x13
+ 753 00a3 3A       		.uleb128 0x3a
+ 754 00a4 0B       		.uleb128 0xb
+ 755 00a5 3B       		.uleb128 0x3b
+ 756 00a6 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 17
+
+
+ 757 00a7 01       		.uleb128 0x1
+ 758 00a8 13       		.uleb128 0x13
+ 759 00a9 00       		.byte	0
+ 760 00aa 00       		.byte	0
+ 761 00ab 10       		.uleb128 0x10
+ 762 00ac 28       		.uleb128 0x28
+ 763 00ad 00       		.byte	0
+ 764 00ae 03       		.uleb128 0x3
+ 765 00af 0E       		.uleb128 0xe
+ 766 00b0 1C       		.uleb128 0x1c
+ 767 00b1 0B       		.uleb128 0xb
+ 768 00b2 00       		.byte	0
+ 769 00b3 00       		.byte	0
+ 770 00b4 11       		.uleb128 0x11
+ 771 00b5 2E       		.uleb128 0x2e
+ 772 00b6 01       		.byte	0x1
+ 773 00b7 3F       		.uleb128 0x3f
+ 774 00b8 19       		.uleb128 0x19
+ 775 00b9 03       		.uleb128 0x3
+ 776 00ba 0E       		.uleb128 0xe
+ 777 00bb 3A       		.uleb128 0x3a
+ 778 00bc 0B       		.uleb128 0xb
+ 779 00bd 3B       		.uleb128 0x3b
+ 780 00be 0B       		.uleb128 0xb
+ 781 00bf 27       		.uleb128 0x27
+ 782 00c0 19       		.uleb128 0x19
+ 783 00c1 49       		.uleb128 0x49
+ 784 00c2 13       		.uleb128 0x13
+ 785 00c3 11       		.uleb128 0x11
+ 786 00c4 01       		.uleb128 0x1
+ 787 00c5 12       		.uleb128 0x12
+ 788 00c6 06       		.uleb128 0x6
+ 789 00c7 40       		.uleb128 0x40
+ 790 00c8 18       		.uleb128 0x18
+ 791 00c9 9742     		.uleb128 0x2117
+ 792 00cb 19       		.uleb128 0x19
+ 793 00cc 01       		.uleb128 0x1
+ 794 00cd 13       		.uleb128 0x13
+ 795 00ce 00       		.byte	0
+ 796 00cf 00       		.byte	0
+ 797 00d0 12       		.uleb128 0x12
+ 798 00d1 05       		.uleb128 0x5
+ 799 00d2 00       		.byte	0
+ 800 00d3 03       		.uleb128 0x3
+ 801 00d4 08       		.uleb128 0x8
+ 802 00d5 3A       		.uleb128 0x3a
+ 803 00d6 0B       		.uleb128 0xb
+ 804 00d7 3B       		.uleb128 0x3b
+ 805 00d8 0B       		.uleb128 0xb
+ 806 00d9 49       		.uleb128 0x49
+ 807 00da 13       		.uleb128 0x13
+ 808 00db 02       		.uleb128 0x2
+ 809 00dc 17       		.uleb128 0x17
+ 810 00dd 00       		.byte	0
+ 811 00de 00       		.byte	0
+ 812 00df 13       		.uleb128 0x13
+ 813 00e0 34       		.uleb128 0x34
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 18
+
+
+ 814 00e1 00       		.byte	0
+ 815 00e2 03       		.uleb128 0x3
+ 816 00e3 0E       		.uleb128 0xe
+ 817 00e4 3A       		.uleb128 0x3a
+ 818 00e5 0B       		.uleb128 0xb
+ 819 00e6 3B       		.uleb128 0x3b
+ 820 00e7 0B       		.uleb128 0xb
+ 821 00e8 49       		.uleb128 0x49
+ 822 00e9 13       		.uleb128 0x13
+ 823 00ea 02       		.uleb128 0x2
+ 824 00eb 17       		.uleb128 0x17
+ 825 00ec 00       		.byte	0
+ 826 00ed 00       		.byte	0
+ 827 00ee 14       		.uleb128 0x14
+ 828 00ef 898201   		.uleb128 0x4109
+ 829 00f2 00       		.byte	0
+ 830 00f3 11       		.uleb128 0x11
+ 831 00f4 01       		.uleb128 0x1
+ 832 00f5 31       		.uleb128 0x31
+ 833 00f6 13       		.uleb128 0x13
+ 834 00f7 00       		.byte	0
+ 835 00f8 00       		.byte	0
+ 836 00f9 15       		.uleb128 0x15
+ 837 00fa 34       		.uleb128 0x34
+ 838 00fb 00       		.byte	0
+ 839 00fc 03       		.uleb128 0x3
+ 840 00fd 0E       		.uleb128 0xe
+ 841 00fe 3A       		.uleb128 0x3a
+ 842 00ff 0B       		.uleb128 0xb
+ 843 0100 3B       		.uleb128 0x3b
+ 844 0101 05       		.uleb128 0x5
+ 845 0102 49       		.uleb128 0x49
+ 846 0103 13       		.uleb128 0x13
+ 847 0104 3F       		.uleb128 0x3f
+ 848 0105 19       		.uleb128 0x19
+ 849 0106 3C       		.uleb128 0x3c
+ 850 0107 19       		.uleb128 0x19
+ 851 0108 00       		.byte	0
+ 852 0109 00       		.byte	0
+ 853 010a 16       		.uleb128 0x16
+ 854 010b 01       		.uleb128 0x1
+ 855 010c 01       		.byte	0x1
+ 856 010d 49       		.uleb128 0x49
+ 857 010e 13       		.uleb128 0x13
+ 858 010f 01       		.uleb128 0x1
+ 859 0110 13       		.uleb128 0x13
+ 860 0111 00       		.byte	0
+ 861 0112 00       		.byte	0
+ 862 0113 17       		.uleb128 0x17
+ 863 0114 21       		.uleb128 0x21
+ 864 0115 00       		.byte	0
+ 865 0116 49       		.uleb128 0x49
+ 866 0117 13       		.uleb128 0x13
+ 867 0118 2F       		.uleb128 0x2f
+ 868 0119 0B       		.uleb128 0xb
+ 869 011a 00       		.byte	0
+ 870 011b 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 19
+
+
+ 871 011c 18       		.uleb128 0x18
+ 872 011d 34       		.uleb128 0x34
+ 873 011e 00       		.byte	0
+ 874 011f 03       		.uleb128 0x3
+ 875 0120 0E       		.uleb128 0xe
+ 876 0121 3A       		.uleb128 0x3a
+ 877 0122 0B       		.uleb128 0xb
+ 878 0123 3B       		.uleb128 0x3b
+ 879 0124 0B       		.uleb128 0xb
+ 880 0125 49       		.uleb128 0x49
+ 881 0126 13       		.uleb128 0x13
+ 882 0127 3F       		.uleb128 0x3f
+ 883 0128 19       		.uleb128 0x19
+ 884 0129 3C       		.uleb128 0x3c
+ 885 012a 19       		.uleb128 0x19
+ 886 012b 00       		.byte	0
+ 887 012c 00       		.byte	0
+ 888 012d 19       		.uleb128 0x19
+ 889 012e 2E       		.uleb128 0x2e
+ 890 012f 00       		.byte	0
+ 891 0130 3F       		.uleb128 0x3f
+ 892 0131 19       		.uleb128 0x19
+ 893 0132 3C       		.uleb128 0x3c
+ 894 0133 19       		.uleb128 0x19
+ 895 0134 6E       		.uleb128 0x6e
+ 896 0135 0E       		.uleb128 0xe
+ 897 0136 03       		.uleb128 0x3
+ 898 0137 0E       		.uleb128 0xe
+ 899 0138 3A       		.uleb128 0x3a
+ 900 0139 0B       		.uleb128 0xb
+ 901 013a 3B       		.uleb128 0x3b
+ 902 013b 0B       		.uleb128 0xb
+ 903 013c 00       		.byte	0
+ 904 013d 00       		.byte	0
+ 905 013e 00       		.byte	0
+ 906              		.section	.debug_loc,"",%progbits
+ 907              	.Ldebug_loc0:
+ 908              	.LLST0:
+ 909 0000 00000000 		.4byte	.LVL0
+ 910 0004 0E000000 		.4byte	.LVL2
+ 911 0008 0100     		.2byte	0x1
+ 912 000a 50       		.byte	0x50
+ 913 000b 0E000000 		.4byte	.LVL2
+ 914 000f 1A000000 		.4byte	.LVL6
+ 915 0013 0400     		.2byte	0x4
+ 916 0015 F3       		.byte	0xf3
+ 917 0016 01       		.uleb128 0x1
+ 918 0017 50       		.byte	0x50
+ 919 0018 9F       		.byte	0x9f
+ 920 0019 1A000000 		.4byte	.LVL6
+ 921 001d 1C000000 		.4byte	.LVL7
+ 922 0021 0100     		.2byte	0x1
+ 923 0023 50       		.byte	0x50
+ 924 0024 1C000000 		.4byte	.LVL7
+ 925 0028 24000000 		.4byte	.LFE389
+ 926 002c 0400     		.2byte	0x4
+ 927 002e F3       		.byte	0xf3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 20
+
+
+ 928 002f 01       		.uleb128 0x1
+ 929 0030 50       		.byte	0x50
+ 930 0031 9F       		.byte	0x9f
+ 931 0032 00000000 		.4byte	0
+ 932 0036 00000000 		.4byte	0
+ 933              	.LLST1:
+ 934 003a 00000000 		.4byte	.LVL0
+ 935 003e 0E000000 		.4byte	.LVL2
+ 936 0042 0100     		.2byte	0x1
+ 937 0044 51       		.byte	0x51
+ 938 0045 0E000000 		.4byte	.LVL2
+ 939 0049 1A000000 		.4byte	.LVL6
+ 940 004d 0100     		.2byte	0x1
+ 941 004f 55       		.byte	0x55
+ 942 0050 1A000000 		.4byte	.LVL6
+ 943 0054 1C000000 		.4byte	.LVL7
+ 944 0058 0100     		.2byte	0x1
+ 945 005a 51       		.byte	0x51
+ 946 005b 1C000000 		.4byte	.LVL7
+ 947 005f 22000000 		.4byte	.LVL10
+ 948 0063 0100     		.2byte	0x1
+ 949 0065 55       		.byte	0x55
+ 950 0066 00000000 		.4byte	0
+ 951 006a 00000000 		.4byte	0
+ 952              	.LLST2:
+ 953 006e 00000000 		.4byte	.LVL0
+ 954 0072 0E000000 		.4byte	.LVL2
+ 955 0076 0100     		.2byte	0x1
+ 956 0078 52       		.byte	0x52
+ 957 0079 0E000000 		.4byte	.LVL2
+ 958 007d 1A000000 		.4byte	.LVL6
+ 959 0081 0100     		.2byte	0x1
+ 960 0083 56       		.byte	0x56
+ 961 0084 1A000000 		.4byte	.LVL6
+ 962 0088 1C000000 		.4byte	.LVL7
+ 963 008c 0100     		.2byte	0x1
+ 964 008e 52       		.byte	0x52
+ 965 008f 1C000000 		.4byte	.LVL7
+ 966 0093 22000000 		.4byte	.LVL11
+ 967 0097 0100     		.2byte	0x1
+ 968 0099 56       		.byte	0x56
+ 969 009a 22000000 		.4byte	.LVL11
+ 970 009e 24000000 		.4byte	.LFE389
+ 971 00a2 0400     		.2byte	0x4
+ 972 00a4 F3       		.byte	0xf3
+ 973 00a5 01       		.uleb128 0x1
+ 974 00a6 52       		.byte	0x52
+ 975 00a7 9F       		.byte	0x9f
+ 976 00a8 00000000 		.4byte	0
+ 977 00ac 00000000 		.4byte	0
+ 978              	.LLST3:
+ 979 00b0 06000000 		.4byte	.LVL1
+ 980 00b4 0E000000 		.4byte	.LVL2
+ 981 00b8 0200     		.2byte	0x2
+ 982 00ba 30       		.byte	0x30
+ 983 00bb 9F       		.byte	0x9f
+ 984 00bc 0E000000 		.4byte	.LVL2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 21
+
+
+ 985 00c0 1A000000 		.4byte	.LVL6
+ 986 00c4 0100     		.2byte	0x1
+ 987 00c6 54       		.byte	0x54
+ 988 00c7 1A000000 		.4byte	.LVL6
+ 989 00cb 1C000000 		.4byte	.LVL7
+ 990 00cf 0200     		.2byte	0x2
+ 991 00d1 30       		.byte	0x30
+ 992 00d2 9F       		.byte	0x9f
+ 993 00d3 1C000000 		.4byte	.LVL7
+ 994 00d7 22000000 		.4byte	.LVL9
+ 995 00db 0100     		.2byte	0x1
+ 996 00dd 54       		.byte	0x54
+ 997 00de 22000000 		.4byte	.LVL9
+ 998 00e2 24000000 		.4byte	.LFE389
+ 999 00e6 0100     		.2byte	0x1
+ 1000 00e8 50       		.byte	0x50
+ 1001 00e9 00000000 		.4byte	0
+ 1002 00ed 00000000 		.4byte	0
+ 1003              	.LLST4:
+ 1004 00f1 00000000 		.4byte	.LVL12
+ 1005 00f5 0E000000 		.4byte	.LVL14
+ 1006 00f9 0100     		.2byte	0x1
+ 1007 00fb 50       		.byte	0x50
+ 1008 00fc 0E000000 		.4byte	.LVL14
+ 1009 0100 20000000 		.4byte	.LVL18
+ 1010 0104 0400     		.2byte	0x4
+ 1011 0106 F3       		.byte	0xf3
+ 1012 0107 01       		.uleb128 0x1
+ 1013 0108 50       		.byte	0x50
+ 1014 0109 9F       		.byte	0x9f
+ 1015 010a 20000000 		.4byte	.LVL18
+ 1016 010e 22000000 		.4byte	.LVL19
+ 1017 0112 0100     		.2byte	0x1
+ 1018 0114 50       		.byte	0x50
+ 1019 0115 22000000 		.4byte	.LVL19
+ 1020 0119 2A000000 		.4byte	.LFE390
+ 1021 011d 0400     		.2byte	0x4
+ 1022 011f F3       		.byte	0xf3
+ 1023 0120 01       		.uleb128 0x1
+ 1024 0121 50       		.byte	0x50
+ 1025 0122 9F       		.byte	0x9f
+ 1026 0123 00000000 		.4byte	0
+ 1027 0127 00000000 		.4byte	0
+ 1028              	.LLST5:
+ 1029 012b 00000000 		.4byte	.LVL12
+ 1030 012f 0E000000 		.4byte	.LVL14
+ 1031 0133 0100     		.2byte	0x1
+ 1032 0135 51       		.byte	0x51
+ 1033 0136 0E000000 		.4byte	.LVL14
+ 1034 013a 20000000 		.4byte	.LVL18
+ 1035 013e 0100     		.2byte	0x1
+ 1036 0140 55       		.byte	0x55
+ 1037 0141 20000000 		.4byte	.LVL18
+ 1038 0145 22000000 		.4byte	.LVL19
+ 1039 0149 0100     		.2byte	0x1
+ 1040 014b 51       		.byte	0x51
+ 1041 014c 22000000 		.4byte	.LVL19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 22
+
+
+ 1042 0150 28000000 		.4byte	.LVL22
+ 1043 0154 0100     		.2byte	0x1
+ 1044 0156 55       		.byte	0x55
+ 1045 0157 00000000 		.4byte	0
+ 1046 015b 00000000 		.4byte	0
+ 1047              	.LLST6:
+ 1048 015f 00000000 		.4byte	.LVL12
+ 1049 0163 0E000000 		.4byte	.LVL14
+ 1050 0167 0100     		.2byte	0x1
+ 1051 0169 52       		.byte	0x52
+ 1052 016a 0E000000 		.4byte	.LVL14
+ 1053 016e 20000000 		.4byte	.LVL18
+ 1054 0172 0100     		.2byte	0x1
+ 1055 0174 56       		.byte	0x56
+ 1056 0175 20000000 		.4byte	.LVL18
+ 1057 0179 22000000 		.4byte	.LVL19
+ 1058 017d 0100     		.2byte	0x1
+ 1059 017f 52       		.byte	0x52
+ 1060 0180 22000000 		.4byte	.LVL19
+ 1061 0184 28000000 		.4byte	.LVL23
+ 1062 0188 0100     		.2byte	0x1
+ 1063 018a 56       		.byte	0x56
+ 1064 018b 28000000 		.4byte	.LVL23
+ 1065 018f 2A000000 		.4byte	.LFE390
+ 1066 0193 0400     		.2byte	0x4
+ 1067 0195 F3       		.byte	0xf3
+ 1068 0196 01       		.uleb128 0x1
+ 1069 0197 52       		.byte	0x52
+ 1070 0198 9F       		.byte	0x9f
+ 1071 0199 00000000 		.4byte	0
+ 1072 019d 00000000 		.4byte	0
+ 1073              	.LLST7:
+ 1074 01a1 06000000 		.4byte	.LVL13
+ 1075 01a5 0E000000 		.4byte	.LVL14
+ 1076 01a9 0200     		.2byte	0x2
+ 1077 01ab 30       		.byte	0x30
+ 1078 01ac 9F       		.byte	0x9f
+ 1079 01ad 0E000000 		.4byte	.LVL14
+ 1080 01b1 20000000 		.4byte	.LVL18
+ 1081 01b5 0100     		.2byte	0x1
+ 1082 01b7 54       		.byte	0x54
+ 1083 01b8 20000000 		.4byte	.LVL18
+ 1084 01bc 22000000 		.4byte	.LVL19
+ 1085 01c0 0200     		.2byte	0x2
+ 1086 01c2 30       		.byte	0x30
+ 1087 01c3 9F       		.byte	0x9f
+ 1088 01c4 22000000 		.4byte	.LVL19
+ 1089 01c8 28000000 		.4byte	.LVL21
+ 1090 01cc 0100     		.2byte	0x1
+ 1091 01ce 54       		.byte	0x54
+ 1092 01cf 28000000 		.4byte	.LVL21
+ 1093 01d3 2A000000 		.4byte	.LFE390
+ 1094 01d7 0100     		.2byte	0x1
+ 1095 01d9 50       		.byte	0x50
+ 1096 01da 00000000 		.4byte	0
+ 1097 01de 00000000 		.4byte	0
+ 1098              		.section	.debug_aranges,"",%progbits
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 23
+
+
+ 1099 0000 24000000 		.4byte	0x24
+ 1100 0004 0200     		.2byte	0x2
+ 1101 0006 00000000 		.4byte	.Ldebug_info0
+ 1102 000a 04       		.byte	0x4
+ 1103 000b 00       		.byte	0
+ 1104 000c 0000     		.2byte	0
+ 1105 000e 0000     		.2byte	0
+ 1106 0010 00000000 		.4byte	.LFB389
+ 1107 0014 24000000 		.4byte	.LFE389-.LFB389
+ 1108 0018 00000000 		.4byte	.LFB390
+ 1109 001c 2A000000 		.4byte	.LFE390-.LFB390
+ 1110 0020 00000000 		.4byte	0
+ 1111 0024 00000000 		.4byte	0
+ 1112              		.section	.debug_ranges,"",%progbits
+ 1113              	.Ldebug_ranges0:
+ 1114 0000 00000000 		.4byte	.LFB389
+ 1115 0004 24000000 		.4byte	.LFE389
+ 1116 0008 00000000 		.4byte	.LFB390
+ 1117 000c 2A000000 		.4byte	.LFE390
+ 1118 0010 00000000 		.4byte	0
+ 1119 0014 00000000 		.4byte	0
+ 1120              		.section	.debug_line,"",%progbits
+ 1121              	.Ldebug_line0:
+ 1122 0000 70020000 		.section	.debug_str,"MS",%progbits,1
+ 1122      02001B02 
+ 1122      00000201 
+ 1122      FB0E0D00 
+ 1122      01010101 
+ 1123              	.LASF25:
+ 1124 0000 72785269 		.ascii	"rxRingBufTail\000"
+ 1124      6E674275 
+ 1124      66546169 
+ 1124      6C00
+ 1125              	.LASF45:
+ 1126 000e 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 1126      4C455F43 
+ 1126      4F4E4E5F 
+ 1126      53544154 
+ 1126      455F434F 
+ 1127              	.LASF27:
+ 1128 002a 72784275 		.ascii	"rxBufSize\000"
+ 1128      6653697A 
+ 1128      6500
+ 1129              	.LASF19:
+ 1130 0034 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 1130      625F7363 
+ 1130      625F7561 
+ 1130      72745F68 
+ 1130      616E646C 
+ 1131              	.LASF42:
+ 1132 0053 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
+ 1132      6E5F626C 
+ 1132      655F6164 
+ 1132      765F7374 
+ 1132      6174655F 
+ 1133              	.LASF2:
+ 1134 0069 73686F72 		.ascii	"short int\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 24
+
+
+ 1134      7420696E 
+ 1134      7400
+ 1135              	.LASF61:
+ 1136 0073 53544449 		.ascii	"STDIO_GetChar\000"
+ 1136      4F5F4765 
+ 1136      74436861 
+ 1136      7200
+ 1137              	.LASF12:
+ 1138 0081 73697A65 		.ascii	"sizetype\000"
+ 1138      74797065 
+ 1138      00
+ 1139              	.LASF65:
+ 1140 008a 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
+ 1140      74635F73 
+ 1140      63625F75 
+ 1140      6172745F 
+ 1140      636F6E74 
+ 1141              	.LASF46:
+ 1142 00a2 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 1142      4C455F43 
+ 1142      4F4E4E5F 
+ 1142      53544154 
+ 1142      455F434C 
+ 1143              	.LASF62:
+ 1144 00cc 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1144      43313120 
+ 1144      352E342E 
+ 1144      31203230 
+ 1144      31363036 
+ 1145 00ff 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 1145      20726576 
+ 1145      6973696F 
+ 1145      6E203233 
+ 1145      37373135 
+ 1146 0132 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 1146      67202D66 
+ 1146      66756E63 
+ 1146      74696F6E 
+ 1146      2D736563 
+ 1147              	.LASF30:
+ 1148 015e 74784275 		.ascii	"txBufSize\000"
+ 1148      6653697A 
+ 1148      6500
+ 1149              	.LASF58:
+ 1150 0168 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 1150      6C655F70 
+ 1150      656E6469 
+ 1150      6E67466C 
+ 1150      61736857 
+ 1151              	.LASF6:
+ 1152 0181 5F5F7569 		.ascii	"__uint32_t\000"
+ 1152      6E743332 
+ 1152      5F7400
+ 1153              	.LASF20:
+ 1154 018c 74785374 		.ascii	"txStatus\000"
+ 1154      61747573 
+ 1154      00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 25
+
+
+ 1155              	.LASF54:
+ 1156 0195 6E436861 		.ascii	"nChars\000"
+ 1156      727300
+ 1157              	.LASF44:
+ 1158 019c 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 1158      4C455F43 
+ 1158      4F4E4E5F 
+ 1158      53544154 
+ 1158      455F434C 
+ 1159              	.LASF48:
+ 1160 01cd 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 1160      4C455F43 
+ 1160      4F4E4E5F 
+ 1160      53544154 
+ 1160      455F434C 
+ 1161              	.LASF28:
+ 1162 01f7 72784275 		.ascii	"rxBufIdx\000"
+ 1162      66496478 
+ 1162      00
+ 1163              	.LASF14:
+ 1164 0200 75696E74 		.ascii	"uint8_t\000"
+ 1164      385F7400 
+ 1165              	.LASF43:
+ 1166 0208 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 1166      4C455F43 
+ 1166      4F4E4E5F 
+ 1166      53544154 
+ 1166      455F4449 
+ 1167              	.LASF52:
+ 1168 0227 5F777269 		.ascii	"_write\000"
+ 1168      746500
+ 1169              	.LASF35:
+ 1170 022e 62644861 		.ascii	"bdHandle\000"
+ 1170      6E646C65 
+ 1170      00
+ 1171              	.LASF24:
+ 1172 0237 72785269 		.ascii	"rxRingBufHead\000"
+ 1172      6E674275 
+ 1172      66486561 
+ 1172      6400
+ 1173              	.LASF16:
+ 1174 0245 666C6F61 		.ascii	"float\000"
+ 1174      7400
+ 1175              	.LASF55:
+ 1176 024b 63795F62 		.ascii	"cy_ble_advState\000"
+ 1176      6C655F61 
+ 1176      64765374 
+ 1176      61746500 
+ 1177              	.LASF29:
+ 1178 025b 74784275 		.ascii	"txBuf\000"
+ 1178      6600
+ 1179              	.LASF8:
+ 1180 0261 6C6F6E67 		.ascii	"long long int\000"
+ 1180      206C6F6E 
+ 1180      6720696E 
+ 1180      7400
+ 1181              	.LASF56:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 26
+
+
+ 1182 026f 63795F62 		.ascii	"cy_ble_connHandle\000"
+ 1182      6C655F63 
+ 1182      6F6E6E48 
+ 1182      616E646C 
+ 1182      6500
+ 1183              	.LASF47:
+ 1184 0281 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 1184      4C455F43 
+ 1184      4F4E4E5F 
+ 1184      53544154 
+ 1184      455F434C 
+ 1185              	.LASF23:
+ 1186 02ab 72785269 		.ascii	"rxRingBufSize\000"
+ 1186      6E674275 
+ 1186      6653697A 
+ 1186      6500
+ 1187              	.LASF60:
+ 1188 02b9 53544449 		.ascii	"STDIO_PutChar\000"
+ 1188      4F5F5075 
+ 1188      74436861 
+ 1188      7200
+ 1189              	.LASF5:
+ 1190 02c7 5F5F7569 		.ascii	"__uint8_t\000"
+ 1190      6E74385F 
+ 1190      7400
+ 1191              	.LASF50:
+ 1192 02d1 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 1192      4C455F43 
+ 1192      4F4E4E5F 
+ 1192      53544154 
+ 1192      455F434C 
+ 1193              	.LASF11:
+ 1194 02f5 6C6F6E67 		.ascii	"long double\000"
+ 1194      20646F75 
+ 1194      626C6500 
+ 1195              	.LASF49:
+ 1196 0301 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 1196      4C455F43 
+ 1196      4F4E4E5F 
+ 1196      53544154 
+ 1196      455F434C 
+ 1197              	.LASF21:
+ 1198 032c 72785374 		.ascii	"rxStatus\000"
+ 1198      61747573 
+ 1198      00
+ 1199              	.LASF1:
+ 1200 0335 756E7369 		.ascii	"unsigned char\000"
+ 1200      676E6564 
+ 1200      20636861 
+ 1200      7200
+ 1201              	.LASF22:
+ 1202 0343 72785269 		.ascii	"rxRingBuf\000"
+ 1202      6E674275 
+ 1202      6600
+ 1203              	.LASF53:
+ 1204 034d 5F726561 		.ascii	"_read\000"
+ 1204      6400
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 27
+
+
+ 1205              	.LASF0:
+ 1206 0353 7369676E 		.ascii	"signed char\000"
+ 1206      65642063 
+ 1206      68617200 
+ 1207              	.LASF9:
+ 1208 035f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1208      206C6F6E 
+ 1208      6720756E 
+ 1208      7369676E 
+ 1208      65642069 
+ 1209              	.LASF15:
+ 1210 0376 75696E74 		.ascii	"uint32_t\000"
+ 1210      33325F74 
+ 1210      00
+ 1211              	.LASF10:
+ 1212 037f 756E7369 		.ascii	"unsigned int\000"
+ 1212      676E6564 
+ 1212      20696E74 
+ 1212      00
+ 1213              	.LASF41:
+ 1214 038c 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 1214      4C455F41 
+ 1214      44565F53 
+ 1214      54415445 
+ 1214      5F53544F 
+ 1215              	.LASF36:
+ 1216 03ac 61747449 		.ascii	"attId\000"
+ 1216      6400
+ 1217              	.LASF3:
+ 1218 03b2 73686F72 		.ascii	"short unsigned int\000"
+ 1218      7420756E 
+ 1218      7369676E 
+ 1218      65642069 
+ 1218      6E7400
+ 1219              	.LASF26:
+ 1220 03c5 72784275 		.ascii	"rxBuf\000"
+ 1220      6600
+ 1221              	.LASF64:
+ 1222 03cb 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
+ 1222      536F4320 
+ 1222      36205072 
+ 1222      6F6A6563 
+ 1222      74735C73 
+ 1223 03fb 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
+ 1223      69746F72 
+ 1223      5C53454C 
+ 1223      566F6C74 
+ 1223      6167654D 
+ 1224              	.LASF13:
+ 1225 041c 63686172 		.ascii	"char\000"
+ 1225      00
+ 1226              	.LASF32:
+ 1227 0421 63624576 		.ascii	"cbEvents\000"
+ 1227      656E7473 
+ 1227      00
+ 1228              	.LASF18:
+ 1229 042a 5F426F6F 		.ascii	"_Bool\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 28
+
+
+ 1229      6C00
+ 1230              	.LASF57:
+ 1231 0430 63795F62 		.ascii	"cy_ble_connState\000"
+ 1231      6C655F63 
+ 1231      6F6E6E53 
+ 1231      74617465 
+ 1231      00
+ 1232              	.LASF39:
+ 1233 0441 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 1233      4C455F41 
+ 1233      44565F53 
+ 1233      54415445 
+ 1233      5F414456 
+ 1234              	.LASF7:
+ 1235 0460 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1235      20756E73 
+ 1235      69676E65 
+ 1235      6420696E 
+ 1235      7400
+ 1236              	.LASF17:
+ 1237 0472 646F7562 		.ascii	"double\000"
+ 1237      6C6500
+ 1238              	.LASF38:
+ 1239 0479 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
+ 1239      4C455F41 
+ 1239      44565F53 
+ 1239      54415445 
+ 1239      5F53544F 
+ 1240              	.LASF33:
+ 1241 0492 696E6974 		.ascii	"initKey\000"
+ 1241      4B657900 
+ 1242              	.LASF34:
+ 1243 049a 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
+ 1243      74635F73 
+ 1243      63625F75 
+ 1243      6172745F 
+ 1243      636F6E74 
+ 1244              	.LASF51:
+ 1245 04b4 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 1245      6E5F626C 
+ 1245      655F636F 
+ 1245      6E6E5F73 
+ 1245      74617465 
+ 1246              	.LASF59:
+ 1247 04cb 55415254 		.ascii	"UART_context\000"
+ 1247      5F636F6E 
+ 1247      74657874 
+ 1247      00
+ 1248              	.LASF37:
+ 1249 04d8 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 1249      74635F62 
+ 1249      6C655F63 
+ 1249      6F6E6E5F 
+ 1249      68616E64 
+ 1250              	.LASF4:
+ 1251 04f1 6C6F6E67 		.ascii	"long int\000"
+ 1251      20696E74 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccluEFeh.s 			page 29
+
+
+ 1251      00
+ 1252              	.LASF31:
+ 1253 04fa 74784C65 		.ascii	"txLeftToTransmit\000"
+ 1253      6674546F 
+ 1253      5472616E 
+ 1253      736D6974 
+ 1253      00
+ 1254              	.LASF40:
+ 1255 050b 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 1255      4C455F41 
+ 1255      44565F53 
+ 1255      54415445 
+ 1255      5F414456 
+ 1256              	.LASF63:
+ 1257 0528 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\utilities\\retarget_i"
+ 1257      72617465 
+ 1257      645F536F 
+ 1257      75726365 
+ 1257      5C50536F 
+ 1258 0557 6F5C7265 		.ascii	"o\\retarget.c\000"
+ 1258      74617267 
+ 1258      65742E63 
+ 1258      00
+ 1259              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

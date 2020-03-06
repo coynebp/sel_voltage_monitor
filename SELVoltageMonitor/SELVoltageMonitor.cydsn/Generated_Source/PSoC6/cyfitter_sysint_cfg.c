@@ -29,3 +29,14 @@
 
 #endif /* ((__CORTEX_M == 0) && (CY_CORE_ID == 0)) */
 
+/* ARM CM4 */
+#if (((__CORTEX_M == 4) && (CY_CORE_ID == 0)))
+
+    /* UART_SCB_IRQ */
+    const cy_stc_sysint_t UART_SCB_IRQ_cfg = {
+        .intrSrc = (IRQn_Type)UART_SCB_IRQ__INTC_NUMBER,
+        .intrPriority = UART_SCB_IRQ__INTC_CORTEXM4_PRIORITY
+    };
+
+#endif /* ((__CORTEX_M == 4) && (CY_CORE_ID == 0)) */
+

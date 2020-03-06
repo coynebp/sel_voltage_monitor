@@ -1,3 +1,3 @@
-# Component constraints for C:\PSoC 6 Projects\SELVoltageMonitor\SELVoltageMonitor.cydsn\TopDesign\TopDesign.cysch
-# Project: C:\PSoC 6 Projects\SELVoltageMonitor\SELVoltageMonitor.cydsn\SELVoltageMonitor.cyprj
-# Date: Fri, 28 Feb 2020 00:08:56 GMT
+# Component constraints for C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\TopDesign\TopDesign.cysch
+# Project: C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\SELVoltageMonitor.cyprj
+# Date: Thu, 05 Mar 2020 21:57:18 GMT

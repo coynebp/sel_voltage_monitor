@@ -13,6 +13,8 @@
     #define BLE_MONITOR_H
     
     #include <project.h>
+    #include <stdlib.h>
+    #include "IPC_CM0.h"
     
     void GenericEventHandler(uint32 event, void *eventParam);
     void updateNextEvent(void);

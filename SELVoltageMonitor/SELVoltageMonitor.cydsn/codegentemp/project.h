@@ -21,6 +21,11 @@
 #include "ipc/cy_ipc_pipe.h"
 #include "sysclk/cy_sysclk.h"
 #include "wdt/cy_wdt.h"
+#include "scb/cy_scb_common.h"
+#include "scb/cy_scb_i2c.h"
+#include "scb/cy_scb_ezi2c.h"
+#include "scb/cy_scb_spi.h"
+#include "scb/cy_scb_uart.h"
 #include "efuse/cy_efuse.h"
 #include "flash/cy_flash.h"
 #include "gpio/cy_gpio.h"
@@ -132,6 +137,8 @@
 #include "cydisabledsheets.h"
 #include "BLE.h"
 #include "BLE_config.h"
+#include "UART.h"
+#include "UART_SCBCLK.h"
 
 /*[]*/
 

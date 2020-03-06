@@ -32,6 +32,18 @@ void GenericEventHandler(uint32 event, void *eventParam)
             {
                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }
+            else if (writeReqParam->handleValPair.attrHandle == CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHAR_HANDLE)
+            {
+                if (rdyToRecvMsg == true)
+                {
+                    rdyToRecvMsg = false;
+                    ipcMsgForCM4.data = writeReqParam->handleValPair.value.val[0]*256 + writeReqParam->handleValPair.value.val[1];
+                    Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                    Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR,
+                                                    CY_IPC_EP_CYPIPE_CM0_ADDR,
+                                                    &ipcMsgForCM4, CM0_ReleaseCallback);
+                }
+            }
             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
             break;
         default:

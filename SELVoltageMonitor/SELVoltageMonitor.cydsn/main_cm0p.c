@@ -9,7 +9,6 @@
  *
  * ========================================
 */
-#include "project.h"
 #include "ble_monitor.h"
 
 int main(void)

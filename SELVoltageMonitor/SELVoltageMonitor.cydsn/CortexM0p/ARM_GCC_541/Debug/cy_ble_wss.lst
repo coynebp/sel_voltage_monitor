@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 1
 
 
    1              		.syntax unified
@@ -31,10 +31,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
   28 0006 00000000 		.4byte	.Ldebug_abbrev0
   29 000a 04       		.byte	0x4
   30 000b 01       		.uleb128 0x1
-  31 000c 02030000 		.4byte	.LASF38
+  31 000c 16030000 		.4byte	.LASF38
   32 0010 0C       		.byte	0xc
-  33 0011 A0030000 		.4byte	.LASF39
-  34 0015 17020000 		.4byte	.LASF40
+  33 0011 B4030000 		.4byte	.LASF39
+  34 0015 D6000000 		.4byte	.LASF40
   35 0019 00000000 		.4byte	.Ldebug_line0
   36 001d 02       		.uleb128 0x2
   37 001e 04       		.byte	0x4
@@ -43,22 +43,22 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
   40 0024 03       		.uleb128 0x3
   41 0025 04       		.byte	0x4
   42 0026 07       		.byte	0x7
-  43 0027 86010000 		.4byte	.LASF0
+  43 0027 D7010000 		.4byte	.LASF0
   44 002b 03       		.uleb128 0x3
   45 002c 08       		.byte	0x8
   46 002d 05       		.byte	0x5
-  47 002e 63020000 		.4byte	.LASF1
+  47 002e 77020000 		.4byte	.LASF1
   48 0032 03       		.uleb128 0x3
   49 0033 08       		.byte	0x8
   50 0034 04       		.byte	0x4
-  51 0035 F6020000 		.4byte	.LASF2
+  51 0035 0A030000 		.4byte	.LASF2
   52 0039 03       		.uleb128 0x3
   53 003a 01       		.byte	0x1
   54 003b 06       		.byte	0x6
-  55 003c 94030000 		.4byte	.LASF3
+  55 003c A8030000 		.4byte	.LASF3
   56 0040 04       		.uleb128 0x4
   57 0041 00000000 		.4byte	.LASF12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 2
 
 
   58 0045 01       		.byte	0x1
@@ -67,35 +67,35 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
   61 004b 03       		.uleb128 0x3
   62 004c 01       		.byte	0x1
   63 004d 08       		.byte	0x8
-  64 004e D6000000 		.4byte	.LASF4
+  64 004e 86010000 		.4byte	.LASF4
   65 0052 03       		.uleb128 0x3
   66 0053 02       		.byte	0x2
   67 0054 05       		.byte	0x5
-  68 0055 95020000 		.4byte	.LASF5
+  68 0055 A9020000 		.4byte	.LASF5
   69 0059 03       		.uleb128 0x3
   70 005a 02       		.byte	0x2
   71 005b 07       		.byte	0x7
-  72 005c F6000000 		.4byte	.LASF6
+  72 005c 39010000 		.4byte	.LASF6
   73 0060 03       		.uleb128 0x3
   74 0061 04       		.byte	0x4
   75 0062 05       		.byte	0x5
-  76 0063 ED020000 		.4byte	.LASF7
+  76 0063 01030000 		.4byte	.LASF7
   77 0067 03       		.uleb128 0x3
   78 0068 04       		.byte	0x4
   79 0069 07       		.byte	0x7
-  80 006a E4000000 		.4byte	.LASF8
+  80 006a 27010000 		.4byte	.LASF8
   81 006e 03       		.uleb128 0x3
   82 006f 08       		.byte	0x8
   83 0070 07       		.byte	0x7
-  84 0071 B7010000 		.4byte	.LASF9
+  84 0071 08020000 		.4byte	.LASF9
   85 0075 03       		.uleb128 0x3
   86 0076 04       		.byte	0x4
   87 0077 07       		.byte	0x7
-  88 0078 5A020000 		.4byte	.LASF10
+  88 0078 6E020000 		.4byte	.LASF10
   89 007c 03       		.uleb128 0x3
   90 007d 01       		.byte	0x1
   91 007e 08       		.byte	0x8
-  92 007f 71020000 		.4byte	.LASF11
+  92 007f 85020000 		.4byte	.LASF11
   93 0083 04       		.uleb128 0x4
   94 0084 7F000000 		.4byte	.LASF13
   95 0088 02       		.byte	0x2
@@ -108,7 +108,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  102 0095 03       		.uleb128 0x3
  103 0096 08       		.byte	0x8
  104 0097 04       		.byte	0x4
- 105 0098 5F010000 		.4byte	.LASF15
+ 105 0098 B0010000 		.4byte	.LASF15
  106 009c 05       		.uleb128 0x5
  107 009d 02       		.byte	0x2
  108 009e 03       		.byte	0x3
@@ -118,13 +118,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  112 00a6 CD000000 		.4byte	.LASF16
  113 00aa 03       		.byte	0x3
  114 00ab 6501     		.2byte	0x165
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 3
 
 
  115 00ad 83000000 		.4byte	0x83
  116 00b1 00       		.byte	0
  117 00b2 06       		.uleb128 0x6
- 118 00b3 54020000 		.4byte	.LASF17
+ 118 00b3 68020000 		.4byte	.LASF17
  119 00b7 03       		.byte	0x3
  120 00b8 6901     		.2byte	0x169
  121 00ba 83000000 		.4byte	0x83
@@ -145,13 +145,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  136 00d9 0A000000 		.4byte	.LASF19
  137 00dd 00       		.byte	0
  138 00de 09       		.uleb128 0x9
- 139 00df F8010000 		.4byte	.LASF20
+ 139 00df 49020000 		.4byte	.LASF20
  140 00e3 01       		.byte	0x1
  141 00e4 09       		.uleb128 0x9
- 142 00e5 9F020000 		.4byte	.LASF21
+ 142 00e5 B3020000 		.4byte	.LASF21
  143 00e9 02       		.byte	0x2
  144 00ea 09       		.uleb128 0x9
- 145 00eb 66010000 		.4byte	.LASF22
+ 145 00eb B7010000 		.4byte	.LASF22
  146 00ef 03       		.byte	0x3
  147 00f0 00       		.byte	0
  148 00f1 04       		.uleb128 0x4
@@ -166,35 +166,35 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  157 0103 87       		.byte	0x87
  158 0104 39010000 		.4byte	0x139
  159 0108 09       		.uleb128 0x9
- 160 0109 76020000 		.4byte	.LASF24
+ 160 0109 8A020000 		.4byte	.LASF24
  161 010d 00       		.byte	0
  162 010e 09       		.uleb128 0x9
- 163 010f BC020000 		.4byte	.LASF25
+ 163 010f D0020000 		.4byte	.LASF25
  164 0113 01       		.byte	0x1
  165 0114 09       		.uleb128 0x9
- 166 0115 43010000 		.4byte	.LASF26
+ 166 0115 94010000 		.4byte	.LASF26
  167 0119 02       		.byte	0x2
  168 011a 09       		.uleb128 0x9
  169 011b 87000000 		.4byte	.LASF27
  170 011f 03       		.byte	0x3
  171 0120 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 4
 
 
- 172 0121 CE010000 		.4byte	.LASF28
+ 172 0121 1F020000 		.4byte	.LASF28
  173 0125 04       		.byte	0x4
  174 0126 09       		.uleb128 0x9
- 175 0127 09010000 		.4byte	.LASF29
+ 175 0127 4C010000 		.4byte	.LASF29
  176 012b 05       		.byte	0x5
  177 012c 09       		.uleb128 0x9
  178 012d 29000000 		.4byte	.LASF30
  179 0131 06       		.byte	0x6
  180 0132 09       		.uleb128 0x9
- 181 0133 93010000 		.4byte	.LASF31
+ 181 0133 E4010000 		.4byte	.LASF31
  182 0137 07       		.byte	0x7
  183 0138 00       		.byte	0
  184 0139 04       		.uleb128 0x4
- 185 013a 01040000 		.4byte	.LASF32
+ 185 013a 15040000 		.4byte	.LASF32
  186 013e 04       		.byte	0x4
  187 013f 90       		.byte	0x90
  188 0140 FC000000 		.4byte	0xfc
@@ -203,7 +203,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  191 0146 02       		.byte	0x2
  192 0147 23000000 		.4byte	.LASF33
  193 014b 0A       		.uleb128 0xa
- 194 014c 33010000 		.4byte	.LASF34
+ 194 014c 76010000 		.4byte	.LASF34
  195 0150 04       		.byte	0x4
  196 0151 2202     		.2byte	0x222
  197 0153 F1000000 		.4byte	0xf1
@@ -227,18 +227,18 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  215 0181 00       		.byte	0
  216 0182 00       		.byte	0
  217 0183 0A       		.uleb128 0xa
- 218 0184 D7030000 		.4byte	.LASF36
+ 218 0184 EB030000 		.4byte	.LASF36
  219 0188 04       		.byte	0x4
  220 0189 2D02     		.2byte	0x22d
  221 018b 73010000 		.4byte	0x173
  222 018f 0A       		.uleb128 0xa
- 223 0190 E8030000 		.4byte	.LASF37
+ 223 0190 FC030000 		.4byte	.LASF37
  224 0194 04       		.byte	0x4
  225 0195 5202     		.2byte	0x252
  226 0197 83000000 		.4byte	0x83
  227 019b 00       		.byte	0
  228              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 5
 
 
  229              	.Ldebug_abbrev0:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  283 0035 0B       		.uleb128 0xb
  284 0036 0B       		.uleb128 0xb
  285 0037 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 6
 
 
  286 0038 0B       		.uleb128 0xb
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  340 006e 0E       		.uleb128 0xe
  341 006f 1C       		.uleb128 0x1c
  342 0070 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 7
 
 
  343 0071 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  393      01010101 
  394              	.LASF12:
  395 0000 5F5F7569 		.ascii	"__uint8_t\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 8
 
 
  395      6E74385F 
@@ -472,185 +472,186 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 1
  415 00cd 62644861 		.ascii	"bdHandle\000"
  415      6E646C65 
  415      00
- 416              	.LASF4:
- 417 00d6 756E7369 		.ascii	"unsigned char\000"
- 417      676E6564 
- 417      20636861 
- 417      7200
- 418              	.LASF8:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 9
+ 416              	.LASF40:
+ 417 00d6 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
+ 417      536F4320 
+ 417      36205072 
+ 417      6F6A6563 
+ 417      74735C73 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 9
 
 
- 419 00e4 6C6F6E67 		.ascii	"long unsigned int\000"
- 419      20756E73 
- 419      69676E65 
- 419      6420696E 
- 419      7400
- 420              	.LASF6:
- 421 00f6 73686F72 		.ascii	"short unsigned int\000"
- 421      7420756E 
- 421      7369676E 
- 421      65642069 
- 421      6E7400
- 422              	.LASF29:
- 423 0109 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
- 423      4C455F43 
- 423      4F4E4E5F 
- 423      53544154 
- 423      455F434C 
- 424              	.LASF34:
- 425 0133 63795F62 		.ascii	"cy_ble_advState\000"
- 425      6C655F61 
- 425      64765374 
- 425      61746500 
- 426              	.LASF26:
- 427 0143 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
- 427      4C455F43 
- 427      4F4E4E5F 
- 427      53544154 
- 427      455F434F 
- 428              	.LASF15:
- 429 015f 646F7562 		.ascii	"double\000"
- 429      6C6500
- 430              	.LASF22:
- 431 0166 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
- 431      4C455F41 
- 431      44565F53 
- 431      54415445 
- 431      5F53544F 
- 432              	.LASF0:
- 433 0186 756E7369 		.ascii	"unsigned int\000"
- 433      676E6564 
- 433      20696E74 
- 433      00
- 434              	.LASF31:
- 435 0193 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
- 435      4C455F43 
- 435      4F4E4E5F 
- 435      53544154 
- 435      455F434C 
- 436              	.LASF9:
- 437 01b7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 437      206C6F6E 
- 437      6720756E 
- 437      7369676E 
- 437      65642069 
- 438              	.LASF28:
- 439 01ce 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
- 439      4C455F43 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 10
+ 418 0106 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
+ 418      69746F72 
+ 418      5C53454C 
+ 418      566F6C74 
+ 418      6167654D 
+ 419              	.LASF8:
+ 420 0127 6C6F6E67 		.ascii	"long unsigned int\000"
+ 420      20756E73 
+ 420      69676E65 
+ 420      6420696E 
+ 420      7400
+ 421              	.LASF6:
+ 422 0139 73686F72 		.ascii	"short unsigned int\000"
+ 422      7420756E 
+ 422      7369676E 
+ 422      65642069 
+ 422      6E7400
+ 423              	.LASF29:
+ 424 014c 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 424      4C455F43 
+ 424      4F4E4E5F 
+ 424      53544154 
+ 424      455F434C 
+ 425              	.LASF34:
+ 426 0176 63795F62 		.ascii	"cy_ble_advState\000"
+ 426      6C655F61 
+ 426      64765374 
+ 426      61746500 
+ 427              	.LASF4:
+ 428 0186 756E7369 		.ascii	"unsigned char\000"
+ 428      676E6564 
+ 428      20636861 
+ 428      7200
+ 429              	.LASF26:
+ 430 0194 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 430      4C455F43 
+ 430      4F4E4E5F 
+ 430      53544154 
+ 430      455F434F 
+ 431              	.LASF15:
+ 432 01b0 646F7562 		.ascii	"double\000"
+ 432      6C6500
+ 433              	.LASF22:
+ 434 01b7 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 434      4C455F41 
+ 434      44565F53 
+ 434      54415445 
+ 434      5F53544F 
+ 435              	.LASF0:
+ 436 01d7 756E7369 		.ascii	"unsigned int\000"
+ 436      676E6564 
+ 436      20696E74 
+ 436      00
+ 437              	.LASF31:
+ 438 01e4 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 438      4C455F43 
+ 438      4F4E4E5F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 10
 
 
- 439      4F4E4E5F 
- 439      53544154 
- 439      455F434C 
- 440              	.LASF20:
- 441 01f8 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
- 441      4C455F41 
- 441      44565F53 
- 441      54415445 
- 441      5F414456 
- 442              	.LASF40:
- 443 0217 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\SELVoltageMonitor\\SELVoltageM"
- 443      536F4320 
- 443      36205072 
- 443      6F6A6563 
- 443      74735C53 
- 444 0247 6F6E6974 		.ascii	"onitor.cydsn\000"
- 444      6F722E63 
- 444      7964736E 
- 444      00
+ 438      53544154 
+ 438      455F434C 
+ 439              	.LASF9:
+ 440 0208 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 440      206C6F6E 
+ 440      6720756E 
+ 440      7369676E 
+ 440      65642069 
+ 441              	.LASF28:
+ 442 021f 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 442      4C455F43 
+ 442      4F4E4E5F 
+ 442      53544154 
+ 442      455F434C 
+ 443              	.LASF20:
+ 444 0249 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 444      4C455F41 
+ 444      44565F53 
+ 444      54415445 
+ 444      5F414456 
  445              	.LASF17:
- 446 0254 61747449 		.ascii	"attId\000"
+ 446 0268 61747449 		.ascii	"attId\000"
  446      6400
  447              	.LASF10:
- 448 025a 73697A65 		.ascii	"sizetype\000"
+ 448 026e 73697A65 		.ascii	"sizetype\000"
  448      74797065 
  448      00
  449              	.LASF1:
- 450 0263 6C6F6E67 		.ascii	"long long int\000"
+ 450 0277 6C6F6E67 		.ascii	"long long int\000"
  450      206C6F6E 
  450      6720696E 
  450      7400
  451              	.LASF11:
- 452 0271 63686172 		.ascii	"char\000"
+ 452 0285 63686172 		.ascii	"char\000"
  452      00
  453              	.LASF24:
- 454 0276 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 454 028a 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
  454      4C455F43 
  454      4F4E4E5F 
  454      53544154 
  454      455F4449 
  455              	.LASF5:
- 456 0295 73686F72 		.ascii	"short int\000"
+ 456 02a9 73686F72 		.ascii	"short int\000"
  456      7420696E 
  456      7400
  457              	.LASF21:
- 458 029f 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 458 02b3 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
  458      4C455F41 
  458      44565F53 
  458      54415445 
  458      5F414456 
  459              	.LASF25:
- 460 02bc 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 460 02d0 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
  460      4C455F43 
  460      4F4E4E5F 
  460      53544154 
  460      455F434C 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc2G3wwo.s 			page 11
+
+
  461              	.LASF7:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccIRLnVc.s 			page 11
-
-
- 462 02ed 6C6F6E67 		.ascii	"long int\000"
+ 462 0301 6C6F6E67 		.ascii	"long int\000"
  462      20696E74 
  462      00
  463              	.LASF2:
- 464 02f6 6C6F6E67 		.ascii	"long double\000"
+ 464 030a 6C6F6E67 		.ascii	"long double\000"
  464      20646F75 
  464      626C6500 
  465              	.LASF38:
- 466 0302 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 466 0316 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  466      43313120 
  466      352E342E 
  466      31203230 
  466      31363036 
- 467 0335 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 467 0349 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
  467      20726576 
  467      6973696F 
  467      6E203233 
  467      37373135 
- 468 0368 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 468 037c 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
  468      67202D66 
  468      66756E63 
  468      74696F6E 
  468      2D736563 
  469              	.LASF3:
- 470 0394 7369676E 		.ascii	"signed char\000"
+ 470 03a8 7369676E 		.ascii	"signed char\000"
  470      65642063 
  470      68617200 
  471              	.LASF39:
- 472 03a0 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_b"
+ 472 03b4 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_b"
  472      72617465 
  472      645F536F 
  472      75726365 
  472      5C50536F 
- 473 03ce 6C655F77 		.ascii	"le_wss.c\000"
+ 473 03e2 6C655F77 		.ascii	"le_wss.c\000"
  473      73732E63 
  473      00
  474              	.LASF36:
- 475 03d7 63795F62 		.ascii	"cy_ble_connState\000"
+ 475 03eb 63795F62 		.ascii	"cy_ble_connState\000"
  475      6C655F63 
  475      6F6E6E53 
  475      74617465 
  475      00
  476              	.LASF37:
- 477 03e8 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 477 03fc 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
  477      6C655F70 
  477      656E6469 
  477      6E67466C 
  477      61736857 
  478              	.LASF32:
- 479 0401 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 479 0415 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
  479      6E5F626C 
  479      655F636F 
  479      6E6E5F73 

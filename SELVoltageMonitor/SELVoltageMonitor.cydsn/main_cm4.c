@@ -1,17 +1,18 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * main_cm4.c
+ * 
+ * Contains main function for the CM0+ processor, which handles the BLE
+ * controller and host.
  *
  * ========================================
 */
 #include "project.h"
 #include <stdio.h>
-#include "IPC_CM4.h"
+#include "ipc_cm4.h"
 
 int main(void)
 {

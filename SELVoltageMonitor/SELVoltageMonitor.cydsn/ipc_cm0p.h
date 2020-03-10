@@ -1,17 +1,18 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ipc_cmop.h
+ * 
+ * This file contains the included libraries, globals, and
+ * function prototype for ipc_cmop.c
  *
  * ========================================
 */
-#ifndef IPC_CM0_H
+#ifndef IPC_CM0P_H
     
-    #define IPC_CM0_H
+    #define IPC_CM0P_H
     #include "project.h"
     #include "ipc_shared.h"
     volatile bool rdyToRecvMsg;

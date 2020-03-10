@@ -1,11 +1,12 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * blemonitor.c
+ * 
+ * This file contains the BLE event handler which handles
+ * basic BLE stack events and write requests.
  *
  * ========================================
 */
@@ -49,32 +50,6 @@ void GenericEventHandler(uint32 event, void *eventParam)
         default:
             break;
     }
-}
-
-void updateNextEvent(void)
-{
-    uint8_t value = 0;
-    uint16 arr[12];
-    cy_stc_ble_gatt_handle_value_pair_t handValPair;
-    handValPair.attrHandle = CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_REQUEST_CHAR_HANDLE;
-    handValPair.value.val = &value;
-    handValPair.value.len = 1;
-    Cy_BLE_GATTS_ReadAttributeValueLocal(NULL, &handValPair);
-    if (value == 1)
-    {
-        value = 0;
-        Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-        handValPair.attrHandle = CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_CHAR_HANDLE;
-        handValPair.value.val = (uint8_t*)arr;
-        handValPair.value.len = 24;
-        Cy_BLE_GATTS_ReadAttributeValueLocal(NULL, &handValPair);
-        for (int i = 0; i < 12; i += 1)
-        {
-            arr[i] += 1;
-        }
-        Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-    }
-    return;
 }
 
 /* [] END OF FILE */

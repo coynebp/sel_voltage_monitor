@@ -1,12 +1,13 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ipc_shared.h
+ * 
+ * This file defines common data types and constants needed for the CM0+
+ * and the CM4 processor to communicate.
+ * 
  * ========================================
 */
 #ifndef IPC_SHARED_H

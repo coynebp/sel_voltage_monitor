@@ -1,14 +1,16 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ipc_cm4.h
+ * 
+ * This file contains the included libraries, globals, and
+ * function prototype for ipc_cm4.c
  *
  * ========================================
-*/#ifndef IPC_CM4_H
+*/
+#ifndef IPC_CM4_H
     
     #define IPC_CM4_H
     

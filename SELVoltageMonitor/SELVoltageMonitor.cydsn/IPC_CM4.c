@@ -1,15 +1,16 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ipc_cm4.c
+ * 
+ * This file initilizes the varaibles and defines the functions
+ * needed for the CM4 processor to communicate with the CMO+.
  *
  * ========================================
 */
-#include "IPC_CM4.h"
+#include "ipc_cm4.h"
 
 volatile bool rdyToReceive = true;
 

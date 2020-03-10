@@ -1,16 +1,16 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ipc_cm0p.c
+ * 
+ * This file initilizes the varaibles and defines the functions
+ * needed for the CM0+ processor to communicate with the CMO4.
  *
  * ========================================
 */
-
-#include "IPC_CM0.h"
+#include "ipc_cm0p.h"
 
 volatile bool rdyToRecvMsg = true;
 

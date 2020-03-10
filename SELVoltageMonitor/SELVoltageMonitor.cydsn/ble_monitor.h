@@ -1,11 +1,12 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ble_monitor.h
+ * 
+ * This file contains the required libraries and
+ * function prototype for ble_monitor.c.
  *
  * ========================================
 */
@@ -14,10 +15,9 @@
     
     #include <project.h>
     #include <stdlib.h>
-    #include "IPC_CM0.h"
+    #include "ipc_cm0p.h"
     
     void GenericEventHandler(uint32 event, void *eventParam);
-    void updateNextEvent(void);
     
 #endif
 /* [] END OF FILE */

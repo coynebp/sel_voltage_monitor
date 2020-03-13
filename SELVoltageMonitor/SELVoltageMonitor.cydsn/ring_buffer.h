@@ -16,9 +16,9 @@
     #include <stdint.h>
     
     typedef struct {
-        uint16_t * const buffer;
+        uint16_t * buffer;
         uint8_t head;
-        const uint8_t maxlen;
+        uint8_t maxlen;
     } ring_buf_t;
     
     void ring_buf_push(ring_buf_t *c, uint16_t data);

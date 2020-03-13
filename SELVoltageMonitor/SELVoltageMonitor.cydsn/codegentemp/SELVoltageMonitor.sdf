@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2020-03-05T21:58:25Z")
+ (DATE "2020-03-12T22:26:18Z")
  (DESIGN "SELVoltageMonitor")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -16,6 +16,9 @@
     (INTERCONNECT CY_CPUSS_SWJ_SWDIO_TMS\(0\).fb CPUSS.swj_swdio_tms (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.periclk \\BLE_1\:bless_isr\\.clock (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.periclk \\UART\:SCB_IRQ\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.periclk \\ADC_1\:IRQ\\.clock (0.000:0.000:0.000))
+    (INTERCONNECT \\ADC_1\:SAR\\.interrupt \\ADC_1\:IRQ\\.interrupt (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.ff_div_49 \\ADC_1\:SAR\\.clock (0.000:0.000:0.000))
     (INTERCONNECT \\BLE_1\:cy_mxs40_ble\\.interrupt \\BLE_1\:bless_isr\\.interrupt (0.000:0.000:0.000))
     (INTERCONNECT \\UART\:rx\(0\)\\.fb \\UART\:SCB\\.uart_rx (0.000:0.000:0.000))
     (INTERCONNECT ClockBlock.ff_div_5 \\UART\:SCB\\.clock (0.000:0.000:0.000))

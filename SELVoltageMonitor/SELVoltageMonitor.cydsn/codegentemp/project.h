@@ -29,6 +29,7 @@
 #include "efuse/cy_efuse.h"
 #include "flash/cy_flash.h"
 #include "gpio/cy_gpio.h"
+#include "sar/cy_sar.h"
 #include "sysanalog/cy_sysanalog.h"
 #include "syspm/cy_syspm.h"
 #include "syslib/cy_syslib.h"
@@ -138,7 +139,9 @@
 #include "BLE.h"
 #include "BLE_config.h"
 #include "UART.h"
+#include "ADC_1.h"
 #include "UART_SCBCLK.h"
+#include "ADC_1_intSarClock.h"
 
 /*[]*/
 

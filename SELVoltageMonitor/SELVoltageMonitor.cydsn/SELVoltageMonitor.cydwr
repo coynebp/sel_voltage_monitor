@@ -9,9 +9,10 @@
       <Data key="6c78a27f-7792-4d54-b036-23f3a1999635/5e509665-5bd3-4115-bbc0-fb65a49def9a" value="BLE_1_bless_isr" />
     </Group>
     <Group key="Pin">
+      <Data key="0113321b-4a37-46f6-8407-2f8646c68756" value="VIN" />
       <Data key="a61270bc-07ec-447d-ac9e-34cfe85c30e9" value="Connection_LED" />
-      <Data key="bada9d75-aedb-412e-976e-3b8fbd3a5f0d/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f" value="DEBUG_UART_tx" />
-      <Data key="bada9d75-aedb-412e-976e-3b8fbd3a5f0d/b7e8018e-1ef7-49c0-b5a5-61641a03e31c" value="DEBUG_UART_rx" />
+      <Data key="bada9d75-aedb-412e-976e-3b8fbd3a5f0d/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f" value="UART_tx" />
+      <Data key="bada9d75-aedb-412e-976e-3b8fbd3a5f0d/b7e8018e-1ef7-49c0-b5a5-61641a03e31c" value="UART_rx" />
     </Group>
   </Group>
   <Group key="Interrupt">
@@ -612,6 +613,14 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="0113321b-4a37-46f6-8407-2f8646c68756">
+      <Group key="0">
+        <Data key="Port Format" value="10,0" />
+      </Group>
+      <Group key="1">
+        <Data key="Port Format" value="10,1" />
+      </Group>
+    </Group>
     <Group key="a61270bc-07ec-447d-ac9e-34cfe85c30e9">
       <Group key="0">
         <Data key="Port Format" value="10,5" />

@@ -1,5 +1,5 @@
 -- Project:   SELVoltageMonitor
--- Generated: 03/12/2020 15:25:42
+-- Generated: 03/18/2020 22:40:46
 -- PSoC Creator  4.2
 
 ENTITY SELVoltageMonitor IS
@@ -943,7 +943,7 @@ BEGIN
     \ADC_1:SAR\:SARADC
         GENERIC MAP(
             cy_registers => "",
-            edge_trigger => 0)
+            edge_trigger => 1)
         PORT MAP(
             dsi_sar_sample_done => Net_99,
             dsi_sar_chan_id_valid => Net_101,

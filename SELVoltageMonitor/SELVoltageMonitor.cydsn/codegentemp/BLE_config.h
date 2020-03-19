@@ -276,7 +276,7 @@ extern "C" {
 
 /** The GATT Maximum attribute length. */
 #define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0120u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0022u)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0025u)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x1Au)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x1Du)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -369,7 +369,7 @@ extern "C" {
 #define CY_BLE_CONFIG_CUSTOMC_SERVICE_COUNT         (0x00u)
 
 /** The maximum supported count of the Custom Service characteristics. */
-#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x06u)
+#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x07u)
 
 /** The maximum supported count of the Custom Service descriptors in one characteristic. */
 #define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
@@ -381,28 +381,30 @@ extern "C" {
 #define CY_BLE_VOLTAGE_MONITOR_SERVICE_INDEX   (0x00u) /* Index of Voltage Monitor service in the cy_ble_customs array */
 #define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHAR_INDEX   (0x00u) /* Index of Current Voltage characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_CHAR_INDEX   (0x01u) /* Index of Next Event characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_REQUEST_CHAR_INDEX   (0x02u) /* Index of Next Event Request characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_REQUEST_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHAR_INDEX   (0x01u) /* Index of Event characteristic */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHAR_INDEX   (0x02u) /* Index of Event Number characteristic */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 #define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHAR_INDEX   (0x03u) /* Index of Number of Events characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 #define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHAR_INDEX   (0x04u) /* Index of Upper Threshold characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 #define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHAR_INDEX   (0x05u) /* Index of Lower Threshold characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHAR_INDEX   (0x06u) /* Index of Trigger characteristic */
+#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 
 
 #define CY_BLE_VOLTAGE_MONITOR_SERVICE_HANDLE   (0x0010u) /* Handle of Voltage Monitor service */
 #define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_DECL_HANDLE   (0x0011u) /* Handle of Current Voltage characteristic declaration */
 #define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHAR_HANDLE   (0x0012u) /* Handle of Current Voltage characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0013u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_DECL_HANDLE   (0x0014u) /* Handle of Next Event characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_CHAR_HANDLE   (0x0015u) /* Handle of Next Event characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_REQUEST_DECL_HANDLE   (0x0017u) /* Handle of Next Event Request characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_REQUEST_CHAR_HANDLE   (0x0018u) /* Handle of Next Event Request characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_NEXT_EVENT_REQUEST_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0019u) /* Handle of Characteristic User Description descriptor */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_DECL_HANDLE   (0x0014u) /* Handle of Event characteristic declaration */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHAR_HANDLE   (0x0015u) /* Handle of Event characteristic */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_DECL_HANDLE   (0x0017u) /* Handle of Event Number characteristic declaration */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHAR_HANDLE   (0x0018u) /* Handle of Event Number characteristic */
+#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0019u) /* Handle of Characteristic User Description descriptor */
 #define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_DECL_HANDLE   (0x001Au) /* Handle of Number of Events characteristic declaration */
 #define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHAR_HANDLE   (0x001Bu) /* Handle of Number of Events characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x001Cu) /* Handle of Characteristic User Description descriptor */
@@ -412,6 +414,9 @@ extern "C" {
 #define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_DECL_HANDLE   (0x0020u) /* Handle of Lower Threshold characteristic declaration */
 #define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHAR_HANDLE   (0x0021u) /* Handle of Lower Threshold characteristic */
 #define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0022u) /* Handle of Characteristic User Description descriptor */
+#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_DECL_HANDLE   (0x0023u) /* Handle of Trigger characteristic declaration */
+#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHAR_HANDLE   (0x0024u) /* Handle of Trigger characteristic */
+#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0025u) /* Handle of Characteristic User Description descriptor */
 
 
 

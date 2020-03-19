@@ -18,8 +18,41 @@ ipc_msg_t ipcMsgForCM4 = {              /* IPC structure to be sent to CM4  */
     .clientId = IPC_CM0_TO_CM4_CLIENT_ID,
     .userCode = 0,
     .intrMask = CY_IPC_CYPIPE_INTR_MASK,
-    .data   = 0
+    .type = 0,
+    .data   = {0}
 };
+
+void CM0_MessageCallback(uint32_t *msg)
+{
+    cy_stc_ble_gatt_handle_value_pair_t handValPair;
+    uint32_t type;
+    ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
+    if (msgPtr != NULL)
+    {
+        type = msgPtr->type;
+        switch (type)
+        {
+            case EVENT_NUM:
+
+                break;
+            
+            case EVENT:
+                
+                break;
+            
+            case NUM_EVENTS:
+
+                break;
+
+            case VOLTAGE:
+
+                break;
+            
+            default:
+                break;
+        }
+    }
+}
 
 void CM0_ReleaseCallback(void)
 {

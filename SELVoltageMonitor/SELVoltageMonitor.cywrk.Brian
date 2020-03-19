@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SELVoltageMonitor\SELVoltageMonitor\TopDesign">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="SELVoltageMonitor\SELVoltageMonitor\CM0p (Core 0)\Source Files\ble_monitor.c">
 <ExpandedNodeIds>
 <v>SELVoltageMonitor</v>
 <v>SELVoltageMonitor\SELVoltageMonitor</v>
@@ -87,13 +87,6 @@
 <v>SELVoltageMonitor\SELVoltageMonitor\Generated_Source\PSoC6\BLE_1</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>SELVoltageMonitor</v>
-<v>SELVoltageMonitor\SELVoltageMonitor</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\TopDesign</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr\Pins</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr\Analog</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr\DMA</v>
 <v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr\Clocks</v>
 <v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr\Interrupts</v>
 <v>SELVoltageMonitor\SELVoltageMonitor\SELVoltageMonitor.cydwr\System</v>
@@ -123,6 +116,13 @@
 <v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\ARM GCC Generic</v>
 <v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\ARM GCC Generic\cy8c6xx7_cm4_dual.ld</v>
 <v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\ARM IAR Generic</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\ARM IAR Generic\cy8c6xx7_cm4_dual.icf</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\ARM MDK Generic</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\ARM MDK Generic\cy8c6xx7_cm4_dual.scat</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\Header Files</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\Header Files\ipc_cm4.h</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\Header Files\ring_buffer.h</v>
+<v>SELVoltageMonitor\SELVoltageMonitor\CM4 (Core 1)\Header Files\voltage_monitor.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -331,40 +331,6 @@
 <VisibleNodeIds>
 <v>SELVoltageMonitor</v>
 <v>SELVoltageMonitor\SELVoltageMonitor</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_INIT.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_INT.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\ADC_1_PM.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE_config.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\BLE_custom_config.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\ble_monitor.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_aios.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ancs.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ans.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bas.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bcs.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bls.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bms.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_bts.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cgms.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cps.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cscs.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_cts.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_custom.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_dis.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_ess.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_event_handler.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gap.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gatt.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_gls.lst</v>
-<v>SELVoltageMonitor\SELVoltageMonitor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_hal_int.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -407,20 +373,18 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\SELVoltageMonitor.cydsn\main_cm4.c" />
-<name v=".\SELVoltageMonitor.cydsn\ipc_cm4.c" />
 <name v=".\SELVoltageMonitor.cydsn\TopDesign\TopDesign.cysch" />
-<name v=".\SELVoltageMonitor.cydsn\SELVoltageMonitor.cydwr" />
-<name v=".\SELVoltageMonitor.cydsn\voltage_monitor.h" />
-<name v=".\SELVoltageMonitor.cydsn\ipc_cm4.h" />
-<name v=".\SELVoltageMonitor.cydsn\voltage_monitor.c" />
-<name v=".\SELVoltageMonitor.cydsn\ring_buffer.h" />
 <name v=".\SELVoltageMonitor.cydsn\ipc_cm0p.c" />
 <name v=".\SELVoltageMonitor.cydsn\ipc_cm0p.h" />
+<name v=".\SELVoltageMonitor.cydsn\main_cm0p.c" />
+<name v=".\SELVoltageMonitor.cydsn\voltage_monitor.c" />
+<name v=".\SELVoltageMonitor.cydsn\ipc_cm4.h" />
 <name v=".\SELVoltageMonitor.cydsn\ipc_shared.h" />
+<name v=".\SELVoltageMonitor.cydsn\ipc_cm4.c" />
+<name v=".\SELVoltageMonitor.cydsn\voltage_monitor.h" />
+<name v=".\SELVoltageMonitor.cydsn\main_cm4.c" />
 <name v=".\SELVoltageMonitor.cydsn\ble_monitor.h" />
-<name v=".\SELVoltageMonitor.cydsn\ring_buffer.c" />
-<name v=".\SELVoltageMonitor.cydsn\system_psoc63_cm4.c" />
+<name v=".\SELVoltageMonitor.cydsn\ble_monitor.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -428,7 +392,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="978, 522" SelectedTabbedMdiWindow="9f4cab48-f920-44ca-8743-c3f4613c8248"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="54a40a8d-51cd-43b3-884d-6abff02f5577" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\main_cm4.c" Guid="5361b0a5-b8d2-48fe-902e-8052ceb2cff3" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm4.c" Guid="13c612c2-ab72-4411-b0da-d1eb60fc9e4b" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\TopDesign\TopDesign.cysch" Guid="9f4cab48-f920-44ca-8743-c3f4613c8248" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\SELVoltageMonitor.cydwr" Guid="93a29e1b-8126-4e09-98ad-dcbdfb00466f" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\voltage_monitor.h" Guid="831238d7-b1a9-4b0f-afc1-07a747b070c3" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm4.h" Guid="d734f756-48ab-40ce-8213-e96b9bfba32e" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\voltage_monitor.c" Guid="136d1311-c415-4ae3-bc2e-fc876cca5b2d" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ring_buffer.h" Guid="fa4055bd-9131-4ed9-aef3-88b84ad076ba" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm0p.c" Guid="12275c2b-ca1a-43d3-8258-3ba1c7be8e5a" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm0p.h" Guid="40b98ae3-a097-4fc4-b145-4299af7ff94b" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_shared.h" Guid="0199c199-b358-49d0-a47c-ba7b1b53ddd5" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ble_monitor.h" Guid="9ee9c4d7-3309-473a-9df4-06557836fbf3" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ring_buffer.c" Guid="202f1a86-6f4e-4f00-a9b2-8a7b776c12ed" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\system_psoc63_cm4.c" Guid="2b9fb681-c130-43f7-8aaa-cef4875fbf0d" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="973, 522" SelectedTabbedMdiWindow="f63def9b-d4d7-4091-8ccf-a19209db389f"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="54a40a8d-51cd-43b3-884d-6abff02f5577" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\TopDesign\TopDesign.cysch" Guid="9f4cab48-f920-44ca-8743-c3f4613c8248" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm0p.c" Guid="f63def9b-d4d7-4091-8ccf-a19209db389f" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm0p.h" Guid="b30270c6-0f6c-45f1-aa13-bfa64063c965" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\main_cm0p.c" Guid="74b2ce02-9bf8-43ac-8fa8-76a9435f2bce" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\voltage_monitor.c" Guid="e6fb375e-00ab-4a43-9d93-a0b953d53421" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm4.h" Guid="0fa6b206-4cb9-47b3-8e63-e2cea2fd5ae6" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_shared.h" Guid="527c7a2c-9b4f-4bbf-b3b9-01e6d3a99f56" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ipc_cm4.c" Guid="2eafc4ca-7b81-405d-a294-68ec470cd121" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\voltage_monitor.h" Guid="3a34dc14-8ae6-4e56-a268-60ab21d32c94" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\main_cm4.c" Guid="630b6346-cd43-4d02-925a-88da7312b50e" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ble_monitor.h" Guid="1a8170ea-23c3-423b-bfde-2ded4d59429a" /><DocumentWindow Key="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\ble_monitor.c" Guid="0fed9217-e1a6-47bd-b424-39be375f4eb6" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

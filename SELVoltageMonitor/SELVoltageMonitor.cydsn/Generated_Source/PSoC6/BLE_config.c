@@ -209,7 +209,7 @@ static const cy_stc_ble_gaps_t cy_ble_gaps =
     0x0009u,    /* Handle of the Central Address Resolution characteristic */
     0x000Bu,    /* Handle of the Resolvable Private Address Only characteristic */
 };
-static uint8_t cy_ble_attValues[0x0202u] = {
+static uint8_t cy_ble_attValues[0x0244u] = {
     /* Device Name */
     (uint8_t)'S', (uint8_t)'E', (uint8_t)'L', (uint8_t)' ', (uint8_t)'V', (uint8_t)'o', (uint8_t)'l', (uint8_t)'t',
 (uint8_t)'a', (uint8_t)'g', (uint8_t)'e', (uint8_t)' ', (uint8_t)'M', (uint8_t)'o', (uint8_t)'n', (uint8_t)'i',
@@ -238,9 +238,9 @@ static uint8_t cy_ble_attValues[0x0202u] = {
 (uint8_t)'M', (uint8_t)'e', (uint8_t)'a', (uint8_t)'s', (uint8_t)'u', (uint8_t)'r', (uint8_t)'e', (uint8_t)'d',
 (uint8_t)' ', (uint8_t)'V', (uint8_t)'o', (uint8_t)'l', (uint8_t)'t', (uint8_t)'a', (uint8_t)'g', (uint8_t)'e', 
 
-    /* Next Event */
-    0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u,
-0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x01u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+    /* Event */
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
@@ -264,16 +264,20 @@ static uint8_t cy_ble_attValues[0x0202u] = {
 (uint8_t)'v', (uint8_t)'e', (uint8_t)'n', (uint8_t)'t', (uint8_t)' ', (uint8_t)'t', (uint8_t)'o', (uint8_t)' ',
 (uint8_t)'b', (uint8_t)'e', (uint8_t)' ', (uint8_t)'r', (uint8_t)'e', (uint8_t)'a', (uint8_t)'d', 
 
-    /* Next Event Request */
+    /* Event Number */
     0x00u, 
 
     /* Characteristic User Description */
-    (uint8_t)'W', (uint8_t)'r', (uint8_t)'i', (uint8_t)'t', (uint8_t)'e', (uint8_t)' ', (uint8_t)'t', (uint8_t)'o',
-(uint8_t)' ', (uint8_t)'t', (uint8_t)'h', (uint8_t)'i', (uint8_t)'s', (uint8_t)' ', (uint8_t)'r', (uint8_t)'e',
-(uint8_t)'g', (uint8_t)'i', (uint8_t)'s', (uint8_t)'t', (uint8_t)'e', (uint8_t)'r', (uint8_t)' ', (uint8_t)'t',
-(uint8_t)'o', (uint8_t)' ', (uint8_t)'r', (uint8_t)'e', (uint8_t)'q', (uint8_t)'u', (uint8_t)'e', (uint8_t)'s',
-(uint8_t)'t', (uint8_t)' ', (uint8_t)'n', (uint8_t)'e', (uint8_t)'x', (uint8_t)'t', (uint8_t)' ', (uint8_t)'e',
-(uint8_t)'v', (uint8_t)'e', (uint8_t)'n', (uint8_t)'t', 
+    (uint8_t)'W', (uint8_t)'r', (uint8_t)'i', (uint8_t)'t', (uint8_t)'e', (uint8_t)' ', (uint8_t)'a', (uint8_t)'n',
+(uint8_t)' ', (uint8_t)'e', (uint8_t)'v', (uint8_t)'e', (uint8_t)'n', (uint8_t)'t', (uint8_t)' ', (uint8_t)'n',
+(uint8_t)'u', (uint8_t)'m', (uint8_t)'b', (uint8_t)'e', (uint8_t)'r', (uint8_t)' ', (uint8_t)'t', (uint8_t)'o',
+(uint8_t)' ', (uint8_t)'r', (uint8_t)'e', (uint8_t)'t', (uint8_t)'r', (uint8_t)'e', (uint8_t)'i', (uint8_t)'v',
+(uint8_t)'e', (uint8_t)' ', (uint8_t)'t', (uint8_t)'h', (uint8_t)'a', (uint8_t)'t', (uint8_t)' ', (uint8_t)'e',
+(uint8_t)'v', (uint8_t)'e', (uint8_t)'n', (uint8_t)' ', (uint8_t)'a', (uint8_t)'n', (uint8_t)'d', (uint8_t)' ',
+(uint8_t)'p', (uint8_t)'l', (uint8_t)'a', (uint8_t)'c', (uint8_t)'e', (uint8_t)' ', (uint8_t)'i', (uint8_t)'t',
+(uint8_t)' ', (uint8_t)'i', (uint8_t)'n', (uint8_t)' ', (uint8_t)'E', (uint8_t)'v', (uint8_t)'e', (uint8_t)'n',
+(uint8_t)'t', (uint8_t)' ', (uint8_t)'c', (uint8_t)'h', (uint8_t)'a', (uint8_t)'r', (uint8_t)'a', (uint8_t)'c',
+(uint8_t)'t', (uint8_t)'e', (uint8_t)'r', (uint8_t)'i', (uint8_t)'s', (uint8_t)'t', (uint8_t)'i', (uint8_t)'c', 
 
     /* Number of Events */
     0x0Au, 
@@ -300,6 +304,15 @@ static uint8_t cy_ble_attValues[0x0202u] = {
 (uint8_t)'l', (uint8_t)'t', (uint8_t)'a', (uint8_t)'g', (uint8_t)'e', (uint8_t)' ', (uint8_t)'T', (uint8_t)'h',
 (uint8_t)'r', (uint8_t)'e', (uint8_t)'s', (uint8_t)'h', (uint8_t)'o', (uint8_t)'l', (uint8_t)'d', 
 
+    /* Trigger */
+    0x00u, 
+
+    /* Characteristic User Description */
+    (uint8_t)'W', (uint8_t)'r', (uint8_t)'i', (uint8_t)'t', (uint8_t)'e', (uint8_t)' ', (uint8_t)'a', (uint8_t)' ',
+(uint8_t)'1', (uint8_t)' ', (uint8_t)'t', (uint8_t)'o', (uint8_t)' ', (uint8_t)'t', (uint8_t)'r', (uint8_t)'i',
+(uint8_t)'g', (uint8_t)'g', (uint8_t)'e', (uint8_t)'r', (uint8_t)' ', (uint8_t)'a', (uint8_t)'n', (uint8_t)' ',
+(uint8_t)'e', (uint8_t)'v', (uint8_t)'e', (uint8_t)'n', (uint8_t)'t', 
+
 };
 #if(CY_BLE_GATT_DB_CCCD_COUNT != 0u)
 static uint8_t cy_ble_attValuesCCCD[CY_BLE_GATT_DB_CCCD_COUNT];
@@ -310,9 +323,9 @@ static const uint8_t cy_ble_attUuid128[][16u] = {
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0xE7u, 0x92u, 0xCFu, 0x7Du },
     /* Current Voltage */
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0x5Bu, 0xF3u, 0x46u, 0x5Cu },
-    /* Next Event */
+    /* Event */
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0x95u, 0x76u, 0x2Eu, 0xDDu },
-    /* Next Event Request */
+    /* Event Number */
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0x23u, 0x97u, 0x59u, 0x7Du },
     /* Number of Events */
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0xFAu, 0xC6u, 0xC3u, 0x3Eu },
@@ -320,9 +333,11 @@ static const uint8_t cy_ble_attUuid128[][16u] = {
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0x4Eu, 0x18u, 0xD6u, 0x7Bu },
     /* Lower Threshold */
     { 0xFBu, 0x34u, 0x9Bu, 0x5Fu, 0x80u, 0x00u, 0x00u, 0x80u, 0x00u, 0x10u, 0x00u, 0x00u, 0x18u, 0x10u, 0xE0u, 0xE8u },
+    /* Trigger */
+    { 0x8Fu, 0xA0u, 0x0Cu, 0x8Cu, 0x20u, 0x49u, 0x40u, 0xAAu, 0xB6u, 0x49u, 0x0Bu, 0x54u, 0x82u, 0x74u, 0x07u, 0xE9u },
 };
 
-static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x1Au] = {
+static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x1Du] = {
     { 0x0013u, (void *)&cy_ble_attValues[0] }, /* Device Name */
     { 0x0002u, (void *)&cy_ble_attValues[19] }, /* Appearance */
     { 0x0008u, (void *)&cy_ble_attValues[21] }, /* Peripheral Preferred Connection Parameters */
@@ -334,24 +349,27 @@ static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x1Au] = {
     { 0x0010u, (void *)&cy_ble_attUuid128[1] }, /* Current Voltage UUID */
     { 0x0002u, (void *)&cy_ble_attValues[35] }, /* Current Voltage */
     { 0x0018u, (void *)&cy_ble_attValues[37] }, /* Characteristic User Description */
-    { 0x0010u, (void *)&cy_ble_attUuid128[2] }, /* Next Event UUID */
-    { 0x0120u, (void *)&cy_ble_attValues[61] }, /* Next Event */
+    { 0x0010u, (void *)&cy_ble_attUuid128[2] }, /* Event UUID */
+    { 0x0120u, (void *)&cy_ble_attValues[61] }, /* Event */
     { 0x0027u, (void *)&cy_ble_attValues[349] }, /* Characteristic User Description */
-    { 0x0010u, (void *)&cy_ble_attUuid128[3] }, /* Next Event Request UUID */
-    { 0x0001u, (void *)&cy_ble_attValues[388] }, /* Next Event Request */
-    { 0x002Cu, (void *)&cy_ble_attValues[389] }, /* Characteristic User Description */
+    { 0x0010u, (void *)&cy_ble_attUuid128[3] }, /* Event Number UUID */
+    { 0x0001u, (void *)&cy_ble_attValues[388] }, /* Event Number */
+    { 0x0050u, (void *)&cy_ble_attValues[389] }, /* Characteristic User Description */
     { 0x0010u, (void *)&cy_ble_attUuid128[4] }, /* Number of Events UUID */
-    { 0x0001u, (void *)&cy_ble_attValues[433] }, /* Number of Events */
-    { 0x001Eu, (void *)&cy_ble_attValues[434] }, /* Characteristic User Description */
+    { 0x0001u, (void *)&cy_ble_attValues[469] }, /* Number of Events */
+    { 0x001Eu, (void *)&cy_ble_attValues[470] }, /* Characteristic User Description */
     { 0x0010u, (void *)&cy_ble_attUuid128[5] }, /* Upper Threshold UUID */
-    { 0x0002u, (void *)&cy_ble_attValues[464] }, /* Upper Threshold */
-    { 0x0017u, (void *)&cy_ble_attValues[466] }, /* Characteristic User Description */
+    { 0x0002u, (void *)&cy_ble_attValues[500] }, /* Upper Threshold */
+    { 0x0017u, (void *)&cy_ble_attValues[502] }, /* Characteristic User Description */
     { 0x0010u, (void *)&cy_ble_attUuid128[6] }, /* Lower Threshold UUID */
-    { 0x0002u, (void *)&cy_ble_attValues[489] }, /* Lower Threshold */
-    { 0x0017u, (void *)&cy_ble_attValues[491] }, /* Characteristic User Description */
+    { 0x0002u, (void *)&cy_ble_attValues[525] }, /* Lower Threshold */
+    { 0x0017u, (void *)&cy_ble_attValues[527] }, /* Characteristic User Description */
+    { 0x0010u, (void *)&cy_ble_attUuid128[7] }, /* Trigger UUID */
+    { 0x0001u, (void *)&cy_ble_attValues[550] }, /* Trigger */
+    { 0x001Du, (void *)&cy_ble_attValues[551] }, /* Characteristic User Description */
 };
 
-static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x22u] = {
+static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x25u] = {
     { 0x0001u, 0x2800u /* Primary service                     */, 0x00000001u /*       */, 0x000Bu, {{0x1800u, NULL}}                           },
     { 0x0002u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0003u, {{0x2A00u, NULL}}                           },
     { 0x0003u, 0x2A00u /* Device Name                         */, 0x01020001u /* rd    */, 0x0003u, {{0x0013u, (void *)&cy_ble_attValuesLen[0]}} },
@@ -367,16 +385,16 @@ static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x22u] = {
     { 0x000Du, 0x2803u /* Characteristic                      */, 0x00200001u /* ind   */, 0x000Fu, {{0x2A05u, NULL}}                           },
     { 0x000Eu, 0x2A05u /* Service Changed                     */, 0x01200000u /* ind   */, 0x000Fu, {{0x0004u, (void *)&cy_ble_attValuesLen[5]}} },
     { 0x000Fu, 0x2902u /* Client Characteristic Configuration */, 0x030A0101u /* rd,wr */, 0x000Fu, {{0x0002u, (void *)&cy_ble_attValuesLen[6]}} },
-    { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*       */, 0x0022u, {{0x0010u, (void *)&cy_ble_attValuesLen[7]}} },
+    { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*       */, 0x0025u, {{0x0010u, (void *)&cy_ble_attValuesLen[7]}} },
     { 0x0011u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0013u, {{0x0010u, (void *)&cy_ble_attValuesLen[8]}} },
     { 0x0012u, 0xF35Bu /* Current Voltage                     */, 0x09020001u /* rd    */, 0x0013u, {{0x0002u, (void *)&cy_ble_attValuesLen[9]}} },
     { 0x0013u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0013u, {{0x0018u, (void *)&cy_ble_attValuesLen[10]}} },
     { 0x0014u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0016u, {{0x0010u, (void *)&cy_ble_attValuesLen[11]}} },
-    { 0x0015u, 0x7695u /* Next Event                          */, 0x09020001u /* rd    */, 0x0016u, {{0x0120u, (void *)&cy_ble_attValuesLen[12]}} },
+    { 0x0015u, 0x7695u /* Event                               */, 0x09020001u /* rd    */, 0x0016u, {{0x0120u, (void *)&cy_ble_attValuesLen[12]}} },
     { 0x0016u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0016u, {{0x0027u, (void *)&cy_ble_attValuesLen[13]}} },
     { 0x0017u, 0x2803u /* Characteristic                      */, 0x000A0001u /* rd,wr */, 0x0019u, {{0x0010u, (void *)&cy_ble_attValuesLen[14]}} },
-    { 0x0018u, 0x9723u /* Next Event Request                  */, 0x090A0101u /* rd,wr */, 0x0019u, {{0x0001u, (void *)&cy_ble_attValuesLen[15]}} },
-    { 0x0019u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0019u, {{0x002Cu, (void *)&cy_ble_attValuesLen[16]}} },
+    { 0x0018u, 0x9723u /* Event Number                        */, 0x090A0101u /* rd,wr */, 0x0019u, {{0x0001u, (void *)&cy_ble_attValuesLen[15]}} },
+    { 0x0019u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0019u, {{0x0050u, (void *)&cy_ble_attValuesLen[16]}} },
     { 0x001Au, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x001Cu, {{0x0010u, (void *)&cy_ble_attValuesLen[17]}} },
     { 0x001Bu, 0xC6FAu /* Number of Events                    */, 0x09020001u /* rd    */, 0x001Cu, {{0x0001u, (void *)&cy_ble_attValuesLen[18]}} },
     { 0x001Cu, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x001Cu, {{0x001Eu, (void *)&cy_ble_attValuesLen[19]}} },
@@ -386,6 +404,9 @@ static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x22u] = {
     { 0x0020u, 0x2803u /* Characteristic                      */, 0x000A0001u /* rd,wr */, 0x0022u, {{0x0010u, (void *)&cy_ble_attValuesLen[23]}} },
     { 0x0021u, 0x1018u /* Lower Threshold                     */, 0x090A0101u /* rd,wr */, 0x0022u, {{0x0002u, (void *)&cy_ble_attValuesLen[24]}} },
     { 0x0022u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0022u, {{0x0017u, (void *)&cy_ble_attValuesLen[25]}} },
+    { 0x0023u, 0x2803u /* Characteristic                      */, 0x00080001u /* wr    */, 0x0025u, {{0x0010u, (void *)&cy_ble_attValuesLen[26]}} },
+    { 0x0024u, 0x7482u /* Trigger                             */, 0x09080100u /* wr    */, 0x0025u, {{0x0001u, (void *)&cy_ble_attValuesLen[27]}} },
+    { 0x0025u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd    */, 0x0025u, {{0x001Du, (void *)&cy_ble_attValuesLen[28]}} },
 };
 
 #endif /* (CY_BLE_GATT_ROLE_SERVER) */
@@ -419,7 +440,7 @@ static const cy_stc_ble_params_t cy_ble_params =
     
         .siliconDeviceAddressEnabled        = 0x01u,
     
-        .gattDbIndexCount                   = 0x0022u,
+        .gattDbIndexCount                   = 0x0025u,
 };
 #endif  /* (CY_BLE_GAP_ROLE_CENTRAL || CY_BLE_GAP_ROLE_PERIPHERAL) */
 

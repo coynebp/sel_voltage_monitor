@@ -18,9 +18,12 @@
     #include "ipc_shared.h"
     #include <stdio.h>
     #include <stdlib.h>
-    volatile bool rdyToReceive;
+    #include <inttypes.h>
+    volatile bool rdyToRecvMsg;
+    ipc_msg_t ipcMsgForCM0;
     
     void CM4_MessageCallback(uint32_t *msg);
+    void CM4_ReleaseCallback(void);
     
   #endif
 /* [] END OF FILE */

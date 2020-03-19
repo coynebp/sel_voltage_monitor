@@ -12,7 +12,7 @@
 */
 #ifndef VOLTAGE_MONITOR_H
 #define VOLTAGE_MONITOR_H
-#define RING_BUF_LEN 10
+#define RING_BUF_LEN 200
    
     #include "project.h"
     #include <stdio.h>
@@ -21,7 +21,6 @@
     #include <inttypes.h>
     
     uint16_t result;
-    double adc_voltage;
     
     ring_buf_t rbuf;
     uint16_t arr[RING_BUF_LEN];

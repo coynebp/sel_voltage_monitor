@@ -25,7 +25,11 @@ int main(void)
     }
     
     /* Enable CM4.*/
-    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR); 
+    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
+    
+    Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
+                         CM0_MessageCallback,
+                         IPC_CM4_TO_CM0_CLIENT_ID);
 
     for(;;)
     {

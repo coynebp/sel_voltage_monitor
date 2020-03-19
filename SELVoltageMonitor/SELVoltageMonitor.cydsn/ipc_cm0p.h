@@ -15,9 +15,11 @@
     #define IPC_CM0P_H
     #include "project.h"
     #include "ipc_shared.h"
+    #include <stdint.h>
     volatile bool rdyToRecvMsg;
     ipc_msg_t ipcMsgForCM4;
     
+    void CM0_MessageCallback(uint32_t *msg);
     void CM0_ReleaseCallback(void);
     
 #endif

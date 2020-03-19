@@ -42,9 +42,9 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 }, 
             },
 
-            /* Next Event characteristic */
+            /* Event characteristic */
             {
-                0x0015u, /* Handle of the Next Event characteristic */ 
+                0x0015u, /* Handle of the Event characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
@@ -52,9 +52,9 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 }, 
             },
 
-            /* Next Event Request characteristic */
+            /* Event Number characteristic */
             {
-                0x0018u, /* Handle of the Next Event Request characteristic */ 
+                0x0018u, /* Handle of the Event Number characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
@@ -89,6 +89,16 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 /* Array of Descriptors handles */
                 {
                     0x0022u, /* Handle of the Characteristic User Description descriptor */ 
+                }, 
+            },
+
+            /* Trigger characteristic */
+            {
+                0x0024u, /* Handle of the Trigger characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    0x0025u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
         }, 

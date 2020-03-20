@@ -48,9 +48,6 @@ void GenericEventHandler(uint32 event, void *eventParam)
                                                  CY_IPC_EP_CYPIPE_CM0_ADDR, 
                                                  &ipcMsgForCM4, CM0_ReleaseCallback);
                 } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
-                
-                //Write new event number to GATT server
-                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHAR_HANDLE)
             {
@@ -77,7 +74,8 @@ void GenericEventHandler(uint32 event, void *eventParam)
                 //Send new lower threshold to CM4
                 rdyToRecvMsg = false;
                 ipcMsgForCM4.type = LOWER_THRESHOLD;
-                ipcMsgForCM4.data[0] = writeReqParam->handleValPair.value.val[0] + writeReqParam->handleValPair.value.val[1]*256;
+                ipcMsgForCM4.data[0] = writeReqParam->handleValPair.value.val[0];
+                ipcMsgForCM4.data[1] = writeReqParam->handleValPair.value.val[1];
                 do
                 {
                 result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR, 

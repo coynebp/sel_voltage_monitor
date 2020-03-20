@@ -231,7 +231,7 @@ static uint8_t cy_ble_attValues[0x0244u] = {
     0x00u, 0x00u, 0x00u, 0x00u, 
 
     /* Current Voltage */
-    0x00u, 0x01u, 
+    0x45u, 0x23u, 
 
     /* Characteristic User Description */
     (uint8_t)'C', (uint8_t)'u', (uint8_t)'r', (uint8_t)'r', (uint8_t)'e', (uint8_t)'n', (uint8_t)'t', (uint8_t)' ',

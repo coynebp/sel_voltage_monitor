@@ -26,7 +26,7 @@
     #define LOWER_THRESHOLD                 5
     #define TRIGGER                         6
     
-    #define MAX_SIZE 144
+    #define MAX_SIZE 288
 
     typedef struct __attribute__((packed, aligned(4)))
     {
@@ -34,7 +34,7 @@
         uint8_t     userCode;
         uint16_t    intrMask;
         uint32_t    type;
-        uint16_t    data[MAX_SIZE];
+        uint8_t     data[MAX_SIZE];
     } ipc_msg_t;
     
 #endif 

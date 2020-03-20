@@ -26,6 +26,7 @@ void CM0_MessageCallback(uint32_t *msg)
 {
     cy_stc_ble_gatt_handle_value_pair_t handValPair;
     uint32_t type;
+    uint8_t data[288];
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
     if (msgPtr != NULL)
     {
@@ -33,19 +34,39 @@ void CM0_MessageCallback(uint32_t *msg)
         switch (type)
         {
             case EVENT_NUM:
-
+                data[0] = msgPtr->data[0];
+                handValPair.attrHandle = CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHAR_HANDLE;
+                handValPair.value.val = data;
+                handValPair.value.len = GATTS_EVENT_NUM_SIZE;
+                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
                 break;
             
             case EVENT:
-                
+                for (int i = 0; i < 288; ++i)
+                {
+                    data[i] = msgPtr->data[i];
+                }
+                handValPair.attrHandle = CY_BLE_VOLTAGE_MONITOR_EVENT_CHAR_HANDLE;
+                handValPair.value.val = data;
+                handValPair.value.len = GATTS_EVENT_SIZE;
+                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
                 break;
             
             case NUM_EVENTS:
-
+                data[0] = msgPtr->data[0];
+                handValPair.attrHandle = CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHAR_HANDLE;
+                handValPair.value.val = data;
+                handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
+                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
                 break;
 
             case VOLTAGE:
-
+                data[0] = msgPtr->data[0];
+                data[1] = msgPtr->data[1];
+                handValPair.attrHandle = CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHAR_HANDLE;
+                handValPair.value.val = data;
+                handValPair.value.len = GATTS_VOLTAGE_SIZE;
+                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
                 break;
             
             default:

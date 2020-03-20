@@ -25,6 +25,8 @@
     ring_buf_t rbuf;
     uint16_t arr[RING_BUF_LEN];
     
+    uint16_t event[144];
+    
     void voltage_monitor_init(void);
     void voltage_monitor_loop(void);
     

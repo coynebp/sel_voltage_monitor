@@ -15,6 +15,7 @@
     #define IPC_CM0P_H
     #include "project.h"
     #include "ipc_shared.h"
+    #include "ble_monitor.h"
     #include <stdint.h>
     volatile bool rdyToRecvMsg;
     ipc_msg_t ipcMsgForCM4;

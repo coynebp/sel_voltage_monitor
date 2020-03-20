@@ -66,6 +66,8 @@ void CM4_ReleaseCallback(void)
 
 void send_voltage(uint16_t * voltage)
 {
+    while (rdyToRecvMsg == false) {};
+    rdyToRecvMsg = false;
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM0.type = VOLTAGE;
     ipcMsgForCM0.data[0] = ((uint8_t *)voltage)[0];
@@ -76,14 +78,12 @@ void send_voltage(uint16_t * voltage)
                             CY_IPC_EP_CYPIPE_CM4_ADDR, 
                             &ipcMsgForCM0, CM4_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
-    if (result == CY_IPC_PIPE_SUCCESS)
-    {
-        printf("SUCCESS\r\n");
-    }
 }
 
 void send_event_num(uint8_t * event_num)
 {
+    while (rdyToRecvMsg == false) {};
+    rdyToRecvMsg = false;
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM0.type = EVENT_NUM;
     ipcMsgForCM0.data[0] = *event_num;
@@ -93,14 +93,12 @@ void send_event_num(uint8_t * event_num)
                             CY_IPC_EP_CYPIPE_CM4_ADDR, 
                             &ipcMsgForCM0, CM4_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
-    if (result == CY_IPC_PIPE_SUCCESS)
-    {
-        printf("SUCCESS\r\n");
-    }
 }
 
 void send_num_events(uint8_t * num_events)
 {
+    while (rdyToRecvMsg == false) {};
+    rdyToRecvMsg = false;
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM0.type = NUM_EVENTS;
     ipcMsgForCM0.data[0] = *num_events;
@@ -110,14 +108,12 @@ void send_num_events(uint8_t * num_events)
                             CY_IPC_EP_CYPIPE_CM4_ADDR, 
                             &ipcMsgForCM0, CM4_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
-    if (result == CY_IPC_PIPE_SUCCESS)
-    {
-        printf("SUCCESS\r\n");
-    }
 }
 
 void send_event(uint16_t * event)
 {
+    while (rdyToRecvMsg == false) {};
+    rdyToRecvMsg = false;
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM0.type = EVENT;
     uint16_t entry;
@@ -133,9 +129,5 @@ void send_event(uint16_t * event)
                             CY_IPC_EP_CYPIPE_CM4_ADDR, 
                             &ipcMsgForCM0, CM4_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
-    if (result == CY_IPC_PIPE_SUCCESS)
-    {
-        printf("SUCCESS\r\n");
-    }
 }
 /* [] END OF FILE */

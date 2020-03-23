@@ -20,12 +20,7 @@
     #include "ring_buffer.h"
     #include <inttypes.h>
     
-    uint16_t result;
-    
-    ring_buf_t rbuf;
-    uint16_t arr[RING_BUF_LEN];
-    
-    uint16_t event[144];
+    uint16_t event[10][144];
     
     void voltage_monitor_init(void);
     void voltage_monitor_loop(void);

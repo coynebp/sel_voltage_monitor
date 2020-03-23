@@ -25,11 +25,11 @@
 */
 /* This array contains attribute handles for the defined Custom Services and their characteristics and descriptors.
    The array index definitions are located in the BLE_custom.h file. */
-static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
+static const cy_stc_ble_customs_t cy_ble_customs[0x03u] = {
 
-    /* Voltage Monitor service */
+    /* Meter service */
     {
-        0x0010u, /* Handle of the Voltage Monitor service */ 
+        0x0010u, /* Handle of the Meter service */ 
         {
 
             /* Current Voltage characteristic */
@@ -38,67 +38,413 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0013u, /* Handle of the Characteristic User Description descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
-
-            /* Event characteristic */
             {
-                0x0015u, /* Handle of the Event characteristic */ 
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0016u, /* Handle of the Characteristic User Description descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+        }, 
+    },
+
+    /* Event service */
+    {
+        0x0013u, /* Handle of the Event service */ 
+        {
+
+            /* ES_1_10 characteristic */
+            {
+                0x0015u, /* Handle of the ES_1_10 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    0x0016u, /* Handle of the Custom Descriptor descriptor */ 
+                }, 
+            },
+
+            /* ES_11_20 characteristic */
+            {
+                0x0018u, /* Handle of the ES_11_20 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_21_30 characteristic */
+            {
+                0x001Au, /* Handle of the ES_21_30 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_31_40 characteristic */
+            {
+                0x001Cu, /* Handle of the ES_31_40 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_41_50 characteristic */
+            {
+                0x001Eu, /* Handle of the ES_41_50 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_51_60 characteristic */
+            {
+                0x0020u, /* Handle of the ES_51_60 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_61_70 characteristic */
+            {
+                0x0022u, /* Handle of the ES_61_70 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_71_80 characteristic */
+            {
+                0x0024u, /* Handle of the ES_71_80 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_81_90 characteristic */
+            {
+                0x0026u, /* Handle of the ES_81_90 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_91_100 characteristic */
+            {
+                0x0028u, /* Handle of the ES_91_100 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_101_110 characteristic */
+            {
+                0x002Au, /* Handle of the ES_101_110 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_111_120 characteristic */
+            {
+                0x002Cu, /* Handle of the ES_111_120 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_121_130 characteristic */
+            {
+                0x002Eu, /* Handle of the ES_121_130 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_131_140 characteristic */
+            {
+                0x0030u, /* Handle of the ES_131_140 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+
+            /* ES_141_144 characteristic */
+            {
+                0x0032u, /* Handle of the ES_141_144 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+        }, 
+    },
+
+    /* Control service */
+    {
+        0x0033u, /* Handle of the Control service */ 
+        {
+
+            /* Trigger characteristic */
+            {
+                0x0035u, /* Handle of the Trigger characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
 
             /* Event Number characteristic */
             {
-                0x0018u, /* Handle of the Event Number characteristic */ 
+                0x0037u, /* Handle of the Event Number characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0019u, /* Handle of the Characteristic User Description descriptor */ 
-                }, 
-            },
-
-            /* Number of Events characteristic */
-            {
-                0x001Bu, /* Handle of the Number of Events characteristic */ 
-                
-                /* Array of Descriptors handles */
-                {
-                    0x001Cu, /* Handle of the Characteristic User Description descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
 
             /* Upper Threshold characteristic */
             {
-                0x001Eu, /* Handle of the Upper Threshold characteristic */ 
+                0x0039u, /* Handle of the Upper Threshold characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x001Fu, /* Handle of the Characteristic User Description descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
 
             /* Lower Threshold characteristic */
             {
-                0x0021u, /* Handle of the Lower Threshold characteristic */ 
+                0x003Bu, /* Handle of the Lower Threshold characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0022u, /* Handle of the Characteristic User Description descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
 
-            /* Trigger characteristic */
+            /* Number of Events characteristic */
             {
-                0x0024u, /* Handle of the Trigger characteristic */ 
+                0x003Du, /* Handle of the Number of Events characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0025u, /* Handle of the Characteristic User Description descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
+            {
+                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
         }, 

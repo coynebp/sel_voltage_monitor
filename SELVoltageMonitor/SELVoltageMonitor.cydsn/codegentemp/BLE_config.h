@@ -259,7 +259,7 @@ extern "C" {
 
 #define CY_BLE_ADV_PKT_0_INDEX_FLAGS   (0x00u)
 #define CY_BLE_ADV_PKT_0_INDEX_LOCAL_NAME   (0x03u)
-#define CY_BLE_ADV_PKT_0_INDEX_SERVICE_UUID_32   (0x18u)
+#define CY_BLE_ADV_PKT_0_INDEX_SERVICE_UUID_16   (0x10u)
 #define CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX   (0x00u)
 
 
@@ -275,8 +275,8 @@ extern "C" {
 #define CY_BLE_CONFIG_GATT_MTU                      (0x0017u)
 
 /** The GATT Maximum attribute length. */
-#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0120u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0025u)
+#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0014u)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x003Du)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x1Du)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x32u)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -363,13 +363,13 @@ extern "C" {
 
 /* CUSTOM */
 /** The maximum supported count of Custom services for the GATT Server role. */
-#define CY_BLE_CONFIG_CUSTOMS_SERVICE_COUNT         (0x01u)
+#define CY_BLE_CONFIG_CUSTOMS_SERVICE_COUNT         (0x03u)
 
 /** The maximum supported count of Custom services for the GATT Client role. */
 #define CY_BLE_CONFIG_CUSTOMC_SERVICE_COUNT         (0x00u)
 
 /** The maximum supported count of the Custom Service characteristics. */
-#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x07u)
+#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x0Fu)
 
 /** The maximum supported count of the Custom Service descriptors in one characteristic. */
 #define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
@@ -378,45 +378,83 @@ extern "C" {
  * Below are the indexes and handles of the defined Custom Services and 
  * their characteristics.
  */
-#define CY_BLE_VOLTAGE_MONITOR_SERVICE_INDEX   (0x00u) /* Index of Voltage Monitor service in the cy_ble_customs array */
-#define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHAR_INDEX   (0x00u) /* Index of Current Voltage characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHAR_INDEX   (0x01u) /* Index of Event characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHAR_INDEX   (0x02u) /* Index of Event Number characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHAR_INDEX   (0x03u) /* Index of Number of Events characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHAR_INDEX   (0x04u) /* Index of Upper Threshold characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHAR_INDEX   (0x05u) /* Index of Lower Threshold characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHAR_INDEX   (0x06u) /* Index of Trigger characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CY_BLE_METER_SERVICE_INDEX   (0x00u) /* Index of Meter service in the cy_ble_customs array */
+#define CY_BLE_METER_CURRENT_VOLTAGE_CHAR_INDEX   (0x00u) /* Index of Current Voltage characteristic */
+
+#define CY_BLE_EVENT_SERVICE_INDEX   (0x01u) /* Index of Event service in the cy_ble_customs array */
+#define CY_BLE_EVENT_ES_1_10_CHAR_INDEX   (0x00u) /* Index of ES_1_10 characteristic */
+#define CY_BLE_EVENT_ES_1_10_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_EVENT_ES_11_20_CHAR_INDEX   (0x01u) /* Index of ES_11_20 characteristic */
+#define CY_BLE_EVENT_ES_21_30_CHAR_INDEX   (0x02u) /* Index of ES_21_30 characteristic */
+#define CY_BLE_EVENT_ES_31_40_CHAR_INDEX   (0x03u) /* Index of ES_31_40 characteristic */
+#define CY_BLE_EVENT_ES_41_50_CHAR_INDEX   (0x04u) /* Index of ES_41_50 characteristic */
+#define CY_BLE_EVENT_ES_51_60_CHAR_INDEX   (0x05u) /* Index of ES_51_60 characteristic */
+#define CY_BLE_EVENT_ES_61_70_CHAR_INDEX   (0x06u) /* Index of ES_61_70 characteristic */
+#define CY_BLE_EVENT_ES_71_80_CHAR_INDEX   (0x07u) /* Index of ES_71_80 characteristic */
+#define CY_BLE_EVENT_ES_81_90_CHAR_INDEX   (0x08u) /* Index of ES_81_90 characteristic */
+#define CY_BLE_EVENT_ES_91_100_CHAR_INDEX   (0x09u) /* Index of ES_91_100 characteristic */
+#define CY_BLE_EVENT_ES_101_110_CHAR_INDEX   (0x0Au) /* Index of ES_101_110 characteristic */
+#define CY_BLE_EVENT_ES_111_120_CHAR_INDEX   (0x0Bu) /* Index of ES_111_120 characteristic */
+#define CY_BLE_EVENT_ES_121_130_CHAR_INDEX   (0x0Cu) /* Index of ES_121_130 characteristic */
+#define CY_BLE_EVENT_ES_131_140_CHAR_INDEX   (0x0Du) /* Index of ES_131_140 characteristic */
+#define CY_BLE_EVENT_ES_141_144_CHAR_INDEX   (0x0Eu) /* Index of ES_141_144 characteristic */
+
+#define CY_BLE_CONTROL_SERVICE_INDEX   (0x02u) /* Index of Control service in the cy_ble_customs array */
+#define CY_BLE_CONTROL_TRIGGER_CHAR_INDEX   (0x00u) /* Index of Trigger characteristic */
+#define CY_BLE_CONTROL_EVENT_NUMBER_CHAR_INDEX   (0x01u) /* Index of Event Number characteristic */
+#define CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_INDEX   (0x02u) /* Index of Upper Threshold characteristic */
+#define CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_INDEX   (0x03u) /* Index of Lower Threshold characteristic */
+#define CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_INDEX   (0x04u) /* Index of Number of Events characteristic */
 
 
-#define CY_BLE_VOLTAGE_MONITOR_SERVICE_HANDLE   (0x0010u) /* Handle of Voltage Monitor service */
-#define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_DECL_HANDLE   (0x0011u) /* Handle of Current Voltage characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHAR_HANDLE   (0x0012u) /* Handle of Current Voltage characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_CURRENT_VOLTAGE_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0013u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_DECL_HANDLE   (0x0014u) /* Handle of Event characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHAR_HANDLE   (0x0015u) /* Handle of Event characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_DECL_HANDLE   (0x0017u) /* Handle of Event Number characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHAR_HANDLE   (0x0018u) /* Handle of Event Number characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_EVENT_NUMBER_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0019u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_DECL_HANDLE   (0x001Au) /* Handle of Number of Events characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHAR_HANDLE   (0x001Bu) /* Handle of Number of Events characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_NUMBER_OF_EVENTS_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x001Cu) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_DECL_HANDLE   (0x001Du) /* Handle of Upper Threshold characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHAR_HANDLE   (0x001Eu) /* Handle of Upper Threshold characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_UPPER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x001Fu) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_DECL_HANDLE   (0x0020u) /* Handle of Lower Threshold characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHAR_HANDLE   (0x0021u) /* Handle of Lower Threshold characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_LOWER_THRESHOLD_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0022u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_DECL_HANDLE   (0x0023u) /* Handle of Trigger characteristic declaration */
-#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHAR_HANDLE   (0x0024u) /* Handle of Trigger characteristic */
-#define CY_BLE_VOLTAGE_MONITOR_TRIGGER_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0025u) /* Handle of Characteristic User Description descriptor */
+#define CY_BLE_METER_SERVICE_HANDLE   (0x0010u) /* Handle of Meter service */
+#define CY_BLE_METER_CURRENT_VOLTAGE_DECL_HANDLE   (0x0011u) /* Handle of Current Voltage characteristic declaration */
+#define CY_BLE_METER_CURRENT_VOLTAGE_CHAR_HANDLE   (0x0012u) /* Handle of Current Voltage characteristic */
+
+#define CY_BLE_EVENT_SERVICE_HANDLE   (0x0013u) /* Handle of Event service */
+#define CY_BLE_EVENT_ES_1_10_DECL_HANDLE   (0x0014u) /* Handle of ES_1_10 characteristic declaration */
+#define CY_BLE_EVENT_ES_1_10_CHAR_HANDLE   (0x0015u) /* Handle of ES_1_10 characteristic */
+#define CY_BLE_EVENT_ES_1_10_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0016u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_EVENT_ES_11_20_DECL_HANDLE   (0x0017u) /* Handle of ES_11_20 characteristic declaration */
+#define CY_BLE_EVENT_ES_11_20_CHAR_HANDLE   (0x0018u) /* Handle of ES_11_20 characteristic */
+#define CY_BLE_EVENT_ES_21_30_DECL_HANDLE   (0x0019u) /* Handle of ES_21_30 characteristic declaration */
+#define CY_BLE_EVENT_ES_21_30_CHAR_HANDLE   (0x001Au) /* Handle of ES_21_30 characteristic */
+#define CY_BLE_EVENT_ES_31_40_DECL_HANDLE   (0x001Bu) /* Handle of ES_31_40 characteristic declaration */
+#define CY_BLE_EVENT_ES_31_40_CHAR_HANDLE   (0x001Cu) /* Handle of ES_31_40 characteristic */
+#define CY_BLE_EVENT_ES_41_50_DECL_HANDLE   (0x001Du) /* Handle of ES_41_50 characteristic declaration */
+#define CY_BLE_EVENT_ES_41_50_CHAR_HANDLE   (0x001Eu) /* Handle of ES_41_50 characteristic */
+#define CY_BLE_EVENT_ES_51_60_DECL_HANDLE   (0x001Fu) /* Handle of ES_51_60 characteristic declaration */
+#define CY_BLE_EVENT_ES_51_60_CHAR_HANDLE   (0x0020u) /* Handle of ES_51_60 characteristic */
+#define CY_BLE_EVENT_ES_61_70_DECL_HANDLE   (0x0021u) /* Handle of ES_61_70 characteristic declaration */
+#define CY_BLE_EVENT_ES_61_70_CHAR_HANDLE   (0x0022u) /* Handle of ES_61_70 characteristic */
+#define CY_BLE_EVENT_ES_71_80_DECL_HANDLE   (0x0023u) /* Handle of ES_71_80 characteristic declaration */
+#define CY_BLE_EVENT_ES_71_80_CHAR_HANDLE   (0x0024u) /* Handle of ES_71_80 characteristic */
+#define CY_BLE_EVENT_ES_81_90_DECL_HANDLE   (0x0025u) /* Handle of ES_81_90 characteristic declaration */
+#define CY_BLE_EVENT_ES_81_90_CHAR_HANDLE   (0x0026u) /* Handle of ES_81_90 characteristic */
+#define CY_BLE_EVENT_ES_91_100_DECL_HANDLE   (0x0027u) /* Handle of ES_91_100 characteristic declaration */
+#define CY_BLE_EVENT_ES_91_100_CHAR_HANDLE   (0x0028u) /* Handle of ES_91_100 characteristic */
+#define CY_BLE_EVENT_ES_101_110_DECL_HANDLE   (0x0029u) /* Handle of ES_101_110 characteristic declaration */
+#define CY_BLE_EVENT_ES_101_110_CHAR_HANDLE   (0x002Au) /* Handle of ES_101_110 characteristic */
+#define CY_BLE_EVENT_ES_111_120_DECL_HANDLE   (0x002Bu) /* Handle of ES_111_120 characteristic declaration */
+#define CY_BLE_EVENT_ES_111_120_CHAR_HANDLE   (0x002Cu) /* Handle of ES_111_120 characteristic */
+#define CY_BLE_EVENT_ES_121_130_DECL_HANDLE   (0x002Du) /* Handle of ES_121_130 characteristic declaration */
+#define CY_BLE_EVENT_ES_121_130_CHAR_HANDLE   (0x002Eu) /* Handle of ES_121_130 characteristic */
+#define CY_BLE_EVENT_ES_131_140_DECL_HANDLE   (0x002Fu) /* Handle of ES_131_140 characteristic declaration */
+#define CY_BLE_EVENT_ES_131_140_CHAR_HANDLE   (0x0030u) /* Handle of ES_131_140 characteristic */
+#define CY_BLE_EVENT_ES_141_144_DECL_HANDLE   (0x0031u) /* Handle of ES_141_144 characteristic declaration */
+#define CY_BLE_EVENT_ES_141_144_CHAR_HANDLE   (0x0032u) /* Handle of ES_141_144 characteristic */
+
+#define CY_BLE_CONTROL_SERVICE_HANDLE   (0x0033u) /* Handle of Control service */
+#define CY_BLE_CONTROL_TRIGGER_DECL_HANDLE   (0x0034u) /* Handle of Trigger characteristic declaration */
+#define CY_BLE_CONTROL_TRIGGER_CHAR_HANDLE   (0x0035u) /* Handle of Trigger characteristic */
+#define CY_BLE_CONTROL_EVENT_NUMBER_DECL_HANDLE   (0x0036u) /* Handle of Event Number characteristic declaration */
+#define CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE   (0x0037u) /* Handle of Event Number characteristic */
+#define CY_BLE_CONTROL_UPPER_THRESHOLD_DECL_HANDLE   (0x0038u) /* Handle of Upper Threshold characteristic declaration */
+#define CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE   (0x0039u) /* Handle of Upper Threshold characteristic */
+#define CY_BLE_CONTROL_LOWER_THRESHOLD_DECL_HANDLE   (0x003Au) /* Handle of Lower Threshold characteristic declaration */
+#define CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE   (0x003Bu) /* Handle of Lower Threshold characteristic */
+#define CY_BLE_CONTROL_NUMBER_OF_EVENTS_DECL_HANDLE   (0x003Cu) /* Handle of Number of Events characteristic declaration */
+#define CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_HANDLE   (0x003Du) /* Handle of Number of Events characteristic */
 
 
 

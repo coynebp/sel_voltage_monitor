@@ -15,13 +15,17 @@
     #define IPC_CM0P_H
     #include "project.h"
     #include "ipc_shared.h"
-    #include "ble_monitor.h"
+    #include "bluetooth.h"
     #include <stdint.h>
     volatile bool rdyToRecvMsg;
     ipc_msg_t ipcMsgForCM4;
     
     void CM0_MessageCallback(uint32_t *msg);
     void CM0_ReleaseCallback(void);
+    
+    void send_threshold(uint8_t * threshold, uint8_t upper_or_lower);
+    void send_trigger(void);
+    void send_event_num(uint8_t * event_num);
     
 #endif
 /* [] END OF FILE */

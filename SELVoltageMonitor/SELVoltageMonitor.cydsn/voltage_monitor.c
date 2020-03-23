@@ -13,35 +13,28 @@
 #include "voltage_monitor.h"
 
 void voltage_monitor_init(void)
-{
+{     
     UART_Start();
     setvbuf ( stdin, NULL, _IONBF, 0);
     printf("Started UART\r\n");
     
-    cy_en_ipc_pipe_status_t result;
+    Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
+                                 CM4_MessageCallback,
+                                 IPC_CM0_TO_CM4_CLIENT_ID);
     
-    result = Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
-                             CM4_MessageCallback,
-                             IPC_CM0_TO_CM4_CLIENT_ID);
-
-    rbuf.maxlen = RING_BUF_LEN;
-    rbuf.buffer = arr;
-    rbuf.head = 0;
-    for (int i = 0; i < RING_BUF_LEN; ++i)
+    for (uint8_t i = 0; i < 10; ++i)
     {
-        rbuf.buffer[i] = 2;
-    }
-
-    for (int j = 0; j < 144; ++j)
-    {
-        event[j] = 0x1234;
+        for (uint8_t j = 0; j < 144; ++j)
+        {
+            event[i][j] = j + i + 1;
+        }
     }
     
-    uint8_t event_num = 5;
-    uint8_t num_events = 7;
-    uint16_t voltage = 0x0123;
+    uint8_t event_num = 0x01;
+    uint8_t num_events = 0x0A;
+    uint16_t voltage = 0x3456;
     
-    send_event(event);
+    send_event(event[0]);
     send_event_num(&event_num);
     send_num_events(&num_events);
     send_voltage(&voltage);

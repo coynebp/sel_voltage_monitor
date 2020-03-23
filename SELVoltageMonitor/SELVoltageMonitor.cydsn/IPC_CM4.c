@@ -27,19 +27,19 @@ void CM4_MessageCallback(uint32_t *msg)
     uint32_t type;
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
     uint16_t threshold;
+    uint8_t num;
     if (msgPtr != NULL)
     {
         type = msgPtr->type;
         switch (type)
         {
             case EVENT_NUM:
-                printf("Event Number: %" PRIx8, msgPtr->data[0]);
+                num = msgPtr->data[0];
+                printf("Event Number: %" PRIx8, num);
                 printf("\r\n");
                 break;
             case UPPER_THRESHOLD:
-                threshold = msgPtr->data[1];
-                threshold = threshold <<8;
-                threshold += msgPtr->data[0];
+                threshold = msgPtr->data[0] + 256 * msgPtr->data[1];
                 printf("New Upper Threshold: %" PRIx16, threshold);
                 printf("\r\n");
                 break;
@@ -75,8 +75,8 @@ void send_voltage(uint16_t * voltage)
     do
     {
     result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM0_ADDR, 
-                            CY_IPC_EP_CYPIPE_CM4_ADDR, 
-                            &ipcMsgForCM0, CM4_ReleaseCallback);
+                                     CY_IPC_EP_CYPIPE_CM4_ADDR, 
+                                     &ipcMsgForCM0, CM4_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
 }
 
@@ -90,8 +90,8 @@ void send_event_num(uint8_t * event_num)
     do
     {
     result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM0_ADDR, 
-                            CY_IPC_EP_CYPIPE_CM4_ADDR, 
-                            &ipcMsgForCM0, CM4_ReleaseCallback);
+                                     CY_IPC_EP_CYPIPE_CM4_ADDR, 
+                                     &ipcMsgForCM0, CM4_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
 }
 

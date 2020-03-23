@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   23              		.thumb_func
   24              		.type	main, %function
   25              	main:
-  26              	.LFB436:
+  26              	.LFB437:
   27              		.file 1 "main_cm0p.c"
    1:main_cm0p.c   **** /* ========================================
    2:main_cm0p.c   ****  *
@@ -40,7 +40,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   10:main_cm0p.c   ****  *
   11:main_cm0p.c   ****  * ========================================
   12:main_cm0p.c   **** */
-  13:main_cm0p.c   **** #include "ble_monitor.h"
+  13:main_cm0p.c   **** #include "bluetooth.h"
   14:main_cm0p.c   **** 
   15:main_cm0p.c   **** int main(void)
   16:main_cm0p.c   **** {
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   39              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
    1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
    2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 2
 
 
    3:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @brief    CMSIS compiler GCC header file
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   struct __attribute__((packed)) T_UINT32 { uint32_t v; };
   58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic pop
   59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __UNALIGNED_UINT32(x)     (((struct T_UINT32 *)(x))->v)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 3
 
 
   60:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   22:main_cm0p.c   ****     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
   60              		.loc 1 22 0
   61 0010 084B     		ldr	r3, .L5+4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 4
 
 
   62 0012 1B78     		ldrb	r3, [r3]
@@ -193,21 +193,22 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   67 001a FFF7FEFF 		bl	Cy_SysEnableCM4
   68              	.LVL2:
   29:main_cm0p.c   ****     
-  30:main_cm0p.c   ****     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
-  69              		.loc 1 30 0
+  30:main_cm0p.c   ****     /* Register the IPC Callback Function.*/
+  31:main_cm0p.c   ****     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
+  69              		.loc 1 31 0
   70 001e 0122     		movs	r2, #1
   71 0020 0649     		ldr	r1, .L5+12
   72 0022 0020     		movs	r0, #0
   73 0024 FFF7FEFF 		bl	Cy_IPC_Pipe_RegisterCallback
   74              	.LVL3:
   75              	.L4:
-  31:main_cm0p.c   ****                          CM0_MessageCallback,
-  32:main_cm0p.c   ****                          IPC_CM4_TO_CM0_CLIENT_ID);
-  33:main_cm0p.c   **** 
-  34:main_cm0p.c   ****     for(;;)
-  35:main_cm0p.c   ****     {
-  36:main_cm0p.c   ****         Cy_BLE_ProcessEvents();
-  76              		.loc 1 36 0 discriminator 1
+  32:main_cm0p.c   ****                          CM0_MessageCallback,
+  33:main_cm0p.c   ****                          IPC_CM4_TO_CM0_CLIENT_ID);
+  34:main_cm0p.c   **** 
+  35:main_cm0p.c   ****     for(;;)
+  36:main_cm0p.c   ****     {
+  37:main_cm0p.c   ****         Cy_BLE_ProcessEvents();
+  76              		.loc 1 37 0 discriminator 1
   77 0028 FFF7FEFF 		bl	Cy_BLE_ProcessEvents
   78              	.LVL4:
   79 002c FCE7     		b	.L4
@@ -219,7 +220,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
   85 0038 00000810 		.word	268959744
   86 003c 00000000 		.word	CM0_MessageCallback
   87              		.cfi_endproc
-  88              	.LFE436:
+  88              	.LFE437:
   89              		.size	main, .-main
   90              		.comm	ipcMsgForCM4,296,4
   91              		.comm	rdyToRecvMsg,1,1
@@ -237,10 +238,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  103              		.file 12 "Generated_Source\\PSoC6/UART.h"
  104              		.file 13 "ipc_cm0p.h"
  105              		.file 14 "Generated_Source\\PSoC6/BLE.h"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 5
+
+
  106              		.file 15 "./system_psoc63.h"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 5
-
-
  107              		.file 16 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/ipc/cy_ipc_pipe.h"
  108              		.section	.debug_info,"",%progbits
  109              	.Ldebug_info0:
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  160 006c AA080000 		.4byte	.LASF8
  161 0070 02       		.uleb128 0x2
  162 0071 08       		.byte	0x8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 6
+
+
  163 0072 05       		.byte	0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 6
-
-
  164 0073 E2020000 		.4byte	.LASF9
  165 0077 02       		.uleb128 0x2
  166 0078 08       		.byte	0x8
@@ -357,10 +358,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  217 00d8 01       		.byte	0x1
  218 00d9 02       		.byte	0x2
  219 00da 670F0000 		.4byte	.LASF20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 7
+
+
  220 00de 07       		.uleb128 0x7
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 7
-
-
  221 00df 04       		.byte	0x4
  222 00e0 E4000000 		.4byte	0xe4
  223 00e4 08       		.uleb128 0x8
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  274 0154 5002     		.2byte	0x250
  275 0156 B4000000 		.4byte	0xb4
  276 015a 14       		.byte	0x14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 8
+
+
  277 015b 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 8
-
-
  278 015c EA130000 		.4byte	.LASF28
  279 0160 05       		.byte	0x5
  280 0161 5202     		.2byte	0x252
@@ -477,10 +478,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  331 01d0 0D       		.uleb128 0xd
  332 01d1 01       		.byte	0x1
  333 01d2 2C000000 		.4byte	0x2c
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 9
+
+
  334 01d6 06       		.byte	0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 9
-
-
  335 01d7 0504     		.2byte	0x405
  336 01d9 F6010000 		.4byte	0x1f6
  337 01dd 0E       		.uleb128 0xe
@@ -537,10 +538,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  388 0247 A2000000 		.4byte	0xa2
  389 024b 10       		.byte	0x10
  390 024c 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 10
+
+
  391 024d 94140000 		.4byte	.LASF47
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 10
-
-
  392 0251 06       		.byte	0x6
  393 0252 FB04     		.2byte	0x4fb
  394 0254 F6010000 		.4byte	0x1f6
@@ -597,10 +598,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  445 02c2 71110000 		.4byte	.LASF56
  446 02c6 06       		.byte	0x6
  447 02c7 0405     		.2byte	0x504
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 11
+
+
  448 02c9 A2000000 		.4byte	0xa2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 11
-
-
  449 02cd 74       		.byte	0x74
  450 02ce 00       		.byte	0
  451 02cf 10       		.uleb128 0x10
@@ -657,10 +658,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  502 0344 12       		.uleb128 0x12
  503 0345 C4070000 		.4byte	.LASF69
  504 0349 0420     		.2byte	0x2004
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 12
+
+
  505 034b 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 12
-
-
  506 034c 19170000 		.4byte	.LASF70
  507 0350 0520     		.2byte	0x2005
  508 0352 12       		.uleb128 0x12
@@ -717,10 +718,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  559 03c9 12       		.uleb128 0x12
  560 03ca CA060000 		.4byte	.LASF88
  561 03ce 1720     		.2byte	0x2017
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 13
+
+
  562 03d0 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 13
-
-
  563 03d1 EF040000 		.4byte	.LASF89
  564 03d5 0030     		.2byte	0x3000
  565 03d7 12       		.uleb128 0x12
@@ -777,10 +778,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  616 044e 12       		.uleb128 0x12
  617 044f AD0E0000 		.4byte	.LASF107
  618 0453 1630     		.2byte	0x3016
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 14
+
+
  619 0455 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 14
-
-
  620 0456 00090000 		.4byte	.LASF108
  621 045a 1730     		.2byte	0x3017
  622 045c 12       		.uleb128 0x12
@@ -837,10 +838,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  673 04d3 12       		.uleb128 0x12
  674 04d4 E60C0000 		.4byte	.LASF126
  675 04d8 1040     		.2byte	0x4010
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 15
+
+
  676 04da 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 15
-
-
  677 04db 7E0B0000 		.4byte	.LASF127
  678 04df 1140     		.2byte	0x4011
  679 04e1 12       		.uleb128 0x12
@@ -897,10 +898,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  730 0558 12       		.uleb128 0x12
  731 0559 88030000 		.4byte	.LASF145
  732 055d 0850     		.2byte	0x5008
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 16
+
+
  733 055f 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 16
-
-
  734 0560 86040000 		.4byte	.LASF146
  735 0564 0950     		.2byte	0x5009
  736 0566 12       		.uleb128 0x12
@@ -957,10 +958,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  787 05dd 12       		.uleb128 0x12
  788 05de 39050000 		.4byte	.LASF164
  789 05e2 0260     		.2byte	0x6002
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 17
+
+
  790 05e4 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 17
-
-
  791 05e5 620C0000 		.4byte	.LASF165
  792 05e9 0360     		.2byte	0x6003
  793 05eb 12       		.uleb128 0x12
@@ -1017,10 +1018,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  844 065a 09       		.byte	0x9
  845 065b 69       		.byte	0x69
  846 065c 73060000 		.4byte	0x673
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 18
+
+
  847 0660 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 18
-
-
  848 0661 040A0000 		.4byte	.LASF177
  849 0665 00       		.byte	0
  850 0666 0E       		.uleb128 0xe
@@ -1077,10 +1078,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  901 06cc 0E       		.uleb128 0xe
  902 06cd 6E070000 		.4byte	.LASF189
  903 06d1 03       		.byte	0x3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 19
+
+
  904 06d2 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 19
-
-
  905 06d3 67060000 		.4byte	.LASF190
  906 06d7 04       		.byte	0x4
  907 06d8 0E       		.uleb128 0xe
@@ -1137,10 +1138,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  958 073b 07       		.uleb128 0x7
  959 073c 04       		.byte	0x4
  960 073d 41070000 		.4byte	0x741
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 20
+
+
  961 0741 16       		.uleb128 0x16
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 20
-
-
  962 0742 DF020000 		.4byte	0x2df
  963 0746 03       		.uleb128 0x3
  964 0747 3C150000 		.4byte	.LASF200
@@ -1197,10 +1198,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1015 07af 51070000 		.4byte	0x751
  1016 07b3 19       		.uleb128 0x19
  1017 07b4 FE000000 		.4byte	.LASF224
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 21
+
+
  1018 07b8 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 21
-
-
  1019 07b9 53       		.byte	0x53
  1020 07ba 03       		.byte	0x3
  1021 07bb 1A       		.uleb128 0x1a
@@ -1208,8 +1209,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1023 07c0 01       		.byte	0x1
  1024 07c1 0F       		.byte	0xf
  1025 07c2 7E000000 		.4byte	0x7e
- 1026 07c6 00000000 		.4byte	.LFB436
- 1027 07ca 40000000 		.4byte	.LFE436-.LFB436
+ 1026 07c6 00000000 		.4byte	.LFB437
+ 1027 07ca 40000000 		.4byte	.LFE437-.LFB437
  1028 07ce 01       		.uleb128 0x1
  1029 07cf 9C       		.byte	0x9c
  1030 07d0 2E080000 		.4byte	0x82e
@@ -1257,10 +1258,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1072 082d 00       		.byte	0
  1073 082e 1F       		.uleb128 0x1f
  1074 082f 70040000 		.4byte	.LASF206
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 22
+
+
  1075 0833 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 22
-
-
  1076 0834 1B02     		.2byte	0x21b
  1077 0836 73060000 		.4byte	0x673
  1078 083a 1F       		.uleb128 0x1f
@@ -1317,10 +1318,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1129 08b1 16       		.uleb128 0x16
  1130 08b2 46070000 		.4byte	0x746
  1131 08b6 1F       		.uleb128 0x1f
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 23
+
+
  1132 08b7 BD090000 		.4byte	.LASF213
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 23
-
-
  1133 08bb 0A       		.byte	0xa
  1134 08bc 6401     		.2byte	0x164
  1135 08be C2080000 		.4byte	0x8c2
@@ -1377,10 +1378,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1186 0009 1B       		.uleb128 0x1b
  1187 000a 0E       		.uleb128 0xe
  1188 000b 55       		.uleb128 0x55
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 24
+
+
  1189 000c 17       		.uleb128 0x17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 24
-
-
  1190 000d 11       		.uleb128 0x11
  1191 000e 01       		.uleb128 0x1
  1192 000f 10       		.uleb128 0x10
@@ -1437,10 +1438,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1243 0042 00       		.byte	0
  1244 0043 00       		.byte	0
  1245 0044 07       		.uleb128 0x7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 25
+
+
  1246 0045 0F       		.uleb128 0xf
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 25
-
-
  1247 0046 00       		.byte	0
  1248 0047 0B       		.uleb128 0xb
  1249 0048 0B       		.uleb128 0xb
@@ -1497,10 +1498,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1300 007b 00       		.byte	0
  1301 007c 03       		.uleb128 0x3
  1302 007d 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 26
+
+
  1303 007e 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 26
-
-
  1304 007f 0B       		.uleb128 0xb
  1305 0080 3B       		.uleb128 0x3b
  1306 0081 05       		.uleb128 0x5
@@ -1557,10 +1558,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1357 00b4 00       		.byte	0
  1358 00b5 00       		.byte	0
  1359 00b6 11       		.uleb128 0x11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 27
+
+
  1360 00b7 21       		.uleb128 0x21
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 27
-
-
  1361 00b8 00       		.byte	0
  1362 00b9 49       		.uleb128 0x49
  1363 00ba 13       		.uleb128 0x13
@@ -1617,10 +1618,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1414 00ed 49       		.uleb128 0x49
  1415 00ee 13       		.uleb128 0x13
  1416 00ef 38       		.uleb128 0x38
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 28
+
+
  1417 00f0 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 28
-
-
  1418 00f1 00       		.byte	0
  1419 00f2 00       		.byte	0
  1420 00f3 16       		.uleb128 0x16
@@ -1677,10 +1678,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1471 0126 3A       		.uleb128 0x3a
  1472 0127 0B       		.uleb128 0xb
  1473 0128 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 29
+
+
  1474 0129 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 29
-
-
  1475 012a 27       		.uleb128 0x27
  1476 012b 19       		.uleb128 0x19
  1477 012c 49       		.uleb128 0x49
@@ -1737,10 +1738,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1528 0165 1E       		.uleb128 0x1e
  1529 0166 8A8201   		.uleb128 0x410a
  1530 0169 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 30
+
+
  1531 016a 02       		.uleb128 0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 30
-
-
  1532 016b 18       		.uleb128 0x18
  1533 016c 9142     		.uleb128 0x2111
  1534 016e 18       		.uleb128 0x18
@@ -1797,10 +1798,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1585 01a1 18       		.uleb128 0x18
  1586 01a2 00       		.byte	0
  1587 01a3 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 31
+
+
  1588 01a4 22       		.uleb128 0x22
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 31
-
-
  1589 01a5 2E       		.uleb128 0x2e
  1590 01a6 00       		.byte	0
  1591 01a7 3F       		.uleb128 0x3f
@@ -1843,24 +1844,24 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1628 000b 00       		.byte	0
  1629 000c 0000     		.2byte	0
  1630 000e 0000     		.2byte	0
- 1631 0010 00000000 		.4byte	.LFB436
- 1632 0014 40000000 		.4byte	.LFE436-.LFB436
+ 1631 0010 00000000 		.4byte	.LFB437
+ 1632 0014 40000000 		.4byte	.LFE437-.LFB437
  1633 0018 00000000 		.4byte	0
  1634 001c 00000000 		.4byte	0
  1635              		.section	.debug_ranges,"",%progbits
  1636              	.Ldebug_ranges0:
- 1637 0000 00000000 		.4byte	.LFB436
- 1638 0004 40000000 		.4byte	.LFE436
+ 1637 0000 00000000 		.4byte	.LFB437
+ 1638 0004 40000000 		.4byte	.LFE437
  1639 0008 00000000 		.4byte	0
  1640 000c 00000000 		.4byte	0
  1641              		.section	.debug_line,"",%progbits
  1642              	.Ldebug_line0:
  1643 0000 15030000 		.section	.debug_str,"MS",%progbits,1
  1643      0200EB02 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 32
+
+
  1643      00000201 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 32
-
-
  1643      FB0E0D00 
  1643      01010101 
  1644              	.LASF114:
@@ -1917,10 +1918,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1664              	.LASF176:
  1665 00e5 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
  1665      74635F62 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 33
+
+
  1665      6C655F63 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 33
-
-
  1665      6F6E6E5F 
  1665      68616E64 
  1666              	.LASF224:
@@ -1977,10 +1978,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1686              	.LASF201:
  1687 01d8 636C6965 		.ascii	"clientId\000"
  1687      6E744964 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 34
+
+
  1687      00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 34
-
-
  1688              	.LASF182:
  1689 01e1 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
  1689      4C455F41 
@@ -2037,10 +2038,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1705      41505F52 
  1705      45534F4C 
  1706              	.LASF36:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 35
+
+
  1707 0323 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 35
-
-
  1707      74635F73 
  1707      63625F75 
  1707      6172745F 
@@ -2097,10 +2098,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1725      56545F47 
  1725      41505F43 
  1725      52454154 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 36
+
+
  1726              	.LASF206:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 36
-
-
  1727 0470 63795F62 		.ascii	"cy_ble_state\000"
  1727      6C655F73 
  1727      74617465 
@@ -2157,10 +2158,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1745      56545F47 
  1745      41505F4B 
  1745      45595052 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 37
+
+
  1746              	.LASF102:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 37
-
-
  1747 0591 43595F42 		.ascii	"CY_BLE_EVT_SET_SLAVE_LATENCY_MODE_COMPLETE\000"
  1747      4C455F45 
  1747      56545F53 
@@ -2217,10 +2218,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1766              	.LASF179:
  1767 0691 43595F42 		.ascii	"CY_BLE_STATE_ON\000"
  1767      4C455F53 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 38
+
+
  1767      54415445 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 38
-
-
  1767      5F4F4E00 
  1768              	.LASF67:
  1769 06a1 43595F42 		.ascii	"CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE\000"
@@ -2277,10 +2278,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1788              	.LASF143:
  1789 07a2 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
  1789      4C455F45 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 39
+
+
  1789      56545F47 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 39
-
-
  1789      41545443 
  1789      5F524541 
  1790              	.LASF69:
@@ -2337,10 +2338,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1807      53544154 
  1807      455F434C 
  1808              	.LASF215:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 40
+
+
  1809 08e6 6970634D 		.ascii	"ipcMsgForCM4\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 40
-
-
  1809      7367466F 
  1809      72434D34 
  1809      00
@@ -2397,10 +2398,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1828              	.LASF46:
  1829 09ce 72616E67 		.ascii	"rangeThres\000"
  1829      65546872 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 41
+
+
  1829      657300
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 41
-
-
  1830              	.LASF209:
  1831 09d9 63795F62 		.ascii	"cy_ble_connState\000"
  1831      6C655F63 
@@ -2457,10 +2458,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1849      45545F54 
  1849      585F5057 
  1850              	.LASF0:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 42
+
+
  1851 0abb 73686F72 		.ascii	"short int\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 42
-
-
  1851      7420696E 
  1851      7400
  1852              	.LASF109:
@@ -2517,10 +2518,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1871      56545F47 
  1871      41545443 
  1871      5F48414E 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 43
+
+
  1872              	.LASF15:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 43
-
-
  1873 0bc2 73697A65 		.ascii	"sizetype\000"
  1873      74797065 
  1873      00
@@ -2577,10 +2578,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1891      56545F53 
  1891      5441434B 
  1891      5F425553 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 44
+
+
  1892              	.LASF55:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 44
-
-
  1893 0cd8 636F6E66 		.ascii	"configRouting\000"
  1893      6967526F 
  1893      7574696E 
@@ -2637,10 +2638,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1911      56545F41 
  1911      44445F44 
  1911      45564943 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 45
+
+
  1912              	.LASF91:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 45
-
-
  1913 0dff 43595F42 		.ascii	"CY_BLE_EVT_SET_DEVICE_ADDR_COMPLETE\000"
  1913      4C455F45 
  1913      56545F53 
@@ -2697,10 +2698,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1931      5472616E 
  1931      736D6974 
  1931      00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 46
+
+
  1932              	.LASF64:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 46
-
-
  1933 0f2e 43595F42 		.ascii	"CY_BLE_EVT_FLASH_CORRUPT\000"
  1933      4C455F45 
  1933      56545F46 
@@ -2757,10 +2758,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1953      554D4552 
  1954              	.LASF103:
  1955 1012 43595F42 		.ascii	"CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 47
+
+
  1955      4C455F45 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 47
-
-
  1955      56545F53 
  1955      5441434B 
  1955      5F534855 
@@ -2817,10 +2818,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1973      33325F74 
  1973      00
  1974              	.LASF110:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 48
+
+
  1975 114c 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 48
-
-
  1975      4C455F45 
  1975      56545F47 
  1975      4150435F 
@@ -2877,10 +2878,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  1995      61736857 
  1996              	.LASF180:
  1997 123e 63795F65 		.ascii	"cy_en_ble_state_t\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 49
+
+
  1997      6E5F626C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 49
-
-
  1997      655F7374 
  1997      6174655F 
  1997      7400
@@ -2937,10 +2938,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  2019      625F7561 
  2019      72745F68 
  2019      616E646C 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 50
+
+
  2020              	.LASF59:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 50
-
-
  2021 1335 43595F42 		.ascii	"CY_BLE_EVT_STACK_ON\000"
  2021      4C455F45 
  2021      56545F53 
@@ -2997,10 +2998,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  2040 1441 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
  2040      4C455F45 
  2040      56545F4C 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 51
+
+
  2040      32434150 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 51
-
-
  2040      5F434246 
  2041              	.LASF135:
  2042 1466 43595F42 		.ascii	"CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE\000"
@@ -3057,10 +3058,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  2060      4E464947 
  2060      5F535452 
  2060      55435400 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 52
+
+
  2061              	.LASF171:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 52
-
-
  2062 1550 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
  2062      4C455F45 
  2062      56545F4C 
@@ -3117,10 +3118,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 1
  2080      61736500 
  2081              	.LASF174:
  2082 1657 62644861 		.ascii	"bdHandle\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccXmUTz0.s 			page 53
+
+
  2082      6E646C65 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccusKyWh.s 			page 53
-
-
  2082      00
  2083              	.LASF22:
  2084 1660 74785374 		.ascii	"txStatus\000"

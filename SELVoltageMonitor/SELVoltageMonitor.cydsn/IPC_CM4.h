@@ -15,6 +15,7 @@
     #define IPC_CM4_H
     
     #include "project.h"
+    #include "voltage_monitor.h"
     #include "ipc_shared.h"
     #include <stdio.h>
     #include <stdlib.h>

@@ -1,5 +1,5 @@
 -- Project:   SELVoltageMonitor
--- Generated: 03/22/2020 15:55:54
+-- Generated: 03/22/2020 20:05:07
 -- PSoC Creator  4.2
 
 ENTITY SELVoltageMonitor IS
@@ -8,6 +8,7 @@ ENTITY SELVoltageMonitor IS
         \UART:tx(0)_PAD\ : OUT std_ulogic;
         \UART:rx(0)_PAD\ : IN std_ulogic);
     ATTRIBUTE voltage_VBACKUP OF __DEFAULT__ : ENTITY IS 3.3e0;
+    ATTRIBUTE voltage_VDD_NS OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_CSD OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_A OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 3.3e0;
@@ -16,7 +17,9 @@ ENTITY SELVoltageMonitor IS
     ATTRIBUTE voltage_VDDIO_0 OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_0_RCV OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_1 OF __DEFAULT__ : ENTITY IS 3.3e0;
-    ATTRIBUTE voltage_VDD_NS OF __DEFAULT__ : ENTITY IS 3.3e0;
+    ATTRIBUTE voltage_VDDR_HVL_2 OF __DEFAULT__ : ENTITY IS 3.3e0;
+    ATTRIBUTE voltage_VDDR_HVL_3 OF __DEFAULT__ : ENTITY IS 3.3e0;
+    ATTRIBUTE voltage_vddd OF __DEFAULT__ : ENTITY IS 3.3e0;
 END SELVoltageMonitor;
 
 ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
@@ -100,7 +103,7 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     ATTRIBUTE lib_model OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "P6[6]";
     ATTRIBUTE lib_model OF Connection_LED(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Connection_LED(0) : LABEL IS "P10[5]";
+    ATTRIBUTE Location OF Connection_LED(0) : LABEL IS "P1[1]";
     ATTRIBUTE lib_model OF \UART:tx(0)\ : LABEL IS "iocell4";
     ATTRIBUTE Location OF \UART:tx(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE lib_model OF \UART:rx(0)\ : LABEL IS "iocell5";

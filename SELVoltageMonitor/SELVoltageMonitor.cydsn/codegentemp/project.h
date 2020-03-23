@@ -14,7 +14,7 @@
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#include "cyble_416045_02.h"
+#include "cy8c6347bzi_bld53.h"
 #include "sysint/cy_sysint.h"
 #include "ipc/cy_ipc_drv.h"
 #include "ipc/cy_ipc_sema.h"
@@ -94,7 +94,7 @@
 #include "psoc63_config.h"
 #include "cy_device_headers.h"
 #if ((__CORTEX_M == 0) || (__CORTEX_M == 4))
-    #include "gpio_psoc63_43_smt.h"
+    #include "gpio_psoc63_116_bga_ble.h"
 #endif /*(__CORTEX_M == 0) || (__CORTEX_M == 4)*/
 #include "cyip_sflash.h"
 #include "cyip_peri.h"

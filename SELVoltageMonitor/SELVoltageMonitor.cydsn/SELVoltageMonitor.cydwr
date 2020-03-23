@@ -623,7 +623,7 @@
     </Group>
     <Group key="a61270bc-07ec-447d-ac9e-34cfe85c30e9">
       <Group key="0">
-        <Data key="Port Format" value="10,5" />
+        <Data key="Port Format" value="1,1" />
       </Group>
     </Group>
     <Group key="bada9d75-aedb-412e-976e-3b8fbd3a5f0d/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f">
@@ -644,6 +644,7 @@
   <Group key="System3">
     <Data key="CYDEV_CONFIG_UNUSED_IO" value="AllowButWarn" />
     <Data key="CYDEV_CONFIGURATION_MODE" value="COMPRESSED" />
+    <Data key="CYDEV_CPUSS0_TRACE_CLOCK" value="P70" />
     <Data key="CYDEV_CPUSS0_TRACE_DATA0" value="P77" />
     <Data key="CYDEV_CPUSS0_TRACE_DATA1" value="P92" />
     <Data key="CYDEV_CPUSS0_TRACE_DATA2" value="P91" />
@@ -660,5 +661,11 @@
     <Data key="CYDEV_VBAC_SUPPLY" value="VDDD" />
     <Data key="CYDEV_VBACKUP" value="3.3" />
     <Data key="CYDEV_VDD" value="3.3" />
+    <Data key="CYDEV_VDD_NS" value="3.3" />
+    <Data key="CYDEV_VDDA" value="3.3" />
+    <Data key="CYDEV_VDDD" value="3.3" />
+    <Data key="CYDEV_VDDIO0" value="3.3" />
+    <Data key="CYDEV_VDDIO1" value="3.3" />
+    <Data key="CYDEV_VDDR_HVL" value="3.3" />
   </Group>
 </DesignWideResources>

@@ -91,8 +91,8 @@
 #define Connection_LED_0_INIT_MUXSEL 0u
 #define Connection_LED_0_INPUT_SYNC 2u
 #define Connection_LED_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Connection_LED_0_NUM 5u
-#define Connection_LED_0_PORT GPIO_PRT10
+#define Connection_LED_0_NUM 1u
+#define Connection_LED_0_PORT GPIO_PRT1
 #define Connection_LED_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Connection_LED_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
 #define Connection_LED_DRIVEMODE CY_GPIO_DM_STRONG_IN_OFF
@@ -101,8 +101,8 @@
 #define Connection_LED_INIT_MUXSEL 0u
 #define Connection_LED_INPUT_SYNC 2u
 #define Connection_LED_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Connection_LED_NUM 5u
-#define Connection_LED_PORT GPIO_PRT10
+#define Connection_LED_NUM 1u
+#define Connection_LED_PORT GPIO_PRT1
 #define Connection_LED_SLEWRATE CY_GPIO_SLEW_FAST
 #define Connection_LED_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
 

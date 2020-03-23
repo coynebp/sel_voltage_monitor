@@ -10,7 +10,7 @@
   </IncludeDirs>
   <Defines>
     <Define>CY_PSOC_CREATOR_USED=1</Define>
-    <Define>CYBLE_416045_02</Define>
+    <Define>CY8C6347BZI_BLD53</Define>
   </Defines>
   <folder folderName=".">
     <file fileName="cy_ipc_config.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\drivers\peripheral\ipc\cy_ipc_config.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="True" />
@@ -253,10 +253,10 @@
         <folder folderName="psoc6">
           <folder folderName="psoc63">
             <folder folderName="include">
-              <file fileName="cyble_416045_02.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\devices\psoc6\psoc63\include\cyble_416045_02.h" buildType="HEADER;CortexM0p,CortexM4;;;" copyLocal="True" isTemplate="False" />
+              <file fileName="cy8c6347bzi_bld53.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\devices\psoc6\psoc63\include\cy8c6347bzi_bld53.h" buildType="HEADER;CortexM0p,CortexM4;;;" copyLocal="True" isTemplate="False" />
               <file fileName="psoc63_config.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\devices\psoc6\psoc63\include\psoc63_config.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
               <file fileName="cy_device_headers.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\devices\psoc6\psoc63\include\cy_device_headers.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
-              <file fileName="gpio_psoc63_43_smt.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\devices\psoc6\psoc63\include\gpio_psoc63_43_smt.h" buildType="HEADER;CortexM0p,CortexM4;;;" copyLocal="True" isTemplate="False" />
+              <file fileName="gpio_psoc63_116_bga_ble.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\devices\psoc6\psoc63\include\gpio_psoc63_116_bga_ble.h" buildType="HEADER;CortexM0p,CortexM4;;;" copyLocal="True" isTemplate="False" />
             </folder>
           </folder>
           <folder folderName="ip">

@@ -2356,7 +2356,7 @@
 <dependencies>
 <CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileSerialize" version="3" xml_contents_version="1">
 <CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemSerialize" version="2" name="cyble_416045_02.h" persistent="Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\cyble_416045_02.h">
-<Hidden v="False" />
+<Hidden v="True" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
 <build_action v="HEADER;CortexM0p,CortexM4;;;" />
 <PropertyDeltas />
@@ -2377,6 +2377,20 @@
 </CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
 <CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileSerialize" version="3" xml_contents_version="1">
 <CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemSerialize" version="2" name="gpio_psoc63_43_smt.h" persistent="Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\gpio_psoc63_43_smt.h">
+<Hidden v="True" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="HEADER;CortexM0p,CortexM4;;;" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileSerialize" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemSerialize" version="2" name="cy8c6347bzi_bld53.h" persistent="Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\cy8c6347bzi_bld53.h">
+<Hidden v="False" />
+</CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
+<build_action v="HEADER;CortexM0p,CortexM4;;;" />
+<PropertyDeltas />
+</CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b>
+<CyGuid_8b8ab257-35d3-4473-b57b-36315200b38b type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtFileSerialize" version="3" xml_contents_version="1">
+<CyGuid_31768f72-0253-412b-af77-e7dba74d1330 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtItemSerialize" version="2" name="gpio_psoc63_116_bga_ble.h" persistent="Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\gpio_psoc63_116_bga_ble.h">
 <Hidden v="False" />
 </CyGuid_31768f72-0253-412b-af77-e7dba74d1330>
 <build_action v="HEADER;CortexM0p,CortexM4;;;" />
@@ -3457,7 +3471,7 @@
 </CyGuid_49cfd574-032a-4a64-b7be-d4eeeaf25e43>
 </CyGuid_60697ce6-dce2-4816-8680-4de0635742eb>
 <top_block v="TopDesign" />
-<selected_device v="CYBLE-416045-02" />
+<selected_device v="CY8C6347BZI-BLD53" />
 <include_paths>
 <include_path v="Generated_Source\PSoC6\pdl\cmsis/include/;OTHER;;;;" />
 <include_path v="Generated_Source\PSoC6\pdl\devices/psoc6/ip/;OTHER;;;;" />
@@ -3468,7 +3482,7 @@
 </include_paths>
 <defines>
 <define v="CY_PSOC_CREATOR_USED=1" />
-<define v="CYBLE_416045_02" />
+<define v="CY8C6347BZI_BLD53" />
 </defines>
 <pdl_path_for_last_code_gen v="C:\Program Files (x86)\Cypress\PDL\3.0.4" />
 <pdl_rel_ver_for_last_code_gen v="3.0.4+build.57" />

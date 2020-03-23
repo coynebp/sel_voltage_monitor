@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
   27:ipc_cm4.c     ****     uint32_t type;
   28:ipc_cm4.c     ****     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
   29:ipc_cm4.c     ****     uint16_t val;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 2
 
 
   30:ipc_cm4.c     ****     if (msgPtr != NULL)
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
   51              		.type	CM4_MessageCallback, %function
   52              	CM4_MessageCallback:
   53              	.LFB516:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 3
 
 
   26:ipc_cm4.c     ****     uint32_t type;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
   99              		.loc 1 41 0
  100 0028 037A     		ldrb	r3, [r0, #8]	@ zero_extendqisi2
  101 002a 417A     		ldrb	r1, [r0, #9]	@ zero_extendqisi2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 4
 
 
  102 002c 03EB0121 		add	r1, r3, r1, lsl #8
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  148              		.cfi_restore 14
  149 0060 7047     		bx	lr
  150              	.L14:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 5
 
 
  151 0062 00BF     		.align	2
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  195 001a 4278     		ldrb	r2, [r0, #1]	@ zero_extendqisi2
  196 001c 5A73     		strb	r2, [r3, #13]
  197              	.LVL22:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 6
 
 
  198              	.L17:
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  241 0002 0B4B     		ldr	r3, .L25
  242 0004 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  243 0006 13F0FF0F 		tst	r3, #255
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 7
 
 
  244 000a FAD0     		beq	.L22
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  287              	.LFB520:
   94:ipc_cm4.c     **** 
   95:ipc_cm4.c     **** void send_num_events(uint8_t * num_events)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 8
 
 
   96:ipc_cm4.c     **** {
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  329              	.L31:
  330 002c 00000000 		.word	.LANCHOR0
  331 0030 00000000 		.word	CM4_ReleaseCallback
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 9
 
 
  332 0034 04000000 		.word	.LANCHOR0+4
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  376              	.L36:
  118:ipc_cm4.c     ****     {
  119:ipc_cm4.c     ****         entry = event[i];
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 10
 
 
  377              		.loc 1 119 0 discriminator 3
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  419 0050 00000000 		.word	.LANCHOR0
  420 0054 00000000 		.word	CM4_ReleaseCallback
  421 0058 04000000 		.word	.LANCHOR0+4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 11
 
 
  422 005c 07028A00 		.word	9044487
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  460              	.LC4:
  461 0050 54524947 		.ascii	"TRIGGER\015\000"
  461      4745520D 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 12
 
 
  461      00
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  515 0053 43040000 		.4byte	.LASF5
  516 0057 03       		.uleb128 0x3
  517 0058 7F050000 		.4byte	.LASF6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 13
 
 
  518 005c 02       		.byte	0x2
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  572 00c5 07       		.byte	0x7
  573 00c6 ED000000 		.4byte	.LASF17
  574 00ca 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 14
 
 
  575 00cb B8000000 		.4byte	0xb8
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  629 014c B7030000 		.4byte	.LASF31
  630 0150 09028A00 		.4byte	0x8a0209
  631 0154 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 15
 
 
  632 0155 C4020000 		.4byte	.LASF32
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  686 01c9 69010000 		.4byte	0x169
  687 01cd 08       		.byte	0x8
  688 01ce 0F       		.uleb128 0xf
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 16
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 16
 
 
  689 01cf 1B030000 		.4byte	.LASF39
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  743 0244 C7040000 		.4byte	.LASF48
  744 0248 05       		.byte	0x5
  745 0249 5D02     		.2byte	0x25d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 17
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 17
 
 
  746 024b 8E010000 		.4byte	0x18e
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  800 02be 04       		.byte	0x4
  801 02bf 0F       		.uleb128 0xf
  802 02c0 2E030000 		.4byte	.LASF58
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 18
 
 
  803 02c4 06       		.byte	0x6
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  857 0339 06       		.byte	0x6
  858 033a 0105     		.2byte	0x501
  859 033c B8000000 		.4byte	0xb8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 19
 
 
  860 0340 68       		.byte	0x68
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  914 03b0 07       		.byte	0x7
  915 03b1 3F       		.byte	0x3f
  916 03b2 D0030000 		.4byte	0x3d0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 20
 
 
  917 03b6 08       		.byte	0x8
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  971 0420 2C050000 		.4byte	.LASF81
  972 0424 08       		.byte	0x8
  973 0425 25       		.byte	0x25
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 21
 
 
  974 0426 2C040000 		.4byte	0x42c
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1028 04a2 A2000000 		.4byte	0xa2
  1029 04a6 69010000 		.4byte	.LLST3
  1030 04aa 1E       		.uleb128 0x1e
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 22
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 22
 
 
  1031 04ab 20000000 		.4byte	.LVL5
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1085 051d 1E       		.uleb128 0x1e
  1086 051e 56000000 		.4byte	.LVL16
  1087 0522 79070000 		.4byte	0x779
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 23
 
 
  1088 0526 34050000 		.4byte	0x534
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1142 058f 51       		.byte	0x51
  1143 0590 01       		.uleb128 0x1
  1144 0591 31       		.byte	0x31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 24
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 24
 
 
  1145 0592 1F       		.uleb128 0x1f
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1199 05ef 04000000 		.4byte	.LANCHOR0+4
  1200 05f3 1F       		.uleb128 0x1f
  1201 05f4 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 25
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 25
 
 
  1202 05f5 53       		.byte	0x53
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1256 0655 00       		.byte	0
  1257 0656 1A       		.uleb128 0x1a
  1258 0657 B8000000 		.4byte	.LASF92
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 26
 
 
  1259 065b 01       		.byte	0x1
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1313 06c5 52       		.byte	0x52
  1314 06c6 05       		.uleb128 0x5
  1315 06c7 03       		.byte	0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 27
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 27
 
 
  1316 06c8 04000000 		.4byte	.LANCHOR0+4
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1370 0740 0B       		.byte	0xb
  1371 0741 17       		.byte	0x17
  1372 0742 25070000 		.4byte	0x725
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 28
 
 
  1373 0746 05       		.uleb128 0x5
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1427 0010 17       		.uleb128 0x17
  1428 0011 00       		.byte	0
  1429 0012 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 29
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 29
 
 
  1430 0013 02       		.uleb128 0x2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1484 0049 0B       		.uleb128 0xb
  1485 004a 0B       		.uleb128 0xb
  1486 004b 49       		.uleb128 0x49
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 30
 
 
  1487 004c 13       		.uleb128 0x13
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1541 0082 0E       		.uleb128 0xe
  1542 0083 3A       		.uleb128 0x3a
  1543 0084 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 31
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 31
 
 
  1544 0085 3B       		.uleb128 0x3b
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1598 00bb 0B       		.uleb128 0xb
  1599 00bc 0B       		.uleb128 0xb
  1600 00bd 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 32
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 32
 
 
  1601 00be 0B       		.uleb128 0xb
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1655 00f4 26       		.uleb128 0x26
  1656 00f5 00       		.byte	0
  1657 00f6 49       		.uleb128 0x49
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 33
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 33
 
 
  1658 00f7 13       		.uleb128 0x13
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1712 012e 0E       		.uleb128 0xe
  1713 012f 3A       		.uleb128 0x3a
  1714 0130 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 34
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 34
 
 
  1715 0131 3B       		.uleb128 0x3b
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1769 0168 0B       		.uleb128 0xb
  1770 0169 49       		.uleb128 0x49
  1771 016a 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 35
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 35
 
 
  1772 016b 02       		.uleb128 0x2
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1826 01a8 0B       		.uleb128 0xb
  1827 01a9 3B       		.uleb128 0x3b
  1828 01aa 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 36
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 36
 
 
  1829 01ab 49       		.uleb128 0x49
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1883 01e1 03       		.uleb128 0x3
  1884 01e2 0E       		.uleb128 0xe
  1885 01e3 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 37
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 37
 
 
  1886 01e4 0B       		.uleb128 0xb
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1940 000a 50       		.byte	0x50
  1941 000b 1C000000 		.4byte	.LVL4
  1942 000f 28000000 		.4byte	.LVL7
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 38
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 38
 
 
  1943 0013 0400     		.2byte	0x4
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  1997 008e 1C000000 		.4byte	.LVL4
  1998 0092 1F000000 		.4byte	.LVL5-1
  1999 0096 0300     		.2byte	0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 39
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 39
 
 
  2000 0098 73       		.byte	0x73
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2054 010b 28000000 		.4byte	.LVL7
  2055 010f 34000000 		.4byte	.LVL9
  2056 0113 0100     		.2byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 40
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 40
 
 
  2057 0115 50       		.byte	0x50
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2111 0188 FF       		.byte	0xff
  2112 0189 1A       		.byte	0x1a
  2113 018a 9F       		.byte	0x9f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 41
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 41
 
 
  2114 018b 30000000 		.4byte	.LVL8
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2168 0210 38000000 		.4byte	.LVL34
  2169 0214 0100     		.2byte	0x1
  2170 0216 50       		.byte	0x50
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 42
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 42
 
 
  2171 0217 38000000 		.4byte	.LVL34
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2225 0024 3C000000 		.4byte	.LFE520
  2226 0028 00000000 		.4byte	.LFB521
  2227 002c 60000000 		.4byte	.LFE521
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 43
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 43
 
 
  2228 0030 00000000 		.4byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2252      625F7363 
  2252      625F7561 
  2252      72745F68 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 44
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 44
 
 
  2252      616E646C 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2275      6973696F 
  2275      6E203233 
  2275      37373135 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 45
 
 
  2276 01a2 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2299      315F616C 
  2299      6C436F6E 
  2299      66696773 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 46
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 46
 
 
  2299      00
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2323      6E674275 
  2323      6653697A 
  2323      6500
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 47
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 47
 
 
  2324              	.LASF56:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2349      50435F50 
  2349      4950455F 
  2349      4552524F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 48
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 48
 
 
  2349      525F4241 
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2373      6F6A6563 
  2373      74735C73 
  2374 048c 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 49
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 49
 
 
  2374      69746F72 
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2400 053a 73656E64 		.ascii	"send_voltage\000"
  2400      5F766F6C 
  2400      74616765 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 50
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 50
 
 
  2400      00
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2424      456E00
  2425              	.LASF73:
  2426 05f4 6E756D43 		.ascii	"numChannels\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 51
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 51
 
 
  2426      68616E6E 
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 1
  2448      6E744964 
  2448      00
  2449              	.LASF100:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cclagsbx.s 			page 52
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccj3s2mB.s 			page 52
 
 
  2450 06ae 6970634D 		.ascii	"ipcMsgForCM0\000"

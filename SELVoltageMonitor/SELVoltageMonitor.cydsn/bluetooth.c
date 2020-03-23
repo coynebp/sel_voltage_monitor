@@ -67,7 +67,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
             {
                 // Place requested event in GATT server
-                write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0]]);
+                write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] - 1]);
                 // Write new event number to GATT server
                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }

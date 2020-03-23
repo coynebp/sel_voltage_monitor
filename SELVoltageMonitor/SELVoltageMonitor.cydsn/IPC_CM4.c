@@ -26,28 +26,25 @@ void CM4_MessageCallback(uint32_t *msg)
 {
     uint32_t type;
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
-    uint16_t threshold;
-    uint8_t num;
+    uint16_t val;
     if (msgPtr != NULL)
     {
         type = msgPtr->type;
         switch (type)
         {
             case EVENT_NUM:
-                num = msgPtr->data[0];
-                printf("Event Number: %" PRIx8, num);
+                val = msgPtr->data[0];
+                printf("Event Number: %" PRIx16, val);
                 printf("\r\n");
                 break;
             case UPPER_THRESHOLD:
-                threshold = msgPtr->data[0] + 256 * msgPtr->data[1];
-                printf("New Upper Threshold: %" PRIx16, threshold);
+                val = msgPtr->data[0] + 256 * msgPtr->data[1];
+                printf("New Upper Threshold: %" PRIx16, val);
                 printf("\r\n");
                 break;
             case LOWER_THRESHOLD:
-                threshold = msgPtr->data[1];
-                threshold = threshold <<8;
-                threshold += msgPtr->data[0];
-                printf("New Lower Threshold: %" PRIx16, threshold);
+                val = msgPtr->data[0] + 0x100 * msgPtr->data[1];
+                printf("New Lower Threshold: %" PRIx16, val);
                 printf("\r\n");
                 break;
             case TRIGGER:

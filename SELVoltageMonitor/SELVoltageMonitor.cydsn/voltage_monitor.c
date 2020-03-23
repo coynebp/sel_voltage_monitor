@@ -14,6 +14,8 @@
 
 void voltage_monitor_init(void)
 {     
+    __enable_irq(); /* Enable global interrupts. */
+    
     UART_Start();
     setvbuf ( stdin, NULL, _IONBF, 0);
     printf("Started UART\r\n");
@@ -26,15 +28,14 @@ void voltage_monitor_init(void)
     {
         for (uint8_t j = 0; j < 144; ++j)
         {
-            event[i][j] = j + i + 1;
+            event[i][j] = 0;
         }
     }
     
     uint8_t event_num = 0x01;
     uint8_t num_events = 0x0A;
     uint16_t voltage = 0x3456;
-    
-    send_event(event[0]);
+
     send_event_num(&event_num);
     send_num_events(&num_events);
     send_voltage(&voltage);

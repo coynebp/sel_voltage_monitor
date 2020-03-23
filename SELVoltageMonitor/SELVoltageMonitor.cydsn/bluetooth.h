@@ -23,8 +23,13 @@
     
     #include <project.h>
     #include <stdlib.h>
+    #include <stdint.h>
     #include <stdio.h>
     #include "ipc_cm0p.h"
+    
+    uint16_t events[10][144];
+    
+    void init_ble(void);
     
     void GenericEventHandler(uint32 event, void *eventParam);
     

@@ -13,6 +13,37 @@
 */
 #include "bluetooth.h"
 
+void init_ble(void)
+{
+    /* Enable global interrupts. */
+	__enable_irq();
+	
+	/* Start the BLE stack, register the event handler. */
+    Cy_BLE_Start(GenericEventHandler); 
+    while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
+    {
+        Cy_BLE_ProcessEvents();
+    }
+    
+    /* Enable CM4.*/
+    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
+    
+    /* Register the IPC Callback Function.*/
+    Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
+                         CM0_MessageCallback,
+                         IPC_CM4_TO_CM0_CLIENT_ID);
+    
+    for (uint8_t i = 0; i < 10; ++i)
+    {
+        for (uint8_t j = 0; j < 144; ++j)
+        {
+            events[i][j] = j + i + 1;
+        }
+    }
+    
+    write_event_to_server((uint8_t *)events[0]);
+}
+
 void GenericEventHandler(uint32 event, void *eventParam)
 {
     cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
@@ -35,18 +66,21 @@ void GenericEventHandler(uint32 event, void *eventParam)
             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
             {
-                //uint8_t event_num = writeReqParam->handleValPair.value.val[0];
-                //Send requested event number to CM4
-                send_event_num(writeReqParam->handleValPair.value.val);
+                // Place requested event in GATT server
+                write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0]]);
+                // Write new event number to GATT server
+                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE)
             {
+                //Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, UPPER_THRESHOLD);
                 //Write new threshold to GATT server
                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE)
             {
+                //Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, LOWER_THRESHOLD);
                 //Write new threshold to GATT server
                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
@@ -131,5 +165,4 @@ void write_event_to_server(uint8_t *event_byte_arr)
     handValPair.value.val = event_byte_arr + 280;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
 }
-
 /* [] END OF FILE */

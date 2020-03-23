@@ -14,7 +14,6 @@
 
 int main(void)
 {
-    __enable_irq(); /* Enable global interrupts. */
     
     voltage_monitor_init();
    

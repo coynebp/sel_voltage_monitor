@@ -1,9 +1,9 @@
 /***************************************************************************//**
-* \file     ADC_1.c
+* \file     ADC.c
 * \version  2.10
 *
 * \brief
-* Provides the source code to the API for the ADC_1 Component.
+* Provides the source code to the API for the ADC Component.
 *
 ********************************************************************************
 * \copyright
@@ -36,16 +36,16 @@
 * of such system or application assumes all risk of such use and in doing
 * so agrees to indemnify Cypress against all liability.
 *******************************************************************************/
-#include "ADC_1.h"
+#include "ADC.h"
 #include <sysint/cy_sysint.h>
 #include <cyfitter_sysint_cfg.h>
 
-uint8_t ADC_1_initVar = 0u;
-uint8_t ADC_1_selected = 0u; /* 0 if no configuration selected. 1 otherwise. */
-uint32_t ADC_1_currentConfig = 0u; /* Currently active configuration */
+uint8_t ADC_initVar = 0u;
+uint8_t ADC_selected = 0u; /* 0 if no configuration selected. 1 otherwise. */
+uint32_t ADC_currentConfig = 0u; /* Currently active configuration */
 
 /*******************************************************************************
-* Function Name: ADC_1_Start
+* Function Name: ADC_Start
 ****************************************************************************//**
 *
 * \brief Performs all required initialization for this component and enables the
@@ -59,27 +59,27 @@ uint32_t ADC_1_currentConfig = 0u; /* Currently active configuration */
 * \sideeffect None
 *
 * \globalvars
-*  \ref ADC_1_initVar (RW)
+*  \ref ADC_initVar (RW)
 *
 *******************************************************************************/
-void ADC_1_Start(void)
+void ADC_Start(void)
 {
-    if (ADC_1_INIT_VAR_INIT_FLAG != (ADC_1_INIT_VAR_INIT_FLAG & ADC_1_initVar))
+    if (ADC_INIT_VAR_INIT_FLAG != (ADC_INIT_VAR_INIT_FLAG & ADC_initVar))
     {
-        ADC_1_Init();
-        ADC_1_initVar |= ADC_1_INIT_VAR_INIT_FLAG;
+        ADC_Init();
+        ADC_initVar |= ADC_INIT_VAR_INIT_FLAG;
     }
 
-    ADC_1_Enable();
+    ADC_Enable();
 
     return;
 }
 
 /*******************************************************************************
-* Function Name: ADC_1_StartEx
+* Function Name: ADC_StartEx
 ****************************************************************************//**
 *
-* \brief This function starts the ADC_1 and sets the Interrupt
+* \brief This function starts the ADC and sets the Interrupt
 * Service Routine to the provided address using the
 * Cy_SysInt_Init() function. Refer to the Interrupt component
 * datasheet for more information on the Cy_SysInt_Init() function.
@@ -91,64 +91,64 @@ void ADC_1_Start(void)
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_StartEx(cy_israddress userIsr)
+void ADC_StartEx(cy_israddress userIsr)
 {
-    ADC_1_Start();
+    ADC_Start();
 
     /* Interrupt core assignment will be up to the user. Initialize and enable the interrupt*/
-    #ifdef ADC_1_IRQ__INTC_CORTEXM4_ASSIGNED
+    #ifdef ADC_IRQ__INTC_CORTEXM4_ASSIGNED
     #if (CY_CPU_CORTEX_M4)
-        (void)Cy_SysInt_Init(&ADC_1_IRQ_cfg, userIsr);
-        NVIC_EnableIRQ(ADC_1_IRQ_cfg.intrSrc);
+        (void)Cy_SysInt_Init(&ADC_IRQ_cfg, userIsr);
+        NVIC_EnableIRQ(ADC_IRQ_cfg.intrSrc);
     #endif
     #endif
 
-    #ifdef ADC_1_IRQ__INTC_CORTEXM0P_ASSIGNED
+    #ifdef ADC_IRQ__INTC_CORTEXM0P_ASSIGNED
     #if (CY_CPU_CORTEX_M0P)
-        (void)Cy_SysInt_Init(&ADC_1_IRQ_cfg, userIsr);
-        NVIC_EnableIRQ(ADC_1_IRQ_cfg.intrSrc);
+        (void)Cy_SysInt_Init(&ADC_IRQ_cfg, userIsr);
+        NVIC_EnableIRQ(ADC_IRQ_cfg.intrSrc);
     #endif
     #endif
 
 }
 
 /* ****************************************************************************
-* Function Name: ADC_1_InitConfig
+* Function Name: ADC_InitConfig
 ****************************************************************************//*
 *
 * \brief Configures all of the registers for a given configuration for scanning.
 *
-* \param scan Number of scan defined in the ADC_1.
+* \param scan Number of scan defined in the ADC.
 *
 * \return None
 *
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_InitConfig(const ADC_1_CONFIG_STRUCT *config)
+void ADC_InitConfig(const ADC_CONFIG_STRUCT *config)
 {
     bool deInitRouting = false;
 
     /* If there is an internal SAR clock, set up its divider values. */
-    #if (ADC_1_CLOCK_INTERNAL)
-        ADC_1_intSarClock_Disable();
-        ADC_1_intSarClock_SetDivider(config->clkDivider);
-        ADC_1_intSarClock_Enable();
-    #endif /* ADC_1_CLOCK_INTERNAL */
+    #if (ADC_CLOCK_INTERNAL)
+        ADC_intSarClock_Disable();
+        ADC_intSarClock_SetDivider(config->clkDivider);
+        ADC_intSarClock_Enable();
+    #endif /* ADC_CLOCK_INTERNAL */
 
     /* Init SAR and MUX registers */
-    (void)Cy_SAR_DeInit(ADC_1_SAR__HW, deInitRouting);
-    (void)Cy_SAR_Init(ADC_1_SAR__HW, config->hwConfigStc);
+    (void)Cy_SAR_DeInit(ADC_SAR__HW, deInitRouting);
+    (void)Cy_SAR_Init(ADC_SAR__HW, config->hwConfigStc);
 
     /* Connect Vminus to VSSA when even one channel is single-ended or multiple channels configured */
-    if(1uL == ADC_1_MUX_SWITCH0_INIT)
+    if(1uL == ADC_MUX_SWITCH0_INIT)
     {
-        Cy_SAR_SetVssaVminusSwitch(ADC_1_SAR__HW, CY_SAR_SWITCH_CLOSE);
+        Cy_SAR_SetVssaVminusSwitch(ADC_SAR__HW, CY_SAR_SWITCH_CLOSE);
 
         /* Set MUX_HW_CTRL_VSSA in MUX_SWITCH_HW_CTRL when multiple channels enabled */
         if(1uL < config->numChannels)
         {
-            Cy_SAR_SetVssaSarSeqCtrl(ADC_1_SAR__HW, CY_SAR_SWITCH_SEQ_CTRL_ENABLE);
+            Cy_SAR_SetVssaSarSeqCtrl(ADC_SAR__HW, CY_SAR_SWITCH_SEQ_CTRL_ENABLE);
         }
     }
 
@@ -156,57 +156,57 @@ void ADC_1_InitConfig(const ADC_1_CONFIG_STRUCT *config)
 }
 
 /* ****************************************************************************
-* Function Name: ADC_1_SelectConfig
+* Function Name: ADC_SelectConfig
 ****************************************************************************//*
 *
 * \brief Selects the predefined configuration for scanning.
 *
-* \param config Number of configuration in the ADC_1.
+* \param config Number of configuration in the ADC.
 *
-* \param restart Set to 1u if the ADC_1 should be  restarted after
+* \param restart Set to 1u if the ADC should be  restarted after
 * selecting the configuration.
 *
 *******************************************************************************/
-void ADC_1_SelectConfig(uint32_t config, uint32_t restart)
+void ADC_SelectConfig(uint32_t config, uint32_t restart)
 {
     /* Check whether the configuration number is valid or not */
-    if(ADC_1_TOTAL_CONFIGS > config)
+    if(ADC_TOTAL_CONFIGS > config)
     {
         /* Stop the ADC before changing configurations */
-        ADC_1_Stop();
-        ADC_1_selected = 1u;
+        ADC_Stop();
+        ADC_selected = 1u;
 
-        if(0u == ADC_1_initVar)
+        if(0u == ADC_initVar)
         {
-            ADC_1_Init();
-            ADC_1_initVar |= ADC_1_INIT_VAR_INIT_FLAG;
+            ADC_Init();
+            ADC_initVar |= ADC_INIT_VAR_INIT_FLAG;
         }
-        #if (ADC_1_VREF_ROUTED)
-            ADC_1_vrefAMux_DisconnectAll();
+        #if (ADC_VREF_ROUTED)
+            ADC_vrefAMux_DisconnectAll();
         #endif
 
-        ADC_1_InitConfig(&ADC_1_allConfigs[config]);
+        ADC_InitConfig(&ADC_allConfigs[config]);
 
-        #if (ADC_1_VREF_ROUTED)
-            ADC_1_vrefAMux_Select((uint8)config);
+        #if (ADC_VREF_ROUTED)
+            ADC_vrefAMux_Select((uint8)config);
         #endif
 
-        ADC_1_currentConfig = config;
+        ADC_currentConfig = config;
 
         if(1u == restart)
         {
             /* Restart the ADC */
-            ADC_1_Start();
+            ADC_Start();
 
             /* Restart the scan */
-            ADC_1_StartConvert();
+            ADC_StartConvert();
         }
     }
     return;
 }
 
 /*******************************************************************************
-* Function Name: ADC_1_StartConvert
+* Function Name: ADC_StartConvert
 ****************************************************************************//**
 *
 * \brief In continuous mode, this API starts the conversion process and it runs
@@ -215,7 +215,7 @@ void ADC_1_SelectConfig(uint32_t config, uint32_t restart)
 * In Single Shot mode, the function triggers a single scan and
 * every scan requires a call of this function. The mode is set with the
 * Sample Mode parameter in the customizer. The customizer setting can be
-* overridden at run time with the ADC_1_SetConvertMode() function.
+* overridden at run time with the ADC_SetConvertMode() function.
 *
 * \param None
 *
@@ -224,20 +224,20 @@ void ADC_1_SelectConfig(uint32_t config, uint32_t restart)
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_StartConvert(void)
+void ADC_StartConvert(void)
 {
-    if (SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk == (ADC_1_SAR__HW->SAMPLE_CTRL & SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk))
+    if (SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk == (ADC_SAR__HW->SAMPLE_CTRL & SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk))
     {
-        Cy_SAR_StartConvert(ADC_1_SAR__HW, CY_SAR_START_CONVERT_CONTINUOUS);
+        Cy_SAR_StartConvert(ADC_SAR__HW, CY_SAR_START_CONVERT_CONTINUOUS);
     }
     else
     {
-        Cy_SAR_StartConvert(ADC_1_SAR__HW, CY_SAR_START_CONVERT_SINGLE_SHOT);
+        Cy_SAR_StartConvert(ADC_SAR__HW, CY_SAR_START_CONVERT_SINGLE_SHOT);
     }
 }
 
 /*******************************************************************************
-* Function Name: ADC_1_SetConvertMode
+* Function Name: ADC_SetConvertMode
 ****************************************************************************//**
 *
 * \brief Sets the conversion mode to either Single-Shot or continuous. This
@@ -251,26 +251,26 @@ void ADC_1_StartConvert(void)
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_SetConvertMode(cy_en_sar_start_convert_sel_t mode)
+void ADC_SetConvertMode(cy_en_sar_start_convert_sel_t mode)
 {
     switch(mode)
     {
     case CY_SAR_START_CONVERT_CONTINUOUS:
-        ADC_1_SAR__HW->SAMPLE_CTRL |= SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk;
+        ADC_SAR__HW->SAMPLE_CTRL |= SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk;
         break;
     case CY_SAR_START_CONVERT_SINGLE_SHOT:
     default:
-        ADC_1_SAR__HW->SAMPLE_CTRL &= ~SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk;
+        ADC_SAR__HW->SAMPLE_CTRL &= ~SAR_SAMPLE_CTRL_DSI_TRIGGER_LEVEL_Msk;
         break;
     }
 }
 
 /* ****************************************************************************
-* Function Name: ADC_1_IRQ_Enable
+* Function Name: ADC_IRQ_Enable
 ****************************************************************************//*
 *
 * \brief Enables interrupts to occur at the end of a conversion. Global
-* interrupts must also be enabled for the ADC_1 interrupts to occur.
+* interrupts must also be enabled for the ADC interrupts to occur.
 *
 * \param None
 *
@@ -279,23 +279,23 @@ void ADC_1_SetConvertMode(cy_en_sar_start_convert_sel_t mode)
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_IRQ_Enable(void){
+void ADC_IRQ_Enable(void){
     /* Interrupt core assignment will be up to the user. */
-    #ifdef ADC_1_IRQ__INTC_CORTEXM4_ASSIGNED
+    #ifdef ADC_IRQ__INTC_CORTEXM4_ASSIGNED
     #if (CY_CPU_CORTEX_M4)
-        NVIC_EnableIRQ(ADC_1_IRQ_cfg.intrSrc);
+        NVIC_EnableIRQ(ADC_IRQ_cfg.intrSrc);
     #endif
     #endif
 
-    #ifdef ADC_1_IRQ__INTC_CORTEXM0P_ASSIGNED
+    #ifdef ADC_IRQ__INTC_CORTEXM0P_ASSIGNED
     #if (CY_CPU_CORTEX_M0P)
-        NVIC_EnableIRQ(ADC_1_IRQ_cfg.intrSrc);
+        NVIC_EnableIRQ(ADC_IRQ_cfg.intrSrc);
     #endif
     #endif
 }
 
 /* ****************************************************************************
-* Function Name: ADC_1_IRQ_Disable
+* Function Name: ADC_IRQ_Disable
 ****************************************************************************//*
 *
 * \brief Disables end of conversion interrupts.
@@ -307,23 +307,23 @@ void ADC_1_IRQ_Enable(void){
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_IRQ_Disable(void){
+void ADC_IRQ_Disable(void){
     /* Interrupt core assignment will be up to the user. */
-    #ifdef ADC_1_IRQ__INTC_CORTEXM4_ASSIGNED
+    #ifdef ADC_IRQ__INTC_CORTEXM4_ASSIGNED
     #if (CY_CPU_CORTEX_M4)
-        NVIC_DisableIRQ(ADC_1_IRQ_cfg.intrSrc);
+        NVIC_DisableIRQ(ADC_IRQ_cfg.intrSrc);
     #endif
     #endif
 
-    #ifdef ADC_1_IRQ__INTC_CORTEXM0P_ASSIGNED
+    #ifdef ADC_IRQ__INTC_CORTEXM0P_ASSIGNED
     #if (CY_CPU_CORTEX_M0P)
-        NVIC_DisableIRQ(ADC_1_IRQ_cfg.intrSrc);
+        NVIC_DisableIRQ(ADC_IRQ_cfg.intrSrc);
     #endif
     #endif
 }
 
 /*******************************************************************************
-* Function Name: ADC_1_SetEosMask
+* Function Name: ADC_SetEosMask
 ****************************************************************************//**
 *
 * \brief Sets or clears the End of Scan (EOS) interrupt mask.
@@ -335,17 +335,17 @@ void ADC_1_IRQ_Disable(void){
 * \sideeffect All other bits in the INTR register are cleared by this function.
 *
 *******************************************************************************/
-void ADC_1_SetEosMask(uint32_t mask)
+void ADC_SetEosMask(uint32_t mask)
 {
     uint32_t intrMaskReg;
 
     intrMaskReg = (0uL == mask) ? CY_SAR_DEINIT : SAR_INTR_MASK_EOS_MASK_Msk;
 
-    Cy_SAR_SetInterruptMask(ADC_1_SAR__HW, intrMaskReg);
+    Cy_SAR_SetInterruptMask(ADC_SAR__HW, intrMaskReg);
 }
 
 /******************************************************************************
-* Function Name: ADC_1_SetChanMask
+* Function Name: ADC_SetChanMask
 ****************************************************************************//*
 *
 * \brief Sets enable/disable mask for all channels in current configuration.
@@ -358,16 +358,16 @@ void ADC_1_SetEosMask(uint32_t mask)
 *  None.
 *
 *******************************************************************************/
-void ADC_1_SetChanMask(uint32_t enableMask)
+void ADC_SetChanMask(uint32_t enableMask)
 {
-    uint32 chanCount = ADC_1_allConfigs[ADC_1_currentConfig].numChannels;
+    uint32 chanCount = ADC_allConfigs[ADC_currentConfig].numChannels;
     enableMask &= (uint32)((uint32)(1ul << chanCount) - 1ul);
 
-    Cy_SAR_SetChanMask(ADC_1_SAR__HW, enableMask);
+    Cy_SAR_SetChanMask(ADC_SAR__HW, enableMask);
 }
 
 /*******************************************************************************
-* Function Name: ADC_1_IsEndConversion
+* Function Name: ADC_IsEndConversion
 ****************************************************************************//**
 *
 * \brief Immediately returns the status of the conversion or does not return
@@ -378,17 +378,17 @@ void ADC_1_SetChanMask(uint32_t enableMask)
 * \param retMode Check conversion return mode.
 *
 * \return uint32_t: If a nonzero value is returned, the last conversion is complete.
-* If the returned value is zero, the ADC_1 is still calculating the last result.
+* If the returned value is zero, the ADC is still calculating the last result.
 *
 * \sideeffect This function reads the end of conversion status, and clears it afterward.
 *
 *******************************************************************************/
-uint32_t ADC_1_IsEndConversion(cy_en_sar_return_mode_t retMode)
+uint32_t ADC_IsEndConversion(cy_en_sar_return_mode_t retMode)
 {
     uint32 endOfConversion = 0u;
     cy_en_sar_status_t result;
 
-    result = Cy_SAR_IsEndConversion(ADC_1_SAR__HW, retMode);
+    result = Cy_SAR_IsEndConversion(ADC_SAR__HW, retMode);
 
     if (result == CY_SAR_SUCCESS)
     {
@@ -399,7 +399,7 @@ uint32_t ADC_1_IsEndConversion(cy_en_sar_return_mode_t retMode)
 }
 
 /* ****************************************************************************
-* Function Name: ADC_1_Init
+* Function Name: ADC_Init
 ****************************************************************************//*
 *
 * \brief Initialize the component according to parameters defined in the
@@ -412,41 +412,41 @@ uint32_t ADC_1_IsEndConversion(cy_en_sar_return_mode_t retMode)
 * \sideeffect None
 *
 *******************************************************************************/
-void ADC_1_Init(void)
+void ADC_Init(void)
 {
     uint32_t configNum = 0u;
 
-    if(0u == ADC_1_initVar)
+    if(0u == ADC_initVar)
     {
         /* Interrupt core assignment will be up to the user. Initialize but do not enable the interrupt*/
-        #ifdef ADC_1_IRQ__INTC_CORTEXM4_ASSIGNED
+        #ifdef ADC_IRQ__INTC_CORTEXM4_ASSIGNED
         #if (CY_CPU_CORTEX_M4)
-            (void)Cy_SysInt_Init(&ADC_1_IRQ_cfg, &ADC_1_ISR);
+            (void)Cy_SysInt_Init(&ADC_IRQ_cfg, &ADC_ISR);
         #endif
         #endif
 
-        #ifdef ADC_1_IRQ__INTC_CORTEXM0P_ASSIGNED
+        #ifdef ADC_IRQ__INTC_CORTEXM0P_ASSIGNED
         #if (CY_CPU_CORTEX_M0P)
-            (void)Cy_SysInt_Init(&ADC_1_IRQ_cfg, &ADC_1_ISR);
+            (void)Cy_SysInt_Init(&ADC_IRQ_cfg, &ADC_ISR);
         #endif
         #endif
 
         /* Initialize configuration zero if SelectConfig has not been called */
-        if(0u == ADC_1_selected)
+        if(0u == ADC_selected)
         {
-            ADC_1_selected = 1u;
+            ADC_selected = 1u;
             configNum = 0uL;
 
             /* Change Vref selection if is was routed by Creator. Break. */
-            #if (ADC_1_VREF_ROUTED)
-                ADC_1_vrefAMux_DisconnectAll();
+            #if (ADC_VREF_ROUTED)
+                ADC_vrefAMux_DisconnectAll();
             #endif
 
-            ADC_1_InitConfig(&ADC_1_allConfigs[configNum]);
+            ADC_InitConfig(&ADC_allConfigs[configNum]);
 
             /* Change Vref selection if is was routed by Creator. Make. */
-            #if (ADC_1_VREF_ROUTED)
-                ADC_1_vrefAMux_Select((uint8)configNum);
+            #if (ADC_VREF_ROUTED)
+                ADC_vrefAMux_Select((uint8)configNum);
             #endif
         }
     }

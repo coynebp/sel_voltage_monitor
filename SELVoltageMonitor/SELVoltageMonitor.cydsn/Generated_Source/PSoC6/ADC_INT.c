@@ -1,9 +1,9 @@
 /***************************************************************************//**
-* \file     ADC_1_INT.c
+* \file     ADC_INT.c
 * \version  2.10
 *
 * \brief
-* Provides the initialization data structure for the ADC_1 Component.
+* Provides the initialization data structure for the ADC Component.
 *
 ********************************************************************************
 * \copyright
@@ -36,7 +36,7 @@
 * of such system or application assumes all risk of such use and in doing
 * so agrees to indemnify Cypress against all liability.
 *******************************************************************************/
-#include "ADC_1.h"
+#include "ADC.h"
 #include "cyapicallbacks.h"
 
 /******************************************************************************
@@ -44,12 +44,12 @@
 * - add user include files, prototypes and variables between the following
 *   #START and #END tags
 ******************************************************************************/
-/* `#START ADC_1_SYS_VAR`  */
+/* `#START ADC_SYS_VAR`  */
 
 /* `#END`  */
 
 /******************************************************************************
-* Function Name: ADC_1_ISR
+* Function Name: ADC_ISR
 *******************************************************************************
 *
 * \brief Handle Interrupt Service Routine.
@@ -61,30 +61,30 @@
 * \sideeffect None
 *
 ******************************************************************************/
-void ADC_1_ISR(void)
+void ADC_ISR(void)
 {
     uint32_t intr_status;
 
     /* Read interrupt status register */
-    intr_status = Cy_SAR_GetInterruptStatus(ADC_1_SAR__HW);
+    intr_status = Cy_SAR_GetInterruptStatus(ADC_SAR__HW);
 
     /* ISR Macro Callback */
-    #ifdef ADC_1_ISR_CALLBACK
-        ADC_1_ISR_Callback();
+    #ifdef ADC_ISR_CALLBACK
+        ADC_ISR_Callback();
     #endif
 
     /************************************************************************
     *  Custom Code
     *  - add user ISR code between the following #START and #END tags
     *************************************************************************/
-    /* `#START MAIN_ADC_1_ISR`  */
+    /* `#START MAIN_ADC_ISR`  */
 
     /* `#END`  */
 
     /* Clear handled interrupt */
-    Cy_SAR_ClearInterrupt(ADC_1_SAR__HW, intr_status);
+    Cy_SAR_ClearInterrupt(ADC_SAR__HW, intr_status);
     /* Read interrupt status register to ensure write completed due to buffered writes */
-    (void)Cy_SAR_GetInterruptStatus(ADC_1_SAR__HW);
+    (void)Cy_SAR_GetInterruptStatus(ADC_SAR__HW);
 }
 
 /* [] END OF FILE */

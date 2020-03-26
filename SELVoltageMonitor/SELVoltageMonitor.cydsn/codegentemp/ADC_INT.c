@@ -1,9 +1,9 @@
 /***************************************************************************//**
-* \file     ADC_1_PM.c
+* \file     ADC_INT.c
 * \version  2.10
 *
 * \brief
-* Provides the initialization data structure for the ADC_1 Component.
+* Provides the initialization data structure for the ADC Component.
 *
 ********************************************************************************
 * \copyright
@@ -36,17 +36,55 @@
 * of such system or application assumes all risk of such use and in doing
 * so agrees to indemnify Cypress against all liability.
 *******************************************************************************/
-#include "ADC_1.h"
+#include "ADC.h"
+#include "cyapicallbacks.h"
 
-static cy_stc_syspm_callback_params_t ADC_1_DeepSleepCallbackParams = {
-    .base = ADC_1_SAR__HW,
-};
+/******************************************************************************
+* Custom Declarations and Variables
+* - add user include files, prototypes and variables between the following
+*   #START and #END tags
+******************************************************************************/
+/* `#START ADC_SYS_VAR`  */
 
-cy_stc_syspm_callback_t ADC_1_DeepSleepCallbackStruct = {
-    .callback = &Cy_SAR_DeepSleepCallback,
-    .type = CY_SYSPM_DEEPSLEEP,
-    .callbackParams = &ADC_1_DeepSleepCallbackParams,
-};
+/* `#END`  */
+
+/******************************************************************************
+* Function Name: ADC_ISR
+*******************************************************************************
+*
+* \brief Handle Interrupt Service Routine.
+*
+* \param None
+*
+* \return None
+*
+* \sideeffect None
+*
+******************************************************************************/
+void ADC_ISR(void)
+{
+    uint32_t intr_status;
+
+    /* Read interrupt status register */
+    intr_status = Cy_SAR_GetInterruptStatus(ADC_SAR__HW);
+
+    /* ISR Macro Callback */
+    #ifdef ADC_ISR_CALLBACK
+        ADC_ISR_Callback();
+    #endif
+
+    /************************************************************************
+    *  Custom Code
+    *  - add user ISR code between the following #START and #END tags
+    *************************************************************************/
+    /* `#START MAIN_ADC_ISR`  */
+
+    /* `#END`  */
+
+    /* Clear handled interrupt */
+    Cy_SAR_ClearInterrupt(ADC_SAR__HW, intr_status);
+    /* Read interrupt status register to ensure write completed due to buffered writes */
+    (void)Cy_SAR_GetInterruptStatus(ADC_SAR__HW);
+}
 
 /* [] END OF FILE */
-

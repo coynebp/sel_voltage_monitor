@@ -7,6 +7,9 @@
   <Group key="DWRInstGuidMapping">
     <Group key="Interrupt">
       <Data key="6c78a27f-7792-4d54-b036-23f3a1999635/5e509665-5bd3-4115-bbc0-fb65a49def9a" value="BLE_1_bless_isr" />
+      <Data key="52d749fd-001b-4c0c-9c57-ebf2f1f0b739/76cc9645-f3bd-4d51-b91b-2975c83cdda3" value="ADC_IRQ" />
+      <Data key="bada9d75-aedb-412e-976e-3b8fbd3a5f0d/9260d369-b684-4310-b925-f618d77b89d7" value="UART_SCB_IRQ" />
+      <Data key="fd02fc4e-305e-4c3f-b0a1-f763678d4cd4" value="ADC_INT" />
     </Group>
     <Group key="Pin">
       <Data key="0113321b-4a37-46f6-8407-2f8646c68756" value="VIN" />
@@ -25,6 +28,20 @@
       <Group key="CortexM4">
         <Data key="Assigned" value="False" />
         <Data key="Priority" value="Default" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="52d749fd-001b-4c0c-9c57-ebf2f1f0b739/76cc9645-f3bd-4d51-b91b-2975c83cdda3">
+      <Group key="CortexM4">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="7" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="fd02fc4e-305e-4c3f-b0a1-f763678d4cd4">
+      <Group key="CortexM4">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="7" />
         <Data key="Vector" value="-1" />
       </Group>
     </Group>

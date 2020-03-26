@@ -20,6 +20,14 @@
 #include "cyfitter_gpio.h"
 #include "cyfitter_sysint.h"
 
+/* ADC */
+#define ADC_intSarClock__DIV_IDX 1
+#define ADC_intSarClock__DIV_NUM 1
+#define ADC_intSarClock__DIV_TYPE CY_SYSCLK_DIV_8_BIT
+#define ADC_SAR__HW SAR
+#define ADC_SAR__IDX 0
+#define ADC_SAR__TR_SAR_IN TRIG6_OUT_PASS_TR_SAR_IN
+
 /* UART */
 #define UART_SCB__HW SCB5
 #define UART_SCB__IDX 5
@@ -31,17 +39,14 @@
 #define UART_SCBCLK__DIV_NUM 0
 #define UART_SCBCLK__DIV_TYPE CY_SYSCLK_DIV_8_BIT
 
-/* ADC_1 */
-#define ADC_1_intSarClock__DIV_IDX 1
-#define ADC_1_intSarClock__DIV_NUM 1
-#define ADC_1_intSarClock__DIV_TYPE CY_SYSCLK_DIV_8_BIT
-#define ADC_1_SAR__HW SAR
-#define ADC_1_SAR__IDX 0
-#define ADC_1_SAR__TR_SAR_IN TRIG6_OUT_PASS_TR_SAR_IN
-
 /* BLE_1 */
 #define BLE_1_cy_mxs40_ble__HW BLE
 #define BLE_1_cy_mxs40_ble__IDX 0
+
+/* Clock_1 */
+#define Clock_1__DIV_IDX 8
+#define Clock_1__DIV_NUM 0
+#define Clock_1__DIV_TYPE CY_SYSCLK_DIV_16_BIT
 
 /* Miscellaneous */
 #define CPUSS__CTI_TR_IN_0 TRIG5_OUT_CPUSS_CTI_TR_IN0

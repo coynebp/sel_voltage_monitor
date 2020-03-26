@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 1
 
 
    1              		.syntax unified
@@ -26,7 +26,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
   23              		.thumb_func
   24              		.type	write_event_to_server, %function
   25              	write_event_to_server:
-  26              	.LFB439:
+  26              	.LFB445:
   27              		.file 1 "bluetooth.c"
    1:bluetooth.c   **** /* ========================================
    2:bluetooth.c   ****  *
@@ -45,100 +45,104 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
   15:bluetooth.c   **** 
   16:bluetooth.c   **** void init_ble(void)
   17:bluetooth.c   **** {
-  18:bluetooth.c   ****     /* Enable global interrupts. */
+  18:bluetooth.c   ****     // Enable global interrupts.
   19:bluetooth.c   **** 	__enable_irq();
   20:bluetooth.c   **** 	
-  21:bluetooth.c   **** 	/* Start the BLE stack, register the event handler. */
+  21:bluetooth.c   **** 	// Start the BLE stack, register the event handler.
   22:bluetooth.c   ****     Cy_BLE_Start(GenericEventHandler); 
   23:bluetooth.c   ****     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
   24:bluetooth.c   ****     {
   25:bluetooth.c   ****         Cy_BLE_ProcessEvents();
   26:bluetooth.c   ****     }
   27:bluetooth.c   ****     
-  28:bluetooth.c   ****     /* Enable CM4.*/
+  28:bluetooth.c   ****     // Enable CM4.
   29:bluetooth.c   ****     Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
   30:bluetooth.c   ****     
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 2
 
 
-  31:bluetooth.c   ****     /* Register the IPC Callback Function.*/
+  31:bluetooth.c   ****     // Register the IPC Callback Function.
   32:bluetooth.c   ****     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
   33:bluetooth.c   ****                          CM0_MessageCallback,
   34:bluetooth.c   ****                          IPC_CM4_TO_CM0_CLIENT_ID);
   35:bluetooth.c   ****     
-  36:bluetooth.c   ****     for (uint8_t i = 0; i < 10; ++i)
-  37:bluetooth.c   ****     {
-  38:bluetooth.c   ****         for (uint8_t j = 0; j < 144; ++j)
-  39:bluetooth.c   ****         {
-  40:bluetooth.c   ****             events[i][j] = j + i + 1;
-  41:bluetooth.c   ****         }
-  42:bluetooth.c   ****     }
-  43:bluetooth.c   ****     
-  44:bluetooth.c   ****     write_event_to_server((uint8_t *)events[0]);
-  45:bluetooth.c   **** }
-  46:bluetooth.c   **** 
-  47:bluetooth.c   **** void GenericEventHandler(uint32 event, void *eventParam)
-  48:bluetooth.c   **** {
-  49:bluetooth.c   ****     cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
-  50:bluetooth.c   ****     switch(event) 
-  51:bluetooth.c   ****     {
-  52:bluetooth.c   ****         case CY_BLE_EVT_STACK_ON:
-  53:bluetooth.c   ****         case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
-  54:bluetooth.c   ****             //Turn off connection LED
-  55:bluetooth.c   ****             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 0);
-  56:bluetooth.c   ****             //Start advertising again
-  57:bluetooth.c   ****             Cy_BLE_GAPP_StartAdvertisement(CY_BLE_ADVERTISING_FAST, CY_BLE_PERIPHERAL_CONFIGURATION
-  58:bluetooth.c   ****             break;
-  59:bluetooth.c   ****             
-  60:bluetooth.c   ****         case CY_BLE_EVT_GATT_CONNECT_IND:
-  61:bluetooth.c   ****             //Turn on connection LED
-  62:bluetooth.c   ****             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 1);
-  63:bluetooth.c   ****             break;
-  64:bluetooth.c   ****             
-  65:bluetooth.c   ****         case CY_BLE_EVT_GATTS_WRITE_REQ:
-  66:bluetooth.c   ****             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
-  67:bluetooth.c   ****             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
-  68:bluetooth.c   ****             {
-  69:bluetooth.c   ****                 // Place requested event in GATT server
-  70:bluetooth.c   ****                 write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] -
-  71:bluetooth.c   ****                 // Write new event number to GATT server
-  72:bluetooth.c   ****                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->ha
-  73:bluetooth.c   ****             }
-  74:bluetooth.c   ****             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR
-  75:bluetooth.c   ****             {
-  76:bluetooth.c   ****                 //Send threshold to CM4
-  77:bluetooth.c   ****                 send_threshold(writeReqParam->handleValPair.value.val, UPPER_THRESHOLD);
-  78:bluetooth.c   ****                 //Write new threshold to GATT server
-  79:bluetooth.c   ****                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->ha
-  80:bluetooth.c   ****             }
-  81:bluetooth.c   ****             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR
-  82:bluetooth.c   ****             {
-  83:bluetooth.c   ****                 //Send threshold to CM4
-  84:bluetooth.c   ****                 send_threshold(writeReqParam->handleValPair.value.val, LOWER_THRESHOLD);
-  85:bluetooth.c   ****                 //Write new threshold to GATT server
-  86:bluetooth.c   ****                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->ha
-  87:bluetooth.c   ****             }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 3
+  36:bluetooth.c   ****     // Initialize events
+  37:bluetooth.c   ****     for (uint8_t i = 0; i < 10; ++i)
+  38:bluetooth.c   ****     {
+  39:bluetooth.c   ****         for (uint8_t j = 0; j < 144; ++j)
+  40:bluetooth.c   ****         {
+  41:bluetooth.c   ****             events[i][j] = j + i + 1;
+  42:bluetooth.c   ****         }
+  43:bluetooth.c   ****     }
+  44:bluetooth.c   ****     
+  45:bluetooth.c   ****     // Practice code for debugging server
+  46:bluetooth.c   ****     write_event_to_server((uint8_t *)events[0]);
+  47:bluetooth.c   **** }
+  48:bluetooth.c   **** 
+  49:bluetooth.c   **** // Event handler for handling connection and writes to BLE server
+  50:bluetooth.c   **** void GenericEventHandler(uint32 event, void *eventParam)
+  51:bluetooth.c   **** {
+  52:bluetooth.c   ****     cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
+  53:bluetooth.c   ****     switch(event) 
+  54:bluetooth.c   ****     {
+  55:bluetooth.c   ****         case CY_BLE_EVT_STACK_ON:
+  56:bluetooth.c   ****         case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
+  57:bluetooth.c   ****             // Turn off connection LED
+  58:bluetooth.c   ****             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 0);
+  59:bluetooth.c   ****             // Start advertising again
+  60:bluetooth.c   ****             Cy_BLE_GAPP_StartAdvertisement(CY_BLE_ADVERTISING_FAST, CY_BLE_PERIPHERAL_CONFIGURATION
+  61:bluetooth.c   ****             break;
+  62:bluetooth.c   ****             
+  63:bluetooth.c   ****         case CY_BLE_EVT_GATT_CONNECT_IND:
+  64:bluetooth.c   ****             // Turn on connection LED
+  65:bluetooth.c   ****             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 1);
+  66:bluetooth.c   ****             break;
+  67:bluetooth.c   ****             
+  68:bluetooth.c   ****         case CY_BLE_EVT_GATTS_WRITE_REQ:
+  69:bluetooth.c   ****             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
+  70:bluetooth.c   ****             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
+  71:bluetooth.c   ****             {
+  72:bluetooth.c   ****                 // Place requested event in GATT server
+  73:bluetooth.c   ****                 write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] -
+  74:bluetooth.c   ****                 // Write new event number to GATT server
+  75:bluetooth.c   ****                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->ha
+  76:bluetooth.c   ****             }
+  77:bluetooth.c   ****             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR
+  78:bluetooth.c   ****             {
+  79:bluetooth.c   ****                 // Send threshold to CM4
+  80:bluetooth.c   ****                 send_threshold(writeReqParam->handleValPair.value.val, UPPER_THRESHOLD);
+  81:bluetooth.c   ****                 // Write new threshold to GATT server
+  82:bluetooth.c   ****                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->ha
+  83:bluetooth.c   ****             }
+  84:bluetooth.c   ****             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR
+  85:bluetooth.c   ****             {
+  86:bluetooth.c   ****                 // Send threshold to CM4
+  87:bluetooth.c   ****                 send_threshold(writeReqParam->handleValPair.value.val, LOWER_THRESHOLD);
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 3
 
 
-  88:bluetooth.c   ****             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_TRIGGER_CHAR_HANDLE)
-  89:bluetooth.c   ****             {
-  90:bluetooth.c   ****                 send_trigger();
-  91:bluetooth.c   ****             }
-  92:bluetooth.c   ****             
-  93:bluetooth.c   ****             //Send write response//
-  94:bluetooth.c   ****             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
-  95:bluetooth.c   ****             
-  96:bluetooth.c   ****             break;
-  97:bluetooth.c   ****             
-  98:bluetooth.c   ****         default:
-  99:bluetooth.c   ****             break;
- 100:bluetooth.c   ****     }
- 101:bluetooth.c   **** }
- 102:bluetooth.c   **** 
- 103:bluetooth.c   **** void write_event_to_server(uint8_t *event_byte_arr)
- 104:bluetooth.c   **** {
-  28              		.loc 1 104 0
+  88:bluetooth.c   ****                 // Write new threshold to GATT server
+  89:bluetooth.c   ****                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->ha
+  90:bluetooth.c   ****             }
+  91:bluetooth.c   ****             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_TRIGGER_CHAR_HANDLE)
+  92:bluetooth.c   ****             {
+  93:bluetooth.c   ****                 // Send trigger indication to CM4
+  94:bluetooth.c   ****                 send_trigger();
+  95:bluetooth.c   ****             }
+  96:bluetooth.c   ****             
+  97:bluetooth.c   ****             //Send write response//
+  98:bluetooth.c   ****             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
+  99:bluetooth.c   ****             
+ 100:bluetooth.c   ****             break;
+ 101:bluetooth.c   ****             
+ 102:bluetooth.c   ****         default:
+ 103:bluetooth.c   ****             break;
+ 104:bluetooth.c   ****     }
+ 105:bluetooth.c   **** }
+ 106:bluetooth.c   **** 
+ 107:bluetooth.c   **** void write_event_to_server(uint8_t *event_byte_arr)
+ 108:bluetooth.c   **** {
+  28              		.loc 1 108 0
   29              		.cfi_startproc
   30              		@ args = 0, pretend = 0, frame = 16
   31              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -151,258 +155,258 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
   38 0002 85B0     		sub	sp, sp, #20
   39              		.cfi_def_cfa_offset 32
   40 0004 0500     		movs	r5, r0
- 105:bluetooth.c   ****     cy_stc_ble_gatt_handle_value_pair_t handValPair;
- 106:bluetooth.c   ****     handValPair.value.len = GATTS_EVENT_SIZE;
-  41              		.loc 1 106 0
+ 109:bluetooth.c   ****     cy_stc_ble_gatt_handle_value_pair_t handValPair;
+ 110:bluetooth.c   ****     handValPair.value.len = GATTS_EVENT_SIZE;
+  41              		.loc 1 110 0
   42 0006 01AC     		add	r4, sp, #4
   43 0008 1423     		movs	r3, #20
   44 000a A380     		strh	r3, [r4, #4]
- 107:bluetooth.c   ****     
- 108:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_1_10_CHAR_HANDLE;
-  45              		.loc 1 108 0
+ 111:bluetooth.c   ****     // Write each set of values to the GATT server
+ 112:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_1_10_CHAR_HANDLE;
+  45              		.loc 1 112 0
   46 000c 0133     		adds	r3, r3, #1
   47 000e 2381     		strh	r3, [r4, #8]
- 109:bluetooth.c   ****     handValPair.value.val = event_byte_arr;
-  48              		.loc 1 109 0
+ 113:bluetooth.c   ****     handValPair.value.val = event_byte_arr;
+  48              		.loc 1 113 0
   49 0010 0190     		str	r0, [sp, #4]
- 110:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-  50              		.loc 1 110 0
+ 114:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+  50              		.loc 1 114 0
   51 0012 2000     		movs	r0, r4
   52              	.LVL1:
   53 0014 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
   54              	.LVL2:
- 111:bluetooth.c   ****     
- 112:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_11_20_CHAR_HANDLE;
-  55              		.loc 1 112 0
+ 115:bluetooth.c   ****     
+ 116:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_11_20_CHAR_HANDLE;
+  55              		.loc 1 116 0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 4
+
+
   56 0018 1823     		movs	r3, #24
   57 001a 2381     		strh	r3, [r4, #8]
- 113:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 20;
-  58              		.loc 1 113 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 4
-
-
+ 117:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 20;
+  58              		.loc 1 117 0
   59 001c 2B00     		movs	r3, r5
   60 001e 1433     		adds	r3, r3, #20
   61 0020 0193     		str	r3, [sp, #4]
- 114:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-  62              		.loc 1 114 0
+ 118:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+  62              		.loc 1 118 0
   63 0022 2000     		movs	r0, r4
   64 0024 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
   65              	.LVL3:
- 115:bluetooth.c   ****     
- 116:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_21_30_CHAR_HANDLE;
-  66              		.loc 1 116 0
+ 119:bluetooth.c   ****     
+ 120:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_21_30_CHAR_HANDLE;
+  66              		.loc 1 120 0
   67 0028 1A23     		movs	r3, #26
   68 002a 2381     		strh	r3, [r4, #8]
- 117:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 40;
-  69              		.loc 1 117 0
+ 121:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 40;
+  69              		.loc 1 121 0
   70 002c 2B00     		movs	r3, r5
   71 002e 2833     		adds	r3, r3, #40
   72 0030 0193     		str	r3, [sp, #4]
- 118:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-  73              		.loc 1 118 0
+ 122:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+  73              		.loc 1 122 0
   74 0032 2000     		movs	r0, r4
   75 0034 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
   76              	.LVL4:
- 119:bluetooth.c   ****     
- 120:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_31_40_CHAR_HANDLE;
-  77              		.loc 1 120 0
+ 123:bluetooth.c   ****     
+ 124:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_31_40_CHAR_HANDLE;
+  77              		.loc 1 124 0
   78 0038 1C23     		movs	r3, #28
   79 003a 2381     		strh	r3, [r4, #8]
- 121:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 60;
-  80              		.loc 1 121 0
+ 125:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 60;
+  80              		.loc 1 125 0
   81 003c 2B00     		movs	r3, r5
   82 003e 3C33     		adds	r3, r3, #60
   83 0040 0193     		str	r3, [sp, #4]
- 122:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-  84              		.loc 1 122 0
+ 126:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+  84              		.loc 1 126 0
   85 0042 2000     		movs	r0, r4
   86 0044 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
   87              	.LVL5:
- 123:bluetooth.c   ****     
- 124:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_41_50_CHAR_HANDLE;
-  88              		.loc 1 124 0
+ 127:bluetooth.c   ****     
+ 128:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_41_50_CHAR_HANDLE;
+  88              		.loc 1 128 0
   89 0048 1E23     		movs	r3, #30
   90 004a 2381     		strh	r3, [r4, #8]
- 125:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 80;
-  91              		.loc 1 125 0
+ 129:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 80;
+  91              		.loc 1 129 0
   92 004c 2B00     		movs	r3, r5
   93 004e 5033     		adds	r3, r3, #80
   94 0050 0193     		str	r3, [sp, #4]
- 126:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-  95              		.loc 1 126 0
+ 130:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+  95              		.loc 1 130 0
   96 0052 2000     		movs	r0, r4
   97 0054 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
   98              	.LVL6:
- 127:bluetooth.c   ****     
- 128:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_51_60_CHAR_HANDLE;
-  99              		.loc 1 128 0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 5
+
+
+ 131:bluetooth.c   ****     
+ 132:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_51_60_CHAR_HANDLE;
+  99              		.loc 1 132 0
  100 0058 2023     		movs	r3, #32
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 5
-
-
  101 005a 2381     		strh	r3, [r4, #8]
- 129:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 100;
- 102              		.loc 1 129 0
+ 133:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 100;
+ 102              		.loc 1 133 0
  103 005c 2B00     		movs	r3, r5
  104 005e 6433     		adds	r3, r3, #100
  105 0060 0193     		str	r3, [sp, #4]
- 130:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 106              		.loc 1 130 0
+ 134:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 106              		.loc 1 134 0
  107 0062 2000     		movs	r0, r4
  108 0064 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  109              	.LVL7:
- 131:bluetooth.c   ****     
- 132:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_61_70_CHAR_HANDLE;
- 110              		.loc 1 132 0
+ 135:bluetooth.c   ****     
+ 136:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_61_70_CHAR_HANDLE;
+ 110              		.loc 1 136 0
  111 0068 2223     		movs	r3, #34
  112 006a 2381     		strh	r3, [r4, #8]
- 133:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 120;
- 113              		.loc 1 133 0
+ 137:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 120;
+ 113              		.loc 1 137 0
  114 006c 2B00     		movs	r3, r5
  115 006e 7833     		adds	r3, r3, #120
  116 0070 0193     		str	r3, [sp, #4]
- 134:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 117              		.loc 1 134 0
+ 138:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 117              		.loc 1 138 0
  118 0072 2000     		movs	r0, r4
  119 0074 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  120              	.LVL8:
- 135:bluetooth.c   ****     
- 136:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_71_80_CHAR_HANDLE;
- 121              		.loc 1 136 0
+ 139:bluetooth.c   ****     
+ 140:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_71_80_CHAR_HANDLE;
+ 121              		.loc 1 140 0
  122 0078 2423     		movs	r3, #36
  123 007a 2381     		strh	r3, [r4, #8]
- 137:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 140;
- 124              		.loc 1 137 0
+ 141:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 140;
+ 124              		.loc 1 141 0
  125 007c 2B00     		movs	r3, r5
  126 007e 8C33     		adds	r3, r3, #140
  127 0080 0193     		str	r3, [sp, #4]
- 138:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 128              		.loc 1 138 0
+ 142:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 128              		.loc 1 142 0
  129 0082 2000     		movs	r0, r4
  130 0084 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  131              	.LVL9:
- 139:bluetooth.c   ****     
- 140:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_81_90_CHAR_HANDLE;
- 132              		.loc 1 140 0
+ 143:bluetooth.c   ****     
+ 144:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_81_90_CHAR_HANDLE;
+ 132              		.loc 1 144 0
  133 0088 2623     		movs	r3, #38
  134 008a 2381     		strh	r3, [r4, #8]
- 141:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 160;
- 135              		.loc 1 141 0
+ 145:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 160;
+ 135              		.loc 1 145 0
  136 008c 2B00     		movs	r3, r5
  137 008e A033     		adds	r3, r3, #160
  138 0090 0193     		str	r3, [sp, #4]
- 142:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 139              		.loc 1 142 0
+ 146:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 139              		.loc 1 146 0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 6
+
+
  140 0092 2000     		movs	r0, r4
  141 0094 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  142              	.LVL10:
- 143:bluetooth.c   ****     
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 6
-
-
- 144:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_91_100_CHAR_HANDLE;
- 143              		.loc 1 144 0
+ 147:bluetooth.c   ****     
+ 148:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_91_100_CHAR_HANDLE;
+ 143              		.loc 1 148 0
  144 0098 2823     		movs	r3, #40
  145 009a 2381     		strh	r3, [r4, #8]
- 145:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 180;
- 146              		.loc 1 145 0
+ 149:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 180;
+ 146              		.loc 1 149 0
  147 009c 2B00     		movs	r3, r5
  148 009e B433     		adds	r3, r3, #180
  149 00a0 0193     		str	r3, [sp, #4]
- 146:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 150              		.loc 1 146 0
+ 150:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 150              		.loc 1 150 0
  151 00a2 2000     		movs	r0, r4
  152 00a4 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  153              	.LVL11:
- 147:bluetooth.c   ****     
- 148:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_101_110_CHAR_HANDLE;
- 154              		.loc 1 148 0
+ 151:bluetooth.c   ****     
+ 152:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_101_110_CHAR_HANDLE;
+ 154              		.loc 1 152 0
  155 00a8 2A23     		movs	r3, #42
  156 00aa 2381     		strh	r3, [r4, #8]
- 149:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 200;
- 157              		.loc 1 149 0
+ 153:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 200;
+ 157              		.loc 1 153 0
  158 00ac 2B00     		movs	r3, r5
  159 00ae C833     		adds	r3, r3, #200
  160 00b0 0193     		str	r3, [sp, #4]
- 150:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 161              		.loc 1 150 0
+ 154:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 161              		.loc 1 154 0
  162 00b2 2000     		movs	r0, r4
  163 00b4 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  164              	.LVL12:
- 151:bluetooth.c   ****     
- 152:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_111_120_CHAR_HANDLE;
- 165              		.loc 1 152 0
+ 155:bluetooth.c   ****     
+ 156:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_111_120_CHAR_HANDLE;
+ 165              		.loc 1 156 0
  166 00b8 2C23     		movs	r3, #44
  167 00ba 2381     		strh	r3, [r4, #8]
- 153:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 220;
- 168              		.loc 1 153 0
+ 157:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 220;
+ 168              		.loc 1 157 0
  169 00bc 2B00     		movs	r3, r5
  170 00be DC33     		adds	r3, r3, #220
  171 00c0 0193     		str	r3, [sp, #4]
- 154:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 172              		.loc 1 154 0
+ 158:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 172              		.loc 1 158 0
  173 00c2 2000     		movs	r0, r4
  174 00c4 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  175              	.LVL13:
- 155:bluetooth.c   ****     
- 156:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_121_130_CHAR_HANDLE;
- 176              		.loc 1 156 0
+ 159:bluetooth.c   ****     
+ 160:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_121_130_CHAR_HANDLE;
+ 176              		.loc 1 160 0
  177 00c8 2E23     		movs	r3, #46
  178 00ca 2381     		strh	r3, [r4, #8]
- 157:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 240;
- 179              		.loc 1 157 0
+ 161:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 240;
+ 179              		.loc 1 161 0
  180 00cc 2B00     		movs	r3, r5
  181 00ce F033     		adds	r3, r3, #240
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 7
+
+
  182 00d0 0193     		str	r3, [sp, #4]
- 158:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 183              		.loc 1 158 0
+ 162:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 183              		.loc 1 162 0
  184 00d2 2000     		movs	r0, r4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 7
-
-
  185 00d4 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  186              	.LVL14:
- 159:bluetooth.c   ****     
- 160:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_131_140_CHAR_HANDLE;
- 187              		.loc 1 160 0
+ 163:bluetooth.c   ****     
+ 164:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_131_140_CHAR_HANDLE;
+ 187              		.loc 1 164 0
  188 00d8 3023     		movs	r3, #48
  189 00da 2381     		strh	r3, [r4, #8]
- 161:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 260;
- 190              		.loc 1 161 0
+ 165:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 260;
+ 190              		.loc 1 165 0
  191 00dc 6B1D     		adds	r3, r5, #5
  192 00de FF33     		adds	r3, r3, #255
  193 00e0 0193     		str	r3, [sp, #4]
- 162:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 194              		.loc 1 162 0
+ 166:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 194              		.loc 1 166 0
  195 00e2 2000     		movs	r0, r4
  196 00e4 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  197              	.LVL15:
- 163:bluetooth.c   ****     
- 164:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_141_144_CHAR_HANDLE;
- 198              		.loc 1 164 0
+ 167:bluetooth.c   ****     
+ 168:bluetooth.c   ****     handValPair.attrHandle = CY_BLE_EVENT_ES_141_144_CHAR_HANDLE;
+ 198              		.loc 1 168 0
  199 00e8 3223     		movs	r3, #50
  200 00ea 2381     		strh	r3, [r4, #8]
- 165:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 280;
- 201              		.loc 1 165 0
+ 169:bluetooth.c   ****     handValPair.value.val = event_byte_arr + 280;
+ 201              		.loc 1 169 0
  202 00ec 1935     		adds	r5, r5, #25
  203              	.LVL16:
  204 00ee FF35     		adds	r5, r5, #255
  205              	.LVL17:
  206 00f0 0195     		str	r5, [sp, #4]
- 166:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
- 207              		.loc 1 166 0
+ 170:bluetooth.c   ****     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+ 207              		.loc 1 170 0
  208 00f2 2000     		movs	r0, r4
  209 00f4 FFF7FEFF 		bl	Cy_BLE_GATTS_WriteAttributeValueLocal
  210              	.LVL18:
- 167:bluetooth.c   **** }
- 211              		.loc 1 167 0
+ 171:bluetooth.c   **** }
+ 211              		.loc 1 171 0
  212 00f8 05B0     		add	sp, sp, #20
  213              		@ sp needed
  214              	.LVL19:
  215 00fa 30BD     		pop	{r4, r5, pc}
  216              		.cfi_endproc
- 217              	.LFE439:
+ 217              	.LFE445:
  218              		.size	write_event_to_server, .-write_event_to_server
  219              		.section	.text.init_ble,"ax",%progbits
  220              		.align	2
@@ -411,16 +415,16 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  223              		.thumb_func
  224              		.type	init_ble, %function
  225              	init_ble:
- 226              	.LFB437:
-  17:bluetooth.c   ****     /* Enable global interrupts. */
+ 226              	.LFB443:
+  17:bluetooth.c   ****     // Enable global interrupts.
  227              		.loc 1 17 0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 8
+
+
  228              		.cfi_startproc
  229              		@ args = 0, pretend = 0, frame = 0
  230              		@ frame_needed = 0, uses_anonymous_args = 0
  231 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 8
-
-
  232              		.cfi_def_cfa_offset 8
  233              		.cfi_offset 4, -8
  234              		.cfi_offset 14, -4
@@ -474,13 +478,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
   45:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __NO_RETURN               __attribute__((noreturn))
   46:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
   47:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __USED
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 9
+
+
   48:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                    __attribute__((used))
   49:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
   50:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
   51:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                    __attribute__((weak))
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 9
-
-
   52:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
   53:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __UNALIGNED_UINT32
   54:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #pragma GCC diagnostic push
@@ -534,13 +538,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  252 000a 01E0     		b	.L3
  253              	.L4:
   25:bluetooth.c   ****     }
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 10
+
+
  254              		.loc 1 25 0
  255 000c FFF7FEFF 		bl	Cy_BLE_ProcessEvents
  256              	.LVL21:
  257              	.L3:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 10
-
-
   23:bluetooth.c   ****     {
  258              		.loc 1 23 0
  259 0010 134B     		ldr	r3, .L9+4
@@ -560,15 +564,15 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  271 0024 FFF7FEFF 		bl	Cy_IPC_Pipe_RegisterCallback
  272              	.LVL23:
  273              	.LBB12:
-  36:bluetooth.c   ****     {
- 274              		.loc 1 36 0
+  37:bluetooth.c   ****     {
+ 274              		.loc 1 37 0
  275 0028 0020     		movs	r0, #0
  276 002a 10E0     		b	.L5
  277              	.LVL24:
  278              	.L6:
  279              	.LBB13:
-  40:bluetooth.c   ****         }
- 280              		.loc 1 40 0 discriminator 3
+  41:bluetooth.c   ****         }
+ 280              		.loc 1 41 0 discriminator 3
  281 002c C100     		lsls	r1, r0, #3
  282 002e 0918     		adds	r1, r1, r0
  283 0030 0A01     		lsls	r2, r1, #4
@@ -578,8 +582,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  287 0038 0131     		adds	r1, r1, #1
  288 003a 0C4C     		ldr	r4, .L9+16
  289 003c 1153     		strh	r1, [r2, r4]
-  38:bluetooth.c   ****         {
- 290              		.loc 1 38 0 discriminator 3
+  39:bluetooth.c   ****         {
+ 290              		.loc 1 39 0 discriminator 3
  291 003e 0133     		adds	r3, r3, #1
  292              	.LVL25:
  293 0040 DBB2     		uxtb	r3, r3
@@ -592,34 +596,34 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  300              	.L7:
  301              	.LVL28:
  302              	.LBB14:
-  38:bluetooth.c   ****         {
- 303              		.loc 1 38 0 is_stmt 0 discriminator 1
+  39:bluetooth.c   ****         {
+ 303              		.loc 1 39 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 11
+
+
  304 0046 8F2B     		cmp	r3, #143
  305 0048 F0D9     		bls	.L6
  306              	.LBE14:
-  36:bluetooth.c   ****     {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 11
-
-
- 307              		.loc 1 36 0 is_stmt 1 discriminator 2
+  37:bluetooth.c   ****     {
+ 307              		.loc 1 37 0 is_stmt 1 discriminator 2
  308 004a 0130     		adds	r0, r0, #1
  309              	.LVL29:
  310 004c C0B2     		uxtb	r0, r0
  311              	.LVL30:
  312              	.L5:
-  36:bluetooth.c   ****     {
- 313              		.loc 1 36 0 is_stmt 0 discriminator 1
+  37:bluetooth.c   ****     {
+ 313              		.loc 1 37 0 is_stmt 0 discriminator 1
  314 004e 0928     		cmp	r0, #9
  315 0050 F8D9     		bls	.L8
  316              	.LBE12:
-  44:bluetooth.c   **** }
- 317              		.loc 1 44 0 is_stmt 1
+  46:bluetooth.c   **** }
+ 317              		.loc 1 46 0 is_stmt 1
  318 0052 0648     		ldr	r0, .L9+16
  319              	.LVL31:
  320 0054 FFF7FEFF 		bl	write_event_to_server
  321              	.LVL32:
-  45:bluetooth.c   **** 
- 322              		.loc 1 45 0
+  47:bluetooth.c   **** 
+ 322              		.loc 1 47 0
  323              		@ sp needed
  324 0058 10BD     		pop	{r4, pc}
  325              	.L10:
@@ -631,7 +635,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  331 0068 00000000 		.word	CM0_MessageCallback
  332 006c 00000000 		.word	events
  333              		.cfi_endproc
- 334              	.LFE437:
+ 334              	.LFE443:
  335              		.size	init_ble, .-init_ble
  336              		.section	.text.GenericEventHandler,"ax",%progbits
  337              		.align	2
@@ -640,9 +644,9 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  340              		.thumb_func
  341              		.type	GenericEventHandler, %function
  342              	GenericEventHandler:
- 343              	.LFB438:
-  48:bluetooth.c   ****     cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
- 344              		.loc 1 48 0
+ 343              	.LFB444:
+  51:bluetooth.c   ****     cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
+ 344              		.loc 1 51 0
  345              		.cfi_startproc
  346              		@ args = 0, pretend = 0, frame = 0
  347              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -652,15 +656,15 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  351              		.cfi_offset 4, -8
  352              		.cfi_offset 14, -4
  353 0002 0C00     		movs	r4, r1
-  50:bluetooth.c   ****     {
- 354              		.loc 1 50 0
+  53:bluetooth.c   ****     {
+ 354              		.loc 1 53 0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 12
+
+
  355 0004 274B     		ldr	r3, .L21
  356 0006 9842     		cmp	r0, r3
  357 0008 0CD0     		beq	.L13
  358 000a 04D8     		bhi	.L14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 12
-
-
  359 000c 8023     		movs	r3, #128
  360 000e 5B01     		lsls	r3, r3, #5
  361 0010 9842     		cmp	r0, r3
@@ -714,13 +718,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
   33:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *   bitfields representing the desired value for each pin in the port.
   34:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * - Pin configuration and management is based on the port address and pin number.
   35:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *   \ref Cy_GPIO_PortToAddr function can optionally be used to calculate the port
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 13
+
+
   36:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *   address from the port number at run-time.
   37:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
   38:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Once the pin/port initialization is complete, each pin can be accessed by 
   39:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * specifying the port (GPIO_PRT_Type) and the pin (0-7) in the provided API 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 13
-
-
   40:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * functions.
   41:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
   42:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \section group_gpio_configuration Configuration Considerations
@@ -774,13 +778,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
   90:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *     <td>1.10.1</td>
   91:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *     <td>Updated description for the functions: \ref Cy_GPIO_GetInterruptStatus, 
   92:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *         \ref Cy_GPIO_GetInterruptMask, \ref Cy_GPIO_GetInterruptStatusMasked.
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 14
+
+
   93:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *         Minor documentation edits.
   94:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *     </td>
   95:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *     <td>Documentation update and clarification</td>
   96:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *   </tr>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 14
-
-
   97:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *   <tr>
   98:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *     <td>1.10</td>
   99:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *     <td>Added input parameter validation to the API functions</td>
@@ -834,13 +838,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  147:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  148:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /***************************************
  149:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *       Enumerations
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 15
+
+
  150:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** ***************************************/
  151:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
  152:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \addtogroup group_gpio_enums
  153:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 15
-
-
  154:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** */
  155:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  156:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
@@ -894,13 +898,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  204:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     uint32_t vohSel;         /**< SIO pair regulated voltage output level */
  205:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** } cy_stc_gpio_pin_config_t;
  206:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 16
+
+
  207:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \} group_gpio_data_structures */
  208:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  209:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /***************************************
  210:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *        Constants
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 16
-
-
  211:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** ***************************************/
  212:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  213:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \cond INTERNAL */
@@ -954,13 +958,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  261:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_PRT_INTR_CFG_EDGE_SEL_MASK     (GPIO_PRT_INTR_CFG_EDGE0_SEL_Msk | \
  262:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE1_SEL_Msk | \
  263:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE2_SEL_Msk | \
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 17
+
+
  264:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE3_SEL_Msk | \
  265:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE4_SEL_Msk | \
  266:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE5_SEL_Msk | \
  267:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE6_SEL_Msk | \
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 17
-
-
  268:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_EDGE7_SEL_Msk)            
  269:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_PRT_INTR_CFG_RANGE_MASK        (CY_GPIO_PRT_INTR_CFG_EDGE_SEL_MASK | \
  270:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 GPIO_PRT_INTR_CFG_FLT_EDGE_SEL_Msk | \
@@ -1014,13 +1018,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  318:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  319:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
  320:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \addtogroup group_gpio_macros
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 18
+
+
  321:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
  322:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** */
  323:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  324:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 18
-
-
  325:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \defgroup group_gpio_driveModes Pin drive mode
  326:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
  327:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Constants to be used for setting the drive mode of the pin.
@@ -1074,13 +1078,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  375:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \defgroup group_gpio_interruptTrigger Interrupt trigger type
  376:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
  377:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Constants to be used for setting the interrupt trigger type on the pin.
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 19
+
+
  378:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** */
  379:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_DISABLE                   (0x00UL) /**< \brief Disable the pin interrupt gener
  380:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_RISING                    (0x01UL) /**< \brief Rising-Edge interrupt */
  381:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_FALLING                   (0x02UL) /**< \brief Falling-Edge interrupt */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 19
-
-
  382:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_BOTH                      (0x03UL) /**< \brief Both-Edge interrupt */
  383:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \} */
  384:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
@@ -1134,13 +1138,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  432:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_VOH_1_49                        (0x02UL) /**< \brief Voh = 1.49 x Reference */
  433:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_VOH_1_67                        (0x03UL) /**< \brief Voh = 1.67 x Reference */
  434:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_VOH_2_08                        (0x04UL) /**< \brief Voh = 2.08 x Reference */
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 20
+
+
  435:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_VOH_2_50                        (0x05UL) /**< \brief Voh = 2.50 x Reference */
  436:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_VOH_2_78                        (0x06UL) /**< \brief Voh = 2.78 x Reference */
  437:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_VOH_4_16                        (0x07UL) /**< \brief Voh = 4.16 x Reference */
  438:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \} */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 20
-
-
  439:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  440:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \} group_gpio_macros */
  441:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
@@ -1194,13 +1198,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  489:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \addtogroup group_gpio_functions_sio
  490:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
  491:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** */
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 21
+
+
  492:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  493:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE void Cy_GPIO_SetVregEn(GPIO_PRT_Type* base, uint32_t pinNum, uint32_t value);
  494:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE uint32_t Cy_GPIO_GetVregEn(GPIO_PRT_Type* base, uint32_t pinNum);
  495:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE void Cy_GPIO_SetIbufMode(GPIO_PRT_Type* base, uint32_t pinNum, uint32_t value);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 21
-
-
  496:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE uint32_t Cy_GPIO_GetIbufMode(GPIO_PRT_Type* base, uint32_t pinNum);
  497:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE void Cy_GPIO_SetVtripSel(GPIO_PRT_Type* base, uint32_t pinNum, uint32_t value);
  498:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE uint32_t Cy_GPIO_GetVtripSel(GPIO_PRT_Type* base, uint32_t pinNum);
@@ -1254,13 +1258,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  546:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /*******************************************************************************
  547:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Function Name: Cy_GPIO_SetHSIOM
  548:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** ****************************************************************************//**
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 22
+
+
  549:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  550:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \brief Configures the HSIOM connection to the pin.
  551:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  552:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Connects the specified High-Speed Input Output Multiplexer (HSIOM) selection
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 22
-
-
  553:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * to the pin.
  554:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  555:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \param base
@@ -1314,13 +1318,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  603:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** ****************************************************************************//**
  604:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  605:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \brief Returns the current HSIOM multiplexer connection to the pin.
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 23
+
+
  606:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  607:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \param base
  608:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Pointer to the pin's port register base address
  609:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 23
-
-
  610:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \param pinNum
  611:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Position of the pin bit-field within the port register
  612:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
@@ -1374,13 +1378,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  660:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \funcusage
  661:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \snippet gpio/gpio_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_GPIO_PortToAddr
  662:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 24
+
+
  663:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *******************************************************************************/
  664:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE GPIO_PRT_Type* Cy_GPIO_PortToAddr(uint32_t portNum)
  665:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** {
  666:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     GPIO_PRT_Type* base;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 24
-
-
  667:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     
  668:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     if(portNum < (uint32_t)IOSS_GPIO_GPIO_PORT_NR)
  669:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     {
@@ -1434,13 +1438,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  717:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Function Name: Cy_GPIO_Write
  718:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** ****************************************************************************//**
  719:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 25
+
+
  720:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \brief Write a logic 0 or logic 1 state to the output driver.
  721:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  722:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * This function should be used only for software driven pins. It does not have
  723:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * any effect on peripheral driven pins.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 25
-
-
  724:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
  725:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \param base
  726:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * Pointer to the pin's port register base address
@@ -1474,16 +1478,16 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  381              	.LVL35:
  382              	.LBE16:
  383              	.LBE15:
-  57:bluetooth.c   ****             break;
- 384              		.loc 1 57 0
+  60:bluetooth.c   ****             break;
+ 384              		.loc 1 60 0
  385 002a 0021     		movs	r1, #0
  386              	.LVL36:
  387 002c 0020     		movs	r0, #0
  388              	.LVL37:
  389 002e FFF7FEFF 		bl	Cy_BLE_GAPP_StartAdvertisement
  390              	.LVL38:
-  58:bluetooth.c   ****             
- 391              		.loc 1 58 0
+  61:bluetooth.c   ****             
+ 391              		.loc 1 61 0
  392 0032 35E0     		b	.L11
  393              	.LVL39:
  394              	.L15:
@@ -1494,24 +1498,24 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  752:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     {
  753:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****         base->OUT_SET = CY_GPIO_OUT_MASK << pinNum;
  397              		.loc 3 753 0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 26
+
+
  398 0034 2022     		movs	r2, #32
  399 0036 1E4B     		ldr	r3, .L21+12
  400 0038 9A60     		str	r2, [r3, #8]
  401 003a 31E0     		b	.L11
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 26
-
-
  402              	.LVL40:
  403              	.L16:
  404              	.LBE18:
  405              	.LBE17:
-  67:bluetooth.c   ****             {
- 406              		.loc 1 67 0
+  70:bluetooth.c   ****             {
+ 406              		.loc 1 70 0
  407 003c 0B89     		ldrh	r3, [r1, #8]
  408 003e 372B     		cmp	r3, #55
  409 0040 0FD1     		bne	.L17
-  70:bluetooth.c   ****                 // Write new event number to GATT server
- 410              		.loc 1 70 0
+  73:bluetooth.c   ****                 // Write new event number to GATT server
+ 410              		.loc 1 73 0
  411 0042 0B68     		ldr	r3, [r1]
  412 0044 1B78     		ldrb	r3, [r3]
  413 0046 013B     		subs	r3, r3, #1
@@ -1523,8 +1527,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  419 0050 C018     		adds	r0, r0, r3
  420 0052 FFF7FEFF 		bl	write_event_to_server
  421              	.LVL42:
-  72:bluetooth.c   ****             }
- 422              		.loc 1 72 0
+  75:bluetooth.c   ****             }
+ 422              		.loc 1 75 0
  423 0056 2000     		movs	r0, r4
  424 0058 0C30     		adds	r0, r0, #12
  425 005a 2100     		movs	r1, r4
@@ -1533,20 +1537,20 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  428 0060 1BE0     		b	.L18
  429              	.LVL44:
  430              	.L17:
-  74:bluetooth.c   ****             {
- 431              		.loc 1 74 0
+  77:bluetooth.c   ****             {
+ 431              		.loc 1 77 0
  432 0062 392B     		cmp	r3, #57
  433 0064 09D1     		bne	.L19
-  77:bluetooth.c   ****                 //Write new threshold to GATT server
- 434              		.loc 1 77 0
+  80:bluetooth.c   ****                 // Write new threshold to GATT server
+ 434              		.loc 1 80 0
  435 0066 0421     		movs	r1, #4
  436              	.LVL45:
  437 0068 2068     		ldr	r0, [r4]
  438              	.LVL46:
  439 006a FFF7FEFF 		bl	send_threshold
  440              	.LVL47:
-  79:bluetooth.c   ****             }
- 441              		.loc 1 79 0
+  82:bluetooth.c   ****             }
+ 441              		.loc 1 82 0
  442 006e 2000     		movs	r0, r4
  443 0070 0C30     		adds	r0, r0, #12
  444 0072 2100     		movs	r1, r4
@@ -1554,24 +1558,24 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  446              	.LVL48:
  447 0078 0FE0     		b	.L18
  448              	.LVL49:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 27
+
+
  449              	.L19:
-  81:bluetooth.c   ****             {
- 450              		.loc 1 81 0
+  84:bluetooth.c   ****             {
+ 450              		.loc 1 84 0
  451 007a 3B2B     		cmp	r3, #59
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 27
-
-
  452 007c 09D1     		bne	.L20
-  84:bluetooth.c   ****                 //Write new threshold to GATT server
- 453              		.loc 1 84 0
+  87:bluetooth.c   ****                 // Write new threshold to GATT server
+ 453              		.loc 1 87 0
  454 007e 0521     		movs	r1, #5
  455              	.LVL50:
  456 0080 2068     		ldr	r0, [r4]
  457              	.LVL51:
  458 0082 FFF7FEFF 		bl	send_threshold
  459              	.LVL52:
-  86:bluetooth.c   ****             }
- 460              		.loc 1 86 0
+  89:bluetooth.c   ****             }
+ 460              		.loc 1 89 0
  461 0086 2000     		movs	r0, r4
  462 0088 0C30     		adds	r0, r0, #12
  463 008a 2100     		movs	r1, r4
@@ -1580,23 +1584,23 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  466 0090 03E0     		b	.L18
  467              	.LVL54:
  468              	.L20:
-  88:bluetooth.c   ****             {
- 469              		.loc 1 88 0
+  91:bluetooth.c   ****             {
+ 469              		.loc 1 91 0
  470 0092 352B     		cmp	r3, #53
  471 0094 01D1     		bne	.L18
-  90:bluetooth.c   ****             }
- 472              		.loc 1 90 0
+  94:bluetooth.c   ****             }
+ 472              		.loc 1 94 0
  473 0096 FFF7FEFF 		bl	send_trigger
  474              	.LVL55:
  475              	.L18:
-  94:bluetooth.c   ****             
- 476              		.loc 1 94 0
+  98:bluetooth.c   ****             
+ 476              		.loc 1 98 0
  477 009a E068     		ldr	r0, [r4, #12]
  478 009c FFF7FEFF 		bl	Cy_BLE_GATTS_WriteRsp
  479              	.LVL56:
  480              	.L11:
- 101:bluetooth.c   **** 
- 481              		.loc 1 101 0
+ 105:bluetooth.c   **** 
+ 481              		.loc 1 105 0
  482              		@ sp needed
  483              	.LVL57:
  484 00a0 10BD     		pop	{r4, pc}
@@ -1609,18 +1613,18 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  491 00b0 00053240 		.word	1077019904
  492 00b4 00000000 		.word	events
  493              		.cfi_endproc
- 494              	.LFE438:
+ 494              	.LFE444:
  495              		.size	GenericEventHandler, .-GenericEventHandler
  496              		.comm	events,2880,4
  497              		.comm	ipcMsgForCM4,296,4
  498              		.comm	rdyToRecvMsg,1,1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 28
+
+
  499              		.text
  500              	.Letext0:
  501              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
  502              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 28
-
-
  503              		.file 6 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/ip/cyip_gpio.h"
  504              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/syslib/cy_syslib.h"
  505              		.file 8 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_uart.h"
@@ -1630,7 +1634,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  509              		.file 12 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack_gatt.h"
  510              		.file 13 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_gap.h"
  511              		.file 14 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_stack_gatt_client.h"
- 512              		.file 15 "Generated_Source\\PSoC6/ADC_1.h"
+ 512              		.file 15 "Generated_Source\\PSoC6/ADC.h"
  513              		.file 16 "ipc_shared.h"
  514              		.file 17 "Generated_Source\\PSoC6/UART.h"
  515              		.file 18 "ipc_cm0p.h"
@@ -1657,49 +1661,49 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  536 0025 02       		.uleb128 0x2
  537 0026 02       		.byte	0x2
  538 0027 05       		.byte	0x5
- 539 0028 CA120000 		.4byte	.LASF0
+ 539 0028 B7120000 		.4byte	.LASF0
  540 002c 02       		.uleb128 0x2
  541 002d 01       		.byte	0x1
  542 002e 08       		.byte	0x8
- 543 002f 31160000 		.4byte	.LASF1
+ 543 002f 19160000 		.4byte	.LASF1
  544 0033 02       		.uleb128 0x2
  545 0034 01       		.byte	0x1
  546 0035 06       		.byte	0x6
- 547 0036 52180000 		.4byte	.LASF2
+ 547 0036 4C180000 		.4byte	.LASF2
  548 003a 03       		.uleb128 0x3
- 549 003b BB140000 		.4byte	.LASF3
+ 549 003b A3140000 		.4byte	.LASF3
  550 003f 04       		.byte	0x4
  551 0040 1D       		.byte	0x1d
  552 0041 2C000000 		.4byte	0x2c
  553 0045 03       		.uleb128 0x3
  554 0046 A7070000 		.4byte	.LASF4
  555 004a 04       		.byte	0x4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 29
+
+
  556 004b 2B       		.byte	0x2b
  557 004c 50000000 		.4byte	0x50
  558 0050 02       		.uleb128 0x2
  559 0051 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 29
-
-
  560 0052 07       		.byte	0x7
- 561 0053 5E180000 		.4byte	.LASF5
+ 561 0053 58180000 		.4byte	.LASF5
  562 0057 02       		.uleb128 0x2
  563 0058 04       		.byte	0x4
  564 0059 05       		.byte	0x5
- 565 005a 0A130000 		.4byte	.LASF6
+ 565 005a 06130000 		.4byte	.LASF6
  566 005e 03       		.uleb128 0x3
- 567 005f 64160000 		.4byte	.LASF7
+ 567 005f 4C160000 		.4byte	.LASF7
  568 0063 04       		.byte	0x4
  569 0064 41       		.byte	0x41
  570 0065 69000000 		.4byte	0x69
  571 0069 02       		.uleb128 0x2
  572 006a 04       		.byte	0x4
  573 006b 07       		.byte	0x7
- 574 006c 6D150000 		.4byte	.LASF8
+ 574 006c 55150000 		.4byte	.LASF8
  575 0070 02       		.uleb128 0x2
  576 0071 08       		.byte	0x8
  577 0072 05       		.byte	0x5
- 578 0073 F80D0000 		.4byte	.LASF9
+ 578 0073 D30D0000 		.4byte	.LASF9
  579 0077 02       		.uleb128 0x2
  580 0078 08       		.byte	0x8
  581 0079 07       		.byte	0x7
@@ -1713,12 +1717,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  589 0087 07       		.byte	0x7
  590 0088 E9010000 		.4byte	.LASF11
  591 008c 03       		.uleb128 0x3
- 592 008d EF0C0000 		.4byte	.LASF12
+ 592 008d CA0C0000 		.4byte	.LASF12
  593 0091 05       		.byte	0x5
  594 0092 18       		.byte	0x18
  595 0093 3A000000 		.4byte	0x3a
  596 0097 03       		.uleb128 0x3
- 597 0098 1D110000 		.4byte	.LASF13
+ 597 0098 0A110000 		.4byte	.LASF13
  598 009c 05       		.byte	0x5
  599 009d 24       		.byte	0x24
  600 009e 45000000 		.4byte	0x45
@@ -1730,17 +1734,17 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  606 00ad 02       		.uleb128 0x2
  607 00ae 04       		.byte	0x4
  608 00af 07       		.byte	0x7
- 609 00b0 64150000 		.4byte	.LASF15
+ 609 00b0 4C150000 		.4byte	.LASF15
  610 00b4 05       		.uleb128 0x5
  611 00b5 A2000000 		.4byte	0xa2
  612 00b9 06       		.uleb128 0x6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 30
+
+
  613 00ba B4000000 		.4byte	0xb4
  614 00be 07       		.uleb128 0x7
  615 00bf B9000000 		.4byte	0xb9
  616 00c3 CE000000 		.4byte	0xce
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 30
-
-
  617 00c7 08       		.uleb128 0x8
  618 00c8 AD000000 		.4byte	0xad
  619 00cc 0F       		.byte	0xf
@@ -1769,7 +1773,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  642 00f5 B4000000 		.4byte	0xb4
  643 00f9 08       		.byte	0x8
  644 00fa 0B       		.uleb128 0xb
- 645 00fb B3140000 		.4byte	.LASF18
+ 645 00fb 9B140000 		.4byte	.LASF18
  646 00ff 06       		.byte	0x6
  647 0100 26       		.byte	0x26
  648 0101 B4000000 		.4byte	0xb4
@@ -1781,26 +1785,26 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  654 010c B9000000 		.4byte	0xb9
  655 0110 10       		.byte	0x10
  656 0111 0B       		.uleb128 0xb
- 657 0112 E40A0000 		.4byte	.LASF19
+ 657 0112 D00A0000 		.4byte	.LASF19
  658 0116 06       		.byte	0x6
  659 0117 28       		.byte	0x28
  660 0118 B4000000 		.4byte	0xb4
  661 011c 14       		.byte	0x14
  662 011d 0B       		.uleb128 0xb
- 663 011e 1B0B0000 		.4byte	.LASF20
+ 663 011e 070B0000 		.4byte	.LASF20
  664 0122 06       		.byte	0x6
  665 0123 29       		.byte	0x29
  666 0124 B4000000 		.4byte	0xb4
  667 0128 18       		.byte	0x18
  668 0129 0B       		.uleb128 0xb
- 669 012a 38150000 		.4byte	.LASF21
+ 669 012a 20150000 		.4byte	.LASF21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 31
+
+
  670 012e 06       		.byte	0x6
  671 012f 2A       		.byte	0x2a
  672 0130 B9000000 		.4byte	0xb9
  673 0134 1C       		.byte	0x1c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 31
-
-
  674 0135 0B       		.uleb128 0xb
  675 0136 A2030000 		.4byte	.LASF22
  676 013a 06       		.byte	0x6
@@ -1808,7 +1812,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  678 013c B4000000 		.4byte	0xb4
  679 0140 20       		.byte	0x20
  680 0141 0B       		.uleb128 0xb
- 681 0142 98160000 		.4byte	.LASF23
+ 681 0142 80160000 		.4byte	.LASF23
  682 0146 06       		.byte	0x6
  683 0147 2C       		.byte	0x2c
  684 0148 B4000000 		.4byte	0xb4
@@ -1844,27 +1848,27 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  714 0184 B9000000 		.4byte	0xb9
  715 0188 38       		.byte	0x38
  716 0189 0B       		.uleb128 0xb
- 717 018a EE130000 		.4byte	.LASF28
+ 717 018a D6130000 		.4byte	.LASF28
  718 018e 06       		.byte	0x6
  719 018f 32       		.byte	0x32
  720 0190 B4000000 		.4byte	0xb4
  721 0194 3C       		.byte	0x3c
  722 0195 0B       		.uleb128 0xb
- 723 0196 92120000 		.4byte	.LASF29
+ 723 0196 7F120000 		.4byte	.LASF29
  724 019a 06       		.byte	0x6
  725 019b 33       		.byte	0x33
  726 019c A7010000 		.4byte	0x1a7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 32
+
+
  727 01a0 40       		.byte	0x40
  728 01a1 00       		.byte	0
  729 01a2 05       		.uleb128 0x5
  730 01a3 BE000000 		.4byte	0xbe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 32
-
-
  731 01a7 06       		.uleb128 0x6
  732 01a8 A2010000 		.4byte	0x1a2
  733 01ac 03       		.uleb128 0x3
- 734 01ad E90A0000 		.4byte	.LASF30
+ 734 01ad D50A0000 		.4byte	.LASF30
  735 01b1 06       		.byte	0x6
  736 01b2 34       		.byte	0x34
  737 01b3 CE000000 		.4byte	0xce
@@ -1892,7 +1896,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  759 01e0 B9000000 		.4byte	0xb9
  760 01e4 0440     		.2byte	0x4004
  761 01e6 0D       		.uleb128 0xd
- 762 01e7 370D0000 		.4byte	.LASF33
+ 762 01e7 120D0000 		.4byte	.LASF33
  763 01eb 06       		.byte	0x6
  764 01ec 3D       		.byte	0x3d
  765 01ed B9000000 		.4byte	0xb9
@@ -1910,28 +1914,28 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  777 0207 B9000000 		.4byte	0xb9
  778 020b 1040     		.2byte	0x4010
  779 020d 0D       		.uleb128 0xd
- 780 020e F9090000 		.4byte	.LASF36
+ 780 020e E5090000 		.4byte	.LASF36
  781 0212 06       		.byte	0x6
  782 0213 40       		.byte	0x40
  783 0214 B4000000 		.4byte	0xb4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 33
+
+
  784 0218 1440     		.2byte	0x4014
  785 021a 0D       		.uleb128 0xd
- 786 021b 44180000 		.4byte	.LASF37
+ 786 021b 3E180000 		.4byte	.LASF37
  787 021f 06       		.byte	0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 33
-
-
  788 0220 41       		.byte	0x41
  789 0221 B4000000 		.4byte	0xb4
  790 0225 1840     		.2byte	0x4018
  791 0227 0D       		.uleb128 0xd
- 792 0228 A4100000 		.4byte	.LASF38
+ 792 0228 91100000 		.4byte	.LASF38
  793 022c 06       		.byte	0x6
  794 022d 42       		.byte	0x42
  795 022e B9000000 		.4byte	0xb9
  796 0232 1C40     		.2byte	0x401c
  797 0234 0D       		.uleb128 0xd
- 798 0235 26110000 		.4byte	.LASF39
+ 798 0235 13110000 		.4byte	.LASF39
  799 0239 06       		.byte	0x6
  800 023a 43       		.byte	0x43
  801 023b B4000000 		.4byte	0xb4
@@ -1945,45 +1949,45 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  809 0250 7F       		.byte	0x7f
  810 0251 00       		.byte	0
  811 0252 03       		.uleb128 0x3
- 812 0253 6F160000 		.4byte	.LASF40
+ 812 0253 57160000 		.4byte	.LASF40
  813 0257 06       		.byte	0x6
  814 0258 44       		.byte	0x44
  815 0259 B7010000 		.4byte	0x1b7
  816 025d 02       		.uleb128 0x2
  817 025e 08       		.byte	0x8
  818 025f 04       		.byte	0x4
- 819 0260 E8100000 		.4byte	.LASF41
+ 819 0260 D5100000 		.4byte	.LASF41
  820 0264 0E       		.uleb128 0xe
- 821 0265 BF130000 		.4byte	.LASF42
+ 821 0265 A7130000 		.4byte	.LASF42
  822 0269 07       		.byte	0x7
  823 026a C401     		.2byte	0x1c4
  824 026c 70020000 		.4byte	0x270
  825 0270 02       		.uleb128 0x2
  826 0271 01       		.byte	0x1
  827 0272 08       		.byte	0x8
- 828 0273 D30B0000 		.4byte	.LASF43
+ 828 0273 BF0B0000 		.4byte	.LASF43
  829 0277 02       		.uleb128 0x2
  830 0278 04       		.byte	0x4
  831 0279 04       		.byte	0x4
- 832 027a A3150000 		.4byte	.LASF44
+ 832 027a 8B150000 		.4byte	.LASF44
  833 027e 02       		.uleb128 0x2
  834 027f 08       		.byte	0x8
  835 0280 04       		.byte	0x4
- 836 0281 9B090000 		.4byte	.LASF45
+ 836 0281 87090000 		.4byte	.LASF45
  837 0285 0E       		.uleb128 0xe
- 838 0286 6E0F0000 		.4byte	.LASF46
+ 838 0286 490F0000 		.4byte	.LASF46
  839 028a 07       		.byte	0x7
  840 028b 8703     		.2byte	0x387
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 34
+
+
  841 028d A2000000 		.4byte	0xa2
  842 0291 0F       		.uleb128 0xf
  843 0292 04       		.byte	0x4
  844 0293 02       		.uleb128 0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 34
-
-
  845 0294 01       		.byte	0x1
  846 0295 02       		.byte	0x2
- 847 0296 B6090000 		.4byte	.LASF47
+ 847 0296 A2090000 		.4byte	.LASF47
  848 029a 10       		.uleb128 0x10
  849 029b 04       		.byte	0x4
  850 029c A0020000 		.4byte	0x2a0
@@ -1998,7 +2002,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  859 02b1 05       		.uleb128 0x5
  860 02b2 93020000 		.4byte	0x293
  861 02b6 0E       		.uleb128 0xe
- 862 02b7 A40D0000 		.4byte	.LASF48
+ 862 02b7 7F0D0000 		.4byte	.LASF48
  863 02bb 08       		.byte	0x8
  864 02bc AB01     		.2byte	0x1ab
  865 02be 9A020000 		.4byte	0x29a
@@ -2021,28 +2025,28 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  882 02e4 B4000000 		.4byte	0xb4
  883 02e8 04       		.byte	0x4
  884 02e9 14       		.uleb128 0x14
- 885 02ea DE100000 		.4byte	.LASF51
+ 885 02ea CB100000 		.4byte	.LASF51
  886 02ee 08       		.byte	0x8
  887 02ef 4D02     		.2byte	0x24d
  888 02f1 91020000 		.4byte	0x291
  889 02f5 08       		.byte	0x8
  890 02f6 14       		.uleb128 0x14
- 891 02f7 B90A0000 		.4byte	.LASF52
+ 891 02f7 A50A0000 		.4byte	.LASF52
  892 02fb 08       		.byte	0x8
  893 02fc 4E02     		.2byte	0x24e
  894 02fe A2000000 		.4byte	0xa2
  895 0302 0C       		.byte	0xc
  896 0303 14       		.uleb128 0x14
- 897 0304 F90E0000 		.4byte	.LASF53
+ 897 0304 D40E0000 		.4byte	.LASF53
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 35
+
+
  898 0308 08       		.byte	0x8
  899 0309 4F02     		.2byte	0x24f
  900 030b B4000000 		.4byte	0xb4
  901 030f 10       		.byte	0x10
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 35
-
-
  902 0310 14       		.uleb128 0x14
- 903 0311 230C0000 		.4byte	.LASF54
+ 903 0311 0F0C0000 		.4byte	.LASF54
  904 0315 08       		.byte	0x8
  905 0316 5002     		.2byte	0x250
  906 0318 B4000000 		.4byte	0xb4
@@ -2054,53 +2058,53 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  912 0325 91020000 		.4byte	0x291
  913 0329 18       		.byte	0x18
  914 032a 14       		.uleb128 0x14
- 915 032b 0C1A0000 		.4byte	.LASF56
+ 915 032b 061A0000 		.4byte	.LASF56
  916 032f 08       		.byte	0x8
  917 0330 5302     		.2byte	0x253
  918 0332 A2000000 		.4byte	0xa2
  919 0336 1C       		.byte	0x1c
  920 0337 14       		.uleb128 0x14
- 921 0338 A30C0000 		.4byte	.LASF57
+ 921 0338 8F0C0000 		.4byte	.LASF57
  922 033c 08       		.byte	0x8
  923 033d 5402     		.2byte	0x254
  924 033f B4000000 		.4byte	0xb4
  925 0343 20       		.byte	0x20
  926 0344 14       		.uleb128 0x14
- 927 0345 9E100000 		.4byte	.LASF58
+ 927 0345 8B100000 		.4byte	.LASF58
  928 0349 08       		.byte	0x8
  929 034a 5602     		.2byte	0x256
  930 034c 91020000 		.4byte	0x291
  931 0350 24       		.byte	0x24
  932 0351 14       		.uleb128 0x14
- 933 0352 640F0000 		.4byte	.LASF59
+ 933 0352 3F0F0000 		.4byte	.LASF59
  934 0356 08       		.byte	0x8
  935 0357 5702     		.2byte	0x257
  936 0359 A2000000 		.4byte	0xa2
  937 035d 28       		.byte	0x28
  938 035e 14       		.uleb128 0x14
- 939 035f 3A140000 		.4byte	.LASF60
+ 939 035f 22140000 		.4byte	.LASF60
  940 0363 08       		.byte	0x8
  941 0364 5802     		.2byte	0x258
  942 0366 B4000000 		.4byte	0xb4
  943 036a 2C       		.byte	0x2c
  944 036b 14       		.uleb128 0x14
- 945 036c 92090000 		.4byte	.LASF61
+ 945 036c 7E090000 		.4byte	.LASF61
  946 0370 08       		.byte	0x8
  947 0371 5D02     		.2byte	0x25d
  948 0373 B6020000 		.4byte	0x2b6
  949 0377 30       		.byte	0x30
  950 0378 14       		.uleb128 0x14
- 951 0379 D60C0000 		.4byte	.LASF62
+ 951 0379 C20C0000 		.4byte	.LASF62
  952 037d 08       		.byte	0x8
  953 037e 6002     		.2byte	0x260
  954 0380 A2000000 		.4byte	0xa2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 36
+
+
  955 0384 34       		.byte	0x34
  956 0385 00       		.byte	0
  957 0386 0E       		.uleb128 0xe
  958 0387 A8060000 		.4byte	.LASF63
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 36
-
-
  959 038b 08       		.byte	0x8
  960 038c 6302     		.2byte	0x263
  961 038e C2020000 		.4byte	0x2c2
@@ -2117,14 +2121,14 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  972 03a6 B2070000 		.4byte	.LASF65
  973 03aa 01       		.byte	0x1
  974 03ab 16       		.uleb128 0x16
- 975 03ac BB0B0000 		.4byte	.LASF66
+ 975 03ac A70B0000 		.4byte	.LASF66
  976 03b0 02       		.byte	0x2
  977 03b1 16       		.uleb128 0x16
  978 03b2 3D020000 		.4byte	.LASF67
  979 03b6 03       		.byte	0x3
  980 03b7 00       		.byte	0
  981 03b8 0E       		.uleb128 0xe
- 982 03b9 28190000 		.4byte	.LASF68
+ 982 03b9 22190000 		.4byte	.LASF68
  983 03bd 09       		.byte	0x9
  984 03be 0A04     		.2byte	0x40a
  985 03c0 92030000 		.4byte	0x392
@@ -2140,52 +2144,52 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  995 03d5 A2000000 		.4byte	0xa2
  996 03d9 00       		.byte	0
  997 03da 14       		.uleb128 0x14
- 998 03db 21160000 		.4byte	.LASF70
+ 998 03db 09160000 		.4byte	.LASF70
  999 03df 09       		.byte	0x9
  1000 03e0 F704     		.2byte	0x4f7
  1001 03e2 A2000000 		.4byte	0xa2
  1002 03e6 04       		.byte	0x4
  1003 03e7 14       		.uleb128 0x14
- 1004 03e8 64110000 		.4byte	.LASF71
+ 1004 03e8 51110000 		.4byte	.LASF71
  1005 03ec 09       		.byte	0x9
  1006 03ed F804     		.2byte	0x4f8
  1007 03ef A2000000 		.4byte	0xa2
  1008 03f3 08       		.byte	0x8
  1009 03f4 14       		.uleb128 0x14
- 1010 03f5 44150000 		.4byte	.LASF72
+ 1010 03f5 2C150000 		.4byte	.LASF72
  1011 03f9 09       		.byte	0x9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 37
+
+
  1012 03fa F904     		.2byte	0x4f9
  1013 03fc A2000000 		.4byte	0xa2
  1014 0400 0C       		.byte	0xc
  1015 0401 14       		.uleb128 0x14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 37
-
-
  1016 0402 7D070000 		.4byte	.LASF73
  1017 0406 09       		.byte	0x9
  1018 0407 FA04     		.2byte	0x4fa
  1019 0409 A2000000 		.4byte	0xa2
  1020 040d 10       		.byte	0x10
  1021 040e 14       		.uleb128 0x14
- 1022 040f C30D0000 		.4byte	.LASF74
+ 1022 040f 9E0D0000 		.4byte	.LASF74
  1023 0413 09       		.byte	0x9
  1024 0414 FB04     		.2byte	0x4fb
  1025 0416 B8030000 		.4byte	0x3b8
  1026 041a 14       		.byte	0x14
  1027 041b 14       		.uleb128 0x14
- 1028 041c 1C0C0000 		.4byte	.LASF75
+ 1028 041c 080C0000 		.4byte	.LASF75
  1029 0420 09       		.byte	0x9
  1030 0421 FC04     		.2byte	0x4fc
  1031 0423 A2000000 		.4byte	0xa2
  1032 0427 18       		.byte	0x18
  1033 0428 14       		.uleb128 0x14
- 1034 0429 070F0000 		.4byte	.LASF76
+ 1034 0429 E20E0000 		.4byte	.LASF76
  1035 042d 09       		.byte	0x9
  1036 042e FD04     		.2byte	0x4fd
  1037 0430 91040000 		.4byte	0x491
  1038 0434 1C       		.byte	0x1c
  1039 0435 14       		.uleb128 0x14
- 1040 0436 031A0000 		.4byte	.LASF77
+ 1040 0436 FD190000 		.4byte	.LASF77
  1041 043a 09       		.byte	0x9
  1042 043b FE04     		.2byte	0x4fe
  1043 043d A2000000 		.4byte	0xa2
@@ -2197,34 +2201,34 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1049 044a A2000000 		.4byte	0xa2
  1050 044e 60       		.byte	0x60
  1051 044f 14       		.uleb128 0x14
- 1052 0450 1A190000 		.4byte	.LASF79
+ 1052 0450 14190000 		.4byte	.LASF79
  1053 0454 09       		.byte	0x9
  1054 0455 0005     		.2byte	0x500
  1055 0457 A2000000 		.4byte	0xa2
  1056 045b 64       		.byte	0x64
  1057 045c 14       		.uleb128 0x14
- 1058 045d 8B110000 		.4byte	.LASF80
+ 1058 045d 78110000 		.4byte	.LASF80
  1059 0461 09       		.byte	0x9
  1060 0462 0105     		.2byte	0x501
  1061 0464 A2000000 		.4byte	0xa2
  1062 0468 68       		.byte	0x68
  1063 0469 14       		.uleb128 0x14
- 1064 046a 840D0000 		.4byte	.LASF81
+ 1064 046a 5F0D0000 		.4byte	.LASF81
  1065 046e 09       		.byte	0x9
  1066 046f 0205     		.2byte	0x502
  1067 0471 A2000000 		.4byte	0xa2
  1068 0475 6C       		.byte	0x6c
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 38
+
+
  1069 0476 14       		.uleb128 0x14
- 1070 0477 FD180000 		.4byte	.LASF82
+ 1070 0477 F7180000 		.4byte	.LASF82
  1071 047b 09       		.byte	0x9
  1072 047c 0305     		.2byte	0x503
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 38
-
-
  1073 047e 93020000 		.4byte	0x293
  1074 0482 70       		.byte	0x70
  1075 0483 14       		.uleb128 0x14
- 1076 0484 3F0B0000 		.4byte	.LASF83
+ 1076 0484 2B0B0000 		.4byte	.LASF83
  1077 0488 09       		.byte	0x9
  1078 0489 0405     		.2byte	0x504
  1079 048b A2000000 		.4byte	0xa2
@@ -2249,55 +2253,55 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1098 04b4 4201     		.2byte	0x142
  1099 04b6 E6070000 		.4byte	0x7e6
  1100 04ba 16       		.uleb128 0x16
- 1101 04bb D4120000 		.4byte	.LASF85
+ 1101 04bb D0120000 		.4byte	.LASF85
  1102 04bf 00       		.byte	0
  1103 04c0 18       		.uleb128 0x18
  1104 04c1 75050000 		.4byte	.LASF86
  1105 04c5 0010     		.2byte	0x1000
  1106 04c7 18       		.uleb128 0x18
- 1107 04c8 51150000 		.4byte	.LASF87
+ 1107 04c8 39150000 		.4byte	.LASF87
  1108 04cc 0110     		.2byte	0x1001
  1109 04ce 18       		.uleb128 0x18
- 1110 04cf C70A0000 		.4byte	.LASF88
+ 1110 04cf B30A0000 		.4byte	.LASF88
  1111 04d3 0210     		.2byte	0x1002
  1112 04d5 18       		.uleb128 0x18
- 1113 04d6 250B0000 		.4byte	.LASF89
+ 1113 04d6 110B0000 		.4byte	.LASF89
  1114 04da 0310     		.2byte	0x1003
  1115 04dc 18       		.uleb128 0x18
  1116 04dd B6000000 		.4byte	.LASF90
  1117 04e1 0410     		.2byte	0x1004
  1118 04e3 18       		.uleb128 0x18
- 1119 04e4 4B190000 		.4byte	.LASF91
+ 1119 04e4 45190000 		.4byte	.LASF91
  1120 04e8 0510     		.2byte	0x1005
  1121 04ea 18       		.uleb128 0x18
- 1122 04eb 71110000 		.4byte	.LASF92
+ 1122 04eb 5E110000 		.4byte	.LASF92
  1123 04ef 0020     		.2byte	0x2000
  1124 04f1 18       		.uleb128 0x18
- 1125 04f2 6A140000 		.4byte	.LASF93
+ 1125 04f2 52140000 		.4byte	.LASF93
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 39
+
+
  1126 04f6 0120     		.2byte	0x2001
  1127 04f8 18       		.uleb128 0x18
- 1128 04f9 F4100000 		.4byte	.LASF94
+ 1128 04f9 E1100000 		.4byte	.LASF94
  1129 04fd 0220     		.2byte	0x2002
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 39
-
-
  1130 04ff 18       		.uleb128 0x18
- 1131 0500 F70A0000 		.4byte	.LASF95
+ 1131 0500 E30A0000 		.4byte	.LASF95
  1132 0504 0320     		.2byte	0x2003
  1133 0506 18       		.uleb128 0x18
- 1134 0507 7D0C0000 		.4byte	.LASF96
+ 1134 0507 690C0000 		.4byte	.LASF96
  1135 050b 0420     		.2byte	0x2004
  1136 050d 18       		.uleb128 0x18
- 1137 050e 6D0E0000 		.4byte	.LASF97
+ 1137 050e 480E0000 		.4byte	.LASF97
  1138 0512 0520     		.2byte	0x2005
  1139 0514 18       		.uleb128 0x18
- 1140 0515 6A0A0000 		.4byte	.LASF98
+ 1140 0515 560A0000 		.4byte	.LASF98
  1141 0519 0620     		.2byte	0x2006
  1142 051b 18       		.uleb128 0x18
- 1143 051c C5140000 		.4byte	.LASF99
+ 1143 051c AD140000 		.4byte	.LASF99
  1144 0520 0720     		.2byte	0x2007
  1145 0522 18       		.uleb128 0x18
- 1146 0523 F4160000 		.4byte	.LASF100
+ 1146 0523 DC160000 		.4byte	.LASF100
  1147 0527 0820     		.2byte	0x2008
  1148 0529 18       		.uleb128 0x18
  1149 052a 2C080000 		.4byte	.LASF101
@@ -2309,38 +2313,38 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1155 0538 CF020000 		.4byte	.LASF103
  1156 053c 0B20     		.2byte	0x200b
  1157 053e 18       		.uleb128 0x18
- 1158 053f 45110000 		.4byte	.LASF104
+ 1158 053f 32110000 		.4byte	.LASF104
  1159 0543 0C20     		.2byte	0x200c
  1160 0545 18       		.uleb128 0x18
  1161 0546 52050000 		.4byte	.LASF105
  1162 054a 0D20     		.2byte	0x200d
  1163 054c 18       		.uleb128 0x18
- 1164 054d 530C0000 		.4byte	.LASF106
+ 1164 054d 3F0C0000 		.4byte	.LASF106
  1165 0551 0E20     		.2byte	0x200e
  1166 0553 18       		.uleb128 0x18
- 1167 0554 10120000 		.4byte	.LASF107
+ 1167 0554 FD110000 		.4byte	.LASF107
  1168 0558 0F20     		.2byte	0x200f
  1169 055a 18       		.uleb128 0x18
- 1170 055b 3D0E0000 		.4byte	.LASF108
+ 1170 055b 180E0000 		.4byte	.LASF108
  1171 055f 1020     		.2byte	0x2010
  1172 0561 18       		.uleb128 0x18
- 1173 0562 370F0000 		.4byte	.LASF109
+ 1173 0562 120F0000 		.4byte	.LASF109
  1174 0566 1120     		.2byte	0x2011
  1175 0568 18       		.uleb128 0x18
- 1176 0569 C2160000 		.4byte	.LASF110
+ 1176 0569 AA160000 		.4byte	.LASF110
  1177 056d 1220     		.2byte	0x2012
  1178 056f 18       		.uleb128 0x18
  1179 0570 A9010000 		.4byte	.LASF111
  1180 0574 1320     		.2byte	0x2013
  1181 0576 18       		.uleb128 0x18
- 1182 0577 600D0000 		.4byte	.LASF112
+ 1182 0577 3B0D0000 		.4byte	.LASF112
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 40
+
+
  1183 057b 1420     		.2byte	0x2014
  1184 057d 18       		.uleb128 0x18
  1185 057e 04040000 		.4byte	.LASF113
  1186 0582 1520     		.2byte	0x2015
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 40
-
-
  1187 0584 18       		.uleb128 0x18
  1188 0585 02050000 		.4byte	.LASF114
  1189 0589 1620     		.2byte	0x2016
@@ -2351,85 +2355,85 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1194 0593 89050000 		.4byte	.LASF116
  1195 0597 0030     		.2byte	0x3000
  1196 0599 18       		.uleb128 0x18
- 1197 059a 53090000 		.4byte	.LASF117
+ 1197 059a 3F090000 		.4byte	.LASF117
  1198 059e 0130     		.2byte	0x3001
  1199 05a0 18       		.uleb128 0x18
  1200 05a1 E9070000 		.4byte	.LASF118
  1201 05a5 0230     		.2byte	0x3002
  1202 05a7 18       		.uleb128 0x18
- 1203 05a8 B00F0000 		.4byte	.LASF119
+ 1203 05a8 9D0F0000 		.4byte	.LASF119
  1204 05ac 0330     		.2byte	0x3003
  1205 05ae 18       		.uleb128 0x18
  1206 05af 60070000 		.4byte	.LASF120
  1207 05b3 0430     		.2byte	0x3004
  1208 05b5 18       		.uleb128 0x18
- 1209 05b6 19150000 		.4byte	.LASF121
+ 1209 05b6 01150000 		.4byte	.LASF121
  1210 05ba 0530     		.2byte	0x3005
  1211 05bc 18       		.uleb128 0x18
  1212 05bd 8A010000 		.4byte	.LASF122
  1213 05c1 0630     		.2byte	0x3006
  1214 05c3 18       		.uleb128 0x18
- 1215 05c4 A8180000 		.4byte	.LASF123
+ 1215 05c4 A2180000 		.4byte	.LASF123
  1216 05c8 0730     		.2byte	0x3007
  1217 05ca 18       		.uleb128 0x18
- 1218 05cb B20E0000 		.4byte	.LASF124
+ 1218 05cb 8D0E0000 		.4byte	.LASF124
  1219 05cf 0830     		.2byte	0x3008
  1220 05d1 18       		.uleb128 0x18
- 1221 05d2 020A0000 		.4byte	.LASF125
+ 1221 05d2 EE090000 		.4byte	.LASF125
  1222 05d6 0930     		.2byte	0x3009
  1223 05d8 18       		.uleb128 0x18
- 1224 05d9 F9140000 		.4byte	.LASF126
+ 1224 05d9 E1140000 		.4byte	.LASF126
  1225 05dd 0A30     		.2byte	0x300a
  1226 05df 18       		.uleb128 0x18
- 1227 05e0 D80B0000 		.4byte	.LASF127
+ 1227 05e0 C40B0000 		.4byte	.LASF127
  1228 05e4 0B30     		.2byte	0x300b
  1229 05e6 18       		.uleb128 0x18
  1230 05e7 D5000000 		.4byte	.LASF128
  1231 05eb 0C30     		.2byte	0x300c
  1232 05ed 18       		.uleb128 0x18
- 1233 05ee F70C0000 		.4byte	.LASF129
+ 1233 05ee D20C0000 		.4byte	.LASF129
  1234 05f2 1130     		.2byte	0x3011
  1235 05f4 18       		.uleb128 0x18
- 1236 05f5 56120000 		.4byte	.LASF130
+ 1236 05f5 43120000 		.4byte	.LASF130
  1237 05f9 1230     		.2byte	0x3012
  1238 05fb 18       		.uleb128 0x18
- 1239 05fc A9150000 		.4byte	.LASF131
+ 1239 05fc 91150000 		.4byte	.LASF131
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 41
+
+
  1240 0600 1330     		.2byte	0x3013
  1241 0602 18       		.uleb128 0x18
- 1242 0603 94140000 		.4byte	.LASF132
+ 1242 0603 7C140000 		.4byte	.LASF132
  1243 0607 1430     		.2byte	0x3014
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 41
-
-
  1244 0609 18       		.uleb128 0x18
- 1245 060a 70130000 		.4byte	.LASF133
+ 1245 060a 6C130000 		.4byte	.LASF133
  1246 060e 1530     		.2byte	0x3015
  1247 0610 18       		.uleb128 0x18
  1248 0611 B3050000 		.4byte	.LASF134
  1249 0615 1630     		.2byte	0x3016
  1250 0617 18       		.uleb128 0x18
- 1251 0618 CD0D0000 		.4byte	.LASF135
+ 1251 0618 A80D0000 		.4byte	.LASF135
  1252 061c 1730     		.2byte	0x3017
  1253 061e 18       		.uleb128 0x18
- 1254 061f 4B0B0000 		.4byte	.LASF136
+ 1254 061f 370B0000 		.4byte	.LASF136
  1255 0623 1830     		.2byte	0x3018
  1256 0625 18       		.uleb128 0x18
- 1257 0626 D40F0000 		.4byte	.LASF137
+ 1257 0626 C10F0000 		.4byte	.LASF137
  1258 062a 0040     		.2byte	0x4000
  1259 062c 18       		.uleb128 0x18
- 1260 062d 71180000 		.4byte	.LASF138
+ 1260 062d 6B180000 		.4byte	.LASF138
  1261 0631 0140     		.2byte	0x4001
  1262 0633 18       		.uleb128 0x18
- 1263 0634 09180000 		.4byte	.LASF139
+ 1263 0634 03180000 		.4byte	.LASF139
  1264 0638 0240     		.2byte	0x4002
  1265 063a 18       		.uleb128 0x18
- 1266 063b EA150000 		.4byte	.LASF140
+ 1266 063b D2150000 		.4byte	.LASF140
  1267 063f 0340     		.2byte	0x4003
  1268 0641 18       		.uleb128 0x18
- 1269 0642 430D0000 		.4byte	.LASF141
+ 1269 0642 1E0D0000 		.4byte	.LASF141
  1270 0646 0440     		.2byte	0x4004
  1271 0648 18       		.uleb128 0x18
- 1272 0649 94190000 		.4byte	.LASF142
+ 1272 0649 8E190000 		.4byte	.LASF142
  1273 064d 0540     		.2byte	0x4005
  1274 064f 18       		.uleb128 0x18
  1275 0650 69000000 		.4byte	.LASF143
@@ -2438,29 +2442,29 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1278 0657 02090000 		.4byte	.LASF144
  1279 065b 0740     		.2byte	0x4007
  1280 065d 18       		.uleb128 0x18
- 1281 065e E7120000 		.4byte	.LASF145
+ 1281 065e E3120000 		.4byte	.LASF145
  1282 0662 0840     		.2byte	0x4008
  1283 0664 18       		.uleb128 0x18
  1284 0665 CB070000 		.4byte	.LASF146
  1285 0669 0940     		.2byte	0x4009
  1286 066b 18       		.uleb128 0x18
- 1287 066c 2F1A0000 		.4byte	.LASF147
+ 1287 066c 291A0000 		.4byte	.LASF147
  1288 0670 0A40     		.2byte	0x400a
  1289 0672 18       		.uleb128 0x18
- 1290 0673 FC0B0000 		.4byte	.LASF148
+ 1290 0673 E80B0000 		.4byte	.LASF148
  1291 0677 0B40     		.2byte	0x400b
  1292 0679 18       		.uleb128 0x18
- 1293 067a 120F0000 		.4byte	.LASF149
+ 1293 067a ED0E0000 		.4byte	.LASF149
  1294 067e 0C40     		.2byte	0x400c
  1295 0680 18       		.uleb128 0x18
- 1296 0681 AC0C0000 		.4byte	.LASF150
+ 1296 0681 980C0000 		.4byte	.LASF150
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 42
+
+
  1297 0685 0D40     		.2byte	0x400d
  1298 0687 18       		.uleb128 0x18
- 1299 0688 32100000 		.4byte	.LASF151
+ 1299 0688 1F100000 		.4byte	.LASF151
  1300 068c 0E40     		.2byte	0x400e
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 42
-
-
  1301 068e 18       		.uleb128 0x18
  1302 068f 6A080000 		.4byte	.LASF152
  1303 0693 0F40     		.2byte	0x400f
@@ -2468,13 +2472,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1305 0696 00070000 		.4byte	.LASF153
  1306 069a 1040     		.2byte	0x4010
  1307 069c 18       		.uleb128 0x18
- 1308 069d 18170000 		.4byte	.LASF154
+ 1308 069d 00170000 		.4byte	.LASF154
  1309 06a1 1140     		.2byte	0x4011
  1310 06a3 18       		.uleb128 0x18
- 1311 06a4 420A0000 		.4byte	.LASF155
+ 1311 06a4 2E0A0000 		.4byte	.LASF155
  1312 06a8 1240     		.2byte	0x4012
  1313 06aa 18       		.uleb128 0x18
- 1314 06ab C6130000 		.4byte	.LASF156
+ 1314 06ab AE130000 		.4byte	.LASF156
  1315 06af 1340     		.2byte	0x4013
  1316 06b1 18       		.uleb128 0x18
  1317 06b2 57020000 		.4byte	.LASF157
@@ -2483,44 +2487,44 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1320 06b9 4A040000 		.4byte	.LASF158
  1321 06bd 1540     		.2byte	0x4015
  1322 06bf 18       		.uleb128 0x18
- 1323 06c0 64190000 		.4byte	.LASF159
+ 1323 06c0 5E190000 		.4byte	.LASF159
  1324 06c4 1640     		.2byte	0x4016
  1325 06c6 18       		.uleb128 0x18
  1326 06c7 08020000 		.4byte	.LASF160
  1327 06cb 1740     		.2byte	0x4017
  1328 06cd 18       		.uleb128 0x18
- 1329 06ce 060E0000 		.4byte	.LASF161
+ 1329 06ce E10D0000 		.4byte	.LASF161
  1330 06d2 1840     		.2byte	0x4018
  1331 06d4 18       		.uleb128 0x18
- 1332 06d5 9C120000 		.4byte	.LASF162
+ 1332 06d5 89120000 		.4byte	.LASF162
  1333 06d9 1940     		.2byte	0x4019
  1334 06db 18       		.uleb128 0x18
- 1335 06dc 750F0000 		.4byte	.LASF163
+ 1335 06dc 500F0000 		.4byte	.LASF163
  1336 06e0 1A40     		.2byte	0x401a
  1337 06e2 18       		.uleb128 0x18
- 1338 06e3 B7110000 		.4byte	.LASF164
+ 1338 06e3 A4110000 		.4byte	.LASF164
  1339 06e7 0050     		.2byte	0x5000
  1340 06e9 18       		.uleb128 0x18
  1341 06ea 86030000 		.4byte	.LASF165
  1342 06ee 0150     		.2byte	0x5001
  1343 06f0 18       		.uleb128 0x18
- 1344 06f1 79170000 		.4byte	.LASF166
+ 1344 06f1 61170000 		.4byte	.LASF166
  1345 06f5 0250     		.2byte	0x5002
  1346 06f7 18       		.uleb128 0x18
- 1347 06f8 C7170000 		.4byte	.LASF167
+ 1347 06f8 C1170000 		.4byte	.LASF167
  1348 06fc 0350     		.2byte	0x5003
  1349 06fe 18       		.uleb128 0x18
  1350 06ff BA040000 		.4byte	.LASF168
  1351 0703 0450     		.2byte	0x5004
  1352 0705 18       		.uleb128 0x18
- 1353 0706 E8110000 		.4byte	.LASF169
+ 1353 0706 D5110000 		.4byte	.LASF169
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 43
+
+
  1354 070a 0550     		.2byte	0x5005
  1355 070c 18       		.uleb128 0x18
- 1356 070d 310C0000 		.4byte	.LASF170
+ 1356 070d 1D0C0000 		.4byte	.LASF170
  1357 0711 0650     		.2byte	0x5006
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 43
-
-
  1358 0713 18       		.uleb128 0x18
  1359 0714 F1020000 		.4byte	.LASF171
  1360 0718 0750     		.2byte	0x5007
@@ -2528,7 +2532,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1362 071b DC030000 		.4byte	.LASF172
  1363 071f 0850     		.2byte	0x5008
  1364 0721 18       		.uleb128 0x18
- 1365 0722 18100000 		.4byte	.LASF173
+ 1365 0722 05100000 		.4byte	.LASF173
  1366 0726 0950     		.2byte	0x5009
  1367 0728 18       		.uleb128 0x18
  1368 0729 21050000 		.4byte	.LASF174
@@ -2537,67 +2541,67 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1371 0730 66030000 		.4byte	.LASF175
  1372 0734 0B50     		.2byte	0x500b
  1373 0736 18       		.uleb128 0x18
- 1374 0737 3B120000 		.4byte	.LASF176
+ 1374 0737 28120000 		.4byte	.LASF176
  1375 073b 0C50     		.2byte	0x500c
  1376 073d 18       		.uleb128 0x18
- 1377 073e 8E0A0000 		.4byte	.LASF177
+ 1377 073e 7A0A0000 		.4byte	.LASF177
  1378 0742 0D50     		.2byte	0x500d
  1379 0744 18       		.uleb128 0x18
- 1380 0745 89180000 		.4byte	.LASF178
+ 1380 0745 83180000 		.4byte	.LASF178
  1381 0749 0E50     		.2byte	0x500e
  1382 074b 18       		.uleb128 0x18
- 1383 074c 72090000 		.4byte	.LASF179
+ 1383 074c 5E090000 		.4byte	.LASF179
  1384 0750 0F50     		.2byte	0x500f
  1385 0752 18       		.uleb128 0x18
  1386 0753 4A080000 		.4byte	.LASF180
  1387 0757 1050     		.2byte	0x5010
  1388 0759 18       		.uleb128 0x18
- 1389 075a A7170000 		.4byte	.LASF181
+ 1389 075a A1170000 		.4byte	.LASF181
  1390 075e 1150     		.2byte	0x5011
  1391 0760 18       		.uleb128 0x18
  1392 0761 F9000000 		.4byte	.LASF182
  1393 0765 1250     		.2byte	0x5012
  1394 0767 18       		.uleb128 0x18
- 1395 0768 95110000 		.4byte	.LASF183
+ 1395 0768 82110000 		.4byte	.LASF183
  1396 076c 1350     		.2byte	0x5013
  1397 076e 18       		.uleb128 0x18
  1398 076f D9040000 		.4byte	.LASF184
  1399 0773 1450     		.2byte	0x5014
  1400 0775 18       		.uleb128 0x18
- 1401 0776 3F160000 		.4byte	.LASF185
+ 1401 0776 27160000 		.4byte	.LASF185
  1402 077a 1550     		.2byte	0x5015
  1403 077c 18       		.uleb128 0x18
- 1404 077d E6170000 		.4byte	.LASF186
+ 1404 077d E0170000 		.4byte	.LASF186
  1405 0781 1650     		.2byte	0x5016
  1406 0783 18       		.uleb128 0x18
  1407 0784 20040000 		.4byte	.LASF187
  1408 0788 1750     		.2byte	0x5017
  1409 078a 18       		.uleb128 0x18
- 1410 078b D50E0000 		.4byte	.LASF188
+ 1410 078b B00E0000 		.4byte	.LASF188
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 44
+
+
  1411 078f 1850     		.2byte	0x5018
  1412 0791 18       		.uleb128 0x18
- 1413 0792 D6180000 		.4byte	.LASF189
+ 1413 0792 D0180000 		.4byte	.LASF189
  1414 0796 0060     		.2byte	0x6000
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 44
-
-
  1415 0798 18       		.uleb128 0x18
- 1416 0799 3A170000 		.4byte	.LASF190
+ 1416 0799 22170000 		.4byte	.LASF190
  1417 079d 0160     		.2byte	0x6001
  1418 079f 18       		.uleb128 0x18
- 1419 07a0 CD150000 		.4byte	.LASF191
+ 1419 07a0 B5150000 		.4byte	.LASF191
  1420 07a4 0260     		.2byte	0x6002
  1421 07a6 18       		.uleb128 0x18
- 1422 07a7 F90F0000 		.4byte	.LASF192
+ 1422 07a7 E60F0000 		.4byte	.LASF192
  1423 07ab 0360     		.2byte	0x6003
  1424 07ad 18       		.uleb128 0x18
  1425 07ae D6050000 		.4byte	.LASF193
  1426 07b2 0460     		.2byte	0x6004
  1427 07b4 18       		.uleb128 0x18
- 1428 07b5 FC130000 		.4byte	.LASF194
+ 1428 07b5 E4130000 		.4byte	.LASF194
  1429 07b9 0560     		.2byte	0x6005
  1430 07bb 18       		.uleb128 0x18
- 1431 07bc D7090000 		.4byte	.LASF195
+ 1431 07bc C3090000 		.4byte	.LASF195
  1432 07c0 0660     		.2byte	0x6006
  1433 07c2 18       		.uleb128 0x18
  1434 07c3 3D000000 		.4byte	.LASF196
@@ -2609,10 +2613,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1440 07d1 92000000 		.4byte	.LASF198
  1441 07d5 0960     		.2byte	0x6009
  1442 07d7 18       		.uleb128 0x18
- 1443 07d8 8B0F0000 		.4byte	.LASF199
+ 1443 07d8 660F0000 		.4byte	.LASF199
  1444 07dc 0A60     		.2byte	0x600a
  1445 07de 18       		.uleb128 0x18
- 1446 07df C8090000 		.4byte	.LASF200
+ 1446 07df B4090000 		.4byte	.LASF200
  1447 07e3 FFFF     		.2byte	0xffff
  1448 07e5 00       		.byte	0
  1449 07e6 17       		.uleb128 0x17
@@ -2621,7 +2625,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1452 07e9 5B01     		.2byte	0x15b
  1453 07eb 0A080000 		.4byte	0x80a
  1454 07ef 14       		.uleb128 0x14
- 1455 07f0 2E180000 		.4byte	.LASF201
+ 1455 07f0 28180000 		.4byte	.LASF201
  1456 07f4 0B       		.byte	0xb
  1457 07f5 6501     		.2byte	0x165
  1458 07f7 8C000000 		.4byte	0x8c
@@ -2634,15 +2638,15 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1465 0808 01       		.byte	0x1
  1466 0809 00       		.byte	0
  1467 080a 0E       		.uleb128 0xe
- 1468 080b 79120000 		.4byte	.LASF203
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 45
+
+
+ 1468 080b 66120000 		.4byte	.LASF203
  1469 080f 0B       		.byte	0xb
  1470 0810 6B01     		.2byte	0x16b
  1471 0812 E6070000 		.4byte	0x7e6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 45
-
-
  1472 0816 0E       		.uleb128 0xe
- 1473 0817 36090000 		.4byte	.LASF204
+ 1473 0817 22090000 		.4byte	.LASF204
  1474 081b 0C       		.byte	0xc
  1475 081c 7F01     		.2byte	0x17f
  1476 081e 97000000 		.4byte	0x97
@@ -2664,14 +2668,14 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1492 0840 97000000 		.4byte	0x97
  1493 0844 04       		.byte	0x4
  1494 0845 14       		.uleb128 0x14
- 1495 0846 60140000 		.4byte	.LASF205
+ 1495 0846 48140000 		.4byte	.LASF205
  1496 084a 0C       		.byte	0xc
  1497 084b A101     		.2byte	0x1a1
  1498 084d 97000000 		.4byte	0x97
  1499 0851 06       		.byte	0x6
  1500 0852 00       		.byte	0
  1501 0853 0E       		.uleb128 0xe
- 1502 0854 AA160000 		.4byte	.LASF206
+ 1502 0854 92160000 		.4byte	.LASF206
  1503 0858 0C       		.byte	0xc
  1504 0859 A301     		.2byte	0x1a3
  1505 085b 22080000 		.4byte	0x822
@@ -2687,40 +2691,40 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1515 0870 53080000 		.4byte	0x853
  1516 0874 00       		.byte	0
  1517 0875 14       		.uleb128 0x14
- 1518 0876 AF190000 		.4byte	.LASF208
+ 1518 0876 A9190000 		.4byte	.LASF208
  1519 087a 0C       		.byte	0xc
  1520 087b AC01     		.2byte	0x1ac
  1521 087d 16080000 		.4byte	0x816
  1522 0881 08       		.byte	0x8
  1523 0882 00       		.byte	0
  1524 0883 0E       		.uleb128 0xe
- 1525 0884 7F150000 		.4byte	.LASF209
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 46
+
+
+ 1525 0884 67150000 		.4byte	.LASF209
  1526 0888 0C       		.byte	0xc
  1527 0889 AE01     		.2byte	0x1ae
  1528 088b 5F080000 		.4byte	0x85f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 46
-
-
  1529 088f 17       		.uleb128 0x17
  1530 0890 10       		.byte	0x10
  1531 0891 0C       		.byte	0xc
  1532 0892 D201     		.2byte	0x1d2
  1533 0894 B3080000 		.4byte	0x8b3
  1534 0898 14       		.uleb128 0x14
- 1535 0899 2C140000 		.4byte	.LASF210
+ 1535 0899 14140000 		.4byte	.LASF210
  1536 089d 0C       		.byte	0xc
  1537 089e D501     		.2byte	0x1d5
  1538 08a0 83080000 		.4byte	0x883
  1539 08a4 00       		.byte	0
  1540 08a5 14       		.uleb128 0x14
- 1541 08a6 8D0E0000 		.4byte	.LASF211
+ 1541 08a6 680E0000 		.4byte	.LASF211
  1542 08aa 0C       		.byte	0xc
  1543 08ab D801     		.2byte	0x1d8
  1544 08ad 0A080000 		.4byte	0x80a
  1545 08b1 0C       		.byte	0xc
  1546 08b2 00       		.byte	0
  1547 08b3 0E       		.uleb128 0xe
- 1548 08b4 1F0E0000 		.4byte	.LASF212
+ 1548 08b4 FA0D0000 		.4byte	.LASF212
  1549 08b8 0C       		.byte	0xc
  1550 08b9 DA01     		.2byte	0x1da
  1551 08bb 8F080000 		.4byte	0x88f
@@ -2731,17 +2735,17 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1556 08c6 69       		.byte	0x69
  1557 08c7 DE080000 		.4byte	0x8de
  1558 08cb 16       		.uleb128 0x16
- 1559 08cc 4B140000 		.4byte	.LASF213
+ 1559 08cc 33140000 		.4byte	.LASF213
  1560 08d0 00       		.byte	0
  1561 08d1 16       		.uleb128 0x16
  1562 08d2 3F010000 		.4byte	.LASF214
  1563 08d6 01       		.byte	0x1
  1564 08d7 16       		.uleb128 0x16
- 1565 08d8 11160000 		.4byte	.LASF215
+ 1565 08d8 F9150000 		.4byte	.LASF215
  1566 08dc 02       		.byte	0x2
  1567 08dd 00       		.byte	0
  1568 08de 03       		.uleb128 0x3
- 1569 08df 33110000 		.4byte	.LASF216
+ 1569 08df 20110000 		.4byte	.LASF216
  1570 08e3 0D       		.byte	0xd
  1571 08e4 70       		.byte	0x70
  1572 08e5 BF080000 		.4byte	0x8bf
@@ -2754,17 +2758,17 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1579 08f5 16       		.uleb128 0x16
  1580 08f6 AB030000 		.4byte	.LASF217
  1581 08fa 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 47
+
+
  1582 08fb 16       		.uleb128 0x16
  1583 08fc 88070000 		.4byte	.LASF218
  1584 0900 01       		.byte	0x1
  1585 0901 16       		.uleb128 0x16
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 47
-
-
- 1586 0902 250A0000 		.4byte	.LASF219
+ 1586 0902 110A0000 		.4byte	.LASF219
  1587 0906 02       		.byte	0x2
  1588 0907 16       		.uleb128 0x16
- 1589 0908 710B0000 		.4byte	.LASF220
+ 1589 0908 5D0B0000 		.4byte	.LASF220
  1590 090c 03       		.byte	0x3
  1591 090d 00       		.byte	0
  1592 090e 03       		.uleb128 0x3
@@ -2779,25 +2783,25 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1601 0920 87       		.byte	0x87
  1602 0921 56090000 		.4byte	0x956
  1603 0925 16       		.uleb128 0x16
- 1604 0926 BA190000 		.4byte	.LASF222
+ 1604 0926 B4190000 		.4byte	.LASF222
  1605 092a 00       		.byte	0
  1606 092b 16       		.uleb128 0x16
  1607 092c 89040000 		.4byte	.LASF223
  1608 0930 01       		.byte	0x1
  1609 0931 16       		.uleb128 0x16
- 1610 0932 82100000 		.4byte	.LASF224
+ 1610 0932 6F100000 		.4byte	.LASF224
  1611 0936 02       		.byte	0x2
  1612 0937 16       		.uleb128 0x16
- 1613 0938 D9190000 		.4byte	.LASF225
+ 1613 0938 D3190000 		.4byte	.LASF225
  1614 093c 03       		.byte	0x3
  1615 093d 16       		.uleb128 0x16
- 1616 093e B4100000 		.4byte	.LASF226
+ 1616 093e A1100000 		.4byte	.LASF226
  1617 0942 04       		.byte	0x4
  1618 0943 16       		.uleb128 0x16
- 1619 0944 910B0000 		.4byte	.LASF227
+ 1619 0944 7D0B0000 		.4byte	.LASF227
  1620 0948 05       		.byte	0x5
  1621 0949 16       		.uleb128 0x16
- 1622 094a 57100000 		.4byte	.LASF228
+ 1622 094a 44100000 		.4byte	.LASF228
  1623 094e 06       		.byte	0x6
  1624 094f 16       		.uleb128 0x16
  1625 0950 1B010000 		.4byte	.LASF229
@@ -2814,13 +2818,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1636 0967 A0       		.byte	0xa0
  1637 0968 B3080000 		.4byte	0x8b3
  1638 096c 03       		.uleb128 0x3
- 1639 096d 4F130000 		.4byte	.LASF232
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 48
+
+
+ 1639 096d 4B130000 		.4byte	.LASF232
  1640 0971 0E       		.byte	0xe
  1641 0972 C2       		.byte	0xc2
  1642 0973 61090000 		.4byte	0x961
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 48
-
-
  1643 0977 09       		.uleb128 0x9
  1644 0978 14       		.byte	0x14
  1645 0979 0F       		.byte	0xf
@@ -2845,13 +2849,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1664 099e BC090000 		.4byte	0x9bc
  1665 09a2 08       		.byte	0x8
  1666 09a3 0B       		.uleb128 0xb
- 1667 09a4 CB180000 		.4byte	.LASF236
+ 1667 09a4 C5180000 		.4byte	.LASF236
  1668 09a8 0F       		.byte	0xf
  1669 09a9 40       		.byte	0x40
  1670 09aa A2000000 		.4byte	0xa2
  1671 09ae 0C       		.byte	0xc
  1672 09af 0B       		.uleb128 0xb
- 1673 09b0 61170000 		.4byte	.LASF237
+ 1673 09b0 49170000 		.4byte	.LASF237
  1674 09b4 0F       		.byte	0xf
  1675 09b5 45       		.byte	0x45
  1676 09b6 A2000000 		.4byte	0xa2
@@ -2863,7 +2867,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1682 09c2 06       		.uleb128 0x6
  1683 09c3 A1040000 		.4byte	0x4a1
  1684 09c7 03       		.uleb128 0x3
- 1685 09c8 22090000 		.4byte	.LASF238
+ 1685 09c8 8B0F0000 		.4byte	.LASF238
  1686 09cc 0F       		.byte	0xf
  1687 09cd 48       		.byte	0x48
  1688 09ce 77090000 		.4byte	0x977
@@ -2874,33 +2878,33 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1693 09d7 180A0000 		.4byte	0xa18
  1694 09db 0B       		.uleb128 0xb
  1695 09dc 49050000 		.4byte	.LASF239
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 49
+
+
  1696 09e0 10       		.byte	0x10
  1697 09e1 21       		.byte	0x21
  1698 09e2 8C000000 		.4byte	0x8c
  1699 09e6 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 49
-
-
  1700 09e7 0B       		.uleb128 0xb
- 1701 09e8 A1160000 		.4byte	.LASF240
+ 1701 09e8 89160000 		.4byte	.LASF240
  1702 09ec 10       		.byte	0x10
  1703 09ed 22       		.byte	0x22
  1704 09ee 8C000000 		.4byte	0x8c
  1705 09f2 01       		.byte	0x1
  1706 09f3 0B       		.uleb128 0xb
- 1707 09f4 031A0000 		.4byte	.LASF77
+ 1707 09f4 FD190000 		.4byte	.LASF77
  1708 09f8 10       		.byte	0x10
  1709 09f9 23       		.byte	0x23
  1710 09fa 97000000 		.4byte	0x97
  1711 09fe 02       		.byte	0x2
  1712 09ff 0B       		.uleb128 0xb
- 1713 0a00 2C160000 		.4byte	.LASF241
+ 1713 0a00 14160000 		.4byte	.LASF241
  1714 0a04 10       		.byte	0x10
  1715 0a05 24       		.byte	0x24
  1716 0a06 A2000000 		.4byte	0xa2
  1717 0a0a 04       		.byte	0x4
  1718 0a0b 0B       		.uleb128 0xb
- 1719 0a0c 780C0000 		.4byte	.LASF242
+ 1719 0a0c 640C0000 		.4byte	.LASF242
  1720 0a10 10       		.byte	0x10
  1721 0a11 25       		.byte	0x25
  1722 0a12 180A0000 		.4byte	0xa18
@@ -2919,7 +2923,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1735 0a2f 26       		.byte	0x26
  1736 0a30 D2090000 		.4byte	0x9d2
  1737 0a34 1C       		.uleb128 0x1c
- 1738 0a35 91130000 		.4byte	.LASF279
+ 1738 0a35 8D130000 		.4byte	.LASF279
  1739 0a39 02       		.byte	0x2
  1740 0a3a 53       		.byte	0x53
  1741 0a3b 03       		.byte	0x3
@@ -2934,13 +2938,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1750 0a4e 03       		.byte	0x3
  1751 0a4f E502     		.2byte	0x2e5
  1752 0a51 6E0A0000 		.4byte	0xa6e
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 50
+
+
  1753 0a55 1E       		.uleb128 0x1e
- 1754 0a56 C6150000 		.4byte	.LASF245
+ 1754 0a56 AE150000 		.4byte	.LASF245
  1755 0a5a 03       		.byte	0x3
  1756 0a5b E502     		.2byte	0x2e5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 50
-
-
  1757 0a5d A2000000 		.4byte	0xa2
  1758 0a61 1E       		.uleb128 0x1e
  1759 0a62 94080000 		.4byte	.LASF207
@@ -2952,24 +2956,24 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1765 0a6f 04       		.byte	0x4
  1766 0a70 AC010000 		.4byte	0x1ac
  1767 0a74 1F       		.uleb128 0x1f
- 1768 0a75 D2110000 		.4byte	.LASF246
+ 1768 0a75 BF110000 		.4byte	.LASF246
  1769 0a79 01       		.byte	0x1
- 1770 0a7a 67       		.byte	0x67
- 1771 0a7b 00000000 		.4byte	.LFB439
- 1772 0a7f FC000000 		.4byte	.LFE439-.LFB439
+ 1770 0a7a 6B       		.byte	0x6b
+ 1771 0a7b 00000000 		.4byte	.LFB445
+ 1772 0a7f FC000000 		.4byte	.LFE445-.LFB445
  1773 0a83 01       		.uleb128 0x1
  1774 0a84 9C       		.byte	0x9c
  1775 0a85 CF0B0000 		.4byte	0xbcf
  1776 0a89 20       		.uleb128 0x20
- 1777 0a8a 98170000 		.4byte	.LASF250
+ 1777 0a8a 92170000 		.4byte	.LASF250
  1778 0a8e 01       		.byte	0x1
- 1779 0a8f 67       		.byte	0x67
+ 1779 0a8f 6B       		.byte	0x6b
  1780 0a90 AB020000 		.4byte	0x2ab
  1781 0a94 00000000 		.4byte	.LLST0
  1782 0a98 21       		.uleb128 0x21
- 1783 0a99 BC090000 		.4byte	.LASF248
+ 1783 0a99 A8090000 		.4byte	.LASF248
  1784 0a9d 01       		.byte	0x1
- 1785 0a9e 69       		.byte	0x69
+ 1785 0a9e 6D       		.byte	0x6d
  1786 0a9f 83080000 		.4byte	0x883
  1787 0aa3 02       		.uleb128 0x2
  1788 0aa4 91       		.byte	0x91
@@ -2994,13 +2998,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1807 0ac9 50       		.byte	0x50
  1808 0aca 02       		.uleb128 0x2
  1809 0acb 74       		.byte	0x74
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 51
+
+
  1810 0acc 00       		.sleb128 0
  1811 0acd 00       		.byte	0
  1812 0ace 22       		.uleb128 0x22
  1813 0acf 38000000 		.4byte	.LVL4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 51
-
-
  1814 0ad3 B40E0000 		.4byte	0xeb4
  1815 0ad7 E20A0000 		.4byte	0xae2
  1816 0adb 23       		.uleb128 0x23
@@ -3054,13 +3058,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1864 0b2f 74       		.byte	0x74
  1865 0b30 00       		.sleb128 0
  1866 0b31 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 52
+
+
  1867 0b32 22       		.uleb128 0x22
  1868 0b33 88000000 		.4byte	.LVL9
  1869 0b37 B40E0000 		.4byte	0xeb4
  1870 0b3b 460B0000 		.4byte	0xb46
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 52
-
-
  1871 0b3f 23       		.uleb128 0x23
  1872 0b40 01       		.uleb128 0x1
  1873 0b41 50       		.byte	0x50
@@ -3114,13 +3118,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1921 0b95 00       		.byte	0
  1922 0b96 22       		.uleb128 0x22
  1923 0b97 D8000000 		.4byte	.LVL14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 53
+
+
  1924 0b9b B40E0000 		.4byte	0xeb4
  1925 0b9f AA0B0000 		.4byte	0xbaa
  1926 0ba3 23       		.uleb128 0x23
  1927 0ba4 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 53
-
-
  1928 0ba5 50       		.byte	0x50
  1929 0ba6 02       		.uleb128 0x2
  1930 0ba7 74       		.byte	0x74
@@ -3149,11 +3153,11 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1953 0bcd 00       		.byte	0
  1954 0bce 00       		.byte	0
  1955 0bcf 1F       		.uleb128 0x1f
- 1956 0bd0 EF0D0000 		.4byte	.LASF247
+ 1956 0bd0 CA0D0000 		.4byte	.LASF247
  1957 0bd4 01       		.byte	0x1
  1958 0bd5 10       		.byte	0x10
- 1959 0bd6 00000000 		.4byte	.LFB437
- 1960 0bda 70000000 		.4byte	.LFE437-.LFB437
+ 1959 0bd6 00000000 		.4byte	.LFB443
+ 1960 0bda 70000000 		.4byte	.LFE443-.LFB443
  1961 0bde 01       		.uleb128 0x1
  1962 0bdf 9C       		.byte	0x9c
  1963 0be0 840C0000 		.4byte	0xc84
@@ -3170,18 +3174,18 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  1974 0c00 27       		.uleb128 0x27
  1975 0c01 6900     		.ascii	"i\000"
  1976 0c03 01       		.byte	0x1
- 1977 0c04 24       		.byte	0x24
+ 1977 0c04 25       		.byte	0x25
  1978 0c05 8C000000 		.4byte	0x8c
  1979 0c09 47000000 		.4byte	.LLST1
  1980 0c0d 28       		.uleb128 0x28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 54
+
+
  1981 0c0e 00000000 		.4byte	.Ldebug_ranges0+0
  1982 0c12 27       		.uleb128 0x27
  1983 0c13 6A00     		.ascii	"j\000"
  1984 0c15 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 54
-
-
- 1985 0c16 26       		.byte	0x26
+ 1985 0c16 27       		.byte	0x27
  1986 0c17 8C000000 		.4byte	0x8c
  1987 0c1b 71000000 		.4byte	.LLST2
  1988 0c1f 00       		.byte	0
@@ -3234,37 +3238,37 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2035 0c7b 50       		.byte	0x50
  2036 0c7c 05       		.uleb128 0x5
  2037 0c7d 03       		.byte	0x3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 55
+
+
  2038 0c7e 00000000 		.4byte	events
  2039 0c82 00       		.byte	0
  2040 0c83 00       		.byte	0
  2041 0c84 1F       		.uleb128 0x1f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 55
-
-
- 2042 0c85 A2090000 		.4byte	.LASF249
+ 2042 0c85 8E090000 		.4byte	.LASF249
  2043 0c89 01       		.byte	0x1
- 2044 0c8a 2F       		.byte	0x2f
- 2045 0c8b 00000000 		.4byte	.LFB438
- 2046 0c8f B8000000 		.4byte	.LFE438-.LFB438
+ 2044 0c8a 32       		.byte	0x32
+ 2045 0c8b 00000000 		.4byte	.LFB444
+ 2046 0c8f B8000000 		.4byte	.LFE444-.LFB444
  2047 0c93 01       		.uleb128 0x1
  2048 0c94 9C       		.byte	0x9c
  2049 0c95 CC0D0000 		.4byte	0xdcc
  2050 0c99 20       		.uleb128 0x20
- 2051 0c9a F3140000 		.4byte	.LASF251
+ 2051 0c9a DB140000 		.4byte	.LASF251
  2052 0c9e 01       		.byte	0x1
- 2053 0c9f 2F       		.byte	0x2f
+ 2053 0c9f 32       		.byte	0x32
  2054 0ca0 85020000 		.4byte	0x285
  2055 0ca4 9A000000 		.4byte	.LLST3
  2056 0ca8 20       		.uleb128 0x20
  2057 0ca9 7F010000 		.4byte	.LASF252
  2058 0cad 01       		.byte	0x1
- 2059 0cae 2F       		.byte	0x2f
+ 2059 0cae 32       		.byte	0x32
  2060 0caf 91020000 		.4byte	0x291
  2061 0cb3 1F010000 		.4byte	.LLST4
  2062 0cb7 2A       		.uleb128 0x2a
- 2063 0cb8 1E140000 		.4byte	.LASF253
+ 2063 0cb8 06140000 		.4byte	.LASF253
  2064 0cbc 01       		.byte	0x1
- 2065 0cbd 31       		.byte	0x31
+ 2065 0cbd 34       		.byte	0x34
  2066 0cbe CC0D0000 		.4byte	0xdcc
  2067 0cc2 A3010000 		.4byte	.LLST5
  2068 0cc6 2B       		.uleb128 0x2b
@@ -3272,7 +3276,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2070 0ccb 24000000 		.4byte	.LBB15
  2071 0ccf 06000000 		.4byte	.LBE15-.LBB15
  2072 0cd3 01       		.byte	0x1
- 2073 0cd4 37       		.byte	0x37
+ 2073 0cd4 3A       		.byte	0x3a
  2074 0cd5 F50C0000 		.4byte	0xcf5
  2075 0cd9 2C       		.uleb128 0x2c
  2076 0cda 610A0000 		.4byte	0xa61
@@ -3289,18 +3293,18 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2087 0cfa 34000000 		.4byte	.LBB17
  2088 0cfe 08000000 		.4byte	.LBE17-.LBB17
  2089 0d02 01       		.byte	0x1
- 2090 0d03 3E       		.byte	0x3e
+ 2090 0d03 41       		.byte	0x41
  2091 0d04 240D0000 		.4byte	0xd24
  2092 0d08 2C       		.uleb128 0x2c
  2093 0d09 610A0000 		.4byte	0xa61
  2094 0d0d 43020000 		.4byte	.LLST9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 56
+
+
  2095 0d11 2C       		.uleb128 0x2c
  2096 0d12 550A0000 		.4byte	0xa55
  2097 0d16 57020000 		.4byte	.LLST10
  2098 0d1a 2C       		.uleb128 0x2c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 56
-
-
  2099 0d1b 490A0000 		.4byte	0xa49
  2100 0d1f 6B020000 		.4byte	.LLST11
  2101 0d23 00       		.byte	0
@@ -3354,13 +3358,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2149 0d77 F90E0000 		.4byte	0xef9
  2150 0d7b 8C0D0000 		.4byte	0xd8c
  2151 0d7f 23       		.uleb128 0x23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 57
+
+
  2152 0d80 01       		.uleb128 0x1
  2153 0d81 50       		.byte	0x50
  2154 0d82 02       		.uleb128 0x2
  2155 0d83 74       		.byte	0x74
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 57
-
-
  2156 0d84 0C       		.sleb128 12
  2157 0d85 23       		.uleb128 0x23
  2158 0d86 01       		.uleb128 0x1
@@ -3407,20 +3411,20 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2199 0dcd 04       		.byte	0x4
  2200 0dce 6C090000 		.4byte	0x96c
  2201 0dd2 2D       		.uleb128 0x2d
- 2202 0dd3 9E130000 		.4byte	.LASF254
+ 2202 0dd3 9A130000 		.4byte	.LASF254
  2203 0dd7 0D       		.byte	0xd
  2204 0dd8 1B02     		.2byte	0x21b
  2205 0dda DE080000 		.4byte	0x8de
  2206 0dde 2D       		.uleb128 0x2d
- 2207 0ddf 940D0000 		.4byte	.LASF255
+ 2207 0ddf 6F0D0000 		.4byte	.LASF255
  2208 0de3 0D       		.byte	0xd
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 58
+
+
  2209 0de4 2202     		.2byte	0x222
  2210 0de6 0E090000 		.4byte	0x90e
  2211 0dea 07       		.uleb128 0x7
  2212 0deb 0A080000 		.4byte	0x80a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 58
-
-
  2213 0def FA0D0000 		.4byte	0xdfa
  2214 0df3 08       		.uleb128 0x8
  2215 0df4 AD000000 		.4byte	0xad
@@ -3444,17 +3448,17 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2233 0e1c 2D02     		.2byte	0x22d
  2234 0e1e 060E0000 		.4byte	0xe06
  2235 0e22 2D       		.uleb128 0x2d
- 2236 0e23 161A0000 		.4byte	.LASF258
+ 2236 0e23 101A0000 		.4byte	.LASF258
  2237 0e27 0D       		.byte	0xd
  2238 0e28 5202     		.2byte	0x252
  2239 0e2a 8C000000 		.4byte	0x8c
  2240 0e2e 2E       		.uleb128 0x2e
- 2241 0e2f 37180000 		.4byte	.LASF259
+ 2241 0e2f 31180000 		.4byte	.LASF259
  2242 0e33 11       		.byte	0x11
  2243 0e34 87       		.byte	0x87
  2244 0e35 86030000 		.4byte	0x386
  2245 0e39 2D       		.uleb128 0x2d
- 2246 0e3a AB130000 		.4byte	.LASF260
+ 2246 0e3a 80170000 		.4byte	.LASF260
  2247 0e3e 0F       		.byte	0xf
  2248 0e3f 6001     		.2byte	0x160
  2249 0e41 A2000000 		.4byte	0xa2
@@ -3468,25 +3472,25 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2257 0e55 06       		.uleb128 0x6
  2258 0e56 C7090000 		.4byte	0x9c7
  2259 0e5a 2D       		.uleb128 0x2d
- 2260 0e5b DE0C0000 		.4byte	.LASF261
+ 2260 0e5b C1120000 		.4byte	.LASF261
  2261 0e5f 0F       		.byte	0xf
  2262 0e60 6401     		.2byte	0x164
  2263 0e62 660E0000 		.4byte	0xe66
  2264 0e66 06       		.uleb128 0x6
  2265 0e67 450E0000 		.4byte	0xe45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 59
+
+
  2266 0e6b 2F       		.uleb128 0x2f
- 2267 0e6c A50E0000 		.4byte	.LASF262
+ 2267 0e6c 800E0000 		.4byte	.LASF262
  2268 0e70 12       		.byte	0x12
  2269 0e71 14       		.byte	0x14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 59
-
-
  2270 0e72 B1020000 		.4byte	0x2b1
  2271 0e76 05       		.uleb128 0x5
  2272 0e77 03       		.byte	0x3
  2273 0e78 00000000 		.4byte	rdyToRecvMsg
  2274 0e7c 2F       		.uleb128 0x2f
- 2275 0e7d 980E0000 		.4byte	.LASF263
+ 2275 0e7d 730E0000 		.4byte	.LASF263
  2276 0e81 12       		.byte	0x12
  2277 0e82 15       		.byte	0x15
  2278 0e83 290A0000 		.4byte	0xa29
@@ -3512,36 +3516,36 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2298 0eaf 03       		.byte	0x3
  2299 0eb0 00000000 		.4byte	events
  2300 0eb4 30       		.uleb128 0x30
- 2301 0eb5 29130000 		.4byte	.LASF265
- 2302 0eb9 29130000 		.4byte	.LASF265
+ 2301 0eb5 25130000 		.4byte	.LASF265
+ 2302 0eb9 25130000 		.4byte	.LASF265
  2303 0ebd 14       		.byte	0x14
  2304 0ebe D5       		.byte	0xd5
  2305 0ebf 30       		.uleb128 0x30
- 2306 0ec0 6C170000 		.4byte	.LASF266
- 2307 0ec4 6C170000 		.4byte	.LASF266
+ 2306 0ec0 54170000 		.4byte	.LASF266
+ 2307 0ec4 54170000 		.4byte	.LASF266
  2308 0ec8 15       		.byte	0x15
  2309 0ec9 24       		.byte	0x24
  2310 0eca 31       		.uleb128 0x31
- 2311 0ecb 220D0000 		.4byte	.LASF267
- 2312 0ecf 220D0000 		.4byte	.LASF267
+ 2311 0ecb FD0C0000 		.4byte	.LASF267
+ 2312 0ecf FD0C0000 		.4byte	.LASF267
  2313 0ed3 0A       		.byte	0xa
  2314 0ed4 B107     		.2byte	0x7b1
  2315 0ed6 31       		.uleb128 0x31
- 2316 0ed7 A90A0000 		.4byte	.LASF268
- 2317 0edb A90A0000 		.4byte	.LASF268
+ 2316 0ed7 950A0000 		.4byte	.LASF268
+ 2317 0edb 950A0000 		.4byte	.LASF268
  2318 0edf 16       		.byte	0x16
  2319 0ee0 FE01     		.2byte	0x1fe
  2320 0ee2 30       		.uleb128 0x30
  2321 0ee3 62010000 		.4byte	.LASF269
  2322 0ee7 62010000 		.4byte	.LASF269
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 60
+
+
  2323 0eeb 17       		.byte	0x17
  2324 0eec FE       		.byte	0xfe
  2325 0eed 31       		.uleb128 0x31
- 2326 0eee 79160000 		.4byte	.LASF270
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 60
-
-
- 2327 0ef2 79160000 		.4byte	.LASF270
+ 2326 0eee 61160000 		.4byte	.LASF270
+ 2327 0ef2 61160000 		.4byte	.LASF270
  2328 0ef6 0D       		.byte	0xd
  2329 0ef7 F901     		.2byte	0x1f9
  2330 0ef9 30       		.uleb128 0x30
@@ -3550,8 +3554,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2333 0f02 14       		.byte	0x14
  2334 0f03 D3       		.byte	0xd3
  2335 0f04 30       		.uleb128 0x30
- 2336 0f05 0B190000 		.4byte	.LASF272
- 2337 0f09 0B190000 		.4byte	.LASF272
+ 2336 0f05 05190000 		.4byte	.LASF272
+ 2337 0f09 05190000 		.4byte	.LASF272
  2338 0f0d 12       		.byte	0x12
  2339 0f0e 1A       		.byte	0x1a
  2340 0f0f 30       		.uleb128 0x30
@@ -3560,8 +3564,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2343 0f18 12       		.byte	0x12
  2344 0f19 1B       		.byte	0x1b
  2345 0f1a 31       		.uleb128 0x31
- 2346 0f1b 13130000 		.4byte	.LASF274
- 2347 0f1f 13130000 		.4byte	.LASF274
+ 2346 0f1b 0F130000 		.4byte	.LASF274
+ 2347 0f1f 0F130000 		.4byte	.LASF274
  2348 0f23 18       		.byte	0x18
  2349 0f24 5F01     		.2byte	0x15f
  2350 0f26 00       		.byte	0
@@ -3594,13 +3598,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2377 0018 3E       		.uleb128 0x3e
  2378 0019 0B       		.uleb128 0xb
  2379 001a 03       		.uleb128 0x3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 61
+
+
  2380 001b 0E       		.uleb128 0xe
  2381 001c 00       		.byte	0
  2382 001d 00       		.byte	0
  2383 001e 03       		.uleb128 0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 61
-
-
  2384 001f 16       		.uleb128 0x16
  2385 0020 00       		.byte	0
  2386 0021 03       		.uleb128 0x3
@@ -3654,13 +3658,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2434 0051 13       		.uleb128 0x13
  2435 0052 2F       		.uleb128 0x2f
  2436 0053 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 62
+
+
  2437 0054 00       		.byte	0
  2438 0055 00       		.byte	0
  2439 0056 09       		.uleb128 0x9
  2440 0057 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 62
-
-
  2441 0058 01       		.byte	0x1
  2442 0059 0B       		.uleb128 0xb
  2443 005a 0B       		.uleb128 0xb
@@ -3714,13 +3718,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2491 008a 01       		.uleb128 0x1
  2492 008b 13       		.uleb128 0x13
  2493 008c 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 63
+
+
  2494 008d 00       		.byte	0
  2495 008e 0D       		.uleb128 0xd
  2496 008f 0D       		.uleb128 0xd
  2497 0090 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 63
-
-
  2498 0091 03       		.uleb128 0x3
  2499 0092 0E       		.uleb128 0xe
  2500 0093 3A       		.uleb128 0x3a
@@ -3774,13 +3778,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2548 00c3 12       		.uleb128 0x12
  2549 00c4 05       		.uleb128 0x5
  2550 00c5 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 64
+
+
  2551 00c6 49       		.uleb128 0x49
  2552 00c7 13       		.uleb128 0x13
  2553 00c8 00       		.byte	0
  2554 00c9 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 64
-
-
  2555 00ca 13       		.uleb128 0x13
  2556 00cb 13       		.uleb128 0x13
  2557 00cc 01       		.byte	0x1
@@ -3834,13 +3838,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2605 00fc 1C       		.uleb128 0x1c
  2606 00fd 0B       		.uleb128 0xb
  2607 00fe 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 65
+
+
  2608 00ff 00       		.byte	0
  2609 0100 17       		.uleb128 0x17
  2610 0101 13       		.uleb128 0x13
  2611 0102 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 65
-
-
  2612 0103 0B       		.uleb128 0xb
  2613 0104 0B       		.uleb128 0xb
  2614 0105 3A       		.uleb128 0x3a
@@ -3894,13 +3898,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2662 0135 21       		.uleb128 0x21
  2663 0136 00       		.byte	0
  2664 0137 49       		.uleb128 0x49
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 66
+
+
  2665 0138 13       		.uleb128 0x13
  2666 0139 2F       		.uleb128 0x2f
  2667 013a 05       		.uleb128 0x5
  2668 013b 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 66
-
-
  2669 013c 00       		.byte	0
  2670 013d 1C       		.uleb128 0x1c
  2671 013e 2E       		.uleb128 0x2e
@@ -3954,13 +3958,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2719 016e 19       		.uleb128 0x19
  2720 016f 03       		.uleb128 0x3
  2721 0170 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 67
+
+
  2722 0171 3A       		.uleb128 0x3a
  2723 0172 0B       		.uleb128 0xb
  2724 0173 3B       		.uleb128 0x3b
  2725 0174 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 67
-
-
  2726 0175 27       		.uleb128 0x27
  2727 0176 19       		.uleb128 0x19
  2728 0177 11       		.uleb128 0x11
@@ -4014,13 +4018,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2776 01aa 13       		.uleb128 0x13
  2777 01ab 01       		.uleb128 0x1
  2778 01ac 13       		.uleb128 0x13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 68
+
+
  2779 01ad 00       		.byte	0
  2780 01ae 00       		.byte	0
  2781 01af 23       		.uleb128 0x23
  2782 01b0 8A8201   		.uleb128 0x410a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 68
-
-
  2783 01b3 00       		.byte	0
  2784 01b4 02       		.uleb128 0x2
  2785 01b5 18       		.uleb128 0x18
@@ -4074,13 +4078,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2833 01e8 0B       		.uleb128 0xb
  2834 01e9 49       		.uleb128 0x49
  2835 01ea 13       		.uleb128 0x13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 69
+
+
  2836 01eb 02       		.uleb128 0x2
  2837 01ec 17       		.uleb128 0x17
  2838 01ed 00       		.byte	0
  2839 01ee 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 69
-
-
  2840 01ef 28       		.uleb128 0x28
  2841 01f0 0B       		.uleb128 0xb
  2842 01f1 01       		.byte	0x1
@@ -4134,13 +4138,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2890 0223 00       		.byte	0
  2891 0224 31       		.uleb128 0x31
  2892 0225 13       		.uleb128 0x13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 70
+
+
  2893 0226 02       		.uleb128 0x2
  2894 0227 17       		.uleb128 0x17
  2895 0228 00       		.byte	0
  2896 0229 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 70
-
-
  2897 022a 2D       		.uleb128 0x2d
  2898 022b 34       		.uleb128 0x34
  2899 022c 00       		.byte	0
@@ -4194,13 +4198,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  2947 025c 00       		.byte	0
  2948 025d 30       		.uleb128 0x30
  2949 025e 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 71
+
+
  2950 025f 00       		.byte	0
  2951 0260 3F       		.uleb128 0x3f
  2952 0261 19       		.uleb128 0x19
  2953 0262 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 71
-
-
  2954 0263 19       		.uleb128 0x19
  2955 0264 6E       		.uleb128 0x6e
  2956 0265 0E       		.uleb128 0xe
@@ -4254,13 +4258,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3004 002e E87D     		.sleb128 -280
  3005 0030 9F       		.byte	0x9f
  3006 0031 FA000000 		.4byte	.LVL19
- 3007 0035 FC000000 		.4byte	.LFE439
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 72
+
+
+ 3007 0035 FC000000 		.4byte	.LFE445
  3008 0039 0400     		.2byte	0x4
  3009 003b F3       		.byte	0xf3
  3010 003c 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 72
-
-
  3011 003d 50       		.byte	0x50
  3012 003e 9F       		.byte	0x9f
  3013 003f 00000000 		.4byte	0
@@ -4314,13 +4318,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3061 00bd 50       		.byte	0x50
  3062 00be 4E000000 		.4byte	.LVL41
  3063 00c2 62000000 		.4byte	.LVL44
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 73
+
+
  3064 00c6 0400     		.2byte	0x4
  3065 00c8 F3       		.byte	0xf3
  3066 00c9 01       		.uleb128 0x1
  3067 00ca 50       		.byte	0x50
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 73
-
-
  3068 00cb 9F       		.byte	0x9f
  3069 00cc 62000000 		.4byte	.LVL44
  3070 00d0 6A000000 		.4byte	.LVL46
@@ -4349,7 +4353,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3093 0106 0100     		.2byte	0x1
  3094 0108 50       		.byte	0x50
  3095 0109 99000000 		.4byte	.LVL55-1
- 3096 010d B8000000 		.4byte	.LFE438
+ 3096 010d B8000000 		.4byte	.LFE444
  3097 0111 0400     		.2byte	0x4
  3098 0113 F3       		.byte	0xf3
  3099 0114 01       		.uleb128 0x1
@@ -4374,13 +4378,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3118 0144 62000000 		.4byte	.LVL44
  3119 0148 0100     		.2byte	0x1
  3120 014a 54       		.byte	0x54
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 74
+
+
  3121 014b 62000000 		.4byte	.LVL44
  3122 014f 68000000 		.4byte	.LVL45
  3123 0153 0100     		.2byte	0x1
  3124 0155 51       		.byte	0x51
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 74
-
-
  3125 0156 68000000 		.4byte	.LVL45
  3126 015a 7A000000 		.4byte	.LVL49
  3127 015e 0100     		.2byte	0x1
@@ -4402,7 +4406,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3143 018a 0100     		.2byte	0x1
  3144 018c 54       		.byte	0x54
  3145 018d A0000000 		.4byte	.LVL57
- 3146 0191 B8000000 		.4byte	.LFE438
+ 3146 0191 B8000000 		.4byte	.LFE444
  3147 0195 0400     		.2byte	0x4
  3148 0197 F3       		.byte	0xf3
  3149 0198 01       		.uleb128 0x1
@@ -4434,13 +4438,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3175 01da 80000000 		.4byte	.LVL50
  3176 01de 92000000 		.4byte	.LVL54
  3177 01e2 0100     		.2byte	0x1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 75
+
+
  3178 01e4 54       		.byte	0x54
  3179 01e5 92000000 		.4byte	.LVL54
  3180 01e9 99000000 		.4byte	.LVL55-1
  3181 01ed 0100     		.2byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 75
-
-
  3182 01ef 51       		.byte	0x51
  3183 01f0 99000000 		.4byte	.LVL55-1
  3184 01f4 A0000000 		.4byte	.LVL56
@@ -4494,13 +4498,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3232 026f 3C000000 		.4byte	.LVL40
  3233 0273 0600     		.2byte	0x6
  3234 0275 0C       		.byte	0xc
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 76
+
+
  3235 0276 00053240 		.4byte	0x40320500
  3236 027a 9F       		.byte	0x9f
  3237 027b 00000000 		.4byte	0
  3238 027f 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 76
-
-
  3239              		.section	.debug_aranges,"",%progbits
  3240 0000 2C000000 		.4byte	0x2c
  3241 0004 0200     		.2byte	0x2
@@ -4509,12 +4513,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3244 000b 00       		.byte	0
  3245 000c 0000     		.2byte	0
  3246 000e 0000     		.2byte	0
- 3247 0010 00000000 		.4byte	.LFB439
- 3248 0014 FC000000 		.4byte	.LFE439-.LFB439
- 3249 0018 00000000 		.4byte	.LFB437
- 3250 001c 70000000 		.4byte	.LFE437-.LFB437
- 3251 0020 00000000 		.4byte	.LFB438
- 3252 0024 B8000000 		.4byte	.LFE438-.LFB438
+ 3247 0010 00000000 		.4byte	.LFB445
+ 3248 0014 FC000000 		.4byte	.LFE445-.LFB445
+ 3249 0018 00000000 		.4byte	.LFB443
+ 3250 001c 70000000 		.4byte	.LFE443-.LFB443
+ 3251 0020 00000000 		.4byte	.LFB444
+ 3252 0024 B8000000 		.4byte	.LFE444-.LFB444
  3253 0028 00000000 		.4byte	0
  3254 002c 00000000 		.4byte	0
  3255              		.section	.debug_ranges,"",%progbits
@@ -4525,18 +4529,18 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3260 000c 4A000000 		.4byte	.LBE14
  3261 0010 00000000 		.4byte	0
  3262 0014 00000000 		.4byte	0
- 3263 0018 00000000 		.4byte	.LFB439
- 3264 001c FC000000 		.4byte	.LFE439
- 3265 0020 00000000 		.4byte	.LFB437
- 3266 0024 70000000 		.4byte	.LFE437
- 3267 0028 00000000 		.4byte	.LFB438
- 3268 002c B8000000 		.4byte	.LFE438
+ 3263 0018 00000000 		.4byte	.LFB445
+ 3264 001c FC000000 		.4byte	.LFE445
+ 3265 0020 00000000 		.4byte	.LFB443
+ 3266 0024 70000000 		.4byte	.LFE443
+ 3267 0028 00000000 		.4byte	.LFB444
+ 3268 002c B8000000 		.4byte	.LFE444
  3269 0030 00000000 		.4byte	0
  3270 0034 00000000 		.4byte	0
  3271              		.section	.debug_line,"",%progbits
  3272              	.Ldebug_line0:
  3273 0000 D6040000 		.section	.debug_str,"MS",%progbits,1
- 3273      02001D04 
+ 3273      02001B04 
  3273      00000201 
  3273      FB0E0D00 
  3273      01010101 
@@ -4554,13 +4558,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3279 001a 5644445F 		.ascii	"VDD_ACTIVE\000"
  3279      41435449 
  3279      564500
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 77
+
+
  3280              	.LASF31:
  3281 0025 494E5452 		.ascii	"INTR_CAUSE0\000"
  3281      5F434155 
  3281      53453000 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 77
-
-
  3282              	.LASF32:
  3283 0031 494E5452 		.ascii	"INTR_CAUSE1\000"
  3283      5F434155 
@@ -4614,13 +4618,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3300              	.LASF214:
  3301 013f 43595F42 		.ascii	"CY_BLE_STATE_INITIALIZING\000"
  3301      4C455F53 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 78
+
+
  3301      54415445 
  3301      5F494E49 
  3301      5449414C 
  3302              	.LASF49:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 78
-
-
  3303 0159 74785374 		.ascii	"txStatus\000"
  3303      61747573 
  3303      00
@@ -4674,13 +4678,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3321      6D73675F 
  3321      7400
  3322              	.LASF67:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 79
+
+
  3323 023d 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
  3323      41525F52 
  3323      414E4745 
  3323      5F434F4E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 79
-
-
  3323      445F4F55 
  3324              	.LASF157:
  3325 0257 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYS_GEN_COMPLETE\000"
@@ -4734,13 +4738,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3343      53746300 
  3344              	.LASF17:
  3345 0341 4F55545F 		.ascii	"OUT_SET\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 80
+
+
  3345      53455400 
  3346              	.LASF231:
  3347 0349 63795F73 		.ascii	"cy_stc_ble_gattc_write_req_t\000"
  3347      74635F62 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 80
-
-
  3347      6C655F67 
  3347      61747463 
  3347      5F777269 
@@ -4794,13 +4798,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3365      5F524541 
  3366              	.LASF158:
  3367 044a 43595F42 		.ascii	"CY_BLE_EVT_GAP_RESOLVE_DEVICE_COMPLETE\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 81
+
+
  3367      4C455F45 
  3367      56545F47 
  3367      41505F52 
  3367      45534F4C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 81
-
-
  3368              	.LASF64:
  3369 0471 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
  3369      41525F52 
@@ -4854,13 +4858,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3387      56545F53 
  3387      45545F52 
  3387      50415F45 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 82
+
+
  3388              	.LASF86:
  3389 0575 43595F42 		.ascii	"CY_BLE_EVT_STACK_ON\000"
  3389      4C455F45 
  3389      56545F53 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 82
-
-
  3389      5441434B 
  3389      5F4F4E00 
  3390              	.LASF116:
@@ -4914,13 +4918,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3405      00
  3406              	.LASF278:
  3407 06c7 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 83
+
+
  3407      74635F73 
  3407      63625F75 
  3407      6172745F 
  3407      636F6E74 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 83
-
-
  3408              	.LASF16:
  3409 06df 4F55545F 		.ascii	"OUT_CLR\000"
  3409      434C5200 
@@ -4974,13 +4978,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3427      5F414456 
  3428              	.LASF4:
  3429 07a7 5F5F7569 		.ascii	"__uint16_t\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 84
+
+
  3429      6E743136 
  3429      5F7400
  3430              	.LASF65:
  3431 07b2 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 84
-
-
  3431      41525F52 
  3431      414E4745 
  3431      5F434F4E 
@@ -5034,13 +5038,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3451 089a 4346475F 		.ascii	"CFG_OUT\000"
  3451      4F555400 
  3452              	.LASF50:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 85
+
+
  3453 08a2 72785374 		.ascii	"rxStatus\000"
  3453      61747573 
  3453      00
  3454              	.LASF55:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 85
-
-
  3455 08ab 72784275 		.ascii	"rxBuf\000"
  3455      6600
  3456              	.LASF277:
@@ -5060,1040 +5064,1039 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 1
  3460      56545F47 
  3460      41505F44 
  3460      45564943 
- 3461              	.LASF238:
- 3462 0922 4144435F 		.ascii	"ADC_1_CONFIG_STRUCT\000"
- 3462      315F434F 
- 3462      4E464947 
- 3462      5F535452 
- 3462      55435400 
- 3463              	.LASF204:
- 3464 0936 63795F62 		.ascii	"cy_ble_gatt_db_attr_handle_t\000"
- 3464      6C655F67 
- 3464      6174745F 
- 3464      64625F61 
- 3464      7474725F 
- 3465              	.LASF117:
- 3466 0953 43595F42 		.ascii	"CY_BLE_EVT_SOFT_RESET_COMPLETE\000"
+ 3461              	.LASF204:
+ 3462 0922 63795F62 		.ascii	"cy_ble_gatt_db_attr_handle_t\000"
+ 3462      6C655F67 
+ 3462      6174745F 
+ 3462      64625F61 
+ 3462      7474725F 
+ 3463              	.LASF117:
+ 3464 093f 43595F42 		.ascii	"CY_BLE_EVT_SOFT_RESET_COMPLETE\000"
+ 3464      4C455F45 
+ 3464      56545F53 
+ 3464      4F46545F 
+ 3464      52455345 
+ 3465              	.LASF179:
+ 3466 095e 43595F42 		.ascii	"CY_BLE_EVT_GATTS_PREP_WRITE_REQ\000"
  3466      4C455F45 
- 3466      56545F53 
- 3466      4F46545F 
- 3466      52455345 
- 3467              	.LASF179:
- 3468 0972 43595F42 		.ascii	"CY_BLE_EVT_GATTS_PREP_WRITE_REQ\000"
- 3468      4C455F45 
- 3468      56545F47 
- 3468      41545453 
- 3468      5F505245 
- 3469              	.LASF61:
- 3470 0992 63624576 		.ascii	"cbEvents\000"
- 3470      656E7473 
- 3470      00
- 3471              	.LASF45:
- 3472 099b 646F7562 		.ascii	"double\000"
- 3472      6C6500
- 3473              	.LASF249:
- 3474 09a2 47656E65 		.ascii	"GenericEventHandler\000"
- 3474      72696345 
- 3474      76656E74 
- 3474      48616E64 
- 3474      6C657200 
- 3475              	.LASF47:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 86
+ 3466      56545F47 
+ 3466      41545453 
+ 3466      5F505245 
+ 3467              	.LASF61:
+ 3468 097e 63624576 		.ascii	"cbEvents\000"
+ 3468      656E7473 
+ 3468      00
+ 3469              	.LASF45:
+ 3470 0987 646F7562 		.ascii	"double\000"
+ 3470      6C6500
+ 3471              	.LASF249:
+ 3472 098e 47656E65 		.ascii	"GenericEventHandler\000"
+ 3472      72696345 
+ 3472      76656E74 
+ 3472      48616E64 
+ 3472      6C657200 
+ 3473              	.LASF47:
+ 3474 09a2 5F426F6F 		.ascii	"_Bool\000"
+ 3474      6C00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 86
 
 
- 3476 09b6 5F426F6F 		.ascii	"_Bool\000"
- 3476      6C00
- 3477              	.LASF248:
- 3478 09bc 68616E64 		.ascii	"handValPair\000"
- 3478      56616C50 
- 3478      61697200 
- 3479              	.LASF200:
- 3480 09c8 43595F42 		.ascii	"CY_BLE_EVT_MAX\000"
+ 3475              	.LASF248:
+ 3476 09a8 68616E64 		.ascii	"handValPair\000"
+ 3476      56616C50 
+ 3476      61697200 
+ 3477              	.LASF200:
+ 3478 09b4 43595F42 		.ascii	"CY_BLE_EVT_MAX\000"
+ 3478      4C455F45 
+ 3478      56545F4D 
+ 3478      415800
+ 3479              	.LASF195:
+ 3480 09c3 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
  3480      4C455F45 
- 3480      56545F4D 
- 3480      415800
- 3481              	.LASF195:
- 3482 09d7 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
- 3482      4C455F45 
- 3482      56545F4C 
- 3482      32434150 
- 3482      5F434246 
- 3483              	.LASF36:
- 3484 09f9 5644445F 		.ascii	"VDD_INTR\000"
- 3484      494E5452 
- 3484      00
- 3485              	.LASF125:
- 3486 0a02 43595F42 		.ascii	"CY_BLE_EVT_RANDOM_NUM_GEN_COMPLETE\000"
- 3486      4C455F45 
- 3486      56545F52 
- 3486      414E444F 
- 3486      4D5F4E55 
- 3487              	.LASF219:
- 3488 0a25 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
- 3488      4C455F41 
- 3488      44565F53 
- 3488      54415445 
- 3488      5F414456 
- 3489              	.LASF155:
- 3490 0a42 43595F42 		.ascii	"CY_BLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ 3480      56545F4C 
+ 3480      32434150 
+ 3480      5F434246 
+ 3481              	.LASF36:
+ 3482 09e5 5644445F 		.ascii	"VDD_INTR\000"
+ 3482      494E5452 
+ 3482      00
+ 3483              	.LASF125:
+ 3484 09ee 43595F42 		.ascii	"CY_BLE_EVT_RANDOM_NUM_GEN_COMPLETE\000"
+ 3484      4C455F45 
+ 3484      56545F52 
+ 3484      414E444F 
+ 3484      4D5F4E55 
+ 3485              	.LASF219:
+ 3486 0a11 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 3486      4C455F41 
+ 3486      44565F53 
+ 3486      54415445 
+ 3486      5F414456 
+ 3487              	.LASF155:
+ 3488 0a2e 43595F42 		.ascii	"CY_BLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ 3488      4C455F45 
+ 3488      56545F47 
+ 3488      41505F53 
+ 3488      4D505F4E 
+ 3489              	.LASF98:
+ 3490 0a56 43595F42 		.ascii	"CY_BLE_EVT_SET_DATA_LENGTH_COMPLETE\000"
  3490      4C455F45 
- 3490      56545F47 
- 3490      41505F53 
- 3490      4D505F4E 
- 3491              	.LASF98:
- 3492 0a6a 43595F42 		.ascii	"CY_BLE_EVT_SET_DATA_LENGTH_COMPLETE\000"
+ 3490      56545F53 
+ 3490      45545F44 
+ 3490      4154415F 
+ 3491              	.LASF177:
+ 3492 0a7a 43595F42 		.ascii	"CY_BLE_EVT_GATTC_WRITE_RSP\000"
  3492      4C455F45 
- 3492      56545F53 
- 3492      45545F44 
- 3492      4154415F 
- 3493              	.LASF177:
- 3494 0a8e 43595F42 		.ascii	"CY_BLE_EVT_GATTC_WRITE_RSP\000"
- 3494      4C455F45 
- 3494      56545F47 
- 3494      41545443 
- 3494      5F575249 
- 3495              	.LASF268:
- 3496 0aa9 43795F53 		.ascii	"Cy_SysEnableCM4\000"
- 3496      7973456E 
- 3496      61626C65 
- 3496      434D3400 
- 3497              	.LASF52:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 87
+ 3492      56545F47 
+ 3492      41545443 
+ 3492      5F575249 
+ 3493              	.LASF268:
+ 3494 0a95 43795F53 		.ascii	"Cy_SysEnableCM4\000"
+ 3494      7973456E 
+ 3494      61626C65 
+ 3494      434D3400 
+ 3495              	.LASF52:
+ 3496 0aa5 72785269 		.ascii	"rxRingBufSize\000"
+ 3496      6E674275 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 87
 
 
- 3498 0ab9 72785269 		.ascii	"rxRingBufSize\000"
- 3498      6E674275 
- 3498      6653697A 
- 3498      6500
- 3499              	.LASF88:
- 3500 0ac7 43595F42 		.ascii	"CY_BLE_EVT_STACK_BUSY_STATUS\000"
- 3500      4C455F45 
- 3500      56545F53 
- 3500      5441434B 
- 3500      5F425553 
- 3501              	.LASF19:
- 3502 0ae4 494E5452 		.ascii	"INTR\000"
- 3502      00
- 3503              	.LASF30:
- 3504 0ae9 4750494F 		.ascii	"GPIO_PRT_Type\000"
- 3504      5F505254 
- 3504      5F547970 
- 3504      6500
- 3505              	.LASF95:
- 3506 0af7 43595F42 		.ascii	"CY_BLE_EVT_GET_CHANNEL_MAP_COMPLETE\000"
- 3506      4C455F45 
- 3506      56545F47 
- 3506      45545F43 
- 3506      48414E4E 
- 3507              	.LASF20:
- 3508 0b1b 494E5452 		.ascii	"INTR_MASK\000"
- 3508      5F4D4153 
- 3508      4B00
- 3509              	.LASF89:
- 3510 0b25 43595F42 		.ascii	"CY_BLE_EVT_MEMORY_REQUEST\000"
- 3510      4C455F45 
- 3510      56545F4D 
- 3510      454D4F52 
- 3510      595F5245 
- 3511              	.LASF83:
- 3512 0b3f 76726566 		.ascii	"vrefMvValue\000"
- 3512      4D765661 
- 3512      6C756500 
- 3513              	.LASF136:
- 3514 0b4b 43595F42 		.ascii	"CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE\000"
- 3514      4C455F45 
- 3514      56545F53 
- 3514      45545F43 
- 3514      4F4E4E5F 
- 3515              	.LASF220:
- 3516 0b71 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
- 3516      4C455F41 
- 3516      44565F53 
- 3516      54415445 
- 3516      5F53544F 
- 3517              	.LASF227:
- 3518 0b91 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
- 3518      4C455F43 
- 3518      4F4E4E5F 
- 3518      53544154 
- 3518      455F434C 
- 3519              	.LASF66:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 88
+ 3496      6653697A 
+ 3496      6500
+ 3497              	.LASF88:
+ 3498 0ab3 43595F42 		.ascii	"CY_BLE_EVT_STACK_BUSY_STATUS\000"
+ 3498      4C455F45 
+ 3498      56545F53 
+ 3498      5441434B 
+ 3498      5F425553 
+ 3499              	.LASF19:
+ 3500 0ad0 494E5452 		.ascii	"INTR\000"
+ 3500      00
+ 3501              	.LASF30:
+ 3502 0ad5 4750494F 		.ascii	"GPIO_PRT_Type\000"
+ 3502      5F505254 
+ 3502      5F547970 
+ 3502      6500
+ 3503              	.LASF95:
+ 3504 0ae3 43595F42 		.ascii	"CY_BLE_EVT_GET_CHANNEL_MAP_COMPLETE\000"
+ 3504      4C455F45 
+ 3504      56545F47 
+ 3504      45545F43 
+ 3504      48414E4E 
+ 3505              	.LASF20:
+ 3506 0b07 494E5452 		.ascii	"INTR_MASK\000"
+ 3506      5F4D4153 
+ 3506      4B00
+ 3507              	.LASF89:
+ 3508 0b11 43595F42 		.ascii	"CY_BLE_EVT_MEMORY_REQUEST\000"
+ 3508      4C455F45 
+ 3508      56545F4D 
+ 3508      454D4F52 
+ 3508      595F5245 
+ 3509              	.LASF83:
+ 3510 0b2b 76726566 		.ascii	"vrefMvValue\000"
+ 3510      4D765661 
+ 3510      6C756500 
+ 3511              	.LASF136:
+ 3512 0b37 43595F42 		.ascii	"CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE\000"
+ 3512      4C455F45 
+ 3512      56545F53 
+ 3512      45545F43 
+ 3512      4F4E4E5F 
+ 3513              	.LASF220:
+ 3514 0b5d 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 3514      4C455F41 
+ 3514      44565F53 
+ 3514      54415445 
+ 3514      5F53544F 
+ 3515              	.LASF227:
+ 3516 0b7d 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 3516      4C455F43 
+ 3516      4F4E4E5F 
+ 3516      53544154 
+ 3516      455F434C 
+ 3517              	.LASF66:
+ 3518 0ba7 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
+ 3518      41525F52 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 88
 
 
- 3520 0bbb 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
- 3520      41525F52 
- 3520      414E4745 
- 3520      5F434F4E 
- 3520      445F4142 
- 3521              	.LASF43:
- 3522 0bd3 63686172 		.ascii	"char\000"
- 3522      00
- 3523              	.LASF127:
- 3524 0bd8 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_ENCRYPT_COMPLETE\000"
+ 3518      414E4745 
+ 3518      5F434F4E 
+ 3518      445F4142 
+ 3519              	.LASF43:
+ 3520 0bbf 63686172 		.ascii	"char\000"
+ 3520      00
+ 3521              	.LASF127:
+ 3522 0bc4 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_ENCRYPT_COMPLETE\000"
+ 3522      4C455F45 
+ 3522      56545F41 
+ 3522      45535F43 
+ 3522      434D5F45 
+ 3523              	.LASF148:
+ 3524 0be8 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_START_STOP\000"
  3524      4C455F45 
- 3524      56545F41 
- 3524      45535F43 
- 3524      434D5F45 
- 3525              	.LASF148:
- 3526 0bfc 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_START_STOP\000"
- 3526      4C455F45 
- 3526      56545F47 
- 3526      4150435F 
- 3526      5343414E 
- 3527              	.LASF75:
- 3528 0c1c 6368616E 		.ascii	"chanEn\000"
- 3528      456E00
- 3529              	.LASF54:
- 3530 0c23 72785269 		.ascii	"rxRingBufTail\000"
- 3530      6E674275 
- 3530      66546169 
- 3530      6C00
- 3531              	.LASF170:
- 3532 0c31 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 3524      56545F47 
+ 3524      4150435F 
+ 3524      5343414E 
+ 3525              	.LASF75:
+ 3526 0c08 6368616E 		.ascii	"chanEn\000"
+ 3526      456E00
+ 3527              	.LASF54:
+ 3528 0c0f 72785269 		.ascii	"rxRingBufTail\000"
+ 3528      6E674275 
+ 3528      66546169 
+ 3528      6C00
+ 3529              	.LASF170:
+ 3530 0c1d 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 3530      4C455F45 
+ 3530      56545F47 
+ 3530      41545443 
+ 3530      5F524541 
+ 3531              	.LASF106:
+ 3532 0c3f 43595F42 		.ascii	"CY_BLE_EVT_SET_HOST_CHANNEL_COMPLETE\000"
  3532      4C455F45 
- 3532      56545F47 
- 3532      41545443 
- 3532      5F524541 
- 3533              	.LASF106:
- 3534 0c53 43595F42 		.ascii	"CY_BLE_EVT_SET_HOST_CHANNEL_COMPLETE\000"
- 3534      4C455F45 
- 3534      56545F53 
- 3534      45545F48 
- 3534      4F53545F 
- 3535              	.LASF242:
- 3536 0c78 64617461 		.ascii	"data\000"
- 3536      00
- 3537              	.LASF96:
- 3538 0c7d 43595F42 		.ascii	"CY_BLE_EVT_LE_SET_EVENT_MASK_COMPLETE\000"
- 3538      4C455F45 
- 3538      56545F4C 
- 3538      455F5345 
- 3538      545F4556 
- 3539              	.LASF57:
- 3540 0ca3 72784275 		.ascii	"rxBufIdx\000"
- 3540      66496478 
- 3540      00
- 3541              	.LASF150:
- 3542 0cac 43595F42 		.ascii	"CY_BLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
- 3542      4C455F45 
- 3542      56545F47 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 89
+ 3532      56545F53 
+ 3532      45545F48 
+ 3532      4F53545F 
+ 3533              	.LASF242:
+ 3534 0c64 64617461 		.ascii	"data\000"
+ 3534      00
+ 3535              	.LASF96:
+ 3536 0c69 43595F42 		.ascii	"CY_BLE_EVT_LE_SET_EVENT_MASK_COMPLETE\000"
+ 3536      4C455F45 
+ 3536      56545F4C 
+ 3536      455F5345 
+ 3536      545F4556 
+ 3537              	.LASF57:
+ 3538 0c8f 72784275 		.ascii	"rxBufIdx\000"
+ 3538      66496478 
+ 3538      00
+ 3539              	.LASF150:
+ 3540 0c98 43595F42 		.ascii	"CY_BLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
+ 3540      4C455F45 
+ 3540      56545F47 
+ 3540      41505F4E 
+ 3540      554D4552 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 89
 
 
- 3542      41505F4E 
- 3542      554D4552 
- 3543              	.LASF62:
- 3544 0cd6 696E6974 		.ascii	"initKey\000"
- 3544      4B657900 
- 3545              	.LASF261:
- 3546 0cde 4144435F 		.ascii	"ADC_1_allConfigs\000"
- 3546      315F616C 
- 3546      6C436F6E 
- 3546      66696773 
- 3546      00
- 3547              	.LASF12:
- 3548 0cef 75696E74 		.ascii	"uint8_t\000"
- 3548      385F7400 
- 3549              	.LASF129:
- 3550 0cf7 43595F42 		.ascii	"CY_BLE_EVT_SET_SLAVE_LATENCY_MODE_COMPLETE\000"
- 3550      4C455F45 
- 3550      56545F53 
- 3550      45545F53 
- 3550      4C415645 
- 3551              	.LASF267:
- 3552 0d22 43795F42 		.ascii	"Cy_BLE_ProcessEvents\000"
- 3552      4C455F50 
- 3552      726F6365 
- 3552      73734576 
- 3552      656E7473 
- 3553              	.LASF33:
- 3554 0d37 494E5452 		.ascii	"INTR_CAUSE2\000"
- 3554      5F434155 
- 3554      53453200 
- 3555              	.LASF141:
- 3556 0d43 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_COMPLETE\000"
- 3556      4C455F45 
- 3556      56545F47 
- 3556      41505F41 
- 3556      5554485F 
- 3557              	.LASF112:
- 3558 0d60 43595F42 		.ascii	"CY_BLE_EVT_SET_DEFAULT_PHY_COMPLETE\000"
- 3558      4C455F45 
- 3558      56545F53 
- 3558      45545F44 
- 3558      45464155 
- 3559              	.LASF81:
- 3560 0d84 6D757853 		.ascii	"muxSwitchSqCtrl\000"
- 3560      77697463 
- 3560      68537143 
- 3560      74726C00 
- 3561              	.LASF255:
- 3562 0d94 63795F62 		.ascii	"cy_ble_advState\000"
- 3562      6C655F61 
- 3562      64765374 
- 3562      61746500 
- 3563              	.LASF48:
- 3564 0da4 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
- 3564      625F7363 
- 3564      625F7561 
- 3564      72745F68 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 90
+ 3541              	.LASF62:
+ 3542 0cc2 696E6974 		.ascii	"initKey\000"
+ 3542      4B657900 
+ 3543              	.LASF12:
+ 3544 0cca 75696E74 		.ascii	"uint8_t\000"
+ 3544      385F7400 
+ 3545              	.LASF129:
+ 3546 0cd2 43595F42 		.ascii	"CY_BLE_EVT_SET_SLAVE_LATENCY_MODE_COMPLETE\000"
+ 3546      4C455F45 
+ 3546      56545F53 
+ 3546      45545F53 
+ 3546      4C415645 
+ 3547              	.LASF267:
+ 3548 0cfd 43795F42 		.ascii	"Cy_BLE_ProcessEvents\000"
+ 3548      4C455F50 
+ 3548      726F6365 
+ 3548      73734576 
+ 3548      656E7473 
+ 3549              	.LASF33:
+ 3550 0d12 494E5452 		.ascii	"INTR_CAUSE2\000"
+ 3550      5F434155 
+ 3550      53453200 
+ 3551              	.LASF141:
+ 3552 0d1e 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_COMPLETE\000"
+ 3552      4C455F45 
+ 3552      56545F47 
+ 3552      41505F41 
+ 3552      5554485F 
+ 3553              	.LASF112:
+ 3554 0d3b 43595F42 		.ascii	"CY_BLE_EVT_SET_DEFAULT_PHY_COMPLETE\000"
+ 3554      4C455F45 
+ 3554      56545F53 
+ 3554      45545F44 
+ 3554      45464155 
+ 3555              	.LASF81:
+ 3556 0d5f 6D757853 		.ascii	"muxSwitchSqCtrl\000"
+ 3556      77697463 
+ 3556      68537143 
+ 3556      74726C00 
+ 3557              	.LASF255:
+ 3558 0d6f 63795F62 		.ascii	"cy_ble_advState\000"
+ 3558      6C655F61 
+ 3558      64765374 
+ 3558      61746500 
+ 3559              	.LASF48:
+ 3560 0d7f 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 3560      625F7363 
+ 3560      625F7561 
+ 3560      72745F68 
+ 3560      616E646C 
+ 3561              	.LASF74:
+ 3562 0d9e 72616E67 		.ascii	"rangeCond\000"
+ 3562      65436F6E 
+ 3562      6400
+ 3563              	.LASF135:
+ 3564 0da8 43595F42 		.ascii	"CY_BLE_EVT_SET_CE_LENGTH_COMPLETE\000"
+ 3564      4C455F45 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 90
 
 
- 3564      616E646C 
- 3565              	.LASF74:
- 3566 0dc3 72616E67 		.ascii	"rangeCond\000"
- 3566      65436F6E 
- 3566      6400
- 3567              	.LASF135:
- 3568 0dcd 43595F42 		.ascii	"CY_BLE_EVT_SET_CE_LENGTH_COMPLETE\000"
- 3568      4C455F45 
- 3568      56545F53 
- 3568      45545F43 
- 3568      455F4C45 
- 3569              	.LASF247:
- 3570 0def 696E6974 		.ascii	"init_ble\000"
- 3570      5F626C65 
- 3570      00
- 3571              	.LASF9:
- 3572 0df8 6C6F6E67 		.ascii	"long long int\000"
- 3572      206C6F6E 
- 3572      6720696E 
- 3572      7400
- 3573              	.LASF161:
- 3574 0e06 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONN_ESTB\000"
+ 3564      56545F53 
+ 3564      45545F43 
+ 3564      455F4C45 
+ 3565              	.LASF247:
+ 3566 0dca 696E6974 		.ascii	"init_ble\000"
+ 3566      5F626C65 
+ 3566      00
+ 3567              	.LASF9:
+ 3568 0dd3 6C6F6E67 		.ascii	"long long int\000"
+ 3568      206C6F6E 
+ 3568      6720696E 
+ 3568      7400
+ 3569              	.LASF161:
+ 3570 0de1 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONN_ESTB\000"
+ 3570      4C455F45 
+ 3570      56545F47 
+ 3570      41505F43 
+ 3570      4F4E4E5F 
+ 3571              	.LASF212:
+ 3572 0dfa 63795F73 		.ascii	"cy_stc_ble_gatt_write_param_t\000"
+ 3572      74635F62 
+ 3572      6C655F67 
+ 3572      6174745F 
+ 3572      77726974 
+ 3573              	.LASF108:
+ 3574 0e18 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_RPA_LIST_COMPLETE\000"
  3574      4C455F45 
- 3574      56545F47 
- 3574      41505F43 
- 3574      4F4E4E5F 
- 3575              	.LASF212:
- 3576 0e1f 63795F73 		.ascii	"cy_stc_ble_gatt_write_param_t\000"
- 3576      74635F62 
- 3576      6C655F67 
- 3576      6174745F 
- 3576      77726974 
- 3577              	.LASF108:
- 3578 0e3d 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_RPA_LIST_COMPLETE\000"
- 3578      4C455F45 
- 3578      56545F52 
- 3578      454D4F56 
- 3578      455F4445 
- 3579              	.LASF97:
- 3580 0e6d 43595F42 		.ascii	"CY_BLE_EVT_LE_PING_AUTH_TIMEOUT\000"
- 3580      4C455F45 
- 3580      56545F4C 
- 3580      455F5049 
- 3580      4E475F41 
- 3581              	.LASF211:
- 3582 0e8d 636F6E6E 		.ascii	"connHandle\000"
- 3582      48616E64 
- 3582      6C6500
- 3583              	.LASF263:
- 3584 0e98 6970634D 		.ascii	"ipcMsgForCM4\000"
- 3584      7367466F 
- 3584      72434D34 
- 3584      00
- 3585              	.LASF262:
- 3586 0ea5 72647954 		.ascii	"rdyToRecvMsg\000"
- 3586      6F526563 
- 3586      764D7367 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 91
+ 3574      56545F52 
+ 3574      454D4F56 
+ 3574      455F4445 
+ 3575              	.LASF97:
+ 3576 0e48 43595F42 		.ascii	"CY_BLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 3576      4C455F45 
+ 3576      56545F4C 
+ 3576      455F5049 
+ 3576      4E475F41 
+ 3577              	.LASF211:
+ 3578 0e68 636F6E6E 		.ascii	"connHandle\000"
+ 3578      48616E64 
+ 3578      6C6500
+ 3579              	.LASF263:
+ 3580 0e73 6970634D 		.ascii	"ipcMsgForCM4\000"
+ 3580      7367466F 
+ 3580      72434D34 
+ 3580      00
+ 3581              	.LASF262:
+ 3582 0e80 72647954 		.ascii	"rdyToRecvMsg\000"
+ 3582      6F526563 
+ 3582      764D7367 
+ 3582      00
+ 3583              	.LASF124:
+ 3584 0e8d 43595F42 		.ascii	"CY_BLE_EVT_SET_CLK_CONFIG_COMPLETE\000"
+ 3584      4C455F45 
+ 3584      56545F53 
+ 3584      45545F43 
+ 3584      4C4B5F43 
+ 3585              	.LASF188:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 91
 
 
- 3586      00
- 3587              	.LASF124:
- 3588 0eb2 43595F42 		.ascii	"CY_BLE_EVT_SET_CLK_CONFIG_COMPLETE\000"
- 3588      4C455F45 
- 3588      56545F53 
- 3588      45545F43 
- 3588      4C4B5F43 
- 3589              	.LASF188:
- 3590 0ed5 43595F42 		.ascii	"CY_BLE_EVT_GATTC_LONG_PROCEDURE_END\000"
- 3590      4C455F45 
- 3590      56545F47 
- 3590      41545443 
- 3590      5F4C4F4E 
- 3591              	.LASF53:
- 3592 0ef9 72785269 		.ascii	"rxRingBufHead\000"
- 3592      6E674275 
- 3592      66486561 
- 3592      6400
- 3593              	.LASF76:
- 3594 0f07 6368616E 		.ascii	"chanConfig\000"
- 3594      436F6E66 
- 3594      696700
- 3595              	.LASF149:
- 3596 0f12 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
- 3596      4C455F45 
- 3596      56545F47 
- 3596      41505F4B 
- 3596      4559494E 
- 3597              	.LASF109:
- 3598 0f37 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_WHITE_LIST_COMPLETE\000"
- 3598      4C455F45 
- 3598      56545F41 
- 3598      44445F44 
- 3598      45564943 
- 3599              	.LASF59:
- 3600 0f64 74784275 		.ascii	"txBufSize\000"
- 3600      6653697A 
- 3600      6500
- 3601              	.LASF46:
- 3602 0f6e 75696E74 		.ascii	"uint32\000"
- 3602      333200
- 3603              	.LASF163:
- 3604 0f75 43595F42 		.ascii	"CY_BLE_EVT_GAP_ADV_TX\000"
- 3604      4C455F45 
- 3604      56545F47 
- 3604      41505F41 
- 3604      44565F54 
- 3605              	.LASF199:
- 3606 0f8b 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 3586 0eb0 43595F42 		.ascii	"CY_BLE_EVT_GATTC_LONG_PROCEDURE_END\000"
+ 3586      4C455F45 
+ 3586      56545F47 
+ 3586      41545443 
+ 3586      5F4C4F4E 
+ 3587              	.LASF53:
+ 3588 0ed4 72785269 		.ascii	"rxRingBufHead\000"
+ 3588      6E674275 
+ 3588      66486561 
+ 3588      6400
+ 3589              	.LASF76:
+ 3590 0ee2 6368616E 		.ascii	"chanConfig\000"
+ 3590      436F6E66 
+ 3590      696700
+ 3591              	.LASF149:
+ 3592 0eed 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 3592      4C455F45 
+ 3592      56545F47 
+ 3592      41505F4B 
+ 3592      4559494E 
+ 3593              	.LASF109:
+ 3594 0f12 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_WHITE_LIST_COMPLETE\000"
+ 3594      4C455F45 
+ 3594      56545F41 
+ 3594      44445F44 
+ 3594      45564943 
+ 3595              	.LASF59:
+ 3596 0f3f 74784275 		.ascii	"txBufSize\000"
+ 3596      6653697A 
+ 3596      6500
+ 3597              	.LASF46:
+ 3598 0f49 75696E74 		.ascii	"uint32\000"
+ 3598      333200
+ 3599              	.LASF163:
+ 3600 0f50 43595F42 		.ascii	"CY_BLE_EVT_GAP_ADV_TX\000"
+ 3600      4C455F45 
+ 3600      56545F47 
+ 3600      41505F41 
+ 3600      44565F54 
+ 3601              	.LASF199:
+ 3602 0f66 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 3602      4C455F45 
+ 3602      56545F4C 
+ 3602      32434150 
+ 3602      5F434246 
+ 3603              	.LASF238:
+ 3604 0f8b 4144435F 		.ascii	"ADC_CONFIG_STRUCT\000"
+ 3604      434F4E46 
+ 3604      49475F53 
+ 3604      54525543 
+ 3604      5400
+ 3605              	.LASF119:
+ 3606 0f9d 43595F42 		.ascii	"CY_BLE_EVT_GET_DEVICE_ADDR_COMPLETE\000"
  3606      4C455F45 
- 3606      56545F4C 
- 3606      32434150 
- 3606      5F434246 
- 3607              	.LASF119:
- 3608 0fb0 43595F42 		.ascii	"CY_BLE_EVT_GET_DEVICE_ADDR_COMPLETE\000"
+ 3606      56545F47 
+ 3606      45545F44 
+ 3606      45564943 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 92
+
+
+ 3607              	.LASF137:
+ 3608 0fc1 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
  3608      4C455F45 
  3608      56545F47 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 92
-
-
- 3608      45545F44 
- 3608      45564943 
- 3609              	.LASF137:
- 3610 0fd4 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
+ 3608      4150435F 
+ 3608      5343414E 
+ 3609              	.LASF192:
+ 3610 0fe6 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_IND\000"
  3610      4C455F45 
- 3610      56545F47 
- 3610      4150435F 
- 3610      5343414E 
- 3611              	.LASF192:
- 3612 0ff9 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 3610      56545F4C 
+ 3610      32434150 
+ 3610      5F434246 
+ 3611              	.LASF173:
+ 3612 1005 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_RSP\000"
  3612      4C455F45 
- 3612      56545F4C 
- 3612      32434150 
- 3612      5F434246 
- 3613              	.LASF173:
- 3614 1018 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_RSP\000"
+ 3612      56545F47 
+ 3612      41545443 
+ 3612      5F524541 
+ 3613              	.LASF151:
+ 3614 101f 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
  3614      4C455F45 
  3614      56545F47 
- 3614      41545443 
- 3614      5F524541 
- 3615              	.LASF151:
- 3616 1032 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
- 3616      4C455F45 
- 3616      56545F47 
- 3616      41505F4B 
- 3616      45595052 
- 3617              	.LASF228:
- 3618 1057 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 3614      41505F4B 
+ 3614      45595052 
+ 3615              	.LASF228:
+ 3616 1044 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 3616      4C455F43 
+ 3616      4F4E4E5F 
+ 3616      53544154 
+ 3616      455F434C 
+ 3617              	.LASF224:
+ 3618 106f 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
  3618      4C455F43 
  3618      4F4E4E5F 
  3618      53544154 
- 3618      455F434C 
- 3619              	.LASF224:
- 3620 1082 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
- 3620      4C455F43 
- 3620      4F4E4E5F 
- 3620      53544154 
- 3620      455F434F 
- 3621              	.LASF58:
- 3622 109e 74784275 		.ascii	"txBuf\000"
- 3622      6600
- 3623              	.LASF38:
- 3624 10a4 5644445F 		.ascii	"VDD_INTR_MASKED\000"
- 3624      494E5452 
- 3624      5F4D4153 
- 3624      4B454400 
- 3625              	.LASF226:
- 3626 10b4 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
- 3626      4C455F43 
- 3626      4F4E4E5F 
- 3626      53544154 
- 3626      455F434C 
- 3627              	.LASF51:
- 3628 10de 72785269 		.ascii	"rxRingBuf\000"
- 3628      6E674275 
- 3628      6600
- 3629              	.LASF41:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 93
+ 3618      455F434F 
+ 3619              	.LASF58:
+ 3620 108b 74784275 		.ascii	"txBuf\000"
+ 3620      6600
+ 3621              	.LASF38:
+ 3622 1091 5644445F 		.ascii	"VDD_INTR_MASKED\000"
+ 3622      494E5452 
+ 3622      5F4D4153 
+ 3622      4B454400 
+ 3623              	.LASF226:
+ 3624 10a1 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 3624      4C455F43 
+ 3624      4F4E4E5F 
+ 3624      53544154 
+ 3624      455F434C 
+ 3625              	.LASF51:
+ 3626 10cb 72785269 		.ascii	"rxRingBuf\000"
+ 3626      6E674275 
+ 3626      6600
+ 3627              	.LASF41:
+ 3628 10d5 6C6F6E67 		.ascii	"long double\000"
+ 3628      20646F75 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 93
 
 
- 3630 10e8 6C6F6E67 		.ascii	"long double\000"
- 3630      20646F75 
- 3630      626C6500 
- 3631              	.LASF94:
- 3632 10f4 43595F42 		.ascii	"CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE\000"
- 3632      4C455F45 
- 3632      56545F52 
- 3632      4541445F 
- 3632      41555448 
- 3633              	.LASF13:
- 3634 111d 75696E74 		.ascii	"uint16_t\000"
- 3634      31365F74 
+ 3628      626C6500 
+ 3629              	.LASF94:
+ 3630 10e1 43595F42 		.ascii	"CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3630      4C455F45 
+ 3630      56545F52 
+ 3630      4541445F 
+ 3630      41555448 
+ 3631              	.LASF13:
+ 3632 110a 75696E74 		.ascii	"uint16_t\000"
+ 3632      31365F74 
+ 3632      00
+ 3633              	.LASF39:
+ 3634 1113 5644445F 		.ascii	"VDD_INTR_SET\000"
+ 3634      494E5452 
+ 3634      5F534554 
  3634      00
- 3635              	.LASF39:
- 3636 1126 5644445F 		.ascii	"VDD_INTR_SET\000"
- 3636      494E5452 
- 3636      5F534554 
- 3636      00
- 3637              	.LASF216:
- 3638 1133 63795F65 		.ascii	"cy_en_ble_state_t\000"
- 3638      6E5F626C 
- 3638      655F7374 
- 3638      6174655F 
- 3638      7400
- 3639              	.LASF104:
- 3640 1145 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_TO_COMPLETE\000"
- 3640      4C455F45 
- 3640      56545F53 
- 3640      45545F52 
- 3640      50415F54 
- 3641              	.LASF71:
- 3642 1164 73616D70 		.ascii	"sampleTime01\000"
- 3642      6C655469 
- 3642      6D653031 
- 3642      00
- 3643              	.LASF92:
- 3644 1171 43595F42 		.ascii	"CY_BLE_EVT_HARDWARE_ERROR\000"
- 3644      4C455F45 
- 3644      56545F48 
- 3644      41524457 
- 3644      4152455F 
- 3645              	.LASF80:
- 3646 118b 6D757853 		.ascii	"muxSwitch\000"
- 3646      77697463 
- 3646      6800
- 3647              	.LASF183:
- 3648 1195 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 3635              	.LASF216:
+ 3636 1120 63795F65 		.ascii	"cy_en_ble_state_t\000"
+ 3636      6E5F626C 
+ 3636      655F7374 
+ 3636      6174655F 
+ 3636      7400
+ 3637              	.LASF104:
+ 3638 1132 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_TO_COMPLETE\000"
+ 3638      4C455F45 
+ 3638      56545F53 
+ 3638      45545F52 
+ 3638      50415F54 
+ 3639              	.LASF71:
+ 3640 1151 73616D70 		.ascii	"sampleTime01\000"
+ 3640      6C655469 
+ 3640      6D653031 
+ 3640      00
+ 3641              	.LASF92:
+ 3642 115e 43595F42 		.ascii	"CY_BLE_EVT_HARDWARE_ERROR\000"
+ 3642      4C455F45 
+ 3642      56545F48 
+ 3642      41524457 
+ 3642      4152455F 
+ 3643              	.LASF80:
+ 3644 1178 6D757853 		.ascii	"muxSwitch\000"
+ 3644      77697463 
+ 3644      6800
+ 3645              	.LASF183:
+ 3646 1182 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_IND\000"
+ 3646      4C455F45 
+ 3646      56545F47 
+ 3646      41545443 
+ 3646      5F48414E 
+ 3647              	.LASF164:
+ 3648 11a4 43595F42 		.ascii	"CY_BLE_EVT_GATTC_ERROR_RSP\000"
  3648      4C455F45 
  3648      56545F47 
  3648      41545443 
- 3648      5F48414E 
- 3649              	.LASF164:
- 3650 11b7 43595F42 		.ascii	"CY_BLE_EVT_GATTC_ERROR_RSP\000"
- 3650      4C455F45 
- 3650      56545F47 
- 3650      41545443 
- 3650      5F455252 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 94
+ 3648      5F455252 
+ 3649              	.LASF246:
+ 3650 11bf 77726974 		.ascii	"write_event_to_server\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 94
 
 
- 3651              	.LASF246:
- 3652 11d2 77726974 		.ascii	"write_event_to_server\000"
- 3652      655F6576 
- 3652      656E745F 
- 3652      746F5F73 
- 3652      65727665 
- 3653              	.LASF169:
- 3654 11e8 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 3650      655F6576 
+ 3650      656E745F 
+ 3650      746F5F73 
+ 3650      65727665 
+ 3651              	.LASF169:
+ 3652 11d5 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 3652      4C455F45 
+ 3652      56545F47 
+ 3652      41545443 
+ 3652      5F524541 
+ 3653              	.LASF107:
+ 3654 11fd 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_RPA_LIST_COMPLETE\000"
  3654      4C455F45 
- 3654      56545F47 
- 3654      41545443 
- 3654      5F524541 
- 3655              	.LASF107:
- 3656 1210 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_RPA_LIST_COMPLETE\000"
+ 3654      56545F41 
+ 3654      44445F44 
+ 3654      45564943 
+ 3655              	.LASF176:
+ 3656 1228 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_REQ\000"
  3656      4C455F45 
- 3656      56545F41 
- 3656      44445F44 
- 3656      45564943 
- 3657              	.LASF176:
- 3658 123b 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_REQ\000"
+ 3656      56545F47 
+ 3656      41545453 
+ 3656      5F575249 
+ 3657              	.LASF130:
+ 3658 1243 43595F42 		.ascii	"CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE\000"
  3658      4C455F45 
- 3658      56545F47 
- 3658      41545453 
- 3658      5F575249 
- 3659              	.LASF130:
- 3660 1256 43595F42 		.ascii	"CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE\000"
- 3660      4C455F45 
- 3660      56545F53 
- 3660      5441434B 
- 3660      5F534855 
- 3661              	.LASF203:
- 3662 1279 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
- 3662      74635F62 
- 3662      6C655F63 
- 3662      6F6E6E5F 
- 3662      68616E64 
- 3663              	.LASF29:
- 3664 1292 52455345 		.ascii	"RESERVED1\000"
- 3664      52564544 
- 3664      3100
- 3665              	.LASF162:
- 3666 129c 43595F42 		.ascii	"CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE\000"
- 3666      4C455F45 
- 3666      56545F47 
- 3666      4150505F 
- 3666      55504441 
- 3667              	.LASF0:
- 3668 12ca 73686F72 		.ascii	"short int\000"
- 3668      7420696E 
- 3668      7400
+ 3658      56545F53 
+ 3658      5441434B 
+ 3658      5F534855 
+ 3659              	.LASF203:
+ 3660 1266 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 3660      74635F62 
+ 3660      6C655F63 
+ 3660      6F6E6E5F 
+ 3660      68616E64 
+ 3661              	.LASF29:
+ 3662 127f 52455345 		.ascii	"RESERVED1\000"
+ 3662      52564544 
+ 3662      3100
+ 3663              	.LASF162:
+ 3664 1289 43595F42 		.ascii	"CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE\000"
+ 3664      4C455F45 
+ 3664      56545F47 
+ 3664      4150505F 
+ 3664      55504441 
+ 3665              	.LASF0:
+ 3666 12b7 73686F72 		.ascii	"short int\000"
+ 3666      7420696E 
+ 3666      7400
+ 3667              	.LASF261:
+ 3668 12c1 4144435F 		.ascii	"ADC_allConfigs\000"
+ 3668      616C6C43 
+ 3668      6F6E6669 
+ 3668      677300
  3669              	.LASF85:
- 3670 12d4 43595F42 		.ascii	"CY_BLE_EVT_INVALID\000"
+ 3670 12d0 43595F42 		.ascii	"CY_BLE_EVT_INVALID\000"
  3670      4C455F45 
  3670      56545F49 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 95
+
+
  3670      4E56414C 
  3670      494400
  3671              	.LASF145:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 95
-
-
- 3672 12e7 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 3672 12e3 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_DISCONNECTED\000"
  3672      4C455F45 
  3672      56545F47 
  3672      41505F44 
  3672      45564943 
  3673              	.LASF6:
- 3674 130a 6C6F6E67 		.ascii	"long int\000"
+ 3674 1306 6C6F6E67 		.ascii	"long int\000"
  3674      20696E74 
  3674      00
  3675              	.LASF274:
- 3676 1313 43795F42 		.ascii	"Cy_BLE_GATTS_WriteRsp\000"
+ 3676 130f 43795F42 		.ascii	"Cy_BLE_GATTS_WriteRsp\000"
  3676      4C455F47 
  3676      41545453 
  3676      5F577269 
  3676      74655273 
  3677              	.LASF265:
- 3678 1329 43795F42 		.ascii	"Cy_BLE_GATTS_WriteAttributeValueLocal\000"
+ 3678 1325 43795F42 		.ascii	"Cy_BLE_GATTS_WriteAttributeValueLocal\000"
  3678      4C455F47 
  3678      41545453 
  3678      5F577269 
  3678      74654174 
  3679              	.LASF232:
- 3680 134f 63795F73 		.ascii	"cy_stc_ble_gattc_write_cmd_req_t\000"
+ 3680 134b 63795F73 		.ascii	"cy_stc_ble_gattc_write_cmd_req_t\000"
  3680      74635F62 
  3680      6C655F67 
  3680      61747463 
  3680      5F777269 
  3681              	.LASF133:
- 3682 1370 43595F42 		.ascii	"CY_BLE_EVT_AES_CMAC_GEN_COMPLETE\000"
+ 3682 136c 43595F42 		.ascii	"CY_BLE_EVT_AES_CMAC_GEN_COMPLETE\000"
  3682      4C455F45 
  3682      56545F41 
  3682      45535F43 
  3682      4D41435F 
  3683              	.LASF279:
- 3684 1391 5F5F656E 		.ascii	"__enable_irq\000"
+ 3684 138d 5F5F656E 		.ascii	"__enable_irq\000"
  3684      61626C65 
  3684      5F697271 
  3684      00
  3685              	.LASF254:
- 3686 139e 63795F62 		.ascii	"cy_ble_state\000"
+ 3686 139a 63795F62 		.ascii	"cy_ble_state\000"
  3686      6C655F73 
  3686      74617465 
  3686      00
- 3687              	.LASF260:
- 3688 13ab 4144435F 		.ascii	"ADC_1_currentConfig\000"
- 3688      315F6375 
- 3688      7272656E 
- 3688      74436F6E 
- 3688      66696700 
- 3689              	.LASF42:
- 3690 13bf 63686172 		.ascii	"char_t\000"
- 3690      5F7400
- 3691              	.LASF156:
- 3692 13c6 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_ADDR_GEN_COMPLETE\000"
- 3692      4C455F45 
- 3692      56545F47 
- 3692      41505F44 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 96
+ 3687              	.LASF42:
+ 3688 13a7 63686172 		.ascii	"char_t\000"
+ 3688      5F7400
+ 3689              	.LASF156:
+ 3690 13ae 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_ADDR_GEN_COMPLETE\000"
+ 3690      4C455F45 
+ 3690      56545F47 
+ 3690      41505F44 
+ 3690      45564943 
+ 3691              	.LASF28:
+ 3692 13d6 4346475F 		.ascii	"CFG_IN_GPIO5V\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 96
 
 
- 3692      45564943 
- 3693              	.LASF28:
- 3694 13ee 4346475F 		.ascii	"CFG_IN_GPIO5V\000"
- 3694      494E5F47 
- 3694      50494F35 
- 3694      5600
- 3695              	.LASF194:
- 3696 13fc 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
- 3696      4C455F45 
- 3696      56545F4C 
- 3696      32434150 
- 3696      5F434246 
- 3697              	.LASF253:
- 3698 141e 77726974 		.ascii	"writeReqParam\000"
- 3698      65526571 
- 3698      50617261 
- 3698      6D00
- 3699              	.LASF210:
- 3700 142c 68616E64 		.ascii	"handleValPair\000"
- 3700      6C655661 
- 3700      6C506169 
- 3700      7200
- 3701              	.LASF60:
- 3702 143a 74784C65 		.ascii	"txLeftToTransmit\000"
- 3702      6674546F 
- 3702      5472616E 
- 3702      736D6974 
- 3702      00
- 3703              	.LASF213:
- 3704 144b 43595F42 		.ascii	"CY_BLE_STATE_STOPPED\000"
- 3704      4C455F53 
- 3704      54415445 
- 3704      5F53544F 
- 3704      50504544 
- 3705              	.LASF205:
- 3706 1460 61637475 		.ascii	"actualLen\000"
- 3706      616C4C65 
- 3706      6E00
- 3707              	.LASF93:
- 3708 146a 43595F42 		.ascii	"CY_BLE_EVT_WRITE_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3692      494E5F47 
+ 3692      50494F35 
+ 3692      5600
+ 3693              	.LASF194:
+ 3694 13e4 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 3694      4C455F45 
+ 3694      56545F4C 
+ 3694      32434150 
+ 3694      5F434246 
+ 3695              	.LASF253:
+ 3696 1406 77726974 		.ascii	"writeReqParam\000"
+ 3696      65526571 
+ 3696      50617261 
+ 3696      6D00
+ 3697              	.LASF210:
+ 3698 1414 68616E64 		.ascii	"handleValPair\000"
+ 3698      6C655661 
+ 3698      6C506169 
+ 3698      7200
+ 3699              	.LASF60:
+ 3700 1422 74784C65 		.ascii	"txLeftToTransmit\000"
+ 3700      6674546F 
+ 3700      5472616E 
+ 3700      736D6974 
+ 3700      00
+ 3701              	.LASF213:
+ 3702 1433 43595F42 		.ascii	"CY_BLE_STATE_STOPPED\000"
+ 3702      4C455F53 
+ 3702      54415445 
+ 3702      5F53544F 
+ 3702      50504544 
+ 3703              	.LASF205:
+ 3704 1448 61637475 		.ascii	"actualLen\000"
+ 3704      616C4C65 
+ 3704      6E00
+ 3705              	.LASF93:
+ 3706 1452 43595F42 		.ascii	"CY_BLE_EVT_WRITE_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3706      4C455F45 
+ 3706      56545F57 
+ 3706      52495445 
+ 3706      5F415554 
+ 3707              	.LASF132:
+ 3708 147c 43595F42 		.ascii	"CY_BLE_EVT_RADIO_VOLTAGE_LEVEL\000"
  3708      4C455F45 
- 3708      56545F57 
- 3708      52495445 
- 3708      5F415554 
- 3709              	.LASF132:
- 3710 1494 43595F42 		.ascii	"CY_BLE_EVT_RADIO_VOLTAGE_LEVEL\000"
- 3710      4C455F45 
- 3710      56545F52 
- 3710      4144494F 
- 3710      5F564F4C 
- 3711              	.LASF18:
- 3712 14b3 4F55545F 		.ascii	"OUT_INV\000"
- 3712      494E5600 
- 3713              	.LASF3:
- 3714 14bb 5F5F7569 		.ascii	"__uint8_t\000"
- 3714      6E74385F 
- 3714      7400
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 97
+ 3708      56545F52 
+ 3708      4144494F 
+ 3708      5F564F4C 
+ 3709              	.LASF18:
+ 3710 149b 4F55545F 		.ascii	"OUT_INV\000"
+ 3710      494E5600 
+ 3711              	.LASF3:
+ 3712 14a3 5F5F7569 		.ascii	"__uint8_t\000"
+ 3712      6E74385F 
+ 3712      7400
+ 3713              	.LASF99:
+ 3714 14ad 43595F42 		.ascii	"CY_BLE_EVT_SET_SUGGESTED_DATA_LENGTH_COMPLETE\000"
+ 3714      4C455F45 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 97
 
 
- 3715              	.LASF99:
- 3716 14c5 43595F42 		.ascii	"CY_BLE_EVT_SET_SUGGESTED_DATA_LENGTH_COMPLETE\000"
- 3716      4C455F45 
- 3716      56545F53 
- 3716      45545F53 
- 3716      55474745 
- 3717              	.LASF251:
- 3718 14f3 6576656E 		.ascii	"event\000"
- 3718      7400
- 3719              	.LASF126:
- 3720 14f9 43595F42 		.ascii	"CY_BLE_EVT_AES_ENCRYPT_COMPLETE\000"
+ 3714      56545F53 
+ 3714      45545F53 
+ 3714      55474745 
+ 3715              	.LASF251:
+ 3716 14db 6576656E 		.ascii	"event\000"
+ 3716      7400
+ 3717              	.LASF126:
+ 3718 14e1 43595F42 		.ascii	"CY_BLE_EVT_AES_ENCRYPT_COMPLETE\000"
+ 3718      4C455F45 
+ 3718      56545F41 
+ 3718      45535F45 
+ 3718      4E435259 
+ 3719              	.LASF121:
+ 3720 1501 43595F42 		.ascii	"CY_BLE_EVT_GET_TX_PWR_COMPLETE\000"
  3720      4C455F45 
- 3720      56545F41 
- 3720      45535F45 
- 3720      4E435259 
- 3721              	.LASF121:
- 3722 1519 43595F42 		.ascii	"CY_BLE_EVT_GET_TX_PWR_COMPLETE\000"
- 3722      4C455F45 
- 3722      56545F47 
- 3722      45545F54 
- 3722      585F5057 
- 3723              	.LASF21:
- 3724 1538 494E5452 		.ascii	"INTR_MASKED\000"
- 3724      5F4D4153 
- 3724      4B454400 
- 3725              	.LASF72:
- 3726 1544 73616D70 		.ascii	"sampleTime23\000"
- 3726      6C655469 
- 3726      6D653233 
- 3726      00
- 3727              	.LASF87:
- 3728 1551 43595F42 		.ascii	"CY_BLE_EVT_TIMEOUT\000"
- 3728      4C455F45 
- 3728      56545F54 
- 3728      494D454F 
- 3728      555400
- 3729              	.LASF15:
- 3730 1564 73697A65 		.ascii	"sizetype\000"
- 3730      74797065 
- 3730      00
- 3731              	.LASF8:
- 3732 156d 6C6F6E67 		.ascii	"long unsigned int\000"
- 3732      20756E73 
- 3732      69676E65 
- 3732      6420696E 
- 3732      7400
- 3733              	.LASF209:
- 3734 157f 63795F73 		.ascii	"cy_stc_ble_gatt_handle_value_pair_t\000"
- 3734      74635F62 
- 3734      6C655F67 
- 3734      6174745F 
- 3734      68616E64 
- 3735              	.LASF44:
- 3736 15a3 666C6F61 		.ascii	"float\000"
- 3736      7400
- 3737              	.LASF131:
- 3738 15a9 43595F42 		.ascii	"CY_BLE_EVT_RADIO_TEMPERATURE\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 98
+ 3720      56545F47 
+ 3720      45545F54 
+ 3720      585F5057 
+ 3721              	.LASF21:
+ 3722 1520 494E5452 		.ascii	"INTR_MASKED\000"
+ 3722      5F4D4153 
+ 3722      4B454400 
+ 3723              	.LASF72:
+ 3724 152c 73616D70 		.ascii	"sampleTime23\000"
+ 3724      6C655469 
+ 3724      6D653233 
+ 3724      00
+ 3725              	.LASF87:
+ 3726 1539 43595F42 		.ascii	"CY_BLE_EVT_TIMEOUT\000"
+ 3726      4C455F45 
+ 3726      56545F54 
+ 3726      494D454F 
+ 3726      555400
+ 3727              	.LASF15:
+ 3728 154c 73697A65 		.ascii	"sizetype\000"
+ 3728      74797065 
+ 3728      00
+ 3729              	.LASF8:
+ 3730 1555 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3730      20756E73 
+ 3730      69676E65 
+ 3730      6420696E 
+ 3730      7400
+ 3731              	.LASF209:
+ 3732 1567 63795F73 		.ascii	"cy_stc_ble_gatt_handle_value_pair_t\000"
+ 3732      74635F62 
+ 3732      6C655F67 
+ 3732      6174745F 
+ 3732      68616E64 
+ 3733              	.LASF44:
+ 3734 158b 666C6F61 		.ascii	"float\000"
+ 3734      7400
+ 3735              	.LASF131:
+ 3736 1591 43595F42 		.ascii	"CY_BLE_EVT_RADIO_TEMPERATURE\000"
+ 3736      4C455F45 
+ 3736      56545F52 
+ 3736      4144494F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 98
 
 
- 3738      4C455F45 
- 3738      56545F52 
- 3738      4144494F 
- 3738      5F54454D 
- 3739              	.LASF245:
- 3740 15c6 70696E4E 		.ascii	"pinNum\000"
- 3740      756D00
- 3741              	.LASF191:
- 3742 15cd 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_COMMAND_REJ\000"
+ 3736      5F54454D 
+ 3737              	.LASF245:
+ 3738 15ae 70696E4E 		.ascii	"pinNum\000"
+ 3738      756D00
+ 3739              	.LASF191:
+ 3740 15b5 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_COMMAND_REJ\000"
+ 3740      4C455F45 
+ 3740      56545F4C 
+ 3740      32434150 
+ 3740      5F434F4D 
+ 3741              	.LASF140:
+ 3742 15d2 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
  3742      4C455F45 
- 3742      56545F4C 
- 3742      32434150 
- 3742      5F434F4D 
- 3743              	.LASF140:
- 3744 15ea 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
- 3744      4C455F45 
- 3744      56545F47 
- 3744      41505F50 
- 3744      4153534B 
- 3745              	.LASF215:
- 3746 1611 43595F42 		.ascii	"CY_BLE_STATE_ON\000"
- 3746      4C455F53 
- 3746      54415445 
- 3746      5F4F4E00 
- 3747              	.LASF70:
- 3748 1621 73616D70 		.ascii	"sampleCtrl\000"
- 3748      6C654374 
- 3748      726C00
- 3749              	.LASF241:
- 3750 162c 74797065 		.ascii	"type\000"
- 3750      00
- 3751              	.LASF1:
- 3752 1631 756E7369 		.ascii	"unsigned char\000"
- 3752      676E6564 
- 3752      20636861 
- 3752      7200
- 3753              	.LASF185:
- 3754 163f 43595F42 		.ascii	"CY_BLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
- 3754      4C455F45 
- 3754      56545F47 
- 3754      41545453 
- 3754      5F444154 
- 3755              	.LASF7:
- 3756 1664 5F5F7569 		.ascii	"__uint32_t\000"
- 3756      6E743332 
- 3756      5F7400
- 3757              	.LASF40:
- 3758 166f 4750494F 		.ascii	"GPIO_Type\000"
- 3758      5F547970 
- 3758      6500
- 3759              	.LASF270:
- 3760 1679 43795F42 		.ascii	"Cy_BLE_GAPP_StartAdvertisement\000"
- 3760      4C455F47 
- 3760      4150505F 
- 3760      53746172 
- 3760      74416476 
- 3761              	.LASF23:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 99
+ 3742      56545F47 
+ 3742      41505F50 
+ 3742      4153534B 
+ 3743              	.LASF215:
+ 3744 15f9 43595F42 		.ascii	"CY_BLE_STATE_ON\000"
+ 3744      4C455F53 
+ 3744      54415445 
+ 3744      5F4F4E00 
+ 3745              	.LASF70:
+ 3746 1609 73616D70 		.ascii	"sampleCtrl\000"
+ 3746      6C654374 
+ 3746      726C00
+ 3747              	.LASF241:
+ 3748 1614 74797065 		.ascii	"type\000"
+ 3748      00
+ 3749              	.LASF1:
+ 3750 1619 756E7369 		.ascii	"unsigned char\000"
+ 3750      676E6564 
+ 3750      20636861 
+ 3750      7200
+ 3751              	.LASF185:
+ 3752 1627 43595F42 		.ascii	"CY_BLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
+ 3752      4C455F45 
+ 3752      56545F47 
+ 3752      41545453 
+ 3752      5F444154 
+ 3753              	.LASF7:
+ 3754 164c 5F5F7569 		.ascii	"__uint32_t\000"
+ 3754      6E743332 
+ 3754      5F7400
+ 3755              	.LASF40:
+ 3756 1657 4750494F 		.ascii	"GPIO_Type\000"
+ 3756      5F547970 
+ 3756      6500
+ 3757              	.LASF270:
+ 3758 1661 43795F42 		.ascii	"Cy_BLE_GAPP_StartAdvertisement\000"
+ 3758      4C455F47 
+ 3758      4150505F 
+ 3758      53746172 
+ 3758      74416476 
+ 3759              	.LASF23:
+ 3760 1680 494E5452 		.ascii	"INTR_CFG\000"
+ 3760      5F434647 
+ 3760      00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 99
 
 
- 3762 1698 494E5452 		.ascii	"INTR_CFG\000"
- 3762      5F434647 
+ 3761              	.LASF240:
+ 3762 1689 75736572 		.ascii	"userCode\000"
+ 3762      436F6465 
  3762      00
- 3763              	.LASF240:
- 3764 16a1 75736572 		.ascii	"userCode\000"
- 3764      436F6465 
- 3764      00
- 3765              	.LASF206:
- 3766 16aa 63795F73 		.ascii	"cy_stc_ble_gatt_value_t\000"
- 3766      74635F62 
- 3766      6C655F67 
- 3766      6174745F 
- 3766      76616C75 
- 3767              	.LASF110:
- 3768 16c2 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_WHITE_LIST_COMPLETE\000"
+ 3763              	.LASF206:
+ 3764 1692 63795F73 		.ascii	"cy_stc_ble_gatt_value_t\000"
+ 3764      74635F62 
+ 3764      6C655F67 
+ 3764      6174745F 
+ 3764      76616C75 
+ 3765              	.LASF110:
+ 3766 16aa 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_WHITE_LIST_COMPLETE\000"
+ 3766      4C455F45 
+ 3766      56545F52 
+ 3766      454D4F56 
+ 3766      455F4445 
+ 3767              	.LASF100:
+ 3768 16dc 43595F42 		.ascii	"CY_BLE_EVT_GET_DATA_LENGTH_COMPLETE\000"
  3768      4C455F45 
- 3768      56545F52 
- 3768      454D4F56 
- 3768      455F4445 
- 3769              	.LASF100:
- 3770 16f4 43595F42 		.ascii	"CY_BLE_EVT_GET_DATA_LENGTH_COMPLETE\000"
+ 3768      56545F47 
+ 3768      45545F44 
+ 3768      4154415F 
+ 3769              	.LASF154:
+ 3770 1700 43595F42 		.ascii	"CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
  3770      4C455F45 
  3770      56545F47 
- 3770      45545F44 
- 3770      4154415F 
- 3771              	.LASF154:
- 3772 1718 43595F42 		.ascii	"CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
+ 3770      4150435F 
+ 3770      44495245 
+ 3771              	.LASF190:
+ 3772 1722 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
  3772      4C455F45 
- 3772      56545F47 
- 3772      4150435F 
- 3772      44495245 
- 3773              	.LASF190:
- 3774 173a 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
- 3774      4C455F45 
- 3774      56545F4C 
- 3774      32434150 
- 3774      5F434F4E 
- 3775              	.LASF237:
- 3776 1761 636C6B44 		.ascii	"clkDivider\000"
- 3776      69766964 
- 3776      657200
- 3777              	.LASF266:
- 3778 176c 43795F42 		.ascii	"Cy_BLE_Start\000"
- 3778      4C455F53 
- 3778      74617274 
- 3778      00
- 3779              	.LASF166:
- 3780 1779 43595F42 		.ascii	"CY_BLE_EVT_GATT_DISCONNECT_IND\000"
- 3780      4C455F45 
- 3780      56545F47 
- 3780      4154545F 
- 3780      44495343 
+ 3772      56545F4C 
+ 3772      32434150 
+ 3772      5F434F4E 
+ 3773              	.LASF237:
+ 3774 1749 636C6B44 		.ascii	"clkDivider\000"
+ 3774      69766964 
+ 3774      657200
+ 3775              	.LASF266:
+ 3776 1754 43795F42 		.ascii	"Cy_BLE_Start\000"
+ 3776      4C455F53 
+ 3776      74617274 
+ 3776      00
+ 3777              	.LASF166:
+ 3778 1761 43595F42 		.ascii	"CY_BLE_EVT_GATT_DISCONNECT_IND\000"
+ 3778      4C455F45 
+ 3778      56545F47 
+ 3778      4154545F 
+ 3778      44495343 
+ 3779              	.LASF260:
+ 3780 1780 4144435F 		.ascii	"ADC_currentConfig\000"
+ 3780      63757272 
+ 3780      656E7443 
+ 3780      6F6E6669 
+ 3780      6700
  3781              	.LASF250:
- 3782 1798 6576656E 		.ascii	"event_byte_arr\000"
+ 3782 1792 6576656E 		.ascii	"event_byte_arr\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 100
+
+
  3782      745F6279 
  3782      74655F61 
  3782      727200
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 100
-
-
  3783              	.LASF181:
- 3784 17a7 43595F42 		.ascii	"CY_BLE_EVT_GATTC_EXEC_WRITE_RSP\000"
+ 3784 17a1 43595F42 		.ascii	"CY_BLE_EVT_GATTC_EXEC_WRITE_RSP\000"
  3784      4C455F45 
  3784      56545F47 
  3784      41545443 
  3784      5F455845 
  3785              	.LASF167:
- 3786 17c7 43595F42 		.ascii	"CY_BLE_EVT_GATTS_XCNHG_MTU_REQ\000"
+ 3786 17c1 43595F42 		.ascii	"CY_BLE_EVT_GATTS_XCNHG_MTU_REQ\000"
  3786      4C455F45 
  3786      56545F47 
  3786      41545453 
  3786      5F58434E 
  3787              	.LASF186:
- 3788 17e6 43595F42 		.ascii	"CY_BLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 3788 17e0 43595F42 		.ascii	"CY_BLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
  3788      4C455F45 
  3788      56545F47 
  3788      41545443 
  3788      5F53544F 
  3789              	.LASF139:
- 3790 1809 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 3790 1803 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
  3790      4C455F45 
  3790      56545F47 
  3790      41505F50 
  3790      4153534B 
  3791              	.LASF201:
- 3792 182e 62644861 		.ascii	"bdHandle\000"
+ 3792 1828 62644861 		.ascii	"bdHandle\000"
  3792      6E646C65 
  3792      00
  3793              	.LASF259:
- 3794 1837 55415254 		.ascii	"UART_context\000"
+ 3794 1831 55415254 		.ascii	"UART_context\000"
  3794      5F636F6E 
  3794      74657874 
  3794      00
  3795              	.LASF37:
- 3796 1844 5644445F 		.ascii	"VDD_INTR_MASK\000"
+ 3796 183e 5644445F 		.ascii	"VDD_INTR_MASK\000"
  3796      494E5452 
  3796      5F4D4153 
  3796      4B00
  3797              	.LASF2:
- 3798 1852 7369676E 		.ascii	"signed char\000"
+ 3798 184c 7369676E 		.ascii	"signed char\000"
  3798      65642063 
  3798      68617200 
  3799              	.LASF5:
- 3800 185e 73686F72 		.ascii	"short unsigned int\000"
+ 3800 1858 73686F72 		.ascii	"short unsigned int\000"
  3800      7420756E 
  3800      7369676E 
  3800      65642069 
  3800      6E7400
  3801              	.LASF138:
- 3802 1871 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_REQ\000"
+ 3802 186b 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_REQ\000"
  3802      4C455F45 
  3802      56545F47 
  3802      41505F41 
  3802      5554485F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 101
+
+
  3803              	.LASF178:
- 3804 1889 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 3804 1883 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_CMD_REQ\000"
  3804      4C455F45 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 101
-
-
  3804      56545F47 
  3804      41545453 
  3804      5F575249 
  3805              	.LASF123:
- 3806 18a8 43595F42 		.ascii	"CY_BLE_EVT_GET_CLK_CONFIG_COMPLETE\000"
+ 3806 18a2 43595F42 		.ascii	"CY_BLE_EVT_GET_CLK_CONFIG_COMPLETE\000"
  3806      4C455F45 
  3806      56545F47 
  3806      45545F43 
  3806      4C4B5F43 
  3807              	.LASF236:
- 3808 18cb 6D697363 		.ascii	"miscConfig\000"
+ 3808 18c5 6D697363 		.ascii	"miscConfig\000"
  3808      436F6E66 
  3808      696700
  3809              	.LASF189:
- 3810 18d6 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 3810 18d0 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
  3810      4C455F45 
  3810      56545F4C 
  3810      32434150 
  3810      5F434F4E 
  3811              	.LASF82:
- 3812 18fd 636F6E66 		.ascii	"configRouting\000"
+ 3812 18f7 636F6E66 		.ascii	"configRouting\000"
  3812      6967526F 
  3812      7574696E 
  3812      6700
  3813              	.LASF272:
- 3814 190b 73656E64 		.ascii	"send_threshold\000"
+ 3814 1905 73656E64 		.ascii	"send_threshold\000"
  3814      5F746872 
  3814      6573686F 
  3814      6C6400
  3815              	.LASF79:
- 3816 191a 72616E67 		.ascii	"rangeIntrMask\000"
+ 3816 1914 72616E67 		.ascii	"rangeIntrMask\000"
  3816      65496E74 
  3816      724D6173 
  3816      6B00
  3817              	.LASF68:
- 3818 1928 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
+ 3818 1922 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
  3818      6E5F7361 
  3818      725F7261 
  3818      6E67655F 
  3818      64657465 
  3819              	.LASF91:
- 3820 194b 43595F42 		.ascii	"CY_BLE_EVT_FLASH_CORRUPT\000"
+ 3820 1945 43595F42 		.ascii	"CY_BLE_EVT_FLASH_CORRUPT\000"
  3820      4C455F45 
  3820      56545F46 
  3820      4C415348 
  3820      5F434F52 
  3821              	.LASF159:
- 3822 1964 43595F42 		.ascii	"CY_BLE_EVT_GAP_GEN_SET_LOCAL_P256_KEYS_COMPLETE\000"
+ 3822 195e 43595F42 		.ascii	"CY_BLE_EVT_GAP_GEN_SET_LOCAL_P256_KEYS_COMPLETE\000"
  3822      4C455F45 
  3822      56545F47 
  3822      41505F47 
  3822      454E5F53 
  3823              	.LASF142:
- 3824 1994 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_FAILED\000"
+ 3824 198e 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_FAILED\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccmGCn6w.s 			page 102
+
+
  3824      4C455F45 
  3824      56545F47 
  3824      41505F41 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccxPnOFr.s 			page 102
-
-
  3824      5554485F 
  3825              	.LASF208:
- 3826 19af 61747472 		.ascii	"attrHandle\000"
+ 3826 19a9 61747472 		.ascii	"attrHandle\000"
  3826      48616E64 
  3826      6C6500
  3827              	.LASF222:
- 3828 19ba 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 3828 19b4 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
  3828      4C455F43 
  3828      4F4E4E5F 
  3828      53544154 
  3828      455F4449 
  3829              	.LASF225:
- 3830 19d9 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 3830 19d3 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
  3830      4C455F43 
  3830      4F4E4E5F 
  3830      53544154 
  3830      455F434C 
  3831              	.LASF77:
- 3832 1a03 696E7472 		.ascii	"intrMask\000"
+ 3832 19fd 696E7472 		.ascii	"intrMask\000"
  3832      4D61736B 
  3832      00
  3833              	.LASF56:
- 3834 1a0c 72784275 		.ascii	"rxBufSize\000"
+ 3834 1a06 72784275 		.ascii	"rxBufSize\000"
  3834      6653697A 
  3834      6500
  3835              	.LASF258:
- 3836 1a16 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 3836 1a10 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
  3836      6C655F70 
  3836      656E6469 
  3836      6E67466C 
  3836      61736857 
  3837              	.LASF147:
- 3838 1a2f 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 3838 1a29 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
  3838      4C455F45 
  3838      56545F47 
  3838      41505F43 

@@ -31,8 +31,11 @@
     #define UART_SCB_IRQ__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t UART_SCB_IRQ_cfg;
 
-    #define ADC_1_IRQ__INTC_ASSIGNED 1u
-    extern const cy_stc_sysint_t ADC_1_IRQ_cfg;
+    #define ADC_INT__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t ADC_INT_cfg;
+
+    #define ADC_IRQ__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t ADC_IRQ_cfg;
 
 #endif /* ((__CORTEX_M == 4) && (CY_CORE_ID == 0)) */
 

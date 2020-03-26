@@ -14,12 +14,18 @@
 void ring_buf_push(ring_buf_t *c, uint16_t data)
 {
     uint8_t next;
-
-    next = c->head + 1;  // next is where head will point to after this write.
+    //Next is where head will point to after this write.
+    next = c->head + 1;
     if (next >= c->maxlen)
         next = 0;
-    c->buffer[c->head] = data;  // Load data and then move
-    c->head = next;             // head to next data offset. // return success to indicate successful push.
+    // Load data and then move
+    c->buffer[c->head] = data;
+    // Head to next data offset. // return success to indicate successful push.
+    c->head = next;
 }
 
+void extract_event(uint8_t event_index, uint16_t * events, ring_buf_t * rbuf)
+{
+    
+}
 /* [] END OF FILE */

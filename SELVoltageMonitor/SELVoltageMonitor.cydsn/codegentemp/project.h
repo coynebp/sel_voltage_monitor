@@ -139,9 +139,10 @@
 #include "BLE.h"
 #include "BLE_config.h"
 #include "UART.h"
-#include "ADC_1.h"
+#include "ADC.h"
+#include "Clock_1.h"
 #include "UART_SCBCLK.h"
-#include "ADC_1_intSarClock.h"
+#include "ADC_intSarClock.h"
 
 /*[]*/
 

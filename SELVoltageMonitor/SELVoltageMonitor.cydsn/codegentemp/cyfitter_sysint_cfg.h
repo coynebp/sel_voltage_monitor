@@ -34,6 +34,9 @@
     #define ADC_INT__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t ADC_INT_cfg;
 
+    #define SCAN_INT__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t SCAN_INT_cfg;
+
     #define ADC_IRQ__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t ADC_IRQ_cfg;
 

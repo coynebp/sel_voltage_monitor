@@ -29,6 +29,7 @@
     
     void voltage_monitor_init(void);
     void ADC_Interrupt(void);
+    void SCAN_Interrupt(void);
     
 #endif
 /* [] END OF FILE */

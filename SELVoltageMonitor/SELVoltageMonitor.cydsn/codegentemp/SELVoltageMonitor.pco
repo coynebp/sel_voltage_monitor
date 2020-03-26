@@ -1,5 +1,5 @@
 # SELVoltageMonitor
-# 2020-03-25 23:48:28Z
+# 2020-03-26 17:13:22Z
 
 dont_use_location p4usbcell -1 -1 0
 dont_use_location USB -1 -1 0
@@ -9,6 +9,9 @@ set_location "ClockBlock" Clock -1 -1 0
 set_location "CPUSS" CPUSS -1 -1 0
 set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
 set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
+set_location "SRSS" SRSS -1 -1 0
+set_io "CY_SRSS_WCO_IN(0)" iocell 0 0
+set_io "CY_SRSS_WCO_OUT(0)" iocell 0 1
 set_io "Connection_LED(0)" iocell 10 5
 set_io "\UART:tx(0)\" iocell 5 1
 set_io "\UART:rx(0)\" iocell 5 0
@@ -20,4 +23,5 @@ set_location "\UART:SCB\" SCB -1 -1 5
 set_location "\ADC:IRQ\" interrupt -1 -1 138
 set_location "\ADC:SAR\" SARADC -1 -1 0
 set_location "ADC_INT" interrupt -1 -1 122
-set_location "Net_154" 0 3 0 0
+set_location "SCAN_INT" interrupt -1 -1 123
+set_location "cy_tff_1" 0 3 0 0

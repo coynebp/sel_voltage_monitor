@@ -14,22 +14,6 @@ net CPUSS_swj_swdio_tms
 	switch ":CPUSS[0]swj_swdio_tms_input_permute.CPUSS[0]swj_swdio_tms==>:CPUSScontainer:CPUSS[0].swj_swdio_tms"
 	term   ":CPUSScontainer:CPUSS[0].swj_swdio_tms"
 end CPUSS_swj_swdio_tms
-net Net_154
-	term   ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:mc[0].q"
-	switch ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:mc[0].q==>:UDB_Array:udb@[UDB=(0,3)]:PLD[0]:permute_output[2].0"
-	switch ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:permute_output[2].output_2==>:UDB_Array:UDBroute2:LHO_Sel57.2"
-	switch ":UDB_Array:UDBroute2:LHO_Sel57.lho57==>:UDB_Array:UDBroute2:LVO_Sel7.4"
-	switch ":UDB_Array:UDBroute2:LVO_Sel7.vo7==>:UDB_Array:DSI_new8:LVO_Sel7.15"
-	switch ":UDB_Array:DSI_new8:LVO_Sel7.vo7==>:UDB_Array:DSI_new8:LHO_Sel2.13"
-	switch ":UDB_Array:DSI_new8:LHO_Sel2.lho2==>:UDB_Array:DSI_new8:RHO_Sel2.1"
-	switch ":UDB_Array:DSI_new8:RHO_Sel2.rho2==>:UDB_Array:DSI_new7:LHO_Sel2.0"
-	switch ":UDB_Array:DSI_new7:LHO_Sel2.lho2==>:UDB_Array:DSI_new7:DOP_Sel7.9"
-	switch ":UDB_Array:DSI_new7:DOP_Sel7.op7==>:tr_group_permute_14.in_4"
-	switch ":tr_group_permute_14.out_14==>:tr_group_permute_14.out_14_limit"
-	switch ":tr_group_permute_14.out_14_limit==>:tr_group_permute_6.in_41"
-	switch ":tr_group_permute_6.out_0==>:SARADCcontainer:SARADC[0].tr_sar_in"
-	term   ":SARADCcontainer:SARADC[0].tr_sar_in"
-end Net_154
 net Net_160
 	term   ":SARADCcontainer:SARADC[0].tr_sar_out"
 	switch ":SARADCcontainer:SARADC[0].tr_sar_out==>:UDB_Array:DSI_new8:LHO_Sel85.3"
@@ -42,13 +26,13 @@ net Net_160
 	switch ":UDB_Array:DSI_new3:DOT_Sel8.ot8==>:intc_0:interrupt122.interrupt"
 	term   ":intc_0:interrupt122.interrupt"
 end Net_160
-net Net_164_digital
+net Net_195_digital
 	term   ":UDB_Array:ClockGen:CLK_GEN.gen_clk_out_0"
 	switch ":UDB_Array:ClockGen:CLK_GEN.gen_clk_out_0==>:UDB_Array:udb@[UDB=(0,3)]:ClockReset:permute_clktree.0"
 	switch ":UDB_Array:udb@[UDB=(0,3)]:ClockReset:permute_clktree.cr_pld0_clk==>:UDB_Array:udb@[UDB=(0,3)]:ClockReset:permute_clktree.cr_pld0_clk_limit"
 	switch ":UDB_Array:udb@[UDB=(0,3)]:ClockReset:permute_clktree.cr_pld0_clk_limit==>:UDB_Array:udb@[UDB=(0,3)]:PLD[0]:mc[0].clock_0"
 	term   ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:mc[0].clock_0"
-end Net_164_digital
+end Net_195_digital
 net \ADC:Net_423\
 	term   ":SARADCcontainer:SARADC[0].interrupt"
 	switch ":SARADCcontainer:SARADC[0].interrupt==>:intc_0:interrupt138.interrupt"
@@ -91,6 +75,17 @@ net \UART:tx_wire\
 	switch ":ioport5:smartio_mux_in1.smartio_mux_in==>:ioport5:pin1.pin_input"
 	term   ":ioport5:pin1.pin_input"
 end \UART:tx_wire\
+net cy_tff_1
+	term   ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:mc[0].q"
+	switch ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:mc[0].q==>:UDB_Array:udb@[UDB=(0,3)]:PLD[0]:permute_output[0].0"
+	switch ":UDB_Array:udb@[UDB=(0,3)]:PLD[0]:permute_output[0].output_0==>:UDB_Array:UDBroute2:LHO_Sel28.3"
+	switch ":UDB_Array:UDBroute2:LHO_Sel28.lho28==>:UDB_Array:UDBroute3:RVO_Sel8.10"
+	switch ":UDB_Array:UDBroute3:RVO_Sel8.vo24==>:UDB_Array:DSI_new3:RVO_Sel8.31"
+	switch ":UDB_Array:DSI_new3:RVO_Sel8.vo24==>:UDB_Array:DSI_new3:LHO_Sel62.14"
+	switch ":UDB_Array:DSI_new3:LHO_Sel62.lho62==>:UDB_Array:DSI_new3:DOT_Sel9.13"
+	switch ":UDB_Array:DSI_new3:DOT_Sel9.ot9==>:intc_0:interrupt123.interrupt"
+	term   ":intc_0:interrupt123.interrupt"
+end cy_tff_1
 net dclk_to_genclk
 	term   ":Clockcontainer:Clock[0].udb_div_0"
 	switch ":Clockcontainer:Clock[0].udb_div_0==>:UDB_Array:ClockGen:dclk_permute.0"

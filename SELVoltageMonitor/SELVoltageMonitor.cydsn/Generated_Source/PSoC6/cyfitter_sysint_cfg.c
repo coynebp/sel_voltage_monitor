@@ -44,6 +44,12 @@
         .intrPriority = ADC_INT__INTC_CORTEXM4_PRIORITY
     };
 
+    /* SCAN_INT */
+    const cy_stc_sysint_t SCAN_INT_cfg = {
+        .intrSrc = (IRQn_Type)SCAN_INT__INTC_NUMBER,
+        .intrPriority = SCAN_INT__INTC_CORTEXM4_PRIORITY
+    };
+
     /* ADC_IRQ */
     const cy_stc_sysint_t ADC_IRQ_cfg = {
         .intrSrc = (IRQn_Type)ADC_IRQ__INTC_NUMBER,

@@ -13,7 +13,13 @@
 #include "voltage_monitor.h"
 
 void voltage_monitor_init(void)
-{     
+{   
+    // Initialize interrupts
+    Cy_SysInt_Init(&ADC_INT_cfg, &ADC_Interrupt);
+    NVIC_EnableIRQ(ADC_INT_cfg.intrSrc);
+    Cy_SysInt_Init(&SCAN_INT_cfg, &SCAN_Interrupt);
+    NVIC_EnableIRQ(SCAN_INT_cfg.intrSrc);
+    
     // Enable global interrupts.
     __enable_irq(); 
     
@@ -32,7 +38,7 @@ void voltage_monitor_init(void)
     ring_buffer.head = 0;
     
     // Start the ADC and register interrupt function
-    ADC_StartEx(ADC_Interrupt);
+    ADC_Start();
     
     //Register the IPC callback function
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
@@ -53,11 +59,12 @@ void voltage_monitor_init(void)
 void ADC_Interrupt(void)
 {
     // Push new ADC value into ring buffer
-    ring_buf_push(&ring_buffer, Cy_SAR_GetResult16(SAR, 0));   
+    uint16_t adc = Cy_SAR_GetResult16(SAR, 0);
+    ring_buf_push(&ring_buffer, adc);
 }
 
-void trigger(void)
+void SCAN_Interrupt(void)
 {
-    
+    Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
 }
 /* [] END OF FILE */

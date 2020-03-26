@@ -51,6 +51,7 @@ void CM4_MessageCallback(uint32_t *msg)
                 printf("\r\n");
                 break;
             case TRIGGER:
+                Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
                 printf("TRIGGER\r\n");
                 printf("[");
                 for (int i = 0; i < 24; ++i)

@@ -11,7 +11,7 @@
  * ========================================
 */
 #ifndef BLUETOOTH_H
-    #define BLUETOOTH_H
+#define BLUETOOTH_H
     
     #define GATTS_VOLTAGE_SIZE 2
     #define GATTS_EVENT_SIZE 20

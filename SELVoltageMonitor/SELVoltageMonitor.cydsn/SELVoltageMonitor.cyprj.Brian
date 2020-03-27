@@ -16672,29 +16672,29 @@
 <v>Cypress Component Catalog\System</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Cypress Component Catalog\Digital\Logic\Xnor [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Logic\Xor [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Registers</v>
-<v>Cypress Component Catalog\Digital\Registers\Control Register [v1.80]</v>
-<v>Cypress Component Catalog\Digital\Registers\Status Register [v1.90]</v>
-<v>Cypress Component Catalog\Digital\Utility</v>
-<v>Cypress Component Catalog\Digital\Utility\Down Counter (7-bit) [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\Sync [v1.0]</v>
-<v>Cypress Component Catalog\Digital\Utility\UDB Clock Enable [v1.0]</v>
-<v>Cypress Component Catalog\Ports and Pins</v>
-<v>Cypress Component Catalog\Ports and Pins\Analog Pin [v1.0]</v>
-<v>Cypress Component Catalog\Ports and Pins\Digital Bidirectional Pin [v1.0]</v>
-<v>Cypress Component Catalog\Ports and Pins\Digital Input Pin [v1.0]</v>
-<v>Cypress Component Catalog\Ports and Pins\Digital Output Pin [v1.0]</v>
-<v>Cypress Component Catalog\System</v>
-<v>Cypress Component Catalog\System\Clock [v1.0]</v>
-<v>Cypress Component Catalog\System\DMA [v2.0]</v>
-<v>Cypress Component Catalog\System\Emulated EEPROM [v2.0]</v>
-<v>Cypress Component Catalog\System\External Memory Interface</v>
-<v>Cypress Component Catalog\System\Global Signal Reference [v2.10]</v>
-<v>Cypress Component Catalog\System\Interrupt [v1.0]</v>
-<v>Cypress Component Catalog\System\MCWDT [v1.10]</v>
-<v>Cypress Component Catalog\System\Real-time clock (RTC) [v2.0]</v>
+<v>Cypress Component Catalog</v>
+<v>Cypress Component Catalog\Analog</v>
+<v>Cypress Component Catalog\Analog\ADC</v>
+<v>Cypress Component Catalog\Analog\ADC\Scanning SAR ADC [v2.10]</v>
+<v>Cypress Component Catalog\Analog\Amplifiers</v>
+<v>Cypress Component Catalog\Analog\Analog MUX</v>
+<v>Cypress Component Catalog\Analog\Comparators</v>
+<v>Cypress Component Catalog\Analog\DAC</v>
+<v>Cypress Component Catalog\Analog\Manual Routing</v>
+<v>Cypress Component Catalog\Analog\VRef [v1.70]</v>
+<v>Cypress Component Catalog\CapSense</v>
+<v>Cypress Component Catalog\Communications</v>
+<v>Cypress Component Catalog\Communications\Bluetooth Low Energy (BLE) [v2.0]</v>
+<v>Cypress Component Catalog\Communications\I2C</v>
+<v>Cypress Component Catalog\Communications\I2S</v>
+<v>Cypress Component Catalog\Communications\PDM to PCM (fixed function) [v2.0]</v>
+<v>Cypress Component Catalog\Communications\SPI</v>
+<v>Cypress Component Catalog\Communications\UART</v>
+<v>Cypress Component Catalog\Communications\UART\UART (SCB) [v2.0]</v>
+<v>Cypress Component Catalog\Digital</v>
+<v>Cypress Component Catalog\Digital\Functions</v>
+<v>Cypress Component Catalog\Digital\Functions\CRC [v2.50]</v>
+<v>Cypress Component Catalog\Digital\Functions\PWM (TCPWM) [v1.0]</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -17121,6 +17121,8 @@
 <v>Generated_Source\PSoC6\pdl\middleware\ble\lib\cy_ble_stack_mdk_soc_cm0p.a</v>
 <v>Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_clk.c</v>
 <v>Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_clk.h</v>
+<v>Generated_Source\PSoC6\pdl\middleware\em_eeprom\cy_em_eeprom.h</v>
+<v>Generated_Source\PSoC6\pdl\middleware\em_eeprom\cy_em_eeprom.c</v>
 <v>Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\cyble_416045_02.h</v>
 <v>Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\psoc63_config.h</v>
 <v>Generated_Source\PSoC6\pdl\devices\psoc6\psoc63\include\cy_device_headers.h</v>
@@ -17181,6 +17183,8 @@
 <v>Generated_Source\PSoC6\ADC_PM.c</v>
 <v>Generated_Source\PSoC6\Clock_1.h</v>
 <v>Generated_Source\PSoC6\ADC_intSarClock.h</v>
+<v>Generated_Source\PSoC6\Em_EEPROM_1.c</v>
+<v>Generated_Source\PSoC6\Em_EEPROM_1.h</v>
 </gen_list>
 <warp_dep>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -17189,7 +17193,7 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="132297464560320314" />
+<deps_time v="132297542096484315" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 <pdl_path v="C:\Program Files (x86)\Cypress\PDL\3.0.4" />

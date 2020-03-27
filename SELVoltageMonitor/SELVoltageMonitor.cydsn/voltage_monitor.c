@@ -6,7 +6,7 @@
  * voltage_monitor.c
  * 
  * This file defines the initialization function and
- * main loop function for the voltage monitor project.
+ * the interrupt routines for the voltage monitor.
  *
  * ========================================
 */
@@ -28,6 +28,10 @@ void voltage_monitor_init(void)
     setvbuf ( stdin, NULL, _IONBF, 0);
     printf("Started UART\r\n");
     
+    // Initialize thresholds
+    upper_threshold = 0;
+    lower_threshold = 0;
+    
     // Initialize ring buffer.
     for (int i = 0; i < RING_BUF_LEN; ++i)
     {
@@ -37,7 +41,7 @@ void voltage_monitor_init(void)
     ring_buffer.maxlen = RING_BUF_LEN;
     ring_buffer.head = 0;
     
-    // Start the ADC and register interrupt function
+    // Start the ADC
     ADC_Start();
     
     //Register the IPC callback function
@@ -53,17 +57,7 @@ void voltage_monitor_init(void)
             event[i][j] = 0;
         }
     }
-    event_index = 0;
-    
-    //example code
-    uint8_t event_num = 0x01;
-    uint8_t num_events = 0x0A;
-    uint16_t voltage = 0x3456;
-
-    send_event_num(&event_num);
-    send_num_events(&num_events);
-    send_voltage(&voltage);
-    
+    next_event_index = 0;    
 }
 
 void ADC_Interrupt(void)
@@ -76,5 +70,13 @@ void ADC_Interrupt(void)
 void SCAN_Interrupt(void)
 {
     Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
+}
+
+uint16_t calc_rms(ring_buf_t * ring_buf)
+{
+    uint16_t rms;
+    
+    
+    return rms;
 }
 /* [] END OF FILE */

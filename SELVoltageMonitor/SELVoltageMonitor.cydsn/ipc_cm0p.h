@@ -11,8 +11,8 @@
  * ========================================
 */
 #ifndef IPC_CM0P_H
+#define IPC_CM0P_H
     
-    #define IPC_CM0P_H
     #include "project.h"
     #include "ipc_shared.h"
     #include "bluetooth.h"

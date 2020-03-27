@@ -5,7 +5,7 @@
  * 
  * blemonitor.c
  * 
- * This file contains the BLE event handler which handles
+ * This file contains the BLE initilization function and event handler which handles
  * basic BLE stack events and write requests. Also sends information
  * to the CM4 processor when received from the BLE client.
  *
@@ -69,10 +69,14 @@ void GenericEventHandler(uint32 event, void *eventParam)
             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
             {
-                // Place requested event in GATT server
-                write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] - 1]);
-                // Write new event number to GATT server
-                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                // Check for valid event number
+                if (writeReqParam->handleValPair.value.val[0] <= 10)
+                {
+                    // Place requested event in GATT server
+                    write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] - 1]);
+                    // Write new event number to GATT server
+                    Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                }
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE)
             {
@@ -94,7 +98,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
                 send_trigger();
             }
             
-            //Send write response//
+            // Send write response
             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
             
             break;

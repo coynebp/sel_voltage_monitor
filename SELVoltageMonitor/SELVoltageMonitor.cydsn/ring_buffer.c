@@ -1,11 +1,12 @@
 /* ========================================
  *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
+ * SEL VOLTAGE MONITOR
+ * TEAM REMBRANDT
+ * 
+ * ring_buffer.c
+ * 
+ * Defines the push function for the ring buffer, as well as a function
+ * for extracting events from the buffer.
  *
  * ========================================
 */

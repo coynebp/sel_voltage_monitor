@@ -30,6 +30,7 @@ void CM0_MessageCallback(uint32_t *msg)
     cy_stc_ble_gatt_handle_value_pair_t handValPair;
     uint32_t type;
     uint8_t data[300];
+    uint8_t event_num;
     for (uint16_t i = 0; i < 300; ++i)
     {
         data[i] = 0;
@@ -40,34 +41,13 @@ void CM0_MessageCallback(uint32_t *msg)
         type = msgPtr->type;
         switch (type)
         {
-            case EVENT_NUM:
-                // Get data from message
-                data[0] = msgPtr->data[0];
-                // Place data in server
-                handValPair.attrHandle = CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE;
-                handValPair.value.val = data;
-                handValPair.value.len = GATTS_EVENT_NUM_SIZE;
-                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-                break;
-
             case EVENT:
                 // Get data from message
-                for (int i = 0; i < 288; ++i)
+                event_num = msgPtr->data[0];
+                for (int i = 2; i < 290; ++i)
                 {
-                    data[i] = msgPtr->data[i];
+                    events[event_num - 1][i] = msgPtr->data[i];
                 }
-                // Place data in server
-                write_event_to_server(data);
-                break;
-            
-            case NUM_EVENTS:
-                // Get data from message
-                data[0] = msgPtr->data[0];
-                // Place data in server
-                handValPair.attrHandle = CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_HANDLE;
-                handValPair.value.val = data;
-                handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
-                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
                 break;
 
             case VOLTAGE:
@@ -121,24 +101,6 @@ void send_trigger(void)
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM4.type = TRIGGER;
     ipcMsgForCM4.data[0] = 1;
-    // Send message
-    do
-    {
-    result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR, 
-                                     CY_IPC_EP_CYPIPE_CM0_ADDR, 
-                                     &ipcMsgForCM4, CM0_ReleaseCallback);
-    } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
-}
-
-void send_event_num(uint8_t * event_num)
-{
-    // Wait for previous message to send
-    while (rdyToRecvMsg == false) {};
-    rdyToRecvMsg = false;
-    // Prepare message struct
-    cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM4.type = EVENT_NUM;
-    ipcMsgForCM4.data[0] = *event_num;
     // Send message
     do
     {

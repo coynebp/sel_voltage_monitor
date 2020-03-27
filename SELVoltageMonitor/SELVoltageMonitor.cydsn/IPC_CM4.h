@@ -11,8 +11,7 @@
  * ========================================
 */
 #ifndef IPC_CM4_H
-    
-    #define IPC_CM4_H
+#define IPC_CM4_H
     
     #include "project.h"
     #include "voltage_monitor.h"
@@ -29,7 +28,7 @@
     void send_voltage(uint16_t * voltage);
     void send_event_num(uint8_t * event_num);
     void send_num_events(uint8_t * num_events);
-    void send_event(uint16_t event[]);
+    void send_event(uint16_t * event, uint8_t event_num);
     
   #endif
 /* [] END OF FILE */

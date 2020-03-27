@@ -193,12 +193,7 @@ static void ClockInit(void)
 
 	/* Enable all source clocks */
 	Cy_SysClk_PiloEnable();
-	status = Cy_SysClk_WcoEnable(500000u);
-	if (CY_RET_SUCCESS != status)
-	{
-		CyClockStartupError(CYCLOCKSTART_WCO_ERROR);
-	}
-	Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_WCO);
+	Cy_SysClk_ClkLfSetSource(CY_SYSCLK_CLKLF_IN_PILO);
 	{
 		cy_stc_ble_bless_eco_cfg_params_t bleCfg =
 		{
@@ -260,7 +255,7 @@ static void ClockInit(void)
 	Cy_SysClk_ClkPumpSetSource(CY_SYSCLK_PUMP_IN_CLKPATH0);
 	Cy_SysClk_ClkPumpSetDivider(CY_SYSCLK_PUMP_DIV_4);
 	Cy_SysClk_ClkPumpEnable();
-	Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_WCO);
+	Cy_SysClk_ClkBakSetSource(CY_SYSCLK_BAK_IN_CLKLF);
 	Cy_SysTick_SetClockSource(CY_SYSTICK_CLOCK_SOURCE_CLK_LF);
 	Cy_SysClk_IloEnable();
 	Cy_SysClk_IloHibernateOn(1u);
@@ -343,28 +338,6 @@ void Cy_SystemInit(void)
 	/* PMIC Control */
 	Cy_SysPm_UnlockPmic();
 	Cy_SysPm_DisablePmicOutput();
-
-	/* Pin0_0 configuration */
-	{
-	    const cy_stc_gpio_pin_config_t pin0_0_cfg =
-	    {
-	        .outVal    = 0x00u,
-	        .driveMode = 0x00u,
-	        .hsiom     = P0_0_GPIO,
-	    };
-	    (void)Cy_GPIO_Pin_Init(GPIO_PRT0, 0, &pin0_0_cfg);
-	}
-
-	/* Pin0_1 configuration */
-	{
-	    const cy_stc_gpio_pin_config_t pin0_1_cfg =
-	    {
-	        .outVal    = 0x00u,
-	        .driveMode = 0x00u,
-	        .hsiom     = P0_1_GPIO,
-	    };
-	    (void)Cy_GPIO_Pin_Init(GPIO_PRT0, 1, &pin0_1_cfg);
-	}
 
 	/* Clock */
 	ClockInit();
@@ -665,23 +638,6 @@ void Cy_SystemInit(void)
 
 		/* Enable UDB array and digital routing */
 		CY_SET_REG32((void *)0x40347900u, CY_GET_REG32((void *)0x40347900u) | 0x106u);
-	}
-
-	/* Port0 configuration */
-	{
-	    const cy_stc_gpio_prt_config_t port0_cfg =
-	    {
-	        .out        = 0x00000000u,
-	        .intrMask   = 0x00000000u,
-	        .intrCfg    = 0x00000000u,
-	        .cfg        = 0x00000000u,
-	        .cfgIn      = 0x00000000u,
-	        .cfgOut     = 0x00000000u,
-	        .cfgSIO     = 0x00000000u,
-	        .sel0Active = 0x00000000u,
-	        .sel1Active = 0x00000000u,
-	    };
-	    (void)Cy_GPIO_Port_Init(GPIO_PRT0, &port0_cfg);
 	}
 
 	/* Port5 configuration */

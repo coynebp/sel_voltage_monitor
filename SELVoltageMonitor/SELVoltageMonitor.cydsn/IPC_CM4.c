@@ -37,16 +37,17 @@ void CM4_MessageCallback(uint32_t *msg)
         {
             case UPPER_THRESHOLD:
                 val = msgPtr->data[0] + 256 * msgPtr->data[1];
+                upper_threshold = val;
                 printf("New Upper Threshold: %" PRIx16, val);
                 printf("\r\n");
                 break;
             case LOWER_THRESHOLD:
                 val = msgPtr->data[0] + 0x100 * msgPtr->data[1];
+                lower_threshold = val;
                 printf("New Lower Threshold: %" PRIx16, val);
                 printf("\r\n");
                 break;
             case TRIGGER:
-                Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
                 printf("TRIGGER\r\n");
                 printf("[");
                 for (int i = 0; i < 24; ++i)

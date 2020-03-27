@@ -75,7 +75,7 @@ void SCAN_Interrupt(void)
 uint16_t calc_rms(ring_buf_t * ring_buf)
 {
     uint16_t rms;
-    
+    rms = 0;
     
     return rms;
 }

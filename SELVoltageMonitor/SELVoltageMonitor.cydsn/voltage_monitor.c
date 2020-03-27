@@ -54,6 +54,16 @@ void voltage_monitor_init(void)
         }
     }
     event_index = 0;
+    
+    //example code
+    uint8_t event_num = 0x01;
+    uint8_t num_events = 0x0A;
+    uint16_t voltage = 0x3456;
+
+    send_event_num(&event_num);
+    send_num_events(&num_events);
+    send_voltage(&voltage);
+    
 }
 
 void ADC_Interrupt(void)

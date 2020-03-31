@@ -25,7 +25,7 @@
     
     void send_threshold(uint8_t * threshold, uint8_t upper_or_lower);
     void send_trigger(void);
-    void send_event_num(uint8_t * event_num);
+    void send_enable(uint8_t trigger);
     
 #endif
 /* [] END OF FILE */

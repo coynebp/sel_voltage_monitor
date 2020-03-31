@@ -23,6 +23,7 @@
     #define UPPER_THRESHOLD                 2
     #define LOWER_THRESHOLD                 3
     #define TRIGGER                         4
+    #define ENABLE                          5
     
     #define MESSAGE_SIZE 290
 

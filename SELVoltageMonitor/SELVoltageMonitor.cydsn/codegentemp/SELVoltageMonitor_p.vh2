@@ -1,5 +1,5 @@
 -- Project:   SELVoltageMonitor
--- Generated: 03/26/2020 21:33:13
+-- Generated: 03/27/2020 17:26:27
 -- PSoC Creator  4.2
 
 ENTITY SELVoltageMonitor IS
@@ -43,7 +43,6 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     SIGNAL ClockBlock_SlowClk : bit;
     SIGNAL ClockBlock_WCO : bit;
     SIGNAL Connection_LED(0)__PA : bit;
-    SIGNAL Net_1 : bit;
     SIGNAL Net_139 : bit;
     SIGNAL Net_141 : bit;
     SIGNAL Net_142_0 : bit;
@@ -66,10 +65,11 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     SIGNAL Net_160 : bit;
     SIGNAL Net_195_digital : bit;
     ATTRIBUTE global_signal OF Net_195_digital : SIGNAL IS true;
-    SIGNAL Net_2 : bit;
+    SIGNAL Net_203 : bit;
+    SIGNAL Net_204 : bit;
+    SIGNAL Net_205 : bit;
     SIGNAL Net_24 : bit;
     SIGNAL Net_25 : bit;
-    SIGNAL Net_3 : bit;
     SIGNAL Pin_1(0)__PA : bit;
     SIGNAL \ADC:Net_423\ : bit;
     SIGNAL \ADC:Net_428_ff49\ : bit;
@@ -918,9 +918,9 @@ BEGIN
             cy_registers => "",
             low_power => 1)
         PORT MAP(
-            ext_pa_lna_chip_en_out => Net_3,
-            ext_lna_rx_ctl_out => Net_2,
-            ext_pa_tx_ctl_out => Net_1,
+            ext_pa_lna_chip_en_out => Net_205,
+            ext_lna_rx_ctl_out => Net_204,
+            ext_pa_tx_ctl_out => Net_203,
             interrupt => \BLE_1:Net_1\);
 
     \BLE_1:bless_isr\:interrupt

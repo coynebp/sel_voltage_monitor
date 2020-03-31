@@ -109,4 +109,22 @@ void send_trigger(void)
                                      &ipcMsgForCM4, CM0_ReleaseCallback);
     } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
 }
+
+void send_enable(uint8_t trigger)
+{
+    // Wait for previous message to send
+    while (rdyToRecvMsg == false) {};
+    rdyToRecvMsg = false;
+    // Prepare message struct
+    cy_en_ipc_pipe_status_t result;
+    ipcMsgForCM4.type = ENABLE;
+    ipcMsgForCM4.data[0] = trigger;
+    // Send message
+    do
+    {
+    result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR, 
+                                     CY_IPC_EP_CYPIPE_CM0_ADDR, 
+                                     &ipcMsgForCM4, CM0_ReleaseCallback);
+    } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
+}
 /* [] END OF FILE */

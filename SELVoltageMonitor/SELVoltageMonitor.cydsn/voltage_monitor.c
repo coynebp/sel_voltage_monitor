@@ -40,6 +40,13 @@ void voltage_monitor_init(void)
     ring_buffer.buffer = arr;
     ring_buffer.maxlen = RING_BUF_LEN;
     ring_buffer.head = 0;
+    ring_buffer.check = RING_BUF_LEN - 288;
+    
+    // Initialize trigger enable to false
+    bool trigger_enable = false;
+    
+    // Initialize counter. Counts samples to trigger an RMS calculation every 8 samples.
+    sample_counter = 0;
     
     // Start the ADC
     ADC_Start();
@@ -49,22 +56,38 @@ void voltage_monitor_init(void)
                                  CM4_MessageCallback,
                                  IPC_CM0_TO_CM4_CLIENT_ID);
     
-    // Initialize the events
-    for (uint8_t i = 0; i < 10; ++i)
+    // Initialize the event
+    for (uint8_t i = 0; i < 144; ++i)
     {
-        for (uint8_t j = 0; j < 144; ++j)
-        {
-            event[i][j] = 0;
-        }
+        event[i] = 0;
     }
-    next_event_index = 0;    
+    next_event_index = 0;
 }
 
 void ADC_Interrupt(void)
 {
+    // Remove DC offset
+    int16_t adc = Cy_SAR_GetResult16(SAR, 0) - 0x7FF;
     // Push new ADC value into ring buffer
-    uint16_t adc = Cy_SAR_GetResult16(SAR, 0);
     ring_buf_push(&ring_buffer, adc);
+    
+    // Incriment sample counter and check for trigger every 8 samples.
+    ++sample_counter;
+    sample_counter = sample_counter % 8;
+    if (sample_counter == 0 && trigger_enable)
+    {
+        int16_t rms = calc_rms();
+        if (rms >= upper_threshold)
+        {
+            trigger();
+            
+        }
+        else if (rms <= lower_threshold)
+        {
+            trigger();
+            
+        }
+    }
 }
 
 void SCAN_Interrupt(void)
@@ -72,11 +95,22 @@ void SCAN_Interrupt(void)
     Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
 }
 
-uint16_t calc_rms(ring_buf_t * ring_buf)
+int16_t calc_rms()
 {
-    uint16_t rms;
-    rms = 0;
-    
+    int16_t rms;
+    int32_t sum = 0;
+    for (int16_t i = ring_buffer.check - 31; i <= ring_buffer.check; ++i)
+    {
+           sum += pow(ring_buffer.buffer[i], 2);
+    }
+    rms = round(sqrt((double)sum / 32));
     return rms;
+}
+
+void trigger(void)
+{
+    printf("TRIGGER\r\n");
+    extract_event(event, &ring_buffer);
+    send_event(event, next_event_index);
 }
 /* [] END OF FILE */

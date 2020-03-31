@@ -50,13 +50,25 @@ void CM4_MessageCallback(uint32_t *msg)
             case TRIGGER:
                 printf("TRIGGER\r\n");
                 printf("[");
-                for (int i = 0; i < 24; ++i)
+                for (uint8_t i = 0; i < 96; ++i)
                 {
-                    printf("%" PRIx16, ring_buffer.buffer[i]);
+                    printf("%" PRId16, ring_buffer.buffer[i]);
                     printf(",");
                 }
                 printf("]\r\n");
+                //trigger();
                 break;
+            case ENABLE:
+                if (msgPtr->data[0])
+                {
+                    trigger_enable = true;
+                }
+                else
+                {
+                    trigger_enable = false;
+                }
+                printf("Enable: %s", trigger_enable ? "TRUE" : "FALSE");
+                printf("\r\n");
             default:
                 break;
         }

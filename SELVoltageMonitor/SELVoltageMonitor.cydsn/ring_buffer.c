@@ -23,9 +23,12 @@ void ring_buf_push(ring_buf_t *c, uint16_t data)
     c->buffer[c->head] = data;
     // Head to next data offset. // return success to indicate successful push.
     c->head = next;
+    c->check = c->check + 1;
+    if (c->check >= c->maxlen)
+        c->check = 0;
 }
 
-void extract_event(uint8_t event_index, uint16_t * events, ring_buf_t * rbuf)
+void extract_event(uint16_t * event, ring_buf_t * rbuf)
 {
     
 }

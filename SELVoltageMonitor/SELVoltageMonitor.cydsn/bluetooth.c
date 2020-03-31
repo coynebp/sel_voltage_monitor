@@ -67,6 +67,17 @@ void GenericEventHandler(uint32 event, void *eventParam)
             
         case CY_BLE_EVT_GATTS_WRITE_REQ:
             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
+            if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_ENABLE_CHAR_HANDLE)
+            {
+                // Check for valid enable
+                if (writeReqParam->handleValPair.value.val[0] <= 1)
+                {
+                    // Send enable to CM4
+                    send_enable(writeReqParam->handleValPair.value.val[0]);
+                    // Write enable to GATT server
+                    Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                }
+            }
             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
             {
                 // Check for valid event number

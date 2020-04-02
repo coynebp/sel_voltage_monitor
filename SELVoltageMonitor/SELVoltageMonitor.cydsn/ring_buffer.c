@@ -14,7 +14,7 @@
 
 void ring_buf_push(ring_buf_t *c, uint16_t data)
 {
-    uint8_t next;
+    uint16_t next;
     //Next is where head will point to after this write.
     next = c->head + 1;
     if (next >= c->maxlen)

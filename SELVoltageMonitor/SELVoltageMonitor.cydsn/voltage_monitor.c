@@ -66,7 +66,7 @@ void voltage_monitor_init(void)
 void ADC_Interrupt(void)
 {
     // Remove DC offset
-    int16_t adc = Cy_SAR_GetResult16(SAR, 0) - 0x7FF;
+    int16_t adc = Cy_SAR_GetResult16(SAR, 0);
     // Push new ADC value into ring buffer
     ring_buf_push(&ring_buffer, adc);
 }
@@ -80,6 +80,7 @@ void trigger(void)
 {
     printf("TRIGGER\r\n");
     event_extraction(&ring_buffer, event);
+    send_event(event);
 }
 
 void event_extraction(ring_buf_t *rbuf, uint16_t *event_arr)

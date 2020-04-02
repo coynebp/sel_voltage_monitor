@@ -39,6 +39,7 @@
           <File BuildType="BUILD" Toolchain="">ipc_cm4.h</File>
           <File BuildType="BUILD" Toolchain="">voltage_monitor.h</File>
           <File BuildType="BUILD" Toolchain="">ring_buffer.h</File>
+          <File BuildType="BUILD" Toolchain="">filter.h</File>
           <File BuildType="BUILD" Toolchain="">main_cm4.c</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">armgcc\startup\startup_psoc63_cm4.S</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">iar\startup\startup_psoc63_cm4.s</File>

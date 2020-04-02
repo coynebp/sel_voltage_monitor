@@ -38,9 +38,10 @@ void init_ble(void)
     {
         for (uint8_t j = 0; j < 144; ++j)
         {
-            events[i][j] = j + i + 1;
+            events[i][j] = 0;
         }
     }
+    num_events = 0;
     
     // Practice code for debugging server
     write_event_to_server((uint8_t *)events[0]);
@@ -81,7 +82,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
             {
                 // Check for valid event number
-                if (writeReqParam->handleValPair.value.val[0] <= 10)
+                if (writeReqParam->handleValPair.value.val[0] <= num_events)
                 {
                     // Place requested event in GATT server
                     write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] - 1]);

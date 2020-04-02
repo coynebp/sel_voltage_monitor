@@ -29,7 +29,7 @@ void CM0_MessageCallback(uint32_t *msg)
 {
     cy_stc_ble_gatt_handle_value_pair_t handValPair;
     uint32_t type;
-    uint8_t data[300];
+    uint8_t data[288];
     uint8_t event_num;
     for (uint16_t i = 0; i < 300; ++i)
     {
@@ -42,7 +42,22 @@ void CM0_MessageCallback(uint32_t *msg)
         switch (type)
         {
             case EVENT:
-                // Get data from message
+                // Check to make sure there is space for another event
+                if (num_events < 10)
+                {
+                    // Incriment number of events
+                    ++num_events;
+                    // Add event data to events array
+                    for(uint16_t i = 0; i < 288; ++i)
+                    {
+                        events[num_events - 1][i] = msgPtr->data[2 * i] + 256 * msgPtr->data[2 * i + 1];
+                    }
+                    // Update the number of events in server
+                    handValPair.attrHandle = CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_HANDLE;
+                    handValPair.value.val = &num_events;
+                    handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
+                    Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+                }
                 break;
 
             case VOLTAGE:

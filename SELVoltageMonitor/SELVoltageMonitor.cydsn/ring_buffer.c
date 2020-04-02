@@ -27,9 +27,4 @@ void ring_buf_push(ring_buf_t *c, uint16_t data)
     if (c->check >= c->maxlen)
         c->check = 0;
 }
-
-void extract_event(uint16_t * event, ring_buf_t * rbuf)
-{
-    
-}
 /* [] END OF FILE */

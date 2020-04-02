@@ -43,11 +43,6 @@ void CM0_MessageCallback(uint32_t *msg)
         {
             case EVENT:
                 // Get data from message
-                event_num = msgPtr->data[0];
-                for (int i = 0; i < 288; ++i)
-                {
-                    events[event_num - 1][i] = msgPtr->data[i + 2];
-                }
                 break;
 
             case VOLTAGE:

@@ -12,7 +12,8 @@
 */
 #ifndef VOLTAGE_MONITOR_H
 #define VOLTAGE_MONITOR_H
-#define RING_BUF_LEN 800
+#define RING_BUF_LEN 1000
+#define EVENT_LENGTH 144
    
     #include "project.h"
     #include <stdio.h>
@@ -21,8 +22,7 @@
     #include "ring_buffer.h"
     #include <inttypes.h>
     
-    uint16_t event[144];
-    uint8_t next_event_index;
+    uint16_t event[EVENT_LENGTH];
     
     int16_t arr[RING_BUF_LEN];
     ring_buf_t ring_buffer;
@@ -37,8 +37,8 @@
     void voltage_monitor_init(void);
     void ADC_Interrupt(void);
     void SCAN_Interrupt(void);
-    int16_t calc_rms();
     void trigger(void);
+    void event_extraction(ring_buf_t *rbuf, uint16_t *event_arr);
     
 #endif
 /* [] END OF FILE */

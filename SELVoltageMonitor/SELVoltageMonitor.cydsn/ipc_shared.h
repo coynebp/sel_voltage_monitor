@@ -25,7 +25,7 @@
     #define TRIGGER                         4
     #define ENABLE                          5
     
-    #define MESSAGE_SIZE 290
+    #define MESSAGE_SIZE 288
 
     typedef struct __attribute__((packed, aligned(4)))
     {

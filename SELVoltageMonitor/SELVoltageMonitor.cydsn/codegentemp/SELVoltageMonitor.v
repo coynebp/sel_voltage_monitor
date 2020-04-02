@@ -1,6 +1,6 @@
 // ======================================================================
 // SELVoltageMonitor.v generated from TopDesign.cysch
-// 03/27/2020 at 17:26
+// 04/01/2020 at 17:19
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1890,7 +1890,7 @@ module top ;
 		#(.id("4b937de1-f27f-4e94-9504-6c9a55a548db"),
 		  .source_clock_id("2FB4EC85-8328-4C5A-9ED9-8B63060178EB"),
 		  .divisor(0),
-		  .period("255102040816.327"),
+		  .period("231481481481.481"),
 		  .is_direct(0),
 		  .is_digital(0))
 		Clock_1

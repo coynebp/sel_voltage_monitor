@@ -61,7 +61,6 @@ void voltage_monitor_init(void)
     {
         event[i] = 0;
     }
-    next_event_index = 0;
 }
 
 void ADC_Interrupt(void)
@@ -70,24 +69,6 @@ void ADC_Interrupt(void)
     int16_t adc = Cy_SAR_GetResult16(SAR, 0) - 0x7FF;
     // Push new ADC value into ring buffer
     ring_buf_push(&ring_buffer, adc);
-    
-    // Incriment sample counter and check for trigger every 8 samples.
-    ++sample_counter;
-    sample_counter = sample_counter % 8;
-    if (sample_counter == 0 && trigger_enable)
-    {
-        int16_t rms = calc_rms();
-        if (rms >= upper_threshold)
-        {
-            trigger();
-            
-        }
-        else if (rms <= lower_threshold)
-        {
-            trigger();
-            
-        }
-    }
 }
 
 void SCAN_Interrupt(void)
@@ -95,22 +76,21 @@ void SCAN_Interrupt(void)
     Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
 }
 
-int16_t calc_rms()
-{
-    int16_t rms;
-    int32_t sum = 0;
-    for (int16_t i = ring_buffer.check - 31; i <= ring_buffer.check; ++i)
-    {
-           sum += pow(ring_buffer.buffer[i], 2);
-    }
-    rms = round(sqrt((double)sum / 32));
-    return rms;
-}
-
 void trigger(void)
 {
     printf("TRIGGER\r\n");
-    extract_event(event, &ring_buffer);
-    send_event(event, next_event_index);
+    event_extraction(&ring_buffer, event);
+}
+
+void event_extraction(ring_buf_t *rbuf, uint16_t *event_arr)
+{
+    uint16_t index = (rbuf->head + rbuf->maxlen - (EVENT_LENGTH * 3)) % rbuf->maxlen + 2;
+    
+    for(uint16_t event_index = 0; index != ((rbuf->head + 2) % rbuf->maxlen); index += 3)
+    {
+        index = index % rbuf->maxlen;
+        event_arr[event_index] = rbuf->buffer[index];
+        ++event_index;
+    }
 }
 /* [] END OF FILE */

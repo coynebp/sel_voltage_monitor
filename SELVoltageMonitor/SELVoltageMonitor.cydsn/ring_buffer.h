@@ -23,6 +23,5 @@
     } ring_buf_t;
     
     void ring_buf_push(ring_buf_t *c, uint16_t data);
-    void extract_event(uint16_t * event, ring_buf_t * rbuf);
 #endif
 /* [] END OF FILE */

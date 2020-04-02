@@ -48,15 +48,7 @@ void CM4_MessageCallback(uint32_t *msg)
                 printf("\r\n");
                 break;
             case TRIGGER:
-                printf("TRIGGER\r\n");
-                printf("[");
-                for (uint8_t i = 0; i < 96; ++i)
-                {
-                    printf("%" PRId16, ring_buffer.buffer[i]);
-                    printf(",");
-                }
-                printf("]\r\n");
-                //trigger();
+                trigger();
                 break;
             case ENABLE:
                 if (msgPtr->data[0])
@@ -102,7 +94,7 @@ void send_voltage(uint16_t * voltage)
 }
 
 // Function for sending complete event to CM0+
-void send_event(uint16_t * event, uint8_t event_num)
+void send_event(uint16_t * event)
 {
     // Wait for previous message to send
     while (rdyToRecvMsg == false) {};
@@ -111,8 +103,7 @@ void send_event(uint16_t * event, uint8_t event_num)
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM0.type = EVENT;
     uint16_t entry;
-    ipcMsgForCM0.data[0] = event_num;
-    for (int i = 1; i < 145; ++i)
+    for (int i = 0; i < 144; ++i)
     {
         entry = event[i];
         ipcMsgForCM0.data[2 * i] = ((uint8_t *)&entry)[0];

@@ -94,7 +94,7 @@ void send_voltage(uint16_t * voltage)
 }
 
 // Function for sending complete event to CM0+
-void send_event(uint16_t * event)
+void send_event(int16_t * event)
 {
     // Wait for previous message to send
     while (rdyToRecvMsg == false) {};

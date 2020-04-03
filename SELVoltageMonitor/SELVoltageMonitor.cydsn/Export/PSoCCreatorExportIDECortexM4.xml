@@ -48,6 +48,7 @@
           <File BuildType="BUILD" Toolchain="">ipc_cm4.c</File>
           <File BuildType="BUILD" Toolchain="">voltage_monitor.c</File>
           <File BuildType="BUILD" Toolchain="">ring_buffer.c</File>
+          <File BuildType="BUILD" Toolchain="">filter.c</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">cy8c6xx7_cm4_dual.ld</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">cy8c6xx7_cm4_dual.icf</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">cy8c6xx7_cm4_dual.scat</File>

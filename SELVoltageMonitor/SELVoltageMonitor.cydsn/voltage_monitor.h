@@ -13,7 +13,8 @@
 #ifndef VOLTAGE_MONITOR_H
 #define VOLTAGE_MONITOR_H
 #define RING_BUF_LEN 1000
-#define EVENT_LENGTH 144
+#define EVENT_LENGTH 432
+#define CYCLE_LENGTH 36
 #define FILTER_LENGTH 18
    
     #include "project.h"
@@ -46,6 +47,11 @@
     // Trigger Enable
     bool trigger_enable;
     
+    // Trigger
+    bool trigger_set;
+    uint16_t samples_to_extract;
+    
+    // Thresholds
     uint16_t upper_threshold;
     uint16_t lower_threshold;
 
@@ -53,7 +59,7 @@
     void ADC_Interrupt(void);
     void SCAN_Interrupt(void);
     void trigger(void);
-    void event_extraction(ring_buf_t *rbuf, int16_t *event_arr);
+    void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr);
     
 #endif
 /* [] END OF FILE */

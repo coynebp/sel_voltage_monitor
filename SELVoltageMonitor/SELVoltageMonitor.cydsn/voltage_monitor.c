@@ -86,7 +86,11 @@ void voltage_monitor_init(void)
     }
     
     // Initialize trigger enable to false
-    bool trigger_enable = false;
+    trigger_enable = false;
+    
+    // Initialize trigger to false
+    trigger_set = false;
+    samples_to_extract = 0;
     
     //Register the IPC callback function
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
@@ -121,23 +125,62 @@ void ADC_Interrupt(void)
         {
             // Push new value into ring buffer
             ring_buf_push(&ring_buffer, temp_values[0] - temp_values[FILTER_LENGTH]);
+            // If an event has been triggered, and more data is needed for event report, push data into event characteristic
+            if (trigger_set)
+            {
+                event[EVENT_LENGTH - samples_to_extract] = ring_buffer.buffer[(ring_buffer.head + ring_buffer.maxlen - 1) % ring_buffer.maxlen];
+                --samples_to_extract;
+                if (!samples_to_extract)
+                {
+                    trigger_set = false;
+                    int16_t short_event[144];
+                    for (uint16_t i = 0; i < EVENT_LENGTH; i += 3)
+                    {
+                        short_event[i / 3] = event[i];
+                    }
+                    for (uint16_t i = 0; i < 144; ++i)
+                    {
+                        printf("%" PRId16, short_event[i]);
+                        printf(",");
+                    }
+                    printf("\r\n");
+                    send_event(short_event);
+                }
+            }
+            // Calculate Squared Magnitude
             int32_t sq_mag = pow(ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN], 2)
                             + pow(ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN], 2);
+            // Average Squared Magnitude over 1 cycle
             int32_t total = 0;
             for (uint8_t i = 35; i > 0; --i)
             {
                 averaging_array[i] = averaging_array[i - 1];
                 total += averaging_array[i];
             }
-                averaging_array[0] = sq_mag;
-                total += averaging_array[0];
-                uint16_t rms = sqrt(total / 36) / sqrt(2);
+            averaging_array[0] = sq_mag;
+            total += averaging_array[0];
+            uint16_t rms = sqrt(total / 36) / sqrt(2);
+            
             if (averaging_charged >= 36)
             {
+                // Send RMS data to BLE server for phone to read
                 send_voltage(&rms);
+                // Check voltage level for triggers
+                if (trigger_enable)
+                {
+                    if (rms >= upper_threshold)
+                    {
+                        trigger();
+                    }
+                    else if (rms <= lower_threshold)
+                    {
+                        trigger();
+                    }
+                }
             }
             else
             {
+                // Wait for averaging array to be filled
                 ++averaging_charged;
             }
         }
@@ -162,26 +205,20 @@ void SCAN_Interrupt(void)
 void trigger(void)
 {
     printf("TRIGGER\r\n");
-    event_extraction(&ring_buffer, event);
-    send_event(event);
-    for (uint16_t i = 0; i < EVENT_LENGTH; ++i)
-    {
-        printf("%" PRId16, event[i]);
-        printf(",");
-    }
-    printf("\r\n");
+    trigger_set = true;
+    extract_past_three_cycles(&ring_buffer, event);
+    samples_to_extract = CYCLE_LENGTH * 9;
 }
 
-void event_extraction(ring_buf_t *rbuf, int16_t *event_arr)
-{
-    uint16_t index = (rbuf->head + rbuf->maxlen - (EVENT_LENGTH * 3)) % rbuf->maxlen + 2;
+void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr)
+{    
+    uint16_t event_index = 0;
     
-    for(uint16_t event_index = 0; index != ((rbuf->head + 2) % rbuf->maxlen); index += 3)
+    for(uint16_t index = (rbuf->head + rbuf->maxlen - (CYCLE_LENGTH * 3)) % rbuf->maxlen; index != rbuf->head + 1; ++index)
     {
         index = index % rbuf->maxlen;
         event_arr[event_index] = rbuf->buffer[index];
         ++event_index;
     }
-    printf("Event Extracted\r\n");
 }
 /* [] END OF FILE */

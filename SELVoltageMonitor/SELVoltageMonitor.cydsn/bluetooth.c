@@ -17,12 +17,26 @@ void init_ble(void)
 {
     // Enable global interrupts.
 	__enable_irq();
+    
+    // Start the UART Debug Output
+    UART_Start();
+    setvbuf ( stdin, NULL, _IONBF, 0);
+    printf("Started UART\r\n"); 
 	
 	// Start the BLE stack, register the event handler.
     Cy_BLE_Start(GenericEventHandler); 
     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
     {
         Cy_BLE_ProcessEvents();
+    }
+    
+    // Initialize events
+    for(uint16_t i = 0; i < 10; ++i)
+    {
+        for(uint16_t j = 0; j < 160; ++j)
+        {
+            events[i][j] = 0;
+        }
     }
     
     // Enable CM4.
@@ -32,15 +46,7 @@ void init_ble(void)
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
                          CM0_MessageCallback,
                          IPC_CM4_TO_CM0_CLIENT_ID);
-    
-    // Initialize events
-    for (uint8_t i = 0; i < 10; ++i)
-    {
-        for (uint8_t j = 0; j < 144; ++j)
-        {
-            events[i][j] = 0;
-        }
-    }
+
     num_events = 0;
     
     // Practice code for debugging server

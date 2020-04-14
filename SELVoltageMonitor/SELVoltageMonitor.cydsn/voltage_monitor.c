@@ -24,9 +24,9 @@ void voltage_monitor_init(void)
     __enable_irq(); 
     
     // Start the UART Debug Output
-    UART_Start();
-    setvbuf ( stdin, NULL, _IONBF, 0);
-    printf("Started UART\r\n");
+    //UART_Start();
+    //setvbuf ( stdin, NULL, _IONBF, 0);
+    //printf("Started UART\r\n");
     
     // Initialize thresholds
     upper_threshold = 0;
@@ -110,7 +110,7 @@ void voltage_monitor_init(void)
 void ADC_Interrupt(void)
 {
     // Get adc result
-    int16_t adc = Cy_SAR_GetResult16(SAR, 0) - 0x7FF;
+    int16_t adc = Cy_SAR_GetResult16(SAR, 0);
     // Push result into filter
     int16_t filtered_value = get_filtered_value(adc, &cosine_filter);
     if (filter_charged >= FILTER_LENGTH)

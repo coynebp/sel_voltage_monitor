@@ -27,7 +27,7 @@
     #include <stdio.h>
     #include "ipc_cm0p.h"
     
-    uint16_t events[10][144];
+    uint16_t events[10][160];
     uint8_t num_events;
     
     void init_ble(void);

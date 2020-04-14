@@ -1,4 +1,4 @@
---------------- Rebuild Started: 04/09/2020 12:15:38 Project: SELVoltageMonitor, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Rebuild Started: 04/10/2020 09:04:15 Project: SELVoltageMonitor, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM0p\ARM_GCC_541\Debug\startup_psoc63_cm0plus.o"
 Deleting file ".\CortexM0p\ARM_GCC_541\Debug\main_cm0p.o"
 Deleting file ".\CortexM0p\ARM_GCC_541\Debug\bluetooth.o"
@@ -175,8 +175,6 @@ Deleting file ".\CortexM4\ARM_GCC_541\Debug\ADC.o"
 Deleting file ".\CortexM4\ARM_GCC_541\Debug\ADC_INT.o"
 Deleting file ".\CortexM4\ARM_GCC_541\Debug\ADC_INIT.o"
 Deleting file ".\CortexM4\ARM_GCC_541\Debug\ADC_PM.o"
-Deleting file ".\CortexM4\ARM_GCC_541\Debug\SELVoltageMonitor.hex"
-Deleting file ".\CortexM4\ARM_GCC_541\Debug\SELVoltageMonitor.elf"
 Deleting file ".\CortexM4\ARM_GCC_541\Debug\SELVoltageMonitor.map"
 Deleting file ".\CortexM4\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
 cydsfit.exe -.appdatapath "C:\Users\Brian\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p "C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\SELVoltageMonitor.cyprj" -d CYBLE-416045-02 -s "C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\Generated_Source\PSoC6" -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
@@ -206,22 +204,6 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/ip/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/psoc63/include/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/bluetooth.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CYBLE_416045_02 -Wall -ffunction-sections -ffat-lto-objects -Og -c bluetooth.c -o .\CortexM0p\ARM_GCC_541\Debug\bluetooth.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/ip/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/psoc63/include/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/system_psoc63_cm0plus.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CYBLE_416045_02 -Wall -ffunction-sections -ffat-lto-objects -Og -c system_psoc63_cm0plus.c -o .\CortexM0p\ARM_GCC_541\Debug\system_psoc63_cm0plus.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/ip/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/psoc63/include/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/ipc_cm0p.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CYBLE_416045_02 -Wall -ffunction-sections -ffat-lto-objects -Og -c ipc_cm0p.c -o .\CortexM0p\ARM_GCC_541\Debug\ipc_cm0p.o
-ipc_cm0p.c: In function 'CM0_MessageCallback':
-ipc_cm0p.c:33:13: warning: unused variable 'event_num' [-Wunused-variable]
-     uint8_t event_num;
-             ^
-ipc_cm0p.c:53:51: warning: iteration 144u invokes undefined behavior [-Waggressive-loop-optimizations]
-                         events[num_events - 1][i] = msgPtr->data[2 * i] + 256 * msgPtr->data[2 * i + 1];
-                                                   ^
-ipc_cm0p.c:51:21: note: containing loop
-                     for(uint16_t i = 0; i < 288; ++i)
-                     ^
-ipc_cm0p.c:36:17: warning: iteration 288u invokes undefined behavior [-Waggressive-loop-optimizations]
-         data[i] = 0;
-                 ^
-ipc_cm0p.c:34:5: note: containing loop
-     for (uint16_t i = 0; i < 300; ++i)
-     ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/ip/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/psoc63/include/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/cy_ipc_config.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CYBLE_416045_02 -Wall -ffunction-sections -ffat-lto-objects -Og -c cy_ipc_config.c -o .\CortexM0p\ARM_GCC_541\Debug\cy_ipc_config.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/ip/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/psoc63/include/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/stdio_user.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CYBLE_416045_02 -Wall -ffunction-sections -ffat-lto-objects -Og -c stdio_user.c -o .\CortexM0p\ARM_GCC_541\Debug\stdio_user.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m0plus -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/ip/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/psoc63/include/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=.\CortexM0p\ARM_GCC_541\Debug/cyfitter_sysint_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CYBLE_416045_02 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC6\cyfitter_sysint_cfg.c -o .\CortexM0p\ARM_GCC_541\Debug\cyfitter_sysint_cfg.o
@@ -400,5 +382,5 @@ Checksum calculated and stored in ELF section .cymeta
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 "C:\Program Files (x86)\Cypress\PDL\3.0.4\tools\win\elf\cymcuelftool.exe" -A "C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\CortexM4\ARM_GCC_541\Debug\SELVoltageMonitor.elf"
-code:204111	sram:5712
---------------- Rebuild Succeeded: 04/09/2020 12:20:16 ---------------
+code:206011	sram:5652
+--------------- Rebuild Succeeded: 04/10/2020 09:05:25 ---------------

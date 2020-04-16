@@ -107,15 +107,15 @@ cy_en_em_eeprom_status_t Em_EEPROM_1_Init(uint32 startAddress);
 ****************************************/
 
 /* Defines the location of the EEPROM storage (User flash or Emulated EEPROM flash area) */
-#define Em_EEPROM_1_USE_EMULATED_EEEPROM       (0U)
+#define Em_EEPROM_1_USE_EMULATED_EEEPROM       (1U)
 /* Defines if blocking or non-blocking writes will be used for writing flash */
 #define Em_EEPROM_1_USE_BLOCKING_WRITE         (0U)
 /* The EEPROM size required by the user */
-#define Em_EEPROM_1_EEPROM_SIZE                (1536U)
+#define Em_EEPROM_1_EEPROM_SIZE                (256U)
 /* The actual size of flash used to implement the EEPROM with the
 * configuration entered by the user.
 */
-#define Em_EEPROM_1_ACTUAL_SIZE                (3072U)
+#define Em_EEPROM_1_ACTUAL_SIZE                (512U)
 #define Em_EEPROM_1_PHYSICAL_SIZE              (Em_EEPROM_1_ACTUAL_SIZE)
 /* Holds the value of Wear Leveling option enter by user */
 #define Em_EEPROM_1_WEAR_LEVEL_FACTOR          (1U)

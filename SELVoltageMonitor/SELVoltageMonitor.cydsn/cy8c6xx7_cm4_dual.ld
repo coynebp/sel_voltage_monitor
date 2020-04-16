@@ -59,8 +59,8 @@ MEMORY
      * Note some middleware (e.g. BLE, Emulated EEPROM) can place their data into this memory region.
      * Therefore, repurposing this memory region will prevent such middleware from operation.
      */
-    em_eeprom         (rx)    : ORIGIN = 0x14000000, LENGTH = 0x8000       /*  32 KB */
-
+    /*em_eeprom         (rx)    : ORIGIN = 0x14000000, LENGTH = 0x8000*/       /*  32 KB */
+    
     /* The following regions define device specific memory regions and must not be changed. */
     sflash_user_data  (rx)    : ORIGIN = 0x16000800, LENGTH = 0x800        /* Supervisory flash: User data */
     sflash_nar        (rx)    : ORIGIN = 0x16001A00, LENGTH = 0x200        /* Supervisory flash: Normal Access Restrictions (NAR) */

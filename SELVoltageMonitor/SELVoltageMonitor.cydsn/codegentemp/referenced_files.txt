@@ -141,6 +141,10 @@
         </folder>
       </folder>
       <folder folderName="middleware">
+        <folder folderName="em_eeprom">
+          <file fileName="cy_em_eeprom.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\middleware\em_eeprom\cy_em_eeprom.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_em_eeprom.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\middleware\em_eeprom\cy_em_eeprom.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+        </folder>
         <folder folderName="ble">
           <file fileName="cy_ble.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\middleware\ble\cy_ble.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
           <file fileName="cy_ble.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.0.4\middleware\ble\cy_ble.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />

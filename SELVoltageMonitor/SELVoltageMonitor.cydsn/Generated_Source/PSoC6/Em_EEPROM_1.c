@@ -20,7 +20,7 @@
 */
 cy_stc_eeprom_config_t const Em_EEPROM_1_config =
 {
-    1536U,
+    256U,
     1U,
     0U,
     0U,

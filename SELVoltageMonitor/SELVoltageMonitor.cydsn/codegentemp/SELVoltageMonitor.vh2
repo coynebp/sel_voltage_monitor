@@ -2,7 +2,7 @@
 --	Conversion of SELVoltageMonitor.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Apr 16 09:55:31 2020
+--	Thu Apr 16 14:29:38 2020
 --
 
 USE cypress.cypress.all;
@@ -397,7 +397,7 @@ cy_tff_1D <= (not cy_tff_1);
 
 \BLE_1:cy_mxs40_ble\:cy_mxs40_ble_v1_0
 	GENERIC MAP(cy_registers=>"",
-		low_power=>'1')
+		low_power=>'0')
 	PORT MAP(ext_pa_lna_chip_en_out=>Net_205,
 		ext_lna_rx_ctl_out=>Net_204,
 		ext_pa_tx_ctl_out=>Net_203,

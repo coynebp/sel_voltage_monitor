@@ -13,16 +13,86 @@
 */
 #include "bluetooth.h"
 
-void init_ble(void)
+void init_ble(const uint8** Ptrs)
 {
+    // Set flash pointers address
+    flashPtrs = Ptrs;
+    
     // Enable global interrupts.
 	__enable_irq();
+    
+    // Enable CM4.
+    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
     
     // Start the UART Debug Output
     UART_Start();
     setvbuf ( stdin, NULL, _IONBF, 0);
-    printf("Started UART\r\n"); 
-	
+    printf("Started UART\r\n");
+    
+    // Register the IPC Callback Function.
+    Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
+                         CM0_MessageCallback,
+                         IPC_CM4_TO_CM0_CLIENT_ID);
+    
+    // Pull number of events, thresholds, and events from flash storage
+    // if data has been written before.
+    if(flashPtrs[0][0] == 'S' && flashPtrs[0][1] == 'W')
+    {
+        printf("Flash Data Present\r\n");
+        // S W indicates that flash data has been previously written
+        // Pull number of events
+        num_events = flashPtrs[0][2];
+        // Pull thresholds
+        upper_thresh[0] = flashPtrs[0][3];
+        upper_thresh[1] = flashPtrs[0][4];
+        send_threshold(upper_thresh, UPPER_THRESHOLD);
+        lower_thresh[0] = flashPtrs[0][5];
+        lower_thresh[1] = flashPtrs[0][6];
+        send_threshold(lower_thresh, LOWER_THRESHOLD);
+        // Pull events
+        for(uint8_t i = 0; i < 10; ++i)
+        {
+            for(uint16_t j = 0; j < 160; ++j)
+            {
+                events[i][j] = flashPtrs[i][2 * j] + 256 * flashPtrs[i][2 * i + 1];
+            }
+        }
+    }
+    else
+    {
+        printf("Flash Data NOT Present\r\n");
+        // Flash data not present, writing starting values for everything
+        num_events = 0;
+        // Upper threshold = 130V
+        upper_thresh[0] = 0x55;
+        upper_thresh[1] = 0x04;
+        send_threshold(upper_thresh, UPPER_THRESHOLD);
+        // Lower threshold = 120V
+        lower_thresh[0] = 0xAB;
+        lower_thresh[1] = 0x03;
+        send_threshold(lower_thresh, LOWER_THRESHOLD);
+        // Initialize events
+        for(uint8_t i = 0; i < 10; ++i)
+        {
+            for(uint16_t j = 0; j < 160; ++j)
+            {
+                events[i][j] = 0;
+            }
+        }
+        // Write config values to flash
+        update_flash_config();
+        // Initialize events in flash
+        uint8_t ramData[CY_FLASH_SIZEOF_ROW];
+        for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+        {
+            ramData[i] = 0;
+        }
+        for (uint8_t i =1; i < 11; ++i)
+        {
+            Cy_Flash_WriteRow((uint32_t)flashPtrs[i],(const uint32_t *)ramData);
+        }
+    }
+
 	// Start the BLE stack, register the event handler.
     Cy_BLE_Start(GenericEventHandler); 
     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
@@ -30,27 +100,10 @@ void init_ble(void)
         Cy_BLE_ProcessEvents();
     }
     
-    // Initialize events
-    for(uint16_t i = 0; i < 10; ++i)
-    {
-        for(uint16_t j = 0; j < 160; ++j)
-        {
-            events[i][j] = 0;
-        }
-    }
-    
-    // Enable CM4.
-    Cy_SysEnableCM4(CY_CORTEX_M4_APPL_ADDR);
-    
-    // Register the IPC Callback Function.
-    Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
-                         CM0_MessageCallback,
-                         IPC_CM4_TO_CM0_CLIENT_ID);
-
-    num_events = 0;
-    
-    // Practice code for debugging server
-    write_event_to_server((uint8_t *)events[0]);
+    // Send config values to BLE Server
+    write_num_events_to_server(&num_events);
+    write_threshold_to_server(upper_thresh, UPPER_THRESHOLD);
+    write_threshold_to_server(lower_thresh, LOWER_THRESHOLD);
 }
 
 // Event handler for handling connection and writes to BLE server
@@ -100,6 +153,10 @@ void GenericEventHandler(uint32 event, void *eventParam)
             {
                 // Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, UPPER_THRESHOLD);
+                // Send new threshold to flash
+                upper_thresh[0] = writeReqParam->handleValPair.value.val[0];
+                upper_thresh[1] = writeReqParam->handleValPair.value.val[1];
+                update_flash_config();
                 // Write new threshold to GATT server
                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }
@@ -107,6 +164,10 @@ void GenericEventHandler(uint32 event, void *eventParam)
             {
                 // Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, LOWER_THRESHOLD);
+                // Send new threshold to flash
+                lower_thresh[0] = writeReqParam->handleValPair.value.val[0];
+                lower_thresh[1] = writeReqParam->handleValPair.value.val[1];
+                update_flash_config();
                 // Write new threshold to GATT server
                 Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
             }
@@ -115,12 +176,9 @@ void GenericEventHandler(uint32 event, void *eventParam)
                 // Send trigger indication to CM4
                 send_trigger();
             }
-            
             // Send write response
             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
-            
-            break;
-            
+            break;          
         default:
             break;
     }
@@ -190,5 +248,61 @@ void write_event_to_server(uint8_t *event_byte_arr)
     handValPair.attrHandle = CY_BLE_EVENT_ES_141_144_CHAR_HANDLE;
     handValPair.value.val = event_byte_arr + 280;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+}
+
+void write_num_events_to_server(uint8_t * num_events_ptr)
+{
+    cy_stc_ble_gatt_handle_value_pair_t handValPair;
+    handValPair.attrHandle = CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_HANDLE;
+    handValPair.value.val = num_events_ptr;
+    handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
+    Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+}
+
+void write_voltage_to_server(uint8_t * voltage_ptr)
+{
+    cy_stc_ble_gatt_handle_value_pair_t handValPair;
+    handValPair.attrHandle = CY_BLE_METER_CURRENT_VOLTAGE_CHAR_HANDLE;
+    handValPair.value.val = voltage_ptr;
+    handValPair.value.len = GATTS_VOLTAGE_SIZE;
+    Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);   
+}
+
+void write_threshold_to_server(uint8_t * threshold_ptr, uint8_t upper_or_lower)
+{
+    cy_stc_ble_gatt_handle_value_pair_t handValPair;
+    if (upper_or_lower == UPPER_THRESHOLD)
+    {
+        handValPair.attrHandle = CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE;
+    }
+    else
+    {
+        handValPair.attrHandle = CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE;
+    }
+    handValPair.value.val = threshold_ptr;
+    handValPair.value.len = GATTS_THRESHOLD_SIZE;
+    Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+}
+
+void update_flash_config(void)
+{
+    uint8_t ramData[CY_FLASH_SIZEOF_ROW];
+    for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+    {
+        ramData[i] = 0;
+    }
+    ramData[0] = 'S';
+    ramData[1] = 'W';
+    ramData[2] = num_events;
+    ramData[3] = upper_thresh[0];
+    ramData[4] = upper_thresh[1];
+    ramData[5] = lower_thresh[0];
+    ramData[6] = lower_thresh[1];
+    cy_en_flashdrv_status_t result;
+    result = Cy_Flash_WriteRow((uint32)flashPtrs[0],(const uint32_t *) ramData);
+    if(result == CY_FLASH_DRV_SUCCESS)
+    {
+        printf("Settings written to flash!\r\n");
+    }
 }
 /* [] END OF FILE */

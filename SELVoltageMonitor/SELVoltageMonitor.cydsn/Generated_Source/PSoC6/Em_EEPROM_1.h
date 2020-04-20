@@ -107,7 +107,7 @@ cy_en_em_eeprom_status_t Em_EEPROM_1_Init(uint32 startAddress);
 ****************************************/
 
 /* Defines the location of the EEPROM storage (User flash or Emulated EEPROM flash area) */
-#define Em_EEPROM_1_USE_EMULATED_EEEPROM       (1U)
+#define Em_EEPROM_1_USE_EMULATED_EEEPROM       (0U)
 /* Defines if blocking or non-blocking writes will be used for writing flash */
 #define Em_EEPROM_1_USE_BLOCKING_WRITE         (0U)
 /* The EEPROM size required by the user */
@@ -126,7 +126,7 @@ cy_en_em_eeprom_status_t Em_EEPROM_1_Init(uint32 startAddress);
 /***************************************
 *       Global Variables
 ***************************************/
-extern cy_stc_eeprom_config_t const Em_EEPROM_1_config;
+extern cy_stc_eeprom_config_t Em_EEPROM_1_config;
 extern cy_stc_eeprom_context_t Em_EEPROM_1_context;
 extern const uint8_t Em_EEPROM_1_em_EepromStorage[Em_EEPROM_1_ACTUAL_SIZE];
 

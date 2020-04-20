@@ -18,7 +18,7 @@
 /** The instance-specific configuration structure. This should be used in the
 *  associated Em_EEPROM_1_Init() function.
 */
-cy_stc_eeprom_config_t const Em_EEPROM_1_config =
+cy_stc_eeprom_config_t Em_EEPROM_1_config =
 {
     256U,
     1U,

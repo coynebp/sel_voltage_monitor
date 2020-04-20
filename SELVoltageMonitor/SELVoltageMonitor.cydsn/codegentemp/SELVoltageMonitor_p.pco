@@ -3,8 +3,8 @@ dont_use_location USB -1 -1 0
 dont_use_location usbcell -1 -1 0
 set_location "cy_tff_1" macrocell 0 3 0 0
 set_io "\UART:rx(0)\" iocell 5 0
-set_location "\BLE_1:bless_isr\" interrupt -1 -1 24
 set_location "\UART:SCB_IRQ\" interrupt -1 -1 46
+set_location "\BLE_1:bless_isr\" interrupt -1 -1 24
 set_location "\ADC:IRQ\" interrupt -1 -1 138
 set_location "\UART:SCB\" SCB -1 -1 5
 set_location "ClockBlock" Clock -1 -1 0

@@ -86,7 +86,7 @@ extern "C" {
                                                       0u) != 0u)
 
 /* Identifies if the low-power mode support is required for BLE_PDL.  */
-#define CY_BLE_CONFIG_USE_DEEP_SLEEP                (1u)
+#define CY_BLE_CONFIG_USE_DEEP_SLEEP                (0u)
 
 /** 
  * The BLE Stack core mode.

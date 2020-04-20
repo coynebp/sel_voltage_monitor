@@ -27,13 +27,8 @@ ipc_msg_t ipcMsgForCM4 = {
 // Callback function when a message gets sent to the CM0+
 void CM0_MessageCallback(uint32_t *msg)
 {
-    cy_stc_ble_gatt_handle_value_pair_t handValPair;
     uint32_t type;
-    uint8_t data[288];
-    for (uint16_t i = 0; i < 288; ++i)
-    {
-        data[i] = 0;
-    }
+    uint8_t data[2];
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
     if (msgPtr != NULL)
     {
@@ -46,16 +41,31 @@ void CM0_MessageCallback(uint32_t *msg)
                 {
                     // Incriment number of events
                     ++num_events;
+                    // Update number of events in flash
+                    update_flash_config();
+                    // Update the number of events in server
+                    write_num_events_to_server(&num_events);
                     // Add event data to events array
                     for(uint16_t i = 0; i < 144; ++i)
                     {
                         events[num_events - 1][i] = msgPtr->data[2 * i] + 256 * msgPtr->data[2 * i + 1];
                     }
-                    // Update the number of events in server
-                    handValPair.attrHandle = CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_HANDLE;
-                    handValPair.value.val = &num_events;
-                    handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
-                    Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+                    // Write event data to flash
+                    uint8_t ramData[CY_FLASH_SIZEOF_ROW];
+                    for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+                    {
+                        ramData[i] = 0;
+                    }
+                    for(uint16_t i = 0; i < 320; ++i)
+                    {
+                        ramData[i] = msgPtr->data[i];
+                    }
+                    cy_en_flashdrv_status_t result;
+                    result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events], (const uint32_t *)ramData);
+                    if (result == CY_FLASH_DRV_SUCCESS)
+                    {
+                        printf("Event written to flash\r\n");
+                    }
                 }
                 break;
 
@@ -64,10 +74,7 @@ void CM0_MessageCallback(uint32_t *msg)
                 data[0] = msgPtr->data[0];
                 data[1] = msgPtr->data[1];
                 // Place data in server
-                handValPair.attrHandle = CY_BLE_METER_CURRENT_VOLTAGE_CHAR_HANDLE;
-                handValPair.value.val = data;
-                handValPair.value.len = GATTS_VOLTAGE_SIZE;
-                Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+                write_voltage_to_server(data);
                 break;
             
             default:

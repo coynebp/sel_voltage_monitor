@@ -1,5 +1,5 @@
 -- Project:   SELVoltageMonitor
--- Generated: 04/16/2020 09:55:38
+-- Generated: 04/16/2020 14:29:45
 -- PSoC Creator  4.2
 
 ENTITY SELVoltageMonitor IS
@@ -921,7 +921,7 @@ BEGIN
     \BLE_1:cy_mxs40_ble\:BLE
         GENERIC MAP(
             cy_registers => "",
-            low_power => 1)
+            low_power => 0)
         PORT MAP(
             ext_pa_lna_chip_en_out => Net_205,
             ext_lna_rx_ctl_out => Net_204,

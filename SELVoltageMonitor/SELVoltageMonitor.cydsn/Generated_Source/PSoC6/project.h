@@ -38,7 +38,6 @@
 #include "profile/cy_profile.h"
 #include "prot/cy_prot.h"
 #include "lvd/cy_lvd.h"
-#include "em_eeprom/cy_em_eeprom.h"
 #include "ble/cy_ble.h"
 #include "ble/cy_ble_hal_pvt.h"
 #include "ble/cy_ble_defines.h"
@@ -142,7 +141,6 @@
 #include "UART.h"
 #include "ADC.h"
 #include "Clock_1.h"
-#include "Em_EEPROM_1.h"
 #include "UART_SCBCLK.h"
 #include "ADC_intSarClock.h"
 

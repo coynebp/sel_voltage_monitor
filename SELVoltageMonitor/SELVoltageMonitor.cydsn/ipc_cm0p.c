@@ -41,8 +41,6 @@ void CM0_MessageCallback(uint32_t *msg)
                 {
                     // Incriment number of events
                     ++num_events;
-                    // Update number of events in flash
-                    update_flash_config();
                     // Update the number of events in server
                     write_num_events_to_server(&num_events);
                     // Add event data to events array
@@ -56,9 +54,10 @@ void CM0_MessageCallback(uint32_t *msg)
                     {
                         ramData[i] = 0;
                     }
-                    for(uint16_t i = 0; i < 320; ++i)
+                    ramData[0] = 1;
+                    for(uint16_t i = 2; i < 322; ++i)
                     {
-                        ramData[i] = msgPtr->data[i];
+                        ramData[i] = msgPtr->data[i - 2];
                     }
                     cy_en_flashdrv_status_t result;
                     result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events], (const uint32_t *)ramData);
@@ -105,7 +104,7 @@ void send_threshold(uint8_t * threshold, uint8_t upper_or_lower)
     result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR, 
                                      CY_IPC_EP_CYPIPE_CM0_ADDR, 
                                      &ipcMsgForCM4, CM0_ReleaseCallback);
-    } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
+    } while (result != CY_IPC_PIPE_SUCCESS);
 }
 
 void send_trigger(void)
@@ -123,7 +122,7 @@ void send_trigger(void)
     result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR, 
                                      CY_IPC_EP_CYPIPE_CM0_ADDR, 
                                      &ipcMsgForCM4, CM0_ReleaseCallback);
-    } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
+    } while (result != CY_IPC_PIPE_SUCCESS);
 }
 
 void send_enable(uint8_t trigger)
@@ -141,6 +140,6 @@ void send_enable(uint8_t trigger)
     result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM4_ADDR, 
                                      CY_IPC_EP_CYPIPE_CM0_ADDR, 
                                      &ipcMsgForCM4, CM0_ReleaseCallback);
-    } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
+    } while (result != CY_IPC_PIPE_SUCCESS);
 }
 /* [] END OF FILE */

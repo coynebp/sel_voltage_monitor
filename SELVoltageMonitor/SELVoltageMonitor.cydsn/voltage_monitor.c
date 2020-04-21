@@ -23,11 +23,6 @@ void voltage_monitor_init(void)
     // Enable global interrupts.
     __enable_irq(); 
     
-    // Start the UART Debug Output
-    //UART_Start();
-    //setvbuf ( stdin, NULL, _IONBF, 0);
-    //printf("Started UART\r\n");
-    
     // Initialize thresholds
     upper_threshold = 0;
     lower_threshold = 0;
@@ -98,7 +93,7 @@ void voltage_monitor_init(void)
                                  IPC_CM0_TO_CM4_CLIENT_ID);
     
     // Initialize the event
-    for (uint8_t i = 0; i < 144; ++i)
+    for (uint16_t i = 0; i < EVENT_LENGTH; ++i)
     {
         event[i] = 0;
     }

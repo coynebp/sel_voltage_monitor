@@ -36,25 +36,25 @@ void init_ble(const uint8** Ptrs)
     
     // Pull number of events, thresholds, and events from flash storage
     // if data has been written before.
-    if(flashPtrs[0][0] == 'S' && flashPtrs[0][1] == 'W')
+    if(flashPtrs[0][0] == 'W' && flashPtrs[0][1] == 'S' && flashPtrs[0][2] == 'U')
     {
         printf("Flash Data Present\r\n");
-        // S W indicates that flash data has been previously written
-        // Pull number of events
-        num_events = flashPtrs[0][2];
+        // W S U indicates that flash data has been previously written
         // Pull thresholds
         upper_thresh[0] = flashPtrs[0][3];
         upper_thresh[1] = flashPtrs[0][4];
-        send_threshold(upper_thresh, UPPER_THRESHOLD);
         lower_thresh[0] = flashPtrs[0][5];
         lower_thresh[1] = flashPtrs[0][6];
-        send_threshold(lower_thresh, LOWER_THRESHOLD);
-        // Pull events
+        // Pull events and number of events
+        // A 1 at the beginning of the event array indicates that an event has been stored
+        // in flash at that location
+        num_events = 0;
         for(uint8_t i = 0; i < 10; ++i)
         {
+            num_events += flashPtrs[i+1][0];
             for(uint16_t j = 0; j < 160; ++j)
             {
-                events[i][j] = flashPtrs[i][2 * j] + 256 * flashPtrs[i][2 * i + 1];
+                events[i][j] = flashPtrs[i+1][2 * j + 2] + 256 * flashPtrs[i+1][2 * j + 3];
             }
         }
     }
@@ -66,11 +66,9 @@ void init_ble(const uint8** Ptrs)
         // Upper threshold = 130V
         upper_thresh[0] = 0x55;
         upper_thresh[1] = 0x04;
-        send_threshold(upper_thresh, UPPER_THRESHOLD);
         // Lower threshold = 120V
         lower_thresh[0] = 0xAB;
         lower_thresh[1] = 0x03;
-        send_threshold(lower_thresh, LOWER_THRESHOLD);
         // Initialize events
         for(uint8_t i = 0; i < 10; ++i)
         {
@@ -99,6 +97,9 @@ void init_ble(const uint8** Ptrs)
     {
         Cy_BLE_ProcessEvents();
     }
+    
+    send_threshold(upper_thresh, UPPER_THRESHOLD);
+    send_threshold(lower_thresh, LOWER_THRESHOLD);
     
     // Send config values to BLE Server
     write_num_events_to_server(&num_events);
@@ -178,7 +179,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             }
             // Send write response
             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
-            break;          
+            break;        
         default:
             break;
     }
@@ -291,9 +292,9 @@ void update_flash_config(void)
     {
         ramData[i] = 0;
     }
-    ramData[0] = 'S';
-    ramData[1] = 'W';
-    ramData[2] = num_events;
+    ramData[0] = 'W';
+    ramData[1] = 'S';
+    ramData[2] = 'U';
     ramData[3] = upper_thresh[0];
     ramData[4] = upper_thresh[1];
     ramData[5] = lower_thresh[0];

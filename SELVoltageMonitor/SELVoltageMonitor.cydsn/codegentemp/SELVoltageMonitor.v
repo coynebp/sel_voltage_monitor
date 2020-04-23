@@ -1,6 +1,6 @@
 // ======================================================================
 // SELVoltageMonitor.v generated from TopDesign.cysch
-// 04/20/2020 at 15:33
+// 04/23/2020 at 15:38
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1959,6 +1959,150 @@ module top ;
 		  .int_type(2'b00))
 		SCAN_INT
 		 (.int_signal(Net_202));
+
+
+	wire [0:0] tmpFB_0__Power_LED_net;
+	wire [0:0] tmpIO_0__Power_LED_net;
+	electrical [0:0] tmpSIOVREF__Power_LED_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("84b7a192-d1d3-4e8f-b378-4c777a5797f7"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("1"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		Power_LED
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Power_LED_net[0:0]}),
+		  .io({tmpIO_0__Power_LED_net[0:0]}),
+		  .siovref(tmpSIOVREF__Power_LED_net));
+
+
+	wire [0:0] tmpFB_0__Overvoltage_LED_net;
+	wire [0:0] tmpIO_0__Overvoltage_LED_net;
+	electrical [0:0] tmpSIOVREF__Overvoltage_LED_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("0058b4aa-ace1-44e7-ad75-34d637c786ec"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("0"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		Overvoltage_LED
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Overvoltage_LED_net[0:0]}),
+		  .io({tmpIO_0__Overvoltage_LED_net[0:0]}),
+		  .siovref(tmpSIOVREF__Overvoltage_LED_net));
+
+
+	wire [0:0] tmpFB_0__Undervoltage_LED_net;
+	wire [0:0] tmpIO_0__Undervoltage_LED_net;
+	electrical [0:0] tmpSIOVREF__Undervoltage_LED_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("d6d5a67b-a8d9-4ad5-bfbc-7086657a7538"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("0"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		Undervoltage_LED
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Undervoltage_LED_net[0:0]}),
+		  .io({tmpIO_0__Undervoltage_LED_net[0:0]}),
+		  .siovref(tmpSIOVREF__Undervoltage_LED_net));
+
+
+	wire [0:0] tmpFB_0__Voltage_OK_net;
+	wire [0:0] tmpIO_0__Voltage_OK_net;
+	electrical [0:0] tmpSIOVREF__Voltage_OK_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("1cf55e7e-2075-40fe-8494-967e02c0a7b3"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("0"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		Voltage_OK
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__Voltage_OK_net[0:0]}),
+		  .io({tmpIO_0__Voltage_OK_net[0:0]}),
+		  .siovref(tmpSIOVREF__Voltage_OK_net));
 
 
 

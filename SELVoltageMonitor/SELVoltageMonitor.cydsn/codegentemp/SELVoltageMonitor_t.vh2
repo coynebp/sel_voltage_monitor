@@ -1,12 +1,16 @@
 -- Project:   C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn\SELVoltageMonitor.cyprj
--- Generated: 04/20/2020 15:33:44
+-- Generated: 04/23/2020 15:39:07
 -- PSoC Creator  4.2
 
 ENTITY SELVoltageMonitor IS
     PORT(
         Connection_LED(0)_PAD : OUT std_ulogic;
         \UART:tx(0)_PAD\ : OUT std_ulogic;
-        \UART:rx(0)_PAD\ : IN std_ulogic);
+        \UART:rx(0)_PAD\ : IN std_ulogic;
+        Power_LED(0)_PAD : OUT std_ulogic;
+        Overvoltage_LED(0)_PAD : OUT std_ulogic;
+        Undervoltage_LED(0)_PAD : OUT std_ulogic;
+        Voltage_OK(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VBACKUP OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA_CSD OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDIO_A OF __DEFAULT__ : ENTITY IS 3.3e0;
@@ -70,7 +74,11 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     SIGNAL Net_205 : bit;
     SIGNAL Net_24 : bit;
     SIGNAL Net_25 : bit;
+    SIGNAL Overvoltage_LED(0)__PA : bit;
     SIGNAL Pin_1(0)__PA : bit;
+    SIGNAL Power_LED(0)__PA : bit;
+    SIGNAL Undervoltage_LED(0)__PA : bit;
+    SIGNAL Voltage_OK(0)__PA : bit;
     SIGNAL \ADC:Net_423\ : bit;
     SIGNAL \ADC:Net_428_ff49\ : bit;
     ATTRIBUTE global_signal OF \ADC:Net_428_ff49\ : SIGNAL IS true;
@@ -104,13 +112,21 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     ATTRIBUTE lib_model OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "P6[6]";
     ATTRIBUTE lib_model OF Connection_LED(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Connection_LED(0) : LABEL IS "P10[5]";
+    ATTRIBUTE Location OF Connection_LED(0) : LABEL IS "P9[0]";
     ATTRIBUTE lib_model OF \UART:tx(0)\ : LABEL IS "iocell4";
     ATTRIBUTE Location OF \UART:tx(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE lib_model OF \UART:rx(0)\ : LABEL IS "iocell5";
     ATTRIBUTE Location OF \UART:rx(0)\ : LABEL IS "P5[0]";
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P10[0]";
+    ATTRIBUTE lib_model OF Power_LED(0) : LABEL IS "iocell7";
+    ATTRIBUTE Location OF Power_LED(0) : LABEL IS "P9[1]";
+    ATTRIBUTE lib_model OF Overvoltage_LED(0) : LABEL IS "iocell8";
+    ATTRIBUTE Location OF Overvoltage_LED(0) : LABEL IS "P9[2]";
+    ATTRIBUTE lib_model OF Undervoltage_LED(0) : LABEL IS "iocell9";
+    ATTRIBUTE Location OF Undervoltage_LED(0) : LABEL IS "P9[3]";
+    ATTRIBUTE lib_model OF Voltage_OK(0) : LABEL IS "iocell10";
+    ATTRIBUTE Location OF Voltage_OK(0) : LABEL IS "P9[4]";
     ATTRIBUTE Location OF \BLE_1:cy_mxs40_ble\ : LABEL IS "F(BLE,0)";
     ATTRIBUTE Location OF \BLE_1:bless_isr\ : LABEL IS "[IntrContainer=(0)][IntrId=(24)]";
     ATTRIBUTE Location OF \UART:SCB_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(46)]";
@@ -925,6 +941,222 @@ BEGIN
         PORT MAP(
             pa_out => Pin_1(0)__PA,
             oe => open,
+            in_clock => open,
+            in_clock_en => open,
+            in_reset => open,
+            out_clock => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Power_LED:logicalport
+        GENERIC MAP(
+            cy_registers => "",
+            drive_mode => "110",
+            drive_strength => "0",
+            hotswap_needed => "0",
+            i2c_mode => "0",
+            ibuf_enabled => "0",
+            id => "84b7a192-d1d3-4e8f-b378-4c777a5797f7",
+            init_dr_st => "1",
+            input_sync => "0",
+            intr_mode => "00",
+            io_voltage => "",
+            max_frequency => "100",
+            oe_conn => "0",
+            oe_sync => "0",
+            output_conn => "0",
+            output_current_cap => "8",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "B",
+            sio_grp_cnt => 0,
+            slew_rate => "0",
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0);
+
+    Power_LED(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Power_LED",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => Power_LED(0)__PA,
+            oe => open,
+            pad_in => Power_LED(0)_PAD,
+            in_clock => open,
+            in_clock_en => open,
+            in_reset => open,
+            out_clock => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Overvoltage_LED:logicalport
+        GENERIC MAP(
+            cy_registers => "",
+            drive_mode => "110",
+            drive_strength => "0",
+            hotswap_needed => "0",
+            i2c_mode => "0",
+            ibuf_enabled => "0",
+            id => "0058b4aa-ace1-44e7-ad75-34d637c786ec",
+            init_dr_st => "0",
+            input_sync => "0",
+            intr_mode => "00",
+            io_voltage => "",
+            max_frequency => "100",
+            oe_conn => "0",
+            oe_sync => "0",
+            output_conn => "0",
+            output_current_cap => "8",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "B",
+            sio_grp_cnt => 0,
+            slew_rate => "0",
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0);
+
+    Overvoltage_LED(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Overvoltage_LED",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => Overvoltage_LED(0)__PA,
+            oe => open,
+            pad_in => Overvoltage_LED(0)_PAD,
+            in_clock => open,
+            in_clock_en => open,
+            in_reset => open,
+            out_clock => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Undervoltage_LED:logicalport
+        GENERIC MAP(
+            cy_registers => "",
+            drive_mode => "110",
+            drive_strength => "0",
+            hotswap_needed => "0",
+            i2c_mode => "0",
+            ibuf_enabled => "0",
+            id => "d6d5a67b-a8d9-4ad5-bfbc-7086657a7538",
+            init_dr_st => "0",
+            input_sync => "0",
+            intr_mode => "00",
+            io_voltage => "",
+            max_frequency => "100",
+            oe_conn => "0",
+            oe_sync => "0",
+            output_conn => "0",
+            output_current_cap => "8",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "B",
+            sio_grp_cnt => 0,
+            slew_rate => "0",
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0);
+
+    Undervoltage_LED(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Undervoltage_LED",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => Undervoltage_LED(0)__PA,
+            oe => open,
+            pad_in => Undervoltage_LED(0)_PAD,
+            in_clock => open,
+            in_clock_en => open,
+            in_reset => open,
+            out_clock => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    Voltage_OK:logicalport
+        GENERIC MAP(
+            cy_registers => "",
+            drive_mode => "110",
+            drive_strength => "0",
+            hotswap_needed => "0",
+            i2c_mode => "0",
+            ibuf_enabled => "0",
+            id => "1cf55e7e-2075-40fe-8494-967e02c0a7b3",
+            init_dr_st => "0",
+            input_sync => "0",
+            intr_mode => "00",
+            io_voltage => "",
+            max_frequency => "100",
+            oe_conn => "0",
+            oe_sync => "0",
+            output_conn => "0",
+            output_current_cap => "8",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "B",
+            sio_grp_cnt => 0,
+            slew_rate => "0",
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0);
+
+    Voltage_OK(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "Voltage_OK",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
+        PORT MAP(
+            pa_out => Voltage_OK(0)__PA,
+            oe => open,
+            pad_in => Voltage_OK(0)_PAD,
             in_clock => open,
             in_clock_en => open,
             in_reset => open,

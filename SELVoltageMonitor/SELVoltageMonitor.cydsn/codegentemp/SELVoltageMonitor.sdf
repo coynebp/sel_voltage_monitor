@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2020-04-20T22:33:44Z")
+ (DATE "2020-04-23T22:39:07Z")
  (DESIGN "SELVoltageMonitor")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -35,6 +35,10 @@
     (INTERCONNECT \\UART\:tx\(0\)\\.pad_out \\UART\:tx\(0\)_PAD\\ (0.000:0.000:0.000))
     (INTERCONNECT \\UART\:tx\(0\)_PAD\\ \\UART\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
     (INTERCONNECT \\UART\:rx\(0\)_PAD\\ \\UART\:rx\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Power_LED\(0\)_PAD Power_LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Overvoltage_LED\(0\)_PAD Overvoltage_LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Undervoltage_LED\(0\)_PAD Undervoltage_LED\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT Voltage_OK\(0\)_PAD Voltage_OK\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

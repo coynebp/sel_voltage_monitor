@@ -2,9 +2,9 @@
  *
  * SEL VOLTAGE MONITOR
  * TEAM REMBRANDT
- * 
+ *
  * blemonitor.c
- * 
+ *
  * This file contains the BLE initilization function and event handler which handles
  * basic BLE stack events and write requests. Also sends information
  * to the CM4 processor when received from the BLE client.

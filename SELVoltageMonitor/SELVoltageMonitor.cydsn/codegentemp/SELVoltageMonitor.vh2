@@ -2,7 +2,7 @@
 --	Conversion of SELVoltageMonitor.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Apr 20 15:33:27 2020
+--	Thu Apr 23 15:38:43 2020
 --
 
 USE cypress.cypress.all;
@@ -386,6 +386,18 @@ TERMINAL tmpSIOVREF__Pin_1_net_0 : bit;
 SIGNAL Net_194 : bit;
 SIGNAL cy_tff_1 : bit;
 SIGNAL Net_202 : bit;
+SIGNAL tmpFB_0__Power_LED_net_0 : bit;
+SIGNAL tmpIO_0__Power_LED_net_0 : bit;
+TERMINAL tmpSIOVREF__Power_LED_net_0 : bit;
+SIGNAL tmpFB_0__Overvoltage_LED_net_0 : bit;
+SIGNAL tmpIO_0__Overvoltage_LED_net_0 : bit;
+TERMINAL tmpSIOVREF__Overvoltage_LED_net_0 : bit;
+SIGNAL tmpFB_0__Undervoltage_LED_net_0 : bit;
+SIGNAL tmpIO_0__Undervoltage_LED_net_0 : bit;
+TERMINAL tmpSIOVREF__Undervoltage_LED_net_0 : bit;
+SIGNAL tmpFB_0__Voltage_OK_net_0 : bit;
+SIGNAL tmpIO_0__Voltage_OK_net_0 : bit;
+TERMINAL tmpSIOVREF__Voltage_OK_net_0 : bit;
 SIGNAL cy_tff_1D : bit;
 BEGIN
 
@@ -1663,6 +1675,134 @@ SCAN_INT:cy_mxs40_isr_v1_0
 		deepsleep_required=>'0',
 		int_type=>"00")
 	PORT MAP(int_signal=>cy_tff_1);
+Power_LED:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"84b7a192-d1d3-4e8f-b378-4c777a5797f7",
+		drive_mode=>"6",
+		ibuf_enabled=>"0",
+		init_dr_st=>"1",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__Power_LED_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Power_LED_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__Power_LED_net_0));
+Overvoltage_LED:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"0058b4aa-ace1-44e7-ad75-34d637c786ec",
+		drive_mode=>"6",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__Overvoltage_LED_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Overvoltage_LED_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__Overvoltage_LED_net_0));
+Undervoltage_LED:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"d6d5a67b-a8d9-4ad5-bfbc-7086657a7538",
+		drive_mode=>"6",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__Undervoltage_LED_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Undervoltage_LED_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__Undervoltage_LED_net_0));
+Voltage_OK:cy_mxs40_gpio_v1_0
+	GENERIC MAP(cy_registers=>"",
+		width=>1,
+		sio_grp_cnt=>0,
+		id=>"1cf55e7e-2075-40fe-8494-967e02c0a7b3",
+		drive_mode=>"6",
+		ibuf_enabled=>"0",
+		init_dr_st=>"0",
+		input_sync=>"0",
+		intr_mode=>"0",
+		io_voltage=>"",
+		output_conn=>"0",
+		oe_conn=>"0",
+		output_sync=>"0",
+		oe_sync=>"0",
+		drive_strength=>"0",
+		max_frequency=>"100",
+		output_current_cap=>"8",
+		i2c_mode=>"0",
+		pin_aliases=>"",
+		pin_mode=>"O",
+		slew_rate=>"0",
+		vtrip=>"0",
+		use_annotation=>"0",
+		hotswap_needed=>"0")
+	PORT MAP(oe=>(one),
+		y=>(zero),
+		fb=>(tmpFB_0__Voltage_OK_net_0),
+		analog=>(open),
+		io=>(tmpIO_0__Voltage_OK_net_0),
+		annotation=>(open),
+		siovref=>(tmpSIOVREF__Voltage_OK_net_0));
 cy_tff_1:cy_dff
 	PORT MAP(d=>cy_tff_1D,
 		clk=>Net_195,

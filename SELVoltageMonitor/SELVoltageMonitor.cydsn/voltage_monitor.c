@@ -21,7 +21,7 @@ void voltage_monitor_init(void)
     NVIC_EnableIRQ(SCAN_INT_cfg.intrSrc);
     
     // Enable global interrupts.
-    __enable_irq(); 
+    __enable_irq();
     
     // Initialize thresholds
     upper_threshold = 0;
@@ -161,16 +161,29 @@ void ADC_Interrupt(void)
                 // Send RMS data to BLE server for phone to read
                 send_voltage(&rms);
                 // Check voltage level for triggers
-                if (trigger_enable)
+                if (rms >= upper_threshold)
                 {
-                    if (rms >= upper_threshold)
+                    if(trigger_enable)
                     {
                         trigger();
                     }
-                    else if (rms <= lower_threshold)
+                    Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 0);
+                    Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 0);
+                    Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 1);
+                }
+                else if (rms <= lower_threshold)
+                {
+                    if(trigger_enable)
                     {
                         trigger();
                     }
+                    Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 0);
+                    Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 0);
+                    Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 1);
+                }
+                else
+                {
+                    
                 }
             }
             else

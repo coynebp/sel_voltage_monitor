@@ -82,6 +82,7 @@ void voltage_monitor_init(void)
     
     // Initialize trigger enable to false
     trigger_enable = false;
+    voltage_normal = true;
     
     // Initialize trigger to false
     trigger_set = false;
@@ -163,27 +164,32 @@ void ADC_Interrupt(void)
                 // Check voltage level for triggers
                 if (rms >= upper_threshold)
                 {
-                    if(trigger_enable)
+                    if(trigger_enable && voltage_normal)
                     {
                         trigger();
                     }
+                    voltage_normal = false;
                     Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 0);
                     Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 0);
                     Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 1);
                 }
                 else if (rms <= lower_threshold)
                 {
-                    if(trigger_enable)
+                    if(trigger_enable && voltage_normal)
                     {
                         trigger();
                     }
+                    voltage_normal = false;
                     Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 0);
                     Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 0);
                     Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 1);
                 }
                 else
                 {
-                    
+                    voltage_normal = true;
+                    Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 0);
+                    Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 0);
+                    Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 1);
                 }
             }
             else

@@ -46,6 +46,7 @@
     
     // Trigger Enable
     bool trigger_enable;
+    bool voltage_normal;
     
     // Trigger
     bool trigger_set;

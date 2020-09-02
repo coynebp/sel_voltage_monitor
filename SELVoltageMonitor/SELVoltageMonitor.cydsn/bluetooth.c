@@ -61,12 +61,12 @@ void init_ble(const uint8** Ptrs)
     else
     {
         printf("Flash Data NOT Present\r\n");
-        // Flash data not present, writing starting values for everything
+        // Flash data not present, writing default values to flash
         num_events = 0;
-        // Upper threshold = 130V
+        // Default upper threshold = 130V
         upper_thresh[0] = 0x55;
         upper_thresh[1] = 0x04;
-        // Lower threshold = 120V
+        // Default lower threshold = 120V
         lower_thresh[0] = 0xAB;
         lower_thresh[1] = 0x03;
         // Initialize events
@@ -98,13 +98,13 @@ void init_ble(const uint8** Ptrs)
         Cy_BLE_ProcessEvents();
     }
     
-    send_threshold(upper_thresh, UPPER_THRESHOLD);
-    send_threshold(lower_thresh, LOWER_THRESHOLD);
+    send_threshold(upper_thresh, type_upper_threshold);
+    send_threshold(lower_thresh, type_lower_threshold);
     
     // Send config values to BLE Server
     write_num_events_to_server(&num_events);
-    write_threshold_to_server(upper_thresh, UPPER_THRESHOLD);
-    write_threshold_to_server(lower_thresh, LOWER_THRESHOLD);
+    write_threshold_to_server(upper_thresh, 'u');
+    write_threshold_to_server(lower_thresh, 'l');
 }
 
 // Event handler for handling connection and writes to BLE server
@@ -153,7 +153,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE)
             {
                 // Send threshold to CM4
-                send_threshold(writeReqParam->handleValPair.value.val, UPPER_THRESHOLD);
+                send_threshold(writeReqParam->handleValPair.value.val, type_upper_threshold);
                 // Send new threshold to flash
                 upper_thresh[0] = writeReqParam->handleValPair.value.val[0];
                 upper_thresh[1] = writeReqParam->handleValPair.value.val[1];
@@ -164,7 +164,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE)
             {
                 // Send threshold to CM4
-                send_threshold(writeReqParam->handleValPair.value.val, LOWER_THRESHOLD);
+                send_threshold(writeReqParam->handleValPair.value.val, type_lower_threshold);
                 // Send new threshold to flash
                 lower_thresh[0] = writeReqParam->handleValPair.value.val[0];
                 lower_thresh[1] = writeReqParam->handleValPair.value.val[1];
@@ -269,10 +269,10 @@ void write_voltage_to_server(uint8_t * voltage_ptr)
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);   
 }
 
-void write_threshold_to_server(uint8_t * threshold_ptr, uint8_t upper_or_lower)
+void write_threshold_to_server(uint8_t * threshold_ptr, char upper_or_lower)
 {
     cy_stc_ble_gatt_handle_value_pair_t handValPair;
-    if (upper_or_lower == UPPER_THRESHOLD)
+    if (upper_or_lower == 'u')
     {
         handValPair.attrHandle = CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE;
     }

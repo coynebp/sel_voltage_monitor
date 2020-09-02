@@ -21,10 +21,14 @@ void ring_buf_push(ring_buf_t *c, uint16_t data)
         next = 0;
     // Load data and then move
     c->buffer[c->head] = data;
-    // Head to next data offset. // return success to indicate successful push.
+    // Head to next data offset.
     c->head = next;
-    c->check = c->check + 1;
-    if (c->check >= c->maxlen)
-        c->check = 0;
+}
+
+void initialize_ring_buffer(ring_buf_t *ring_buf, int16_t * buffer, uint16_t maxlen)
+{
+    ring_buf->buffer = buffer;
+    ring_buf->head = 0;
+    ring_buf->maxlen = maxlen;
 }
 /* [] END OF FILE */

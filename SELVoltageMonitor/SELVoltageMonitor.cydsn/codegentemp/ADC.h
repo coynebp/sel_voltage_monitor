@@ -147,7 +147,7 @@ The parameters that are set in the customizer are redefined as constants here.
 #define ADC_CFG0_CHANNEL_EN              (0x1u)
 
 /* Sample Control Register */
-#define ADC_CFG0_SINGLE_ENDED_FORMAT     (0uL)
+#define ADC_CFG0_SINGLE_ENDED_FORMAT     (1uL)
 #define ADC_CFG0_DIFFERENTIAL_FORMAT     (1uL)
 #define ADC_CFG0_SAMPLES_AVERAGED        (1uL)
 #define ADC_CFG0_RANGE_INTR_MASK         (0x0u)

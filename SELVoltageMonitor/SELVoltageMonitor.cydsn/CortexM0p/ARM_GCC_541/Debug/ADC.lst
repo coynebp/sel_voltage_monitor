@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   28:Generated_Source\PSoC6/ADC.c **** * PARTICULAR PURPOSE. Cypress reserves the right to make
   29:Generated_Source\PSoC6/ADC.c **** * changes to the Software without notice. Cypress does not assume any
   30:Generated_Source\PSoC6/ADC.c **** * liability arising out of the application or use of the Software or any
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 2
 
 
   31:Generated_Source\PSoC6/ADC.c **** * product or circuit described in the Software. Cypress does not
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   85:Generated_Source\PSoC6/ADC.c **** * datasheet for more information on the Cy_SysInt_Init() function.
   86:Generated_Source\PSoC6/ADC.c **** *
   87:Generated_Source\PSoC6/ADC.c **** * \param address This is the address of a user defined function for the ISR.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 3
 
 
   88:Generated_Source\PSoC6/ADC.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   40              	.LVL1:
   41              	.LBB32:
   42              	.LBB33:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 4
 
 
   43              	.LBB34:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   53:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Refer to the technical reference manual (TRM) and the device datasheet.
   54:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
   55:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \section group_sysclk_MISRA MISRA-C Compliance
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 5
 
 
   56:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * <table class="doxtable">
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  110:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>R</td>
  111:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>The value of an expression of integer type shall not be implicitly converted to a differe
  112:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *         if the expression is complex.</td>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 6
 
 
  113:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>Use of a Cypress defined macro to access memory-mapped objects.</td>
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  167:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>1.11</td>
  168:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>Updated the following functions. Now they use a semaphore when 
  169:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *         try to read the status or configure the SysClk measurement counters:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 7
 
 
  170:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *         * Cy_SysClk_StartClkMeasurementCounters()
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  224:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   source one or more clock paths (Refer to \ref group_sysclk_path_src).
  225:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   These clock paths can then source the processors and peripherals in
  226:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   the device.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 8
 
 
  227:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  281:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     is user-adjustable.
  282:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   ![](sysclk_fll.png)
  283:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 9
 
 
  284:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   The SysClk driver supports two models for configuring the FLL. The first
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  338:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   - It is recommended to always have the ILO enabled
  339:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
  340:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   \defgroup group_sysclk_ilo_funcs       Functions
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 10
 
 
  341:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \}
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  395:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   Entering and exiting low power modes require compatible clock configurations
  396:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   to be set before entering low power and restored upon wake-up and exit. The
  397:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   SysClk driver provides a Cy_SysClk_DeepSleepCallback() function to support
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 11
 
 
  398:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   deep-sleep mode entry. 
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  452:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   
  453:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   High frequency clocks are sourced by path clocks, which should be configured
  454:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   first. An exception to this rule is CLK_HF[0], which cannot be disabled. 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 12
 
 
  455:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   This divided clock drives the core processors and the peripherals in the system.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  509:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
  510:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   ![](sysclk_peri_divs.png)
  511:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 13
 
 
  512:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   Each peripheral can connect to any one of the programmable dividers. A
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  566:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   internal voltage pump for the Continuous Time Block mini (CTBm) in the analog 
  567:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   subsystem. The pump clock is a divided clock of one of the clock paths 
  568:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   (\ref group_sysclk_path_src).
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 14
 
 
  569:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  623:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_INVALID_STATE = (CY_SYSCLK_ID | CY_PDL_STATUS_ERROR | 3u)  /**< Clock is in an invali
  624:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** } cy_en_sysclk_status_t;
  625:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /** \} group_sysclk_returns */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 15
 
 
  626:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  680:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     SRSS->CLK_ECO_CONFIG &= ~_VAL2FLD(SRSS_CLK_ECO_CONFIG_ECO_EN, 1u); /* 0 = disable */
  681:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** }
  682:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 16
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 16
 
 
  683:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  737:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** cy_en_clkpath_in_sources_t Cy_SysClk_ClkPathGetSource(uint32_t clkPath);
  738:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /** \} group_sysclk_path_src_funcs */
  739:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 17
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 17
 
 
  740:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  794:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \addtogroup group_sysclk_fll_funcs
  795:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \{
  796:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 18
 
 
  797:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** cy_en_sysclk_status_t Cy_SysClk_FllConfigure(uint32_t inputFreq, uint32_t outputFreq, cy_en_fll_pll
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  851:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
  852:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_FllDisable
  853:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 19
 
 
  854:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  908:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** cy_en_sysclk_status_t Cy_SysClk_PllEnable(uint32_t clkPath, uint32_t timeoutus);
  909:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE bool Cy_SysClk_PllLocked(uint32_t clkPath);
  910:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE bool Cy_SysClk_PllLostLock(uint32_t clkPath);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 20
 
 
  911:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE cy_en_sysclk_status_t Cy_SysClk_PllDisable(uint32_t clkPath);
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  965:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_PllDisable
  966:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
  967:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 21
 
 
  968:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Disables the selected PLL.
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1022:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_IloDisable
 1023:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
 1024:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 22
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 22
 
 
 1025:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Disables the ILO. ILO can't be disabled if WDT is enabled.
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1079:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \{
 1080:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** */
 1081:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_PiloEnable(void);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 23
 
 
 1082:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_PiloDisable(void);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1136:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1137:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
 1138:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_PiloSetTrim(uint32_t trimVal)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 24
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 24
 
 
 1139:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1193:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_PATH11 =        0x50Bu,
 1194:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_PATH12 =        0x50Cu,
 1195:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_PATH13 =        0x50Du,
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 25
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 25
 
 
 1196:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_PATH14 =        0x50Eu,
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1250:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /* ==========================    TRIM SECTION    ============================ */
 1251:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /* ========================================================================== */
 1252:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /**
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 26
 
 
 1253:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \addtogroup group_sysclk_trim_funcs
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1307:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_CSV_LOSS_256_CYCLES = 6u, /**< 1 clock must be seen within 256 cycles of the supervis
 1308:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_CSV_LOSS_512_CYCLES = 7u  /**< 1 clock must be seen within 512 cycles of the supervis
 1309:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** } cy_en_csv_loss_window_t;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 27
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 27
 
 
 1310:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1364:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * CY_SYSCLK_TIMEOUT - Timeout waiting for WCO to stabilize
 1365:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1366:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 28
 
 
 1367:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_WcoEnable
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1421:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     BACKUP->CTL &= ~_VAL2FLD(BACKUP_CTL_WCO_EN, 1u); /* 0 = disable */
 1422:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** }
 1423:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 29
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 29
 
 
 1424:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1478:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * clkHf divider values. See CLK_ROOT_SELECT registers, bits ROOT_DIV.
 1479:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Used with functions \ref Cy_SysClk_ClkHfSetDivider and \ref Cy_SysClk_ClkHfGetDivider.
 1480:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 30
 
 
 1481:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** typedef enum
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1535:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 1536:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
 1537:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_ClkHfEnable
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 31
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 31
 
 
 1538:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1592:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Selects the source of the selected clkHf.
 1593:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1594:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param clkHf selects which clkHf mux to configure.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 32
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 32
 
 
 1595:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1649:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
 1650:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_ClkHfSetDivider
 1651:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 33
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 33
 
 
 1652:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1706:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
 1707:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_ClkFastSetDivider
 1708:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 34
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 34
 
 
 1709:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1763:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** }
 1764:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 1765:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 35
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 35
 
 
 1766:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_ClkPeriGetDivider
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1820:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
 1821:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1822:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Sets one of the programmable clock dividers. This is only used for integer
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 36
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 36
 
 
 1823:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * dividers. Use \ref Cy_SysClk_PeriphSetFracDivider for setting factional dividers.
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1877:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1878:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param dividerNum specifies which divider of the selected type to configure
 1879:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 37
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 37
 
 
 1880:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \return The divider value.
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1934:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****                 Cy_SysClk_PeriphSetFracDivider(cy_en_divider_types_t dividerType, uint32_t dividerN
 1935:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****                                                uint32_t dividerIntValue, uint32_t dividerFracValue)
 1936:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 38
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 38
 
 
 1937:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     cy_en_sysclk_status_t retval = CY_SYSCLK_BAD_PARAM;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1991:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 1992:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     if (dividerType == CY_SYSCLK_DIV_16_5_BIT)
 1993:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 39
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 39
 
 
 1994:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         CY_ASSERT_L1(dividerNum < PERI_DIV_16_5_NR);
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 2048:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Reports which clock divider is assigned to a selected IP block.
 2049:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 2050:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param ipBlock specifies ip block to connect the clock divider to.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 40
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 40
 
 
 2051:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 2105:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** }
 2106:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 2107:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 41
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 41
 
 
 2108:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_PeriphDisableDivider
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   65 0014 1000     		movs	r0, r2
   66              	.LVL4:
   67 0016 0E49     		ldr	r1, .L3+8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 42
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 42
 
 
   68 0018 5458     		ldr	r4, [r2, r1]
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  149:Generated_Source\PSoC6/ADC.c ****         if(1uL < config->numChannels)
  150:Generated_Source\PSoC6/ADC.c ****         {
  151:Generated_Source\PSoC6/ADC.c ****             Cy_SAR_SetVssaSarSeqCtrl(ADC_SAR__HW, CY_SAR_SWITCH_SEQ_CTRL_ENABLE);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 43
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 43
 
 
  152:Generated_Source\PSoC6/ADC.c ****         }
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  182:Generated_Source\PSoC6/ADC.c ****             ADC_initVar |= ADC_INIT_VAR_INIT_FLAG;
  183:Generated_Source\PSoC6/ADC.c ****         }
  184:Generated_Source\PSoC6/ADC.c ****         #if (ADC_VREF_ROUTED)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 44
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 44
 
 
  185:Generated_Source\PSoC6/ADC.c ****             ADC_vrefAMux_DisconnectAll();
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  140 0002 074B     		ldr	r3, .L8
  141 0004 5B68     		ldr	r3, [r3, #4]
  142 0006 5B03     		lsls	r3, r3, #13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 45
 
 
  143 0008 04D5     		bpl	.L6
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  252:Generated_Source\PSoC6/ADC.c **** *
  253:Generated_Source\PSoC6/ADC.c **** *******************************************************************************/
  254:Generated_Source\PSoC6/ADC.c **** void ADC_SetConvertMode(cy_en_sar_start_convert_sel_t mode)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 46
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 46
 
 
  255:Generated_Source\PSoC6/ADC.c **** {
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  217              		.type	ADC_IRQ_Enable, %function
  218              	ADC_IRQ_Enable:
  219              	.LFB182:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 47
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 47
 
 
  267:Generated_Source\PSoC6/ADC.c **** 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  302:Generated_Source\PSoC6/ADC.c **** *
  303:Generated_Source\PSoC6/ADC.c **** * \param None
  304:Generated_Source\PSoC6/ADC.c **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 48
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 48
 
 
  305:Generated_Source\PSoC6/ADC.c **** * \return None
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  258              		.loc 1 339 0
  259              		.cfi_startproc
  260              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 49
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 49
 
 
  261              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   37:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *       - averaging and accumulation
   38:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   - scan can be triggered by firmware or hardware in single shot or continuous mode
   39:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   - hardware averaging from 2 to 256 samples
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 50
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 50
 
 
   40:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   - selectable voltage references
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   94:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
   95:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \subsection group_sar_init_struct_sampleTime01 uint32_t sampleTime01
   96:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 51
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 51
 
 
   97:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * This field configures the value for sample times 0 and 1 in ADC clock cycles.
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  151:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
  152:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Select a value from each of the following enums that begin with "cy_en_sar_chan_config_" and "OR"
  153:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 52
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 52
 
 
  154:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   - \ref cy_en_sar_chan_config_input_mode_t
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  208:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * This field is the firmware control of the SARMUX switches.
  209:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
  210:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Use one or more values from the \ref cy_en_sar_mux_switch_fw_ctrl_t enum and "OR" them together.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 53
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 53
 
 
  211:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * If the SARSEQ is enabled, the SARMUX switches that will be used must
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  265:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     </td>
  266:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td>
  267:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     Firmware triggering is always available by calling \ref Cy_SAR_StartConvert with \ref CY_SAR_
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 54
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 54
 
 
  268:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     To allow only firmware triggering, or disable
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  322:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
  323:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Alternately, instead of handling the interrupts, the \ref Cy_SAR_IsEndConversion function
  324:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * allows for firmware polling of the end of conversion status.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 55
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 55
 
 
  325:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  379:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \image html sar_scan_rate_eqn.png
  380:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
  381:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * where N is the total number of channels in the scan.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 56
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 56
 
 
  382:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  436:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   <tr>
  437:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td>CTB0 Opamp0 1x output</td>
  438:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td>\ref CY_SAR_POS_PORT_ADDR_CTB0</td>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 57
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 57
 
 
  439:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td>\ref CY_SAR_CHAN_POS_PIN_ADDR_2</td>
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  493:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * This SAR driver provides a callback function to handle power mode transitions.
  494:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * The \ref Cy_SAR_DeepSleepCallback function ensures that SAR conversions are stopped
  495:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * before Deep Sleep entry. Upon wakeup, the callback
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 58
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 58
 
 
  496:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * enables the hardware and continuous conversions, if previously enabled.
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  550:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   <tr>
  551:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td>1.0</td>
  552:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td>Initial version</td>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 59
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 59
 
 
  553:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *     <td></td>
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  607:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** /** Driver minor version */
  608:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** #define CY_SAR_DRV_VERSION_MINOR        10
  609:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 60
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 60
 
 
  610:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** /** SAR driver identifier */
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  664:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** #define CY_SAR_REG_CHAN_CONFIG_MASK     (SAR_CHAN_CONFIG_POS_PIN_ADDR_Msk \
  665:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****                                         | SAR_CHAN_CONFIG_POS_PORT_ADDR_Msk \
  666:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****                                         | SAR_CHAN_CONFIG_DIFFERENTIAL_EN_Msk \
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 61
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 61
 
 
  667:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****                                         | SAR_CHAN_CONFIG_AVG_EN_Msk \
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  721:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * The offset can be overridden using \ref Cy_SAR_SetOffset.
  722:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
  723:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * The channel offsets are used by the \ref Cy_SAR_CountsTo_Volts, \ref Cy_SAR_CountsTo_mVolts, and
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 62
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 62
 
 
  724:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \ref Cy_SAR_CountsTo_uVolts functions to convert counts to voltage.
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  778:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** }cy_en_sar_switch_state_t;
  779:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** 
  780:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** /** Definitions for sequencer control of switches */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 63
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 63
 
 
  781:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** typedef enum
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  835:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * of the SARMUX dedicated port or an acore wire in AROUTE, if available on the device.
  836:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
  837:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \ref CY_SAR_NEG_SEL_VSSA_KELVIN comes straight from a Vssa pad without any shared branches
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 64
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 64
 
 
  838:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * so as to keep quiet and avoid voltage drops.
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  892:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** }cy_en_sar_ctrl_sarseq_routing_switches_t;
  893:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** 
  894:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** /* \} */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 65
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 65
 
 
  895:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** 
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  949:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   of the scan, the accumulated value is shifted right to fit into 16 bits
  950:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   and stored into the CHAN_RESULT register.
  951:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * - Sequential fixed:  a channel will be sampled back to back.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 66
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 66
 
 
  952:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *   The result is added to a running sum in a 20-bit register. At the end
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1006:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \{
 1007:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** */
 1008:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** /** Configure the lower and upper thresholds for range detection
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 67
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 67
 
 
 1009:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1063:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** {
 1064:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_POS_PIN_ADDR_0     = 0uL,                                            /**< Pin 0 on 
 1065:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_POS_PIN_ADDR_1     = 1uL << SAR_CHAN_CONFIG_POS_PIN_ADDR_Pos,        /**< Pin 1 on 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 68
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 68
 
 
 1066:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_POS_PIN_ADDR_2     = 2uL << SAR_CHAN_CONFIG_POS_PIN_ADDR_Pos,        /**< Pin 2 on 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1120:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_NEG_PIN_ADDR_3     = 3uL << SAR_CHAN_CONFIG_NEG_PIN_ADDR_Pos,        /**< Pin 3 on 
 1121:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_NEG_PIN_ADDR_4     = 4uL << SAR_CHAN_CONFIG_NEG_PIN_ADDR_Pos,        /**< Pin 4 on 
 1122:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_NEG_PIN_ADDR_5     = 5uL << SAR_CHAN_CONFIG_NEG_PIN_ADDR_Pos,        /**< Pin 5 on 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 69
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 69
 
 
 1123:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_CHAN_NEG_PIN_ADDR_6     = 6uL << SAR_CHAN_CONFIG_NEG_PIN_ADDR_Pos,        /**< Pin 6 on 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1177:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** */
 1178:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** typedef enum
 1179:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 70
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 70
 
 
 1180:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     /* SARMUX pins to Vplus */
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1234:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_MUX_SQ_CTRL_P3           = SAR_MUX_SWITCH_SQ_CTRL_MUX_SQ_CTRL_P3_Msk,        /**< Enable
 1235:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_MUX_SQ_CTRL_P4           = SAR_MUX_SWITCH_SQ_CTRL_MUX_SQ_CTRL_P4_Msk,        /**< Enable
 1236:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_MUX_SQ_CTRL_P5           = SAR_MUX_SWITCH_SQ_CTRL_MUX_SQ_CTRL_P5_Msk,        /**< Enable
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 71
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 71
 
 
 1237:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     CY_SAR_MUX_SQ_CTRL_P6           = SAR_MUX_SWITCH_SQ_CTRL_MUX_SQ_CTRL_P6_Msk,        /**< Enable
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1291:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     uint32_t hwEnabled;         /**< SAR enabled state */
 1292:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h ****     uint32_t continuous;        /**< State of the continuous bit */
 1293:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** } cy_stc_sar_state_backup_t;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 72
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 72
 
 
 1294:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1348:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** int16_t Cy_SAR_CountsTo_mVolts(const SAR_Type *base, uint32_t chan, int16_t adcCounts);
 1349:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** int32_t Cy_SAR_CountsTo_uVolts(const SAR_Type *base, uint32_t chan, int16_t adcCounts);
 1350:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** cy_en_sar_status_t Cy_SAR_SetOffset(uint32_t chan, int16_t offset);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 73
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 73
 
 
 1351:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** cy_en_sar_status_t Cy_SAR_SetGain(uint32_t chan, int32_t adcGain);
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1405:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** */
 1406:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** 
 1407:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** /*******************************************************************************
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 74
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 74
 
 
 1408:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Function Name: Cy_SAR_Disable
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1462:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \param base
 1463:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Pointer to structure describing registers
 1464:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 75
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 75
 
 
 1465:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \param enableMask
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1519:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Return the interrupt register status.
 1520:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
 1521:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \param base
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 76
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 76
 
 
 1522:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Pointer to structure describing registers
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
 1576:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * Pointer to structure describing registers
 1577:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** *
 1578:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * \param intrMask
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 77
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 77
 
 
 1579:Generated_Source\PSoC6\pdl\drivers/peripheral/sar/cy_sar.h **** * The mask of interrupts to set.
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  285 0014 8623     		movs	r3, #134
  286 0016 9B00     		lsls	r3, r3, #2
  287 0018 034A     		ldr	r2, .L21+8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 78
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 78
 
 
  288 001a D450     		str	r4, [r2, r3]
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  363:Generated_Source\PSoC6/ADC.c ****     uint32 chanCount = ADC_allConfigs[ADC_currentConfig].numChannels;
  322              		.loc 1 363 0
  323 0002 0B4B     		ldr	r3, .L25
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 79
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 79
 
 
  324 0004 1B68     		ldr	r3, [r3]
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  372              		.section	.text.ADC_IsEndConversion,"ax",%progbits
  373              		.align	2
  374              		.global	ADC_IsEndConversion
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 80
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 80
 
 
  375              		.code	16
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  402 0010 00E0     		b	.L28
  403              	.LVL32:
  404              	.L29:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 81
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 81
 
 
  394:Generated_Source\PSoC6/ADC.c ****     {
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  417:Generated_Source\PSoC6/ADC.c ****     uint32_t configNum = 0u;
  418:Generated_Source\PSoC6/ADC.c **** 
  419:Generated_Source\PSoC6/ADC.c ****     if(0u == ADC_initVar)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 82
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 82
 
 
  436              		.loc 1 419 0
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  456              		@ sp needed
  457 001e 10BD     		pop	{r4, pc}
  458              	.L35:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 83
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 83
 
 
  459              		.align	2
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   10:Generated_Source\PSoC6/ADC.h **** * (c) 2017, Cypress Semiconductor Corporation. All rights reserved.
   11:Generated_Source\PSoC6/ADC.h **** * This software, including source code, documentation and related
   12:Generated_Source\PSoC6/ADC.h **** * materials ("Software"), is owned by Cypress Semiconductor
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 84
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 84
 
 
   13:Generated_Source\PSoC6/ADC.h **** * Corporation ("Cypress") and is protected by and subject to worldwide
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
   67:Generated_Source\PSoC6/ADC.h ****                                             */
   68:Generated_Source\PSoC6/ADC.h **** #if (ADC_CLOCK_INTERNAL)
   69:Generated_Source\PSoC6/ADC.h ****     uint32_t clkDivider;                    /* Clock divider */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 85
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 85
 
 
   70:Generated_Source\PSoC6/ADC.h **** #endif /* ADC_CLOCK_INTERNAL */
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  124:Generated_Source\PSoC6/ADC.h **** void ADC_ISR(void);
  125:Generated_Source\PSoC6/ADC.h **** void ADC_IRQ_Enable(void);
  126:Generated_Source\PSoC6/ADC.h **** void ADC_IRQ_Disable(void);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 86
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 86
 
 
  127:Generated_Source\PSoC6/ADC.h **** 
@@ -5124,7 +5124,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  147:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_CHANNEL_EN              (0x1u)
  148:Generated_Source\PSoC6/ADC.h **** 
  149:Generated_Source\PSoC6/ADC.h **** /* Sample Control Register */
- 150:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_SINGLE_ENDED_FORMAT     (0uL)
+ 150:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_SINGLE_ENDED_FORMAT     (1uL)
  151:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_DIFFERENTIAL_FORMAT     (1uL)
  152:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_SAMPLES_AVERAGED        (1uL)
  153:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_RANGE_INTR_MASK         (0x0u)
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  181:Generated_Source\PSoC6/ADC.h **** /* ************************************************************************** */
  182:Generated_Source\PSoC6/ADC.h **** /* Begin configuration 1 customizer defines                                   */
  183:Generated_Source\PSoC6/ADC.h **** /* ************************************************************************** */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 87
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 87
 
 
  184:Generated_Source\PSoC6/ADC.h **** 
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  238:Generated_Source\PSoC6/ADC.h ****     /* Sample Control Register */
  239:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG2_SINGLE_ENDED_FORMAT     (uL)
  240:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG2_DIFFERENTIAL_FORMAT     (uL)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 88
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 88
 
 
  241:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG2_SAMPLES_AVERAGED        (uL)
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  295:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG3_APERTURE_TIME3          (uL)
  296:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG3_FREERUNNING             (u)
  297:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG3_AVGERAGING_MODE         (uL)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 89
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 89
 
 
  298:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG3_LOW_LIMIT               (u)
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  352:Generated_Source\PSoC6/ADC.h **** extern uint32_t ADC_currentConfig;
  353:Generated_Source\PSoC6/ADC.h **** 
  354:Generated_Source\PSoC6/ADC.h **** #define ADC_INIT_VAR_INIT_FLAG     (0x01u)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 90
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 90
 
 
  355:Generated_Source\PSoC6/ADC.h **** 
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  409:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG0_SE_NEG_INPUT_INIT \
  410:Generated_Source\PSoC6/ADC.h ****             ((uint32)(ADC_NEG_SEL_VSSA_KELVIN \
  411:Generated_Source\PSoC6/ADC.h ****             << SAR_CTRL_NEG_SEL_Pos ))
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 91
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 91
 
 
  412:Generated_Source\PSoC6/ADC.h **** #elif(ADC_CFG0_VNEG_INPUT_SEL == ADC_NEG_SEL_VREF)
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  466:Generated_Source\PSoC6/ADC.h **** #define ADC_CFG0_VREF_POWER_INIT  \
  467:Generated_Source\PSoC6/ADC.h ****         (ADC_CFG0_VREF_PWR \
  468:Generated_Source\PSoC6/ADC.h ****         << SAR_CTRL_PWR_CTRL_VREF_Pos)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 92
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 92
 
 
  469:Generated_Source\PSoC6/ADC.h **** 
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  523:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG1_SAMPLE_TIME01_INIT \
  524:Generated_Source\PSoC6/ADC.h ****             ((ADC_CFG1_APERTURE_TIME0 \
  525:Generated_Source\PSoC6/ADC.h ****             << SAR_SAMPLE_TIME01_SAMPLE_TIME0_Pos) \
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 93
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 93
 
 
  526:Generated_Source\PSoC6/ADC.h ****             | (ADC_CFG1_APERTURE_TIME1 \
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  580:Generated_Source\PSoC6/ADC.h ****             << SAR_SAMPLE_CTRL_AVG_CNT_Pos)
  581:Generated_Source\PSoC6/ADC.h **** 
  582:Generated_Source\PSoC6/ADC.h ****     /* Combination of Average Mode and Average Shift */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 94
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 94
 
 
  583:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG1_AVG_MODE_INIT \
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  637:Generated_Source\PSoC6/ADC.h ****             (ADC_CFG1_FREERUNNING)
  638:Generated_Source\PSoC6/ADC.h **** #endif /* ADC_TOTAL_CONFIGS > 1 */
  639:Generated_Source\PSoC6/ADC.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 95
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 95
 
 
  640:Generated_Source\PSoC6/ADC.h **** /* ************************************************************************** */
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  694:Generated_Source\PSoC6/ADC.h **** 
  695:Generated_Source\PSoC6/ADC.h ****     /* SAMPLE_CTRL initial values */
  696:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG2_SE_RESULT_FORMAT_INIT \
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 96
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 96
 
 
  697:Generated_Source\PSoC6/ADC.h ****             (ADC_CFG2_SINGLE_ENDED_FORMAT \
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  751:Generated_Source\PSoC6/ADC.h ****             | SAR_SAMPLE_CTRL_EOS_DSI_OUT_EN_Msk \
  752:Generated_Source\PSoC6/ADC.h ****     )
  753:Generated_Source\PSoC6/ADC.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 97
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 97
 
 
  754:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG2_RANGE_THRES_INIT \
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  808:Generated_Source\PSoC6/ADC.h ****     #elif (ADC_CFG3_SINGLE_PRESENT != 0u)
  809:Generated_Source\PSoC6/ADC.h ****         #define ADC_CFG3_SE_NEG_INPUT_INIT         ADC_CFG3_NEG_OTHER
  810:Generated_Source\PSoC6/ADC.h ****     #else
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 98
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 98
 
 
  811:Generated_Source\PSoC6/ADC.h ****         #define ADC_CFG3_SE_NEG_INPUT_INIT         0u
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  865:Generated_Source\PSoC6/ADC.h ****             | ADC_CFG3_SWITCH_CONF_INIT )
  866:Generated_Source\PSoC6/ADC.h **** 
  867:Generated_Source\PSoC6/ADC.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 99
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 99
 
 
  868:Generated_Source\PSoC6/ADC.h ****     #define ADC_CFG3_SAMPLE_CTRL_INIT \
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  505              	.LBE45:
   76:Generated_Source\PSoC6/ADC.c **** 
  506              		.loc 1 76 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 100
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 100
 
 
  507              		@ sp needed
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  557              		.cfi_def_cfa_offset 16
  558              		.cfi_offset 4, -16
  559              		.cfi_offset 5, -12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 101
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 101
 
 
  560              		.cfi_offset 6, -8
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  194:Generated_Source\PSoC6/ADC.c **** 
  607              		.loc 1 194 0
  608 003c 054B     		ldr	r3, .L44+4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 102
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 102
 
 
  609 003e 1C60     		str	r4, [r3]
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  653              		.type	ADC_selected, %object
  654              		.size	ADC_selected, 1
  655              	ADC_selected:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 103
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 103
 
 
  656 0005 00       		.space	1
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  710 005f 04       		.byte	0x4
  711 0060 07       		.byte	0x7
  712 0061 1A040000 		.4byte	.LASF7
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 104
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 104
 
 
  713 0065 02       		.uleb128 0x2
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  767 00d7 00       		.byte	0
  768 00d8 07       		.uleb128 0x7
  769 00d9 A3000000 		.4byte	0xa3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 105
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 105
 
 
  770 00dd E8000000 		.4byte	0xe8
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  824 014c 06       		.uleb128 0x6
  825 014d 47010000 		.4byte	0x147
  826 0151 03       		.uleb128 0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 106
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 106
 
 
  827 0152 45080000 		.4byte	.LASF19
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  881 01bf 07       		.byte	0x7
  882 01c0 3E       		.byte	0x3e
  883 01c1 9E000000 		.4byte	0x9e
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 107
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 107
 
 
  884 01c5 24       		.byte	0x24
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  938 0231 9E000000 		.4byte	0x9e
  939 0235 24       		.byte	0x24
  940 0236 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 108
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 108
 
 
  941 0237 C8060000 		.4byte	.LASF18
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  995 02aa 0D       		.uleb128 0xd
  996 02ab 89060000 		.4byte	.LASF31
  997 02af 07       		.byte	0x7
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 109
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 109
 
 
  998 02b0 6F       		.byte	0x6f
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1052 0325 78       		.byte	0x78
  1053 0326 08040000 		.4byte	0x408
  1054 032a 0048     		.2byte	0x4800
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 110
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 110
 
 
  1055 032c 0D       		.uleb128 0xd
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1109 03ab 7F       		.byte	0x7f
  1110 03ac 00       		.byte	0
  1111 03ad 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 111
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 111
 
 
  1112 03ae 9D030000 		.4byte	0x39d
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1166 0431 08       		.uleb128 0x8
  1167 0432 97000000 		.4byte	0x97
  1168 0436 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 112
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 112
 
 
  1169 0437 00       		.byte	0
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1223 04a4 9E000000 		.4byte	0x9e
  1224 04a8 18       		.byte	0x18
  1225 04a9 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 113
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 113
 
 
  1226 04aa CC090000 		.4byte	.LASF46
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1280 0519 E6060000 		.4byte	.LASF38
  1281 051d 08       		.byte	0x8
  1282 051e 31       		.byte	0x31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 114
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 114
 
 
  1283 051f 36070000 		.4byte	0x736
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1337 0594 9E000000 		.4byte	0x9e
  1338 0598 2002     		.2byte	0x220
  1339 059a 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 115
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 115
 
 
  1340 059b 5F070000 		.4byte	.LASF61
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1394 0610 D2050000 		.4byte	.LASF70
  1395 0614 08       		.byte	0x8
  1396 0615 44       		.byte	0x44
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 116
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 116
 
 
  1397 0616 9E000000 		.4byte	0x9e
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1451 068b 78070000 		.4byte	0x778
  1452 068f 0803     		.2byte	0x308
  1453 0691 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 117
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 117
 
 
  1454 0692 6B040000 		.4byte	.LASF80
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1508 070a 38040000 		.4byte	0x438
  1509 070e 06       		.uleb128 0x6
  1510 070f 09070000 		.4byte	0x709
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 118
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 118
 
 
  1511 0713 05       		.uleb128 0x5
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1565 0798 03       		.uleb128 0x3
  1566 0799 61080000 		.4byte	.LASF86
  1567 079d 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 119
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 119
 
 
  1568 079e 54       		.byte	0x54
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1622 0814 03000600 		.4byte	0x60003
  1623 0818 00       		.byte	0
  1624 0819 0F       		.uleb128 0xf
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 120
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 120
 
 
  1625 081a 66060000 		.4byte	.LASF98
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1679 088c 01       		.byte	0x1
  1680 088d 2C000000 		.4byte	0x2c
  1681 0891 03       		.byte	0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 121
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 121
 
 
  1682 0892 0E03     		.2byte	0x30e
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1736 08ff 03       		.byte	0x3
  1737 0900 F404     		.2byte	0x4f4
  1738 0902 CA090000 		.4byte	0x9ca
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 122
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 122
 
 
  1739 0906 16       		.uleb128 0x16
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1793 097b 16       		.uleb128 0x16
  1794 097c 26000000 		.4byte	.LASF127
  1795 0980 03       		.byte	0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 123
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 123
 
 
  1796 0981 FF04     		.2byte	0x4ff
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1850 09f4 6B02     		.2byte	0x26b
  1851 09f6 1C0A0000 		.4byte	0xa1c
  1852 09fa 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 124
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 124
 
 
  1853 09fb 9E040000 		.4byte	.LASF135
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1907 0a73 04       		.byte	0x4
  1908 0a74 3E       		.byte	0x3e
  1909 0a75 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 125
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 125
 
 
  1910 0a79 04       		.byte	0x4
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  1964 0aec 270A0000 		.4byte	.LASF154
  1965 0af0 02       		.byte	0x2
  1966 0af1 4A08     		.2byte	0x84a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 126
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 126
 
 
  1967 0af3 1C0A0000 		.4byte	0xa1c
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2021 0b71 8A050000 		.4byte	.LASF158
  2022 0b75 03       		.byte	0x3
  2023 0b76 8B05     		.2byte	0x58b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 127
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 127
 
 
  2024 0b78 7D0B0000 		.4byte	0xb7d
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2078 0be6 7D0B0000 		.4byte	0xb7d
  2079 0bea 18       		.uleb128 0x18
  2080 0beb 60040000 		.4byte	.LASF165
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 128
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 128
 
 
  2081 0bef 03       		.byte	0x3
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2135 0c6d 25       		.uleb128 0x25
  2136 0c6e 04000000 		.4byte	.LBB34
  2137 0c72 0A000000 		.4byte	.LBE34-.LBB34
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 129
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 129
 
 
  2138 0c76 26       		.uleb128 0x26
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2192 0d00 D20A0000 		.4byte	0xad2
  2193 0d04 CB000000 		.4byte	.LLST9
  2194 0d08 24       		.uleb128 0x24
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 130
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 130
 
 
  2195 0d09 C60A0000 		.4byte	0xac6
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2249 0d75 C5100000 		.4byte	0x10c5
  2250 0d79 8C0D0000 		.4byte	0xd8c
  2251 0d7d 28       		.uleb128 0x28
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 131
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 131
 
 
  2252 0d7e 01       		.uleb128 0x1
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2306 0ddf 01       		.byte	0x1
  2307 0de0 3601     		.2byte	0x136
  2308 0de2 00000000 		.4byte	.LFB183
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 132
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 132
 
 
  2309 0de6 02000000 		.4byte	.LFE183-.LFB183
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2363 0e60 2C       		.uleb128 0x2c
  2364 0e61 79060000 		.4byte	.LASF179
  2365 0e65 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 133
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 133
 
 
  2366 0e66 6901     		.2byte	0x169
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2420 0ee4 1C000000 		.4byte	.LFE186-.LFB186
  2421 0ee8 01       		.uleb128 0x1
  2422 0ee9 9C       		.byte	0x9c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 134
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 134
 
 
  2423 0eea 320F0000 		.4byte	0xf32
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2477 0f6a 28000000 		.4byte	.LFE176-.LFB176
  2478 0f6e 01       		.uleb128 0x1
  2479 0f6f 9C       		.byte	0x9c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 135
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 135
 
 
  2480 0f70 A50F0000 		.4byte	0xfa5
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2534 0fee AA       		.byte	0xaa
  2535 0fef 8C000000 		.4byte	0x8c
  2536 0ff3 6C020000 		.4byte	.LLST24
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 136
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 136
 
 
  2537 0ff7 20       		.uleb128 0x20
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2591 107c C6000000 		.4byte	.LASF193
  2592 1080 01       		.byte	0x1
  2593 1081 2D       		.byte	0x2d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 137
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 137
 
 
  2594 1082 8C000000 		.4byte	0x8c
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2648 0003 25       		.uleb128 0x25
  2649 0004 0E       		.uleb128 0xe
  2650 0005 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 138
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 138
 
 
  2651 0006 0B       		.uleb128 0xb
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2705 003c 00       		.byte	0
  2706 003d 06       		.uleb128 0x6
  2707 003e 26       		.uleb128 0x26
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 139
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 139
 
 
  2708 003f 00       		.byte	0
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2762 0075 0B       		.uleb128 0xb
  2763 0076 05       		.uleb128 0x5
  2764 0077 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 140
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 140
 
 
  2765 0078 0B       		.uleb128 0xb
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2819 00ae 05       		.uleb128 0x5
  2820 00af 49       		.uleb128 0x49
  2821 00b0 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 141
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 141
 
 
  2822 00b1 00       		.byte	0
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2876 00e7 0B       		.uleb128 0xb
  2877 00e8 0B       		.uleb128 0xb
  2878 00e9 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 142
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 142
 
 
  2879 00ea 0B       		.uleb128 0xb
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2933 0120 19       		.uleb128 0x19
  2934 0121 34       		.uleb128 0x34
  2935 0122 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 143
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 143
 
 
  2936 0123 03       		.uleb128 0x3
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  2990 0159 0B       		.uleb128 0xb
  2991 015a 01       		.uleb128 0x1
  2992 015b 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 144
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 144
 
 
  2993 015c 00       		.byte	0
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3047 0193 00       		.byte	0
  3048 0194 20       		.uleb128 0x20
  3049 0195 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 145
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 145
 
 
  3050 0196 00       		.byte	0
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3104 01cc 58       		.uleb128 0x58
  3105 01cd 0B       		.uleb128 0xb
  3106 01ce 59       		.uleb128 0x59
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 146
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 146
 
 
  3107 01cf 0B       		.uleb128 0xb
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3161 020c 01       		.uleb128 0x1
  3162 020d 31       		.uleb128 0x31
  3163 020e 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 147
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 147
 
 
  3164 020f 00       		.byte	0
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3218 0246 01       		.uleb128 0x1
  3219 0247 12       		.uleb128 0x12
  3220 0248 06       		.uleb128 0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 148
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 148
 
 
  3221 0249 40       		.uleb128 0x40
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3275 0280 2E       		.uleb128 0x2e
  3276 0281 01       		.byte	0x1
  3277 0282 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 149
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 149
 
 
  3278 0283 19       		.uleb128 0x19
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3332 02bc 3B       		.uleb128 0x3b
  3333 02bd 0B       		.uleb128 0xb
  3334 02be 49       		.uleb128 0x49
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 150
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 150
 
 
  3335 02bf 13       		.uleb128 0x13
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3389 001a 60000000 		.4byte	.LFE178
  3390 001e 0400     		.2byte	0x4
  3391 0020 F3       		.byte	0xf3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 151
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 151
 
 
  3392 0021 01       		.uleb128 0x1
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3446 00a9 30       		.byte	0x30
  3447 00aa 9F       		.byte	0x9f
  3448 00ab 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 152
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 152
 
 
  3449 00af 00000000 		.4byte	0
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3503 0137 1C000000 		.4byte	.LVL19
  3504 013b 2C000000 		.4byte	.LFE184
  3505 013f 0500     		.2byte	0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 153
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 153
 
 
  3506 0141 72       		.byte	0x72
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3560 01ca 0100     		.2byte	0x1
  3561 01cc 54       		.byte	0x54
  3562 01cd 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 154
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 154
 
 
  3563 01d1 00000000 		.4byte	0
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3617 025e 0400     		.2byte	0x4
  3618 0260 F3       		.byte	0xf3
  3619 0261 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 155
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 155
 
 
  3620 0262 50       		.byte	0x50
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3674 000b 00       		.byte	0
  3675 000c 0000     		.2byte	0
  3676 000e 0000     		.2byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 156
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 156
 
 
  3677 0010 00000000 		.4byte	.LFB178
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3731              		.section	.debug_line,"",%progbits
  3732              	.Ldebug_line0:
  3733 0000 A6030000 		.section	.debug_str,"MS",%progbits,1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 157
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 157
 
 
  3733      02005D02 
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3755      456E6162 
  3755      6C6500
  3756              	.LASF184:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 158
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 158
 
 
  3757 0096 4144435F 		.ascii	"ADC_Init\000"
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3777      4B5F494E 
  3777      56414C49 
  3777      445F5354 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 159
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 159
 
 
  3778              	.LASF62:
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3799 0219 636C6B44 		.ascii	"clkDivider\000"
  3799      69766964 
  3799      657200
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 160
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 160
 
 
  3800              	.LASF83:
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3823      4B5F4241 
  3823      445F5041 
  3823      52414D00 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 161
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 161
 
 
  3824              	.LASF155:
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3848              	.LASF6:
  3849 0373 5F5F7569 		.ascii	"__uint32_t\000"
  3849      6E743332 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 162
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 162
 
 
  3849      5F7400
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3875      6D00
  3876              	.LASF89:
  3877 0413 63686172 		.ascii	"char_t\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 163
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 163
 
 
  3877      5F7400
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3897      43544C00 
  3898              	.LASF22:
  3899 04cf 41444452 		.ascii	"ADDR0\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 164
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 164
 
 
  3899      3000
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3925 057a 534C5F43 		.ascii	"SL_CTL\000"
  3925      544C00
  3926              	.LASF57:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 165
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 165
 
 
  3927 0581 494E5452 		.ascii	"INTR_SET\000"
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3949      54524C00 
  3950              	.LASF45:
  3951 062c 52414E47 		.ascii	"RANGE_THRES\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 166
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 166
 
 
  3951      455F5448 
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  3975      52564544 
  3975      3200
  3976              	.LASF35:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 167
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 167
 
 
  3977 06dc 52455345 		.ascii	"RESERVED3\000"
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4001      4E54525F 
  4001      4F564552 
  4001      464C4F57 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 168
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 168
 
 
  4002              	.LASF39:
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4025 0820 50455249 		.ascii	"PERI_TR_GR_Type\000"
  4025      5F54525F 
  4025      47525F54 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 169
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 169
 
 
  4025      79706500 
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4046              	.LASF90:
  4047 092b 63686172 		.ascii	"char\000"
  4047      00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 170
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 170
 
 
  4048              	.LASF97:
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4071      72697068 
  4071      53657444 
  4072              	.LASF118:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 171
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 171
 
 
  4073 09f2 6374726C 		.ascii	"ctrl\000"
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4097      6B5F5065 
  4097      72697068 
  4097      456E6162 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 172
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 172
 
 
  4098              	.LASF26:
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4119              	.LASF29:
  4120 0b83 4449565F 		.ascii	"DIV_8_CTL\000"
  4120      385F4354 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 173
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 173
 
 
  4120      4C00
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 1
  4142      73656C65 
  4142      63746564 
  4142      00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc8EeQjL.s 			page 174
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccnAaOmh.s 			page 174
 
 
  4143              	.LASF139:

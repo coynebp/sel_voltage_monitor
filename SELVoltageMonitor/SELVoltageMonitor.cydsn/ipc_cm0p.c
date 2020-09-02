@@ -20,7 +20,7 @@ ipc_msg_t ipcMsgForCM4 = {
     .clientId = IPC_CM0_TO_CM4_CLIENT_ID,
     .userCode = 0,
     .intrMask = CY_IPC_CYPIPE_INTR_MASK,
-    .type = 0,
+    .type = type_voltage,
     .data   = {0}
 };
 
@@ -114,7 +114,7 @@ void send_trigger(void)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM4.type = TRIGGER;
+    ipcMsgForCM4.type = type_trigger;
     ipcMsgForCM4.data[0] = 1;
     // Send message
     do
@@ -132,7 +132,7 @@ void send_enable(uint8_t trigger)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM4.type = ENABLE;
+    ipcMsgForCM4.type = type_enable;
     ipcMsgForCM4.data[0] = trigger;
     // Send message
     do

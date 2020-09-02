@@ -42,7 +42,7 @@
     void write_event_to_server(uint8_t *event_byte_arr);
     void write_num_events_to_server(uint8_t * num_events_ptr);
     void write_voltage_to_server(uint8_t * voltage_ptr);
-    void write_threshold_to_server(uint8_t * threshold_ptr, uint8_t upper_or_lower);
+    void write_threshold_to_server(uint8_t * threshold_ptr, char upper_or_lower);
     
     void update_flash_config(void);
     

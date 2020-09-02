@@ -24,17 +24,27 @@
     #define LOWER_THRESHOLD                 3
     #define TRIGGER                         4
     #define ENABLE                          5
-    
+
+    typedef enum ipc_msg_datatype
+    {
+        type_voltage,
+        type_event,
+        type_upper_threshold,
+        type_lower_threshold,
+        type_trigger,
+        type_enable
+    } ipc_msg_datatype;
+
     #define MESSAGE_SIZE 288
 
     typedef struct __attribute__((packed, aligned(4)))
     {
-        uint8_t     clientId;
-        uint8_t     userCode;
-        uint16_t    intrMask;
-        uint32_t    type;
-        uint8_t     data[MESSAGE_SIZE];
+        uint8_t             clientId;
+        uint8_t             userCode;
+        uint16_t            intrMask;
+        ipc_msg_datatype    type;
+        uint8_t             data[MESSAGE_SIZE];
     } ipc_msg_t;
-    
+
 #endif 
 /* [] END OF FILE */

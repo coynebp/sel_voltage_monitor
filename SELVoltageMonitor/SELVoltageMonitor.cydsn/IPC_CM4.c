@@ -35,32 +35,19 @@ void CM4_MessageCallback(uint32_t *msg)
         type = msgPtr->type;
         switch (type)
         {
-            case UPPER_THRESHOLD:
+            case type_upper_threshold:
                 val = msgPtr->data[0] + 256 * msgPtr->data[1];
-                upper_threshold = val;
-                printf("New Upper Threshold: %" PRIx16, val);
-                printf("\r\n");
+                set_upper_threshold(val);
                 break;
-            case LOWER_THRESHOLD:
+            case type_lower_threshold:
                 val = msgPtr->data[0] + 0x100 * msgPtr->data[1];
-                lower_threshold = val;
-                printf("New Lower Threshold: %" PRIx16, val);
-                printf("\r\n");
+                set_lower_threshold(val);
                 break;
-            case TRIGGER:
+            case type_trigger:
                 trigger();
                 break;
-            case ENABLE:
-                if (msgPtr->data[0])
-                {
-                    trigger_enable = true;
-                }
-                else
-                {
-                    trigger_enable = false;
-                }
-                printf("Enable: %s", trigger_enable ? "TRUE" : "FALSE");
-                printf("\r\n");
+            case type_enable:
+                set_trigger_enable(msgPtr->data[0]);
             default:
                 break;
         }
@@ -81,7 +68,7 @@ void send_voltage(uint16_t * voltage)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM0.type = VOLTAGE;
+    ipcMsgForCM0.type = type_voltage;
     ipcMsgForCM0.data[0] = ((uint8_t *)voltage)[0];
     ipcMsgForCM0.data[1] = ((uint8_t *)voltage)[1];
     // Send message
@@ -98,10 +85,11 @@ void send_event(int16_t * event)
 {
     // Wait for previous message to send
     while (rdyToRecvMsg == false) {};
+    // Set ready flag to false
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM0.type = EVENT;
+    ipcMsgForCM0.type = type_event;
     uint16_t entry;
     for (int i = 0; i < 144; ++i)
     {

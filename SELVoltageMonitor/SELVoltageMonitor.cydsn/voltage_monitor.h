@@ -5,8 +5,7 @@
  * 
  * voltage_monitor.h
  * 
- * This file contains the included libraries,
- * function prototypes, and globals, for voltage_monitor.c.
+ * Header file for voltage_monitor.c
  *
  * ========================================
 */
@@ -24,25 +23,18 @@
     #include "ring_buffer.h"
     #include "filter.h"
     #include <inttypes.h>
-    
-    // Trigger Enable
-    bool trigger_enable;
-    bool voltage_normal;
-
-    // Trigger
-    bool trigger_set;
-    uint16_t samples_to_extract;
-
-    // Thresholds
-    uint16_t upper_threshold;
-    uint16_t lower_threshold;
 
     void voltage_monitor_init(void);
     void ADC_Interrupt(void);
     void SCAN_Interrupt(void);
     void trigger(void);
+    void clear_trigger(void);
     void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr);
-    int squared_magnitude(int a, int b);
+    void set_upper_threshold(uint16_t threshold);
+    void set_lower_threshold(uint16_t threshold);
+    void set_trigger_enable(bool val);
+    void set_leds(bool over, bool under, bool normal);
+    int32_t squared_magnitude(int32_t a, int32_t b);
     
 #endif
 /* [] END OF FILE */

@@ -12,6 +12,10 @@
 */
 #include "voltage_monitor.h"
 
+// Thresholds
+uint16_t upper_threshold;
+uint16_t lower_threshold;
+
 // Ring buffer
 int16_t rb_buffer[RING_BUF_LEN];
 ring_buf_t ring_buffer;
@@ -25,9 +29,17 @@ int16 cosine_taps[FILTER_LENGTH];
 fir_filter_t cosine_filter;
 
 // Averaging filter
-int32 averaging_values[FILTER_LENGTH];
+int32 averaging_samples[FILTER_LENGTH];
 int16 averaging_taps[FILTER_LENGTH];
 fir_filter_t averaging_filter;
+
+// Trigger Enable
+bool trigger_enable;
+bool voltage_normal;
+
+// Trigger
+bool trigger_set;
+uint16_t samples_to_extract;
 
 void voltage_monitor_init(void)
 {   
@@ -69,9 +81,9 @@ void voltage_monitor_init(void)
     }
     for(uint8_t i = 0; i < FILTER_LENGTH; ++i)
     {
-        averaging_values[i] = 0;
+        averaging_samples[i] = 0;
     }
-    initialize_filter(FILTER_LENGTH, averaging_taps, 36, averaging_values, &averaging_filter);
+    initialize_filter(FILTER_LENGTH, averaging_taps, 36, averaging_samples, &averaging_filter);
     
     // Initialize trigger enable to false and indicate that voltage is normal
     trigger_enable = false;
@@ -105,30 +117,21 @@ void ADC_Interrupt(void)
     if (cosine_filter.is_charged)
     {
         // Push new value into ring buffer
-        ring_buf_push(&ring_buffer, get_filtered_value(&cosine_filter));
-        // If an event has been triggered, and more data is needed for event report, push data into event characteristic
+        int16_t filtered_value = get_filtered_value(&cosine_filter);
+        ring_buf_push(&ring_buffer, filtered_value);
+        // If an event has been triggered, and more data is needed for event report, record sample for event report
         if (trigger_set)
         {
-            event[EVENT_LENGTH - samples_to_extract] = ring_buffer.buffer[(ring_buffer.head + ring_buffer.maxlen - 1) % ring_buffer.maxlen];
+            // Add to event report
+            event[EVENT_LENGTH - samples_to_extract] = filtered_value;
             --samples_to_extract;
+            // Send event report and clear trigger if no more samples are needed
             if (!samples_to_extract)
             {
-                trigger_set = false;
-                int16_t short_event[144];
-                for (uint16_t i = 0; i < EVENT_LENGTH; i += 3)
-                {
-                    short_event[i / 3] = event[i];
-                }
-                for (uint16_t i = 0; i < 144; ++i)
-                {
-                    printf("%" PRId16, short_event[i]);
-                    printf(",");
-                }
-                printf("\r\n");
-                send_event(short_event);
+                clear_trigger();
             }
         }
-        // Calculate Squared Magnitude
+        // Calculate Squared Magnitude for RMS calculation
         int32_t sq_mag = squared_magnitude(
                              ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN],
                              ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN]
@@ -137,39 +140,36 @@ void ADC_Interrupt(void)
         insert_filter_value(&averaging_filter, sq_mag);
         if (averaging_filter.is_charged)
         {
-            // Determine RMS value
+            // Determine Average RMS value
             uint16_t rms = round(sqrt(get_filtered_value(&averaging_filter)) / sqrt(2));
             // Send RMS data to BLE server for phone to read
             send_voltage(&rms);
-            // Check voltage level for triggers and LED behavior
+            // Check average RMS for threshold crossings and LED behavior
             if (rms >= upper_threshold)
             {
+                // Overvoltage Condition
                 if(trigger_enable && voltage_normal)
                 {
                     trigger();
                 }
                 voltage_normal = false;
-                Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 0); //Undervoltage LED off
-                Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 0); // Voltage OK LED off
-                Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 1); // Overvoltage LED on
+                set_leds(true, false, false);
             }
             else if (rms <= lower_threshold)
             {
+                // Undervoltage
                 if(trigger_enable && voltage_normal)
                 {
                     trigger();
                 }
                 voltage_normal = false;
-                Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 0); // Overvoltage LED off
-                Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 0); // Voltage OK LED off
-                Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 1); // Undervoltage LED on
+                set_leds(false, true, false);
             }
             else
             {
+                // Voltage normal
                 voltage_normal = true;
-                Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, 0); // Overvoltage LED off
-                Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, 0); // Undervoltage LED off
-                Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, 1); // Voltage OK LED on
+                set_leds(false, false, true);
             }
         }
     }
@@ -182,14 +182,26 @@ void SCAN_Interrupt(void)
 
 void trigger(void)
 {
-    printf("TRIGGER\r\n");
+    printf("Event Triggered\r\n");
     trigger_set = true;
     extract_past_three_cycles(&ring_buffer, event);
     samples_to_extract = CYCLE_LENGTH * 9;
 }
 
+void clear_trigger(void)
+{
+    trigger_set = false;
+    int16_t short_event[144];
+    for (uint16_t i = 0; i < EVENT_LENGTH; i += 3)
+    {
+        short_event[i / 3] = event[i];
+    }
+    send_event(short_event);
+    printf("Event sent to BLE server\r\n");
+}
+
 void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr)
-{    
+{
     uint16_t event_index = 0;
     
     for(uint16_t index = (rbuf->head + rbuf->maxlen - (CYCLE_LENGTH * 3)) % rbuf->maxlen; index != rbuf->head + 1; ++index)
@@ -200,7 +212,29 @@ void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr)
     }
 }
 
-int squared_magnitude(int a, int b)
+void set_upper_threshold(uint16_t threshold)
+{
+    upper_threshold = threshold;
+}
+
+void set_lower_threshold(uint16_t threshold)
+{
+    lower_threshold = threshold;
+}
+
+void set_trigger_enable(bool val)
+{
+    trigger_enable = val;
+}
+
+void set_leds(bool over, bool under, bool normal)
+{
+    Cy_GPIO_Write(Overvoltage_LED_0_PORT, Overvoltage_LED_0_NUM, over); // Overvoltage LED
+    Cy_GPIO_Write(Undervoltage_LED_0_PORT, Undervoltage_LED_0_NUM, under); // Undervoltage LED
+    Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, normal); // Voltage OK LED
+}
+
+int32_t squared_magnitude(int32_t a, int32_t b)
 {
     return pow(a, 2) + pow(b, 2);
 }

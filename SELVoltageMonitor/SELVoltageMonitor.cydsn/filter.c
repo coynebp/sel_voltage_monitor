@@ -28,7 +28,7 @@ void insert_filter_value(fir_filter_t *filter, int32_t value)
     }
     // Add newest sample to the filter.
     filter->samples[0] = value;
-    // If filter is not yet charged, check if sample makes filter charged.
+    // If filter is not yet charged, count the sample.
     if (!filter->is_charged)
     {
         ++filter->num_samples;

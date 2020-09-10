@@ -18,13 +18,6 @@
     #define IPC_CM0_TO_CM4_CLIENT_ID        0
     #define IPC_CM4_TO_CM0_CLIENT_ID        1
 
-    #define VOLTAGE                         0
-    #define EVENT                           1
-    #define UPPER_THRESHOLD                 2
-    #define LOWER_THRESHOLD                 3
-    #define TRIGGER                         4
-    #define ENABLE                          5
-
     typedef enum ipc_msg_datatype
     {
         type_voltage,

@@ -35,7 +35,7 @@ void CM0_MessageCallback(uint32_t *msg)
         type = msgPtr->type;
         switch (type)
         {
-            case EVENT:
+            case type_event:
                 // Check to make sure there is space for another event
                 if (num_events < 10)
                 {
@@ -68,7 +68,7 @@ void CM0_MessageCallback(uint32_t *msg)
                 }
                 break;
 
-            case VOLTAGE:
+            case type_voltage:
                 // Get data from message
                 data[0] = msgPtr->data[0];
                 data[1] = msgPtr->data[1];

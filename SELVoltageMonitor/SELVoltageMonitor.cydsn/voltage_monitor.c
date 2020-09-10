@@ -5,8 +5,8 @@
  * 
  * voltage_monitor.c
  * 
- * This file defines the initialization function and
- * the interrupt routines for the voltage monitor.
+ * Monitors voltage provided to the system and sends information to the 
+ * CM0+ processor.
  *
  * ========================================
 */
@@ -132,10 +132,9 @@ void ADC_Interrupt(void)
             }
         }
         // Calculate Squared Magnitude for RMS calculation
-        int32_t sq_mag = squared_magnitude(
-                             ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN],
-                             ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN]
-                         );
+        int32_t real_part = ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN];
+        int32_t imaginary_part = ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN];
+        int32_t sq_mag = squared_magnitude(real_part, imaginary_part);
         // Push squared magnitude into averaging filter
         insert_filter_value(&averaging_filter, sq_mag);
         if (averaging_filter.is_charged)
@@ -234,8 +233,8 @@ void set_leds(bool over, bool under, bool normal)
     Cy_GPIO_Write(Voltage_OK_0_PORT, Voltage_OK_0_NUM, normal); // Voltage OK LED
 }
 
-int32_t squared_magnitude(int32_t a, int32_t b)
+int32_t squared_magnitude(int32_t real, int32_t imag)
 {
-    return pow(a, 2) + pow(b, 2);
+    return pow(real, 2) + pow(imag, 2);
 }
 /* [] END OF FILE */

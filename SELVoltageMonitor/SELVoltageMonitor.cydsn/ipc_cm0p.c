@@ -5,8 +5,8 @@
  * 
  * ipc_cm0p.c
  * 
- * This file initilizes the variables and defines the functions
- * needed for the CM0+ processor to communicate with the CMO4.
+ * This file contains the functions and callbacks for the
+ * CM0+ processor to communicate with the CM4
  *
  * ========================================
 */
@@ -28,7 +28,6 @@ ipc_msg_t ipcMsgForCM4 = {
 void CM0_MessageCallback(uint32_t *msg)
 {
     ipc_msg_datatype type;
-    uint8_t data[2];
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
     if (msgPtr != NULL)
     {
@@ -36,46 +35,13 @@ void CM0_MessageCallback(uint32_t *msg)
         switch (type)
         {
             case type_event:
-                // Check to make sure there is space for another event
-                if (num_events < 10)
-                {
-                    // Incriment number of events
-                    ++num_events;
-                    // Update the number of events in server
-                    write_num_events_to_server(&num_events);
-                    // Add event data to events array
-                    for(uint16_t i = 0; i < 144; ++i)
-                    {
-                        events[num_events - 1][i] = msgPtr->data[2 * i] + 256 * msgPtr->data[2 * i + 1];
-                    }
-                    // Write event data to flash
-                    uint8_t ramData[CY_FLASH_SIZEOF_ROW];
-                    for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
-                    {
-                        ramData[i] = 0;
-                    }
-                    ramData[0] = 1;
-                    for(uint16_t i = 2; i < 322; ++i)
-                    {
-                        ramData[i] = msgPtr->data[i - 2];
-                    }
-                    cy_en_flashdrv_status_t result;
-                    result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events], (const uint32_t *)ramData);
-                    if (result == CY_FLASH_DRV_SUCCESS)
-                    {
-                        printf("Event written to flash\r\n");
-                    }
-                }
+                record_event(msgPtr->data);
                 break;
-
             case type_voltage:
-                // Get data from message
-                data[0] = msgPtr->data[0];
-                data[1] = msgPtr->data[1];
-                // Place data in server
-                write_voltage_to_server(data);
+            {
+                record_voltage(msgPtr->data);
                 break;
-            
+            }
             default:
                 break;
         }
@@ -125,7 +91,7 @@ void send_trigger(void)
     } while (result != CY_IPC_PIPE_SUCCESS);
 }
 
-void send_enable(uint8_t trigger)
+void send_enable(uint8_t enable)
 {
     // Wait for previous message to send
     while (rdyToRecvMsg == false) {};
@@ -133,7 +99,7 @@ void send_enable(uint8_t trigger)
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
     ipcMsgForCM4.type = (ipc_msg_datatype)type_enable;
-    ipcMsgForCM4.data[0] = trigger;
+    ipcMsgForCM4.data[0] = enable;
     // Send message
     do
     {

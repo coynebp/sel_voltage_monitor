@@ -4,6 +4,8 @@
  * TEAM REMBRANDT
  * 
  * filter.c
+ *
+ * Generalized FIR filter
  * 
  * ========================================
 */

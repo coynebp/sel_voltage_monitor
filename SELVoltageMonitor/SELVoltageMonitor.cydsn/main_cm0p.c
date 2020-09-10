@@ -4,14 +4,12 @@
  * TEAM REMBRANDT
  * 
  * main_cm0p.c
- * 
- * Contains main function for the CM0+ processor, which handles the BLE
- * controller and host.
  *
  * ========================================
 */
 #include "bluetooth.h"
 
+// Declaring flash storage for configuration and event storage
 CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashInfo[CY_FLASH_SIZEOF_ROW] = {0};
 CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent1[CY_FLASH_SIZEOF_ROW] = {0};
 CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent2[CY_FLASH_SIZEOF_ROW] = {0};

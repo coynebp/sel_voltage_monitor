@@ -5,8 +5,8 @@
  * 
  * ipc_cm4.c
  * 
- * This file initilizes the varaibles and defines the functions
- * needed for the CM4 processor to send data to the CMO+.
+ * This file contains the functions and callbacks for the
+ * CM4 processor to communicate with the CMO+
  *
  * ========================================
 */

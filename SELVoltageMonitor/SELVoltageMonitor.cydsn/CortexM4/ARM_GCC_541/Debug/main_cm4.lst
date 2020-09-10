@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 1
 
 
    1              		.syntax unified
@@ -36,16 +36,13 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
    5:main_cm4.c    ****  * 
    6:main_cm4.c    ****  * main_cm4.c
    7:main_cm4.c    ****  * 
-   8:main_cm4.c    ****  * Contains main function for the CM4 processor, which handles the 
-   9:main_cm4.c    ****  * voltage monitor application.
-  10:main_cm4.c    ****  *
-  11:main_cm4.c    ****  * ========================================
-  12:main_cm4.c    **** */
-  13:main_cm4.c    **** #include "voltage_monitor.h"
-  14:main_cm4.c    **** 
-  15:main_cm4.c    **** int main(void)
-  16:main_cm4.c    **** {
-  29              		.loc 1 16 0
+   8:main_cm4.c    ****  * ========================================
+   9:main_cm4.c    **** */
+  10:main_cm4.c    **** #include "voltage_monitor.h"
+  11:main_cm4.c    **** 
+  12:main_cm4.c    **** int main(void)
+  13:main_cm4.c    **** {
+  29              		.loc 1 13 0
   30              		.cfi_startproc
   31              		@ Volatile: function does not return.
   32              		@ args = 0, pretend = 0, frame = 0
@@ -54,16 +51,16 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
   35              		.cfi_def_cfa_offset 8
   36              		.cfi_offset 3, -8
   37              		.cfi_offset 14, -4
-  17:main_cm4.c    ****     
-  18:main_cm4.c    ****     voltage_monitor_init();
-  38              		.loc 1 18 0
+  14:main_cm4.c    ****     
+  15:main_cm4.c    ****     voltage_monitor_init();
+  38              		.loc 1 15 0
   39 0002 FFF7FEFF 		bl	voltage_monitor_init
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 2
-
-
   40              	.LVL0:
   41              	.L2:
   42 0006 FEE7     		b	.L2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 2
+
+
   43              		.cfi_endproc
   44              	.LFE522:
   45              		.size	main, .-main
@@ -118,12 +115,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
   94 004f 5C040000 		.4byte	.LASF4
   95 0053 03       		.uleb128 0x3
   96 0054 9C010000 		.4byte	.LASF6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 3
-
-
   97 0058 02       		.byte	0x2
   98 0059 41       		.byte	0x41
   99 005a 5E000000 		.4byte	0x5e
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 3
+
+
  100 005e 02       		.uleb128 0x2
  101 005f 04       		.byte	0x4
  102 0060 07       		.byte	0x7
@@ -178,12 +175,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  151 00bb C4030000 		.4byte	.LASF17
  152 00bf 06       		.uleb128 0x6
  153 00c0 04       		.byte	0x4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 4
-
-
  154 00c1 02       		.uleb128 0x2
  155 00c2 01       		.byte	0x1
  156 00c3 02       		.byte	0x2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 4
+
+
  157 00c4 A0030000 		.4byte	.LASF18
  158 00c8 07       		.uleb128 0x7
  159 00c9 04       		.byte	0x4
@@ -238,12 +235,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  208 0134 38000000 		.4byte	.LASF25
  209 0138 04       		.byte	0x4
  210 0139 5002     		.2byte	0x250
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 5
-
-
  211 013b 9E000000 		.4byte	0x9e
  212 013f 14       		.byte	0x14
  213 0140 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 5
+
+
  214 0141 06030000 		.4byte	.LASF26
  215 0145 04       		.byte	0x4
  216 0146 5202     		.2byte	0x252
@@ -298,12 +295,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  265 01af 6302     		.2byte	0x263
  266 01b1 E5000000 		.4byte	0xe5
  267 01b5 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 6
-
-
  268 01b6 01       		.byte	0x1
  269 01b7 33000000 		.4byte	0x33
  270 01bb 05       		.byte	0x5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 6
+
+
  271 01bc 0504     		.2byte	0x405
  272 01be DB010000 		.4byte	0x1db
  273 01c2 0E       		.uleb128 0xe
@@ -358,12 +355,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  322 0229 05       		.byte	0x5
  323 022a FA04     		.2byte	0x4fa
  324 022c 8C000000 		.4byte	0x8c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 7
-
-
  325 0230 10       		.byte	0x10
  326 0231 0C       		.uleb128 0xc
  327 0232 D6010000 		.4byte	.LASF45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 7
+
+
  328 0236 05       		.byte	0x5
  329 0237 FB04     		.2byte	0x4fb
  330 0239 DB010000 		.4byte	0x1db
@@ -418,12 +415,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  379 02a5 70       		.byte	0x70
  380 02a6 0C       		.uleb128 0xc
  381 02a7 CD000000 		.4byte	.LASF54
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 8
-
-
  382 02ab 05       		.byte	0x5
  383 02ac 0405     		.2byte	0x504
  384 02ae 8C000000 		.4byte	0x8c
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 8
+
+
  385 02b2 74       		.byte	0x74
  386 02b3 00       		.byte	0
  387 02b4 10       		.uleb128 0x10
@@ -478,19 +475,19 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  436 0316 04       		.byte	0x4
  437 0317 1B030000 		.4byte	0x31b
  438 031b 14       		.uleb128 0x14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 9
-
-
  439 031c C4020000 		.4byte	0x2c4
  440 0320 03       		.uleb128 0x3
  441 0321 B9010000 		.4byte	.LASF61
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 9
+
+
  442 0325 06       		.byte	0x6
  443 0326 48       		.byte	0x48
  444 0327 D0020000 		.4byte	0x2d0
  445 032b 15       		.uleb128 0x15
  446 032c 97010000 		.4byte	.LASF70
  447 0330 01       		.byte	0x1
- 448 0331 0F       		.byte	0xf
+ 448 0331 0C       		.byte	0xc
  449 0332 73000000 		.4byte	0x73
  450 0336 00000000 		.4byte	.LFB522
  451 033a 08000000 		.4byte	.LFE522-.LFB522
@@ -538,12 +535,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  493 039d D4020000 		.4byte	.LASF71
  494 03a1 D4020000 		.4byte	.LASF71
  495 03a5 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 10
-
-
- 496 03a6 1B       		.byte	0x1b
+ 496 03a6 22       		.byte	0x22
  497 03a7 00       		.byte	0
  498              		.section	.debug_abbrev,"",%progbits
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 10
+
+
  499              	.Ldebug_abbrev0:
  500 0000 01       		.uleb128 0x1
  501 0001 11       		.uleb128 0x11
@@ -598,12 +595,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  550 0032 03       		.uleb128 0x3
  551 0033 08       		.uleb128 0x8
  552 0034 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 11
-
-
  553 0035 00       		.byte	0
  554 0036 05       		.uleb128 0x5
  555 0037 35       		.uleb128 0x35
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 11
+
+
  556 0038 00       		.byte	0
  557 0039 49       		.uleb128 0x49
  558 003a 13       		.uleb128 0x13
@@ -658,12 +655,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  607 006b 13       		.uleb128 0x13
  608 006c 01       		.byte	0x1
  609 006d 03       		.uleb128 0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 12
-
-
  610 006e 0E       		.uleb128 0xe
  611 006f 0B       		.uleb128 0xb
  612 0070 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 12
+
+
  613 0071 3A       		.uleb128 0x3a
  614 0072 0B       		.uleb128 0xb
  615 0073 3B       		.uleb128 0x3b
@@ -718,12 +715,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  664 00a4 0B       		.uleb128 0xb
  665 00a5 3A       		.uleb128 0x3a
  666 00a6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 13
-
-
  667 00a7 3B       		.uleb128 0x3b
  668 00a8 05       		.uleb128 0x5
  669 00a9 01       		.uleb128 0x1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 13
+
+
  670 00aa 13       		.uleb128 0x13
  671 00ab 00       		.byte	0
  672 00ac 00       		.byte	0
@@ -778,12 +775,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  721 00dd 00       		.byte	0
  722 00de 49       		.uleb128 0x49
  723 00df 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 14
-
-
  724 00e0 00       		.byte	0
  725 00e1 00       		.byte	0
  726 00e2 15       		.uleb128 0x15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 14
+
+
  727 00e3 2E       		.uleb128 0x2e
  728 00e4 01       		.byte	0x1
  729 00e5 3F       		.uleb128 0x3f
@@ -838,12 +835,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  778 011a 19       		.uleb128 0x19
  779 011b 00       		.byte	0
  780 011c 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 15
-
-
  781 011d 18       		.uleb128 0x18
  782 011e 34       		.uleb128 0x34
  783 011f 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 15
+
+
  784 0120 03       		.uleb128 0x3
  785 0121 0E       		.uleb128 0xe
  786 0122 3A       		.uleb128 0x3a
@@ -898,12 +895,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  835              	.Ldebug_line0:
  836 0000 2B020000 		.section	.debug_str,"MS",%progbits,1
  836      02001502 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 16
-
-
  836      00000201 
  836      FB0E0D00 
  836      01010101 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 16
+
+
  837              	.LASF56:
  838 0000 6368616E 		.ascii	"channelBase\000"
  838      6E656C42 
@@ -958,12 +955,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  858      6E74724D 
  858      61736B00 
  859              	.LASF41:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 17
-
-
  860 00aa 73616D70 		.ascii	"sampleCtrl\000"
  860      6C654374 
  860      726C00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 17
+
+
  861              	.LASF69:
  862 00b5 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
  862      74635F73 
@@ -1018,12 +1015,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  881 01b9 4144435F 		.ascii	"ADC_CONFIG_STRUCT\000"
  881      434F4E46 
  881      49475F53 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 18
-
-
  881      54525543 
  881      5400
  882              	.LASF67:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 18
+
+
  883 01cb 6D61696E 		.ascii	"main_cm4.c\000"
  883      5F636D34 
  883      2E6300
@@ -1078,12 +1075,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  905      00
  906              	.LASF14:
  907 025d 6C6F6E67 		.ascii	"long double\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 19
-
-
  907      20646F75 
  907      626C6500 
  908              	.LASF21:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 19
+
+
  909 0269 72785374 		.ascii	"rxStatus\000"
  909      61747573 
  909      00
@@ -1138,12 +1135,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  929      6E7400
  930              	.LASF26:
  931 0306 72784275 		.ascii	"rxBuf\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 20
-
-
  931      6600
  932              	.LASF68:
  933 030c 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 20
+
+
  933      536F4320 
  933      36205072 
  933      6F6A6563 
@@ -1198,12 +1195,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  956      7433325F 
  956      7400
  957              	.LASF36:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 21
-
-
  958 03d5 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
  958      41525F52 
  958      414E4745 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 21
+
+
  958      5F434F4E 
  958      445F494E 
  959              	.LASF33:
@@ -1258,12 +1255,12 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 1
  980      00
  981              	.LASF48:
  982 047f 696E7472 		.ascii	"intrMask\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccwbrivt.s 			page 22
-
-
  982      4D61736B 
  982      00
  983              	.LASF39:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccoPoKlW.s 			page 22
+
+
  984 0488 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
  984      6E5F7361 
  984      725F7261 

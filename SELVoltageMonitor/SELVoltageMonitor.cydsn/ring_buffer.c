@@ -4,9 +4,11 @@
  * TEAM REMBRANDT
  * 
  * ring_buffer.c
+ *
+ * Circular buffer used for storing past sample values.
  * 
- * Defines the push function for the ring buffer, as well as a function
- * for extracting events from the buffer.
+ * Based on code by Siddharth Chandrasekaran
+ * Published at: https://embedjournal.com/implementing-circular-buffer-embedded-c/
  *
  * ========================================
 */

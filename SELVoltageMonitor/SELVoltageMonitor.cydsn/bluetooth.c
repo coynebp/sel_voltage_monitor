@@ -5,13 +5,18 @@
  *
  * blemonitor.c
  *
- * This file contains the BLE initilization function and event handler which handles
- * basic BLE stack events and write requests. Also sends information
- * to the CM4 processor when received from the BLE client.
+ * This file contains functions and event handlers for initializing
+ * and operating the BLE server for the SEL Voltage Monitor.
  *
  * ========================================
 */
 #include "bluetooth.h"
+
+const uint8_t** flashPtrs;
+uint16_t events[10][160];
+uint8_t num_events;
+uint8_t upper_thresh[2];
+uint8_t lower_thresh[2];
 
 void init_ble(const uint8** Ptrs)
 {
@@ -26,7 +31,7 @@ void init_ble(const uint8** Ptrs)
     
     // Start the UART Debug Output
     UART_Start();
-    setvbuf ( stdin, NULL, _IONBF, 0);
+    setvbuf(stdin, NULL, _IONBF, 0);
     printf("Started UART\r\n");
     
     // Register the IPC Callback Function.
@@ -92,7 +97,7 @@ void init_ble(const uint8** Ptrs)
     }
 
 	// Start the BLE stack, register the event handler.
-    Cy_BLE_Start(GenericEventHandler); 
+    Cy_BLE_Start(BluetoothEventHandler); 
     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
     {
         Cy_BLE_ProcessEvents();
@@ -107,8 +112,7 @@ void init_ble(const uint8** Ptrs)
     write_threshold_to_server(lower_thresh, 'l');
 }
 
-// Event handler for handling connection and writes to BLE server
-void GenericEventHandler(uint32 event, void *eventParam)
+void BluetoothEventHandler(uint32 event, void *eventParam)
 {
     cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
     switch(event) 
@@ -154,7 +158,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             {
                 // Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_upper_threshold);
-                // Send new threshold to flash
+                // Write new threshold to flash
                 upper_thresh[0] = writeReqParam->handleValPair.value.val[0];
                 upper_thresh[1] = writeReqParam->handleValPair.value.val[1];
                 update_flash_config();
@@ -165,7 +169,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             {
                 // Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_lower_threshold);
-                // Send new threshold to flash
+                // Write new threshold to flash
                 lower_thresh[0] = writeReqParam->handleValPair.value.val[0];
                 lower_thresh[1] = writeReqParam->handleValPair.value.val[1];
                 update_flash_config();
@@ -305,5 +309,56 @@ void update_flash_config(void)
     {
         printf("Settings written to flash!\r\n");
     }
+}
+
+void record_event(uint8_t * new_event)
+{
+    if (num_events < 10)
+    {
+        // Incriment number of events
+        ++num_events;
+        // Update the number of events in server
+        write_num_events_to_server(&num_events);
+        // Record event in RAM
+        for(uint16_t i = 0; i < 144; ++i)
+        {
+            events[num_events - 1][i] = new_event[2 * i] + 256 * new_event[2 * i + 1];
+        }
+        // Write event data to flash
+        uint8_t ramData[CY_FLASH_SIZEOF_ROW];
+        for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+        {
+            ramData[i] = 0;
+        }
+        ramData[0] = 1; // This indicates that an event has been written at this location
+        for(uint16_t i = 2; i < 322; ++i)
+        {
+            ramData[i] = new_event[i - 2];
+        }
+        cy_en_flashdrv_status_t result;
+        result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events], (const uint32_t *)ramData);
+        if (result == CY_FLASH_DRV_SUCCESS)
+        {
+            printf("New event written to flash\r\n");
+        }
+        else
+        {
+            printf("New event failed to write to flash\r\n");
+        }
+    }
+    else
+    {
+        printf("Event storage full!\r\n");
+    }
+}
+
+void record_voltage(uint8_t * data)
+{
+    uint8_t voltage[2];
+    // Get data from message
+    voltage[0] = data[0];
+    voltage[1] = data[1];
+    // Place data in server
+    write_voltage_to_server(voltage);
 }
 /* [] END OF FILE */

@@ -5,8 +5,7 @@
  * 
  * ipc_cm4.h
  * 
- * This file contains the included libraries, globals, and
- * function prototype for ipc_cm4.c
+ * Header file for ipc_cm4.c
  *
  * ========================================
 */
@@ -20,12 +19,41 @@
     #include <stdlib.h>
     #include <inttypes.h>
     
+    /**************
+    function: CM4_MessageCallback
+    description: Callback function when CM4 receives a message from the CM0+
+    parameters: uint32_t *msg (automatically passed)
+    returns: none
+    notes: none
+    ***************/
     void CM4_MessageCallback(uint32_t *msg);
+    
+    /**************
+    function: CM4_ReleaseCallback
+    description: Release callback for when the CM0+ 
+    parameters: uint32_t *msg (automatically passed)
+    returns: none
+    notes: none
+    ***************/
     void CM4_ReleaseCallback(void);
     
+    /**************
+    function: send_voltage
+    description: Sends the voltage value provided to the CM0+ to be placed
+        in the BLE server
+    parameters: uint16_t * voltage
+    returns: none
+    notes: none
+    ***************/
     void send_voltage(uint16_t * voltage);
-    void send_event_num(uint8_t * event_num);
-    void send_num_events(uint8_t * num_events);
+    
+    /**************
+    function: send_event
+    description: Sends the provided event report to the CM0+
+    parameters: int16_t * event
+    returns: none
+    notes: none
+    ***************/
     void send_event(int16_t * event);
     
   #endif

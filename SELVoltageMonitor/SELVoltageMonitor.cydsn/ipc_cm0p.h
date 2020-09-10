@@ -23,7 +23,7 @@
     void CM0_MessageCallback(uint32_t *msg);
     void CM0_ReleaseCallback(void);
     
-    void send_threshold(uint8_t * threshold, uint8_t upper_or_lower);
+    void send_threshold(uint8_t * threshold, ipc_msg_datatype upper_or_lower);
     void send_trigger(void);
     void send_enable(uint8_t trigger);
     

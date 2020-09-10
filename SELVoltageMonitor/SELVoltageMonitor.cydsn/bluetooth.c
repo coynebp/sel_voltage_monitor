@@ -153,7 +153,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE)
             {
                 // Send threshold to CM4
-                send_threshold(writeReqParam->handleValPair.value.val, type_upper_threshold);
+                send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_upper_threshold);
                 // Send new threshold to flash
                 upper_thresh[0] = writeReqParam->handleValPair.value.val[0];
                 upper_thresh[1] = writeReqParam->handleValPair.value.val[1];
@@ -164,7 +164,7 @@ void GenericEventHandler(uint32 event, void *eventParam)
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE)
             {
                 // Send threshold to CM4
-                send_threshold(writeReqParam->handleValPair.value.val, type_lower_threshold);
+                send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_lower_threshold);
                 // Send new threshold to flash
                 lower_thresh[0] = writeReqParam->handleValPair.value.val[0];
                 lower_thresh[1] = writeReqParam->handleValPair.value.val[1];

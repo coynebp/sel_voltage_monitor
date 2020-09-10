@@ -27,7 +27,7 @@ ipc_msg_t ipcMsgForCM4 = {
 // Callback function when a message gets sent to the CM0+
 void CM0_MessageCallback(uint32_t *msg)
 {
-    uint32_t type;
+    ipc_msg_datatype type;
     uint8_t data[2];
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
     if (msgPtr != NULL)
@@ -88,7 +88,7 @@ void CM0_ReleaseCallback(void)
     rdyToRecvMsg = true;
 }
 
-void send_threshold(uint8_t * threshold, uint8_t upper_or_lower)
+void send_threshold(uint8_t * threshold, ipc_msg_datatype upper_or_lower)
 {
     // Wait for previous message to send
     while (rdyToRecvMsg == false) {};
@@ -114,7 +114,7 @@ void send_trigger(void)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM4.type = type_trigger;
+    ipcMsgForCM4.type = (ipc_msg_datatype)type_trigger;
     ipcMsgForCM4.data[0] = 1;
     // Send message
     do
@@ -132,7 +132,7 @@ void send_enable(uint8_t trigger)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM4.type = type_enable;
+    ipcMsgForCM4.type = (ipc_msg_datatype)type_enable;
     ipcMsgForCM4.data[0] = trigger;
     // Send message
     do

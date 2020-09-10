@@ -27,7 +27,7 @@ ipc_msg_t ipcMsgForCM0 = {
 // Callback function when a message gets sent to the CM4
 void CM4_MessageCallback(uint32_t *msg)
 {
-    uint32_t type;
+    ipc_msg_datatype type;
     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
     uint16_t val;
     if (msgPtr != NULL)
@@ -68,7 +68,7 @@ void send_voltage(uint16_t * voltage)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM0.type = type_voltage;
+    ipcMsgForCM0.type = (ipc_msg_datatype)type_voltage;
     ipcMsgForCM0.data[0] = ((uint8_t *)voltage)[0];
     ipcMsgForCM0.data[1] = ((uint8_t *)voltage)[1];
     // Send message
@@ -89,7 +89,7 @@ void send_event(int16_t * event)
     rdyToRecvMsg = false;
     // Prepare message struct
     cy_en_ipc_pipe_status_t result;
-    ipcMsgForCM0.type = type_event;
+    ipcMsgForCM0.type = (ipc_msg_datatype)type_event;
     uint16_t entry;
     for (int i = 0; i < 144; ++i)
     {

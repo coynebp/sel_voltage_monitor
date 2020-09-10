@@ -92,18 +92,18 @@ void voltage_monitor_init(void)
     // Initialize trigger to false
     trigger_set = false;
     samples_to_extract = 0;
-    
+
     //Register the IPC callback function
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
                                  CM4_MessageCallback,
                                  IPC_CM0_TO_CM4_CLIENT_ID);
-    
+
     // Initialize the event array
     for (uint16_t i = 0; i < EVENT_LENGTH; ++i)
     {
         event[i] = 0;
     }
-    
+
     // Start the ADC
     ADC_Start();
 }

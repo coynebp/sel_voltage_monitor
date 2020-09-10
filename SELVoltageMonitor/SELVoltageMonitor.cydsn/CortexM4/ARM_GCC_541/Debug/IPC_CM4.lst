@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 1
 
 
    1              		.syntax unified
@@ -58,10 +58,10 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
   27:ipc_cm4.c     **** // Callback function when a message gets sent to the CM4
   28:ipc_cm4.c     **** void CM4_MessageCallback(uint32_t *msg)
   29:ipc_cm4.c     **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 2
 
 
-  30:ipc_cm4.c     ****     uint32_t type;
+  30:ipc_cm4.c     ****     ipc_msg_datatype type;
   31:ipc_cm4.c     ****     ipc_msg_t * msgPtr = (ipc_msg_t *)msg;
   32:ipc_cm4.c     ****     uint16_t val;
   33:ipc_cm4.c     ****     if (msgPtr != NULL)
@@ -117,8 +117,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
   51              		.type	CM4_MessageCallback, %function
   52              	CM4_MessageCallback:
   53              	.LFB522:
-  29:ipc_cm4.c     ****     uint32_t type;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 3
+  29:ipc_cm4.c     ****     ipc_msg_datatype type;
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 3
 
 
   54              		.loc 1 29 0
@@ -129,7 +129,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
   33:ipc_cm4.c     ****     {
   59              		.loc 1 33 0
   60 0000 10B3     		cbz	r0, .L12
-  29:ipc_cm4.c     ****     uint32_t type;
+  29:ipc_cm4.c     ****     ipc_msg_datatype type;
   61              		.loc 1 29 0
   62 0002 08B5     		push	{r3, lr}
   63              		.cfi_def_cfa_offset 8
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  100 0026 8079     		ldrb	r0, [r0, #6]	@ zero_extendqisi2
  101              	.LVL9:
  102 0028 03EB0020 		add	r0, r3, r0, lsl #8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 4
 
 
  103              	.LVL10:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  147              		.cfi_startproc
  148              		@ args = 0, pretend = 0, frame = 0
  149              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 5
 
 
  150              	.LVL18:
@@ -261,7 +261,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  164 0010 1A70     		strb	r2, [r3]
   69:ipc_cm4.c     ****     // Prepare message struct
   70:ipc_cm4.c     ****     cy_en_ipc_pipe_status_t result;
-  71:ipc_cm4.c     ****     ipcMsgForCM0.type = type_voltage;
+  71:ipc_cm4.c     ****     ipcMsgForCM0.type = (ipc_msg_datatype)type_voltage;
  165              		.loc 1 71 0
  166 0012 1A72     		strb	r2, [r3, #8]
   72:ipc_cm4.c     ****     ipcMsgForCM0.data[0] = ((uint8_t *)voltage)[0];
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  188              	.L18:
  189              		.align	2
  190              	.L17:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 6
 
 
  191 0030 00000000 		.word	.LANCHOR0
@@ -350,7 +350,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  228 0012 1970     		strb	r1, [r3]
   90:ipc_cm4.c     ****     // Prepare message struct
   91:ipc_cm4.c     ****     cy_en_ipc_pipe_status_t result;
-  92:ipc_cm4.c     ****     ipcMsgForCM0.type = type_event;
+  92:ipc_cm4.c     ****     ipcMsgForCM0.type = (ipc_msg_datatype)type_event;
  229              		.loc 1 92 0
  230 0014 0122     		movs	r2, #1
  231 0016 1A72     		strb	r2, [r3, #8]
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  233              	.LBB2:
   93:ipc_cm4.c     ****     uint16_t entry;
   94:ipc_cm4.c     ****     for (int i = 0; i < 144; ++i)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 7
 
 
  234              		.loc 1 94 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  273 004c 03B0     		add	sp, sp, #12
  274              		.cfi_def_cfa_offset 12
  275              		@ sp needed
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 8
 
 
  276 004e 30BD     		pop	{r4, r5, pc}
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  326 000c 27010000 		.4byte	.LASF111
  327 0010 0C       		.byte	0xc
  328 0011 FA030000 		.4byte	.LASF112
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 9
 
 
  329 0015 40040000 		.4byte	.LASF113
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  383 0087 08       		.byte	0x8
  384 0088 05       		.byte	0x5
  385 0089 05030000 		.4byte	.LASF11
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 10
 
 
  386 008d 02       		.uleb128 0x2
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  440 00f6 B6020000 		.4byte	.LASF22
  441 00fa 02       		.uleb128 0x2
  442 00fb 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 11
 
 
  443 00fc 04       		.byte	0x4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  497 0183 02       		.byte	0x2
  498 0184 21040000 		.4byte	.LASF36
  499 0188 06       		.uleb128 0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 12
 
 
  500 0189 04       		.byte	0x4
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  554 0200 E0000000 		.4byte	0xe0
  555 0204 14       		.byte	0x14
  556 0205 0F       		.uleb128 0xf
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 13
 
 
  557 0206 3A040000 		.4byte	.LASF44
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  611 027b 01       		.byte	0x1
  612 027c 3E000000 		.4byte	0x3e
  613 0280 06       		.byte	0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 14
 
 
  614 0281 0504     		.2byte	0x405
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  668 02f5 10       		.byte	0x10
  669 02f6 0F       		.uleb128 0xf
  670 02f7 51020000 		.4byte	.LASF63
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 15
 
 
  671 02fb 06       		.byte	0x6
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  725 0370 06       		.byte	0x6
  726 0371 0405     		.2byte	0x504
  727 0373 CE000000 		.4byte	0xce
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 16
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 16
 
 
  728 0377 74       		.byte	0x74
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  782 03e1 04       		.byte	0x4
  783 03e2 E6030000 		.4byte	0x3e6
  784 03e6 16       		.uleb128 0x16
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 17
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 17
 
 
  785 03e7 89030000 		.4byte	0x389
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  839 0457 24       		.byte	0x24
  840 0458 A2000000 		.4byte	0xa2
  841 045c 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 18
 
 
  842 045d 15       		.uleb128 0x15
@@ -1078,24 +1078,24 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  896 04d3 1D       		.uleb128 0x1d
  897 04d4 C6000000 		.4byte	.LASF89
  898 04d8 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 19
 
 
  899 04d9 1E       		.byte	0x1e
- 900 04da CE000000 		.4byte	0xce
+ 900 04da 31040000 		.4byte	0x431
  901 04de 77000000 		.4byte	.LLST1
  902 04e2 1D       		.uleb128 0x1d
  903 04e3 2B050000 		.4byte	.LASF92
  904 04e7 01       		.byte	0x1
  905 04e8 1F       		.byte	0x1f
  906 04e9 25050000 		.4byte	0x525
- 907 04ed 1D010000 		.4byte	.LLST2
+ 907 04ed F4000000 		.4byte	.LLST2
  908 04f1 1E       		.uleb128 0x1e
  909 04f2 76616C00 		.ascii	"val\000"
  910 04f6 01       		.byte	0x1
  911 04f7 20       		.byte	0x20
  912 04f8 B8000000 		.4byte	0xb8
- 913 04fc 94010000 		.4byte	.LLST3
+ 913 04fc 6B010000 		.4byte	.LLST3
  914 0500 1F       		.uleb128 0x1f
  915 0501 22000000 		.4byte	.LVL6
  916 0505 74060000 		.4byte	0x674
@@ -1126,7 +1126,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  941 0545 01       		.byte	0x1
  942 0546 40       		.byte	0x40
  943 0547 95030000 		.4byte	0x395
- 944 054b B2010000 		.4byte	.LLST4
+ 944 054b 89010000 		.4byte	.LLST4
  945 054f 21       		.uleb128 0x21
  946 0550 0C000000 		.4byte	.LASF96
  947 0554 01       		.byte	0x1
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  953 055d 28000000 		.4byte	.LVL20
  954 0561 A0060000 		.4byte	0x6a0
  955 0565 23       		.uleb128 0x23
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 20
 
 
  956 0566 01       		.uleb128 0x1
@@ -1178,7 +1178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  990 059d 01       		.byte	0x1
  991 059e 54       		.byte	0x54
  992 059f F6030000 		.4byte	0x3f6
- 993 05a3 D3010000 		.4byte	.LLST5
+ 993 05a3 AA010000 		.4byte	.LLST5
  994 05a7 21       		.uleb128 0x21
  995 05a8 0C000000 		.4byte	.LASF96
  996 05ac 01       		.byte	0x1
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1010 05c3 18000000 		.4byte	.LBB2
  1011 05c7 22000000 		.4byte	.LBE2-.LBB2
  1012 05cb DD050000 		.4byte	0x5dd
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 21
 
 
  1013 05cf 1E       		.uleb128 0x1e
@@ -1206,7 +1206,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1015 05d2 01       		.byte	0x1
  1016 05d3 5E       		.byte	0x5e
  1017 05d4 94000000 		.4byte	0x94
- 1018 05d8 F4010000 		.4byte	.LLST6
+ 1018 05d8 CB010000 		.4byte	.LLST6
  1019 05dc 00       		.byte	0
  1020 05dd 22       		.uleb128 0x22
  1021 05de 46000000 		.4byte	.LVL26
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1067 0635 13       		.uleb128 0x13
  1068 0636 D9000000 		.4byte	0xd9
  1069 063a 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 22
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 22
 
 
  1070 063b 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1124 0000 01       		.uleb128 0x1
  1125 0001 11       		.uleb128 0x11
  1126 0002 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 23
 
 
  1127 0003 25       		.uleb128 0x25
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1181 0039 49       		.uleb128 0x49
  1182 003a 13       		.uleb128 0x13
  1183 003b 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 24
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 24
 
 
  1184 003c 00       		.byte	0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1238 0072 19       		.uleb128 0x19
  1239 0073 01       		.uleb128 0x1
  1240 0074 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 25
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 25
 
 
  1241 0075 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1295 00ab 01       		.byte	0x1
  1296 00ac 0B       		.uleb128 0xb
  1297 00ad 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 26
 
 
  1298 00ae 49       		.uleb128 0x49
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1352 00e4 15       		.uleb128 0x15
  1353 00e5 0D       		.uleb128 0xd
  1354 00e6 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 27
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 27
 
 
  1355 00e7 03       		.uleb128 0x3
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1409 011d 2F       		.uleb128 0x2f
  1410 011e 05       		.uleb128 0x5
  1411 011f 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 28
 
 
  1412 0120 00       		.byte	0
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1466 0158 3A       		.uleb128 0x3a
  1467 0159 0B       		.uleb128 0xb
  1468 015a 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 29
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 29
 
 
  1469 015b 0B       		.uleb128 0xb
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1523 0193 0B       		.uleb128 0xb
  1524 0194 49       		.uleb128 0x49
  1525 0195 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 30
 
 
  1526 0196 02       		.uleb128 0x2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1580 01d1 0B       		.uleb128 0xb
  1581 01d2 3B       		.uleb128 0x3b
  1582 01d3 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 31
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 31
 
 
  1583 01d4 49       		.uleb128 0x49
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1637 020a 0B       		.uleb128 0xb
  1638 020b 3B       		.uleb128 0x3b
  1639 020c 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 32
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 32
 
 
  1640 020d 00       		.byte	0
@@ -1918,841 +1918,800 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 1
  1694 006f 00000000 		.4byte	0
  1695 0073 00000000 		.4byte	0
  1696              	.LLST1:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 33
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 33
 
 
  1697 0077 06000000 		.4byte	.LVL1
  1698 007b 08000000 		.4byte	.LVL2
- 1699 007f 0600     		.2byte	0x6
- 1700 0081 73       		.byte	0x73
- 1701 0082 00       		.sleb128 0
- 1702 0083 08       		.byte	0x8
- 1703 0084 FF       		.byte	0xff
- 1704 0085 1A       		.byte	0x1a
- 1705 0086 9F       		.byte	0x9f
- 1706 0087 08000000 		.4byte	.LVL2
- 1707 008b 16000000 		.4byte	.LVL3
- 1708 008f 0600     		.2byte	0x6
- 1709 0091 73       		.byte	0x73
- 1710 0092 02       		.sleb128 2
- 1711 0093 08       		.byte	0x8
- 1712 0094 FF       		.byte	0xff
- 1713 0095 1A       		.byte	0x1a
- 1714 0096 9F       		.byte	0x9f
- 1715 0097 16000000 		.4byte	.LVL3
- 1716 009b 18000000 		.4byte	.LVL4
- 1717 009f 0800     		.2byte	0x8
- 1718 00a1 70       		.byte	0x70
- 1719 00a2 04       		.sleb128 4
- 1720 00a3 94       		.byte	0x94
- 1721 00a4 01       		.byte	0x1
- 1722 00a5 08       		.byte	0x8
- 1723 00a6 FF       		.byte	0xff
- 1724 00a7 1A       		.byte	0x1a
- 1725 00a8 9F       		.byte	0x9f
- 1726 00a9 18000000 		.4byte	.LVL4
- 1727 00ad 21000000 		.4byte	.LVL6-1
- 1728 00b1 0B00     		.2byte	0xb
- 1729 00b3 F3       		.byte	0xf3
- 1730 00b4 01       		.uleb128 0x1
- 1731 00b5 50       		.byte	0x50
- 1732 00b6 23       		.byte	0x23
- 1733 00b7 04       		.uleb128 0x4
- 1734 00b8 94       		.byte	0x94
- 1735 00b9 01       		.byte	0x1
- 1736 00ba 08       		.byte	0x8
- 1737 00bb FF       		.byte	0xff
- 1738 00bc 1A       		.byte	0x1a
- 1739 00bd 9F       		.byte	0x9f
- 1740 00be 24000000 		.4byte	.LVL7
- 1741 00c2 26000000 		.4byte	.LVL8
- 1742 00c6 0600     		.2byte	0x6
- 1743 00c8 73       		.byte	0x73
- 1744 00c9 02       		.sleb128 2
- 1745 00ca 08       		.byte	0x8
- 1746 00cb FF       		.byte	0xff
- 1747 00cc 1A       		.byte	0x1a
- 1748 00cd 9F       		.byte	0x9f
- 1749 00ce 26000000 		.4byte	.LVL8
- 1750 00d2 28000000 		.4byte	.LVL9
- 1751 00d6 0800     		.2byte	0x8
- 1752 00d8 70       		.byte	0x70
- 1753 00d9 04       		.sleb128 4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 34
+ 1699 007f 0100     		.2byte	0x1
+ 1700 0081 53       		.byte	0x53
+ 1701 0082 08000000 		.4byte	.LVL2
+ 1702 0086 16000000 		.4byte	.LVL3
+ 1703 008a 0300     		.2byte	0x3
+ 1704 008c 73       		.byte	0x73
+ 1705 008d 02       		.sleb128 2
+ 1706 008e 9F       		.byte	0x9f
+ 1707 008f 16000000 		.4byte	.LVL3
+ 1708 0093 18000000 		.4byte	.LVL4
+ 1709 0097 0200     		.2byte	0x2
+ 1710 0099 70       		.byte	0x70
+ 1711 009a 04       		.sleb128 4
+ 1712 009b 18000000 		.4byte	.LVL4
+ 1713 009f 21000000 		.4byte	.LVL6-1
+ 1714 00a3 0500     		.2byte	0x5
+ 1715 00a5 F3       		.byte	0xf3
+ 1716 00a6 01       		.uleb128 0x1
+ 1717 00a7 50       		.byte	0x50
+ 1718 00a8 23       		.byte	0x23
+ 1719 00a9 04       		.uleb128 0x4
+ 1720 00aa 24000000 		.4byte	.LVL7
+ 1721 00ae 26000000 		.4byte	.LVL8
+ 1722 00b2 0300     		.2byte	0x3
+ 1723 00b4 73       		.byte	0x73
+ 1724 00b5 02       		.sleb128 2
+ 1725 00b6 9F       		.byte	0x9f
+ 1726 00b7 26000000 		.4byte	.LVL8
+ 1727 00bb 28000000 		.4byte	.LVL9
+ 1728 00bf 0200     		.2byte	0x2
+ 1729 00c1 70       		.byte	0x70
+ 1730 00c2 04       		.sleb128 4
+ 1731 00c3 28000000 		.4byte	.LVL9
+ 1732 00c7 31000000 		.4byte	.LVL11-1
+ 1733 00cb 0500     		.2byte	0x5
+ 1734 00cd F3       		.byte	0xf3
+ 1735 00ce 01       		.uleb128 0x1
+ 1736 00cf 50       		.byte	0x50
+ 1737 00d0 23       		.byte	0x23
+ 1738 00d1 04       		.uleb128 0x4
+ 1739 00d2 34000000 		.4byte	.LVL12
+ 1740 00d6 37000000 		.4byte	.LVL13-1
+ 1741 00da 0300     		.2byte	0x3
+ 1742 00dc 73       		.byte	0x73
+ 1743 00dd 02       		.sleb128 2
+ 1744 00de 9F       		.byte	0x9f
+ 1745 00df 3A000000 		.4byte	.LVL14
+ 1746 00e3 45000000 		.4byte	.LVL16-1
+ 1747 00e7 0300     		.2byte	0x3
+ 1748 00e9 73       		.byte	0x73
+ 1749 00ea 02       		.sleb128 2
+ 1750 00eb 9F       		.byte	0x9f
+ 1751 00ec 00000000 		.4byte	0
+ 1752 00f0 00000000 		.4byte	0
+ 1753              	.LLST2:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 34
 
 
- 1754 00da 94       		.byte	0x94
- 1755 00db 01       		.byte	0x1
- 1756 00dc 08       		.byte	0x8
- 1757 00dd FF       		.byte	0xff
- 1758 00de 1A       		.byte	0x1a
- 1759 00df 9F       		.byte	0x9f
- 1760 00e0 28000000 		.4byte	.LVL9
- 1761 00e4 31000000 		.4byte	.LVL11-1
- 1762 00e8 0B00     		.2byte	0xb
- 1763 00ea F3       		.byte	0xf3
- 1764 00eb 01       		.uleb128 0x1
- 1765 00ec 50       		.byte	0x50
- 1766 00ed 23       		.byte	0x23
- 1767 00ee 04       		.uleb128 0x4
- 1768 00ef 94       		.byte	0x94
- 1769 00f0 01       		.byte	0x1
- 1770 00f1 08       		.byte	0x8
- 1771 00f2 FF       		.byte	0xff
- 1772 00f3 1A       		.byte	0x1a
- 1773 00f4 9F       		.byte	0x9f
- 1774 00f5 34000000 		.4byte	.LVL12
- 1775 00f9 37000000 		.4byte	.LVL13-1
- 1776 00fd 0600     		.2byte	0x6
- 1777 00ff 73       		.byte	0x73
- 1778 0100 02       		.sleb128 2
- 1779 0101 08       		.byte	0x8
- 1780 0102 FF       		.byte	0xff
- 1781 0103 1A       		.byte	0x1a
- 1782 0104 9F       		.byte	0x9f
- 1783 0105 3A000000 		.4byte	.LVL14
- 1784 0109 45000000 		.4byte	.LVL16-1
- 1785 010d 0600     		.2byte	0x6
- 1786 010f 73       		.byte	0x73
- 1787 0110 02       		.sleb128 2
- 1788 0111 08       		.byte	0x8
- 1789 0112 FF       		.byte	0xff
- 1790 0113 1A       		.byte	0x1a
- 1791 0114 9F       		.byte	0x9f
- 1792 0115 00000000 		.4byte	0
- 1793 0119 00000000 		.4byte	0
- 1794              	.LLST2:
- 1795 011d 00000000 		.4byte	.LVL0
- 1796 0121 18000000 		.4byte	.LVL4
- 1797 0125 0100     		.2byte	0x1
- 1798 0127 50       		.byte	0x50
- 1799 0128 18000000 		.4byte	.LVL4
- 1800 012c 24000000 		.4byte	.LVL7
- 1801 0130 0400     		.2byte	0x4
- 1802 0132 F3       		.byte	0xf3
- 1803 0133 01       		.uleb128 0x1
- 1804 0134 50       		.byte	0x50
- 1805 0135 9F       		.byte	0x9f
- 1806 0136 24000000 		.4byte	.LVL7
- 1807 013a 28000000 		.4byte	.LVL9
- 1808 013e 0100     		.2byte	0x1
- 1809 0140 50       		.byte	0x50
- 1810 0141 28000000 		.4byte	.LVL9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 35
+ 1754 00f4 00000000 		.4byte	.LVL0
+ 1755 00f8 18000000 		.4byte	.LVL4
+ 1756 00fc 0100     		.2byte	0x1
+ 1757 00fe 50       		.byte	0x50
+ 1758 00ff 18000000 		.4byte	.LVL4
+ 1759 0103 24000000 		.4byte	.LVL7
+ 1760 0107 0400     		.2byte	0x4
+ 1761 0109 F3       		.byte	0xf3
+ 1762 010a 01       		.uleb128 0x1
+ 1763 010b 50       		.byte	0x50
+ 1764 010c 9F       		.byte	0x9f
+ 1765 010d 24000000 		.4byte	.LVL7
+ 1766 0111 28000000 		.4byte	.LVL9
+ 1767 0115 0100     		.2byte	0x1
+ 1768 0117 50       		.byte	0x50
+ 1769 0118 28000000 		.4byte	.LVL9
+ 1770 011c 34000000 		.4byte	.LVL12
+ 1771 0120 0400     		.2byte	0x4
+ 1772 0122 F3       		.byte	0xf3
+ 1773 0123 01       		.uleb128 0x1
+ 1774 0124 50       		.byte	0x50
+ 1775 0125 9F       		.byte	0x9f
+ 1776 0126 34000000 		.4byte	.LVL12
+ 1777 012a 37000000 		.4byte	.LVL13-1
+ 1778 012e 0100     		.2byte	0x1
+ 1779 0130 50       		.byte	0x50
+ 1780 0131 37000000 		.4byte	.LVL13-1
+ 1781 0135 3A000000 		.4byte	.LVL14
+ 1782 0139 0400     		.2byte	0x4
+ 1783 013b F3       		.byte	0xf3
+ 1784 013c 01       		.uleb128 0x1
+ 1785 013d 50       		.byte	0x50
+ 1786 013e 9F       		.byte	0x9f
+ 1787 013f 3A000000 		.4byte	.LVL14
+ 1788 0143 3C000000 		.4byte	.LVL15
+ 1789 0147 0100     		.2byte	0x1
+ 1790 0149 50       		.byte	0x50
+ 1791 014a 3C000000 		.4byte	.LVL15
+ 1792 014e 48000000 		.4byte	.LVL17
+ 1793 0152 0400     		.2byte	0x4
+ 1794 0154 F3       		.byte	0xf3
+ 1795 0155 01       		.uleb128 0x1
+ 1796 0156 50       		.byte	0x50
+ 1797 0157 9F       		.byte	0x9f
+ 1798 0158 48000000 		.4byte	.LVL17
+ 1799 015c 4A000000 		.4byte	.LFE522
+ 1800 0160 0100     		.2byte	0x1
+ 1801 0162 50       		.byte	0x50
+ 1802 0163 00000000 		.4byte	0
+ 1803 0167 00000000 		.4byte	0
+ 1804              	.LLST3:
+ 1805 016b 1C000000 		.4byte	.LVL5
+ 1806 016f 21000000 		.4byte	.LVL6-1
+ 1807 0173 0100     		.2byte	0x1
+ 1808 0175 50       		.byte	0x50
+ 1809 0176 2C000000 		.4byte	.LVL10
+ 1810 017a 31000000 		.4byte	.LVL11-1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 35
 
 
- 1811 0145 34000000 		.4byte	.LVL12
- 1812 0149 0400     		.2byte	0x4
- 1813 014b F3       		.byte	0xf3
- 1814 014c 01       		.uleb128 0x1
- 1815 014d 50       		.byte	0x50
- 1816 014e 9F       		.byte	0x9f
- 1817 014f 34000000 		.4byte	.LVL12
- 1818 0153 37000000 		.4byte	.LVL13-1
- 1819 0157 0100     		.2byte	0x1
- 1820 0159 50       		.byte	0x50
- 1821 015a 37000000 		.4byte	.LVL13-1
- 1822 015e 3A000000 		.4byte	.LVL14
- 1823 0162 0400     		.2byte	0x4
- 1824 0164 F3       		.byte	0xf3
- 1825 0165 01       		.uleb128 0x1
- 1826 0166 50       		.byte	0x50
- 1827 0167 9F       		.byte	0x9f
- 1828 0168 3A000000 		.4byte	.LVL14
- 1829 016c 3C000000 		.4byte	.LVL15
- 1830 0170 0100     		.2byte	0x1
- 1831 0172 50       		.byte	0x50
- 1832 0173 3C000000 		.4byte	.LVL15
- 1833 0177 48000000 		.4byte	.LVL17
- 1834 017b 0400     		.2byte	0x4
- 1835 017d F3       		.byte	0xf3
- 1836 017e 01       		.uleb128 0x1
- 1837 017f 50       		.byte	0x50
- 1838 0180 9F       		.byte	0x9f
- 1839 0181 48000000 		.4byte	.LVL17
- 1840 0185 4A000000 		.4byte	.LFE522
- 1841 0189 0100     		.2byte	0x1
- 1842 018b 50       		.byte	0x50
- 1843 018c 00000000 		.4byte	0
- 1844 0190 00000000 		.4byte	0
- 1845              	.LLST3:
- 1846 0194 1C000000 		.4byte	.LVL5
- 1847 0198 21000000 		.4byte	.LVL6-1
- 1848 019c 0100     		.2byte	0x1
- 1849 019e 50       		.byte	0x50
- 1850 019f 2C000000 		.4byte	.LVL10
- 1851 01a3 31000000 		.4byte	.LVL11-1
- 1852 01a7 0100     		.2byte	0x1
- 1853 01a9 50       		.byte	0x50
- 1854 01aa 00000000 		.4byte	0
- 1855 01ae 00000000 		.4byte	0
- 1856              	.LLST4:
- 1857 01b2 00000000 		.4byte	.LVL18
- 1858 01b6 1C000000 		.4byte	.LVL19
- 1859 01ba 0100     		.2byte	0x1
- 1860 01bc 50       		.byte	0x50
- 1861 01bd 1C000000 		.4byte	.LVL19
- 1862 01c1 40000000 		.4byte	.LFE524
- 1863 01c5 0400     		.2byte	0x4
- 1864 01c7 F3       		.byte	0xf3
- 1865 01c8 01       		.uleb128 0x1
- 1866 01c9 50       		.byte	0x50
- 1867 01ca 9F       		.byte	0x9f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 36
+ 1811 017e 0100     		.2byte	0x1
+ 1812 0180 50       		.byte	0x50
+ 1813 0181 00000000 		.4byte	0
+ 1814 0185 00000000 		.4byte	0
+ 1815              	.LLST4:
+ 1816 0189 00000000 		.4byte	.LVL18
+ 1817 018d 1C000000 		.4byte	.LVL19
+ 1818 0191 0100     		.2byte	0x1
+ 1819 0193 50       		.byte	0x50
+ 1820 0194 1C000000 		.4byte	.LVL19
+ 1821 0198 40000000 		.4byte	.LFE524
+ 1822 019c 0400     		.2byte	0x4
+ 1823 019e F3       		.byte	0xf3
+ 1824 019f 01       		.uleb128 0x1
+ 1825 01a0 50       		.byte	0x50
+ 1826 01a1 9F       		.byte	0x9f
+ 1827 01a2 00000000 		.4byte	0
+ 1828 01a6 00000000 		.4byte	0
+ 1829              	.LLST5:
+ 1830 01aa 00000000 		.4byte	.LVL21
+ 1831 01ae 3A000000 		.4byte	.LVL25
+ 1832 01b2 0100     		.2byte	0x1
+ 1833 01b4 50       		.byte	0x50
+ 1834 01b5 3A000000 		.4byte	.LVL25
+ 1835 01b9 60000000 		.4byte	.LFE525
+ 1836 01bd 0400     		.2byte	0x4
+ 1837 01bf F3       		.byte	0xf3
+ 1838 01c0 01       		.uleb128 0x1
+ 1839 01c1 50       		.byte	0x50
+ 1840 01c2 9F       		.byte	0x9f
+ 1841 01c3 00000000 		.4byte	0
+ 1842 01c7 00000000 		.4byte	0
+ 1843              	.LLST6:
+ 1844 01cb 18000000 		.4byte	.LVL22
+ 1845 01cf 1A000000 		.4byte	.LVL23
+ 1846 01d3 0200     		.2byte	0x2
+ 1847 01d5 30       		.byte	0x30
+ 1848 01d6 9F       		.byte	0x9f
+ 1849 01d7 1A000000 		.4byte	.LVL23
+ 1850 01db 3A000000 		.4byte	.LVL25
+ 1851 01df 0100     		.2byte	0x1
+ 1852 01e1 51       		.byte	0x51
+ 1853 01e2 00000000 		.4byte	0
+ 1854 01e6 00000000 		.4byte	0
+ 1855              		.section	.debug_aranges,"",%progbits
+ 1856 0000 34000000 		.4byte	0x34
+ 1857 0004 0200     		.2byte	0x2
+ 1858 0006 00000000 		.4byte	.Ldebug_info0
+ 1859 000a 04       		.byte	0x4
+ 1860 000b 00       		.byte	0
+ 1861 000c 0000     		.2byte	0
+ 1862 000e 0000     		.2byte	0
+ 1863 0010 00000000 		.4byte	.LFB523
+ 1864 0014 0C000000 		.4byte	.LFE523-.LFB523
+ 1865 0018 00000000 		.4byte	.LFB522
+ 1866 001c 4A000000 		.4byte	.LFE522-.LFB522
+ 1867 0020 00000000 		.4byte	.LFB524
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 36
 
 
- 1868 01cb 00000000 		.4byte	0
- 1869 01cf 00000000 		.4byte	0
- 1870              	.LLST5:
- 1871 01d3 00000000 		.4byte	.LVL21
- 1872 01d7 3A000000 		.4byte	.LVL25
- 1873 01db 0100     		.2byte	0x1
- 1874 01dd 50       		.byte	0x50
- 1875 01de 3A000000 		.4byte	.LVL25
- 1876 01e2 60000000 		.4byte	.LFE525
- 1877 01e6 0400     		.2byte	0x4
- 1878 01e8 F3       		.byte	0xf3
- 1879 01e9 01       		.uleb128 0x1
- 1880 01ea 50       		.byte	0x50
- 1881 01eb 9F       		.byte	0x9f
- 1882 01ec 00000000 		.4byte	0
- 1883 01f0 00000000 		.4byte	0
- 1884              	.LLST6:
- 1885 01f4 18000000 		.4byte	.LVL22
- 1886 01f8 1A000000 		.4byte	.LVL23
- 1887 01fc 0200     		.2byte	0x2
- 1888 01fe 30       		.byte	0x30
- 1889 01ff 9F       		.byte	0x9f
- 1890 0200 1A000000 		.4byte	.LVL23
- 1891 0204 3A000000 		.4byte	.LVL25
- 1892 0208 0100     		.2byte	0x1
- 1893 020a 51       		.byte	0x51
- 1894 020b 00000000 		.4byte	0
- 1895 020f 00000000 		.4byte	0
- 1896              		.section	.debug_aranges,"",%progbits
- 1897 0000 34000000 		.4byte	0x34
- 1898 0004 0200     		.2byte	0x2
- 1899 0006 00000000 		.4byte	.Ldebug_info0
- 1900 000a 04       		.byte	0x4
- 1901 000b 00       		.byte	0
- 1902 000c 0000     		.2byte	0
- 1903 000e 0000     		.2byte	0
- 1904 0010 00000000 		.4byte	.LFB523
- 1905 0014 0C000000 		.4byte	.LFE523-.LFB523
- 1906 0018 00000000 		.4byte	.LFB522
- 1907 001c 4A000000 		.4byte	.LFE522-.LFB522
- 1908 0020 00000000 		.4byte	.LFB524
- 1909 0024 40000000 		.4byte	.LFE524-.LFB524
- 1910 0028 00000000 		.4byte	.LFB525
- 1911 002c 60000000 		.4byte	.LFE525-.LFB525
- 1912 0030 00000000 		.4byte	0
- 1913 0034 00000000 		.4byte	0
- 1914              		.section	.debug_ranges,"",%progbits
- 1915              	.Ldebug_ranges0:
- 1916 0000 00000000 		.4byte	.LFB523
- 1917 0004 0C000000 		.4byte	.LFE523
- 1918 0008 00000000 		.4byte	.LFB522
- 1919 000c 4A000000 		.4byte	.LFE522
- 1920 0010 00000000 		.4byte	.LFB524
- 1921 0014 40000000 		.4byte	.LFE524
- 1922 0018 00000000 		.4byte	.LFB525
- 1923 001c 60000000 		.4byte	.LFE525
- 1924 0020 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 37
+ 1868 0024 40000000 		.4byte	.LFE524-.LFB524
+ 1869 0028 00000000 		.4byte	.LFB525
+ 1870 002c 60000000 		.4byte	.LFE525-.LFB525
+ 1871 0030 00000000 		.4byte	0
+ 1872 0034 00000000 		.4byte	0
+ 1873              		.section	.debug_ranges,"",%progbits
+ 1874              	.Ldebug_ranges0:
+ 1875 0000 00000000 		.4byte	.LFB523
+ 1876 0004 0C000000 		.4byte	.LFE523
+ 1877 0008 00000000 		.4byte	.LFB522
+ 1878 000c 4A000000 		.4byte	.LFE522
+ 1879 0010 00000000 		.4byte	.LFB524
+ 1880 0014 40000000 		.4byte	.LFE524
+ 1881 0018 00000000 		.4byte	.LFB525
+ 1882 001c 60000000 		.4byte	.LFE525
+ 1883 0020 00000000 		.4byte	0
+ 1884 0024 00000000 		.4byte	0
+ 1885              		.section	.debug_line,"",%progbits
+ 1886              	.Ldebug_line0:
+ 1887 0000 FE020000 		.section	.debug_str,"MS",%progbits,1
+ 1887      02006702 
+ 1887      00000201 
+ 1887      FB0E0D00 
+ 1887      01010101 
+ 1888              	.LASF74:
+ 1889 0000 6368616E 		.ascii	"channelBase\000"
+ 1889      6E656C42 
+ 1889      61736500 
+ 1890              	.LASF96:
+ 1891 000c 72657375 		.ascii	"result\000"
+ 1891      6C7400
+ 1892              	.LASF56:
+ 1893 0013 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
+ 1893      41525F52 
+ 1893      414E4745 
+ 1893      5F434F4E 
+ 1893      445F4F55 
+ 1894              	.LASF86:
+ 1895 002d 6970635F 		.ascii	"ipc_msg_datatype\000"
+ 1895      6D73675F 
+ 1895      64617461 
+ 1895      74797065 
+ 1895      00
+ 1896              	.LASF27:
+ 1897 003e 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_PRIORITY\000"
+ 1897      50435F50 
+ 1897      4950455F 
+ 1897      4552524F 
+ 1897      525F4241 
+ 1898              	.LASF43:
+ 1899 005d 72785269 		.ascii	"rxRingBufTail\000"
+ 1899      6E674275 
+ 1899      66546169 
+ 1899      6C00
+ 1900              	.LASF31:
+ 1901 006b 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_SEND_BUSY\000"
+ 1901      50435F50 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 37
 
 
- 1925 0024 00000000 		.4byte	0
- 1926              		.section	.debug_line,"",%progbits
- 1927              	.Ldebug_line0:
- 1928 0000 FE020000 		.section	.debug_str,"MS",%progbits,1
- 1928      02006702 
- 1928      00000201 
- 1928      FB0E0D00 
- 1928      01010101 
- 1929              	.LASF74:
- 1930 0000 6368616E 		.ascii	"channelBase\000"
- 1930      6E656C42 
- 1930      61736500 
- 1931              	.LASF96:
- 1932 000c 72657375 		.ascii	"result\000"
- 1932      6C7400
- 1933              	.LASF56:
- 1934 0013 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
- 1934      41525F52 
- 1934      414E4745 
- 1934      5F434F4E 
- 1934      445F4F55 
- 1935              	.LASF86:
- 1936 002d 6970635F 		.ascii	"ipc_msg_datatype\000"
- 1936      6D73675F 
- 1936      64617461 
- 1936      74797065 
+ 1901      4950455F 
+ 1901      4552524F 
+ 1901      525F5345 
+ 1902              	.LASF45:
+ 1903 0087 72784275 		.ascii	"rxBufSize\000"
+ 1903      6653697A 
+ 1903      6500
+ 1904              	.LASF78:
+ 1905 0091 636C6B44 		.ascii	"clkDivider\000"
+ 1905      69766964 
+ 1905      657200
+ 1906              	.LASF37:
+ 1907 009c 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 1907      625F7363 
+ 1907      625F7561 
+ 1907      72745F68 
+ 1907      616E646C 
+ 1908              	.LASF97:
+ 1909 00bb 73656E64 		.ascii	"send_event\000"
+ 1909      5F657665 
+ 1909      6E7400
+ 1910              	.LASF89:
+ 1911 00c6 74797065 		.ascii	"type\000"
+ 1911      00
+ 1912              	.LASF49:
+ 1913 00cb 74784C65 		.ascii	"txLeftToTransmit\000"
+ 1913      6674546F 
+ 1913      5472616E 
+ 1913      736D6974 
+ 1913      00
+ 1914              	.LASF19:
+ 1915 00dc 73697A65 		.ascii	"sizetype\000"
+ 1915      74797065 
+ 1915      00
+ 1916              	.LASF15:
+ 1917 00e5 696E7431 		.ascii	"int16_t\000"
+ 1917      365F7400 
+ 1918              	.LASF59:
+ 1919 00ed 73616D70 		.ascii	"sampleCtrl\000"
+ 1919      6C654374 
+ 1919      726C00
+ 1920              	.LASF114:
+ 1921 00f8 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
+ 1921      74635F73 
+ 1921      63625F75 
+ 1921      6172745F 
+ 1921      636F6E74 
+ 1922              	.LASF72:
+ 1923 0110 76726566 		.ascii	"vrefMvValue\000"
+ 1923      4D765661 
+ 1923      6C756500 
+ 1924              	.LASF62:
+ 1925 011c 72616E67 		.ascii	"rangeThres\000"
+ 1925      65546872 
+ 1925      657300
+ 1926              	.LASF111:
+ 1927 0127 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 38
+
+
+ 1927      43313120 
+ 1927      352E342E 
+ 1927      31203230 
+ 1927      31363036 
+ 1928 015a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 1928      20726576 
+ 1928      6973696F 
+ 1928      6E203233 
+ 1928      37373135 
+ 1929 018d 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ 1929      70202D6D 
+ 1929      6670753D 
+ 1929      66707634 
+ 1929      2D73702D 
+ 1930 01c0 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 1930      6F6E7320 
+ 1930      2D666661 
+ 1930      742D6C74 
+ 1930      6F2D6F62 
+ 1931              	.LASF107:
+ 1932 01da 7365745F 		.ascii	"set_lower_threshold\000"
+ 1932      6C6F7765 
+ 1932      725F7468 
+ 1932      72657368 
+ 1932      6F6C6400 
+ 1933              	.LASF9:
+ 1934 01ee 5F5F7569 		.ascii	"__uint32_t\000"
+ 1934      6E743332 
+ 1934      5F7400
+ 1935              	.LASF38:
+ 1936 01f9 74785374 		.ascii	"txStatus\000"
+ 1936      61747573 
  1936      00
- 1937              	.LASF27:
- 1938 003e 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_PRIORITY\000"
- 1938      50435F50 
- 1938      4950455F 
- 1938      4552524F 
- 1938      525F4241 
- 1939              	.LASF43:
- 1940 005d 72785269 		.ascii	"rxRingBufTail\000"
- 1940      6E674275 
- 1940      66546169 
- 1940      6C00
- 1941              	.LASF31:
- 1942 006b 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_SEND_BUSY\000"
+ 1937              	.LASF98:
+ 1938 0202 6576656E 		.ascii	"event\000"
+ 1938      7400
+ 1939              	.LASF5:
+ 1940 0208 5F5F7569 		.ascii	"__uint16_t\000"
+ 1940      6E743136 
+ 1940      5F7400
+ 1941              	.LASF25:
+ 1942 0213 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_IPC\000"
  1942      50435F50 
  1942      4950455F 
  1942      4552524F 
- 1942      525F5345 
- 1943              	.LASF45:
- 1944 0087 72784275 		.ascii	"rxBufSize\000"
- 1944      6653697A 
- 1944      6500
- 1945              	.LASF78:
- 1946 0091 636C6B44 		.ascii	"clkDivider\000"
- 1946      69766964 
- 1946      657200
- 1947              	.LASF37:
- 1948 009c 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
- 1948      625F7363 
- 1948      625F7561 
- 1948      72745F68 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 38
+ 1942      525F4E4F 
+ 1943              	.LASF46:
+ 1944 022c 72784275 		.ascii	"rxBufIdx\000"
+ 1944      66496478 
+ 1944      00
+ 1945              	.LASF0:
+ 1946 0235 73686F72 		.ascii	"short int\000"
+ 1946      7420696E 
+ 1946      7400
+ 1947              	.LASF79:
+ 1948 023f 4144435F 		.ascii	"ADC_CONFIG_STRUCT\000"
+ 1948      434F4E46 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 39
 
 
- 1948      616E646C 
- 1949              	.LASF97:
- 1950 00bb 73656E64 		.ascii	"send_event\000"
- 1950      5F657665 
- 1950      6E7400
- 1951              	.LASF89:
- 1952 00c6 74797065 		.ascii	"type\000"
- 1952      00
- 1953              	.LASF49:
- 1954 00cb 74784C65 		.ascii	"txLeftToTransmit\000"
- 1954      6674546F 
- 1954      5472616E 
- 1954      736D6974 
- 1954      00
- 1955              	.LASF19:
- 1956 00dc 73697A65 		.ascii	"sizetype\000"
- 1956      74797065 
- 1956      00
- 1957              	.LASF15:
- 1958 00e5 696E7431 		.ascii	"int16_t\000"
- 1958      365F7400 
- 1959              	.LASF59:
- 1960 00ed 73616D70 		.ascii	"sampleCtrl\000"
- 1960      6C654374 
- 1960      726C00
- 1961              	.LASF114:
- 1962 00f8 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
- 1962      74635F73 
- 1962      63625F75 
- 1962      6172745F 
- 1962      636F6E74 
- 1963              	.LASF72:
- 1964 0110 76726566 		.ascii	"vrefMvValue\000"
- 1964      4D765661 
- 1964      6C756500 
- 1965              	.LASF62:
- 1966 011c 72616E67 		.ascii	"rangeThres\000"
- 1966      65546872 
- 1966      657300
- 1967              	.LASF111:
- 1968 0127 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1968      43313120 
- 1968      352E342E 
- 1968      31203230 
- 1968      31363036 
- 1969 015a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
- 1969      20726576 
- 1969      6973696F 
- 1969      6E203233 
- 1969      37373135 
- 1970 018d 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
- 1970      70202D6D 
- 1970      6670753D 
- 1970      66707634 
- 1970      2D73702D 
- 1971 01c0 65637469 		.ascii	"ections -ffat-lto-objects\000"
- 1971      6F6E7320 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 39
+ 1948      49475F53 
+ 1948      54525543 
+ 1948      5400
+ 1949              	.LASF63:
+ 1950 0251 72616E67 		.ascii	"rangeCond\000"
+ 1950      65436F6E 
+ 1950      6400
+ 1951              	.LASF14:
+ 1952 025b 75696E74 		.ascii	"uint8_t\000"
+ 1952      385F7400 
+ 1953              	.LASF24:
+ 1954 0263 43595F49 		.ascii	"CY_IPC_PIPE_SUCCESS\000"
+ 1954      50435F50 
+ 1954      4950455F 
+ 1954      53554343 
+ 1954      45535300 
+ 1955              	.LASF103:
+ 1956 0277 4144435F 		.ascii	"ADC_allConfigs\000"
+ 1956      616C6C43 
+ 1956      6F6E6669 
+ 1956      677300
+ 1957              	.LASF48:
+ 1958 0286 74784275 		.ascii	"txBufSize\000"
+ 1958      6653697A 
+ 1958      6500
+ 1959              	.LASF110:
+ 1960 0290 43795F49 		.ascii	"Cy_IPC_Pipe_SendMessage\000"
+ 1960      50435F50 
+ 1960      6970655F 
+ 1960      53656E64 
+ 1960      4D657373 
+ 1961              	.LASF42:
+ 1962 02a8 72785269 		.ascii	"rxRingBufHead\000"
+ 1962      6E674275 
+ 1962      66486561 
+ 1962      6400
+ 1963              	.LASF22:
+ 1964 02b6 666C6F61 		.ascii	"float\000"
+ 1964      7400
+ 1965              	.LASF34:
+ 1966 02bc 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CLIENT\000"
+ 1966      50435F50 
+ 1966      4950455F 
+ 1966      4552524F 
+ 1966      525F4241 
+ 1967              	.LASF47:
+ 1968 02d9 74784275 		.ascii	"txBuf\000"
+ 1968      6600
+ 1969              	.LASF102:
+ 1970 02df 4144435F 		.ascii	"ADC_currentConfig\000"
+ 1970      63757272 
+ 1970      656E7443 
+ 1970      6F6E6669 
+ 1970      6700
+ 1971              	.LASF106:
+ 1972 02f1 7365745F 		.ascii	"set_upper_threshold\000"
+ 1972      75707065 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 40
 
 
- 1971      2D666661 
- 1971      742D6C74 
- 1971      6F2D6F62 
- 1972              	.LASF107:
- 1973 01da 7365745F 		.ascii	"set_lower_threshold\000"
- 1973      6C6F7765 
- 1973      725F7468 
- 1973      72657368 
- 1973      6F6C6400 
- 1974              	.LASF9:
- 1975 01ee 5F5F7569 		.ascii	"__uint32_t\000"
- 1975      6E743332 
- 1975      5F7400
- 1976              	.LASF38:
- 1977 01f9 74785374 		.ascii	"txStatus\000"
- 1977      61747573 
- 1977      00
- 1978              	.LASF98:
- 1979 0202 6576656E 		.ascii	"event\000"
- 1979      7400
- 1980              	.LASF5:
- 1981 0208 5F5F7569 		.ascii	"__uint16_t\000"
- 1981      6E743136 
- 1981      5F7400
- 1982              	.LASF25:
- 1983 0213 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_IPC\000"
- 1983      50435F50 
- 1983      4950455F 
- 1983      4552524F 
- 1983      525F4E4F 
- 1984              	.LASF46:
- 1985 022c 72784275 		.ascii	"rxBufIdx\000"
- 1985      66496478 
- 1985      00
- 1986              	.LASF0:
- 1987 0235 73686F72 		.ascii	"short int\000"
- 1987      7420696E 
- 1987      7400
- 1988              	.LASF79:
- 1989 023f 4144435F 		.ascii	"ADC_CONFIG_STRUCT\000"
- 1989      434F4E46 
- 1989      49475F53 
- 1989      54525543 
- 1989      5400
- 1990              	.LASF63:
- 1991 0251 72616E67 		.ascii	"rangeCond\000"
- 1991      65436F6E 
- 1991      6400
- 1992              	.LASF14:
- 1993 025b 75696E74 		.ascii	"uint8_t\000"
- 1993      385F7400 
- 1994              	.LASF24:
- 1995 0263 43595F49 		.ascii	"CY_IPC_PIPE_SUCCESS\000"
- 1995      50435F50 
- 1995      4950455F 
- 1995      53554343 
- 1995      45535300 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 40
+ 1972      725F7468 
+ 1972      72657368 
+ 1972      6F6C6400 
+ 1973              	.LASF11:
+ 1974 0305 6C6F6E67 		.ascii	"long long int\000"
+ 1974      206C6F6E 
+ 1974      6720696E 
+ 1974      7400
+ 1975              	.LASF71:
+ 1976 0313 636F6E66 		.ascii	"configRouting\000"
+ 1976      6967526F 
+ 1976      7574696E 
+ 1976      6700
+ 1977              	.LASF41:
+ 1978 0321 72785269 		.ascii	"rxRingBufSize\000"
+ 1978      6E674275 
+ 1978      6653697A 
+ 1978      6500
+ 1979              	.LASF58:
+ 1980 032f 6374726C 		.ascii	"ctrl\000"
+ 1980      00
+ 1981              	.LASF60:
+ 1982 0334 73616D70 		.ascii	"sampleTime01\000"
+ 1982      6C655469 
+ 1982      6D653031 
+ 1982      00
+ 1983              	.LASF3:
+ 1984 0341 5F5F7569 		.ascii	"__uint8_t\000"
+ 1984      6E74385F 
+ 1984      7400
+ 1985              	.LASF67:
+ 1986 034b 73617449 		.ascii	"satIntrMask\000"
+ 1986      6E74724D 
+ 1986      61736B00 
+ 1987              	.LASF20:
+ 1988 0357 6C6F6E67 		.ascii	"long double\000"
+ 1988      20646F75 
+ 1988      626C6500 
+ 1989              	.LASF99:
+ 1990 0363 656E7472 		.ascii	"entry\000"
+ 1990      7900
+ 1991              	.LASF39:
+ 1992 0369 72785374 		.ascii	"rxStatus\000"
+ 1992      61747573 
+ 1992      00
+ 1993              	.LASF2:
+ 1994 0372 756E7369 		.ascii	"unsigned char\000"
+ 1994      676E6564 
+ 1994      20636861 
+ 1994      7200
+ 1995              	.LASF40:
+ 1996 0380 72785269 		.ascii	"rxRingBuf\000"
+ 1996      6E674275 
+ 1996      6600
+ 1997              	.LASF93:
+ 1998 038a 434D345F 		.ascii	"CM4_MessageCallback\000"
+ 1998      4D657373 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 41
 
 
- 1996              	.LASF103:
- 1997 0277 4144435F 		.ascii	"ADC_allConfigs\000"
- 1997      616C6C43 
- 1997      6F6E6669 
- 1997      677300
- 1998              	.LASF48:
- 1999 0286 74784275 		.ascii	"txBufSize\000"
- 1999      6653697A 
- 1999      6500
- 2000              	.LASF110:
- 2001 0290 43795F49 		.ascii	"Cy_IPC_Pipe_SendMessage\000"
- 2001      50435F50 
- 2001      6970655F 
- 2001      53656E64 
- 2001      4D657373 
- 2002              	.LASF42:
- 2003 02a8 72785269 		.ascii	"rxRingBufHead\000"
- 2003      6E674275 
- 2003      66486561 
- 2003      6400
- 2004              	.LASF22:
- 2005 02b6 666C6F61 		.ascii	"float\000"
- 2005      7400
- 2006              	.LASF34:
- 2007 02bc 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CLIENT\000"
- 2007      50435F50 
- 2007      4950455F 
- 2007      4552524F 
- 2007      525F4241 
- 2008              	.LASF47:
- 2009 02d9 74784275 		.ascii	"txBuf\000"
- 2009      6600
- 2010              	.LASF102:
- 2011 02df 4144435F 		.ascii	"ADC_currentConfig\000"
- 2011      63757272 
- 2011      656E7443 
- 2011      6F6E6669 
- 2011      6700
- 2012              	.LASF106:
- 2013 02f1 7365745F 		.ascii	"set_upper_threshold\000"
- 2013      75707065 
- 2013      725F7468 
- 2013      72657368 
- 2013      6F6C6400 
- 2014              	.LASF11:
- 2015 0305 6C6F6E67 		.ascii	"long long int\000"
- 2015      206C6F6E 
- 2015      6720696E 
- 2015      7400
- 2016              	.LASF71:
- 2017 0313 636F6E66 		.ascii	"configRouting\000"
- 2017      6967526F 
- 2017      7574696E 
- 2017      6700
- 2018              	.LASF41:
- 2019 0321 72785269 		.ascii	"rxRingBufSize\000"
- 2019      6E674275 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 41
+ 1998      61676543 
+ 1998      616C6C62 
+ 1998      61636B00 
+ 1999              	.LASF33:
+ 2000 039e 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CPU\000"
+ 2000      50435F50 
+ 2000      4950455F 
+ 2000      4552524F 
+ 2000      525F4241 
+ 2001              	.LASF1:
+ 2002 03b8 7369676E 		.ascii	"signed char\000"
+ 2002      65642063 
+ 2002      68617200 
+ 2003              	.LASF12:
+ 2004 03c4 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2004      206C6F6E 
+ 2004      6720756E 
+ 2004      7369676E 
+ 2004      65642069 
+ 2005              	.LASF18:
+ 2006 03db 75696E74 		.ascii	"uint32_t\000"
+ 2006      33325F74 
+ 2006      00
+ 2007              	.LASF95:
+ 2008 03e4 766F6C74 		.ascii	"voltage\000"
+ 2008      61676500 
+ 2009              	.LASF68:
+ 2010 03ec 72616E67 		.ascii	"rangeIntrMask\000"
+ 2010      65496E74 
+ 2010      724D6173 
+ 2010      6B00
+ 2011              	.LASF112:
+ 2012 03fa 6970635F 		.ascii	"ipc_cm4.c\000"
+ 2012      636D342E 
+ 2012      6300
+ 2013              	.LASF70:
+ 2014 0404 6D757853 		.ascii	"muxSwitchSqCtrl\000"
+ 2014      77697463 
+ 2014      68537143 
+ 2014      74726C00 
+ 2015              	.LASF104:
+ 2016 0414 72647954 		.ascii	"rdyToRecvMsg\000"
+ 2016      6F526563 
+ 2016      764D7367 
+ 2016      00
+ 2017              	.LASF36:
+ 2018 0421 5F426F6F 		.ascii	"_Bool\000"
+ 2018      6C00
+ 2019              	.LASF6:
+ 2020 0427 73686F72 		.ascii	"short unsigned int\000"
+ 2020      7420756E 
+ 2020      7369676E 
+ 2020      65642069 
+ 2020      6E7400
+ 2021              	.LASF44:
+ 2022 043a 72784275 		.ascii	"rxBuf\000"
+ 2022      6600
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 42
 
 
- 2019      6653697A 
- 2019      6500
- 2020              	.LASF58:
- 2021 032f 6374726C 		.ascii	"ctrl\000"
- 2021      00
- 2022              	.LASF60:
- 2023 0334 73616D70 		.ascii	"sampleTime01\000"
- 2023      6C655469 
- 2023      6D653031 
- 2023      00
- 2024              	.LASF3:
- 2025 0341 5F5F7569 		.ascii	"__uint8_t\000"
- 2025      6E74385F 
- 2025      7400
- 2026              	.LASF67:
- 2027 034b 73617449 		.ascii	"satIntrMask\000"
- 2027      6E74724D 
- 2027      61736B00 
- 2028              	.LASF20:
- 2029 0357 6C6F6E67 		.ascii	"long double\000"
- 2029      20646F75 
- 2029      626C6500 
- 2030              	.LASF99:
- 2031 0363 656E7472 		.ascii	"entry\000"
- 2031      7900
- 2032              	.LASF39:
- 2033 0369 72785374 		.ascii	"rxStatus\000"
- 2033      61747573 
+ 2023              	.LASF113:
+ 2024 0440 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
+ 2024      536F4320 
+ 2024      36205072 
+ 2024      6F6A6563 
+ 2024      74735C73 
+ 2025 0470 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
+ 2025      69746F72 
+ 2025      5C53454C 
+ 2025      566F6C74 
+ 2025      6167654D 
+ 2026              	.LASF77:
+ 2027 0491 6D697363 		.ascii	"miscConfig\000"
+ 2027      436F6E66 
+ 2027      696700
+ 2028              	.LASF21:
+ 2029 049c 63686172 		.ascii	"char\000"
+ 2029      00
+ 2030              	.LASF69:
+ 2031 04a1 6D757853 		.ascii	"muxSwitch\000"
+ 2031      77697463 
+ 2031      6800
+ 2032              	.LASF50:
+ 2033 04ab 63624576 		.ascii	"cbEvents\000"
+ 2033      656E7473 
  2033      00
- 2034              	.LASF2:
- 2035 0372 756E7369 		.ascii	"unsigned char\000"
- 2035      676E6564 
- 2035      20636861 
- 2035      7200
- 2036              	.LASF40:
- 2037 0380 72785269 		.ascii	"rxRingBuf\000"
- 2037      6E674275 
- 2037      6600
- 2038              	.LASF93:
- 2039 038a 434D345F 		.ascii	"CM4_MessageCallback\000"
- 2039      4D657373 
- 2039      61676543 
- 2039      616C6C62 
- 2039      61636B00 
- 2040              	.LASF33:
- 2041 039e 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CPU\000"
- 2041      50435F50 
- 2041      4950455F 
- 2041      4552524F 
- 2041      525F4241 
- 2042              	.LASF1:
- 2043 03b8 7369676E 		.ascii	"signed char\000"
- 2043      65642063 
- 2043      68617200 
- 2044              	.LASF12:
- 2045 03c4 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2045      206C6F6E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 42
-
-
- 2045      6720756E 
- 2045      7369676E 
- 2045      65642069 
- 2046              	.LASF18:
- 2047 03db 75696E74 		.ascii	"uint32_t\000"
- 2047      33325F74 
+ 2034              	.LASF55:
+ 2035 04b4 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
+ 2035      41525F52 
+ 2035      414E4745 
+ 2035      5F434F4E 
+ 2035      445F4142 
+ 2036              	.LASF17:
+ 2037 04cc 696E7433 		.ascii	"int32_t\000"
+ 2037      325F7400 
+ 2038              	.LASF30:
+ 2039 04d4 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_DIR_ERROR\000"
+ 2039      50435F50 
+ 2039      4950455F 
+ 2039      4552524F 
+ 2039      525F4449 
+ 2040              	.LASF108:
+ 2041 04f0 74726967 		.ascii	"trigger\000"
+ 2041      67657200 
+ 2042              	.LASF88:
+ 2043 04f8 75736572 		.ascii	"userCode\000"
+ 2043      436F6465 
+ 2043      00
+ 2044              	.LASF76:
+ 2045 0501 6877436F 		.ascii	"hwConfigStc\000"
+ 2045      6E666967 
+ 2045      53746300 
+ 2046              	.LASF90:
+ 2047 050d 64617461 		.ascii	"data\000"
  2047      00
- 2048              	.LASF95:
- 2049 03e4 766F6C74 		.ascii	"voltage\000"
- 2049      61676500 
- 2050              	.LASF68:
- 2051 03ec 72616E67 		.ascii	"rangeIntrMask\000"
- 2051      65496E74 
- 2051      724D6173 
- 2051      6B00
- 2052              	.LASF112:
- 2053 03fa 6970635F 		.ascii	"ipc_cm4.c\000"
- 2053      636D342E 
- 2053      6300
- 2054              	.LASF70:
- 2055 0404 6D757853 		.ascii	"muxSwitchSqCtrl\000"
- 2055      77697463 
- 2055      68537143 
- 2055      74726C00 
- 2056              	.LASF104:
- 2057 0414 72647954 		.ascii	"rdyToRecvMsg\000"
- 2057      6F526563 
- 2057      764D7367 
- 2057      00
- 2058              	.LASF36:
- 2059 0421 5F426F6F 		.ascii	"_Bool\000"
- 2059      6C00
- 2060              	.LASF6:
- 2061 0427 73686F72 		.ascii	"short unsigned int\000"
- 2061      7420756E 
- 2061      7369676E 
- 2061      65642069 
- 2061      6E7400
- 2062              	.LASF44:
- 2063 043a 72784275 		.ascii	"rxBuf\000"
- 2063      6600
- 2064              	.LASF113:
- 2065 0440 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
- 2065      536F4320 
- 2065      36205072 
- 2065      6F6A6563 
- 2065      74735C73 
- 2066 0470 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
- 2066      69746F72 
- 2066      5C53454C 
- 2066      566F6C74 
- 2066      6167654D 
- 2067              	.LASF77:
- 2068 0491 6D697363 		.ascii	"miscConfig\000"
- 2068      436F6E66 
- 2068      696700
- 2069              	.LASF21:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 43
+ 2048              	.LASF85:
+ 2049 0512 74797065 		.ascii	"type_enable\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 43
 
 
- 2070 049c 63686172 		.ascii	"char\000"
- 2070      00
- 2071              	.LASF69:
- 2072 04a1 6D757853 		.ascii	"muxSwitch\000"
- 2072      77697463 
- 2072      6800
- 2073              	.LASF50:
- 2074 04ab 63624576 		.ascii	"cbEvents\000"
- 2074      656E7473 
- 2074      00
- 2075              	.LASF55:
- 2076 04b4 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
- 2076      41525F52 
- 2076      414E4745 
- 2076      5F434F4E 
- 2076      445F4142 
- 2077              	.LASF17:
- 2078 04cc 696E7433 		.ascii	"int32_t\000"
- 2078      325F7400 
- 2079              	.LASF30:
- 2080 04d4 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_DIR_ERROR\000"
- 2080      50435F50 
- 2080      4950455F 
- 2080      4552524F 
- 2080      525F4449 
- 2081              	.LASF108:
- 2082 04f0 74726967 		.ascii	"trigger\000"
- 2082      67657200 
- 2083              	.LASF88:
- 2084 04f8 75736572 		.ascii	"userCode\000"
- 2084      436F6465 
- 2084      00
- 2085              	.LASF76:
- 2086 0501 6877436F 		.ascii	"hwConfigStc\000"
- 2086      6E666967 
- 2086      53746300 
- 2087              	.LASF90:
- 2088 050d 64617461 		.ascii	"data\000"
- 2088      00
- 2089              	.LASF85:
- 2090 0512 74797065 		.ascii	"type_enable\000"
- 2090      5F656E61 
- 2090      626C6500 
- 2091              	.LASF94:
- 2092 051e 73656E64 		.ascii	"send_voltage\000"
- 2092      5F766F6C 
- 2092      74616765 
- 2092      00
- 2093              	.LASF92:
- 2094 052b 6D736750 		.ascii	"msgPtr\000"
- 2094      747200
- 2095              	.LASF10:
- 2096 0532 6C6F6E67 		.ascii	"long unsigned int\000"
- 2096      20756E73 
- 2096      69676E65 
- 2096      6420696E 
- 2096      7400
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 44
+ 2049      5F656E61 
+ 2049      626C6500 
+ 2050              	.LASF94:
+ 2051 051e 73656E64 		.ascii	"send_voltage\000"
+ 2051      5F766F6C 
+ 2051      74616765 
+ 2051      00
+ 2052              	.LASF92:
+ 2053 052b 6D736750 		.ascii	"msgPtr\000"
+ 2053      747200
+ 2054              	.LASF10:
+ 2055 0532 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2055      20756E73 
+ 2055      69676E65 
+ 2055      6420696E 
+ 2055      7400
+ 2056              	.LASF23:
+ 2057 0544 646F7562 		.ascii	"double\000"
+ 2057      6C6500
+ 2058              	.LASF35:
+ 2059 054b 63795F65 		.ascii	"cy_en_ipc_pipe_status_t\000"
+ 2059      6E5F6970 
+ 2059      635F7069 
+ 2059      70655F73 
+ 2059      74617475 
+ 2060              	.LASF83:
+ 2061 0563 74797065 		.ascii	"type_lower_threshold\000"
+ 2061      5F6C6F77 
+ 2061      65725F74 
+ 2061      68726573 
+ 2061      686F6C64 
+ 2062              	.LASF16:
+ 2063 0578 75696E74 		.ascii	"uint16_t\000"
+ 2063      31365F74 
+ 2063      00
+ 2064              	.LASF7:
+ 2065 0581 5F5F696E 		.ascii	"__int32_t\000"
+ 2065      7433325F 
+ 2065      7400
+ 2066              	.LASF54:
+ 2067 058b 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
+ 2067      41525F52 
+ 2067      414E4745 
+ 2067      5F434F4E 
+ 2067      445F494E 
+ 2068              	.LASF82:
+ 2069 05a4 74797065 		.ascii	"type_upper_threshold\000"
+ 2069      5F757070 
+ 2069      65725F74 
+ 2069      68726573 
+ 2069      686F6C64 
+ 2070              	.LASF51:
+ 2071 05b9 696E6974 		.ascii	"initKey\000"
+ 2071      4B657900 
+ 2072              	.LASF4:
+ 2073 05c1 5F5F696E 		.ascii	"__int16_t\000"
+ 2073      7431365F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 44
 
 
- 2097              	.LASF23:
- 2098 0544 646F7562 		.ascii	"double\000"
- 2098      6C6500
- 2099              	.LASF35:
- 2100 054b 63795F65 		.ascii	"cy_en_ipc_pipe_status_t\000"
- 2100      6E5F6970 
- 2100      635F7069 
- 2100      70655F73 
- 2100      74617475 
- 2101              	.LASF83:
- 2102 0563 74797065 		.ascii	"type_lower_threshold\000"
- 2102      5F6C6F77 
- 2102      65725F74 
- 2102      68726573 
- 2102      686F6C64 
- 2103              	.LASF16:
- 2104 0578 75696E74 		.ascii	"uint16_t\000"
- 2104      31365F74 
- 2104      00
- 2105              	.LASF7:
- 2106 0581 5F5F696E 		.ascii	"__int32_t\000"
- 2106      7433325F 
- 2106      7400
- 2107              	.LASF54:
- 2108 058b 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
- 2108      41525F52 
- 2108      414E4745 
- 2108      5F434F4E 
- 2108      445F494E 
- 2109              	.LASF82:
- 2110 05a4 74797065 		.ascii	"type_upper_threshold\000"
- 2110      5F757070 
- 2110      65725F74 
- 2110      68726573 
- 2110      686F6C64 
- 2111              	.LASF51:
- 2112 05b9 696E6974 		.ascii	"initKey\000"
- 2112      4B657900 
- 2113              	.LASF4:
- 2114 05c1 5F5F696E 		.ascii	"__int16_t\000"
- 2114      7431365F 
- 2114      7400
- 2115              	.LASF65:
- 2116 05cb 6368616E 		.ascii	"chanConfig\000"
- 2116      436F6E66 
- 2116      696700
- 2117              	.LASF73:
- 2118 05d6 63795F73 		.ascii	"cy_stc_sar_config_t\000"
- 2118      74635F73 
- 2118      61725F63 
- 2118      6F6E6669 
- 2118      675F7400 
- 2119              	.LASF52:
- 2120 05ea 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
- 2120      74635F73 
- 2120      63625F75 
- 2120      6172745F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 45
+ 2073      7400
+ 2074              	.LASF65:
+ 2075 05cb 6368616E 		.ascii	"chanConfig\000"
+ 2075      436F6E66 
+ 2075      696700
+ 2076              	.LASF73:
+ 2077 05d6 63795F73 		.ascii	"cy_stc_sar_config_t\000"
+ 2077      74635F73 
+ 2077      61725F63 
+ 2077      6F6E6669 
+ 2077      675F7400 
+ 2078              	.LASF52:
+ 2079 05ea 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
+ 2079      74635F73 
+ 2079      63625F75 
+ 2079      6172745F 
+ 2079      636F6E74 
+ 2080              	.LASF13:
+ 2081 0604 756E7369 		.ascii	"unsigned int\000"
+ 2081      676E6564 
+ 2081      20696E74 
+ 2081      00
+ 2082              	.LASF91:
+ 2083 0611 6970635F 		.ascii	"ipc_msg_t\000"
+ 2083      6D73675F 
+ 2083      7400
+ 2084              	.LASF64:
+ 2085 061b 6368616E 		.ascii	"chanEn\000"
+ 2085      456E00
+ 2086              	.LASF75:
+ 2087 0622 6E756D43 		.ascii	"numChannels\000"
+ 2087      68616E6E 
+ 2087      656C7300 
+ 2088              	.LASF32:
+ 2089 062e 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_MESSAGE\000"
+ 2089      50435F50 
+ 2089      4950455F 
+ 2089      4552524F 
+ 2089      525F4E4F 
+ 2090              	.LASF115:
+ 2091 064b 434D345F 		.ascii	"CM4_ReleaseCallback\000"
+ 2091      52656C65 
+ 2091      61736543 
+ 2091      616C6C62 
+ 2091      61636B00 
+ 2092              	.LASF61:
+ 2093 065f 73616D70 		.ascii	"sampleTime23\000"
+ 2093      6C655469 
+ 2093      6D653233 
+ 2093      00
+ 2094              	.LASF28:
+ 2095 066c 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_HANDLE\000"
+ 2095      50435F50 
+ 2095      4950455F 
+ 2095      4552524F 
+ 2095      525F4241 
+ 2096              	.LASF8:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 45
 
 
- 2120      636F6E74 
- 2121              	.LASF13:
- 2122 0604 756E7369 		.ascii	"unsigned int\000"
- 2122      676E6564 
- 2122      20696E74 
- 2122      00
- 2123              	.LASF91:
- 2124 0611 6970635F 		.ascii	"ipc_msg_t\000"
- 2124      6D73675F 
- 2124      7400
- 2125              	.LASF64:
- 2126 061b 6368616E 		.ascii	"chanEn\000"
- 2126      456E00
- 2127              	.LASF75:
- 2128 0622 6E756D43 		.ascii	"numChannels\000"
- 2128      68616E6E 
- 2128      656C7300 
- 2129              	.LASF32:
- 2130 062e 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_MESSAGE\000"
- 2130      50435F50 
- 2130      4950455F 
- 2130      4552524F 
- 2130      525F4E4F 
- 2131              	.LASF115:
- 2132 064b 434D345F 		.ascii	"CM4_ReleaseCallback\000"
- 2132      52656C65 
- 2132      61736543 
- 2132      616C6C62 
- 2132      61636B00 
- 2133              	.LASF61:
- 2134 065f 73616D70 		.ascii	"sampleTime23\000"
- 2134      6C655469 
- 2134      6D653233 
- 2134      00
- 2135              	.LASF28:
- 2136 066c 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_HANDLE\000"
- 2136      50435F50 
- 2136      4950455F 
- 2136      4552524F 
- 2136      525F4241 
- 2137              	.LASF8:
- 2138 0689 6C6F6E67 		.ascii	"long int\000"
- 2138      20696E74 
- 2138      00
- 2139              	.LASF100:
- 2140 0692 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 2140      52784275 
- 2140      66666572 
- 2140      00
- 2141              	.LASF109:
- 2142 069f 7365745F 		.ascii	"set_trigger_enable\000"
- 2142      74726967 
- 2142      6765725F 
- 2142      656E6162 
- 2142      6C6500
- 2143              	.LASF81:
- 2144 06b2 74797065 		.ascii	"type_event\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccaIiEIL.s 			page 46
+ 2097 0689 6C6F6E67 		.ascii	"long int\000"
+ 2097      20696E74 
+ 2097      00
+ 2098              	.LASF100:
+ 2099 0692 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2099      52784275 
+ 2099      66666572 
+ 2099      00
+ 2100              	.LASF109:
+ 2101 069f 7365745F 		.ascii	"set_trigger_enable\000"
+ 2101      74726967 
+ 2101      6765725F 
+ 2101      656E6162 
+ 2101      6C6500
+ 2102              	.LASF81:
+ 2103 06b2 74797065 		.ascii	"type_event\000"
+ 2103      5F657665 
+ 2103      6E7400
+ 2104              	.LASF66:
+ 2105 06bd 696E7472 		.ascii	"intrMask\000"
+ 2105      4D61736B 
+ 2105      00
+ 2106              	.LASF29:
+ 2107 06c6 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_ID\000"
+ 2107      50435F50 
+ 2107      4950455F 
+ 2107      4552524F 
+ 2107      525F4241 
+ 2108              	.LASF87:
+ 2109 06df 636C6965 		.ascii	"clientId\000"
+ 2109      6E744964 
+ 2109      00
+ 2110              	.LASF105:
+ 2111 06e8 6970634D 		.ascii	"ipcMsgForCM0\000"
+ 2111      7367466F 
+ 2111      72434D30 
+ 2111      00
+ 2112              	.LASF53:
+ 2113 06f5 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
+ 2113      41525F52 
+ 2113      414E4745 
+ 2113      5F434F4E 
+ 2113      445F4245 
+ 2114              	.LASF101:
+ 2115 070d 55415254 		.ascii	"UART_context\000"
+ 2115      5F636F6E 
+ 2115      74657874 
+ 2115      00
+ 2116              	.LASF26:
+ 2117 071a 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_INTR\000"
+ 2117      50435F50 
+ 2117      4950455F 
+ 2117      4552524F 
+ 2117      525F4E4F 
+ 2118              	.LASF84:
+ 2119 0734 74797065 		.ascii	"type_trigger\000"
+ 2119      5F747269 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccWq1CsO.s 			page 46
 
 
- 2144      5F657665 
- 2144      6E7400
- 2145              	.LASF66:
- 2146 06bd 696E7472 		.ascii	"intrMask\000"
- 2146      4D61736B 
- 2146      00
- 2147              	.LASF29:
- 2148 06c6 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_ID\000"
- 2148      50435F50 
- 2148      4950455F 
- 2148      4552524F 
- 2148      525F4241 
- 2149              	.LASF87:
- 2150 06df 636C6965 		.ascii	"clientId\000"
- 2150      6E744964 
- 2150      00
- 2151              	.LASF105:
- 2152 06e8 6970634D 		.ascii	"ipcMsgForCM0\000"
- 2152      7367466F 
- 2152      72434D30 
- 2152      00
- 2153              	.LASF53:
- 2154 06f5 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
- 2154      41525F52 
- 2154      414E4745 
- 2154      5F434F4E 
- 2154      445F4245 
- 2155              	.LASF101:
- 2156 070d 55415254 		.ascii	"UART_context\000"
- 2156      5F636F6E 
- 2156      74657874 
- 2156      00
- 2157              	.LASF26:
- 2158 071a 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_INTR\000"
- 2158      50435F50 
- 2158      4950455F 
- 2158      4552524F 
- 2158      525F4E4F 
- 2159              	.LASF84:
- 2160 0734 74797065 		.ascii	"type_trigger\000"
- 2160      5F747269 
- 2160      67676572 
- 2160      00
- 2161              	.LASF80:
- 2162 0741 74797065 		.ascii	"type_voltage\000"
- 2162      5F766F6C 
- 2162      74616765 
- 2162      00
- 2163              	.LASF57:
- 2164 074e 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
- 2164      6E5F7361 
- 2164      725F7261 
- 2164      6E67655F 
- 2164      64657465 
- 2165              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 2119      67676572 
+ 2119      00
+ 2120              	.LASF80:
+ 2121 0741 74797065 		.ascii	"type_voltage\000"
+ 2121      5F766F6C 
+ 2121      74616765 
+ 2121      00
+ 2122              	.LASF57:
+ 2123 074e 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
+ 2123      6E5F7361 
+ 2123      725F7261 
+ 2123      6E67655F 
+ 2123      64657465 
+ 2124              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

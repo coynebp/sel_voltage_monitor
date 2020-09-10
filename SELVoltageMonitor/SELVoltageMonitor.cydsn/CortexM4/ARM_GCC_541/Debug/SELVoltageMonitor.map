@@ -3661,25 +3661,25 @@ OUTPUT(C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonito
  .debug_frame   0x00001dac       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libm.a(lib_a-s_copysign.o)
  .debug_frame   0x00001dcc       0x20 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libc.a(lib_a-errno.o)
 
-.debug_loc      0x00000000     0x4f27
+.debug_loc      0x00000000     0x4efe
  .debug_loc     0x00000000      0x1fe .\CortexM4\ARM_GCC_541\Debug\system_psoc63_cm4.o
- .debug_loc     0x000001fe      0x213 .\CortexM4\ARM_GCC_541\Debug\ipc_cm4.o
- .debug_loc     0x00000411      0x43f .\CortexM4\ARM_GCC_541\Debug\voltage_monitor.o
- .debug_loc     0x00000850       0xca .\CortexM4\ARM_GCC_541\Debug\filter.o
- .debug_loc     0x0000091a       0x1e .\CortexM4\ARM_GCC_541\Debug\cy_ipc_config.o
- .debug_loc     0x00000938       0x87 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
- .debug_loc     0x000009bf      0x223 .\CortexM4\ARM_GCC_541\Debug\cy_sysint.o
- .debug_loc     0x00000be2      0x2a1 .\CortexM4\ARM_GCC_541\Debug\cy_ipc_drv.o
- .debug_loc     0x00000e83      0x6c2 .\CortexM4\ARM_GCC_541\Debug\cy_ipc_sema.o
- .debug_loc     0x00001545      0x7d4 .\CortexM4\ARM_GCC_541\Debug\cy_ipc_pipe.o
- .debug_loc     0x00001d19      0xbe0 .\CortexM4\ARM_GCC_541\Debug\cy_flash.o
- .debug_loc     0x000028f9      0xb0a .\CortexM4\ARM_GCC_541\Debug\cy_syspm.o
- .debug_loc     0x00003403      0x1fc .\CortexM4\ARM_GCC_541\Debug\cy_syslib.o
- .debug_loc     0x000035ff      0x588 .\CortexM4\ARM_GCC_541\Debug\cy_scb_common.o
- .debug_loc     0x00003b87      0xe70 .\CortexM4\ARM_GCC_541\Debug\cy_sar.o
- .debug_loc     0x000049f7      0x1e4 .\CortexM4\ARM_GCC_541\Debug\retarget.o
- .debug_loc     0x00004bdb      0x304 .\CortexM4\ARM_GCC_541\Debug\ADC.o
- .debug_loc     0x00004edf       0x48 .\CortexM4\ARM_GCC_541\Debug\ADC_INT.o
+ .debug_loc     0x000001fe      0x1ea .\CortexM4\ARM_GCC_541\Debug\ipc_cm4.o
+ .debug_loc     0x000003e8      0x43f .\CortexM4\ARM_GCC_541\Debug\voltage_monitor.o
+ .debug_loc     0x00000827       0xca .\CortexM4\ARM_GCC_541\Debug\filter.o
+ .debug_loc     0x000008f1       0x1e .\CortexM4\ARM_GCC_541\Debug\cy_ipc_config.o
+ .debug_loc     0x0000090f       0x87 .\CortexM4\ARM_GCC_541\Debug\stdio_user.o
+ .debug_loc     0x00000996      0x223 .\CortexM4\ARM_GCC_541\Debug\cy_sysint.o
+ .debug_loc     0x00000bb9      0x2a1 .\CortexM4\ARM_GCC_541\Debug\cy_ipc_drv.o
+ .debug_loc     0x00000e5a      0x6c2 .\CortexM4\ARM_GCC_541\Debug\cy_ipc_sema.o
+ .debug_loc     0x0000151c      0x7d4 .\CortexM4\ARM_GCC_541\Debug\cy_ipc_pipe.o
+ .debug_loc     0x00001cf0      0xbe0 .\CortexM4\ARM_GCC_541\Debug\cy_flash.o
+ .debug_loc     0x000028d0      0xb0a .\CortexM4\ARM_GCC_541\Debug\cy_syspm.o
+ .debug_loc     0x000033da      0x1fc .\CortexM4\ARM_GCC_541\Debug\cy_syslib.o
+ .debug_loc     0x000035d6      0x588 .\CortexM4\ARM_GCC_541\Debug\cy_scb_common.o
+ .debug_loc     0x00003b5e      0xe70 .\CortexM4\ARM_GCC_541\Debug\cy_sar.o
+ .debug_loc     0x000049ce      0x1e4 .\CortexM4\ARM_GCC_541\Debug\retarget.o
+ .debug_loc     0x00004bb2      0x304 .\CortexM4\ARM_GCC_541\Debug\ADC.o
+ .debug_loc     0x00004eb6       0x48 .\CortexM4\ARM_GCC_541\Debug\ADC_INT.o
 
 .stab           0x00000000       0x6c
  .stab          0x00000000       0x24 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7e-m/softfp\libnosys.a(close.o)

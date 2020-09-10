@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 1
 
 
    1              		.syntax unified
@@ -57,8 +57,8 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
   27:ipc_cm0p.c    **** // Callback function when a message gets sent to the CM0+
   28:ipc_cm0p.c    **** void CM0_MessageCallback(uint32_t *msg)
   29:ipc_cm0p.c    **** {
-  30:ipc_cm0p.c    ****     uint32_t type;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 2
+  30:ipc_cm0p.c    ****     ipc_msg_datatype type;
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 2
 
 
   31:ipc_cm0p.c    ****     uint8_t data[2];
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
   85:ipc_cm0p.c    **** // Release function when IPC message has been sent to CM0+ successfully
   86:ipc_cm0p.c    **** void CM0_ReleaseCallback(void)
   87:ipc_cm0p.c    **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 3
 
 
   28              		.loc 1 87 0
@@ -150,7 +150,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
   52              		.type	CM0_MessageCallback, %function
   53              	CM0_MessageCallback:
   54              	.LFB443:
-  29:ipc_cm0p.c    ****     uint32_t type;
+  29:ipc_cm0p.c    ****     ipc_msg_datatype type;
   55              		.loc 1 29 0
   56              		.cfi_startproc
   57              		@ args = 0, pretend = 0, frame = 520
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
   76 000c 002B     		cmp	r3, #0
   77 000e 4CD0     		beq	.L6
   78 0010 012B     		cmp	r3, #1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 4
 
 
   79 0012 51D1     		bne	.L4
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
   47:ipc_cm0p.c    ****                     {
  127              		.loc 1 47 0 is_stmt 0 discriminator 1
  128 0052 8F2A     		cmp	r2, #143
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 5
 
 
  129 0054 E9D9     		bls	.L9
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
   58:ipc_cm0p.c    ****                     {
  176              		.loc 1 58 0 is_stmt 0 discriminator 1
  177 0084 4222     		movs	r2, #66
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 6
 
 
  178 0086 FF32     		adds	r2, r2, #255
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  225 00be 30BD     		pop	{r4, r5, pc}
  226              	.L16:
  227              		.align	2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 7
 
 
  228              	.L15:
@@ -380,7 +380,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  244              	send_threshold:
  245              	.LFB445:
   90:ipc_cm0p.c    **** 
-  91:ipc_cm0p.c    **** void send_threshold(uint8_t * threshold, uint8_t upper_or_lower)
+  91:ipc_cm0p.c    **** void send_threshold(uint8_t * threshold, ipc_msg_datatype upper_or_lower)
   92:ipc_cm0p.c    **** {
  246              		.loc 1 92 0
  247              		.cfi_startproc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  271 0016 4278     		ldrb	r2, [r0, #1]
  272 0018 9A72     		strb	r2, [r3, #10]
  273              	.LVL29:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 8
 
 
  274              	.L19:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  315 0002 0A4B     		ldr	r3, .L25
  316 0004 1B78     		ldrb	r3, [r3]
  317 0006 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 9
 
 
  318 0008 FBD0     		beq	.L23
@@ -489,7 +489,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  322 000e 1A70     		strb	r2, [r3]
  115:ipc_cm0p.c    ****     // Prepare message struct
  116:ipc_cm0p.c    ****     cy_en_ipc_pipe_status_t result;
- 117:ipc_cm0p.c    ****     ipcMsgForCM4.type = type_trigger;
+ 117:ipc_cm0p.c    ****     ipcMsgForCM4.type = (ipc_msg_datatype)type_trigger;
  323              		.loc 1 117 0
  324 0010 0432     		adds	r2, r2, #4
  325 0012 1A72     		strb	r2, [r3, #8]
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  359              	.LFB447:
  127:ipc_cm0p.c    **** 
  128:ipc_cm0p.c    **** void send_enable(uint8_t trigger)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 10
 
 
  129:ipc_cm0p.c    **** {
@@ -566,7 +566,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  378 000e 1A70     		strb	r2, [r3]
  133:ipc_cm0p.c    ****     // Prepare message struct
  134:ipc_cm0p.c    ****     cy_en_ipc_pipe_status_t result;
- 135:ipc_cm0p.c    ****     ipcMsgForCM4.type = type_enable;
+ 135:ipc_cm0p.c    ****     ipcMsgForCM4.type = (ipc_msg_datatype)type_enable;
  379              		.loc 1 135 0
  380 0010 0532     		adds	r2, r2, #5
  381 0012 1A72     		strb	r2, [r3, #8]
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  398              		@ sp needed
  399 0028 10BD     		pop	{r4, pc}
  400              	.L31:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 11
 
 
  401 002a C046     		.align	2
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  447              		.file 10 "Generated_Source\\PSoC6\\pdl\\middleware/ble/cy_ble_gap.h"
  448              		.file 11 "Generated_Source\\PSoC6/ADC.h"
  449              		.file 12 "ipc_shared.h"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 12
 
 
  450              		.file 13 "Generated_Source\\PSoC6/UART.h"
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  504 006b 07       		.byte	0x7
  505 006c DA150000 		.4byte	.LASF8
  506 0070 02       		.uleb128 0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 13
 
 
  507 0071 08       		.byte	0x8
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  561 00da FD150000 		.4byte	.LASF18
  562 00de 02       		.uleb128 0x2
  563 00df 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 14
 
 
  564 00e0 04       		.byte	0x4
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  618 0167 02       		.byte	0x2
  619 0168 340A0000 		.4byte	.LASF32
  620 016c 08       		.uleb128 0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 15
 
 
  621 016d 04       		.byte	0x4
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  675 01e3 860C0000 		.4byte	.LASF39
  676 01e7 05       		.byte	0x5
  677 01e8 5002     		.2byte	0x250
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 16
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 16
 
 
  678 01ea B4000000 		.4byte	0xb4
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  732 025e 6302     		.2byte	0x263
  733 0260 94010000 		.4byte	0x194
  734 0264 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 17
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 17
 
 
  735 0265 19010000 		.4byte	.LASF222
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  789 02f8 0A       		.uleb128 0xa
  790 02f9 7C040000 		.4byte	.LASF62
  791 02fd 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 18
 
 
  792 02fe 0A       		.uleb128 0xa
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  846 036f 11030000 		.4byte	0x311
  847 0373 14       		.byte	0x14
  848 0374 11       		.uleb128 0x11
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 19
 
 
  849 0375 7F0C0000 		.4byte	.LASF73
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  903 03ea 06       		.uleb128 0x6
  904 03eb A2000000 		.4byte	0xa2
  905 03ef FA030000 		.4byte	0x3fa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 20
 
 
  906 03f3 07       		.uleb128 0x7
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  960 046d 15       		.uleb128 0x15
  961 046e DC0A0000 		.4byte	.LASF96
  962 0472 0620     		.2byte	0x2006
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 21
 
 
  963 0474 15       		.uleb128 0x15
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1017 04f2 15       		.uleb128 0x15
  1018 04f3 D1090000 		.4byte	.LASF115
  1019 04f7 0130     		.2byte	0x3001
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 22
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 22
 
 
  1020 04f9 15       		.uleb128 0x15
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1074 0577 15       		.uleb128 0x15
  1075 0578 9F0B0000 		.4byte	.LASF134
  1076 057c 1830     		.2byte	0x3018
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 23
 
 
  1077 057e 15       		.uleb128 0x15
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1131 05fc 15       		.uleb128 0x15
  1132 05fd B40A0000 		.4byte	.LASF153
  1133 0601 1240     		.2byte	0x4012
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 24
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 24
 
 
  1134 0603 15       		.uleb128 0x15
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1188 0681 15       		.uleb128 0x15
  1189 0682 64050000 		.4byte	.LASF172
  1190 0686 0A50     		.2byte	0x500a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 25
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 25
 
 
  1191 0688 15       		.uleb128 0x15
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1245 0706 15       		.uleb128 0x15
  1246 0707 19060000 		.4byte	.LASF191
  1247 070b 0460     		.2byte	0x6004
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 26
 
 
  1248 070d 15       		.uleb128 0x15
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1302 0781 7E       		.byte	0x7e
  1303 0782 9F070000 		.4byte	0x79f
  1304 0786 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 27
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 27
 
 
  1305 0787 94030000 		.4byte	.LASF202
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1359 07f3 14       		.byte	0x14
  1360 07f4 0B       		.byte	0xb
  1361 07f5 3B       		.byte	0x3b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 28
 
 
  1362 07f6 37080000 		.4byte	0x837
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1416 0868 01       		.byte	0x1
  1417 0869 0A       		.uleb128 0xa
  1418 086a 4B090000 		.4byte	.LASF226
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 29
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 29
 
 
  1419 086e 02       		.byte	0x2
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1473 08d8 E4080000 		.4byte	0x8e4
  1474 08dc 1B       		.uleb128 0x1b
  1475 08dd AD000000 		.4byte	0xad
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 30
 
 
  1476 08e1 1F01     		.2byte	0x11f
@@ -1775,7 +1775,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1507 0925 5E160000 		.4byte	.LASF232
  1508 0929 01       		.byte	0x1
  1509 092a 1E       		.byte	0x1e
- 1510 092b A2000000 		.4byte	0xa2
+ 1510 092b 82080000 		.4byte	0x882
  1511 092f 42000000 		.4byte	.LLST1
  1512 0933 20       		.uleb128 0x20
  1513 0934 DB0C0000 		.4byte	.LASF233
@@ -1790,7 +1790,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1522 0946 01       		.byte	0x1
  1523 0947 20       		.byte	0x20
  1524 0948 1D0A0000 		.4byte	0xa1d
- 1525 094c B2000000 		.4byte	.LLST2
+ 1525 094c 90000000 		.4byte	.LLST2
  1526 0950 21       		.uleb128 0x21
  1527 0951 1C000000 		.4byte	.LBB2
  1528 0955 8E000000 		.4byte	.LBE2-.LBB2
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1530 095d 20       		.uleb128 0x20
  1531 095e B9030000 		.4byte	.LASF236
  1532 0962 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 31
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 31
 
 
  1533 0963 34       		.byte	0x34
@@ -1811,7 +1811,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1540 0971 01       		.byte	0x1
  1541 0972 3E       		.byte	0x3e
  1542 0973 DF020000 		.4byte	0x2df
- 1543 0977 F4000000 		.4byte	.LLST3
+ 1543 0977 D2000000 		.4byte	.LLST3
  1544 097b 21       		.uleb128 0x21
  1545 097c 26000000 		.4byte	.LBB3
  1546 0980 34000000 		.4byte	.LBE3-.LBB3
@@ -1821,7 +1821,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1550 098b 01       		.byte	0x1
  1551 098c 2F       		.byte	0x2f
  1552 098d 97000000 		.4byte	0x97
- 1553 0991 07010000 		.4byte	.LLST4
+ 1553 0991 E5000000 		.4byte	.LLST4
  1554 0995 00       		.byte	0
  1555 0996 21       		.uleb128 0x21
  1556 0997 5A000000 		.4byte	.LBB4
@@ -1832,7 +1832,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1561 09a6 01       		.byte	0x1
  1562 09a7 35       		.byte	0x35
  1563 09a8 97000000 		.4byte	0x97
- 1564 09ac 31010000 		.4byte	.LLST5
+ 1564 09ac 0F010000 		.4byte	.LLST5
  1565 09b0 00       		.byte	0
  1566 09b1 21       		.uleb128 0x21
  1567 09b2 72000000 		.4byte	.LBB5
@@ -1843,7 +1843,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1572 09c1 01       		.byte	0x1
  1573 09c2 3A       		.byte	0x3a
  1574 09c3 97000000 		.4byte	0x97
- 1575 09c7 4F010000 		.4byte	.LLST6
+ 1575 09c7 2D010000 		.4byte	.LLST6
  1576 09cb 00       		.byte	0
  1577 09cc 23       		.uleb128 0x23
  1578 09cd 26000000 		.4byte	.LVL6
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1587 09e2 00       		.byte	0
  1588 09e3 23       		.uleb128 0x23
  1589 09e4 9E000000 		.4byte	.LVL19
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 32
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 32
 
 
  1590 09e8 670C0000 		.4byte	0xc67
@@ -1916,16 +1916,16 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1642 0a4e 01       		.byte	0x1
  1643 0a4f 5B       		.byte	0x5b
  1644 0a50 7D010000 		.4byte	0x17d
- 1645 0a54 79010000 		.4byte	.LLST7
+ 1645 0a54 57010000 		.4byte	.LLST7
  1646 0a58 26       		.uleb128 0x26
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 33
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 33
 
 
  1647 0a59 2C0C0000 		.4byte	.LASF241
  1648 0a5d 01       		.byte	0x1
  1649 0a5e 5B       		.byte	0x5b
- 1650 0a5f 8C000000 		.4byte	0x8c
- 1651 0a63 9A010000 		.4byte	.LLST8
+ 1650 0a5f 82080000 		.4byte	0x882
+ 1651 0a63 78010000 		.4byte	.LLST8
  1652 0a67 20       		.uleb128 0x20
  1653 0a68 90070000 		.4byte	.LASF237
  1654 0a6c 01       		.byte	0x1
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1701 0abc 50       		.byte	0x50
  1702 0abd 25       		.uleb128 0x25
  1703 0abe 26000000 		.4byte	.LVL31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 34
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 34
 
 
  1704 0ac2 8D0C0000 		.4byte	0xc8d
@@ -2020,7 +2020,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1740 0afe 01       		.byte	0x1
  1741 0aff 80       		.byte	0x80
  1742 0b00 8C000000 		.4byte	0x8c
- 1743 0b04 BB010000 		.4byte	.LLST9
+ 1743 0b04 99010000 		.4byte	.LLST9
  1744 0b08 20       		.uleb128 0x20
  1745 0b09 90070000 		.4byte	.LASF237
  1746 0b0d 01       		.byte	0x1
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1758 0b22 31       		.byte	0x31
  1759 0b23 24       		.uleb128 0x24
  1760 0b24 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 35
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 35
 
 
  1761 0b25 51       		.byte	0x51
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1815 0b92 87       		.byte	0x87
  1816 0b93 58020000 		.4byte	0x258
  1817 0b97 27       		.uleb128 0x27
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 36
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 36
 
 
  1818 0b98 88170000 		.4byte	.LASF250
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1872 0c12 29       		.uleb128 0x29
  1873 0c13 5C170000 		.4byte	.LASF255
  1874 0c17 0E       		.byte	0xe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 37
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 37
 
 
  1875 0c18 22       		.byte	0x22
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1929 0c8e A6150000 		.4byte	.LASF262
  1930 0c92 A6150000 		.4byte	.LASF262
  1931 0c96 04       		.byte	0x4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 38
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 38
 
 
  1932 0c97 FC       		.byte	0xfc
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  1986 0032 03       		.uleb128 0x3
  1987 0033 08       		.uleb128 0x8
  1988 0034 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 39
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 39
 
 
  1989 0035 00       		.byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2043 006b 0E       		.uleb128 0xe
  2044 006c 1C       		.uleb128 0x1c
  2045 006d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 40
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 40
 
 
  2046 006e 00       		.byte	0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2100 00a4 3A       		.uleb128 0x3a
  2101 00a5 0B       		.uleb128 0xb
  2102 00a6 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 41
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 41
 
 
  2103 00a7 05       		.uleb128 0x5
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2157 00dd 01       		.byte	0x1
  2158 00de 0B       		.uleb128 0xb
  2159 00df 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 42
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 42
 
 
  2160 00e0 3A       		.uleb128 0x3a
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2214 0116 01       		.byte	0x1
  2215 0117 03       		.uleb128 0x3
  2216 0118 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 43
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 43
 
 
  2217 0119 0B       		.uleb128 0xb
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2271 0150 19       		.uleb128 0x19
  2272 0151 00       		.byte	0
  2273 0152 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 44
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 44
 
 
  2274 0153 1D       		.uleb128 0x1d
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2328 018a 00       		.byte	0
  2329 018b 20       		.uleb128 0x20
  2330 018c 34       		.uleb128 0x34
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 45
 
 
  2331 018d 00       		.byte	0
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2385 01c7 18       		.uleb128 0x18
  2386 01c8 9142     		.uleb128 0x2111
  2387 01ca 18       		.uleb128 0x18
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 46
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 46
 
 
  2388 01cb 00       		.byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2442 0203 3F       		.uleb128 0x3f
  2443 0204 19       		.uleb128 0x19
  2444 0205 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 47
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 47
 
 
  2445 0206 19       		.uleb128 0x19
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2499 023c 2C       		.uleb128 0x2c
  2500 023d 2E       		.uleb128 0x2e
  2501 023e 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 48
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 48
 
 
  2502 023f 3F       		.uleb128 0x3f
@@ -2869,1786 +2869,1749 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 1
  2547              	.LLST1:
  2548 0042 0C000000 		.4byte	.LVL2
  2549 0046 16000000 		.4byte	.LVL3
- 2550 004a 0600     		.2byte	0x6
- 2551 004c 73       		.byte	0x73
- 2552 004d 00       		.sleb128 0
- 2553 004e 08       		.byte	0x8
- 2554 004f FF       		.byte	0xff
- 2555 0050 1A       		.byte	0x1a
- 2556 0051 9F       		.byte	0x9f
- 2557 0052 16000000 		.4byte	.LVL3
- 2558 0056 1E000000 		.4byte	.LVL4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 49
+ 2550 004a 0100     		.2byte	0x1
+ 2551 004c 53       		.byte	0x53
+ 2552 004d 16000000 		.4byte	.LVL3
+ 2553 0051 1E000000 		.4byte	.LVL4
+ 2554 0055 0200     		.2byte	0x2
+ 2555 0057 70       		.byte	0x70
+ 2556 0058 04       		.sleb128 4
+ 2557 0059 1E000000 		.4byte	.LVL4
+ 2558 005d 22000000 		.4byte	.LVL5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 49
 
 
- 2559 005a 0800     		.2byte	0x8
- 2560 005c 70       		.byte	0x70
- 2561 005d 04       		.sleb128 4
- 2562 005e 94       		.byte	0x94
- 2563 005f 01       		.byte	0x1
- 2564 0060 08       		.byte	0x8
- 2565 0061 FF       		.byte	0xff
- 2566 0062 1A       		.byte	0x1a
- 2567 0063 9F       		.byte	0x9f
- 2568 0064 1E000000 		.4byte	.LVL4
- 2569 0068 22000000 		.4byte	.LVL5
- 2570 006c 0800     		.2byte	0x8
- 2571 006e 74       		.byte	0x74
- 2572 006f 04       		.sleb128 4
- 2573 0070 94       		.byte	0x94
- 2574 0071 01       		.byte	0x1
- 2575 0072 08       		.byte	0x8
- 2576 0073 FF       		.byte	0xff
- 2577 0074 1A       		.byte	0x1a
- 2578 0075 9F       		.byte	0x9f
- 2579 0076 AA000000 		.4byte	.LVL22
- 2580 007a AC000000 		.4byte	.LVL23
- 2581 007e 0600     		.2byte	0x6
- 2582 0080 73       		.byte	0x73
- 2583 0081 00       		.sleb128 0
- 2584 0082 08       		.byte	0x8
- 2585 0083 FF       		.byte	0xff
- 2586 0084 1A       		.byte	0x1a
- 2587 0085 9F       		.byte	0x9f
- 2588 0086 AC000000 		.4byte	.LVL23
- 2589 008a AE000000 		.4byte	.LVL24
- 2590 008e 0800     		.2byte	0x8
- 2591 0090 70       		.byte	0x70
- 2592 0091 04       		.sleb128 4
- 2593 0092 94       		.byte	0x94
- 2594 0093 01       		.byte	0x1
- 2595 0094 08       		.byte	0x8
- 2596 0095 FF       		.byte	0xff
- 2597 0096 1A       		.byte	0x1a
- 2598 0097 9F       		.byte	0x9f
- 2599 0098 AE000000 		.4byte	.LVL24
- 2600 009c B0000000 		.4byte	.LVL25
- 2601 00a0 0800     		.2byte	0x8
- 2602 00a2 74       		.byte	0x74
- 2603 00a3 04       		.sleb128 4
- 2604 00a4 94       		.byte	0x94
- 2605 00a5 01       		.byte	0x1
- 2606 00a6 08       		.byte	0x8
- 2607 00a7 FF       		.byte	0xff
- 2608 00a8 1A       		.byte	0x1a
- 2609 00a9 9F       		.byte	0x9f
- 2610 00aa 00000000 		.4byte	0
- 2611 00ae 00000000 		.4byte	0
- 2612              	.LLST2:
- 2613 00b2 08000000 		.4byte	.LVL1
- 2614 00b6 1E000000 		.4byte	.LVL4
- 2615 00ba 0100     		.2byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 50
+ 2559 0061 0200     		.2byte	0x2
+ 2560 0063 74       		.byte	0x74
+ 2561 0064 04       		.sleb128 4
+ 2562 0065 AA000000 		.4byte	.LVL22
+ 2563 0069 AC000000 		.4byte	.LVL23
+ 2564 006d 0100     		.2byte	0x1
+ 2565 006f 53       		.byte	0x53
+ 2566 0070 AC000000 		.4byte	.LVL23
+ 2567 0074 AE000000 		.4byte	.LVL24
+ 2568 0078 0200     		.2byte	0x2
+ 2569 007a 70       		.byte	0x70
+ 2570 007b 04       		.sleb128 4
+ 2571 007c AE000000 		.4byte	.LVL24
+ 2572 0080 B0000000 		.4byte	.LVL25
+ 2573 0084 0200     		.2byte	0x2
+ 2574 0086 74       		.byte	0x74
+ 2575 0087 04       		.sleb128 4
+ 2576 0088 00000000 		.4byte	0
+ 2577 008c 00000000 		.4byte	0
+ 2578              	.LLST2:
+ 2579 0090 08000000 		.4byte	.LVL1
+ 2580 0094 1E000000 		.4byte	.LVL4
+ 2581 0098 0100     		.2byte	0x1
+ 2582 009a 50       		.byte	0x50
+ 2583 009b 1E000000 		.4byte	.LVL4
+ 2584 009f AA000000 		.4byte	.LVL22
+ 2585 00a3 0100     		.2byte	0x1
+ 2586 00a5 54       		.byte	0x54
+ 2587 00a6 AA000000 		.4byte	.LVL22
+ 2588 00aa AE000000 		.4byte	.LVL24
+ 2589 00ae 0100     		.2byte	0x1
+ 2590 00b0 50       		.byte	0x50
+ 2591 00b1 AE000000 		.4byte	.LVL24
+ 2592 00b5 BE000000 		.4byte	.LVL27
+ 2593 00b9 0100     		.2byte	0x1
+ 2594 00bb 54       		.byte	0x54
+ 2595 00bc BE000000 		.4byte	.LVL27
+ 2596 00c0 D8000000 		.4byte	.LFE443
+ 2597 00c4 0400     		.2byte	0x4
+ 2598 00c6 F3       		.byte	0xf3
+ 2599 00c7 01       		.uleb128 0x1
+ 2600 00c8 50       		.byte	0x50
+ 2601 00c9 9F       		.byte	0x9f
+ 2602 00ca 00000000 		.4byte	0
+ 2603 00ce 00000000 		.4byte	0
+ 2604              	.LLST3:
+ 2605 00d2 9E000000 		.4byte	.LVL19
+ 2606 00d6 A4000000 		.4byte	.LVL20
+ 2607 00da 0100     		.2byte	0x1
+ 2608 00dc 50       		.byte	0x50
+ 2609 00dd 00000000 		.4byte	0
+ 2610 00e1 00000000 		.4byte	0
+ 2611              	.LLST4:
+ 2612 00e5 26000000 		.4byte	.LVL6
+ 2613 00e9 2A000000 		.4byte	.LVL7
+ 2614 00ed 0200     		.2byte	0x2
+ 2615 00ef 30       		.byte	0x30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 50
 
 
- 2616 00bc 50       		.byte	0x50
- 2617 00bd 1E000000 		.4byte	.LVL4
- 2618 00c1 AA000000 		.4byte	.LVL22
- 2619 00c5 0100     		.2byte	0x1
- 2620 00c7 54       		.byte	0x54
- 2621 00c8 AA000000 		.4byte	.LVL22
- 2622 00cc AE000000 		.4byte	.LVL24
- 2623 00d0 0100     		.2byte	0x1
- 2624 00d2 50       		.byte	0x50
- 2625 00d3 AE000000 		.4byte	.LVL24
- 2626 00d7 BE000000 		.4byte	.LVL27
- 2627 00db 0100     		.2byte	0x1
- 2628 00dd 54       		.byte	0x54
- 2629 00de BE000000 		.4byte	.LVL27
- 2630 00e2 D8000000 		.4byte	.LFE443
- 2631 00e6 0400     		.2byte	0x4
- 2632 00e8 F3       		.byte	0xf3
- 2633 00e9 01       		.uleb128 0x1
- 2634 00ea 50       		.byte	0x50
- 2635 00eb 9F       		.byte	0x9f
- 2636 00ec 00000000 		.4byte	0
- 2637 00f0 00000000 		.4byte	0
- 2638              	.LLST3:
- 2639 00f4 9E000000 		.4byte	.LVL19
- 2640 00f8 A4000000 		.4byte	.LVL20
- 2641 00fc 0100     		.2byte	0x1
- 2642 00fe 50       		.byte	0x50
- 2643 00ff 00000000 		.4byte	0
- 2644 0103 00000000 		.4byte	0
- 2645              	.LLST4:
- 2646 0107 26000000 		.4byte	.LVL6
- 2647 010b 2A000000 		.4byte	.LVL7
- 2648 010f 0200     		.2byte	0x2
- 2649 0111 30       		.byte	0x30
- 2650 0112 9F       		.byte	0x9f
- 2651 0113 2A000000 		.4byte	.LVL7
- 2652 0117 50000000 		.4byte	.LVL8
- 2653 011b 0100     		.2byte	0x1
- 2654 011d 52       		.byte	0x52
- 2655 011e 52000000 		.4byte	.LVL9
- 2656 0122 5A000000 		.4byte	.LVL10
- 2657 0126 0100     		.2byte	0x1
- 2658 0128 52       		.byte	0x52
- 2659 0129 00000000 		.4byte	0
- 2660 012d 00000000 		.4byte	0
- 2661              	.LLST5:
- 2662 0131 5A000000 		.4byte	.LVL10
- 2663 0135 62000000 		.4byte	.LVL11
- 2664 0139 0100     		.2byte	0x1
- 2665 013b 53       		.byte	0x53
- 2666 013c 64000000 		.4byte	.LVL12
- 2667 0140 70000000 		.4byte	.LVL13
- 2668 0144 0100     		.2byte	0x1
- 2669 0146 53       		.byte	0x53
- 2670 0147 00000000 		.4byte	0
- 2671 014b 00000000 		.4byte	0
- 2672              	.LLST6:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 51
+ 2616 00f0 9F       		.byte	0x9f
+ 2617 00f1 2A000000 		.4byte	.LVL7
+ 2618 00f5 50000000 		.4byte	.LVL8
+ 2619 00f9 0100     		.2byte	0x1
+ 2620 00fb 52       		.byte	0x52
+ 2621 00fc 52000000 		.4byte	.LVL9
+ 2622 0100 5A000000 		.4byte	.LVL10
+ 2623 0104 0100     		.2byte	0x1
+ 2624 0106 52       		.byte	0x52
+ 2625 0107 00000000 		.4byte	0
+ 2626 010b 00000000 		.4byte	0
+ 2627              	.LLST5:
+ 2628 010f 5A000000 		.4byte	.LVL10
+ 2629 0113 62000000 		.4byte	.LVL11
+ 2630 0117 0100     		.2byte	0x1
+ 2631 0119 53       		.byte	0x53
+ 2632 011a 64000000 		.4byte	.LVL12
+ 2633 011e 70000000 		.4byte	.LVL13
+ 2634 0122 0100     		.2byte	0x1
+ 2635 0124 53       		.byte	0x53
+ 2636 0125 00000000 		.4byte	0
+ 2637 0129 00000000 		.4byte	0
+ 2638              	.LLST6:
+ 2639 012d 72000000 		.4byte	.LVL14
+ 2640 0131 76000000 		.4byte	.LVL15
+ 2641 0135 0200     		.2byte	0x2
+ 2642 0137 32       		.byte	0x32
+ 2643 0138 9F       		.byte	0x9f
+ 2644 0139 76000000 		.4byte	.LVL15
+ 2645 013d 82000000 		.4byte	.LVL16
+ 2646 0141 0100     		.2byte	0x1
+ 2647 0143 53       		.byte	0x53
+ 2648 0144 84000000 		.4byte	.LVL17
+ 2649 0148 8E000000 		.4byte	.LVL18
+ 2650 014c 0100     		.2byte	0x1
+ 2651 014e 53       		.byte	0x53
+ 2652 014f 00000000 		.4byte	0
+ 2653 0153 00000000 		.4byte	0
+ 2654              	.LLST7:
+ 2655 0157 00000000 		.4byte	.LVL28
+ 2656 015b 1A000000 		.4byte	.LVL29
+ 2657 015f 0100     		.2byte	0x1
+ 2658 0161 50       		.byte	0x50
+ 2659 0162 1A000000 		.4byte	.LVL29
+ 2660 0166 38000000 		.4byte	.LFE445
+ 2661 016a 0400     		.2byte	0x4
+ 2662 016c F3       		.byte	0xf3
+ 2663 016d 01       		.uleb128 0x1
+ 2664 016e 50       		.byte	0x50
+ 2665 016f 9F       		.byte	0x9f
+ 2666 0170 00000000 		.4byte	0
+ 2667 0174 00000000 		.4byte	0
+ 2668              	.LLST8:
+ 2669 0178 00000000 		.4byte	.LVL28
+ 2670 017c 1A000000 		.4byte	.LVL29
+ 2671 0180 0100     		.2byte	0x1
+ 2672 0182 51       		.byte	0x51
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 51
 
 
- 2673 014f 72000000 		.4byte	.LVL14
- 2674 0153 76000000 		.4byte	.LVL15
- 2675 0157 0200     		.2byte	0x2
- 2676 0159 32       		.byte	0x32
- 2677 015a 9F       		.byte	0x9f
- 2678 015b 76000000 		.4byte	.LVL15
- 2679 015f 82000000 		.4byte	.LVL16
- 2680 0163 0100     		.2byte	0x1
- 2681 0165 53       		.byte	0x53
- 2682 0166 84000000 		.4byte	.LVL17
- 2683 016a 8E000000 		.4byte	.LVL18
- 2684 016e 0100     		.2byte	0x1
- 2685 0170 53       		.byte	0x53
- 2686 0171 00000000 		.4byte	0
- 2687 0175 00000000 		.4byte	0
- 2688              	.LLST7:
- 2689 0179 00000000 		.4byte	.LVL28
- 2690 017d 1A000000 		.4byte	.LVL29
- 2691 0181 0100     		.2byte	0x1
- 2692 0183 50       		.byte	0x50
- 2693 0184 1A000000 		.4byte	.LVL29
- 2694 0188 38000000 		.4byte	.LFE445
- 2695 018c 0400     		.2byte	0x4
- 2696 018e F3       		.byte	0xf3
- 2697 018f 01       		.uleb128 0x1
- 2698 0190 50       		.byte	0x50
- 2699 0191 9F       		.byte	0x9f
- 2700 0192 00000000 		.4byte	0
- 2701 0196 00000000 		.4byte	0
- 2702              	.LLST8:
- 2703 019a 00000000 		.4byte	.LVL28
- 2704 019e 1A000000 		.4byte	.LVL29
- 2705 01a2 0100     		.2byte	0x1
- 2706 01a4 51       		.byte	0x51
- 2707 01a5 1A000000 		.4byte	.LVL29
- 2708 01a9 38000000 		.4byte	.LFE445
- 2709 01ad 0400     		.2byte	0x4
- 2710 01af F3       		.byte	0xf3
- 2711 01b0 01       		.uleb128 0x1
- 2712 01b1 51       		.byte	0x51
- 2713 01b2 9F       		.byte	0x9f
- 2714 01b3 00000000 		.4byte	0
- 2715 01b7 00000000 		.4byte	0
- 2716              	.LLST9:
- 2717 01bb 00000000 		.4byte	.LVL32
- 2718 01bf 16000000 		.4byte	.LVL33
- 2719 01c3 0100     		.2byte	0x1
- 2720 01c5 50       		.byte	0x50
- 2721 01c6 16000000 		.4byte	.LVL33
- 2722 01ca 34000000 		.4byte	.LFE447
- 2723 01ce 0400     		.2byte	0x4
- 2724 01d0 F3       		.byte	0xf3
- 2725 01d1 01       		.uleb128 0x1
- 2726 01d2 50       		.byte	0x50
- 2727 01d3 9F       		.byte	0x9f
- 2728 01d4 00000000 		.4byte	0
- 2729 01d8 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 52
+ 2673 0183 1A000000 		.4byte	.LVL29
+ 2674 0187 38000000 		.4byte	.LFE445
+ 2675 018b 0400     		.2byte	0x4
+ 2676 018d F3       		.byte	0xf3
+ 2677 018e 01       		.uleb128 0x1
+ 2678 018f 51       		.byte	0x51
+ 2679 0190 9F       		.byte	0x9f
+ 2680 0191 00000000 		.4byte	0
+ 2681 0195 00000000 		.4byte	0
+ 2682              	.LLST9:
+ 2683 0199 00000000 		.4byte	.LVL32
+ 2684 019d 16000000 		.4byte	.LVL33
+ 2685 01a1 0100     		.2byte	0x1
+ 2686 01a3 50       		.byte	0x50
+ 2687 01a4 16000000 		.4byte	.LVL33
+ 2688 01a8 34000000 		.4byte	.LFE447
+ 2689 01ac 0400     		.2byte	0x4
+ 2690 01ae F3       		.byte	0xf3
+ 2691 01af 01       		.uleb128 0x1
+ 2692 01b0 50       		.byte	0x50
+ 2693 01b1 9F       		.byte	0x9f
+ 2694 01b2 00000000 		.4byte	0
+ 2695 01b6 00000000 		.4byte	0
+ 2696              		.section	.debug_aranges,"",%progbits
+ 2697 0000 3C000000 		.4byte	0x3c
+ 2698 0004 0200     		.2byte	0x2
+ 2699 0006 00000000 		.4byte	.Ldebug_info0
+ 2700 000a 04       		.byte	0x4
+ 2701 000b 00       		.byte	0
+ 2702 000c 0000     		.2byte	0
+ 2703 000e 0000     		.2byte	0
+ 2704 0010 00000000 		.4byte	.LFB444
+ 2705 0014 0C000000 		.4byte	.LFE444-.LFB444
+ 2706 0018 00000000 		.4byte	.LFB443
+ 2707 001c D8000000 		.4byte	.LFE443-.LFB443
+ 2708 0020 00000000 		.4byte	.LFB445
+ 2709 0024 38000000 		.4byte	.LFE445-.LFB445
+ 2710 0028 00000000 		.4byte	.LFB446
+ 2711 002c 34000000 		.4byte	.LFE446-.LFB446
+ 2712 0030 00000000 		.4byte	.LFB447
+ 2713 0034 34000000 		.4byte	.LFE447-.LFB447
+ 2714 0038 00000000 		.4byte	0
+ 2715 003c 00000000 		.4byte	0
+ 2716              		.section	.debug_ranges,"",%progbits
+ 2717              	.Ldebug_ranges0:
+ 2718 0000 00000000 		.4byte	.LFB444
+ 2719 0004 0C000000 		.4byte	.LFE444
+ 2720 0008 00000000 		.4byte	.LFB443
+ 2721 000c D8000000 		.4byte	.LFE443
+ 2722 0010 00000000 		.4byte	.LFB445
+ 2723 0014 38000000 		.4byte	.LFE445
+ 2724 0018 00000000 		.4byte	.LFB446
+ 2725 001c 34000000 		.4byte	.LFE446
+ 2726 0020 00000000 		.4byte	.LFB447
+ 2727 0024 34000000 		.4byte	.LFE447
+ 2728 0028 00000000 		.4byte	0
+ 2729 002c 00000000 		.4byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 52
 
 
- 2730              		.section	.debug_aranges,"",%progbits
- 2731 0000 3C000000 		.4byte	0x3c
- 2732 0004 0200     		.2byte	0x2
- 2733 0006 00000000 		.4byte	.Ldebug_info0
- 2734 000a 04       		.byte	0x4
- 2735 000b 00       		.byte	0
- 2736 000c 0000     		.2byte	0
- 2737 000e 0000     		.2byte	0
- 2738 0010 00000000 		.4byte	.LFB444
- 2739 0014 0C000000 		.4byte	.LFE444-.LFB444
- 2740 0018 00000000 		.4byte	.LFB443
- 2741 001c D8000000 		.4byte	.LFE443-.LFB443
- 2742 0020 00000000 		.4byte	.LFB445
- 2743 0024 38000000 		.4byte	.LFE445-.LFB445
- 2744 0028 00000000 		.4byte	.LFB446
- 2745 002c 34000000 		.4byte	.LFE446-.LFB446
- 2746 0030 00000000 		.4byte	.LFB447
- 2747 0034 34000000 		.4byte	.LFE447-.LFB447
- 2748 0038 00000000 		.4byte	0
- 2749 003c 00000000 		.4byte	0
- 2750              		.section	.debug_ranges,"",%progbits
- 2751              	.Ldebug_ranges0:
- 2752 0000 00000000 		.4byte	.LFB444
- 2753 0004 0C000000 		.4byte	.LFE444
- 2754 0008 00000000 		.4byte	.LFB443
- 2755 000c D8000000 		.4byte	.LFE443
- 2756 0010 00000000 		.4byte	.LFB445
- 2757 0014 38000000 		.4byte	.LFE445
- 2758 0018 00000000 		.4byte	.LFB446
- 2759 001c 34000000 		.4byte	.LFE446
- 2760 0020 00000000 		.4byte	.LFB447
- 2761 0024 34000000 		.4byte	.LFE447
- 2762 0028 00000000 		.4byte	0
- 2763 002c 00000000 		.4byte	0
- 2764              		.section	.debug_line,"",%progbits
- 2765              	.Ldebug_line0:
- 2766 0000 B8030000 		.section	.debug_str,"MS",%progbits,1
- 2766      0200E302 
- 2766      00000201 
- 2766      FB0E0D00 
- 2766      01010101 
- 2767              	.LASF247:
- 2768 0000 63795F62 		.ascii	"cy_ble_connState\000"
+ 2730              		.section	.debug_line,"",%progbits
+ 2731              	.Ldebug_line0:
+ 2732 0000 B8030000 		.section	.debug_str,"MS",%progbits,1
+ 2732      0200E302 
+ 2732      00000201 
+ 2732      FB0E0D00 
+ 2732      01010101 
+ 2733              	.LASF247:
+ 2734 0000 63795F62 		.ascii	"cy_ble_connState\000"
+ 2734      6C655F63 
+ 2734      6F6E6E53 
+ 2734      74617465 
+ 2734      00
+ 2735              	.LASF92:
+ 2736 0011 43595F42 		.ascii	"CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 2736      4C455F45 
+ 2736      56545F52 
+ 2736      4541445F 
+ 2736      41555448 
+ 2737              	.LASF194:
+ 2738 003a 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_READ\000"
+ 2738      4C455F45 
+ 2738      56545F4C 
+ 2738      32434150 
+ 2738      5F434246 
+ 2739              	.LASF141:
+ 2740 005a 43595F42 		.ascii	"CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
+ 2740      4C455F45 
+ 2740      56545F47 
+ 2740      4150505F 
+ 2740      41445645 
+ 2741              	.LASF196:
+ 2742 0083 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 2742      4C455F45 
+ 2742      56545F4C 
+ 2742      32434150 
+ 2742      5F434246 
+ 2743              	.LASF88:
+ 2744 00a7 43595F42 		.ascii	"CY_BLE_EVT_PENDING_FLASH_WRITE\000"
+ 2744      4C455F45 
+ 2744      56545F50 
+ 2744      454E4449 
+ 2744      4E475F46 
+ 2745              	.LASF126:
+ 2746 00c6 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_DECRYPT_COMPLETE\000"
+ 2746      4C455F45 
+ 2746      56545F41 
+ 2746      45535F43 
+ 2746      434D5F44 
+ 2747              	.LASF180:
+ 2748 00ea 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
+ 2748      4C455F45 
+ 2748      56545F47 
+ 2748      41545443 
+ 2748      5F48414E 
+ 2749              	.LASF228:
+ 2750 010c 74797065 		.ascii	"type_trigger\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 53
+
+
+ 2750      5F747269 
+ 2750      67676572 
+ 2750      00
+ 2751              	.LASF222:
+ 2752 0119 63795F65 		.ascii	"cy_en_flashdrv_status\000"
+ 2752      6E5F666C 
+ 2752      61736864 
+ 2752      72765F73 
+ 2752      74617475 
+ 2753              	.LASF214:
+ 2754 012f 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 2754      4C455F43 
+ 2754      4F4E4E5F 
+ 2754      53544154 
+ 2754      455F434C 
+ 2755              	.LASF34:
+ 2756 0153 74785374 		.ascii	"txStatus\000"
+ 2756      61747573 
+ 2756      00
+ 2757              	.LASF120:
+ 2758 015c 43595F42 		.ascii	"CY_BLE_EVT_SET_TX_PWR_COMPLETE\000"
+ 2758      4C455F45 
+ 2758      56545F53 
+ 2758      45545F54 
+ 2758      585F5057 
+ 2759              	.LASF229:
+ 2760 017b 74797065 		.ascii	"type_enable\000"
+ 2760      5F656E61 
+ 2760      626C6500 
+ 2761              	.LASF109:
+ 2762 0187 43595F42 		.ascii	"CY_BLE_EVT_GET_PHY_COMPLETE\000"
+ 2762      4C455F45 
+ 2762      56545F47 
+ 2762      45545F50 
+ 2762      48595F43 
+ 2763              	.LASF195:
+ 2764 01a3 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 2764      4C455F45 
+ 2764      56545F4C 
+ 2764      32434150 
+ 2764      5F434246 
+ 2765              	.LASF11:
+ 2766 01c7 756E7369 		.ascii	"unsigned int\000"
+ 2766      676E6564 
+ 2766      20696E74 
+ 2766      00
+ 2767              	.LASF246:
+ 2768 01d4 63795F62 		.ascii	"cy_ble_connHandle\000"
  2768      6C655F63 
- 2768      6F6E6E53 
- 2768      74617465 
- 2768      00
- 2769              	.LASF92:
- 2770 0011 43595F42 		.ascii	"CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 2768      6F6E6E48 
+ 2768      616E646C 
+ 2768      6500
+ 2769              	.LASF158:
+ 2770 01e6 43595F42 		.ascii	"CY_BLE_EVT_GAP_CREATE_CONN_CANCEL_COMPLETE\000"
  2770      4C455F45 
- 2770      56545F52 
- 2770      4541445F 
- 2770      41555448 
- 2771              	.LASF194:
- 2772 003a 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_READ\000"
- 2772      4C455F45 
- 2772      56545F4C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 53
+ 2770      56545F47 
+ 2770      41505F43 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 54
 
 
- 2772      32434150 
- 2772      5F434246 
- 2773              	.LASF141:
- 2774 005a 43595F42 		.ascii	"CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP\000"
- 2774      4C455F45 
- 2774      56545F47 
- 2774      4150505F 
- 2774      41445645 
- 2775              	.LASF196:
- 2776 0083 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_TX_CREDIT_IND\000"
+ 2770      52454154 
+ 2771              	.LASF234:
+ 2772 0211 6970635F 		.ascii	"ipc_msg_t\000"
+ 2772      6D73675F 
+ 2772      7400
+ 2773              	.LASF65:
+ 2774 021b 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
+ 2774      41525F52 
+ 2774      414E4745 
+ 2774      5F434F4E 
+ 2774      445F4F55 
+ 2775              	.LASF155:
+ 2776 0235 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYS_GEN_COMPLETE\000"
  2776      4C455F45 
- 2776      56545F4C 
- 2776      32434150 
- 2776      5F434246 
- 2777              	.LASF88:
- 2778 00a7 43595F42 		.ascii	"CY_BLE_EVT_PENDING_FLASH_WRITE\000"
- 2778      4C455F45 
- 2778      56545F50 
- 2778      454E4449 
- 2778      4E475F46 
- 2779              	.LASF126:
- 2780 00c6 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_DECRYPT_COMPLETE\000"
- 2780      4C455F45 
- 2780      56545F41 
- 2780      45535F43 
- 2780      434D5F44 
- 2781              	.LASF180:
- 2782 00ea 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_NTF\000"
- 2782      4C455F45 
- 2782      56545F47 
- 2782      41545443 
- 2782      5F48414E 
- 2783              	.LASF228:
- 2784 010c 74797065 		.ascii	"type_trigger\000"
- 2784      5F747269 
- 2784      67676572 
- 2784      00
- 2785              	.LASF222:
- 2786 0119 63795F65 		.ascii	"cy_en_flashdrv_status\000"
- 2786      6E5F666C 
- 2786      61736864 
- 2786      72765F73 
- 2786      74617475 
- 2787              	.LASF214:
- 2788 012f 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
- 2788      4C455F43 
- 2788      4F4E4E5F 
- 2788      53544154 
- 2788      455F434C 
- 2789              	.LASF34:
- 2790 0153 74785374 		.ascii	"txStatus\000"
- 2790      61747573 
- 2790      00
- 2791              	.LASF120:
- 2792 015c 43595F42 		.ascii	"CY_BLE_EVT_SET_TX_PWR_COMPLETE\000"
- 2792      4C455F45 
- 2792      56545F53 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 54
+ 2776      56545F47 
+ 2776      41505F4B 
+ 2776      4559535F 
+ 2777              	.LASF259:
+ 2778 0256 77726974 		.ascii	"write_num_events_to_server\000"
+ 2778      655F6E75 
+ 2778      6D5F6576 
+ 2778      656E7473 
+ 2778      5F746F5F 
+ 2779              	.LASF252:
+ 2780 0271 6576656E 		.ascii	"events\000"
+ 2780      747300
+ 2781              	.LASF216:
+ 2782 0278 6368616E 		.ascii	"channelBase\000"
+ 2782      6E656C42 
+ 2782      61736500 
+ 2783              	.LASF215:
+ 2784 0284 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 2784      6E5F626C 
+ 2784      655F636F 
+ 2784      6E6E5F73 
+ 2784      74617465 
+ 2785              	.LASF169:
+ 2786 029b 43595F42 		.ascii	"CY_BLE_EVT_GATTC_FIND_INFO_RSP\000"
+ 2786      4C455F45 
+ 2786      56545F47 
+ 2786      41545443 
+ 2786      5F46494E 
+ 2787              	.LASF113:
+ 2788 02ba 43595F42 		.ascii	"CY_BLE_EVT_SET_PRIVACY_MODE_COMPLETE\000"
+ 2788      4C455F45 
+ 2788      56545F53 
+ 2788      45545F50 
+ 2788      52495641 
+ 2789              	.LASF56:
+ 2790 02df 43595F46 		.ascii	"CY_FLASH_DRV_PL_ROW_COMP_FA\000"
+ 2790      4C415348 
+ 2790      5F445256 
+ 2790      5F504C5F 
+ 2790      524F575F 
+ 2791              	.LASF21:
+ 2792 02fb 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_IPC\000"
+ 2792      50435F50 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 55
 
 
- 2792      45545F54 
- 2792      585F5057 
- 2793              	.LASF229:
- 2794 017b 74797065 		.ascii	"type_enable\000"
- 2794      5F656E61 
- 2794      626C6500 
- 2795              	.LASF109:
- 2796 0187 43595F42 		.ascii	"CY_BLE_EVT_GET_PHY_COMPLETE\000"
- 2796      4C455F45 
- 2796      56545F47 
- 2796      45545F50 
- 2796      48595F43 
- 2797              	.LASF195:
- 2798 01a3 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_RX_CREDIT_IND\000"
+ 2792      4950455F 
+ 2792      4552524F 
+ 2792      525F4E4F 
+ 2793              	.LASF37:
+ 2794 0314 72785269 		.ascii	"rxRingBufSize\000"
+ 2794      6E674275 
+ 2794      6653697A 
+ 2794      6500
+ 2795              	.LASF253:
+ 2796 0322 6E756D5F 		.ascii	"num_events\000"
+ 2796      6576656E 
+ 2796      747300
+ 2797              	.LASF105:
+ 2798 032d 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_RPA_LIST_COMPLETE\000"
  2798      4C455F45 
- 2798      56545F4C 
- 2798      32434150 
- 2798      5F434246 
- 2799              	.LASF11:
- 2800 01c7 756E7369 		.ascii	"unsigned int\000"
- 2800      676E6564 
- 2800      20696E74 
- 2800      00
- 2801              	.LASF246:
- 2802 01d4 63795F62 		.ascii	"cy_ble_connHandle\000"
- 2802      6C655F63 
- 2802      6F6E6E48 
- 2802      616E646C 
- 2802      6500
- 2803              	.LASF158:
- 2804 01e6 43595F42 		.ascii	"CY_BLE_EVT_GAP_CREATE_CONN_CANCEL_COMPLETE\000"
- 2804      4C455F45 
- 2804      56545F47 
- 2804      41505F43 
- 2804      52454154 
- 2805              	.LASF234:
- 2806 0211 6970635F 		.ascii	"ipc_msg_t\000"
- 2806      6D73675F 
- 2806      7400
- 2807              	.LASF65:
- 2808 021b 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
- 2808      41525F52 
- 2808      414E4745 
- 2808      5F434F4E 
- 2808      445F4F55 
- 2809              	.LASF155:
- 2810 0235 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYS_GEN_COMPLETE\000"
+ 2798      56545F41 
+ 2798      44445F44 
+ 2798      45564943 
+ 2799              	.LASF173:
+ 2800 0358 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_MULTI_RSP\000"
+ 2800      4C455F45 
+ 2800      56545F47 
+ 2800      41545443 
+ 2800      5F524541 
+ 2801              	.LASF163:
+ 2802 0378 43595F42 		.ascii	"CY_BLE_EVT_GATT_CONNECT_IND\000"
+ 2802      4C455F45 
+ 2802      56545F47 
+ 2802      4154545F 
+ 2802      434F4E4E 
+ 2803              	.LASF202:
+ 2804 0394 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
+ 2804      4C455F41 
+ 2804      44565F53 
+ 2804      54415445 
+ 2804      5F53544F 
+ 2805              	.LASF76:
+ 2806 03ad 73617449 		.ascii	"satIntrMask\000"
+ 2806      6E74724D 
+ 2806      61736B00 
+ 2807              	.LASF236:
+ 2808 03b9 72616D44 		.ascii	"ramData\000"
+ 2808      61746100 
+ 2809              	.LASF170:
+ 2810 03c1 43595F42 		.ascii	"CY_BLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
  2810      4C455F45 
  2810      56545F47 
- 2810      41505F4B 
- 2810      4559535F 
- 2811              	.LASF259:
- 2812 0256 77726974 		.ascii	"write_num_events_to_server\000"
- 2812      655F6E75 
- 2812      6D5F6576 
- 2812      656E7473 
- 2812      5F746F5F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 55
+ 2810      41545443 
+ 2810      5F46494E 
+ 2811              	.LASF94:
+ 2812 03e9 43595F42 		.ascii	"CY_BLE_EVT_LE_SET_EVENT_MASK_COMPLETE\000"
+ 2812      4C455F45 
+ 2812      56545F4C 
+ 2812      455F5345 
+ 2812      545F4556 
+ 2813              	.LASF111:
+ 2814 040f 43595F42 		.ascii	"CY_BLE_EVT_SET_PHY_COMPLETE\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 56
 
 
- 2813              	.LASF252:
- 2814 0271 6576656E 		.ascii	"events\000"
- 2814      747300
- 2815              	.LASF216:
- 2816 0278 6368616E 		.ascii	"channelBase\000"
- 2816      6E656C42 
- 2816      61736500 
- 2817              	.LASF215:
- 2818 0284 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
- 2818      6E5F626C 
- 2818      655F636F 
- 2818      6E6E5F73 
- 2818      74617465 
- 2819              	.LASF169:
- 2820 029b 43595F42 		.ascii	"CY_BLE_EVT_GATTC_FIND_INFO_RSP\000"
- 2820      4C455F45 
- 2820      56545F47 
- 2820      41545443 
- 2820      5F46494E 
- 2821              	.LASF113:
- 2822 02ba 43595F42 		.ascii	"CY_BLE_EVT_SET_PRIVACY_MODE_COMPLETE\000"
- 2822      4C455F45 
- 2822      56545F53 
- 2822      45545F50 
- 2822      52495641 
- 2823              	.LASF56:
- 2824 02df 43595F46 		.ascii	"CY_FLASH_DRV_PL_ROW_COMP_FA\000"
- 2824      4C415348 
- 2824      5F445256 
- 2824      5F504C5F 
- 2824      524F575F 
- 2825              	.LASF21:
- 2826 02fb 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_IPC\000"
- 2826      50435F50 
- 2826      4950455F 
- 2826      4552524F 
- 2826      525F4E4F 
- 2827              	.LASF37:
- 2828 0314 72785269 		.ascii	"rxRingBufSize\000"
- 2828      6E674275 
- 2828      6653697A 
- 2828      6500
- 2829              	.LASF253:
- 2830 0322 6E756D5F 		.ascii	"num_events\000"
- 2830      6576656E 
- 2830      747300
- 2831              	.LASF105:
- 2832 032d 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_RPA_LIST_COMPLETE\000"
- 2832      4C455F45 
- 2832      56545F41 
- 2832      44445F44 
- 2832      45564943 
- 2833              	.LASF173:
- 2834 0358 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_MULTI_RSP\000"
- 2834      4C455F45 
- 2834      56545F47 
- 2834      41545443 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 56
+ 2814      4C455F45 
+ 2814      56545F53 
+ 2814      45545F50 
+ 2814      48595F43 
+ 2815              	.LASF185:
+ 2816 042b 43595F42 		.ascii	"CY_BLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
+ 2816      4C455F45 
+ 2816      56545F47 
+ 2816      41545453 
+ 2816      5F524541 
+ 2817              	.LASF156:
+ 2818 0455 43595F42 		.ascii	"CY_BLE_EVT_GAP_RESOLVE_DEVICE_COMPLETE\000"
+ 2818      4C455F45 
+ 2818      56545F47 
+ 2818      41505F52 
+ 2818      45534F4C 
+ 2819              	.LASF62:
+ 2820 047c 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
+ 2820      41525F52 
+ 2820      414E4745 
+ 2820      5F434F4E 
+ 2820      445F4245 
+ 2821              	.LASF208:
+ 2822 0494 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 2822      4C455F43 
+ 2822      4F4E4E5F 
+ 2822      53544154 
+ 2822      455F434C 
+ 2823              	.LASF166:
+ 2824 04c5 43595F42 		.ascii	"CY_BLE_EVT_GATTC_XCHNG_MTU_RSP\000"
+ 2824      4C455F45 
+ 2824      56545F47 
+ 2824      41545443 
+ 2824      5F584348 
+ 2825              	.LASF182:
+ 2826 04e4 43595F42 		.ascii	"CY_BLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
+ 2826      4C455F45 
+ 2826      56545F47 
+ 2826      41545453 
+ 2826      5F48414E 
+ 2827              	.LASF112:
+ 2828 0506 43595F42 		.ascii	"CY_BLE_EVT_PHY_UPDATE_COMPLETE\000"
+ 2828      4C455F45 
+ 2828      56545F50 
+ 2828      48595F55 
+ 2828      50444154 
+ 2829              	.LASF25:
+ 2830 0525 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_ID\000"
+ 2830      50435F50 
+ 2830      4950455F 
+ 2830      4552524F 
+ 2830      525F4241 
+ 2831              	.LASF235:
+ 2832 053e 6D736750 		.ascii	"msgPtr\000"
+ 2832      747200
+ 2833              	.LASF238:
+ 2834 0545 434D305F 		.ascii	"CM0_MessageCallback\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 57
 
 
- 2834      5F524541 
- 2835              	.LASF163:
- 2836 0378 43595F42 		.ascii	"CY_BLE_EVT_GATT_CONNECT_IND\000"
- 2836      4C455F45 
- 2836      56545F47 
- 2836      4154545F 
- 2836      434F4E4E 
- 2837              	.LASF202:
- 2838 0394 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
- 2838      4C455F41 
- 2838      44565F53 
- 2838      54415445 
- 2838      5F53544F 
- 2839              	.LASF76:
- 2840 03ad 73617449 		.ascii	"satIntrMask\000"
- 2840      6E74724D 
- 2840      61736B00 
- 2841              	.LASF236:
- 2842 03b9 72616D44 		.ascii	"ramData\000"
- 2842      61746100 
- 2843              	.LASF170:
- 2844 03c1 43595F42 		.ascii	"CY_BLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP\000"
+ 2834      4D657373 
+ 2834      61676543 
+ 2834      616C6C62 
+ 2834      61636B00 
+ 2835              	.LASF225:
+ 2836 0559 74797065 		.ascii	"type_event\000"
+ 2836      5F657665 
+ 2836      6E7400
+ 2837              	.LASF172:
+ 2838 0564 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BLOB_RSP\000"
+ 2838      4C455F45 
+ 2838      56545F47 
+ 2838      41545443 
+ 2838      5F524541 
+ 2839              	.LASF14:
+ 2840 0583 75696E74 		.ascii	"uint32_t\000"
+ 2840      33325F74 
+ 2840      00
+ 2841              	.LASF58:
+ 2842 058c 43595F46 		.ascii	"CY_FLASH_DRV_PROGRESS_NO_ERROR\000"
+ 2842      4C415348 
+ 2842      5F445256 
+ 2842      5F50524F 
+ 2842      47524553 
+ 2843              	.LASF103:
+ 2844 05ab 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_ENABLE_COMPLETE\000"
  2844      4C455F45 
- 2844      56545F47 
- 2844      41545443 
- 2844      5F46494E 
- 2845              	.LASF94:
- 2846 03e9 43595F42 		.ascii	"CY_BLE_EVT_LE_SET_EVENT_MASK_COMPLETE\000"
+ 2844      56545F53 
+ 2844      45545F52 
+ 2844      50415F45 
+ 2845              	.LASF84:
+ 2846 05ce 43595F42 		.ascii	"CY_BLE_EVT_STACK_ON\000"
  2846      4C455F45 
- 2846      56545F4C 
- 2846      455F5345 
- 2846      545F4556 
- 2847              	.LASF111:
- 2848 040f 43595F42 		.ascii	"CY_BLE_EVT_SET_PHY_COMPLETE\000"
+ 2846      56545F53 
+ 2846      5441434B 
+ 2846      5F4F4E00 
+ 2847              	.LASF114:
+ 2848 05e2 43595F42 		.ascii	"CY_BLE_EVT_LL_CNTRL_PROC_PENDING_COMPLETE\000"
  2848      4C455F45 
- 2848      56545F53 
- 2848      45545F50 
- 2848      48595F43 
- 2849              	.LASF185:
- 2850 042b 43595F42 		.ascii	"CY_BLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ\000"
- 2850      4C455F45 
- 2850      56545F47 
- 2850      41545453 
- 2850      5F524541 
- 2851              	.LASF156:
- 2852 0455 43595F42 		.ascii	"CY_BLE_EVT_GAP_RESOLVE_DEVICE_COMPLETE\000"
+ 2848      56545F4C 
+ 2848      4C5F434E 
+ 2848      54524C5F 
+ 2849              	.LASF254:
+ 2850 060c 75707065 		.ascii	"upper_thresh\000"
+ 2850      725F7468 
+ 2850      72657368 
+ 2850      00
+ 2851              	.LASF191:
+ 2852 0619 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_CNF\000"
  2852      4C455F45 
- 2852      56545F47 
- 2852      41505F52 
- 2852      45534F4C 
- 2853              	.LASF62:
- 2854 047c 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
- 2854      41525F52 
- 2854      414E4745 
- 2854      5F434F4E 
- 2854      445F4245 
- 2855              	.LASF208:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 57
+ 2852      56545F4C 
+ 2852      32434150 
+ 2852      5F434246 
+ 2853              	.LASF51:
+ 2854 0638 43595F46 		.ascii	"CY_FLASH_DRV_INVALID_FM_PL\000"
+ 2854      4C415348 
+ 2854      5F445256 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 58
 
 
- 2856 0494 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
- 2856      4C455F43 
- 2856      4F4E4E5F 
- 2856      53544154 
- 2856      455F434C 
- 2857              	.LASF166:
- 2858 04c5 43595F42 		.ascii	"CY_BLE_EVT_GATTC_XCHNG_MTU_RSP\000"
- 2858      4C455F45 
- 2858      56545F47 
- 2858      41545443 
- 2858      5F584348 
- 2859              	.LASF182:
- 2860 04e4 43595F42 		.ascii	"CY_BLE_EVT_GATTS_HANDLE_VALUE_CNF\000"
- 2860      4C455F45 
- 2860      56545F47 
- 2860      41545453 
- 2860      5F48414E 
- 2861              	.LASF112:
- 2862 0506 43595F42 		.ascii	"CY_BLE_EVT_PHY_UPDATE_COMPLETE\000"
- 2862      4C455F45 
- 2862      56545F50 
- 2862      48595F55 
- 2862      50444154 
- 2863              	.LASF25:
- 2864 0525 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_ID\000"
- 2864      50435F50 
- 2864      4950455F 
- 2864      4552524F 
- 2864      525F4241 
- 2865              	.LASF235:
- 2866 053e 6D736750 		.ascii	"msgPtr\000"
- 2866      747200
- 2867              	.LASF238:
- 2868 0545 434D305F 		.ascii	"CM0_MessageCallback\000"
- 2868      4D657373 
- 2868      61676543 
- 2868      616C6C62 
- 2868      61636B00 
- 2869              	.LASF225:
- 2870 0559 74797065 		.ascii	"type_event\000"
- 2870      5F657665 
- 2870      6E7400
- 2871              	.LASF172:
- 2872 0564 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BLOB_RSP\000"
- 2872      4C455F45 
- 2872      56545F47 
- 2872      41545443 
- 2872      5F524541 
- 2873              	.LASF14:
- 2874 0583 75696E74 		.ascii	"uint32_t\000"
- 2874      33325F74 
- 2874      00
- 2875              	.LASF58:
- 2876 058c 43595F46 		.ascii	"CY_FLASH_DRV_PROGRESS_NO_ERROR\000"
- 2876      4C415348 
- 2876      5F445256 
- 2876      5F50524F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 58
+ 2854      5F494E56 
+ 2854      414C4944 
+ 2855              	.LASF100:
+ 2856 0653 43595F42 		.ascii	"CY_BLE_EVT_GET_PEER_RPA_COMPLETE\000"
+ 2856      4C455F45 
+ 2856      56545F47 
+ 2856      45545F50 
+ 2856      4545525F 
+ 2857              	.LASF263:
+ 2858 0674 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2858      43313120 
+ 2858      352E342E 
+ 2858      31203230 
+ 2858      31363036 
+ 2859 06a7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 2859      20726576 
+ 2859      6973696F 
+ 2859      6E203233 
+ 2859      37373135 
+ 2860 06da 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 2860      67202D66 
+ 2860      66756E63 
+ 2860      74696F6E 
+ 2860      2D736563 
+ 2861              	.LASF48:
+ 2862 0706 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
+ 2862      74635F73 
+ 2862      63625F75 
+ 2862      6172745F 
+ 2862      636F6E74 
+ 2863              	.LASF86:
+ 2864 0720 43595F42 		.ascii	"CY_BLE_EVT_STACK_BUSY_STATUS\000"
+ 2864      4C455F45 
+ 2864      56545F53 
+ 2864      5441434B 
+ 2864      5F425553 
+ 2865              	.LASF217:
+ 2866 073d 6E756D43 		.ascii	"numChannels\000"
+ 2866      68616E6E 
+ 2866      656C7300 
+ 2867              	.LASF266:
+ 2868 0749 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
+ 2868      74635F73 
+ 2868      63625F75 
+ 2868      6172745F 
+ 2868      636F6E74 
+ 2869              	.LASF101:
+ 2870 0761 43595F42 		.ascii	"CY_BLE_EVT_GET_LOCAL_RPA_COMPLETE\000"
+ 2870      4C455F45 
+ 2870      56545F47 
+ 2870      45545F4C 
+ 2870      4F43414C 
+ 2871              	.LASF242:
+ 2872 0783 73656E64 		.ascii	"send_trigger\000"
+ 2872      5F747269 
+ 2872      67676572 
+ 2872      00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 59
 
 
- 2876      47524553 
- 2877              	.LASF103:
- 2878 05ab 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_ENABLE_COMPLETE\000"
- 2878      4C455F45 
- 2878      56545F53 
- 2878      45545F52 
- 2878      50415F45 
- 2879              	.LASF84:
- 2880 05ce 43595F42 		.ascii	"CY_BLE_EVT_STACK_ON\000"
- 2880      4C455F45 
- 2880      56545F53 
- 2880      5441434B 
- 2880      5F4F4E00 
- 2881              	.LASF114:
- 2882 05e2 43595F42 		.ascii	"CY_BLE_EVT_LL_CNTRL_PROC_PENDING_COMPLETE\000"
+ 2873              	.LASF237:
+ 2874 0790 72657375 		.ascii	"result\000"
+ 2874      6C7400
+ 2875              	.LASF151:
+ 2876 0797 43595F42 		.ascii	"CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE\000"
+ 2876      4C455F45 
+ 2876      56545F47 
+ 2876      41505F45 
+ 2876      4E48414E 
+ 2877              	.LASF10:
+ 2878 07bc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2878      206C6F6E 
+ 2878      6720756E 
+ 2878      7369676E 
+ 2878      65642069 
+ 2879              	.LASF206:
+ 2880 07d3 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
+ 2880      6E5F626C 
+ 2880      655F6164 
+ 2880      765F7374 
+ 2880      6174655F 
+ 2881              	.LASF118:
+ 2882 07e9 43595F42 		.ascii	"CY_BLE_EVT_GET_RSSI_COMPLETE\000"
  2882      4C455F45 
- 2882      56545F4C 
- 2882      4C5F434E 
- 2882      54524C5F 
- 2883              	.LASF254:
- 2884 060c 75707065 		.ascii	"upper_thresh\000"
- 2884      725F7468 
- 2884      72657368 
- 2884      00
- 2885              	.LASF191:
- 2886 0619 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_CNF\000"
- 2886      4C455F45 
- 2886      56545F4C 
- 2886      32434150 
- 2886      5F434246 
- 2887              	.LASF51:
- 2888 0638 43595F46 		.ascii	"CY_FLASH_DRV_INVALID_FM_PL\000"
- 2888      4C415348 
- 2888      5F445256 
- 2888      5F494E56 
- 2888      414C4944 
- 2889              	.LASF100:
- 2890 0653 43595F42 		.ascii	"CY_BLE_EVT_GET_PEER_RPA_COMPLETE\000"
- 2890      4C455F45 
- 2890      56545F47 
- 2890      45545F50 
- 2890      4545525F 
- 2891              	.LASF263:
- 2892 0674 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 2892      43313120 
- 2892      352E342E 
- 2892      31203230 
- 2892      31363036 
- 2893 06a7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
- 2893      20726576 
- 2893      6973696F 
- 2893      6E203233 
- 2893      37373135 
- 2894 06da 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
- 2894      67202D66 
- 2894      66756E63 
- 2894      74696F6E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 59
+ 2882      56545F47 
+ 2882      45545F52 
+ 2882      5353495F 
+ 2883              	.LASF227:
+ 2884 0806 74797065 		.ascii	"type_lower_threshold\000"
+ 2884      5F6C6F77 
+ 2884      65725F74 
+ 2884      68726573 
+ 2884      686F6C64 
+ 2885              	.LASF71:
+ 2886 081b 72616E67 		.ascii	"rangeThres\000"
+ 2886      65546872 
+ 2886      657300
+ 2887              	.LASF203:
+ 2888 0826 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 2888      4C455F41 
+ 2888      44565F53 
+ 2888      54415445 
+ 2888      5F414456 
+ 2889              	.LASF4:
+ 2890 0845 5F5F7569 		.ascii	"__uint16_t\000"
+ 2890      6E743136 
+ 2890      5F7400
+ 2891              	.LASF63:
+ 2892 0850 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
+ 2892      41525F52 
+ 2892      414E4745 
+ 2892      5F434F4E 
+ 2892      445F494E 
+ 2893              	.LASF144:
+ 2894 0869 43595F42 		.ascii	"CY_BLE_EVT_GAP_ENCRYPT_CHANGE\000"
+ 2894      4C455F45 
+ 2894      56545F47 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 60
 
 
- 2894      2D736563 
- 2895              	.LASF48:
- 2896 0706 63795F73 		.ascii	"cy_stc_scb_uart_context_t\000"
- 2896      74635F73 
- 2896      63625F75 
- 2896      6172745F 
- 2896      636F6E74 
- 2897              	.LASF86:
- 2898 0720 43595F42 		.ascii	"CY_BLE_EVT_STACK_BUSY_STATUS\000"
- 2898      4C455F45 
- 2898      56545F53 
- 2898      5441434B 
- 2898      5F425553 
- 2899              	.LASF217:
- 2900 073d 6E756D43 		.ascii	"numChannels\000"
- 2900      68616E6E 
- 2900      656C7300 
- 2901              	.LASF266:
- 2902 0749 63795F73 		.ascii	"cy_stc_scb_uart_context\000"
- 2902      74635F73 
- 2902      63625F75 
- 2902      6172745F 
- 2902      636F6E74 
- 2903              	.LASF101:
- 2904 0761 43595F42 		.ascii	"CY_BLE_EVT_GET_LOCAL_RPA_COMPLETE\000"
+ 2894      41505F45 
+ 2894      4E435259 
+ 2895              	.LASF116:
+ 2896 0887 43595F42 		.ascii	"CY_BLE_EVT_SET_DEVICE_ADDR_COMPLETE\000"
+ 2896      4C455F45 
+ 2896      56545F53 
+ 2896      45545F44 
+ 2896      45564943 
+ 2897              	.LASF82:
+ 2898 08ab 63795F73 		.ascii	"cy_stc_sar_config_t\000"
+ 2898      74635F73 
+ 2898      61725F63 
+ 2898      6F6E6669 
+ 2898      675F7400 
+ 2899              	.LASF200:
+ 2900 08bf 61747449 		.ascii	"attId\000"
+ 2900      6400
+ 2901              	.LASF67:
+ 2902 08c5 6374726C 		.ascii	"ctrl\000"
+ 2902      00
+ 2903              	.LASF99:
+ 2904 08ca 43595F42 		.ascii	"CY_BLE_EVT_DATA_LENGTH_CHANGE\000"
  2904      4C455F45 
- 2904      56545F47 
- 2904      45545F4C 
- 2904      4F43414C 
- 2905              	.LASF242:
- 2906 0783 73656E64 		.ascii	"send_trigger\000"
- 2906      5F747269 
- 2906      67676572 
- 2906      00
- 2907              	.LASF237:
- 2908 0790 72657375 		.ascii	"result\000"
- 2908      6C7400
- 2909              	.LASF151:
- 2910 0797 43595F42 		.ascii	"CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE\000"
+ 2904      56545F44 
+ 2904      4154415F 
+ 2904      4C454E47 
+ 2905              	.LASF53:
+ 2906 08e8 43595F46 		.ascii	"CY_FLASH_DRV_ROW_PROTECTED\000"
+ 2906      4C415348 
+ 2906      5F445256 
+ 2906      5F524F57 
+ 2906      5F50524F 
+ 2907              	.LASF49:
+ 2908 0903 43595F46 		.ascii	"CY_FLASH_DRV_SUCCESS\000"
+ 2908      4C415348 
+ 2908      5F445256 
+ 2908      5F535543 
+ 2908      43455353 
+ 2909              	.LASF150:
+ 2910 0918 43595F42 		.ascii	"CY_BLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
  2910      4C455F45 
  2910      56545F47 
- 2910      41505F45 
- 2910      4E48414E 
- 2911              	.LASF10:
- 2912 07bc 6C6F6E67 		.ascii	"long long unsigned int\000"
- 2912      206C6F6E 
- 2912      6720756E 
- 2912      7369676E 
- 2912      65642069 
- 2913              	.LASF206:
- 2914 07d3 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
- 2914      6E5F626C 
- 2914      655F6164 
- 2914      765F7374 
- 2914      6174655F 
- 2915              	.LASF118:
- 2916 07e9 43595F42 		.ascii	"CY_BLE_EVT_GET_RSSI_COMPLETE\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 60
+ 2910      41505F4F 
+ 2910      4F425F47 
+ 2911              	.LASF35:
+ 2912 0942 72785374 		.ascii	"rxStatus\000"
+ 2912      61747573 
+ 2912      00
+ 2913              	.LASF226:
+ 2914 094b 74797065 		.ascii	"type_upper_threshold\000"
+ 2914      5F757070 
+ 2914      65725F74 
+ 2914      68726573 
+ 2914      686F6C64 
+ 2915              	.LASF265:
+ 2916 0960 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
+ 2916      536F4320 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 61
 
 
- 2916      4C455F45 
- 2916      56545F47 
- 2916      45545F52 
- 2916      5353495F 
- 2917              	.LASF227:
- 2918 0806 74797065 		.ascii	"type_lower_threshold\000"
- 2918      5F6C6F77 
- 2918      65725F74 
- 2918      68726573 
- 2918      686F6C64 
- 2919              	.LASF71:
- 2920 081b 72616E67 		.ascii	"rangeThres\000"
- 2920      65546872 
- 2920      657300
- 2921              	.LASF203:
- 2922 0826 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
- 2922      4C455F41 
- 2922      44565F53 
- 2922      54415445 
- 2922      5F414456 
- 2923              	.LASF4:
- 2924 0845 5F5F7569 		.ascii	"__uint16_t\000"
- 2924      6E743136 
- 2924      5F7400
- 2925              	.LASF63:
- 2926 0850 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
- 2926      41525F52 
- 2926      414E4745 
- 2926      5F434F4E 
- 2926      445F494E 
- 2927              	.LASF144:
- 2928 0869 43595F42 		.ascii	"CY_BLE_EVT_GAP_ENCRYPT_CHANGE\000"
- 2928      4C455F45 
- 2928      56545F47 
- 2928      41505F45 
- 2928      4E435259 
- 2929              	.LASF116:
- 2930 0887 43595F42 		.ascii	"CY_BLE_EVT_SET_DEVICE_ADDR_COMPLETE\000"
- 2930      4C455F45 
- 2930      56545F53 
- 2930      45545F44 
- 2930      45564943 
- 2931              	.LASF82:
- 2932 08ab 63795F73 		.ascii	"cy_stc_sar_config_t\000"
- 2932      74635F73 
- 2932      61725F63 
- 2932      6F6E6669 
- 2932      675F7400 
- 2933              	.LASF200:
- 2934 08bf 61747449 		.ascii	"attId\000"
- 2934      6400
- 2935              	.LASF67:
- 2936 08c5 6374726C 		.ascii	"ctrl\000"
- 2936      00
- 2937              	.LASF99:
- 2938 08ca 43595F42 		.ascii	"CY_BLE_EVT_DATA_LENGTH_CHANGE\000"
- 2938      4C455F45 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 61
+ 2916      36205072 
+ 2916      6F6A6563 
+ 2916      74735C73 
+ 2917 0990 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
+ 2917      69746F72 
+ 2917      5C53454C 
+ 2917      566F6C74 
+ 2917      6167654D 
+ 2918              	.LASF142:
+ 2919 09b1 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 2919      4C455F45 
+ 2919      56545F47 
+ 2919      41505F44 
+ 2919      45564943 
+ 2920              	.LASF115:
+ 2921 09d1 43595F42 		.ascii	"CY_BLE_EVT_SOFT_RESET_COMPLETE\000"
+ 2921      4C455F45 
+ 2921      56545F53 
+ 2921      4F46545F 
+ 2921      52455345 
+ 2922              	.LASF177:
+ 2923 09f0 43595F42 		.ascii	"CY_BLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 2923      4C455F45 
+ 2923      56545F47 
+ 2923      41545453 
+ 2923      5F505245 
+ 2924              	.LASF267:
+ 2925 0a10 434D305F 		.ascii	"CM0_ReleaseCallback\000"
+ 2925      52656C65 
+ 2925      61736543 
+ 2925      616C6C62 
+ 2925      61636B00 
+ 2926              	.LASF46:
+ 2927 0a24 63624576 		.ascii	"cbEvents\000"
+ 2927      656E7473 
+ 2927      00
+ 2928              	.LASF19:
+ 2929 0a2d 646F7562 		.ascii	"double\000"
+ 2929      6C6500
+ 2930              	.LASF32:
+ 2931 0a34 5F426F6F 		.ascii	"_Bool\000"
+ 2931      6C00
+ 2932              	.LASF198:
+ 2933 0a3a 43595F42 		.ascii	"CY_BLE_EVT_MAX\000"
+ 2933      4C455F45 
+ 2933      56545F4D 
+ 2933      415800
+ 2934              	.LASF193:
+ 2935 0a49 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
+ 2935      4C455F45 
+ 2935      56545F4C 
+ 2935      32434150 
+ 2935      5F434246 
+ 2936              	.LASF230:
+ 2937 0a6b 636C6965 		.ascii	"clientId\000"
+ 2937      6E744964 
+ 2937      00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 62
 
 
- 2938      56545F44 
- 2938      4154415F 
- 2938      4C454E47 
- 2939              	.LASF53:
- 2940 08e8 43595F46 		.ascii	"CY_FLASH_DRV_ROW_PROTECTED\000"
- 2940      4C415348 
- 2940      5F445256 
- 2940      5F524F57 
- 2940      5F50524F 
- 2941              	.LASF49:
- 2942 0903 43595F46 		.ascii	"CY_FLASH_DRV_SUCCESS\000"
- 2942      4C415348 
- 2942      5F445256 
- 2942      5F535543 
- 2942      43455353 
- 2943              	.LASF150:
- 2944 0918 43595F42 		.ascii	"CY_BLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
- 2944      4C455F45 
- 2944      56545F47 
- 2944      41505F4F 
- 2944      4F425F47 
- 2945              	.LASF35:
- 2946 0942 72785374 		.ascii	"rxStatus\000"
- 2946      61747573 
- 2946      00
- 2947              	.LASF226:
- 2948 094b 74797065 		.ascii	"type_upper_threshold\000"
- 2948      5F757070 
- 2948      65725F74 
- 2948      68726573 
- 2948      686F6C64 
- 2949              	.LASF265:
- 2950 0960 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
- 2950      536F4320 
- 2950      36205072 
- 2950      6F6A6563 
- 2950      74735C73 
- 2951 0990 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
- 2951      69746F72 
- 2951      5C53454C 
- 2951      566F6C74 
- 2951      6167654D 
- 2952              	.LASF142:
- 2953 09b1 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_CONNECTED\000"
+ 2938              	.LASF123:
+ 2939 0a74 43595F42 		.ascii	"CY_BLE_EVT_RANDOM_NUM_GEN_COMPLETE\000"
+ 2939      4C455F45 
+ 2939      56545F52 
+ 2939      414E444F 
+ 2939      4D5F4E55 
+ 2940              	.LASF204:
+ 2941 0a97 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 2941      4C455F41 
+ 2941      44565F53 
+ 2941      54415445 
+ 2941      5F414456 
+ 2942              	.LASF153:
+ 2943 0ab4 43595F42 		.ascii	"CY_BLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
+ 2943      4C455F45 
+ 2943      56545F47 
+ 2943      41505F53 
+ 2943      4D505F4E 
+ 2944              	.LASF96:
+ 2945 0adc 43595F42 		.ascii	"CY_BLE_EVT_SET_DATA_LENGTH_COMPLETE\000"
+ 2945      4C455F45 
+ 2945      56545F53 
+ 2945      45545F44 
+ 2945      4154415F 
+ 2946              	.LASF175:
+ 2947 0b00 43595F42 		.ascii	"CY_BLE_EVT_GATTC_WRITE_RSP\000"
+ 2947      4C455F45 
+ 2947      56545F47 
+ 2947      41545443 
+ 2947      5F575249 
+ 2948              	.LASF260:
+ 2949 0b1b 43795F46 		.ascii	"Cy_Flash_WriteRow\000"
+ 2949      6C617368 
+ 2949      5F577269 
+ 2949      7465526F 
+ 2949      7700
+ 2950              	.LASF264:
+ 2951 0b2d 6970635F 		.ascii	"ipc_cm0p.c\000"
+ 2951      636D3070 
+ 2951      2E6300
+ 2952              	.LASF189:
+ 2953 0b38 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_COMMAND_REJ\000"
  2953      4C455F45 
- 2953      56545F47 
- 2953      41505F44 
- 2953      45564943 
- 2954              	.LASF115:
- 2955 09d1 43595F42 		.ascii	"CY_BLE_EVT_SOFT_RESET_COMPLETE\000"
+ 2953      56545F4C 
+ 2953      32434150 
+ 2953      5F434F4D 
+ 2954              	.LASF93:
+ 2955 0b55 43595F42 		.ascii	"CY_BLE_EVT_GET_CHANNEL_MAP_COMPLETE\000"
  2955      4C455F45 
- 2955      56545F53 
- 2955      4F46545F 
- 2955      52455345 
- 2956              	.LASF177:
- 2957 09f0 43595F42 		.ascii	"CY_BLE_EVT_GATTS_PREP_WRITE_REQ\000"
+ 2955      56545F47 
+ 2955      45545F43 
+ 2955      48414E4E 
+ 2956              	.LASF87:
+ 2957 0b79 43595F42 		.ascii	"CY_BLE_EVT_MEMORY_REQUEST\000"
  2957      4C455F45 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 62
+ 2957      56545F4D 
+ 2957      454D4F52 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 63
 
 
- 2957      56545F47 
- 2957      41545453 
- 2957      5F505245 
- 2958              	.LASF267:
- 2959 0a10 434D305F 		.ascii	"CM0_ReleaseCallback\000"
- 2959      52656C65 
- 2959      61736543 
- 2959      616C6C62 
- 2959      61636B00 
- 2960              	.LASF46:
- 2961 0a24 63624576 		.ascii	"cbEvents\000"
- 2961      656E7473 
- 2961      00
- 2962              	.LASF19:
- 2963 0a2d 646F7562 		.ascii	"double\000"
- 2963      6C6500
- 2964              	.LASF32:
- 2965 0a34 5F426F6F 		.ascii	"_Bool\000"
- 2965      6C00
- 2966              	.LASF198:
- 2967 0a3a 43595F42 		.ascii	"CY_BLE_EVT_MAX\000"
- 2967      4C455F45 
- 2967      56545F4D 
- 2967      415800
- 2968              	.LASF193:
- 2969 0a49 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_CNF\000"
- 2969      4C455F45 
- 2969      56545F4C 
- 2969      32434150 
- 2969      5F434246 
- 2970              	.LASF230:
- 2971 0a6b 636C6965 		.ascii	"clientId\000"
- 2971      6E744964 
- 2971      00
- 2972              	.LASF123:
- 2973 0a74 43595F42 		.ascii	"CY_BLE_EVT_RANDOM_NUM_GEN_COMPLETE\000"
+ 2957      595F5245 
+ 2958              	.LASF81:
+ 2959 0b93 76726566 		.ascii	"vrefMvValue\000"
+ 2959      4D765661 
+ 2959      6C756500 
+ 2960              	.LASF134:
+ 2961 0b9f 43595F42 		.ascii	"CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE\000"
+ 2961      4C455F45 
+ 2961      56545F53 
+ 2961      45545F43 
+ 2961      4F4E4E5F 
+ 2962              	.LASF205:
+ 2963 0bc5 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 2963      4C455F41 
+ 2963      44565F53 
+ 2963      54415445 
+ 2963      5F53544F 
+ 2964              	.LASF212:
+ 2965 0be5 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 2965      4C455F43 
+ 2965      4F4E4E5F 
+ 2965      53544154 
+ 2965      455F434C 
+ 2966              	.LASF64:
+ 2967 0c0f 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
+ 2967      41525F52 
+ 2967      414E4745 
+ 2967      5F434F4E 
+ 2967      445F4142 
+ 2968              	.LASF17:
+ 2969 0c27 63686172 		.ascii	"char\000"
+ 2969      00
+ 2970              	.LASF241:
+ 2971 0c2c 75707065 		.ascii	"upper_or_lower\000"
+ 2971      725F6F72 
+ 2971      5F6C6F77 
+ 2971      657200
+ 2972              	.LASF125:
+ 2973 0c3b 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_ENCRYPT_COMPLETE\000"
  2973      4C455F45 
- 2973      56545F52 
- 2973      414E444F 
- 2973      4D5F4E55 
- 2974              	.LASF204:
- 2975 0a97 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
- 2975      4C455F41 
- 2975      44565F53 
- 2975      54415445 
- 2975      5F414456 
- 2976              	.LASF153:
- 2977 0ab4 43595F42 		.ascii	"CY_BLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO\000"
- 2977      4C455F45 
- 2977      56545F47 
- 2977      41505F53 
- 2977      4D505F4E 
- 2978              	.LASF96:
- 2979 0adc 43595F42 		.ascii	"CY_BLE_EVT_SET_DATA_LENGTH_COMPLETE\000"
- 2979      4C455F45 
- 2979      56545F53 
- 2979      45545F44 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 63
+ 2973      56545F41 
+ 2973      45535F43 
+ 2973      434D5F45 
+ 2974              	.LASF146:
+ 2975 0c5f 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_START_STOP\000"
+ 2975      4C455F45 
+ 2975      56545F47 
+ 2975      4150435F 
+ 2975      5343414E 
+ 2976              	.LASF73:
+ 2977 0c7f 6368616E 		.ascii	"chanEn\000"
+ 2977      456E00
+ 2978              	.LASF39:
+ 2979 0c86 72785269 		.ascii	"rxRingBufTail\000"
+ 2979      6E674275 
+ 2979      66546169 
+ 2979      6C00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 64
 
 
- 2979      4154415F 
- 2980              	.LASF175:
- 2981 0b00 43595F42 		.ascii	"CY_BLE_EVT_GATTC_WRITE_RSP\000"
+ 2980              	.LASF168:
+ 2981 0c94 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
  2981      4C455F45 
  2981      56545F47 
  2981      41545443 
- 2981      5F575249 
- 2982              	.LASF260:
- 2983 0b1b 43795F46 		.ascii	"Cy_Flash_WriteRow\000"
- 2983      6C617368 
- 2983      5F577269 
- 2983      7465526F 
- 2983      7700
- 2984              	.LASF264:
- 2985 0b2d 6970635F 		.ascii	"ipc_cm0p.c\000"
- 2985      636D3070 
- 2985      2E6300
- 2986              	.LASF189:
- 2987 0b38 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_COMMAND_REJ\000"
- 2987      4C455F45 
- 2987      56545F4C 
- 2987      32434150 
- 2987      5F434F4D 
- 2988              	.LASF93:
- 2989 0b55 43595F42 		.ascii	"CY_BLE_EVT_GET_CHANNEL_MAP_COMPLETE\000"
- 2989      4C455F45 
- 2989      56545F47 
- 2989      45545F43 
- 2989      48414E4E 
- 2990              	.LASF87:
- 2991 0b79 43595F42 		.ascii	"CY_BLE_EVT_MEMORY_REQUEST\000"
+ 2981      5F524541 
+ 2982              	.LASF104:
+ 2983 0cb6 43595F42 		.ascii	"CY_BLE_EVT_SET_HOST_CHANNEL_COMPLETE\000"
+ 2983      4C455F45 
+ 2983      56545F53 
+ 2983      45545F48 
+ 2983      4F53545F 
+ 2984              	.LASF233:
+ 2985 0cdb 64617461 		.ascii	"data\000"
+ 2985      00
+ 2986              	.LASF27:
+ 2987 0ce0 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_SEND_BUSY\000"
+ 2987      50435F50 
+ 2987      4950455F 
+ 2987      4552524F 
+ 2987      525F5345 
+ 2988              	.LASF42:
+ 2989 0cfc 72784275 		.ascii	"rxBufIdx\000"
+ 2989      66496478 
+ 2989      00
+ 2990              	.LASF148:
+ 2991 0d05 43595F42 		.ascii	"CY_BLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
  2991      4C455F45 
- 2991      56545F4D 
- 2991      454D4F52 
- 2991      595F5245 
- 2992              	.LASF81:
- 2993 0b93 76726566 		.ascii	"vrefMvValue\000"
- 2993      4D765661 
- 2993      6C756500 
- 2994              	.LASF134:
- 2995 0b9f 43595F42 		.ascii	"CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE\000"
- 2995      4C455F45 
- 2995      56545F53 
- 2995      45545F43 
- 2995      4F4E4E5F 
- 2996              	.LASF205:
- 2997 0bc5 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
- 2997      4C455F41 
- 2997      44565F53 
- 2997      54415445 
- 2997      5F53544F 
- 2998              	.LASF212:
- 2999 0be5 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
- 2999      4C455F43 
- 2999      4F4E4E5F 
- 2999      53544154 
- 2999      455F434C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 64
+ 2991      56545F47 
+ 2991      41505F4E 
+ 2991      554D4552 
+ 2992              	.LASF47:
+ 2993 0d2f 696E6974 		.ascii	"initKey\000"
+ 2993      4B657900 
+ 2994              	.LASF12:
+ 2995 0d37 75696E74 		.ascii	"uint8_t\000"
+ 2995      385F7400 
+ 2996              	.LASF269:
+ 2997 0d3f 5F5F6275 		.ascii	"__builtin_puts\000"
+ 2997      696C7469 
+ 2997      6E5F7075 
+ 2997      747300
+ 2998              	.LASF127:
+ 2999 0d4e 43595F42 		.ascii	"CY_BLE_EVT_SET_SLAVE_LATENCY_MODE_COMPLETE\000"
+ 2999      4C455F45 
+ 2999      56545F53 
+ 2999      45545F53 
+ 2999      4C415645 
+ 3000              	.LASF268:
+ 3001 0d79 70757473 		.ascii	"puts\000"
+ 3001      00
+ 3002              	.LASF139:
+ 3003 0d7e 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_COMPLETE\000"
+ 3003      4C455F45 
+ 3003      56545F47 
+ 3003      41505F41 
+ 3003      5554485F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 65
 
 
- 3000              	.LASF64:
- 3001 0c0f 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
- 3001      41525F52 
- 3001      414E4745 
- 3001      5F434F4E 
- 3001      445F4142 
- 3002              	.LASF17:
- 3003 0c27 63686172 		.ascii	"char\000"
- 3003      00
- 3004              	.LASF241:
- 3005 0c2c 75707065 		.ascii	"upper_or_lower\000"
- 3005      725F6F72 
- 3005      5F6C6F77 
- 3005      657200
- 3006              	.LASF125:
- 3007 0c3b 43595F42 		.ascii	"CY_BLE_EVT_AES_CCM_ENCRYPT_COMPLETE\000"
- 3007      4C455F45 
- 3007      56545F41 
- 3007      45535F43 
- 3007      434D5F45 
- 3008              	.LASF146:
- 3009 0c5f 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_START_STOP\000"
- 3009      4C455F45 
- 3009      56545F47 
- 3009      4150435F 
- 3009      5343414E 
- 3010              	.LASF73:
- 3011 0c7f 6368616E 		.ascii	"chanEn\000"
- 3011      456E00
- 3012              	.LASF39:
- 3013 0c86 72785269 		.ascii	"rxRingBufTail\000"
- 3013      6E674275 
- 3013      66546169 
- 3013      6C00
- 3014              	.LASF168:
- 3015 0c94 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP\000"
+ 3004              	.LASF110:
+ 3005 0d9b 43595F42 		.ascii	"CY_BLE_EVT_SET_DEFAULT_PHY_COMPLETE\000"
+ 3005      4C455F45 
+ 3005      56545F53 
+ 3005      45545F44 
+ 3005      45464155 
+ 3006              	.LASF79:
+ 3007 0dbf 6D757853 		.ascii	"muxSwitchSqCtrl\000"
+ 3007      77697463 
+ 3007      68537143 
+ 3007      74726C00 
+ 3008              	.LASF245:
+ 3009 0dcf 63795F62 		.ascii	"cy_ble_advState\000"
+ 3009      6C655F61 
+ 3009      64765374 
+ 3009      61746500 
+ 3010              	.LASF33:
+ 3011 0ddf 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
+ 3011      625F7363 
+ 3011      625F7561 
+ 3011      72745F68 
+ 3011      616E646C 
+ 3012              	.LASF72:
+ 3013 0dfe 72616E67 		.ascii	"rangeCond\000"
+ 3013      65436F6E 
+ 3013      6400
+ 3014              	.LASF133:
+ 3015 0e08 43595F42 		.ascii	"CY_BLE_EVT_SET_CE_LENGTH_COMPLETE\000"
  3015      4C455F45 
- 3015      56545F47 
- 3015      41545443 
- 3015      5F524541 
- 3016              	.LASF104:
- 3017 0cb6 43595F42 		.ascii	"CY_BLE_EVT_SET_HOST_CHANNEL_COMPLETE\000"
+ 3015      56545F53 
+ 3015      45545F43 
+ 3015      455F4C45 
+ 3016              	.LASF132:
+ 3017 0e2a 43595F42 		.ascii	"CY_BLE_EVT_SET_EVENT_MASK_COMPLETE\000"
  3017      4C455F45 
  3017      56545F53 
- 3017      45545F48 
- 3017      4F53545F 
- 3018              	.LASF233:
- 3019 0cdb 64617461 		.ascii	"data\000"
- 3019      00
- 3020              	.LASF27:
- 3021 0ce0 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_SEND_BUSY\000"
- 3021      50435F50 
- 3021      4950455F 
- 3021      4552524F 
- 3021      525F5345 
- 3022              	.LASF42:
- 3023 0cfc 72784275 		.ascii	"rxBufIdx\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 65
-
-
- 3023      66496478 
- 3023      00
- 3024              	.LASF148:
- 3025 0d05 43595F42 		.ascii	"CY_BLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST\000"
+ 3017      45545F45 
+ 3017      56454E54 
+ 3018              	.LASF243:
+ 3019 0e4d 73656E64 		.ascii	"send_enable\000"
+ 3019      5F656E61 
+ 3019      626C6500 
+ 3020              	.LASF9:
+ 3021 0e59 6C6F6E67 		.ascii	"long long int\000"
+ 3021      206C6F6E 
+ 3021      6720696E 
+ 3021      7400
+ 3022              	.LASF159:
+ 3023 0e67 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONN_ESTB\000"
+ 3023      4C455F45 
+ 3023      56545F47 
+ 3023      41505F43 
+ 3023      4F4E4E5F 
+ 3024              	.LASF106:
+ 3025 0e80 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_RPA_LIST_COMPLETE\000"
  3025      4C455F45 
- 3025      56545F47 
- 3025      41505F4E 
- 3025      554D4552 
- 3026              	.LASF47:
- 3027 0d2f 696E6974 		.ascii	"initKey\000"
- 3027      4B657900 
- 3028              	.LASF12:
- 3029 0d37 75696E74 		.ascii	"uint8_t\000"
- 3029      385F7400 
- 3030              	.LASF269:
- 3031 0d3f 5F5F6275 		.ascii	"__builtin_puts\000"
- 3031      696C7469 
- 3031      6E5F7075 
- 3031      747300
- 3032              	.LASF127:
- 3033 0d4e 43595F42 		.ascii	"CY_BLE_EVT_SET_SLAVE_LATENCY_MODE_COMPLETE\000"
+ 3025      56545F52 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 66
+
+
+ 3025      454D4F56 
+ 3025      455F4445 
+ 3026              	.LASF95:
+ 3027 0eb0 43595F42 		.ascii	"CY_BLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 3027      4C455F45 
+ 3027      56545F4C 
+ 3027      455F5049 
+ 3027      4E475F41 
+ 3028              	.LASF258:
+ 3029 0ed0 6970634D 		.ascii	"ipcMsgForCM4\000"
+ 3029      7367466F 
+ 3029      72434D34 
+ 3029      00
+ 3030              	.LASF257:
+ 3031 0edd 72647954 		.ascii	"rdyToRecvMsg\000"
+ 3031      6F526563 
+ 3031      764D7367 
+ 3031      00
+ 3032              	.LASF122:
+ 3033 0eea 43595F42 		.ascii	"CY_BLE_EVT_SET_CLK_CONFIG_COMPLETE\000"
  3033      4C455F45 
  3033      56545F53 
- 3033      45545F53 
- 3033      4C415645 
- 3034              	.LASF268:
- 3035 0d79 70757473 		.ascii	"puts\000"
- 3035      00
- 3036              	.LASF139:
- 3037 0d7e 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_COMPLETE\000"
- 3037      4C455F45 
- 3037      56545F47 
- 3037      41505F41 
- 3037      5554485F 
- 3038              	.LASF110:
- 3039 0d9b 43595F42 		.ascii	"CY_BLE_EVT_SET_DEFAULT_PHY_COMPLETE\000"
- 3039      4C455F45 
- 3039      56545F53 
- 3039      45545F44 
- 3039      45464155 
- 3040              	.LASF79:
- 3041 0dbf 6D757853 		.ascii	"muxSwitchSqCtrl\000"
- 3041      77697463 
- 3041      68537143 
- 3041      74726C00 
- 3042              	.LASF245:
- 3043 0dcf 63795F62 		.ascii	"cy_ble_advState\000"
- 3043      6C655F61 
- 3043      64765374 
- 3043      61746500 
- 3044              	.LASF33:
- 3045 0ddf 63795F63 		.ascii	"cy_cb_scb_uart_handle_events_t\000"
- 3045      625F7363 
- 3045      625F7561 
- 3045      72745F68 
- 3045      616E646C 
- 3046              	.LASF72:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 66
+ 3033      45545F43 
+ 3033      4C4B5F43 
+ 3034              	.LASF186:
+ 3035 0f0d 43595F42 		.ascii	"CY_BLE_EVT_GATTC_LONG_PROCEDURE_END\000"
+ 3035      4C455F45 
+ 3035      56545F47 
+ 3035      41545443 
+ 3035      5F4C4F4E 
+ 3036              	.LASF29:
+ 3037 0f31 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CPU\000"
+ 3037      50435F50 
+ 3037      4950455F 
+ 3037      4552524F 
+ 3037      525F4241 
+ 3038              	.LASF224:
+ 3039 0f4b 74797065 		.ascii	"type_voltage\000"
+ 3039      5F766F6C 
+ 3039      74616765 
+ 3039      00
+ 3040              	.LASF38:
+ 3041 0f58 72785269 		.ascii	"rxRingBufHead\000"
+ 3041      6E674275 
+ 3041      66486561 
+ 3041      6400
+ 3042              	.LASF74:
+ 3043 0f66 6368616E 		.ascii	"chanConfig\000"
+ 3043      436F6E66 
+ 3043      696700
+ 3044              	.LASF147:
+ 3045 0f71 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
+ 3045      4C455F45 
+ 3045      56545F47 
+ 3045      41505F4B 
+ 3045      4559494E 
+ 3046              	.LASF107:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 67
 
 
- 3047 0dfe 72616E67 		.ascii	"rangeCond\000"
- 3047      65436F6E 
- 3047      6400
- 3048              	.LASF133:
- 3049 0e08 43595F42 		.ascii	"CY_BLE_EVT_SET_CE_LENGTH_COMPLETE\000"
- 3049      4C455F45 
- 3049      56545F53 
- 3049      45545F43 
- 3049      455F4C45 
- 3050              	.LASF132:
- 3051 0e2a 43595F42 		.ascii	"CY_BLE_EVT_SET_EVENT_MASK_COMPLETE\000"
+ 3047 0f96 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_WHITE_LIST_COMPLETE\000"
+ 3047      4C455F45 
+ 3047      56545F41 
+ 3047      44445F44 
+ 3047      45564943 
+ 3048              	.LASF44:
+ 3049 0fc3 74784275 		.ascii	"txBufSize\000"
+ 3049      6653697A 
+ 3049      6500
+ 3050              	.LASF161:
+ 3051 0fcd 43595F42 		.ascii	"CY_BLE_EVT_GAP_ADV_TX\000"
  3051      4C455F45 
- 3051      56545F53 
- 3051      45545F45 
- 3051      56454E54 
- 3052              	.LASF243:
- 3053 0e4d 73656E64 		.ascii	"send_enable\000"
- 3053      5F656E61 
- 3053      626C6500 
- 3054              	.LASF9:
- 3055 0e59 6C6F6E67 		.ascii	"long long int\000"
- 3055      206C6F6E 
- 3055      6720696E 
- 3055      7400
- 3056              	.LASF159:
- 3057 0e67 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONN_ESTB\000"
+ 3051      56545F47 
+ 3051      41505F41 
+ 3051      44565F54 
+ 3052              	.LASF197:
+ 3053 0fe3 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
+ 3053      4C455F45 
+ 3053      56545F4C 
+ 3053      32434150 
+ 3053      5F434246 
+ 3054              	.LASF221:
+ 3055 1008 4144435F 		.ascii	"ADC_CONFIG_STRUCT\000"
+ 3055      434F4E46 
+ 3055      49475F53 
+ 3055      54525543 
+ 3055      5400
+ 3056              	.LASF135:
+ 3057 101a 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
  3057      4C455F45 
  3057      56545F47 
- 3057      41505F43 
- 3057      4F4E4E5F 
- 3058              	.LASF106:
- 3059 0e80 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_RPA_LIST_COMPLETE\000"
+ 3057      4150435F 
+ 3057      5343414E 
+ 3058              	.LASF190:
+ 3059 103f 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_IND\000"
  3059      4C455F45 
- 3059      56545F52 
- 3059      454D4F56 
- 3059      455F4445 
- 3060              	.LASF95:
- 3061 0eb0 43595F42 		.ascii	"CY_BLE_EVT_LE_PING_AUTH_TIMEOUT\000"
+ 3059      56545F4C 
+ 3059      32434150 
+ 3059      5F434246 
+ 3060              	.LASF171:
+ 3061 105e 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_RSP\000"
  3061      4C455F45 
- 3061      56545F4C 
- 3061      455F5049 
- 3061      4E475F41 
- 3062              	.LASF258:
- 3063 0ed0 6970634D 		.ascii	"ipcMsgForCM4\000"
- 3063      7367466F 
- 3063      72434D34 
- 3063      00
- 3064              	.LASF257:
- 3065 0edd 72647954 		.ascii	"rdyToRecvMsg\000"
- 3065      6F526563 
- 3065      764D7367 
- 3065      00
- 3066              	.LASF122:
- 3067 0eea 43595F42 		.ascii	"CY_BLE_EVT_SET_CLK_CONFIG_COMPLETE\000"
- 3067      4C455F45 
- 3067      56545F53 
- 3067      45545F43 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 67
+ 3061      56545F47 
+ 3061      41545443 
+ 3061      5F524541 
+ 3062              	.LASF149:
+ 3063 1078 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
+ 3063      4C455F45 
+ 3063      56545F47 
+ 3063      41505F4B 
+ 3063      45595052 
+ 3064              	.LASF213:
+ 3065 109d 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 3065      4C455F43 
+ 3065      4F4E4E5F 
+ 3065      53544154 
+ 3065      455F434C 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 68
 
 
- 3067      4C4B5F43 
- 3068              	.LASF186:
- 3069 0f0d 43595F42 		.ascii	"CY_BLE_EVT_GATTC_LONG_PROCEDURE_END\000"
- 3069      4C455F45 
- 3069      56545F47 
- 3069      41545443 
- 3069      5F4C4F4E 
- 3070              	.LASF29:
- 3071 0f31 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CPU\000"
- 3071      50435F50 
- 3071      4950455F 
- 3071      4552524F 
- 3071      525F4241 
- 3072              	.LASF224:
- 3073 0f4b 74797065 		.ascii	"type_voltage\000"
- 3073      5F766F6C 
- 3073      74616765 
- 3073      00
- 3074              	.LASF38:
- 3075 0f58 72785269 		.ascii	"rxRingBufHead\000"
- 3075      6E674275 
- 3075      66486561 
- 3075      6400
- 3076              	.LASF74:
- 3077 0f66 6368616E 		.ascii	"chanConfig\000"
- 3077      436F6E66 
- 3077      696700
- 3078              	.LASF147:
- 3079 0f71 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT\000"
- 3079      4C455F45 
- 3079      56545F47 
- 3079      41505F4B 
- 3079      4559494E 
- 3080              	.LASF107:
- 3081 0f96 43595F42 		.ascii	"CY_BLE_EVT_ADD_DEVICE_TO_WHITE_LIST_COMPLETE\000"
- 3081      4C455F45 
- 3081      56545F41 
- 3081      44445F44 
- 3081      45564943 
- 3082              	.LASF44:
- 3083 0fc3 74784275 		.ascii	"txBufSize\000"
- 3083      6653697A 
- 3083      6500
- 3084              	.LASF161:
- 3085 0fcd 43595F42 		.ascii	"CY_BLE_EVT_GAP_ADV_TX\000"
- 3085      4C455F45 
- 3085      56545F47 
- 3085      41505F41 
- 3085      44565F54 
- 3086              	.LASF197:
- 3087 0fe3 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND\000"
- 3087      4C455F45 
- 3087      56545F4C 
- 3087      32434150 
- 3087      5F434246 
- 3088              	.LASF221:
- 3089 1008 4144435F 		.ascii	"ADC_CONFIG_STRUCT\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 68
+ 3066              	.LASF209:
+ 3067 10c8 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 3067      4C455F43 
+ 3067      4F4E4E5F 
+ 3067      53544154 
+ 3067      455F434F 
+ 3068              	.LASF43:
+ 3069 10e4 74784275 		.ascii	"txBuf\000"
+ 3069      6600
+ 3070              	.LASF211:
+ 3071 10ea 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 3071      4C455F43 
+ 3071      4F4E4E5F 
+ 3071      53544154 
+ 3071      455F434C 
+ 3072              	.LASF57:
+ 3073 1114 43595F46 		.ascii	"CY_FLASH_DRV_ERR_UNC\000"
+ 3073      4C415348 
+ 3073      5F445256 
+ 3073      5F455252 
+ 3073      5F554E43 
+ 3074              	.LASF30:
+ 3075 1129 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CLIENT\000"
+ 3075      50435F50 
+ 3075      4950455F 
+ 3075      4552524F 
+ 3075      525F4241 
+ 3076              	.LASF121:
+ 3077 1146 43595F42 		.ascii	"CY_BLE_EVT_GET_CLK_CONFIG_COMPLETE\000"
+ 3077      4C455F45 
+ 3077      56545F47 
+ 3077      45545F43 
+ 3077      4C4B5F43 
+ 3078              	.LASF36:
+ 3079 1169 72785269 		.ascii	"rxRingBuf\000"
+ 3079      6E674275 
+ 3079      6600
+ 3080              	.LASF16:
+ 3081 1173 6C6F6E67 		.ascii	"long double\000"
+ 3081      20646F75 
+ 3081      626C6500 
+ 3082              	.LASF52:
+ 3083 117f 43595F46 		.ascii	"CY_FLASH_DRV_INVALID_FLASH_ADDR\000"
+ 3083      4C415348 
+ 3083      5F445256 
+ 3083      5F494E56 
+ 3083      414C4944 
+ 3084              	.LASF13:
+ 3085 119f 75696E74 		.ascii	"uint16_t\000"
+ 3085      31365F74 
+ 3085      00
+ 3086              	.LASF60:
+ 3087 11a8 43595F46 		.ascii	"CY_FLASH_DRV_OPCODE_BUSY\000"
+ 3087      4C415348 
+ 3087      5F445256 
+ 3087      5F4F5043 
+ 3087      4F44455F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 69
 
 
- 3089      434F4E46 
- 3089      49475F53 
- 3089      54525543 
- 3089      5400
- 3090              	.LASF135:
- 3091 101a 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT\000"
- 3091      4C455F45 
- 3091      56545F47 
- 3091      4150435F 
- 3091      5343414E 
- 3092              	.LASF190:
- 3093 103f 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_CONN_IND\000"
+ 3088              	.LASF102:
+ 3089 11c1 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_TO_COMPLETE\000"
+ 3089      4C455F45 
+ 3089      56545F53 
+ 3089      45545F52 
+ 3089      50415F54 
+ 3090              	.LASF69:
+ 3091 11e0 73616D70 		.ascii	"sampleTime01\000"
+ 3091      6C655469 
+ 3091      6D653031 
+ 3091      00
+ 3092              	.LASF90:
+ 3093 11ed 43595F42 		.ascii	"CY_BLE_EVT_HARDWARE_ERROR\000"
  3093      4C455F45 
- 3093      56545F4C 
- 3093      32434150 
- 3093      5F434246 
- 3094              	.LASF171:
- 3095 105e 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_RSP\000"
- 3095      4C455F45 
- 3095      56545F47 
- 3095      41545443 
- 3095      5F524541 
- 3096              	.LASF149:
- 3097 1078 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYPRESS_NOTIFICATION\000"
+ 3093      56545F48 
+ 3093      41524457 
+ 3093      4152455F 
+ 3094              	.LASF78:
+ 3095 1207 6D757853 		.ascii	"muxSwitch\000"
+ 3095      77697463 
+ 3095      6800
+ 3096              	.LASF181:
+ 3097 1211 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_IND\000"
  3097      4C455F45 
  3097      56545F47 
- 3097      41505F4B 
- 3097      45595052 
- 3098              	.LASF213:
- 3099 109d 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
- 3099      4C455F43 
- 3099      4F4E4E5F 
- 3099      53544154 
- 3099      455F434C 
- 3100              	.LASF209:
- 3101 10c8 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
- 3101      4C455F43 
- 3101      4F4E4E5F 
- 3101      53544154 
- 3101      455F434F 
- 3102              	.LASF43:
- 3103 10e4 74784275 		.ascii	"txBuf\000"
- 3103      6600
- 3104              	.LASF211:
- 3105 10ea 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
- 3105      4C455F43 
- 3105      4F4E4E5F 
- 3105      53544154 
- 3105      455F434C 
- 3106              	.LASF57:
- 3107 1114 43595F46 		.ascii	"CY_FLASH_DRV_ERR_UNC\000"
- 3107      4C415348 
- 3107      5F445256 
- 3107      5F455252 
- 3107      5F554E43 
- 3108              	.LASF30:
- 3109 1129 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_CLIENT\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 69
+ 3097      41545443 
+ 3097      5F48414E 
+ 3098              	.LASF162:
+ 3099 1233 43595F42 		.ascii	"CY_BLE_EVT_GATTC_ERROR_RSP\000"
+ 3099      4C455F45 
+ 3099      56545F47 
+ 3099      41545443 
+ 3099      5F455252 
+ 3100              	.LASF167:
+ 3101 124e 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 3101      4C455F45 
+ 3101      56545F47 
+ 3101      41545443 
+ 3101      5F524541 
+ 3102              	.LASF20:
+ 3103 1276 43595F49 		.ascii	"CY_IPC_PIPE_SUCCESS\000"
+ 3103      50435F50 
+ 3103      4950455F 
+ 3103      53554343 
+ 3103      45535300 
+ 3104              	.LASF174:
+ 3105 128a 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_REQ\000"
+ 3105      4C455F45 
+ 3105      56545F47 
+ 3105      41545453 
+ 3105      5F575249 
+ 3106              	.LASF128:
+ 3107 12a5 43595F42 		.ascii	"CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE\000"
+ 3107      4C455F45 
+ 3107      56545F53 
+ 3107      5441434B 
+ 3107      5F534855 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 70
 
 
+ 3108              	.LASF22:
+ 3109 12c8 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_INTR\000"
  3109      50435F50 
  3109      4950455F 
  3109      4552524F 
- 3109      525F4241 
- 3110              	.LASF121:
- 3111 1146 43595F42 		.ascii	"CY_BLE_EVT_GET_CLK_CONFIG_COMPLETE\000"
- 3111      4C455F45 
- 3111      56545F47 
- 3111      45545F43 
- 3111      4C4B5F43 
- 3112              	.LASF36:
- 3113 1169 72785269 		.ascii	"rxRingBuf\000"
- 3113      6E674275 
- 3113      6600
- 3114              	.LASF16:
- 3115 1173 6C6F6E67 		.ascii	"long double\000"
- 3115      20646F75 
- 3115      626C6500 
- 3116              	.LASF52:
- 3117 117f 43595F46 		.ascii	"CY_FLASH_DRV_INVALID_FLASH_ADDR\000"
- 3117      4C415348 
- 3117      5F445256 
- 3117      5F494E56 
- 3117      414C4944 
- 3118              	.LASF13:
- 3119 119f 75696E74 		.ascii	"uint16_t\000"
- 3119      31365F74 
- 3119      00
- 3120              	.LASF60:
- 3121 11a8 43595F46 		.ascii	"CY_FLASH_DRV_OPCODE_BUSY\000"
- 3121      4C415348 
- 3121      5F445256 
- 3121      5F4F5043 
- 3121      4F44455F 
- 3122              	.LASF102:
- 3123 11c1 43595F42 		.ascii	"CY_BLE_EVT_SET_RPA_TO_COMPLETE\000"
+ 3109      525F4E4F 
+ 3110              	.LASF201:
+ 3111 12e2 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 3111      74635F62 
+ 3111      6C655F63 
+ 3111      6F6E6E5F 
+ 3111      68616E64 
+ 3112              	.LASF28:
+ 3113 12fb 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_MESSAGE\000"
+ 3113      50435F50 
+ 3113      4950455F 
+ 3113      4552524F 
+ 3113      525F4E4F 
+ 3114              	.LASF50:
+ 3115 1318 43595F46 		.ascii	"CY_FLASH_DRV_INV_PROT\000"
+ 3115      4C415348 
+ 3115      5F445256 
+ 3115      5F494E56 
+ 3115      5F50524F 
+ 3116              	.LASF160:
+ 3117 132e 43595F42 		.ascii	"CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE\000"
+ 3117      4C455F45 
+ 3117      56545F47 
+ 3117      4150505F 
+ 3117      55504441 
+ 3118              	.LASF0:
+ 3119 135c 73686F72 		.ascii	"short int\000"
+ 3119      7420696E 
+ 3119      7400
+ 3120              	.LASF251:
+ 3121 1366 4144435F 		.ascii	"ADC_allConfigs\000"
+ 3121      616C6C43 
+ 3121      6F6E6669 
+ 3121      677300
+ 3122              	.LASF83:
+ 3123 1375 43595F42 		.ascii	"CY_BLE_EVT_INVALID\000"
  3123      4C455F45 
- 3123      56545F53 
- 3123      45545F52 
- 3123      50415F54 
- 3124              	.LASF69:
- 3125 11e0 73616D70 		.ascii	"sampleTime01\000"
- 3125      6C655469 
- 3125      6D653031 
- 3125      00
- 3126              	.LASF90:
- 3127 11ed 43595F42 		.ascii	"CY_BLE_EVT_HARDWARE_ERROR\000"
- 3127      4C455F45 
- 3127      56545F48 
- 3127      41524457 
- 3127      4152455F 
- 3128              	.LASF78:
- 3129 1207 6D757853 		.ascii	"muxSwitch\000"
- 3129      77697463 
- 3129      6800
- 3130              	.LASF181:
- 3131 1211 43595F42 		.ascii	"CY_BLE_EVT_GATTC_HANDLE_VALUE_IND\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 70
+ 3123      56545F49 
+ 3123      4E56414C 
+ 3123      494400
+ 3124              	.LASF143:
+ 3125 1388 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_DISCONNECTED\000"
+ 3125      4C455F45 
+ 3125      56545F47 
+ 3125      41505F44 
+ 3125      45564943 
+ 3126              	.LASF256:
+ 3127 13ab 666C6173 		.ascii	"flashPtrs\000"
+ 3127      68507472 
+ 3127      7300
+ 3128              	.LASF6:
+ 3129 13b5 6C6F6E67 		.ascii	"long int\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 71
 
 
+ 3129      20696E74 
+ 3129      00
+ 3130              	.LASF131:
+ 3131 13be 43595F42 		.ascii	"CY_BLE_EVT_AES_CMAC_GEN_COMPLETE\000"
  3131      4C455F45 
- 3131      56545F47 
- 3131      41545443 
- 3131      5F48414E 
- 3132              	.LASF162:
- 3133 1233 43595F42 		.ascii	"CY_BLE_EVT_GATTC_ERROR_RSP\000"
- 3133      4C455F45 
- 3133      56545F47 
- 3133      41545443 
- 3133      5F455252 
- 3134              	.LASF167:
- 3135 124e 43595F42 		.ascii	"CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP\000"
+ 3131      56545F41 
+ 3131      45535F43 
+ 3131      4D41435F 
+ 3132              	.LASF261:
+ 3133 13df 77726974 		.ascii	"write_voltage_to_server\000"
+ 3133      655F766F 
+ 3133      6C746167 
+ 3133      655F746F 
+ 3133      5F736572 
+ 3134              	.LASF154:
+ 3135 13f7 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_ADDR_GEN_COMPLETE\000"
  3135      4C455F45 
  3135      56545F47 
- 3135      41545443 
- 3135      5F524541 
- 3136              	.LASF20:
- 3137 1276 43595F49 		.ascii	"CY_IPC_PIPE_SUCCESS\000"
- 3137      50435F50 
- 3137      4950455F 
- 3137      53554343 
- 3137      45535300 
- 3138              	.LASF174:
- 3139 128a 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_REQ\000"
- 3139      4C455F45 
- 3139      56545F47 
- 3139      41545453 
- 3139      5F575249 
- 3140              	.LASF128:
- 3141 12a5 43595F42 		.ascii	"CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE\000"
+ 3135      41505F44 
+ 3135      45564943 
+ 3136              	.LASF192:
+ 3137 141f 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
+ 3137      4C455F45 
+ 3137      56545F4C 
+ 3137      32434150 
+ 3137      5F434246 
+ 3138              	.LASF45:
+ 3139 1441 74784C65 		.ascii	"txLeftToTransmit\000"
+ 3139      6674546F 
+ 3139      5472616E 
+ 3139      736D6974 
+ 3139      00
+ 3140              	.LASF178:
+ 3141 1452 43595F42 		.ascii	"CY_BLE_EVT_GATTS_EXEC_WRITE_REQ\000"
  3141      4C455F45 
- 3141      56545F53 
- 3141      5441434B 
- 3141      5F534855 
- 3142              	.LASF22:
- 3143 12c8 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_INTR\000"
- 3143      50435F50 
- 3143      4950455F 
- 3143      4552524F 
- 3143      525F4E4F 
- 3144              	.LASF201:
- 3145 12e2 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
- 3145      74635F62 
- 3145      6C655F63 
- 3145      6F6E6E5F 
- 3145      68616E64 
- 3146              	.LASF28:
- 3147 12fb 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_NO_MESSAGE\000"
- 3147      50435F50 
- 3147      4950455F 
- 3147      4552524F 
- 3147      525F4E4F 
- 3148              	.LASF50:
- 3149 1318 43595F46 		.ascii	"CY_FLASH_DRV_INV_PROT\000"
- 3149      4C415348 
- 3149      5F445256 
- 3149      5F494E56 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 71
+ 3141      56545F47 
+ 3141      41545453 
+ 3141      5F455845 
+ 3142              	.LASF91:
+ 3143 1472 43595F42 		.ascii	"CY_BLE_EVT_WRITE_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3143      4C455F45 
+ 3143      56545F57 
+ 3143      52495445 
+ 3143      5F415554 
+ 3144              	.LASF130:
+ 3145 149c 43595F42 		.ascii	"CY_BLE_EVT_RADIO_VOLTAGE_LEVEL\000"
+ 3145      4C455F45 
+ 3145      56545F52 
+ 3145      4144494F 
+ 3145      5F564F4C 
+ 3146              	.LASF55:
+ 3147 14bb 43595F46 		.ascii	"CY_FLASH_DRV_INVALID_INPUT_PARAMETERS\000"
+ 3147      4C415348 
+ 3147      5F445256 
+ 3147      5F494E56 
+ 3147      414C4944 
+ 3148              	.LASF3:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 72
 
 
- 3149      5F50524F 
- 3150              	.LASF160:
- 3151 132e 43595F42 		.ascii	"CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE\000"
+ 3149 14e1 5F5F7569 		.ascii	"__uint8_t\000"
+ 3149      6E74385F 
+ 3149      7400
+ 3150              	.LASF97:
+ 3151 14eb 43595F42 		.ascii	"CY_BLE_EVT_SET_SUGGESTED_DATA_LENGTH_COMPLETE\000"
  3151      4C455F45 
- 3151      56545F47 
- 3151      4150505F 
- 3151      55504441 
- 3152              	.LASF0:
- 3153 135c 73686F72 		.ascii	"short int\000"
- 3153      7420696E 
- 3153      7400
- 3154              	.LASF251:
- 3155 1366 4144435F 		.ascii	"ADC_allConfigs\000"
- 3155      616C6C43 
- 3155      6F6E6669 
- 3155      677300
- 3156              	.LASF83:
- 3157 1375 43595F42 		.ascii	"CY_BLE_EVT_INVALID\000"
+ 3151      56545F53 
+ 3151      45545F53 
+ 3151      55474745 
+ 3152              	.LASF117:
+ 3153 1519 43595F42 		.ascii	"CY_BLE_EVT_GET_DEVICE_ADDR_COMPLETE\000"
+ 3153      4C455F45 
+ 3153      56545F47 
+ 3153      45545F44 
+ 3153      45564943 
+ 3154              	.LASF124:
+ 3155 153d 43595F42 		.ascii	"CY_BLE_EVT_AES_ENCRYPT_COMPLETE\000"
+ 3155      4C455F45 
+ 3155      56545F41 
+ 3155      45535F45 
+ 3155      4E435259 
+ 3156              	.LASF119:
+ 3157 155d 43595F42 		.ascii	"CY_BLE_EVT_GET_TX_PWR_COMPLETE\000"
  3157      4C455F45 
- 3157      56545F49 
- 3157      4E56414C 
- 3157      494400
- 3158              	.LASF143:
- 3159 1388 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_DISCONNECTED\000"
- 3159      4C455F45 
- 3159      56545F47 
- 3159      41505F44 
- 3159      45564943 
- 3160              	.LASF256:
- 3161 13ab 666C6173 		.ascii	"flashPtrs\000"
- 3161      68507472 
- 3161      7300
- 3162              	.LASF6:
- 3163 13b5 6C6F6E67 		.ascii	"long int\000"
- 3163      20696E74 
- 3163      00
- 3164              	.LASF131:
- 3165 13be 43595F42 		.ascii	"CY_BLE_EVT_AES_CMAC_GEN_COMPLETE\000"
+ 3157      56545F47 
+ 3157      45545F54 
+ 3157      585F5057 
+ 3158              	.LASF24:
+ 3159 157c 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_HANDLE\000"
+ 3159      50435F50 
+ 3159      4950455F 
+ 3159      4552524F 
+ 3159      525F4241 
+ 3160              	.LASF70:
+ 3161 1599 73616D70 		.ascii	"sampleTime23\000"
+ 3161      6C655469 
+ 3161      6D653233 
+ 3161      00
+ 3162              	.LASF262:
+ 3163 15a6 43795F49 		.ascii	"Cy_IPC_Pipe_SendMessage\000"
+ 3163      50435F50 
+ 3163      6970655F 
+ 3163      53656E64 
+ 3163      4D657373 
+ 3164              	.LASF85:
+ 3165 15be 43595F42 		.ascii	"CY_BLE_EVT_TIMEOUT\000"
  3165      4C455F45 
- 3165      56545F41 
- 3165      45535F43 
- 3165      4D41435F 
- 3166              	.LASF261:
- 3167 13df 77726974 		.ascii	"write_voltage_to_server\000"
- 3167      655F766F 
- 3167      6C746167 
- 3167      655F746F 
- 3167      5F736572 
- 3168              	.LASF154:
- 3169 13f7 43595F42 		.ascii	"CY_BLE_EVT_GAP_DEVICE_ADDR_GEN_COMPLETE\000"
- 3169      4C455F45 
- 3169      56545F47 
- 3169      41505F44 
- 3169      45564943 
- 3170              	.LASF192:
- 3171 141f 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CBFC_DISCONN_IND\000"
- 3171      4C455F45 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 72
+ 3165      56545F54 
+ 3165      494D454F 
+ 3165      555400
+ 3166              	.LASF15:
+ 3167 15d1 73697A65 		.ascii	"sizetype\000"
+ 3167      74797065 
+ 3167      00
+ 3168              	.LASF8:
+ 3169 15da 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3169      20756E73 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 73
 
 
- 3171      56545F4C 
- 3171      32434150 
- 3171      5F434246 
- 3172              	.LASF45:
- 3173 1441 74784C65 		.ascii	"txLeftToTransmit\000"
- 3173      6674546F 
- 3173      5472616E 
- 3173      736D6974 
- 3173      00
- 3174              	.LASF178:
- 3175 1452 43595F42 		.ascii	"CY_BLE_EVT_GATTS_EXEC_WRITE_REQ\000"
- 3175      4C455F45 
- 3175      56545F47 
- 3175      41545453 
- 3175      5F455845 
- 3176              	.LASF91:
- 3177 1472 43595F42 		.ascii	"CY_BLE_EVT_WRITE_AUTH_PAYLOAD_TO_COMPLETE\000"
+ 3169      69676E65 
+ 3169      6420696E 
+ 3169      7400
+ 3170              	.LASF223:
+ 3171 15ec 6970635F 		.ascii	"ipc_msg_datatype\000"
+ 3171      6D73675F 
+ 3171      64617461 
+ 3171      74797065 
+ 3171      00
+ 3172              	.LASF18:
+ 3173 15fd 666C6F61 		.ascii	"float\000"
+ 3173      7400
+ 3174              	.LASF218:
+ 3175 1603 6877436F 		.ascii	"hwConfigStc\000"
+ 3175      6E666967 
+ 3175      53746300 
+ 3176              	.LASF129:
+ 3177 160f 43595F42 		.ascii	"CY_BLE_EVT_RADIO_TEMPERATURE\000"
  3177      4C455F45 
- 3177      56545F57 
- 3177      52495445 
- 3177      5F415554 
- 3178              	.LASF130:
- 3179 149c 43595F42 		.ascii	"CY_BLE_EVT_RADIO_VOLTAGE_LEVEL\000"
+ 3177      56545F52 
+ 3177      4144494F 
+ 3177      5F54454D 
+ 3178              	.LASF138:
+ 3179 162c 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
  3179      4C455F45 
- 3179      56545F52 
- 3179      4144494F 
- 3179      5F564F4C 
- 3180              	.LASF55:
- 3181 14bb 43595F46 		.ascii	"CY_FLASH_DRV_INVALID_INPUT_PARAMETERS\000"
- 3181      4C415348 
- 3181      5F445256 
- 3181      5F494E56 
- 3181      414C4944 
- 3182              	.LASF3:
- 3183 14e1 5F5F7569 		.ascii	"__uint8_t\000"
- 3183      6E74385F 
- 3183      7400
- 3184              	.LASF97:
- 3185 14eb 43595F42 		.ascii	"CY_BLE_EVT_SET_SUGGESTED_DATA_LENGTH_COMPLETE\000"
- 3185      4C455F45 
- 3185      56545F53 
- 3185      45545F53 
- 3185      55474745 
- 3186              	.LASF117:
- 3187 1519 43595F42 		.ascii	"CY_BLE_EVT_GET_DEVICE_ADDR_COMPLETE\000"
+ 3179      56545F47 
+ 3179      41505F50 
+ 3179      4153534B 
+ 3180              	.LASF68:
+ 3181 1653 73616D70 		.ascii	"sampleCtrl\000"
+ 3181      6C654374 
+ 3181      726C00
+ 3182              	.LASF232:
+ 3183 165e 74797065 		.ascii	"type\000"
+ 3183      00
+ 3184              	.LASF1:
+ 3185 1663 756E7369 		.ascii	"unsigned char\000"
+ 3185      676E6564 
+ 3185      20636861 
+ 3185      7200
+ 3186              	.LASF183:
+ 3187 1671 43595F42 		.ascii	"CY_BLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
  3187      4C455F45 
  3187      56545F47 
- 3187      45545F44 
- 3187      45564943 
- 3188              	.LASF124:
- 3189 153d 43595F42 		.ascii	"CY_BLE_EVT_AES_ENCRYPT_COMPLETE\000"
- 3189      4C455F45 
- 3189      56545F41 
- 3189      45535F45 
- 3189      4E435259 
- 3190              	.LASF119:
- 3191 155d 43595F42 		.ascii	"CY_BLE_EVT_GET_TX_PWR_COMPLETE\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 73
+ 3187      41545453 
+ 3187      5F444154 
+ 3188              	.LASF7:
+ 3189 1696 5F5F7569 		.ascii	"__uint32_t\000"
+ 3189      6E743332 
+ 3189      5F7400
+ 3190              	.LASF244:
+ 3191 16a1 74726967 		.ascii	"trigger\000"
+ 3191      67657200 
+ 3192              	.LASF231:
+ 3193 16a9 75736572 		.ascii	"userCode\000"
+ 3193      436F6465 
+ 3193      00
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 74
 
 
- 3191      4C455F45 
- 3191      56545F47 
- 3191      45545F54 
- 3191      585F5057 
- 3192              	.LASF24:
- 3193 157c 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_HANDLE\000"
- 3193      50435F50 
- 3193      4950455F 
- 3193      4552524F 
- 3193      525F4241 
- 3194              	.LASF70:
- 3195 1599 73616D70 		.ascii	"sampleTime23\000"
- 3195      6C655469 
- 3195      6D653233 
- 3195      00
- 3196              	.LASF262:
- 3197 15a6 43795F49 		.ascii	"Cy_IPC_Pipe_SendMessage\000"
- 3197      50435F50 
- 3197      6970655F 
- 3197      53656E64 
- 3197      4D657373 
- 3198              	.LASF85:
- 3199 15be 43595F42 		.ascii	"CY_BLE_EVT_TIMEOUT\000"
+ 3194              	.LASF108:
+ 3195 16b2 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_WHITE_LIST_COMPLETE\000"
+ 3195      4C455F45 
+ 3195      56545F52 
+ 3195      454D4F56 
+ 3195      455F4445 
+ 3196              	.LASF98:
+ 3197 16e4 43595F42 		.ascii	"CY_BLE_EVT_GET_DATA_LENGTH_COMPLETE\000"
+ 3197      4C455F45 
+ 3197      56545F47 
+ 3197      45545F44 
+ 3197      4154415F 
+ 3198              	.LASF152:
+ 3199 1708 43595F42 		.ascii	"CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
  3199      4C455F45 
- 3199      56545F54 
- 3199      494D454F 
- 3199      555400
- 3200              	.LASF15:
- 3201 15d1 73697A65 		.ascii	"sizetype\000"
- 3201      74797065 
- 3201      00
- 3202              	.LASF8:
- 3203 15da 6C6F6E67 		.ascii	"long unsigned int\000"
- 3203      20756E73 
- 3203      69676E65 
- 3203      6420696E 
- 3203      7400
- 3204              	.LASF223:
- 3205 15ec 6970635F 		.ascii	"ipc_msg_datatype\000"
- 3205      6D73675F 
- 3205      64617461 
- 3205      74797065 
+ 3199      56545F47 
+ 3199      4150435F 
+ 3199      44495245 
+ 3200              	.LASF188:
+ 3201 172a 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 3201      4C455F45 
+ 3201      56545F4C 
+ 3201      32434150 
+ 3201      5F434F4E 
+ 3202              	.LASF220:
+ 3203 1751 636C6B44 		.ascii	"clkDivider\000"
+ 3203      69766964 
+ 3203      657200
+ 3204              	.LASF255:
+ 3205 175c 6C6F7765 		.ascii	"lower_thresh\000"
+ 3205      725F7468 
+ 3205      72657368 
  3205      00
- 3206              	.LASF18:
- 3207 15fd 666C6F61 		.ascii	"float\000"
- 3207      7400
- 3208              	.LASF218:
- 3209 1603 6877436F 		.ascii	"hwConfigStc\000"
- 3209      6E666967 
- 3209      53746300 
- 3210              	.LASF129:
- 3211 160f 43595F42 		.ascii	"CY_BLE_EVT_RADIO_TEMPERATURE\000"
+ 3206              	.LASF164:
+ 3207 1769 43595F42 		.ascii	"CY_BLE_EVT_GATT_DISCONNECT_IND\000"
+ 3207      4C455F45 
+ 3207      56545F47 
+ 3207      4154545F 
+ 3207      44495343 
+ 3208              	.LASF250:
+ 3209 1788 4144435F 		.ascii	"ADC_currentConfig\000"
+ 3209      63757272 
+ 3209      656E7443 
+ 3209      6F6E6669 
+ 3209      6700
+ 3210              	.LASF179:
+ 3211 179a 43595F42 		.ascii	"CY_BLE_EVT_GATTC_EXEC_WRITE_RSP\000"
  3211      4C455F45 
- 3211      56545F52 
- 3211      4144494F 
- 3211      5F54454D 
- 3212              	.LASF138:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 74
-
-
- 3213 162c 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST\000"
+ 3211      56545F47 
+ 3211      41545443 
+ 3211      5F455845 
+ 3212              	.LASF165:
+ 3213 17ba 43595F42 		.ascii	"CY_BLE_EVT_GATTS_XCNHG_MTU_REQ\000"
  3213      4C455F45 
  3213      56545F47 
- 3213      41505F50 
- 3213      4153534B 
- 3214              	.LASF68:
- 3215 1653 73616D70 		.ascii	"sampleCtrl\000"
- 3215      6C654374 
- 3215      726C00
- 3216              	.LASF232:
- 3217 165e 74797065 		.ascii	"type\000"
- 3217      00
- 3218              	.LASF1:
- 3219 1663 756E7369 		.ascii	"unsigned char\000"
- 3219      676E6564 
- 3219      20636861 
- 3219      7200
- 3220              	.LASF183:
- 3221 1671 43595F42 		.ascii	"CY_BLE_EVT_GATTS_DATA_SIGNED_CMD_REQ\000"
- 3221      4C455F45 
- 3221      56545F47 
- 3221      41545453 
- 3221      5F444154 
- 3222              	.LASF7:
- 3223 1696 5F5F7569 		.ascii	"__uint32_t\000"
- 3223      6E743332 
- 3223      5F7400
- 3224              	.LASF244:
- 3225 16a1 74726967 		.ascii	"trigger\000"
- 3225      67657200 
- 3226              	.LASF231:
- 3227 16a9 75736572 		.ascii	"userCode\000"
- 3227      436F6465 
- 3227      00
- 3228              	.LASF108:
- 3229 16b2 43595F42 		.ascii	"CY_BLE_EVT_REMOVE_DEVICE_FROM_WHITE_LIST_COMPLETE\000"
- 3229      4C455F45 
- 3229      56545F52 
- 3229      454D4F56 
- 3229      455F4445 
- 3230              	.LASF98:
- 3231 16e4 43595F42 		.ascii	"CY_BLE_EVT_GET_DATA_LENGTH_COMPLETE\000"
- 3231      4C455F45 
- 3231      56545F47 
- 3231      45545F44 
- 3231      4154415F 
- 3232              	.LASF152:
- 3233 1708 43595F42 		.ascii	"CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT\000"
- 3233      4C455F45 
- 3233      56545F47 
- 3233      4150435F 
- 3233      44495245 
- 3234              	.LASF188:
- 3235 172a 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP\000"
+ 3213      41545453 
+ 3213      5F58434E 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 75
+
+
+ 3214              	.LASF240:
+ 3215 17d9 74687265 		.ascii	"threshold\000"
+ 3215      73686F6C 
+ 3215      6400
+ 3216              	.LASF184:
+ 3217 17e3 43595F42 		.ascii	"CY_BLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
+ 3217      4C455F45 
+ 3217      56545F47 
+ 3217      41545443 
+ 3217      5F53544F 
+ 3218              	.LASF137:
+ 3219 1806 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
+ 3219      4C455F45 
+ 3219      56545F47 
+ 3219      41505F50 
+ 3219      4153534B 
+ 3220              	.LASF199:
+ 3221 182b 62644861 		.ascii	"bdHandle\000"
+ 3221      6E646C65 
+ 3221      00
+ 3222              	.LASF249:
+ 3223 1834 55415254 		.ascii	"UART_context\000"
+ 3223      5F636F6E 
+ 3223      74657874 
+ 3223      00
+ 3224              	.LASF2:
+ 3225 1841 7369676E 		.ascii	"signed char\000"
+ 3225      65642063 
+ 3225      68617200 
+ 3226              	.LASF54:
+ 3227 184d 43595F46 		.ascii	"CY_FLASH_DRV_IPC_BUSY\000"
+ 3227      4C415348 
+ 3227      5F445256 
+ 3227      5F495043 
+ 3227      5F425553 
+ 3228              	.LASF26:
+ 3229 1863 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_DIR_ERROR\000"
+ 3229      50435F50 
+ 3229      4950455F 
+ 3229      4552524F 
+ 3229      525F4449 
+ 3230              	.LASF5:
+ 3231 187f 73686F72 		.ascii	"short unsigned int\000"
+ 3231      7420756E 
+ 3231      7369676E 
+ 3231      65642069 
+ 3231      6E7400
+ 3232              	.LASF59:
+ 3233 1892 43595F46 		.ascii	"CY_FLASH_DRV_OPERATION_STARTED\000"
+ 3233      4C415348 
+ 3233      5F445256 
+ 3233      5F4F5045 
+ 3233      52415449 
+ 3234              	.LASF136:
+ 3235 18b1 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_REQ\000"
  3235      4C455F45 
- 3235      56545F4C 
- 3235      32434150 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 75
+ 3235      56545F47 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 76
 
 
- 3235      5F434F4E 
- 3236              	.LASF220:
- 3237 1751 636C6B44 		.ascii	"clkDivider\000"
- 3237      69766964 
- 3237      657200
- 3238              	.LASF255:
- 3239 175c 6C6F7765 		.ascii	"lower_thresh\000"
- 3239      725F7468 
- 3239      72657368 
- 3239      00
- 3240              	.LASF164:
- 3241 1769 43595F42 		.ascii	"CY_BLE_EVT_GATT_DISCONNECT_IND\000"
- 3241      4C455F45 
- 3241      56545F47 
- 3241      4154545F 
- 3241      44495343 
- 3242              	.LASF250:
- 3243 1788 4144435F 		.ascii	"ADC_currentConfig\000"
- 3243      63757272 
- 3243      656E7443 
- 3243      6F6E6669 
- 3243      6700
- 3244              	.LASF179:
- 3245 179a 43595F42 		.ascii	"CY_BLE_EVT_GATTC_EXEC_WRITE_RSP\000"
- 3245      4C455F45 
- 3245      56545F47 
- 3245      41545443 
- 3245      5F455845 
- 3246              	.LASF165:
- 3247 17ba 43595F42 		.ascii	"CY_BLE_EVT_GATTS_XCNHG_MTU_REQ\000"
- 3247      4C455F45 
- 3247      56545F47 
- 3247      41545453 
- 3247      5F58434E 
- 3248              	.LASF240:
- 3249 17d9 74687265 		.ascii	"threshold\000"
- 3249      73686F6C 
- 3249      6400
- 3250              	.LASF184:
- 3251 17e3 43595F42 		.ascii	"CY_BLE_EVT_GATTC_STOP_CMD_COMPLETE\000"
- 3251      4C455F45 
- 3251      56545F47 
- 3251      41545443 
- 3251      5F53544F 
- 3252              	.LASF137:
- 3253 1806 43595F42 		.ascii	"CY_BLE_EVT_GAP_PASSKEY_ENTRY_REQUEST\000"
- 3253      4C455F45 
- 3253      56545F47 
- 3253      41505F50 
- 3253      4153534B 
- 3254              	.LASF199:
- 3255 182b 62644861 		.ascii	"bdHandle\000"
- 3255      6E646C65 
- 3255      00
- 3256              	.LASF249:
- 3257 1834 55415254 		.ascii	"UART_context\000"
- 3257      5F636F6E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 76
+ 3235      41505F41 
+ 3235      5554485F 
+ 3236              	.LASF176:
+ 3237 18c9 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_CMD_REQ\000"
+ 3237      4C455F45 
+ 3237      56545F47 
+ 3237      41545453 
+ 3237      5F575249 
+ 3238              	.LASF31:
+ 3239 18e8 63795F65 		.ascii	"cy_en_ipc_pipe_status_t\000"
+ 3239      6E5F6970 
+ 3239      635F7069 
+ 3239      70655F73 
+ 3239      74617475 
+ 3240              	.LASF219:
+ 3241 1900 6D697363 		.ascii	"miscConfig\000"
+ 3241      436F6E66 
+ 3241      696700
+ 3242              	.LASF187:
+ 3243 190b 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
+ 3243      4C455F45 
+ 3243      56545F4C 
+ 3243      32434150 
+ 3243      5F434F4E 
+ 3244              	.LASF80:
+ 3245 1932 636F6E66 		.ascii	"configRouting\000"
+ 3245      6967526F 
+ 3245      7574696E 
+ 3245      6700
+ 3246              	.LASF61:
+ 3247 1940 63795F65 		.ascii	"cy_en_flashdrv_status_t\000"
+ 3247      6E5F666C 
+ 3247      61736864 
+ 3247      72765F73 
+ 3247      74617475 
+ 3248              	.LASF239:
+ 3249 1958 73656E64 		.ascii	"send_threshold\000"
+ 3249      5F746872 
+ 3249      6573686F 
+ 3249      6C6400
+ 3250              	.LASF77:
+ 3251 1967 72616E67 		.ascii	"rangeIntrMask\000"
+ 3251      65496E74 
+ 3251      724D6173 
+ 3251      6B00
+ 3252              	.LASF66:
+ 3253 1975 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
+ 3253      6E5F7361 
+ 3253      725F7261 
+ 3253      6E67655F 
+ 3253      64657465 
+ 3254              	.LASF89:
+ 3255 1998 43595F42 		.ascii	"CY_BLE_EVT_FLASH_CORRUPT\000"
+ 3255      4C455F45 
+ 3255      56545F46 
+ 3255      4C415348 
+ 3255      5F434F52 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccCiEOGe.s 			page 77
 
 
- 3257      74657874 
- 3257      00
- 3258              	.LASF2:
- 3259 1841 7369676E 		.ascii	"signed char\000"
- 3259      65642063 
- 3259      68617200 
- 3260              	.LASF54:
- 3261 184d 43595F46 		.ascii	"CY_FLASH_DRV_IPC_BUSY\000"
- 3261      4C415348 
- 3261      5F445256 
- 3261      5F495043 
- 3261      5F425553 
- 3262              	.LASF26:
- 3263 1863 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_DIR_ERROR\000"
- 3263      50435F50 
- 3263      4950455F 
- 3263      4552524F 
- 3263      525F4449 
- 3264              	.LASF5:
- 3265 187f 73686F72 		.ascii	"short unsigned int\000"
- 3265      7420756E 
- 3265      7369676E 
- 3265      65642069 
- 3265      6E7400
- 3266              	.LASF59:
- 3267 1892 43595F46 		.ascii	"CY_FLASH_DRV_OPERATION_STARTED\000"
- 3267      4C415348 
- 3267      5F445256 
- 3267      5F4F5045 
- 3267      52415449 
- 3268              	.LASF136:
- 3269 18b1 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_REQ\000"
- 3269      4C455F45 
- 3269      56545F47 
- 3269      41505F41 
- 3269      5554485F 
- 3270              	.LASF176:
- 3271 18c9 43595F42 		.ascii	"CY_BLE_EVT_GATTS_WRITE_CMD_REQ\000"
- 3271      4C455F45 
- 3271      56545F47 
- 3271      41545453 
- 3271      5F575249 
- 3272              	.LASF31:
- 3273 18e8 63795F65 		.ascii	"cy_en_ipc_pipe_status_t\000"
- 3273      6E5F6970 
- 3273      635F7069 
- 3273      70655F73 
- 3273      74617475 
- 3274              	.LASF219:
- 3275 1900 6D697363 		.ascii	"miscConfig\000"
- 3275      436F6E66 
- 3275      696700
- 3276              	.LASF187:
- 3277 190b 43595F42 		.ascii	"CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ\000"
- 3277      4C455F45 
- 3277      56545F4C 
- 3277      32434150 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 77
-
-
- 3277      5F434F4E 
- 3278              	.LASF80:
- 3279 1932 636F6E66 		.ascii	"configRouting\000"
- 3279      6967526F 
- 3279      7574696E 
- 3279      6700
- 3280              	.LASF61:
- 3281 1940 63795F65 		.ascii	"cy_en_flashdrv_status_t\000"
- 3281      6E5F666C 
- 3281      61736864 
- 3281      72765F73 
- 3281      74617475 
- 3282              	.LASF239:
- 3283 1958 73656E64 		.ascii	"send_threshold\000"
- 3283      5F746872 
- 3283      6573686F 
- 3283      6C6400
- 3284              	.LASF77:
- 3285 1967 72616E67 		.ascii	"rangeIntrMask\000"
- 3285      65496E74 
- 3285      724D6173 
- 3285      6B00
- 3286              	.LASF66:
- 3287 1975 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
- 3287      6E5F7361 
- 3287      725F7261 
- 3287      6E67655F 
- 3287      64657465 
- 3288              	.LASF89:
- 3289 1998 43595F42 		.ascii	"CY_BLE_EVT_FLASH_CORRUPT\000"
- 3289      4C455F45 
- 3289      56545F46 
- 3289      4C415348 
- 3289      5F434F52 
- 3290              	.LASF157:
- 3291 19b1 43595F42 		.ascii	"CY_BLE_EVT_GAP_GEN_SET_LOCAL_P256_KEYS_COMPLETE\000"
- 3291      4C455F45 
- 3291      56545F47 
- 3291      41505F47 
- 3291      454E5F53 
- 3292              	.LASF140:
- 3293 19e1 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_FAILED\000"
- 3293      4C455F45 
- 3293      56545F47 
- 3293      41505F41 
- 3293      5554485F 
- 3294              	.LASF23:
- 3295 19fc 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_PRIORITY\000"
- 3295      50435F50 
- 3295      4950455F 
- 3295      4552524F 
- 3295      525F4241 
- 3296              	.LASF40:
- 3297 1a1b 72784275 		.ascii	"rxBuf\000"
- 3297      6600
- 3298              	.LASF207:
- 3299 1a21 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQRADqm.s 			page 78
-
-
- 3299      4C455F43 
- 3299      4F4E4E5F 
- 3299      53544154 
- 3299      455F4449 
- 3300              	.LASF210:
- 3301 1a40 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
- 3301      4C455F43 
- 3301      4F4E4E5F 
- 3301      53544154 
- 3301      455F434C 
- 3302              	.LASF75:
- 3303 1a6a 696E7472 		.ascii	"intrMask\000"
- 3303      4D61736B 
- 3303      00
- 3304              	.LASF41:
- 3305 1a73 72784275 		.ascii	"rxBufSize\000"
- 3305      6653697A 
- 3305      6500
- 3306              	.LASF248:
- 3307 1a7d 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
- 3307      6C655F70 
- 3307      656E6469 
- 3307      6E67466C 
- 3307      61736857 
- 3308              	.LASF145:
- 3309 1a96 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
- 3309      4C455F45 
- 3309      56545F47 
- 3309      41505F43 
- 3309      4F4E4E45 
- 3310              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 3256              	.LASF157:
+ 3257 19b1 43595F42 		.ascii	"CY_BLE_EVT_GAP_GEN_SET_LOCAL_P256_KEYS_COMPLETE\000"
+ 3257      4C455F45 
+ 3257      56545F47 
+ 3257      41505F47 
+ 3257      454E5F53 
+ 3258              	.LASF140:
+ 3259 19e1 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_FAILED\000"
+ 3259      4C455F45 
+ 3259      56545F47 
+ 3259      41505F41 
+ 3259      5554485F 
+ 3260              	.LASF23:
+ 3261 19fc 43595F49 		.ascii	"CY_IPC_PIPE_ERROR_BAD_PRIORITY\000"
+ 3261      50435F50 
+ 3261      4950455F 
+ 3261      4552524F 
+ 3261      525F4241 
+ 3262              	.LASF40:
+ 3263 1a1b 72784275 		.ascii	"rxBuf\000"
+ 3263      6600
+ 3264              	.LASF207:
+ 3265 1a21 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 3265      4C455F43 
+ 3265      4F4E4E5F 
+ 3265      53544154 
+ 3265      455F4449 
+ 3266              	.LASF210:
+ 3267 1a40 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 3267      4C455F43 
+ 3267      4F4E4E5F 
+ 3267      53544154 
+ 3267      455F434C 
+ 3268              	.LASF75:
+ 3269 1a6a 696E7472 		.ascii	"intrMask\000"
+ 3269      4D61736B 
+ 3269      00
+ 3270              	.LASF41:
+ 3271 1a73 72784275 		.ascii	"rxBufSize\000"
+ 3271      6653697A 
+ 3271      6500
+ 3272              	.LASF248:
+ 3273 1a7d 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 3273      6C655F70 
+ 3273      656E6469 
+ 3273      6E67466C 
+ 3273      61736857 
+ 3274              	.LASF145:
+ 3275 1a96 43595F42 		.ascii	"CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE\000"
+ 3275      4C455F45 
+ 3275      56545F47 
+ 3275      41505F43 
+ 3275      4F4E4E45 
+ 3276              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

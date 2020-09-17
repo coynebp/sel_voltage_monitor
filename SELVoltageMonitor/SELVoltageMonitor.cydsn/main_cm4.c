@@ -14,8 +14,6 @@ int main(void)
     
     voltage_monitor_init();
    
-    for(;;)
-    {  
-    }
+    for(;;) {}
 }
 /* [] END OF FILE */

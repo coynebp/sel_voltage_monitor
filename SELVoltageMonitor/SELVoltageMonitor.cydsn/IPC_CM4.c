@@ -44,6 +44,7 @@ void CM4_MessageCallback(uint32_t *msg)
                 set_lower_threshold(val);
                 break;
             case type_trigger:
+                printf("MANUAL TRIGGER\r\n");
                 trigger();
                 break;
             case type_enable:

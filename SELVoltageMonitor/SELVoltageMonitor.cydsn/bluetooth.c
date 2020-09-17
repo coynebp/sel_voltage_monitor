@@ -32,7 +32,13 @@ void init_ble(const uint8** Ptrs)
     // Start the UART Debug Output
     UART_Start();
     setvbuf(stdin, NULL, _IONBF, 0);
-    printf("Started UART\r\n");
+    printf("***********************************\r\n");
+    printf("***     SEL VOLTAGE MONITOR     ***\r\n");
+    printf("***       TEAM REMBRANDT        ***\r\n");
+    printf("*** WASHINGTON STATE UNIVERSITY ***\r\n");
+    printf("***            2020             ***\r\n");
+    printf("***********************************\r\n\n");
+
     
     // Register the IPC Callback Function.
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
@@ -119,6 +125,7 @@ void BluetoothEventHandler(uint32 event, void *eventParam)
     {
         case CY_BLE_EVT_STACK_ON:
         case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
+            printf("BLE device DISCONNECTED, starting advertisement\r\n");
             // Turn off connection LED
             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 0);
             // Start advertising again
@@ -126,6 +133,7 @@ void BluetoothEventHandler(uint32 event, void *eventParam)
             break;
             
         case CY_BLE_EVT_GATT_CONNECT_IND:
+            printf("BLE device CONNECTED\r\n");
             // Turn on connection LED
             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 1);
             break;
@@ -134,28 +142,36 @@ void BluetoothEventHandler(uint32 event, void *eventParam)
             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
             if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_ENABLE_CHAR_HANDLE)
             {
-                // Check for valid enable
-                if (writeReqParam->handleValPair.value.val[0] <= 1)
+                bool enable = writeReqParam->handleValPair.value.val[0];
+                if (enable)
                 {
-                    // Send enable to CM4
-                    send_enable(writeReqParam->handleValPair.value.val[0]);
-                    // Write enable to GATT server
-                    Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                    printf("Enabling voltage monitor...\r\n");
                 }
-            }
-            if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
-            {
-                // Check for valid event number
-                if (writeReqParam->handleValPair.value.val[0] <= num_events)
+                else
                 {
+                    printf("Disabling voltage monitor...\r\n");
+                }
+                // Send enable to CM4
+                send_enable(enable);
+                // Write enable to GATT server
+                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+            }
+            else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
+            {
+                uint16_t event_num = writeReqParam->handleValPair.value.val[0];
+                // Check for valid event number
+                if (event_num <= num_events)
+                {
+                    printf("Placing event %d in server...\r\n", event_num);
                     // Place requested event in GATT server
-                    write_event_to_server((uint8_t *)events[writeReqParam->handleValPair.value.val[0] - 1]);
+                    write_event_to_server((uint8_t *)events[event_num - 1]);
                     // Write new event number to GATT server
                     Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
                 }
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE)
             {
+                printf("Setting new upper threshold...\r\n");
                 // Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_upper_threshold);
                 // Write new threshold to flash
@@ -167,6 +183,7 @@ void BluetoothEventHandler(uint32 event, void *eventParam)
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE)
             {
+                printf("Setting new lower threshold...\r\n");
                 // Send threshold to CM4
                 send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_lower_threshold);
                 // Write new threshold to flash
@@ -178,6 +195,7 @@ void BluetoothEventHandler(uint32 event, void *eventParam)
             }
             else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_TRIGGER_CHAR_HANDLE)
             {
+                printf("Triggering...\r\n");
                 // Send trigger indication to CM4
                 send_trigger();
             }
@@ -253,6 +271,7 @@ void write_event_to_server(uint8_t *event_byte_arr)
     handValPair.attrHandle = CY_BLE_EVENT_ES_141_144_CHAR_HANDLE;
     handValPair.value.val = event_byte_arr + 280;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+    printf("Event placed in server\r\n");
 }
 
 void write_num_events_to_server(uint8_t * num_events_ptr)
@@ -262,6 +281,7 @@ void write_num_events_to_server(uint8_t * num_events_ptr)
     handValPair.value.val = num_events_ptr;
     handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+    printf("Number of events updated in server: %d\r\n", *num_events_ptr);
 }
 
 void write_voltage_to_server(uint8_t * voltage_ptr)
@@ -287,6 +307,7 @@ void write_threshold_to_server(uint8_t * threshold_ptr, char upper_or_lower)
     handValPair.value.val = threshold_ptr;
     handValPair.value.len = GATTS_THRESHOLD_SIZE;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
+    printf("Threshold updated in server\r\n");
 }
 
 void update_flash_config(void)
@@ -307,7 +328,7 @@ void update_flash_config(void)
     result = Cy_Flash_WriteRow((uint32)flashPtrs[0],(const uint32_t *) ramData);
     if(result == CY_FLASH_DRV_SUCCESS)
     {
-        printf("Settings written to flash!\r\n");
+        printf("Settings updated in flash\r\n");
     }
 }
 

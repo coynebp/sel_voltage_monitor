@@ -36,6 +36,8 @@ fir_filter_t averaging_filter;
 // Trigger Enable
 bool trigger_enable;
 bool voltage_normal;
+bool voltage_high;
+bool voltage_low;
 
 // Trigger
 bool trigger_set;
@@ -88,6 +90,8 @@ void voltage_monitor_init(void)
     // Initialize trigger enable to false and indicate that voltage is normal
     trigger_enable = false;
     voltage_normal = true;
+    voltage_high = false;
+    voltage_low = false;
     
     // Initialize trigger to false
     trigger_set = false;
@@ -147,27 +151,45 @@ void ADC_Interrupt(void)
             if (rms >= upper_threshold)
             {
                 // Overvoltage Condition
-                if(trigger_enable && voltage_normal)
+                if(voltage_normal || voltage_low)
                 {
-                    trigger();
+                    printf("OVERVOLGATE DETECTED\r\n");
+                    if (trigger_enable)
+                    {
+                        trigger();
+                    }
                 }
                 voltage_normal = false;
+                voltage_high = true;
+                voltage_low = false;
                 set_leds(true, false, false);
             }
             else if (rms <= lower_threshold)
             {
                 // Undervoltage
-                if(trigger_enable && voltage_normal)
+                if(voltage_normal || voltage_high)
                 {
-                    trigger();
+                    printf("UNDERVOLTAGE DETECTED\r\n");
+                    if (trigger_enable)
+                    {
+                        trigger();
+                    }
                 }
                 voltage_normal = false;
+                voltage_high = false;
+                voltage_low = true;
                 set_leds(false, true, false);
             }
             else
             {
                 // Voltage normal
+                if (!voltage_normal)
+                {
+                    printf("VOLTAGE OK\r\n");
+                }
                 voltage_normal = true;
+                voltage_high = false;
+                voltage_low = false;
                 set_leds(false, false, true);
             }
         }
@@ -214,16 +236,28 @@ void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr)
 void set_upper_threshold(uint16_t threshold)
 {
     upper_threshold = threshold;
+    printf("New upper threshold: 0x%" PRIx16, threshold);
+    printf("\r\n");
 }
 
 void set_lower_threshold(uint16_t threshold)
 {
     lower_threshold = threshold;
+    printf("New lower threshold: 0x%" PRIx16, threshold);
+    printf("\r\n");
 }
 
 void set_trigger_enable(bool val)
 {
     trigger_enable = val;
+    if (val)
+    {
+        printf("Trigger enabled\r\n");
+    }
+    else
+    {
+        printf("Trigger disabled\r\n");
+    }
 }
 
 void set_leds(bool over, bool under, bool normal)

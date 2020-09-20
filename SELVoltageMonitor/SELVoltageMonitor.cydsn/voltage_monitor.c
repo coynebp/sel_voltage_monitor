@@ -22,14 +22,14 @@ ring_buf_t ring_buffer;
 
 // Event array
 int16_t event[EVENT_LENGTH];
-    
+
 // Cosine filter
-int32 raw_samples[FILTER_LENGTH];
+uint32 raw_samples[FILTER_LENGTH];
 int16 cosine_taps[FILTER_LENGTH];
 fir_filter_t cosine_filter;
 
 // Averaging filter
-int32 averaging_samples[FILTER_LENGTH];
+uint32 averaging_samples[FILTER_LENGTH];
 int16 averaging_taps[FILTER_LENGTH];
 fir_filter_t averaging_filter;
 
@@ -74,7 +74,7 @@ void voltage_monitor_init(void)
     {
         raw_samples[i] = 0;
     }
-    initialize_filter(FILTER_LENGTH, cosine_taps, 18 * 1024, raw_samples, &cosine_filter);
+    initialize_filter(FILTER_LENGTH, cosine_taps, (18 * 1024), raw_samples, &cosine_filter);
     
     // Initialize averaging filter for squared magnitudes
     for (uint8_t i = 0; i < FILTER_LENGTH; ++i)
@@ -115,7 +115,7 @@ void voltage_monitor_init(void)
 void ADC_Interrupt(void)
 {
     // Get adc result
-    int16_t adc = Cy_SAR_GetResult16(SAR, 0);
+    uint16_t adc = Cy_SAR_GetResult16(SAR, 0) & 0xFFF;
     // Push result into filter
     insert_filter_value(&cosine_filter, adc);
     if (cosine_filter.is_charged)
@@ -269,6 +269,7 @@ void set_leds(bool over, bool under, bool normal)
 
 int32_t squared_magnitude(int32_t real, int32_t imag)
 {
-    return pow(real, 2) + pow(imag, 2);
+    int32_t val = (real * real) + (imag * imag);
+    return val;
 }
 /* [] END OF FILE */

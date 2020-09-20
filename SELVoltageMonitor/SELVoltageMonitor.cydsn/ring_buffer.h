@@ -28,7 +28,7 @@
     returns: none
     notes: none
     ***************/
-    void ring_buf_push(ring_buf_t *c, uint16_t data);
+    void ring_buf_push(ring_buf_t *c, int16_t data);
     
     /**************
     function: initialize_ring_buffer

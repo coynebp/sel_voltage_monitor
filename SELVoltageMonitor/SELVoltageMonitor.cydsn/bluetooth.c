@@ -394,12 +394,13 @@ void delete_event(uint8_t event_num)
     {
         ramData[i] = 0;
     }
+    ramData[0] = 1;
     for (uint8_t i = event_num; i < num_events; ++i)
     {
         for (uint16_t j = 0; j < 160; ++j)
         {
             events[i - 1][j] = events[i][j];
-            memcpy(ramData, events[i - 1], 288);
+            memcpy(ramData + 2, events[i - 1], 288);
         }
         result = Cy_Flash_WriteRow((uint32_t)flashPtrs[i], (const uint32_t *)ramData);
         if (result != CY_FLASH_DRV_SUCCESS)
@@ -410,13 +411,13 @@ void delete_event(uint8_t event_num)
     // Reset RAM and flash storage for deleted event
     for (uint16_t j = 0; j < 160; ++j)
     {
-        events[event_num - 1][j] = 0;
+        events[num_events - 1][j] = 0;
     }
     for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
     {
         ramData[i] = 0;
     }
-    result = Cy_Flash_WriteRow((uint32_t)flashPtrs[event_num],(const uint32_t *)ramData);
+    result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events],(const uint32_t *)ramData);
     if (result != CY_FLASH_DRV_SUCCESS)
     {
         success = false;

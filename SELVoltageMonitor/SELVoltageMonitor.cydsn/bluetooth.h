@@ -106,6 +106,16 @@
     void record_event(uint8_t * new_event);
     
     /**************
+    function: delete_event
+    description: Deletes the given event number in flash storage and in RAM
+    parameters: uint8_t event_num
+    returns: none
+    notes: assumes that event_num is a valid event number with data already present
+    ***************/
+    void delete_event(uint8_t event_num);
+    
+    
+    /**************
     function: record_voltage
     description: Records current voltage in the BLE server
     parameters: uint8_t * data

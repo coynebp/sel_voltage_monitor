@@ -14,7 +14,7 @@
 */
 #include "ring_buffer.h"
 
-void ring_buf_push(ring_buf_t *c, int16_t data)
+void ring_buf_push(ring_buf_t *c, uint16_t data)
 {
     uint16_t next;
     //Next is where head will point to after this write.

@@ -1,0 +1,1121 @@
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m0plus
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"ee_prom.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.ee_prom_Init,"ax",%progbits
+  20              		.align	2
+  21              		.global	ee_prom_Init
+  22              		.code	16
+  23              		.thumb_func
+  24              		.type	ee_prom_Init, %function
+  25              	ee_prom_Init:
+  26              	.LFB36:
+  27              		.file 1 "Generated_Source\\PSoC6\\ee_prom.c"
+   1:Generated_Source\PSoC6/ee_prom.c **** /*******************************************************************************
+   2:Generated_Source\PSoC6/ee_prom.c **** * File Name: ee_prom.c
+   3:Generated_Source\PSoC6/ee_prom.c **** * Version 2.0
+   4:Generated_Source\PSoC6/ee_prom.c **** *
+   5:Generated_Source\PSoC6/ee_prom.c **** * Description:
+   6:Generated_Source\PSoC6/ee_prom.c **** *  This file provides source code of the API for the Emulated EEPROM
+   7:Generated_Source\PSoC6/ee_prom.c **** *  Component.
+   8:Generated_Source\PSoC6/ee_prom.c **** *
+   9:Generated_Source\PSoC6/ee_prom.c **** ********************************************************************************
+  10:Generated_Source\PSoC6/ee_prom.c **** * Copyright 2013-2017, Cypress Semiconductor Corporation. All rights reserved.
+  11:Generated_Source\PSoC6/ee_prom.c **** * You may use this file only in accordance with the license, terms, conditions,
+  12:Generated_Source\PSoC6/ee_prom.c **** * disclaimers, and limitations in the end user license agreement accompanying
+  13:Generated_Source\PSoC6/ee_prom.c **** * the software package with which this file was provided.
+  14:Generated_Source\PSoC6/ee_prom.c **** *******************************************************************************/
+  15:Generated_Source\PSoC6/ee_prom.c **** 
+  16:Generated_Source\PSoC6/ee_prom.c **** #include "ee_prom.h"
+  17:Generated_Source\PSoC6/ee_prom.c **** 
+  18:Generated_Source\PSoC6/ee_prom.c **** /** The instance-specific configuration structure. This should be used in the
+  19:Generated_Source\PSoC6/ee_prom.c **** *  associated ee_prom_Init() function.
+  20:Generated_Source\PSoC6/ee_prom.c **** */
+  21:Generated_Source\PSoC6/ee_prom.c **** cy_stc_eeprom_config_t const ee_prom_config =
+  22:Generated_Source\PSoC6/ee_prom.c **** {
+  23:Generated_Source\PSoC6/ee_prom.c ****     1536U,
+  24:Generated_Source\PSoC6/ee_prom.c ****     1U,
+  25:Generated_Source\PSoC6/ee_prom.c ****     0U,
+  26:Generated_Source\PSoC6/ee_prom.c ****     0U,
+  27:Generated_Source\PSoC6/ee_prom.c ****     0U
+  28:Generated_Source\PSoC6/ee_prom.c **** };
+  29:Generated_Source\PSoC6/ee_prom.c **** 
+  30:Generated_Source\PSoC6/ee_prom.c **** /** The instance-specific context structure that holds all required information
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 2
+
+
+  31:Generated_Source\PSoC6/ee_prom.c **** * about an EEPROM instance. This structure is filled by the Em_EEPROM
+  32:Generated_Source\PSoC6/ee_prom.c **** * library Init() function and used by EEPROM library functions.
+  33:Generated_Source\PSoC6/ee_prom.c **** */
+  34:Generated_Source\PSoC6/ee_prom.c **** cy_stc_eeprom_context_t ee_prom_context;
+  35:Generated_Source\PSoC6/ee_prom.c **** 
+  36:Generated_Source\PSoC6/ee_prom.c **** /* For PSoC 6 place EEPROM into Emulated EEPROM flash area */
+  37:Generated_Source\PSoC6/ee_prom.c **** #if ((CY_PSOC6) && (ee_prom_STORAGE_EM_EEPROM))
+  38:Generated_Source\PSoC6/ee_prom.c **** 
+  39:Generated_Source\PSoC6/ee_prom.c ****     CY_SECTION(".cy_em_eeprom") CY_ALIGN(CY_FLASH_SIZEOF_ROW)
+  40:Generated_Source\PSoC6/ee_prom.c ****     const uint8_t ee_prom_em_EepromStorage[ee_prom_ACTUAL_SIZE] = {0u};
+  41:Generated_Source\PSoC6/ee_prom.c **** 
+  42:Generated_Source\PSoC6/ee_prom.c **** #endif /* ((CY_PSOC6) && (ee_prom_STORAGE_EM_EEPROM)) */
+  43:Generated_Source\PSoC6/ee_prom.c **** 
+  44:Generated_Source\PSoC6/ee_prom.c **** 
+  45:Generated_Source\PSoC6/ee_prom.c **** /*******************************************************************************
+  46:Generated_Source\PSoC6/ee_prom.c **** * Function Name: ee_prom_Init
+  47:Generated_Source\PSoC6/ee_prom.c **** ********************************************************************************
+  48:Generated_Source\PSoC6/ee_prom.c **** *
+  49:Generated_Source\PSoC6/ee_prom.c **** * Fills the start address of the EEPROM to the component configuration structure
+  50:Generated_Source\PSoC6/ee_prom.c **** * and invokes Cy_Em_EEPROM_Init() function. In case of PSoC 6 the function 
+  51:Generated_Source\PSoC6/ee_prom.c **** * is located in Cy_Em_EEPROM middleware library which is part of PDL. In case if
+  52:Generated_Source\PSoC6/ee_prom.c **** * it is utilized in the design based on non-PSOC 6 device the function is 
+  53:Generated_Source\PSoC6/ee_prom.c **** * located in internal design wide resource component - Em_EEPROM_Dynamic.
+  54:Generated_Source\PSoC6/ee_prom.c **** *
+  55:Generated_Source\PSoC6/ee_prom.c **** * \param startAddress
+  56:Generated_Source\PSoC6/ee_prom.c **** * Start address of the EEPROM storage. For PSoC 6, if Emulated EEPROM is 
+  57:Generated_Source\PSoC6/ee_prom.c **** * selected for EEPROM storage, the start address will be overwritten to some 
+  58:Generated_Source\PSoC6/ee_prom.c **** * address from Emulated EEPROM flash area.
+  59:Generated_Source\PSoC6/ee_prom.c **** *
+  60:Generated_Source\PSoC6/ee_prom.c **** * \return
+  61:Generated_Source\PSoC6/ee_prom.c **** * A result of function execution of type cy_en_em_eeprom_status_t.
+  62:Generated_Source\PSoC6/ee_prom.c **** *
+  63:Generated_Source\PSoC6/ee_prom.c **** *******************************************************************************/
+  64:Generated_Source\PSoC6/ee_prom.c **** cy_en_em_eeprom_status_t ee_prom_Init(uint32 startAddress)
+  65:Generated_Source\PSoC6/ee_prom.c **** {
+  28              		.loc 1 65 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 16
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 00B5     		push	{lr}
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 14, -4
+  36 0002 85B0     		sub	sp, sp, #20
+  37              		.cfi_def_cfa_offset 24
+  66:Generated_Source\PSoC6/ee_prom.c ****     cy_en_em_eeprom_status_t ret;
+  67:Generated_Source\PSoC6/ee_prom.c ****     cy_stc_eeprom_config_t config;
+  68:Generated_Source\PSoC6/ee_prom.c **** 
+  69:Generated_Source\PSoC6/ee_prom.c ****     config.blockingWrite =      ee_prom_config.blockingWrite;
+  38              		.loc 1 69 0
+  39 0004 0023     		movs	r3, #0
+  40 0006 6A46     		mov	r2, sp
+  41 0008 5372     		strb	r3, [r2, #9]
+  70:Generated_Source\PSoC6/ee_prom.c ****     config.eepromSize =         ee_prom_config.eepromSize;
+  42              		.loc 1 70 0
+  43 000a C022     		movs	r2, #192
+  44 000c D200     		lsls	r2, r2, #3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 3
+
+
+  45 000e 0092     		str	r2, [sp]
+  71:Generated_Source\PSoC6/ee_prom.c ****     config.redundantCopy =      ee_prom_config.redundantCopy;
+  46              		.loc 1 71 0
+  47 0010 6A46     		mov	r2, sp
+  48 0012 1372     		strb	r3, [r2, #8]
+  72:Generated_Source\PSoC6/ee_prom.c ****     config.wearLevelingFactor = ee_prom_config.wearLevelingFactor;
+  49              		.loc 1 72 0
+  50 0014 0133     		adds	r3, r3, #1
+  51 0016 0193     		str	r3, [sp, #4]
+  73:Generated_Source\PSoC6/ee_prom.c ****     
+  74:Generated_Source\PSoC6/ee_prom.c **** #if ((CY_PSOC6) && (ee_prom_STORAGE_EM_EEPROM))
+  75:Generated_Source\PSoC6/ee_prom.c ****     /* For PSoC 6, if Emulated EEPROM is selected - override the eeprom start 
+  76:Generated_Source\PSoC6/ee_prom.c ****     * address.
+  77:Generated_Source\PSoC6/ee_prom.c ****     */
+  78:Generated_Source\PSoC6/ee_prom.c ****     config.userFlashStartAddr = (uint32_t)ee_prom_em_EepromStorage;
+  52              		.loc 1 78 0
+  53 0018 034B     		ldr	r3, .L2
+  54 001a 0393     		str	r3, [sp, #12]
+  79:Generated_Source\PSoC6/ee_prom.c **** #else
+  80:Generated_Source\PSoC6/ee_prom.c ****     config.userFlashStartAddr = startAddress;
+  81:Generated_Source\PSoC6/ee_prom.c **** #endif /* ((CY_PSOC6) && (ee_prom_STORAGE_EM_EEPROM)) */
+  82:Generated_Source\PSoC6/ee_prom.c ****         
+  83:Generated_Source\PSoC6/ee_prom.c ****     ret = Cy_Em_EEPROM_Init(&config, &ee_prom_context);
+  55              		.loc 1 83 0
+  56 001c 0349     		ldr	r1, .L2+4
+  57 001e 6846     		mov	r0, sp
+  58              	.LVL1:
+  59 0020 FFF7FEFF 		bl	Cy_Em_EEPROM_Init
+  60              	.LVL2:
+  84:Generated_Source\PSoC6/ee_prom.c **** 
+  85:Generated_Source\PSoC6/ee_prom.c ****     return(ret);
+  86:Generated_Source\PSoC6/ee_prom.c **** }
+  61              		.loc 1 86 0
+  62 0024 05B0     		add	sp, sp, #20
+  63              		@ sp needed
+  64 0026 00BD     		pop	{pc}
+  65              	.L3:
+  66              		.align	2
+  67              	.L2:
+  68 0028 00000000 		.word	.LANCHOR0
+  69 002c 00000000 		.word	ee_prom_context
+  70              		.cfi_endproc
+  71              	.LFE36:
+  72              		.size	ee_prom_Init, .-ee_prom_Init
+  73              		.global	ee_prom_em_EepromStorage
+  74              		.comm	ee_prom_context,28,4
+  75              		.global	ee_prom_config
+  76              		.section	.cy_em_eeprom,"a",%progbits
+  77              		.align	9
+  78              		.set	.LANCHOR0,. + 0
+  79              		.type	ee_prom_em_EepromStorage, %object
+  80              		.size	ee_prom_em_EepromStorage, 3072
+  81              	ee_prom_em_EepromStorage:
+  82 0000 00000000 		.space	3072
+  82      00000000 
+  82      00000000 
+  82      00000000 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 4
+
+
+  82      00000000 
+  83              		.section	.rodata
+  84              		.align	2
+  85              		.type	ee_prom_config, %object
+  86              		.size	ee_prom_config, 16
+  87              	ee_prom_config:
+  88 0000 00060000 		.word	1536
+  89 0004 01000000 		.word	1
+  90 0008 00       		.byte	0
+  91 0009 00       		.byte	0
+  92 000a 0000     		.space	2
+  93 000c 00000000 		.word	0
+  94              		.text
+  95              	.Letext0:
+  96              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  97              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+  98              		.file 4 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/syslib/cy_syslib.h"
+  99              		.file 5 "Generated_Source\\PSoC6\\pdl\\middleware/em_eeprom/cy_em_eeprom.h"
+ 100              		.section	.debug_info,"",%progbits
+ 101              	.Ldebug_info0:
+ 102 0000 98020000 		.4byte	0x298
+ 103 0004 0400     		.2byte	0x4
+ 104 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 105 000a 04       		.byte	0x4
+ 106 000b 01       		.uleb128 0x1
+ 107 000c 7F010000 		.4byte	.LASF39
+ 108 0010 0C       		.byte	0xc
+ 109 0011 83000000 		.4byte	.LASF40
+ 110 0015 A4000000 		.4byte	.LASF41
+ 111 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 112 001d 00000000 		.4byte	0
+ 113 0021 00000000 		.4byte	.Ldebug_line0
+ 114 0025 02       		.uleb128 0x2
+ 115 0026 02       		.byte	0x2
+ 116 0027 05       		.byte	0x5
+ 117 0028 0A030000 		.4byte	.LASF0
+ 118 002c 02       		.uleb128 0x2
+ 119 002d 01       		.byte	0x1
+ 120 002e 08       		.byte	0x8
+ 121 002f 18020000 		.4byte	.LASF1
+ 122 0033 02       		.uleb128 0x2
+ 123 0034 01       		.byte	0x1
+ 124 0035 06       		.byte	0x6
+ 125 0036 4F030000 		.4byte	.LASF2
+ 126 003a 03       		.uleb128 0x3
+ 127 003b 00000000 		.4byte	.LASF5
+ 128 003f 02       		.byte	0x2
+ 129 0040 1D       		.byte	0x1d
+ 130 0041 2C000000 		.4byte	0x2c
+ 131 0045 02       		.uleb128 0x2
+ 132 0046 02       		.byte	0x2
+ 133 0047 07       		.byte	0x7
+ 134 0048 2D010000 		.4byte	.LASF3
+ 135 004c 02       		.uleb128 0x2
+ 136 004d 04       		.byte	0x4
+ 137 004e 05       		.byte	0x5
+ 138 004f 34030000 		.4byte	.LASF4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 5
+
+
+ 139 0053 03       		.uleb128 0x3
+ 140 0054 74010000 		.4byte	.LASF6
+ 141 0058 02       		.byte	0x2
+ 142 0059 41       		.byte	0x41
+ 143 005a 5E000000 		.4byte	0x5e
+ 144 005e 02       		.uleb128 0x2
+ 145 005f 04       		.byte	0x4
+ 146 0060 07       		.byte	0x7
+ 147 0061 1B010000 		.4byte	.LASF7
+ 148 0065 02       		.uleb128 0x2
+ 149 0066 08       		.byte	0x8
+ 150 0067 05       		.byte	0x5
+ 151 0068 B5020000 		.4byte	.LASF8
+ 152 006c 02       		.uleb128 0x2
+ 153 006d 08       		.byte	0x8
+ 154 006e 07       		.byte	0x7
+ 155 006f 5C020000 		.4byte	.LASF9
+ 156 0073 04       		.uleb128 0x4
+ 157 0074 04       		.byte	0x4
+ 158 0075 05       		.byte	0x5
+ 159 0076 696E7400 		.ascii	"int\000"
+ 160 007a 02       		.uleb128 0x2
+ 161 007b 04       		.byte	0x4
+ 162 007c 07       		.byte	0x7
+ 163 007d 26020000 		.4byte	.LASF10
+ 164 0081 03       		.uleb128 0x3
+ 165 0082 73020000 		.4byte	.LASF11
+ 166 0086 03       		.byte	0x3
+ 167 0087 18       		.byte	0x18
+ 168 0088 3A000000 		.4byte	0x3a
+ 169 008c 03       		.uleb128 0x3
+ 170 008d 2B030000 		.4byte	.LASF12
+ 171 0091 03       		.byte	0x3
+ 172 0092 30       		.byte	0x30
+ 173 0093 53000000 		.4byte	0x53
+ 174 0097 02       		.uleb128 0x2
+ 175 0098 04       		.byte	0x4
+ 176 0099 07       		.byte	0x7
+ 177 009a AC020000 		.4byte	.LASF13
+ 178 009e 02       		.uleb128 0x2
+ 179 009f 01       		.byte	0x1
+ 180 00a0 08       		.byte	0x8
+ 181 00a1 D5020000 		.4byte	.LASF14
+ 182 00a5 02       		.uleb128 0x2
+ 183 00a6 04       		.byte	0x4
+ 184 00a7 04       		.byte	0x4
+ 185 00a8 49030000 		.4byte	.LASF15
+ 186 00ac 02       		.uleb128 0x2
+ 187 00ad 08       		.byte	0x8
+ 188 00ae 04       		.byte	0x4
+ 189 00af 6D010000 		.4byte	.LASF16
+ 190 00b3 05       		.uleb128 0x5
+ 191 00b4 11020000 		.4byte	.LASF17
+ 192 00b8 04       		.byte	0x4
+ 193 00b9 8703     		.2byte	0x387
+ 194 00bb 8C000000 		.4byte	0x8c
+ 195 00bf 02       		.uleb128 0x2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 6
+
+
+ 196 00c0 08       		.byte	0x8
+ 197 00c1 04       		.byte	0x4
+ 198 00c2 3D030000 		.4byte	.LASF18
+ 199 00c6 06       		.uleb128 0x6
+ 200 00c7 10       		.byte	0x10
+ 201 00c8 05       		.byte	0x5
+ 202 00c9 0101     		.2byte	0x101
+ 203 00cb 11010000 		.4byte	0x111
+ 204 00cf 07       		.uleb128 0x7
+ 205 00d0 4F000000 		.4byte	.LASF19
+ 206 00d4 05       		.byte	0x5
+ 207 00d5 0401     		.2byte	0x104
+ 208 00d7 8C000000 		.4byte	0x8c
+ 209 00db 00       		.byte	0
+ 210 00dc 07       		.uleb128 0x7
+ 211 00dd 3C000000 		.4byte	.LASF20
+ 212 00e1 05       		.byte	0x5
+ 213 00e2 0901     		.2byte	0x109
+ 214 00e4 8C000000 		.4byte	0x8c
+ 215 00e8 04       		.byte	0x4
+ 216 00e9 07       		.uleb128 0x7
+ 217 00ea 9E020000 		.4byte	.LASF21
+ 218 00ee 05       		.byte	0x5
+ 219 00ef 0C01     		.2byte	0x10c
+ 220 00f1 81000000 		.4byte	0x81
+ 221 00f5 08       		.byte	0x8
+ 222 00f6 07       		.uleb128 0x7
+ 223 00f7 90020000 		.4byte	.LASF22
+ 224 00fb 05       		.byte	0x5
+ 225 00fc 1101     		.2byte	0x111
+ 226 00fe 81000000 		.4byte	0x81
+ 227 0102 09       		.byte	0x9
+ 228 0103 07       		.uleb128 0x7
+ 229 0104 33020000 		.4byte	.LASF23
+ 230 0108 05       		.byte	0x5
+ 231 0109 1601     		.2byte	0x116
+ 232 010b 8C000000 		.4byte	0x8c
+ 233 010f 0C       		.byte	0xc
+ 234 0110 00       		.byte	0
+ 235 0111 05       		.uleb128 0x5
+ 236 0112 40010000 		.4byte	.LASF24
+ 237 0116 05       		.byte	0x5
+ 238 0117 1701     		.2byte	0x117
+ 239 0119 C6000000 		.4byte	0xc6
+ 240 011d 06       		.uleb128 0x6
+ 241 011e 1C       		.byte	0x1c
+ 242 011f 05       		.byte	0x5
+ 243 0120 1E01     		.2byte	0x11e
+ 244 0122 8F010000 		.4byte	0x18f
+ 245 0126 07       		.uleb128 0x7
+ 246 0127 21030000 		.4byte	.LASF25
+ 247 012b 05       		.byte	0x5
+ 248 012c 2301     		.2byte	0x123
+ 249 012e 8C000000 		.4byte	0x8c
+ 250 0132 00       		.byte	0
+ 251 0133 07       		.uleb128 0x7
+ 252 0134 17000000 		.4byte	.LASF26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 7
+
+
+ 253 0138 05       		.byte	0x5
+ 254 0139 2801     		.2byte	0x128
+ 255 013b 8C000000 		.4byte	0x8c
+ 256 013f 04       		.byte	0x4
+ 257 0140 07       		.uleb128 0x7
+ 258 0141 F5000000 		.4byte	.LASF27
+ 259 0145 05       		.byte	0x5
+ 260 0146 2B01     		.2byte	0x12b
+ 261 0148 8C000000 		.4byte	0x8c
+ 262 014c 08       		.byte	0x8
+ 263 014d 07       		.uleb128 0x7
+ 264 014e 4F000000 		.4byte	.LASF19
+ 265 0152 05       		.byte	0x5
+ 266 0153 2E01     		.2byte	0x12e
+ 267 0155 8C000000 		.4byte	0x8c
+ 268 0159 0C       		.byte	0xc
+ 269 015a 07       		.uleb128 0x7
+ 270 015b 3C000000 		.4byte	.LASF20
+ 271 015f 05       		.byte	0x5
+ 272 0160 3301     		.2byte	0x133
+ 273 0162 8C000000 		.4byte	0x8c
+ 274 0166 10       		.byte	0x10
+ 275 0167 07       		.uleb128 0x7
+ 276 0168 9E020000 		.4byte	.LASF21
+ 277 016c 05       		.byte	0x5
+ 278 016d 3601     		.2byte	0x136
+ 279 016f 81000000 		.4byte	0x81
+ 280 0173 14       		.byte	0x14
+ 281 0174 07       		.uleb128 0x7
+ 282 0175 90020000 		.4byte	.LASF22
+ 283 0179 05       		.byte	0x5
+ 284 017a 3B01     		.2byte	0x13b
+ 285 017c 81000000 		.4byte	0x81
+ 286 0180 15       		.byte	0x15
+ 287 0181 07       		.uleb128 0x7
+ 288 0182 33020000 		.4byte	.LASF23
+ 289 0186 05       		.byte	0x5
+ 290 0187 3E01     		.2byte	0x13e
+ 291 0189 8C000000 		.4byte	0x8c
+ 292 018d 18       		.byte	0x18
+ 293 018e 00       		.byte	0
+ 294 018f 05       		.uleb128 0x5
+ 295 0190 24000000 		.4byte	.LASF28
+ 296 0194 05       		.byte	0x5
+ 297 0195 3F01     		.2byte	0x13f
+ 298 0197 1D010000 		.4byte	0x11d
+ 299 019b 08       		.uleb128 0x8
+ 300 019c 04       		.byte	0x4
+ 301 019d 7A000000 		.4byte	0x7a
+ 302 01a1 05       		.byte	0x5
+ 303 01a2 5301     		.2byte	0x153
+ 304 01a4 D3010000 		.4byte	0x1d3
+ 305 01a8 09       		.uleb128 0x9
+ 306 01a9 7B020000 		.4byte	.LASF29
+ 307 01ad 00       		.byte	0
+ 308 01ae 0A       		.uleb128 0xa
+ 309 01af DA020000 		.4byte	.LASF30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 8
+
+
+ 310 01b3 01006E00 		.4byte	0x6e0001
+ 311 01b7 0A       		.uleb128 0xa
+ 312 01b8 5B030000 		.4byte	.LASF31
+ 313 01bc 02006E00 		.4byte	0x6e0002
+ 314 01c0 0A       		.uleb128 0xa
+ 315 01c1 46020000 		.4byte	.LASF32
+ 316 01c5 03006E00 		.4byte	0x6e0003
+ 317 01c9 0A       		.uleb128 0xa
+ 318 01ca 03010000 		.4byte	.LASF33
+ 319 01ce 04006E00 		.4byte	0x6e0004
+ 320 01d2 00       		.byte	0
+ 321 01d3 05       		.uleb128 0x5
+ 322 01d4 F1020000 		.4byte	.LASF34
+ 323 01d8 05       		.byte	0x5
+ 324 01d9 5901     		.2byte	0x159
+ 325 01db 9B010000 		.4byte	0x19b
+ 326 01df 0B       		.uleb128 0xb
+ 327 01e0 14030000 		.4byte	.LASF42
+ 328 01e4 01       		.byte	0x1
+ 329 01e5 40       		.byte	0x40
+ 330 01e6 D3010000 		.4byte	0x1d3
+ 331 01ea 00000000 		.4byte	.LFB36
+ 332 01ee 30000000 		.4byte	.LFE36-.LFB36
+ 333 01f2 01       		.uleb128 0x1
+ 334 01f3 9C       		.byte	0x9c
+ 335 01f4 3C020000 		.4byte	0x23c
+ 336 01f8 0C       		.uleb128 0xc
+ 337 01f9 0A000000 		.4byte	.LASF43
+ 338 01fd 01       		.byte	0x1
+ 339 01fe 40       		.byte	0x40
+ 340 01ff B3000000 		.4byte	0xb3
+ 341 0203 00000000 		.4byte	.LLST0
+ 342 0207 0D       		.uleb128 0xd
+ 343 0208 72657400 		.ascii	"ret\000"
+ 344 020c 01       		.byte	0x1
+ 345 020d 42       		.byte	0x42
+ 346 020e D3010000 		.4byte	0x1d3
+ 347 0212 01       		.uleb128 0x1
+ 348 0213 50       		.byte	0x50
+ 349 0214 0E       		.uleb128 0xe
+ 350 0215 66010000 		.4byte	.LASF35
+ 351 0219 01       		.byte	0x1
+ 352 021a 43       		.byte	0x43
+ 353 021b 11010000 		.4byte	0x111
+ 354 021f 02       		.uleb128 0x2
+ 355 0220 91       		.byte	0x91
+ 356 0221 68       		.sleb128 -24
+ 357 0222 0F       		.uleb128 0xf
+ 358 0223 24000000 		.4byte	.LVL2
+ 359 0227 8F020000 		.4byte	0x28f
+ 360 022b 10       		.uleb128 0x10
+ 361 022c 01       		.uleb128 0x1
+ 362 022d 50       		.byte	0x50
+ 363 022e 02       		.uleb128 0x2
+ 364 022f 7D       		.byte	0x7d
+ 365 0230 00       		.sleb128 0
+ 366 0231 10       		.uleb128 0x10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 9
+
+
+ 367 0232 01       		.uleb128 0x1
+ 368 0233 51       		.byte	0x51
+ 369 0234 05       		.uleb128 0x5
+ 370 0235 03       		.byte	0x3
+ 371 0236 00000000 		.4byte	ee_prom_context
+ 372 023a 00       		.byte	0
+ 373 023b 00       		.byte	0
+ 374 023c 11       		.uleb128 0x11
+ 375 023d 57010000 		.4byte	.LASF36
+ 376 0241 01       		.byte	0x1
+ 377 0242 15       		.byte	0x15
+ 378 0243 4D020000 		.4byte	0x24d
+ 379 0247 05       		.uleb128 0x5
+ 380 0248 03       		.byte	0x3
+ 381 0249 00000000 		.4byte	ee_prom_config
+ 382 024d 12       		.uleb128 0x12
+ 383 024e 11010000 		.4byte	0x111
+ 384 0252 11       		.uleb128 0x11
+ 385 0253 73000000 		.4byte	.LASF37
+ 386 0257 01       		.byte	0x1
+ 387 0258 22       		.byte	0x22
+ 388 0259 8F010000 		.4byte	0x18f
+ 389 025d 05       		.uleb128 0x5
+ 390 025e 03       		.byte	0x3
+ 391 025f 00000000 		.4byte	ee_prom_context
+ 392 0263 13       		.uleb128 0x13
+ 393 0264 74020000 		.4byte	0x274
+ 394 0268 74020000 		.4byte	0x274
+ 395 026c 14       		.uleb128 0x14
+ 396 026d 97000000 		.4byte	0x97
+ 397 0271 FF0B     		.2byte	0xbff
+ 398 0273 00       		.byte	0
+ 399 0274 12       		.uleb128 0x12
+ 400 0275 81000000 		.4byte	0x81
+ 401 0279 11       		.uleb128 0x11
+ 402 027a 5A000000 		.4byte	.LASF38
+ 403 027e 01       		.byte	0x1
+ 404 027f 28       		.byte	0x28
+ 405 0280 8A020000 		.4byte	0x28a
+ 406 0284 05       		.uleb128 0x5
+ 407 0285 03       		.byte	0x3
+ 408 0286 00000000 		.4byte	ee_prom_em_EepromStorage
+ 409 028a 12       		.uleb128 0x12
+ 410 028b 63020000 		.4byte	0x263
+ 411 028f 15       		.uleb128 0x15
+ 412 0290 C3020000 		.4byte	.LASF44
+ 413 0294 C3020000 		.4byte	.LASF44
+ 414 0298 05       		.byte	0x5
+ 415 0299 6601     		.2byte	0x166
+ 416 029b 00       		.byte	0
+ 417              		.section	.debug_abbrev,"",%progbits
+ 418              	.Ldebug_abbrev0:
+ 419 0000 01       		.uleb128 0x1
+ 420 0001 11       		.uleb128 0x11
+ 421 0002 01       		.byte	0x1
+ 422 0003 25       		.uleb128 0x25
+ 423 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 10
+
+
+ 424 0005 13       		.uleb128 0x13
+ 425 0006 0B       		.uleb128 0xb
+ 426 0007 03       		.uleb128 0x3
+ 427 0008 0E       		.uleb128 0xe
+ 428 0009 1B       		.uleb128 0x1b
+ 429 000a 0E       		.uleb128 0xe
+ 430 000b 55       		.uleb128 0x55
+ 431 000c 17       		.uleb128 0x17
+ 432 000d 11       		.uleb128 0x11
+ 433 000e 01       		.uleb128 0x1
+ 434 000f 10       		.uleb128 0x10
+ 435 0010 17       		.uleb128 0x17
+ 436 0011 00       		.byte	0
+ 437 0012 00       		.byte	0
+ 438 0013 02       		.uleb128 0x2
+ 439 0014 24       		.uleb128 0x24
+ 440 0015 00       		.byte	0
+ 441 0016 0B       		.uleb128 0xb
+ 442 0017 0B       		.uleb128 0xb
+ 443 0018 3E       		.uleb128 0x3e
+ 444 0019 0B       		.uleb128 0xb
+ 445 001a 03       		.uleb128 0x3
+ 446 001b 0E       		.uleb128 0xe
+ 447 001c 00       		.byte	0
+ 448 001d 00       		.byte	0
+ 449 001e 03       		.uleb128 0x3
+ 450 001f 16       		.uleb128 0x16
+ 451 0020 00       		.byte	0
+ 452 0021 03       		.uleb128 0x3
+ 453 0022 0E       		.uleb128 0xe
+ 454 0023 3A       		.uleb128 0x3a
+ 455 0024 0B       		.uleb128 0xb
+ 456 0025 3B       		.uleb128 0x3b
+ 457 0026 0B       		.uleb128 0xb
+ 458 0027 49       		.uleb128 0x49
+ 459 0028 13       		.uleb128 0x13
+ 460 0029 00       		.byte	0
+ 461 002a 00       		.byte	0
+ 462 002b 04       		.uleb128 0x4
+ 463 002c 24       		.uleb128 0x24
+ 464 002d 00       		.byte	0
+ 465 002e 0B       		.uleb128 0xb
+ 466 002f 0B       		.uleb128 0xb
+ 467 0030 3E       		.uleb128 0x3e
+ 468 0031 0B       		.uleb128 0xb
+ 469 0032 03       		.uleb128 0x3
+ 470 0033 08       		.uleb128 0x8
+ 471 0034 00       		.byte	0
+ 472 0035 00       		.byte	0
+ 473 0036 05       		.uleb128 0x5
+ 474 0037 16       		.uleb128 0x16
+ 475 0038 00       		.byte	0
+ 476 0039 03       		.uleb128 0x3
+ 477 003a 0E       		.uleb128 0xe
+ 478 003b 3A       		.uleb128 0x3a
+ 479 003c 0B       		.uleb128 0xb
+ 480 003d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 11
+
+
+ 481 003e 05       		.uleb128 0x5
+ 482 003f 49       		.uleb128 0x49
+ 483 0040 13       		.uleb128 0x13
+ 484 0041 00       		.byte	0
+ 485 0042 00       		.byte	0
+ 486 0043 06       		.uleb128 0x6
+ 487 0044 13       		.uleb128 0x13
+ 488 0045 01       		.byte	0x1
+ 489 0046 0B       		.uleb128 0xb
+ 490 0047 0B       		.uleb128 0xb
+ 491 0048 3A       		.uleb128 0x3a
+ 492 0049 0B       		.uleb128 0xb
+ 493 004a 3B       		.uleb128 0x3b
+ 494 004b 05       		.uleb128 0x5
+ 495 004c 01       		.uleb128 0x1
+ 496 004d 13       		.uleb128 0x13
+ 497 004e 00       		.byte	0
+ 498 004f 00       		.byte	0
+ 499 0050 07       		.uleb128 0x7
+ 500 0051 0D       		.uleb128 0xd
+ 501 0052 00       		.byte	0
+ 502 0053 03       		.uleb128 0x3
+ 503 0054 0E       		.uleb128 0xe
+ 504 0055 3A       		.uleb128 0x3a
+ 505 0056 0B       		.uleb128 0xb
+ 506 0057 3B       		.uleb128 0x3b
+ 507 0058 05       		.uleb128 0x5
+ 508 0059 49       		.uleb128 0x49
+ 509 005a 13       		.uleb128 0x13
+ 510 005b 38       		.uleb128 0x38
+ 511 005c 0B       		.uleb128 0xb
+ 512 005d 00       		.byte	0
+ 513 005e 00       		.byte	0
+ 514 005f 08       		.uleb128 0x8
+ 515 0060 04       		.uleb128 0x4
+ 516 0061 01       		.byte	0x1
+ 517 0062 0B       		.uleb128 0xb
+ 518 0063 0B       		.uleb128 0xb
+ 519 0064 49       		.uleb128 0x49
+ 520 0065 13       		.uleb128 0x13
+ 521 0066 3A       		.uleb128 0x3a
+ 522 0067 0B       		.uleb128 0xb
+ 523 0068 3B       		.uleb128 0x3b
+ 524 0069 05       		.uleb128 0x5
+ 525 006a 01       		.uleb128 0x1
+ 526 006b 13       		.uleb128 0x13
+ 527 006c 00       		.byte	0
+ 528 006d 00       		.byte	0
+ 529 006e 09       		.uleb128 0x9
+ 530 006f 28       		.uleb128 0x28
+ 531 0070 00       		.byte	0
+ 532 0071 03       		.uleb128 0x3
+ 533 0072 0E       		.uleb128 0xe
+ 534 0073 1C       		.uleb128 0x1c
+ 535 0074 0B       		.uleb128 0xb
+ 536 0075 00       		.byte	0
+ 537 0076 00       		.byte	0
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 12
+
+
+ 538 0077 0A       		.uleb128 0xa
+ 539 0078 28       		.uleb128 0x28
+ 540 0079 00       		.byte	0
+ 541 007a 03       		.uleb128 0x3
+ 542 007b 0E       		.uleb128 0xe
+ 543 007c 1C       		.uleb128 0x1c
+ 544 007d 06       		.uleb128 0x6
+ 545 007e 00       		.byte	0
+ 546 007f 00       		.byte	0
+ 547 0080 0B       		.uleb128 0xb
+ 548 0081 2E       		.uleb128 0x2e
+ 549 0082 01       		.byte	0x1
+ 550 0083 3F       		.uleb128 0x3f
+ 551 0084 19       		.uleb128 0x19
+ 552 0085 03       		.uleb128 0x3
+ 553 0086 0E       		.uleb128 0xe
+ 554 0087 3A       		.uleb128 0x3a
+ 555 0088 0B       		.uleb128 0xb
+ 556 0089 3B       		.uleb128 0x3b
+ 557 008a 0B       		.uleb128 0xb
+ 558 008b 27       		.uleb128 0x27
+ 559 008c 19       		.uleb128 0x19
+ 560 008d 49       		.uleb128 0x49
+ 561 008e 13       		.uleb128 0x13
+ 562 008f 11       		.uleb128 0x11
+ 563 0090 01       		.uleb128 0x1
+ 564 0091 12       		.uleb128 0x12
+ 565 0092 06       		.uleb128 0x6
+ 566 0093 40       		.uleb128 0x40
+ 567 0094 18       		.uleb128 0x18
+ 568 0095 9742     		.uleb128 0x2117
+ 569 0097 19       		.uleb128 0x19
+ 570 0098 01       		.uleb128 0x1
+ 571 0099 13       		.uleb128 0x13
+ 572 009a 00       		.byte	0
+ 573 009b 00       		.byte	0
+ 574 009c 0C       		.uleb128 0xc
+ 575 009d 05       		.uleb128 0x5
+ 576 009e 00       		.byte	0
+ 577 009f 03       		.uleb128 0x3
+ 578 00a0 0E       		.uleb128 0xe
+ 579 00a1 3A       		.uleb128 0x3a
+ 580 00a2 0B       		.uleb128 0xb
+ 581 00a3 3B       		.uleb128 0x3b
+ 582 00a4 0B       		.uleb128 0xb
+ 583 00a5 49       		.uleb128 0x49
+ 584 00a6 13       		.uleb128 0x13
+ 585 00a7 02       		.uleb128 0x2
+ 586 00a8 17       		.uleb128 0x17
+ 587 00a9 00       		.byte	0
+ 588 00aa 00       		.byte	0
+ 589 00ab 0D       		.uleb128 0xd
+ 590 00ac 34       		.uleb128 0x34
+ 591 00ad 00       		.byte	0
+ 592 00ae 03       		.uleb128 0x3
+ 593 00af 08       		.uleb128 0x8
+ 594 00b0 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 13
+
+
+ 595 00b1 0B       		.uleb128 0xb
+ 596 00b2 3B       		.uleb128 0x3b
+ 597 00b3 0B       		.uleb128 0xb
+ 598 00b4 49       		.uleb128 0x49
+ 599 00b5 13       		.uleb128 0x13
+ 600 00b6 02       		.uleb128 0x2
+ 601 00b7 18       		.uleb128 0x18
+ 602 00b8 00       		.byte	0
+ 603 00b9 00       		.byte	0
+ 604 00ba 0E       		.uleb128 0xe
+ 605 00bb 34       		.uleb128 0x34
+ 606 00bc 00       		.byte	0
+ 607 00bd 03       		.uleb128 0x3
+ 608 00be 0E       		.uleb128 0xe
+ 609 00bf 3A       		.uleb128 0x3a
+ 610 00c0 0B       		.uleb128 0xb
+ 611 00c1 3B       		.uleb128 0x3b
+ 612 00c2 0B       		.uleb128 0xb
+ 613 00c3 49       		.uleb128 0x49
+ 614 00c4 13       		.uleb128 0x13
+ 615 00c5 02       		.uleb128 0x2
+ 616 00c6 18       		.uleb128 0x18
+ 617 00c7 00       		.byte	0
+ 618 00c8 00       		.byte	0
+ 619 00c9 0F       		.uleb128 0xf
+ 620 00ca 898201   		.uleb128 0x4109
+ 621 00cd 01       		.byte	0x1
+ 622 00ce 11       		.uleb128 0x11
+ 623 00cf 01       		.uleb128 0x1
+ 624 00d0 31       		.uleb128 0x31
+ 625 00d1 13       		.uleb128 0x13
+ 626 00d2 00       		.byte	0
+ 627 00d3 00       		.byte	0
+ 628 00d4 10       		.uleb128 0x10
+ 629 00d5 8A8201   		.uleb128 0x410a
+ 630 00d8 00       		.byte	0
+ 631 00d9 02       		.uleb128 0x2
+ 632 00da 18       		.uleb128 0x18
+ 633 00db 9142     		.uleb128 0x2111
+ 634 00dd 18       		.uleb128 0x18
+ 635 00de 00       		.byte	0
+ 636 00df 00       		.byte	0
+ 637 00e0 11       		.uleb128 0x11
+ 638 00e1 34       		.uleb128 0x34
+ 639 00e2 00       		.byte	0
+ 640 00e3 03       		.uleb128 0x3
+ 641 00e4 0E       		.uleb128 0xe
+ 642 00e5 3A       		.uleb128 0x3a
+ 643 00e6 0B       		.uleb128 0xb
+ 644 00e7 3B       		.uleb128 0x3b
+ 645 00e8 0B       		.uleb128 0xb
+ 646 00e9 49       		.uleb128 0x49
+ 647 00ea 13       		.uleb128 0x13
+ 648 00eb 3F       		.uleb128 0x3f
+ 649 00ec 19       		.uleb128 0x19
+ 650 00ed 02       		.uleb128 0x2
+ 651 00ee 18       		.uleb128 0x18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 14
+
+
+ 652 00ef 00       		.byte	0
+ 653 00f0 00       		.byte	0
+ 654 00f1 12       		.uleb128 0x12
+ 655 00f2 26       		.uleb128 0x26
+ 656 00f3 00       		.byte	0
+ 657 00f4 49       		.uleb128 0x49
+ 658 00f5 13       		.uleb128 0x13
+ 659 00f6 00       		.byte	0
+ 660 00f7 00       		.byte	0
+ 661 00f8 13       		.uleb128 0x13
+ 662 00f9 01       		.uleb128 0x1
+ 663 00fa 01       		.byte	0x1
+ 664 00fb 49       		.uleb128 0x49
+ 665 00fc 13       		.uleb128 0x13
+ 666 00fd 01       		.uleb128 0x1
+ 667 00fe 13       		.uleb128 0x13
+ 668 00ff 00       		.byte	0
+ 669 0100 00       		.byte	0
+ 670 0101 14       		.uleb128 0x14
+ 671 0102 21       		.uleb128 0x21
+ 672 0103 00       		.byte	0
+ 673 0104 49       		.uleb128 0x49
+ 674 0105 13       		.uleb128 0x13
+ 675 0106 2F       		.uleb128 0x2f
+ 676 0107 05       		.uleb128 0x5
+ 677 0108 00       		.byte	0
+ 678 0109 00       		.byte	0
+ 679 010a 15       		.uleb128 0x15
+ 680 010b 2E       		.uleb128 0x2e
+ 681 010c 00       		.byte	0
+ 682 010d 3F       		.uleb128 0x3f
+ 683 010e 19       		.uleb128 0x19
+ 684 010f 3C       		.uleb128 0x3c
+ 685 0110 19       		.uleb128 0x19
+ 686 0111 6E       		.uleb128 0x6e
+ 687 0112 0E       		.uleb128 0xe
+ 688 0113 03       		.uleb128 0x3
+ 689 0114 0E       		.uleb128 0xe
+ 690 0115 3A       		.uleb128 0x3a
+ 691 0116 0B       		.uleb128 0xb
+ 692 0117 3B       		.uleb128 0x3b
+ 693 0118 05       		.uleb128 0x5
+ 694 0119 00       		.byte	0
+ 695 011a 00       		.byte	0
+ 696 011b 00       		.byte	0
+ 697              		.section	.debug_loc,"",%progbits
+ 698              	.Ldebug_loc0:
+ 699              	.LLST0:
+ 700 0000 00000000 		.4byte	.LVL0
+ 701 0004 20000000 		.4byte	.LVL1
+ 702 0008 0100     		.2byte	0x1
+ 703 000a 50       		.byte	0x50
+ 704 000b 20000000 		.4byte	.LVL1
+ 705 000f 30000000 		.4byte	.LFE36
+ 706 0013 0400     		.2byte	0x4
+ 707 0015 F3       		.byte	0xf3
+ 708 0016 01       		.uleb128 0x1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 15
+
+
+ 709 0017 50       		.byte	0x50
+ 710 0018 9F       		.byte	0x9f
+ 711 0019 00000000 		.4byte	0
+ 712 001d 00000000 		.4byte	0
+ 713              		.section	.debug_aranges,"",%progbits
+ 714 0000 1C000000 		.4byte	0x1c
+ 715 0004 0200     		.2byte	0x2
+ 716 0006 00000000 		.4byte	.Ldebug_info0
+ 717 000a 04       		.byte	0x4
+ 718 000b 00       		.byte	0
+ 719 000c 0000     		.2byte	0
+ 720 000e 0000     		.2byte	0
+ 721 0010 00000000 		.4byte	.LFB36
+ 722 0014 30000000 		.4byte	.LFE36-.LFB36
+ 723 0018 00000000 		.4byte	0
+ 724 001c 00000000 		.4byte	0
+ 725              		.section	.debug_ranges,"",%progbits
+ 726              	.Ldebug_ranges0:
+ 727 0000 00000000 		.4byte	.LFB36
+ 728 0004 30000000 		.4byte	.LFE36
+ 729 0008 00000000 		.4byte	0
+ 730 000c 00000000 		.4byte	0
+ 731              		.section	.debug_line,"",%progbits
+ 732              	.Ldebug_line0:
+ 733 0000 D7010000 		.section	.debug_str,"MS",%progbits,1
+ 733      0200BA01 
+ 733      00000201 
+ 733      FB0E0D00 
+ 733      01010101 
+ 734              	.LASF5:
+ 735 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 735      6E74385F 
+ 735      7400
+ 736              	.LASF43:
+ 737 000a 73746172 		.ascii	"startAddress\000"
+ 737      74416464 
+ 737      72657373 
+ 737      00
+ 738              	.LASF26:
+ 739 0017 6E756D62 		.ascii	"numberOfRows\000"
+ 739      65724F66 
+ 739      526F7773 
+ 739      00
+ 740              	.LASF28:
+ 741 0024 63795F73 		.ascii	"cy_stc_eeprom_context_t\000"
+ 741      74635F65 
+ 741      6570726F 
+ 741      6D5F636F 
+ 741      6E746578 
+ 742              	.LASF20:
+ 743 003c 77656172 		.ascii	"wearLevelingFactor\000"
+ 743      4C657665 
+ 743      6C696E67 
+ 743      46616374 
+ 743      6F7200
+ 744              	.LASF19:
+ 745 004f 65657072 		.ascii	"eepromSize\000"
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 16
+
+
+ 745      6F6D5369 
+ 745      7A6500
+ 746              	.LASF38:
+ 747 005a 65655F70 		.ascii	"ee_prom_em_EepromStorage\000"
+ 747      726F6D5F 
+ 747      656D5F45 
+ 747      6570726F 
+ 747      6D53746F 
+ 748              	.LASF37:
+ 749 0073 65655F70 		.ascii	"ee_prom_context\000"
+ 749      726F6D5F 
+ 749      636F6E74 
+ 749      65787400 
+ 750              	.LASF40:
+ 751 0083 47656E65 		.ascii	"Generated_Source\\PSoC6\\ee_prom.c\000"
+ 751      72617465 
+ 751      645F536F 
+ 751      75726365 
+ 751      5C50536F 
+ 752              	.LASF41:
+ 753 00a4 433A5C50 		.ascii	"C:\\PSoC 6 Projects\\sel_voltage_monitor\\SELVoltag"
+ 753      536F4320 
+ 753      36205072 
+ 753      6F6A6563 
+ 753      74735C73 
+ 754 00d4 654D6F6E 		.ascii	"eMonitor\\SELVoltageMonitor.cydsn\000"
+ 754      69746F72 
+ 754      5C53454C 
+ 754      566F6C74 
+ 754      6167654D 
+ 755              	.LASF27:
+ 756 00f5 6C617374 		.ascii	"lastWrRowAddr\000"
+ 756      5772526F 
+ 756      77416464 
+ 756      7200
+ 757              	.LASF33:
+ 758 0103 43595F45 		.ascii	"CY_EM_EEPROM_WRITE_FAIL\000"
+ 758      4D5F4545 
+ 758      50524F4D 
+ 758      5F575249 
+ 758      54455F46 
+ 759              	.LASF7:
+ 760 011b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 760      20756E73 
+ 760      69676E65 
+ 760      6420696E 
+ 760      7400
+ 761              	.LASF3:
+ 762 012d 73686F72 		.ascii	"short unsigned int\000"
+ 762      7420756E 
+ 762      7369676E 
+ 762      65642069 
+ 762      6E7400
+ 763              	.LASF24:
+ 764 0140 63795F73 		.ascii	"cy_stc_eeprom_config_t\000"
+ 764      74635F65 
+ 764      6570726F 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 17
+
+
+ 764      6D5F636F 
+ 764      6E666967 
+ 765              	.LASF36:
+ 766 0157 65655F70 		.ascii	"ee_prom_config\000"
+ 766      726F6D5F 
+ 766      636F6E66 
+ 766      696700
+ 767              	.LASF35:
+ 768 0166 636F6E66 		.ascii	"config\000"
+ 768      696700
+ 769              	.LASF16:
+ 770 016d 646F7562 		.ascii	"double\000"
+ 770      6C6500
+ 771              	.LASF6:
+ 772 0174 5F5F7569 		.ascii	"__uint32_t\000"
+ 772      6E743332 
+ 772      5F7400
+ 773              	.LASF39:
+ 774 017f 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 774      43313120 
+ 774      352E342E 
+ 774      31203230 
+ 774      31363036 
+ 775 01b2 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m0plus -mthumb -"
+ 775      20726576 
+ 775      6973696F 
+ 775      6E203233 
+ 775      37373135 
+ 776 01e5 67202D4F 		.ascii	"g -Og -ffunction-sections -ffat-lto-objects\000"
+ 776      67202D66 
+ 776      66756E63 
+ 776      74696F6E 
+ 776      2D736563 
+ 777              	.LASF17:
+ 778 0211 75696E74 		.ascii	"uint32\000"
+ 778      333200
+ 779              	.LASF1:
+ 780 0218 756E7369 		.ascii	"unsigned char\000"
+ 780      676E6564 
+ 780      20636861 
+ 780      7200
+ 781              	.LASF10:
+ 782 0226 756E7369 		.ascii	"unsigned int\000"
+ 782      676E6564 
+ 782      20696E74 
+ 782      00
+ 783              	.LASF23:
+ 784 0233 75736572 		.ascii	"userFlashStartAddr\000"
+ 784      466C6173 
+ 784      68537461 
+ 784      72744164 
+ 784      647200
+ 785              	.LASF32:
+ 786 0246 43595F45 		.ascii	"CY_EM_EEPROM_BAD_DATA\000"
+ 786      4D5F4545 
+ 786      50524F4D 
+ 786      5F424144 
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 18
+
+
+ 786      5F444154 
+ 787              	.LASF9:
+ 788 025c 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 788      206C6F6E 
+ 788      6720756E 
+ 788      7369676E 
+ 788      65642069 
+ 789              	.LASF11:
+ 790 0273 75696E74 		.ascii	"uint8_t\000"
+ 790      385F7400 
+ 791              	.LASF29:
+ 792 027b 43595F45 		.ascii	"CY_EM_EEPROM_SUCCESS\000"
+ 792      4D5F4545 
+ 792      50524F4D 
+ 792      5F535543 
+ 792      43455353 
+ 793              	.LASF22:
+ 794 0290 626C6F63 		.ascii	"blockingWrite\000"
+ 794      6B696E67 
+ 794      57726974 
+ 794      6500
+ 795              	.LASF21:
+ 796 029e 72656475 		.ascii	"redundantCopy\000"
+ 796      6E64616E 
+ 796      74436F70 
+ 796      7900
+ 797              	.LASF13:
+ 798 02ac 73697A65 		.ascii	"sizetype\000"
+ 798      74797065 
+ 798      00
+ 799              	.LASF8:
+ 800 02b5 6C6F6E67 		.ascii	"long long int\000"
+ 800      206C6F6E 
+ 800      6720696E 
+ 800      7400
+ 801              	.LASF44:
+ 802 02c3 43795F45 		.ascii	"Cy_Em_EEPROM_Init\000"
+ 802      6D5F4545 
+ 802      50524F4D 
+ 802      5F496E69 
+ 802      7400
+ 803              	.LASF14:
+ 804 02d5 63686172 		.ascii	"char\000"
+ 804      00
+ 805              	.LASF30:
+ 806 02da 43595F45 		.ascii	"CY_EM_EEPROM_BAD_PARAM\000"
+ 806      4D5F4545 
+ 806      50524F4D 
+ 806      5F424144 
+ 806      5F504152 
+ 807              	.LASF34:
+ 808 02f1 63795F65 		.ascii	"cy_en_em_eeprom_status_t\000"
+ 808      6E5F656D 
+ 808      5F656570 
+ 808      726F6D5F 
+ 808      73746174 
+ 809              	.LASF0:
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccQuufby.s 			page 19
+
+
+ 810 030a 73686F72 		.ascii	"short int\000"
+ 810      7420696E 
+ 810      7400
+ 811              	.LASF42:
+ 812 0314 65655F70 		.ascii	"ee_prom_Init\000"
+ 812      726F6D5F 
+ 812      496E6974 
+ 812      00
+ 813              	.LASF25:
+ 814 0321 776C456E 		.ascii	"wlEndAddr\000"
+ 814      64416464 
+ 814      7200
+ 815              	.LASF12:
+ 816 032b 75696E74 		.ascii	"uint32_t\000"
+ 816      33325F74 
+ 816      00
+ 817              	.LASF4:
+ 818 0334 6C6F6E67 		.ascii	"long int\000"
+ 818      20696E74 
+ 818      00
+ 819              	.LASF18:
+ 820 033d 6C6F6E67 		.ascii	"long double\000"
+ 820      20646F75 
+ 820      626C6500 
+ 821              	.LASF15:
+ 822 0349 666C6F61 		.ascii	"float\000"
+ 822      7400
+ 823              	.LASF2:
+ 824 034f 7369676E 		.ascii	"signed char\000"
+ 824      65642063 
+ 824      68617200 
+ 825              	.LASF31:
+ 826 035b 43595F45 		.ascii	"CY_EM_EEPROM_BAD_CHECKSUM\000"
+ 826      4D5F4545 
+ 826      50524F4D 
+ 826      5F424144 
+ 826      5F434845 
+ 827              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

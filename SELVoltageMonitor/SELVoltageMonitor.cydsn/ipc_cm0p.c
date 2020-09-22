@@ -39,7 +39,7 @@ void CM0_MessageCallback(uint32_t *msg)
                 break;
             case type_voltage:
             {
-                record_voltage(msgPtr->data);
+                write_voltage_to_server(msgPtr->data);
                 break;
             }
             default:

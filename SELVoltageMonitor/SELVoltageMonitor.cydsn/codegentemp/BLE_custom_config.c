@@ -377,8 +377,10 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x03u] = {
                     CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
+
+            /* Delete Event Number characteristic */
             {
-                CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                0x0041u, /* Handle of the Delete Event Number characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {

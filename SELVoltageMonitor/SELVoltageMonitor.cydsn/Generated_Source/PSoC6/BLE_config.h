@@ -276,7 +276,7 @@ extern "C" {
 
 /** The GATT Maximum attribute length. */
 #define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0014u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x003Fu)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0041u)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x34u)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x36u)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -406,6 +406,7 @@ extern "C" {
 #define CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_INDEX   (0x03u) /* Index of Lower Threshold characteristic */
 #define CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_INDEX   (0x04u) /* Index of Number of Events characteristic */
 #define CY_BLE_CONTROL_ENABLE_CHAR_INDEX   (0x05u) /* Index of Enable characteristic */
+#define CY_BLE_CONTROL_DELETE_EVENT_NUMBER_CHAR_INDEX   (0x06u) /* Index of Delete Event Number characteristic */
 
 
 #define CY_BLE_METER_SERVICE_HANDLE   (0x0010u) /* Handle of Meter service */
@@ -458,6 +459,8 @@ extern "C" {
 #define CY_BLE_CONTROL_NUMBER_OF_EVENTS_CHAR_HANDLE   (0x003Du) /* Handle of Number of Events characteristic */
 #define CY_BLE_CONTROL_ENABLE_DECL_HANDLE   (0x003Eu) /* Handle of Enable characteristic declaration */
 #define CY_BLE_CONTROL_ENABLE_CHAR_HANDLE   (0x003Fu) /* Handle of Enable characteristic */
+#define CY_BLE_CONTROL_DELETE_EVENT_NUMBER_DECL_HANDLE   (0x0040u) /* Handle of Delete Event Number characteristic declaration */
+#define CY_BLE_CONTROL_DELETE_EVENT_NUMBER_CHAR_HANDLE   (0x0041u) /* Handle of Delete Event Number characteristic */
 
 
 

@@ -120,90 +120,104 @@ void init_ble(const uint8** Ptrs)
 
 void BluetoothEventHandler(uint32 event, void *eventParam)
 {
-    cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
     switch(event) 
     {
         case CY_BLE_EVT_STACK_ON:
         case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
-            printf("BLE device DISCONNECTED, starting advertisement\r\n");
+        {
+            printf("BLE device DISCONNECTED. Starting advertisement...\r\n");
             // Turn off connection LED
             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 0);
             // Start advertising again
             Cy_BLE_GAPP_StartAdvertisement(CY_BLE_ADVERTISING_FAST, CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX);
             break;
-            
+        }
         case CY_BLE_EVT_GATT_CONNECT_IND:
+        {
             printf("BLE device CONNECTED\r\n");
             // Turn on connection LED
             Cy_GPIO_Write(Connection_LED_0_PORT, Connection_LED_0_NUM, 1);
             break;
-            
+        }
         case CY_BLE_EVT_GATTS_WRITE_REQ:
+        {
+            cy_stc_ble_gattc_write_cmd_req_t *writeReqParam;
             writeReqParam = (cy_stc_ble_gattc_write_cmd_req_t *)eventParam;
-            if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_ENABLE_CHAR_HANDLE)
+            cy_ble_gatt_db_attr_handle_t handle = writeReqParam->handleValPair.attrHandle;
+            switch(handle)
             {
-                bool enable = writeReqParam->handleValPair.value.val[0];
-                if (enable)
+                case CY_BLE_CONTROL_ENABLE_CHAR_HANDLE:
                 {
-                    printf("Enabling voltage monitor...\r\n");
-                }
-                else
-                {
-                    printf("Disabling voltage monitor...\r\n");
-                }
-                // Send enable to CM4
-                send_enable(enable);
-                // Write enable to GATT server
-                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
-            }
-            else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE)
-            {
-                uint16_t event_num = writeReqParam->handleValPair.value.val[0];
-                // Check for valid event number
-                if (event_num <= num_events)
-                {
-                    printf("Placing event %d in server...\r\n", event_num);
-                    // Place requested event in GATT server
-                    write_event_to_server((uint8_t *)events[event_num - 1]);
-                    // Write new event number to GATT server
+                    bool enable = writeReqParam->handleValPair.value.val[0];
+                    // Send enable to CM4
+                    send_enable(enable);
+                    // Write enable to GATT server
                     Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                    break;
                 }
-            }
-            else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE)
-            {
-                printf("Setting new upper threshold...\r\n");
-                // Send threshold to CM4
-                send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_upper_threshold);
-                // Write new threshold to flash
-                upper_thresh[0] = writeReqParam->handleValPair.value.val[0];
-                upper_thresh[1] = writeReqParam->handleValPair.value.val[1];
-                update_flash_config();
-                // Write new threshold to GATT server
-                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
-            }
-            else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE)
-            {
-                printf("Setting new lower threshold...\r\n");
-                // Send threshold to CM4
-                send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_lower_threshold);
-                // Write new threshold to flash
-                lower_thresh[0] = writeReqParam->handleValPair.value.val[0];
-                lower_thresh[1] = writeReqParam->handleValPair.value.val[1];
-                update_flash_config();
-                // Write new threshold to GATT server
-                Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
-            }
-            else if (writeReqParam->handleValPair.attrHandle == CY_BLE_CONTROL_TRIGGER_CHAR_HANDLE)
-            {
-                printf("Triggering...\r\n");
-                // Send trigger indication to CM4
-                send_trigger();
+                case CY_BLE_CONTROL_EVENT_NUMBER_CHAR_HANDLE:
+                {
+                    uint8_t event_num = writeReqParam->handleValPair.value.val[0];
+                    // Check for valid event number
+                    if (event_num <= num_events)
+                    {
+                        // Place requested event in GATT server
+                        write_event_to_server((uint8_t *)events[event_num - 1]);
+                        // Write new event number to GATT server
+                        Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                    }
+                    break;
+                }
+                case CY_BLE_CONTROL_DELETE_EVENT_NUMBER_CHAR_HANDLE:
+                {
+                    uint8_t event_num = writeReqParam->handleValPair.value.val[0];
+                    // Check for valid event number to delete
+                    if (event_num <= num_events)
+                    {
+                        delete_event(event_num);
+                    }
+                    break;
+                }
+                case CY_BLE_CONTROL_UPPER_THRESHOLD_CHAR_HANDLE:
+                {
+                    // Send threshold to CM4
+                    send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_upper_threshold);
+                    // Write new threshold to flash
+                    upper_thresh[0] = writeReqParam->handleValPair.value.val[0];
+                    upper_thresh[1] = writeReqParam->handleValPair.value.val[1];
+                    update_flash_config();
+                    // Write new threshold to GATT server
+                    Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                    break;
+                }
+                case CY_BLE_CONTROL_LOWER_THRESHOLD_CHAR_HANDLE:
+                {
+                    // Send threshold to CM4
+                    send_threshold(writeReqParam->handleValPair.value.val, (ipc_msg_datatype)type_lower_threshold);
+                    // Write new threshold to flash
+                    lower_thresh[0] = writeReqParam->handleValPair.value.val[0];
+                    lower_thresh[1] = writeReqParam->handleValPair.value.val[1];
+                    update_flash_config();
+                    // Write new threshold to GATT server
+                    Cy_BLE_GATTS_WriteAttributeValuePeer(&writeReqParam->connHandle, &writeReqParam->handleValPair);
+                    break;
+                }
+                case CY_BLE_CONTROL_TRIGGER_CHAR_HANDLE:
+                {
+                    // Send trigger indication to CM4
+                    send_trigger();
+                    break;
+                }
+                default:
+                    break;
             }
             // Send write response
             Cy_BLE_GATTS_WriteRsp(writeReqParam->connHandle);
-            break;        
+            break;
+        }
         default:
             break;
+            
     }
 }
 
@@ -271,7 +285,6 @@ void write_event_to_server(uint8_t *event_byte_arr)
     handValPair.attrHandle = CY_BLE_EVENT_ES_141_144_CHAR_HANDLE;
     handValPair.value.val = event_byte_arr + 280;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-    printf("Event placed in server\r\n");
 }
 
 void write_num_events_to_server(uint8_t * num_events_ptr)
@@ -281,7 +294,6 @@ void write_num_events_to_server(uint8_t * num_events_ptr)
     handValPair.value.val = num_events_ptr;
     handValPair.value.len = GATTS_NUM_EVENTS_SIZE;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-    printf("Number of events updated in server: %d\r\n", *num_events_ptr);
 }
 
 void write_voltage_to_server(uint8_t * voltage_ptr)
@@ -307,7 +319,6 @@ void write_threshold_to_server(uint8_t * threshold_ptr, char upper_or_lower)
     handValPair.value.val = threshold_ptr;
     handValPair.value.len = GATTS_THRESHOLD_SIZE;
     Cy_BLE_GATTS_WriteAttributeValueLocal(&handValPair);
-    printf("Threshold updated in server\r\n");
 }
 
 void update_flash_config(void)
@@ -370,6 +381,57 @@ void record_event(uint8_t * new_event)
     else
     {
         printf("Event storage full!\r\n");
+    }
+}
+
+void delete_event(uint8_t event_num)
+{
+    bool success = true;
+    cy_en_flashdrv_status_t result;
+    // Delete event from RAM and flash storage
+    uint8_t ramData[CY_FLASH_SIZEOF_ROW];
+    for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+    {
+        ramData[i] = 0;
+    }
+    for (uint8_t i = event_num; i < num_events; ++i)
+    {
+        for (uint16_t j = 0; j < 160; ++j)
+        {
+            events[i - 1][j] = events[i][j];
+            memcpy(ramData, events[i - 1], 288);
+        }
+        result = Cy_Flash_WriteRow((uint32_t)flashPtrs[i], (const uint32_t *)ramData);
+        if (result != CY_FLASH_DRV_SUCCESS)
+        {
+            success = false;
+        }
+    }
+    // Reset RAM and flash storage for deleted event
+    for (uint16_t j = 0; j < 160; ++j)
+    {
+        events[event_num - 1][j] = 0;
+    }
+    for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+    {
+        ramData[i] = 0;
+    }
+    result = Cy_Flash_WriteRow((uint32_t)flashPtrs[event_num],(const uint32_t *)ramData);
+    if (result != CY_FLASH_DRV_SUCCESS)
+    {
+        success = false;
+    }
+    // Update number of events
+    --num_events;
+    // Update number of events in server
+    write_num_events_to_server(&num_events);
+    if (success)
+    {
+        printf("Event successfully removed\r\n");
+    }
+    else
+    {
+        printf("Event removal unsuccessful\r\n");
     }
 }
 

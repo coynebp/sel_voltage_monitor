@@ -11,7 +11,7 @@
 */
 #include "filter.h"
 
-void initialize_filter(uint8_t length, int16_t * taps, uint16_t gain, uint32_t * samples, fir_filter_t * filter)
+void initialize_filter(uint8_t length, int16_t * taps, int16_t gain, int32_t * samples, fir_filter_t * filter)
 {
     filter->length = length;
     filter->taps = taps;
@@ -21,7 +21,7 @@ void initialize_filter(uint8_t length, int16_t * taps, uint16_t gain, uint32_t *
     filter->num_samples = 0;
 }
 
-void insert_filter_value(fir_filter_t *filter, uint32_t value)
+void insert_filter_value(fir_filter_t *filter, int32_t value)
 {
     // Move all samples along the array.
     for(uint8_t i = filter->length - 1; i >= 1; --i)
@@ -48,7 +48,6 @@ int32_t get_filtered_value(fir_filter_t *filter)
     {
         result += (filter->samples[i] * filter->taps[i]);
     }
-    int32_t val = (result / filter->gain);
-    return val;
+    return result / filter->gain;
 }
 /* [] END OF FILE */

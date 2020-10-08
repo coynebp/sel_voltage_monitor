@@ -17,6 +17,8 @@
     #include "bluetooth.h"
     #include <stdint.h>
     
+    volatile bool event_to_record;
+    
     /**************
     function: CM0_MessageCallback
     description: Callback function when a message is received from CM4

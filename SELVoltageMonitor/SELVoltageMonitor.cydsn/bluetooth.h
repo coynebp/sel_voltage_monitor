@@ -105,6 +105,8 @@
     ***************/
     void record_event(uint8_t * new_event);
     
+    void store_recent_event(void);
+    
     /**************
     function: delete_event
     description: Deletes the given event number in flash storage and in RAM
@@ -124,6 +126,8 @@
         the 16 bit voltage
     ***************/
     void record_voltage(uint8_t * data);
+    
+    bool store_flash(const uint8_t * flash_ptr, uint8_t * ram_ptr);
     
 #endif
 /* [] END OF FILE */

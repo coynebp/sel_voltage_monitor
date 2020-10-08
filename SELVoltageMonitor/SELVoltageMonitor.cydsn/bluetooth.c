@@ -96,9 +96,18 @@ void init_ble(const uint8** Ptrs)
         {
             ramData[i] = 0;
         }
+        bool success;
         for (uint8_t i =1; i < 11; ++i)
         {
-            Cy_Flash_WriteRow((uint32_t)flashPtrs[i],(const uint32_t *)ramData);
+            success = store_flash(flashPtrs[i], ramData);
+            if (success)
+            {
+                printf("Flash write successful\r\n");
+            }
+            else
+            {
+                printf("Flash write unsuccessful\r\n");
+            }
         }
     }
 
@@ -335,11 +344,15 @@ void update_flash_config(void)
     ramData[4] = upper_thresh[1];
     ramData[5] = lower_thresh[0];
     ramData[6] = lower_thresh[1];
-    cy_en_flashdrv_status_t result;
-    result = Cy_Flash_WriteRow((uint32)flashPtrs[0],(const uint32_t *) ramData);
-    if(result == CY_FLASH_DRV_SUCCESS)
+    bool success;
+    success = store_flash(flashPtrs[0], ramData);
+    if(success)
     {
         printf("Settings updated in flash\r\n");
+    }
+    else
+    {
+        printf("Settings did not update in flash\r\n");
     }
 }
 
@@ -356,27 +369,6 @@ void record_event(uint8_t * new_event)
         {
             events[num_events - 1][i] = new_event[2 * i] + 256 * new_event[2 * i + 1];
         }
-        // Write event data to flash
-        uint8_t ramData[CY_FLASH_SIZEOF_ROW];
-        for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
-        {
-            ramData[i] = 0;
-        }
-        ramData[0] = 1; // This indicates that an event has been written at this location
-        for(uint16_t i = 2; i < 322; ++i)
-        {
-            ramData[i] = new_event[i - 2];
-        }
-        cy_en_flashdrv_status_t result;
-        result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events], (const uint32_t *)ramData);
-        if (result == CY_FLASH_DRV_SUCCESS)
-        {
-            printf("New event written to flash\r\n");
-        }
-        else
-        {
-            printf("New event failed to write to flash\r\n");
-        }
     }
     else
     {
@@ -384,10 +376,31 @@ void record_event(uint8_t * new_event)
     }
 }
 
+void store_recent_event(void)
+{
+    // Write event data to flash
+        uint8_t ramData[CY_FLASH_SIZEOF_ROW];
+        for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
+        {
+            ramData[i] = 0;
+        }
+        ramData[0] = 1; // This indicates that an event has been written at this location
+        memcpy(ramData + 2, events[num_events], 288);
+        bool success;
+        success = store_flash(flashPtrs[num_events], ramData);
+        if (success)
+        {
+            printf("New event written to flash\r\n");
+        }
+        else
+        {
+            printf("New event failed to write to flash\r\n");
+        }
+}
+
 void delete_event(uint8_t event_num)
 {
     bool success = true;
-    cy_en_flashdrv_status_t result;
     // Delete event from RAM and flash storage
     uint8_t ramData[CY_FLASH_SIZEOF_ROW];
     for (uint16_t i = 0; i < CY_FLASH_SIZEOF_ROW; ++i)
@@ -402,11 +415,7 @@ void delete_event(uint8_t event_num)
             events[i - 1][j] = events[i][j];
             memcpy(ramData + 2, events[i - 1], 288);
         }
-        result = Cy_Flash_WriteRow((uint32_t)flashPtrs[i], (const uint32_t *)ramData);
-        if (result != CY_FLASH_DRV_SUCCESS)
-        {
-            success = false;
-        }
+        success = store_flash(flashPtrs[i], ramData);
     }
     // Reset RAM and flash storage for deleted event
     for (uint16_t j = 0; j < 160; ++j)
@@ -417,11 +426,7 @@ void delete_event(uint8_t event_num)
     {
         ramData[i] = 0;
     }
-    result = Cy_Flash_WriteRow((uint32_t)flashPtrs[num_events],(const uint32_t *)ramData);
-    if (result != CY_FLASH_DRV_SUCCESS)
-    {
-        success = false;
-    }
+    success = store_flash(flashPtrs[num_events], ramData);
     // Update number of events
     --num_events;
     // Update number of events in server
@@ -444,5 +449,29 @@ void record_voltage(uint8_t * data)
     voltage[1] = data[1];
     // Place data in server
     write_voltage_to_server(voltage);
+}
+
+bool store_flash(const uint8_t * flash_ptr, uint8_t * ram_ptr)
+{
+    bool success = false;
+    cy_en_flashdrv_status_t status = Cy_Flash_StartWrite((uint32_t)flash_ptr, (const uint32_t *)ram_ptr);
+    while (status != CY_FLASH_DRV_OPERATION_STARTED)
+    {
+        uint32_t error = status - CY_FLASH_ID_ERROR;
+        printf("%d \r\n", error);
+        status = Cy_Flash_StartWrite((uint32_t)flash_ptr, (const uint32_t *)ram_ptr);
+    }
+    printf("Flash started\r\n");
+    uint32_t timeout = 100;                
+    while((Cy_Flash_IsOperationComplete() != CY_FLASH_DRV_SUCCESS)  && (timeout > 0) )
+    {
+        timeout--;
+        Cy_SysLib_Delay(1);
+    } 
+    if (timeout != 0)
+    {
+        success = true;
+    }
+    return success;
 }
 /* [] END OF FILE */

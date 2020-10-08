@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
   37              		.cfi_offset 4, -4
   19:ring_buffer.c ****     uint16_t next;
   20:ring_buffer.c ****     //Next is where head will point to after this write.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 2
 
 
   21:ring_buffer.c ****     next = c->head + 1;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
   33:ring_buffer.c ****     ring_buf->head = 0;
   80              		.loc 1 33 0
   81 0002 0023     		movs	r3, #0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 3
 
 
   82 0004 8380     		strh	r3, [r0, #4]	@ movhi
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  135 0058 04       		.byte	0x4
  136 0059 05       		.byte	0x5
  137 005a EF010000 		.4byte	.LASF6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 4
 
 
  138 005e 02       		.uleb128 0x2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  192 00c4 07       		.uleb128 0x7
  193 00c5 04       		.byte	0x4
  194 00c6 81000000 		.4byte	0x81
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 5
 
 
  195 00ca 03       		.uleb128 0x3
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  249 0134 0A       		.uleb128 0xa
  250 0135 DF010000 		.4byte	.LASF13
  251 0139 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 6
 
 
  252 013a 1E       		.byte	0x1e
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  306 0027 49       		.uleb128 0x49
  307 0028 13       		.uleb128 0x13
  308 0029 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 7
 
 
  309 002a 00       		.byte	0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  363 0060 03       		.uleb128 0x3
  364 0061 0E       		.uleb128 0xe
  365 0062 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 8
 
 
  366 0063 0B       		.uleb128 0xb
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  420 009a 3B       		.uleb128 0x3b
  421 009b 0B       		.uleb128 0xb
  422 009c 49       		.uleb128 0x49
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 9
 
 
  423 009d 13       		.uleb128 0x13
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  476      02003201 
  476      00000201 
  476      FB0E0D00 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 10
 
 
  476      01010101 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  499      7400
  500              	.LASF14:
  501 00c1 68656164 		.ascii	"head\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 11
 
 
  501      00
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 1
  520      7400
  521              	.LASF13:
  522 01df 62756666 		.ascii	"buffer\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccitN8pF.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccyMc73C.s 			page 12
 
 
  522      657200

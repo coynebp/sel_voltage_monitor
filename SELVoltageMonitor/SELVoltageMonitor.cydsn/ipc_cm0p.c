@@ -15,6 +15,8 @@
 // Variable to ensure messages don't overlap
 volatile bool rdyToRecvMsg = true;
 
+// Flag to store event
+
 // Message structure for IPC
 ipc_msg_t ipcMsgForCM4 = {
     .clientId = IPC_CM0_TO_CM4_CLIENT_ID,
@@ -36,6 +38,7 @@ void CM0_MessageCallback(uint32_t *msg)
         {
             case type_event:
                 record_event(msgPtr->data);
+                event_to_record = true;
                 break;
             case type_voltage:
             {

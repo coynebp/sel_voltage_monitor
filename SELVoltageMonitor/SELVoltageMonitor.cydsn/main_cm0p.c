@@ -26,6 +26,8 @@ const uint8_t* arr[11];
 
 int main(void)
 {
+    event_to_record = false;
+    
     arr[0] = flashInfo;
     arr[1] = flashEvent1;
     arr[2] = flashEvent2;
@@ -43,6 +45,11 @@ int main(void)
     for(;;)
     {
         Cy_BLE_ProcessEvents();
+        if (event_to_record)
+        {
+            store_recent_event();
+            event_to_record = false;
+        }
     }
 }
 

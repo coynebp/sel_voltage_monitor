@@ -163,6 +163,7 @@ SECTIONS
 
     /* To copy multiple ROM to RAM sections,
      * uncomment .copy.table section and,
+     ++
      * define __STARTUP_COPY_MULTIPLE in startup_psoc63_cm4.S */
     .copy.table :
     {

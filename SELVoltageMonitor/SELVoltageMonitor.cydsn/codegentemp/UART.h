@@ -131,7 +131,7 @@ __STATIC_INLINE void UART_Interrupt(void);
 * @{
 */
 extern uint8_t UART_initVar;
-extern cy_stc_scb_uart_config_t const UART_config;
+extern cy_stc_scb_uart_config_t UART_config;
 extern cy_stc_scb_uart_context_t UART_context;
 /** @} group_globals */
 

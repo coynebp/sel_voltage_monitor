@@ -116,28 +116,22 @@ void ADC_Interrupt(void)
 {
     // Get adc result
     int16_t adc = Cy_SAR_GetResult16(SAR, 0);
-    // Push result into filter
     insert_filter_value(&cosine_filter, adc);
     if (cosine_filter.is_charged)
     {
         // Push new value into ring buffer
-        int16_t filtered_value = get_filtered_value(&cosine_filter);
+        int16_t filtered_value = get_filtered_value(&cosine_filter) + 0xFFF; // Constant is added to fit data in 13 bits, rather than 16
         ring_buf_push(&ring_buffer, filtered_value);
         // If an event has been triggered, and more data is needed for event report, record sample for event report
         if (trigger_set)
         {
             // Add to event report
-            event[EVENT_LENGTH - samples_to_extract] = filtered_value;
+            event[EVENT_LENGTH - samples_to_extract] = ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN];
             --samples_to_extract;
-            // Send event report and clear trigger if no more samples are needed
-            if (!samples_to_extract)
-            {
-                clear_trigger();
-            }
         }
         // Calculate Squared Magnitude for RMS calculation
-        int32_t real_part = ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN];
-        int32_t imaginary_part = ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN];
+        int32_t real_part = (ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN] & 0x1FFF) - 0xFFF;// Mask out data and remove constant
+        int32_t imaginary_part = (ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN] & 0x1FFF) - 0xFFF;// Mask out data and remove constant
         int32_t sq_mag = squared_magnitude(real_part, imaginary_part);
         // Push squared magnitude into averaging filter
         insert_filter_value(&averaging_filter, sq_mag);
@@ -159,10 +153,10 @@ void ADC_Interrupt(void)
                         trigger();
                     }
                 }
+                
                 voltage_normal = false;
                 voltage_high = true;
                 voltage_low = false;
-                set_leds(true, false, false);
             }
             else if (rms <= lower_threshold)
             {
@@ -175,10 +169,10 @@ void ADC_Interrupt(void)
                         trigger();
                     }
                 }
+                
                 voltage_normal = false;
                 voltage_high = false;
                 voltage_low = true;
-                set_leds(false, true, false);
             }
             else
             {
@@ -190,7 +184,27 @@ void ADC_Interrupt(void)
                 voltage_normal = true;
                 voltage_high = false;
                 voltage_low = false;
-                set_leds(false, false, true);
+            }
+            // set leds
+            set_leds(voltage_high, voltage_low, voltage_normal);
+            // set appropriate bits for over/undervoltage conditions for event reports
+            uint16_t buffer_index = (ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN;
+            if(voltage_high)
+            {
+                ring_buffer.buffer[buffer_index] |= (1<<15);
+            }
+            else if(voltage_low)
+            {
+                ring_buffer.buffer[buffer_index] |= (1<<14);
+            }
+            if(trigger_set)
+            {
+                event[EVENT_LENGTH - samples_to_extract + 1] |= (voltage_high<<15);
+                event[EVENT_LENGTH - samples_to_extract + 1] |= (voltage_low<<14);
+                if (!samples_to_extract)
+                {
+                    clear_trigger();
+                }
             }
         }
     }
@@ -218,7 +232,6 @@ void clear_trigger(void)
         short_event[i / 3] = event[i];
     }
     send_event(short_event);
-    printf("Event sent to BLE server\r\n");
 }
 
 void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr)

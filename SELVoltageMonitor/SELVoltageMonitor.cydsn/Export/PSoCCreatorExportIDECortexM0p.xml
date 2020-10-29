@@ -27,7 +27,7 @@
   </Toolchains>
   <Project Name="SELVoltageMonitor" Path="C:\PSoC 6 Projects\sel_voltage_monitor\SELVoltageMonitor\SELVoltageMonitor.cydsn" Version="Unknown" Type="Normal">
     <CMSIS_SVD_File>SELVoltageMonitor.svd</CMSIS_SVD_File>
-    <Datasheet />
+    <Datasheet>SELVoltageMonitor_datasheet.pdf</Datasheet>
     <LinkerFiles>
       <LinkerFile Toolchain="ARM GCC Generic">.\cy8c6xx7_cm0plus.ld</LinkerFile>
       <LinkerFile Toolchain="ARM MDK Generic">.\cy8c6xx7_cm0plus.scat</LinkerFile>

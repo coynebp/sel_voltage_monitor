@@ -9,18 +9,7 @@
 */
 #include "bluetooth.h"
 
-// Declaring flash storage for configuration and event storage
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashInfo[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent1[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent2[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent3[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent4[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent5[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent6[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent7[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent8[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent9[CY_FLASH_SIZEOF_ROW] = {0};
-CY_ALIGN(CY_FLASH_SIZEOF_ROW) const uint8_t flashEvent10[CY_FLASH_SIZEOF_ROW] = {0};
+const uint8_t* FLASH_BASE_ADDR = (uint8_t*)0x14000000;
 
 const uint8_t* arr[11];
 
@@ -28,17 +17,17 @@ int main(void)
 {
     event_to_record = false;
     
-    arr[0] = flashInfo;
-    arr[1] = flashEvent1;
-    arr[2] = flashEvent2;
-    arr[3] = flashEvent3;
-    arr[4] = flashEvent4;
-    arr[5] = flashEvent5;
-    arr[6] = flashEvent6;
-    arr[7] = flashEvent7;
-    arr[8] = flashEvent8;
-    arr[9] = flashEvent9;
-    arr[10] = flashEvent10;
+    arr[0] = FLASH_BASE_ADDR;
+    arr[1] = FLASH_BASE_ADDR + CY_FLASH_SIZEOF_ROW;
+    arr[2] = FLASH_BASE_ADDR + 2 * CY_FLASH_SIZEOF_ROW;
+    arr[3] = FLASH_BASE_ADDR + 3 * CY_FLASH_SIZEOF_ROW;
+    arr[4] = FLASH_BASE_ADDR + 4 * CY_FLASH_SIZEOF_ROW;
+    arr[5] = FLASH_BASE_ADDR + 5 * CY_FLASH_SIZEOF_ROW;
+    arr[6] = FLASH_BASE_ADDR + 6 * CY_FLASH_SIZEOF_ROW;
+    arr[7] = FLASH_BASE_ADDR + 7 * CY_FLASH_SIZEOF_ROW;
+    arr[8] = FLASH_BASE_ADDR + 8 * CY_FLASH_SIZEOF_ROW;
+    arr[9] = FLASH_BASE_ADDR + 9 * CY_FLASH_SIZEOF_ROW;
+    arr[10] = FLASH_BASE_ADDR + 10 * CY_FLASH_SIZEOF_ROW;
     
     init_ble(arr);
     

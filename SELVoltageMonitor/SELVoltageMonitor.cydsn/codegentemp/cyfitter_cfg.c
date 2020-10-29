@@ -678,10 +678,10 @@ void Cy_SystemInit(void)
 	{
 	    const cy_stc_gpio_prt_config_t port9_cfg =
 	    {
-	        .out        = 0x00000002u,
+	        .out        = 0x00000004u,
 	        .intrMask   = 0x00000000u,
 	        .intrCfg    = 0x00000000u,
-	        .cfg        = 0x00066666u,
+	        .cfg        = 0x00666660u,
 	        .cfgIn      = 0x00000000u,
 	        .cfgOut     = 0x00000000u,
 	        .cfgSIO     = 0x00000000u,

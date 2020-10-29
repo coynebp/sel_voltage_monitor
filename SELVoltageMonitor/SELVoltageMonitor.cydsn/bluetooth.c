@@ -75,11 +75,11 @@ void init_ble(const uint8** Ptrs)
         // Flash data not present, writing default values to flash
         num_events = 0;
         // Default upper threshold = 130V
-        upper_thresh[0] = 0x55;
-        upper_thresh[1] = 0x04;
+        upper_thresh[0] = 0x43;
+        upper_thresh[1] = 0x02;
         // Default lower threshold = 120V
-        lower_thresh[0] = 0xAB;
-        lower_thresh[1] = 0x03;
+        lower_thresh[0] = 0xEA;
+        lower_thresh[1] = 0x01;
         // Initialize events
         for(uint8_t i = 0; i < 10; ++i)
         {

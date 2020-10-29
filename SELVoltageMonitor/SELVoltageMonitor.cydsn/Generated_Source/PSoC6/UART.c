@@ -42,7 +42,7 @@ uint8_t UART_initVar = 0U;
 * The pointer to this structure should be passed to Cy_SCB_UART_Init function
 * to initialize component with GUI selected settings.
 */
-cy_stc_scb_uart_config_t const UART_config =
+cy_stc_scb_uart_config_t UART_config =
 {
     .uartMode                   = CY_SCB_UART_STANDARD,
     .enableMutliProcessorMode   = false,

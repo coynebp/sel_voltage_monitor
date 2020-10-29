@@ -1,5 +1,5 @@
 -- Project:   SELVoltageMonitor
--- Generated: 10/06/2020 13:09:02
+-- Generated: 10/29/2020 10:04:28
 -- PSoC Creator  4.2
 
 ENTITY SELVoltageMonitor IS
@@ -109,7 +109,7 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     ATTRIBUTE lib_model OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "P6[6]";
     ATTRIBUTE lib_model OF Connection_LED(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF Connection_LED(0) : LABEL IS "P9[0]";
+    ATTRIBUTE Location OF Connection_LED(0) : LABEL IS "P9[1]";
     ATTRIBUTE lib_model OF \UART:tx(0)\ : LABEL IS "iocell4";
     ATTRIBUTE Location OF \UART:tx(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE lib_model OF \UART:rx(0)\ : LABEL IS "iocell5";
@@ -117,13 +117,13 @@ ARCHITECTURE __DEFAULT__ OF SELVoltageMonitor IS
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P10[0]";
     ATTRIBUTE lib_model OF Power_LED(0) : LABEL IS "iocell7";
-    ATTRIBUTE Location OF Power_LED(0) : LABEL IS "P9[1]";
+    ATTRIBUTE Location OF Power_LED(0) : LABEL IS "P9[2]";
     ATTRIBUTE lib_model OF Overvoltage_LED(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF Overvoltage_LED(0) : LABEL IS "P9[2]";
+    ATTRIBUTE Location OF Overvoltage_LED(0) : LABEL IS "P9[3]";
     ATTRIBUTE lib_model OF Undervoltage_LED(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF Undervoltage_LED(0) : LABEL IS "P9[3]";
+    ATTRIBUTE Location OF Undervoltage_LED(0) : LABEL IS "P9[4]";
     ATTRIBUTE lib_model OF Voltage_OK(0) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF Voltage_OK(0) : LABEL IS "P9[4]";
+    ATTRIBUTE Location OF Voltage_OK(0) : LABEL IS "P9[5]";
     ATTRIBUTE Location OF \ADC:SAR\ : LABEL IS "F(SARADC,0)";
     ATTRIBUTE lib_model OF cy_tff_1 : LABEL IS "macrocell1";
     COMPONENT BLE

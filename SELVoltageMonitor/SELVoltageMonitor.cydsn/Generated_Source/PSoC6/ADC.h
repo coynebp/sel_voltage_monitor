@@ -149,7 +149,7 @@ The parameters that are set in the customizer are redefined as constants here.
 /* Sample Control Register */
 #define ADC_CFG0_SINGLE_ENDED_FORMAT     (0uL)
 #define ADC_CFG0_DIFFERENTIAL_FORMAT     (0uL)
-#define ADC_CFG0_SAMPLES_AVERAGED        (1uL)
+#define ADC_CFG0_SAMPLES_AVERAGED        (2uL)
 #define ADC_CFG0_RANGE_INTR_MASK         (0x0u)
 #define ADC_CFG0_SATURATE_INTR_MASK      (0x0u)
 #define ADC_CFG0_VNEG_INPUT_SEL          (7)

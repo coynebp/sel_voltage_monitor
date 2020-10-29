@@ -73,12 +73,9 @@ void send_voltage(uint16_t * voltage)
     ipcMsgForCM0.data[0] = ((uint8_t *)voltage)[0];
     ipcMsgForCM0.data[1] = ((uint8_t *)voltage)[1];
     // Send message
-    do
-    {
-    result = Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM0_ADDR, 
+    Cy_IPC_Pipe_SendMessage(CY_IPC_EP_CYPIPE_CM0_ADDR, 
                                      CY_IPC_EP_CYPIPE_CM4_ADDR, 
                                      &ipcMsgForCM0, CM4_ReleaseCallback);
-    } while (result == CY_IPC_PIPE_ERROR_SEND_BUSY);
 }
 
 // Function for sending complete event to CM0+

@@ -91,7 +91,7 @@
 #define Power_LED_0_INIT_MUXSEL 0u
 #define Power_LED_0_INPUT_SYNC 2u
 #define Power_LED_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Power_LED_0_NUM 1u
+#define Power_LED_0_NUM 2u
 #define Power_LED_0_PORT GPIO_PRT9
 #define Power_LED_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Power_LED_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -101,7 +101,7 @@
 #define Power_LED_INIT_MUXSEL 0u
 #define Power_LED_INPUT_SYNC 2u
 #define Power_LED_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Power_LED_NUM 1u
+#define Power_LED_NUM 2u
 #define Power_LED_PORT GPIO_PRT9
 #define Power_LED_SLEWRATE CY_GPIO_SLEW_FAST
 #define Power_LED_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -113,7 +113,7 @@
 #define Voltage_OK_0_INIT_MUXSEL 0u
 #define Voltage_OK_0_INPUT_SYNC 2u
 #define Voltage_OK_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Voltage_OK_0_NUM 4u
+#define Voltage_OK_0_NUM 5u
 #define Voltage_OK_0_PORT GPIO_PRT9
 #define Voltage_OK_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Voltage_OK_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -123,7 +123,7 @@
 #define Voltage_OK_INIT_MUXSEL 0u
 #define Voltage_OK_INPUT_SYNC 2u
 #define Voltage_OK_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Voltage_OK_NUM 4u
+#define Voltage_OK_NUM 5u
 #define Voltage_OK_PORT GPIO_PRT9
 #define Voltage_OK_SLEWRATE CY_GPIO_SLEW_FAST
 #define Voltage_OK_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -135,7 +135,7 @@
 #define Connection_LED_0_INIT_MUXSEL 0u
 #define Connection_LED_0_INPUT_SYNC 2u
 #define Connection_LED_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Connection_LED_0_NUM 0u
+#define Connection_LED_0_NUM 1u
 #define Connection_LED_0_PORT GPIO_PRT9
 #define Connection_LED_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Connection_LED_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -145,7 +145,7 @@
 #define Connection_LED_INIT_MUXSEL 0u
 #define Connection_LED_INPUT_SYNC 2u
 #define Connection_LED_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Connection_LED_NUM 0u
+#define Connection_LED_NUM 1u
 #define Connection_LED_PORT GPIO_PRT9
 #define Connection_LED_SLEWRATE CY_GPIO_SLEW_FAST
 #define Connection_LED_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -157,7 +157,7 @@
 #define Overvoltage_LED_0_INIT_MUXSEL 0u
 #define Overvoltage_LED_0_INPUT_SYNC 2u
 #define Overvoltage_LED_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Overvoltage_LED_0_NUM 2u
+#define Overvoltage_LED_0_NUM 3u
 #define Overvoltage_LED_0_PORT GPIO_PRT9
 #define Overvoltage_LED_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Overvoltage_LED_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -167,7 +167,7 @@
 #define Overvoltage_LED_INIT_MUXSEL 0u
 #define Overvoltage_LED_INPUT_SYNC 2u
 #define Overvoltage_LED_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Overvoltage_LED_NUM 2u
+#define Overvoltage_LED_NUM 3u
 #define Overvoltage_LED_PORT GPIO_PRT9
 #define Overvoltage_LED_SLEWRATE CY_GPIO_SLEW_FAST
 #define Overvoltage_LED_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -179,7 +179,7 @@
 #define Undervoltage_LED_0_INIT_MUXSEL 0u
 #define Undervoltage_LED_0_INPUT_SYNC 2u
 #define Undervoltage_LED_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Undervoltage_LED_0_NUM 3u
+#define Undervoltage_LED_0_NUM 4u
 #define Undervoltage_LED_0_PORT GPIO_PRT9
 #define Undervoltage_LED_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Undervoltage_LED_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
@@ -189,7 +189,7 @@
 #define Undervoltage_LED_INIT_MUXSEL 0u
 #define Undervoltage_LED_INPUT_SYNC 2u
 #define Undervoltage_LED_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Undervoltage_LED_NUM 3u
+#define Undervoltage_LED_NUM 4u
 #define Undervoltage_LED_PORT GPIO_PRT9
 #define Undervoltage_LED_SLEWRATE CY_GPIO_SLEW_FAST
 #define Undervoltage_LED_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS

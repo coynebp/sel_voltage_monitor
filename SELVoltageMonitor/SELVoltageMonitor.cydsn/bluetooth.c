@@ -453,6 +453,7 @@ void record_voltage(uint8_t * data)
 
 bool store_flash(const uint8_t * flash_ptr, uint8_t * ram_ptr)
 {
+    send_hold();
     bool success = false;
     cy_en_flashdrv_status_t status = Cy_Flash_StartWrite((uint32_t)flash_ptr, (const uint32_t *)ram_ptr);
     while (status != CY_FLASH_DRV_OPERATION_STARTED)

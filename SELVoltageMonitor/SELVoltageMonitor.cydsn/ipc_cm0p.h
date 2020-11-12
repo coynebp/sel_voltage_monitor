@@ -67,5 +67,13 @@
     ***************/
     void send_enable(uint8_t enable);
     
+    /**************
+    function: send_hold
+    description: Sends a signal to CM4 that a flash write is in progress.
+    parameters: none
+    returns: none
+    ***************/
+    void send_hold(void);
+    
 #endif
 /* [] END OF FILE */

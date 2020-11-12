@@ -25,7 +25,8 @@
         type_upper_threshold,
         type_lower_threshold,
         type_trigger,
-        type_enable
+        type_enable,
+        type_hold,
     } ipc_msg_datatype;
 
     #define MESSAGE_SIZE 288

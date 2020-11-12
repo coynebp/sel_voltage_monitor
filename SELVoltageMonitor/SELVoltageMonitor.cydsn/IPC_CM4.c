@@ -49,6 +49,8 @@ void CM4_MessageCallback(uint32_t *msg)
                 break;
             case type_enable:
                 set_trigger_enable(msgPtr->data[0]);
+            case type_hold:
+                set_hold_time(100);
             default:
                 break;
         }

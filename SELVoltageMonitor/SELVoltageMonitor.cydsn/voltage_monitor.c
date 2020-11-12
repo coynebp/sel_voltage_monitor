@@ -43,6 +43,9 @@ bool voltage_low;
 bool trigger_set;
 uint16_t samples_to_extract;
 
+// Hold time
+uint32_t hold;
+
 void voltage_monitor_init(void)
 {   
     // Initialize interrupts
@@ -96,6 +99,9 @@ void voltage_monitor_init(void)
     // Initialize trigger to false
     trigger_set = false;
     samples_to_extract = 0;
+    
+    // Initialize hold time to zero
+    hold = 0;
 
     //Register the IPC callback function
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,
@@ -114,6 +120,10 @@ void voltage_monitor_init(void)
 
 void ADC_Interrupt(void)
 {
+    if (hold)
+    {
+        hold = hold - 1;
+    }
     // Get adc result
     int16_t adc = Cy_SAR_GetResult16(SAR, 0);
     insert_filter_value(&cosine_filter, adc);
@@ -135,7 +145,7 @@ void ADC_Interrupt(void)
         int32_t sq_mag = squared_magnitude(real_part, imaginary_part);
         // Push squared magnitude into averaging filter
         insert_filter_value(&averaging_filter, sq_mag);
-        if (averaging_filter.is_charged)
+        if (averaging_filter.is_charged && (!hold))
         {
             // Determine Average RMS value
             uint16_t rms = round(sqrt(get_filtered_value(&averaging_filter)) / sqrt(2));
@@ -283,5 +293,10 @@ void set_leds(bool over, bool under, bool normal)
 int32_t squared_magnitude(int32_t real, int32_t imag)
 {
     return pow(real, 2) + pow(imag, 2);
+}
+
+void set_hold_time(uint32_t hold_time)
+{
+    hold = hold_time;
 }
 /* [] END OF FILE */

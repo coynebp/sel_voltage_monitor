@@ -131,5 +131,13 @@
     ***************/
     int32_t squared_magnitude(int32_t real, int32_t imag);
     
+    /**************
+    function: set hold time
+    description: Sets a number of samples during which triggers will be disabled
+    parameters: uint32_t hold_time
+    returns: none
+    ***************/
+    void set_hold_time(uint32_t hold_time);
+    
 #endif
 /* [] END OF FILE */

@@ -101,7 +101,7 @@ void voltage_monitor_init(void)
     samples_to_extract = 0;
     
     // Initialize hold time to zero
-    hold = 0;
+    hold = 100;
 
     //Register the IPC callback function
     Cy_IPC_Pipe_RegisterCallback(CY_IPC_EP_CYPIPE_ADDR,

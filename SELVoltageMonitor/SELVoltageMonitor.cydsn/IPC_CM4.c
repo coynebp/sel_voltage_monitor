@@ -40,7 +40,7 @@ void CM4_MessageCallback(uint32_t *msg)
                 set_upper_threshold(val);
                 break;
             case type_lower_threshold:
-                val = msgPtr->data[0] + 0x100 * msgPtr->data[1];
+                val = msgPtr->data[0] + 256 * msgPtr->data[1];
                 set_lower_threshold(val);
                 break;
             case type_trigger:

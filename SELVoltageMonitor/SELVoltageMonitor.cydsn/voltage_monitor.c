@@ -20,9 +20,6 @@ uint16_t lower_threshold;
 int16_t rb_buffer[RING_BUF_LEN];
 ring_buf_t ring_buffer;
 
-// Event array
-int16_t event[EVENT_LENGTH];
-
 // Cosine filter
 int32 raw_samples[FILTER_LENGTH];
 int16 cosine_taps[FILTER_LENGTH];
@@ -108,12 +105,6 @@ void voltage_monitor_init(void)
                                  CM4_MessageCallback,
                                  IPC_CM0_TO_CM4_CLIENT_ID);
 
-    // Initialize the event array
-    for (uint16_t i = 0; i < EVENT_LENGTH; ++i)
-    {
-        event[i] = 0;
-    }
-
     // Start the ADC
     ADC_Start();
 }
@@ -132,13 +123,6 @@ void ADC_Interrupt(void)
         // Push new value into ring buffer
         int16_t filtered_value = get_filtered_value(&cosine_filter) + 0xFFF; // Constant is added to fit data in 13 bits, rather than 16
         ring_buf_push(&ring_buffer, filtered_value);
-        // If an event has been triggered, and more data is needed for event report, record sample for event report
-        if (trigger_set)
-        {
-            // Add to event report
-            event[EVENT_LENGTH - samples_to_extract] = ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN];
-            --samples_to_extract;
-        }
         // Calculate Squared Magnitude for RMS calculation
         int32_t real_part = (ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 1) % RING_BUF_LEN] & 0x1FFF) - 0xFFF;// Mask out data and remove constant
         int32_t imaginary_part = (ring_buffer.buffer[(ring_buffer.head + RING_BUF_LEN - 10) % RING_BUF_LEN] & 0x1FFF) - 0xFFF;// Mask out data and remove constant
@@ -209,8 +193,7 @@ void ADC_Interrupt(void)
             }
             if(trigger_set)
             {
-                event[EVENT_LENGTH - samples_to_extract + 1] |= (voltage_high<<15);
-                event[EVENT_LENGTH - samples_to_extract + 1] |= (voltage_low<<14);
+                --samples_to_extract;
                 if (!samples_to_extract)
                 {
                     clear_trigger();
@@ -229,26 +212,33 @@ void trigger(void)
 {
     printf("Event Triggered\r\n");
     trigger_set = true;
-    extract_past_three_cycles(&ring_buffer, event);
     samples_to_extract = CYCLE_LENGTH * 9;
 }
 
 void clear_trigger(void)
 {
     trigger_set = false;
+    
+    int16_t event[EVENT_LENGTH];
+    extract_past_twelve_cycles(&ring_buffer, event);
+    
     int16_t short_event[144];
     for (uint16_t i = 0; i < EVENT_LENGTH; i += 3)
     {
         short_event[i / 3] = event[i];
     }
+    for (uint16_t i=0; i < 144; ++i)
+    {
+        printf("%d\r\n", short_event[i]);
+    }
     send_event(short_event);
 }
 
-void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr)
+void extract_past_twelve_cycles(ring_buf_t *rbuf, int16_t *event_arr)
 {
     uint16_t event_index = 0;
     
-    for(uint16_t index = (rbuf->head + rbuf->maxlen - (CYCLE_LENGTH * 3)) % rbuf->maxlen; index != rbuf->head + 1; ++index)
+    for(uint16_t index = (rbuf->head + rbuf->maxlen - (CYCLE_LENGTH * 12)) % rbuf->maxlen; index != rbuf->head + 1; ++index)
     {
         index = index % rbuf->maxlen;
         event_arr[event_index] = rbuf->buffer[index];

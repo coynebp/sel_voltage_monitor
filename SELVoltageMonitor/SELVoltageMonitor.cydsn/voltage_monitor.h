@@ -75,13 +75,13 @@
     
     /**************
     function: extract_past_three_cycles
-    description: Pulls the most recent three cycles from the provided ring buffer
+    description: Pulls the most recent twelve cycles from the provided ring buffer
         and places the samples in the provided event array.
     parameters: ring_buf_t *rbuf, int16_t *event_arr
     returns: none
     notes: Assumes a sample rate of 2.16kHz
     ***************/
-    void extract_past_three_cycles(ring_buf_t *rbuf, int16_t *event_arr);
+    void extract_past_twelve_cycles(ring_buf_t *rbuf, int16_t *event_arr);
     
     /**************
     function: set_upper_threshold

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   29:Generated_Source\PSoC6/cyfitter_cfg.c **** 
   30:Generated_Source\PSoC6/cyfitter_cfg.c **** #define CY_NEED_CYCLOCKSTARTUPERROR 1
   31:Generated_Source\PSoC6/cyfitter_cfg.c **** #include "syspm/cy_syspm.h"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 2
 
 
   32:Generated_Source\PSoC6/cyfitter_cfg.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   86:Generated_Source\PSoC6/cyfitter_cfg.c **** static void CYCONFIGCPY(void *dest, const void *src, size_t n);
   87:Generated_Source\PSoC6/cyfitter_cfg.c **** CY_CFG_UNUSED
   88:Generated_Source\PSoC6/cyfitter_cfg.c **** static void CYCONFIGCPY(void *dest, const void *src, size_t n)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 3
 
 
   89:Generated_Source\PSoC6/cyfitter_cfg.c **** {
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   37              	.LFE174:
   38              		.size	CyClockStartupError, .-CyClockStartupError
   39 0002 C046     		.section	.text.cfg_write_bytes32,"ax",%progbits
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 4
 
 
   40              		.align	2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   53              		.cfi_def_cfa_offset 20
   54              		.cfi_offset 4, -20
   55              		.cfi_offset 5, -16
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 5
 
 
   56              		.cfi_offset 6, -12
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  181:Generated_Source\PSoC6/cyfitter_cfg.c **** 		{
   98              		.loc 1 181 0
   99 0026 002B     		cmp	r3, #0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 6
 
 
  100 0028 F4D1     		bne	.L6
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  214:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_ClkHfSetSource(0u, CY_SYSCLK_CLKHF_IN_CLKPATH0);
  215:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_ClkHfSetDivider(0u, CY_SYSCLK_CLKHF_NO_DIVIDE);
  216:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_ClkHfEnable(0u);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 7
 
 
  217:Generated_Source\PSoC6/cyfitter_cfg.c **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  271:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_8_BIT, 1u, 49u);
  272:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_8_BIT, 1u);
  273:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_PeriphAssignDivider(PCLK_UDB_CLOCKS0, CY_SYSCLK_DIV_16_BIT, 0u);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 8
 
 
  274:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_16_BIT, 0u, 11573u);
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  148 0018 00001D41 		.word	1092419584
  149 001c 00031D41 		.word	1092420352
  150 0020 01001180 		.word	-2146369535
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 9
 
 
  151 0024 000E1F41 		.word	1092554240
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   27:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Consult the Technical Reference Manual for your device for details of the 
   28:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * clock system.
   29:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 10
 
 
   30:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * The PDL defines clock system capabilities in:\n
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   84:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   </tr>
   85:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   <tr>
   86:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>10.2</td>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 11
 
 
   87:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>R</td>
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  141:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>R</td>
  142:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>The object addressed by the pointer parameter is not modified and so the pointer could be
  143:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *         type 'pointer to const'.</td>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 12
 
 
  144:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>The callback function for system power management (SysPm) must be of generic callback typ
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  198:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>Updated Cy_SysClk_DeepSleepCallback() to save/restore both FLL and PLL settings</td>
  199:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *     <td>The function should return when the lock is established or a timeout has occurred</td>
  200:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   </tr>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 13
 
 
  201:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   <tr>
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  255:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   ![](sysclk_path_source.png)
  256:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
  257:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   \note The PDL driver cannot configure a clock path to use Digital Signal
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 14
 
 
  258:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   Interconnect (DSI) outputs as sources. This must be done through DSI
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  312:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   necessary parameters for the PLL at run-time. This may be necessary for dynamic
  313:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   run-time changes to the PLL. However this method is slow as it needs to perform 
  314:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   the calculation before configuring the PLL. The other model is to call 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 15
 
 
  315:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   Cy_SysClk_PllManualConfigure() function with pre-calculated parameter values. 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  369:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   2. Start the counters
  370:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   3. Wait for the measurement counter to finish counting
  371:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   4. Retrieve the measured frequency
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 16
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 16
 
 
  372:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  426:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   Some devices support a built-in clock supervisor (CSV) in the WCO. The clock
  427:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   supervisor detects if the WCO has been lost; that is, the WCO is no longer 
  428:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   producing clock pulses. The CSV does this by checking to ensure there is at 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 17
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 17
 
 
  429:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   least one WCO clock pulse within a certain time window. The ILO or PILO can be
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  483:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \{
  484:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   The peripheral clock is a divided clock of CLK_HF0 (\ref group_sysclk_clk_hf "HF Clocks").
  485:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   It is the source clock for the \ref group_sysclk_clk_slow, and most active domain
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 18
 
 
  486:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   peripheral clocks (\ref group_sysclk_clk_peripheral). A divider value of 1~256 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  540:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   
  541:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   The low-frequency clock has three possible source clocks:
  542:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   \ref group_sysclk_ilo "ILO", \ref group_sysclk_pilo "PILO", and
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 19
 
 
  543:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *   \ref group_sysclk_wco "WCO".
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  597:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** extern "C" {
  598:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** #endif /* __cplusplus */
  599:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 20
 
 
  600:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /**
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  654:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /** \} */
  655:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
  656:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /** \} group_sysclk_macros */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 21
 
 
  657:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  711:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \addtogroup group_sysclk_path_src_enums
  712:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \{
  713:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 22
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 22
 
 
  714:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /**
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  768:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_FLL_CCO_RANGE4  /**< Target frequency is in range 150 - 200 MHz. */
  769:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** } cy_en_fll_cco_ranges_t;
  770:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /** \} group_sysclk_fll_enums */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 23
 
 
  771:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  825:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
  826:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** #if (CY_IP_MXS40SRSS_VERSION != 1) || defined(CY_DOXYGEN)
  827:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 24
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 24
 
 
  828:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_FllLostLock
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  882:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
  883:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     uint32_t                    inputFreq;  /**< frequency of PLL source, in Hz */
  884:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     uint32_t                    outputFreq; /**< frequency of PLL output, in Hz */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 25
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 25
 
 
  885:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     bool                        lfMode;     /**< CLK_PLL_CONFIG register, PLL_LF_MODE bit */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  939:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Reports whether or not the selected PLL lost its lock since the last time this
  940:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * function was called. Clears the lost lock indicator.
  941:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 26
 
 
  942:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param clkPath Selects which PLL to check. 1 is the first PLL; 0 is invalid.
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  996:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /**
  997:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \addtogroup group_sysclk_ilo_funcs
  998:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \{
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 27
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 27
 
 
  999:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** */
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1053:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1054:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Controls whether the ILO stays on during a hibernate, or through an XRES or
 1055:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * brown-out detect (BOD) event.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 28
 
 
 1056:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1102:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     Cy_SysLib_Delay(1/*msec*/);
  186              		.loc 2 1102 0
  187 0012 0120     		movs	r0, #1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 29
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 29
 
 
  188 0014 FFF7FEFF 		bl	Cy_SysLib_Delay
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1144:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_PiloGetTrim
 1145:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
 1146:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 30
 
 
 1147:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Reports the current PILO trim bits value.
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1201:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_CLKHF2 =        0x602u,
 1202:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_CLKHF3 =        0x603u,
 1203:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_CLKHF4 =        0x604u,
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 31
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 31
 
 
 1204:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_MEAS_CLK_CLKHF5 =        0x605u,
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1258:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /** \} group_sysclk_trim_funcs */
 1259:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 1260:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 32
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 32
 
 
 1261:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /* ========================================================================== */
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1315:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
 1316:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_CSV_ERROR_IGNORE = 0u,     /**< Ignore the error reported by the clock supervisor. */
 1317:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_CSV_ERROR_FAULT = 1u,      /**< Trigger a fault when an error is reported by the cloc
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 33
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 33
 
 
 1318:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_CSV_ERROR_RESET = 2u,      /**< Trigger a reset when an error is reported by the cloc
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1372:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     cy_en_sysclk_status_t rtnval = CY_SYSCLK_TIMEOUT;
 1373:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 1374:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     /* first set the WCO enable bit */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 34
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 34
 
 
 1375:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     BACKUP->CTL |= _VAL2FLD(BACKUP_CTL_WCO_EN, 1u); /* 1 = enable */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1429:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * must be provided on the wco_out pin.
 1430:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1431:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param bypass \ref cy_en_wco_bypass_modes_t
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 35
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 35
 
 
 1432:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1486:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_CLKHF_DIVIDE_BY_8 = 3u     /**< divide clkHf by 8 */
 1487:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** } cy_en_clkhf_dividers_t;
 1488:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 36
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 36
 
 
 1489:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /**
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1543:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1544:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \return \ref cy_en_sysclk_status_t
 1545:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 37
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 37
 
 
 1546:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1600:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
 1601:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_ClkHfSetSource
 1602:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 38
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 38
 
 
 1603:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1657:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     {
 1658:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         CY_SYSCLK_CLR_SET(SRSS->CLK_ROOT_SELECT[clkHf], SRSS_CLK_ROOT_SELECT_ROOT_DIV, divider);
 1659:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         retval = CY_SYSCLK_SUCCESS;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 39
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 39
 
 
 1660:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     }
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1714:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** 
 1715:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** /*******************************************************************************
 1716:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_ClkFastGetDivider
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 40
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 40
 
 
 1717:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1771:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \return The divider value.
 1772:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * The integer division done is by (divider value + 1), or division by 1 to 256.
 1773:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 41
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 41
 
 
 1774:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1828:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1829:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param dividerValue divider value
 1830:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Causes integer division of (divider value + 1), or division by 1 to 256
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 42
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 42
 
 
 1831:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * (8-bit divider) or 1 to 65536 (16-bit divider).
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1885:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_PeriphSetDivider
 1886:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 1887:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 43
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 43
 
 
 1888:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE uint32_t Cy_SysClk_PeriphGetDivider(cy_en_divider_types_t dividerType, uint32_t div
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1942:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****             (dividerFracValue <= (PERI_DIV_16_5_CTL_FRAC5_DIV_Msk >> PERI_DIV_16_5_CTL_FRAC5_DIV_Po
 1943:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         {
 1944:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****             CY_SYSCLK_CLR_SET(PERI->DIV_16_5_CTL[dividerNum], PERI_DIV_16_5_CTL_INT16_DIV, dividerI
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 44
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 44
 
 
 1945:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****             CY_SYSCLK_CLR_SET(PERI->DIV_16_5_CTL[dividerNum], PERI_DIV_16_5_CTL_FRAC5_DIV, dividerF
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1999:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     { /* 24.5-bit divider */
 2000:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         CY_ASSERT_L1(dividerNum < PERI_DIV_24_5_NR);
 2001:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         *dividerIntValue  = _FLD2VAL(PERI_DIV_24_5_CTL_INT24_DIV, PERI->DIV_24_5_CTL[dividerNum]);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 45
 
 
 2002:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         *dividerFracValue = _FLD2VAL(PERI_DIV_24_5_CTL_FRAC5_DIV, PERI->DIV_24_5_CTL[dividerNum]);
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2056:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_PeriphAssignDivider
 2057:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 2058:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 46
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 46
 
 
 2059:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE uint32_t Cy_SysClk_PeriphGetAssignedDivider(en_clk_dst_t ipBlock)
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2113:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param dividerType specifies which type of divider to use; \ref cy_en_divider_types_t.
 2114:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 2115:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \param dividerNum specifies which divider of the selected type to configure.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 47
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 47
 
 
 2116:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2170:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
 2171:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     cy_en_sysclk_status_t retval = CY_SYSCLK_BAD_PARAM;
 2172:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     if (dividerTypePA <= CY_SYSCLK_DIV_24_5_BIT)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 48
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 48
 
 
 2173:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     {
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2227:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****             retval = _FLD2VAL(PERI_DIV_8_CTL_EN, PERI->DIV_8_CTL[dividerNum]);
 2228:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****             break;
 2229:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****         case CY_SYSCLK_DIV_16_BIT:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 49
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 49
 
 
 2230:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****             retval = _FLD2VAL(PERI_DIV_16_CTL_EN, PERI->DIV_16_CTL[dividerNum]);
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2284:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \funcusage
 2285:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * \snippet sysclk/sysclk_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_SysClk_ClkSlowSetDivider
 2286:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 50
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 50
 
 
 2287:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  202 0022 A021     		movs	r1, #160
  203 0024 C900     		lsls	r1, r1, #3
  204 0026 6A58     		ldr	r2, [r5, r1]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 51
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 51
 
 
  205 0028 0323     		movs	r3, #3
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  254 005e 1369     		ldr	r3, [r2, #16]
  255 0060 1940     		ands	r1, r3
  256 0062 1161     		str	r1, [r2, #16]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 52
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 52
 
 
  257              	.LVL20:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  305              	.LVL26:
  222:Generated_Source\PSoC6/cyfitter_cfg.c **** 	Cy_SysClk_ClkPathSetSource(0, CY_SYSCLK_CLKPATH_IN_IMO);
  306              		.loc 1 222 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 53
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 53
 
 
  307 0096 0021     		movs	r1, #0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  353 00d8 02D0     		beq	.L13
  248:Generated_Source\PSoC6/cyfitter_cfg.c **** 	}
  354              		.loc 1 248 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 54
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 54
 
 
  355 00da 0420     		movs	r0, #4
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2387:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_ClkTimerSetSource(cy_en_clktimer_in_sources_t source);
 2388:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE cy_en_clktimer_in_sources_t Cy_SysClk_ClkTimerGetSource(void);
 2389:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_ClkTimerSetDivider(uint8_t divider);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 55
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 55
 
 
 2390:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE uint8_t Cy_SysClk_ClkTimerGetDivider(void);
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2430:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
 2431:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     /* return both fields TIMER_SEL and TIMER_HF0_DIV as a single combined value */
 2432:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     return (cy_en_clktimer_in_sources_t)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 56
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 56
 
 
 2433:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****            (SRSS->CLK_TIMER_CTL & (SRSS_CLK_TIMER_CTL_TIMER_SEL_Msk | SRSS_CLK_TIMER_CTL_TIMER_HF0_
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2477:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 2478:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Enables the timer clock (clk_timer). The timer clock can be used as a source
 2479:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * for SYSTICK and one or more of the energy profiler counters.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 57
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 57
 
 
 2480:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2523:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_PUMP_IN_CLKPATH2,  /**< Pump clock input is clock path 2 */
 2524:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_PUMP_IN_CLKPATH3,  /**< Pump clock input is clock path 3 */
 2525:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_PUMP_IN_CLKPATH4,  /**< Pump clock input is clock path 4 */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 58
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 58
 
 
 2526:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_SYSCLK_PUMP_IN_CLKPATH5,  /**< Pump clock input is clock path 5 */
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2580:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
 2581:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_ClkPumpSetSource(cy_en_clkpump_in_sources_t source)
 2582:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 59
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 59
 
 
 2583:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h ****     CY_ASSERT_L3(source <= CY_SYSCLK_PUMP_IN_CLKPATH15);
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  410 010c 0A40     		ands	r2, r1
  411 010e 8021     		movs	r1, #128
  412 0110 8901     		lsls	r1, r1, #6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 60
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 60
 
 
  413 0112 0A43     		orrs	r2, r1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2659:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Function Name: Cy_SysClk_ClkPumpDisable
 2660:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** ****************************************************************************//**
 2661:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 61
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 61
 
 
 2662:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** * Disables the pump clock (clk_pump).
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2716:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *
 2717:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** *******************************************************************************/
 2718:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** __STATIC_INLINE void Cy_SysClk_ClkBakSetSource(cy_en_clkbak_in_sources_t source)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 62
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 62
 
 
 2719:Generated_Source\PSoC6\pdl\drivers/peripheral/sysclk/cy_sysclk.h **** {
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  477 0150 254B     		ldr	r3, .L14+60
  478 0152 0021     		movs	r1, #0
  479 0154 254A     		ldr	r2, .L14+64
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 63
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 63
 
 
  480 0156 9950     		str	r1, [r3, r2]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  529              	.LVL52:
  530              	.LBE113:
  531              	.LBE112:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 64
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 64
 
 
  532              	.LBB114:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  579              	.L15:
  580              		.align	2
  581              	.L14:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 65
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 65
 
 
  582 01ac 00002640 		.word	1076232192
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  633              		@ sp needed
  634 000a 10BD     		pop	{r4, pc}
  635              		.cfi_endproc
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 66
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 66
 
 
  636              	.LFE171:
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  320:Generated_Source\PSoC6/cyfitter_cfg.c **** * Return:
  321:Generated_Source\PSoC6/cyfitter_cfg.c **** *   void
  322:Generated_Source\PSoC6/cyfitter_cfg.c **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 67
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 67
 
 
  323:Generated_Source\PSoC6/cyfitter_cfg.c **** *******************************************************************************/
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
    7:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** ********************************************************************************
    8:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \copyright
    9:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * Copyright 2016-2018, Cypress Semiconductor Corporation.  All rights reserved.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 68
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 68
 
 
   10:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * You may use this file only in accordance with the license, terms, conditions,
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
   64:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * Refer to \ref group_syspm_switching_into_lpactive in Configuration 
   65:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * considerations.
   66:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 69
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 69
 
 
   67:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * * <b>Deep Sleep</b> - is a lower power mode where high-frequency clocks are 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  121:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
  122:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * All pending interrupts should be cleared before the device is put into a 
  123:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * Sleep or Deep Sleep mode, even if they are masked.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 70
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 70
 
 
  124:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  178:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *   - the maximum operating frequency for all Clk_HF paths must not exceed 
  179:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *     <b>50 MHz</b>, whereas the peripheral and slow clock must not exceed <b>25 MHz</b>
  180:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *     (refer to \ref group_sysclk driver documentation).
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 71
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 71
 
 
  181:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *   - the total current consumption must be less than or equal to <b>20 mA</b><br>
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  235:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
  236:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * Do not call Cy_SysPm_PmicLock() (which automatically enables the PMIC output).
  237:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 72
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 72
 
 
  238:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * When disabled, the PMIC output is enabled when the PMIC is locked, or by 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  292:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * prepare for a low-power mode (for instance, shutting down the analog part); 
  293:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * or to perform tasks while exiting a low-power mode (like enabling the analog 
  294:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * part again).
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 73
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 73
 
 
  295:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  349:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \snippet syspm/syspm_2_20_sut_01.cydsn/main_cm4.c snippet_Cy_SysPm_Callback_Params_Declaration
  350:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
  351:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * Now we setup the actual callback configuration structures. Each of these 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 74
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 74
 
 
  352:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * contains, among the other fields, the address of the 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  406:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \subsection group_syspm_cb_config_consideration Callback Configuration Considerations
  407:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
  408:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \subsubsection group_syspm_cb_parameters Callback Function Parameters
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 75
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 75
 
 
  409:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  463:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * are implemented and set up correctly. The following discussion assumes: <br>
  464:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * * All required callback functions are defined and implemented <br>
  465:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * * All cy_stc_syspm_callback_t structures are filled with required values <br>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 76
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 76
 
 
  466:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * * All callbacks are successfully registered 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  520:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *         block are grouped as \ref group_syspm_functions_ldo under 
  521:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *         \ref group_syspm_functions_core_regulators</td>
  522:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *   </tr>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 77
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 77
 
 
  523:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  577:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *            Cy_SysPm_LdoSetVoltage <br>
  578:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *            Cy_SysPm_BuckSetVoltage1 <br>
  579:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *            Cy_SysPm_BuckEnable <br>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 78
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 78
 
 
  580:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *            No backward compatibility issues
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  634:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *   <tr>
  635:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *     <td>1.0</td>
  636:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *     <td>Initial version</td>
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 79
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 79
 
 
  637:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *     <td></td>
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  691:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /*******************************************************************************
  692:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *       Internal Defines
  693:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *******************************************************************************/
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 80
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 80
 
 
  694:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  748:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****                                                          ((mode) == CY_SYSPM_BEFORE_TRANSITION) || 
  749:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****                                                          ((mode) == CY_SYSPM_AFTER_TRANSITION))
  750:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 81
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 81
 
 
  751:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /* Macro to validate parameters in Cy_SysPm_Sleep() and for Cy_SysPm_DeepSleep() function */
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  805:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /** The mask to set the Hibernate power mode */
  806:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** #define CY_SYSPM_PWR_SET_HIBERNATE                 ((uint32_t) CY_SYSPM_PWR_HIBERNATE_UNLOCK |\
  807:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****                                                                    SRSS_PWR_HIBERNATE_FREEZE_Msk |\
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 82
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 82
 
 
  808:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****                                                                    SRSS_PWR_HIBERNATE_HIBERNATE_Msk
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  862:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /**
  863:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * The internal define of the first wake-up pin value 
  864:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * used in the Cy_SysPm_SetHibernateWakeupSource() function
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 83
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 83
 
 
  865:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** */
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  919:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     
  920:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** #endif /* (0u != CY_IP_M4CPUSS) */
  921:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 84
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 84
 
 
  922:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /** The CM0 is Active */
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  976:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     CY_SYSPM_WAIT_FOR_EVENT           /**< Wait for an event */
  977:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** } cy_en_syspm_waitfor_t;
  978:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 85
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 85
 
 
  979:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /** This enumeration is used to configure sources for wakeup from the Hibernate 
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1033:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     /**
 1034:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     *  The enumeration is used to select the output voltage for the Buck 
 1035:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     *  output 1, which can supply a core(s).
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 86
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 86
 
 
 1036:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     */
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1090:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** typedef enum
 1091:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** {
 1092:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     CY_SYSPM_VDDBACKUP_DEFAULT         = 0U,    /**< Automatically selects Vddd or Vbackup to suppl
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 87
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 87
 
 
 1093:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****                                                      Vddbackup */
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1147:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** */
 1148:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** #define CY_SYSPM_SKIP_CHECK_READY                   (0x01U)   /**< The define to skip the check rea
 1149:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** #define CY_SYSPM_SKIP_CHECK_FAIL                    (0x02U)   /**< The define to skip the check fai
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 88
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 88
 
 
 1150:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** #define CY_SYSPM_SKIP_BEFORE_TRANSITION             (0x04U)   /**< The define to skip the before tr
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1204:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
 1205:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** #ifdef CY_IP_MXUDB
 1206:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 89
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 89
 
 
 1207:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     /** \cond INTERNAL */
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1261:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \{
 1262:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** */
 1263:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** cy_en_syspm_status_t Cy_SysPm_Sleep(cy_en_syspm_waitfor_t waitFor);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 90
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 90
 
 
 1264:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** cy_en_syspm_status_t Cy_SysPm_DeepSleep(cy_en_syspm_waitfor_t waitFor);
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1318:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** __STATIC_INLINE void Cy_SysPm_BackupDisableVoltageMeasurement(void);
 1319:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** __STATIC_INLINE void Cy_SysPm_BackupSuperCapCharge(cy_en_syspm_sc_charge_key_t key);
 1320:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /** \} group_syspm_functions_backup */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 91
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 91
 
 
 1321:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1375:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         return((Cy_SysPm_ReadStatus() & CY_SYSPM_STATUS_CM4_ACTIVE) != 0U);
 1376:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     }
 1377:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 92
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 92
 
 
 1378:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1432:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     *
 1433:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     *******************************************************************************/
 1434:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     __STATIC_INLINE bool Cy_SysPm_Cm4IsLowPower(void)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 93
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 93
 
 
 1435:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     {
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1489:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
 1490:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * Checks whether the CM0+ is in Deep Sleep mode.
 1491:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 94
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 94
 
 
 1492:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \return
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1546:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /** \} group_syspm_functions_power_status */
 1547:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
 1548:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 95
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 95
 
 
 1549:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** /**
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1603:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         /*******************************************************************************
 1604:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         * Function Name: Cy_SysPm_BuckGetVoltage2
 1605:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         ****************************************************************************//**
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 96
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 96
 
 
 1606:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         *
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1660:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****             /* Disable the Vbuck2 output */
 1661:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****             SRSS->PWR_BUCK_CTL2 &= ((uint32_t) ~ (_VAL2FLD(SRSS_PWR_BUCK_CTL2_BUCK_OUT2_EN, 1U)));
 1662:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 97
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 97
 
 
 1663:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1717:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         * True if the HW control is set; false if the FW control is set for the 
 1718:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         * Buck output 2.
 1719:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 98
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 98
 
 
 1720:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         * The function is applicable for devices with the SIMO Buck regulator.
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1774:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
 1775:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \return
 1776:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * True means the LDO is enabled. False means it is disabled.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 99
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 99
 
 
 1777:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1831:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
 1832:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \funcusage
 1833:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \snippet syspm/syspm_2_20_sut_01.cydsn/main_cm4.c snippet_Cy_SysPm_PmicEnable
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 100
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 100
 
 
 1834:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1888:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *******************************************************************************/
 1889:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** __STATIC_INLINE void Cy_SysPm_PmicDisable(cy_en_syspm_pmic_wakeup_polarity_t polarity)
 1890:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 101
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 101
 
 
 1891:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     CY_ASSERT_L3(CY_SYSPM_IS_POLARITY_VALID(polarity));
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 1945:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         _VAL2FLD(BACKUP_PMIC_CTL_UNLOCK, CY_SYSPM_PMIC_UNLOCK_KEY) | _VAL2FLD(BACKUP_PMIC_CTL_PMIC_
 1946:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****     }
 1947:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 102
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 102
 
 
 1948:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** 
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
 2002:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** * \snippet syspm/syspm_2_20_sut_01.cydsn/main_cm4.c snippet_Cy_SysPm_PmicLock
 2003:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *
 2004:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** *******************************************************************************/
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 103
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 103
 
 
 2005:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h **** __STATIC_INLINE void Cy_SysPm_PmicLock(void)
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  731 0044 8901     		lsls	r1, r1, #6
  732 0046 0B43     		orrs	r3, r1
 1981:Generated_Source\PSoC6\pdl\drivers/peripheral/syspm/cy_syspm.h ****         (BACKUP->PMIC_CTL | _VAL2FLD(BACKUP_PMIC_CTL_UNLOCK, CY_SYSPM_PMIC_UNLOCK_KEY)) &
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 104
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 104
 
 
  733              		.loc 3 1981 0
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  382:Generated_Source\PSoC6/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UDB_UDBPAIR4_UDBSNG0_BASE), 116u},
  383:Generated_Source\PSoC6/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UDB_UDBPAIR4_UDBSNG1_BASE), 116u},
  384:Generated_Source\PSoC6/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UDB_UDBPAIR5_UDBSNG0_BASE), 116u},
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 105
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 105
 
 
  385:Generated_Source\PSoC6/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UDB_UDBPAIR5_UDBSNG1_BASE), 116u},
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  439:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu
  440:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0xFFu, 0x00u, 0x00u, 0x00u, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu
  441:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 106
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 106
 
 
  442:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  496:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu
  497:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x04u, 0x0Du, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x1Fu, 0x00u, 0x00u, 0x1Fu, 0x00u, 0x00u, 0x00u
  498:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x1Fu, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 107
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 107
 
 
  499:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0x11u, 0x11u
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  553:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u
  554:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0xFFu, 0x11u, 0x11u
  555:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 108
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 108
 
 
  556:Generated_Source\PSoC6/cyfitter_cfg.c **** 			0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u, 0x11u
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  610:Generated_Source\PSoC6/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UDB_DSI10_BASE), BS_UDB_DSI10_VAL, 124u},
  611:Generated_Source\PSoC6/cyfitter_cfg.c **** 			{(void CYFAR *)(CYDEV_UDB_DSI11_BASE), BS_UDB_DSI11_VAL, 124u},
  612:Generated_Source\PSoC6/cyfitter_cfg.c **** 		};
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 109
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 109
 
 
  613:Generated_Source\PSoC6/cyfitter_cfg.c **** 
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  627:Generated_Source\PSoC6/cyfitter_cfg.c **** 		for (i = 0u; i < (sizeof(cfg_memcpy_list)/sizeof(cfg_memcpy_list[0])); i++)
  628:Generated_Source\PSoC6/cyfitter_cfg.c **** 		{
  629:Generated_Source\PSoC6/cyfitter_cfg.c **** 			const cfg_memcpy_t *mc = &cfg_memcpy_list[i];
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 110
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 110
 
 
  630:Generated_Source\PSoC6/cyfitter_cfg.c **** 			CYCONFIGCPYCODE(mc->dest, mc->src, mc->size);
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  821 00b8 1360     		str	r3, [r2]
  822              	.LBE126:
  823              	.LBB129:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 111
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 111
 
 
  641:Generated_Source\PSoC6/cyfitter_cfg.c **** 	}
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  666:Generated_Source\PSoC6/cyfitter_cfg.c **** 	        .intrCfg    = 0x00000000u,
  667:Generated_Source\PSoC6/cyfitter_cfg.c **** 	        .cfg        = 0xBA000000u,
  668:Generated_Source\PSoC6/cyfitter_cfg.c **** 	        .cfgIn      = 0x00000000u,
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 112
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 112
 
 
  669:Generated_Source\PSoC6/cyfitter_cfg.c **** 	        .cfgOut     = 0x00000000u,
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  879 010c 0021     		movs	r1, #0
  880 010e 2000     		movs	r0, r4
  881 0110 FFF7FEFF 		bl	memset
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 113
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 113
 
 
  882              	.LVL80:
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  917              		.size	Cy_SystemInit, .-Cy_SystemInit
  918              		.section	.rodata
  919              		.align	2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 114
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 114
 
 
  920              		.set	.LANCHOR0,. + 0
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  974 006c 00233440 		.word	1077158656
  975 0070 48020000 		.word	BS_UDB_UDBPAIR1_ROUTE_VAL.10202
  976 0074 90000000 		.word	144
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 115
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 115
 
 
  977 0078 00253440 		.word	1077159168
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1031 013b 04       		.byte	4
  1032 013c 63       		.byte	99
  1033 013d 01       		.byte	1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 116
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 116
 
 
  1034 013e 00       		.byte	0
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1088 01c3 00       		.byte	0
  1089 01c4 FF       		.byte	-1
  1090 01c5 FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 117
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 117
 
 
  1091 01c6 FF       		.byte	-1
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1145 01fc 00       		.byte	0
  1146 01fd 00       		.byte	0
  1147 01fe 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 118
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 118
 
 
  1148 01ff 00       		.byte	0
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1202 0235 11       		.byte	17
  1203 0236 11       		.byte	17
  1204 0237 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 119
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 119
 
 
  1205 0238 11       		.byte	17
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1259 026b 00       		.byte	0
  1260 026c FF       		.byte	-1
  1261 026d FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 120
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 120
 
 
  1262 026e FF       		.byte	-1
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1316 02a4 FF       		.byte	-1
  1317 02a5 FF       		.byte	-1
  1318 02a6 FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 121
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 121
 
 
  1319 02a7 FF       		.byte	-1
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1373 02da 00       		.byte	0
  1374 02db 00       		.byte	0
  1375 02dc 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 122
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 122
 
 
  1376 02dd 00       		.byte	0
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1430 0313 00       		.byte	0
  1431 0314 00       		.byte	0
  1432 0315 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 123
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 123
 
 
  1433 0316 00       		.byte	0
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1487 034c 11       		.byte	17
  1488 034d 11       		.byte	17
  1489 034e 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 124
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 124
 
 
  1490 034f 11       		.byte	17
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1544 0382 FF       		.byte	-1
  1545 0383 FF       		.byte	-1
  1546 0384 FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 125
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 125
 
 
  1547 0385 FF       		.byte	-1
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1601 03bb 00       		.byte	0
  1602 03bc FF       		.byte	-1
  1603 03bd FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 126
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 126
 
 
  1604 03be FF       		.byte	-1
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1658 03f4 11       		.byte	17
  1659 03f5 11       		.byte	17
  1660 03f6 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 127
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 127
 
 
  1661 03f7 11       		.byte	17
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1715 042a FF       		.byte	-1
  1716 042b FF       		.byte	-1
  1717 042c FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 128
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 128
 
 
  1718 042d FF       		.byte	-1
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1772 0463 11       		.byte	17
  1773 0464 11       		.byte	17
  1774 0465 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 129
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 129
 
 
  1775 0466 11       		.byte	17
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1829 0499 FF       		.byte	-1
  1830 049a FF       		.byte	-1
  1831 049b FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 130
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 130
 
 
  1832 049c FF       		.byte	-1
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1886 04d2 00       		.byte	0
  1887 04d3 00       		.byte	0
  1888 04d4 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 131
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 131
 
 
  1889 04d5 00       		.byte	0
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  1943 050b 11       		.byte	17
  1944 050c 11       		.byte	17
  1945 050d 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 132
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 132
 
 
  1946 050e 11       		.byte	17
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2000 0541 00       		.byte	0
  2001 0542 00       		.byte	0
  2002 0543 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 133
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 133
 
 
  2003 0544 00       		.byte	0
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2057 057a 11       		.byte	17
  2058 057b 11       		.byte	17
  2059 057c 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 134
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 134
 
 
  2060 057d 11       		.byte	17
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2114 05b0 1F       		.byte	31
  2115 05b1 1F       		.byte	31
  2116 05b2 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 135
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 135
 
 
  2117 05b3 1F       		.byte	31
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2171 05e9 11       		.byte	17
  2172 05ea 11       		.byte	17
  2173 05eb 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 136
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 136
 
 
  2174 05ec 11       		.byte	17
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2228 061f 1F       		.byte	31
  2229 0620 1F       		.byte	31
  2230 0621 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 137
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 137
 
 
  2231 0622 1F       		.byte	31
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2285 0658 FF       		.byte	-1
  2286 0659 FF       		.byte	-1
  2287 065a FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 138
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 138
 
 
  2288 065b FF       		.byte	-1
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2342 068e 00       		.byte	0
  2343 068f 00       		.byte	0
  2344 0690 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 139
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 139
 
 
  2345 0691 00       		.byte	0
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2399 06c7 00       		.byte	0
  2400 06c8 00       		.byte	0
  2401 06c9 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 140
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 140
 
 
  2402 06ca 00       		.byte	0
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2456 0700 11       		.byte	17
  2457 0701 11       		.byte	17
  2458 0702 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 141
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 141
 
 
  2459 0703 11       		.byte	17
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2513 0736 00       		.byte	0
  2514 0737 00       		.byte	0
  2515 0738 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 142
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 142
 
 
  2516 0739 00       		.byte	0
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2570 076f 11       		.byte	17
  2571 0770 11       		.byte	17
  2572 0771 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 143
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 143
 
 
  2573 0772 11       		.byte	17
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2627 07a5 1F       		.byte	31
  2628 07a6 1F       		.byte	31
  2629 07a7 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 144
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 144
 
 
  2630 07a8 1F       		.byte	31
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2684 07de 11       		.byte	17
  2685 07df 11       		.byte	17
  2686 07e0 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 145
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 145
 
 
  2687 07e1 11       		.byte	17
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2741 0814 1F       		.byte	31
  2742 0815 1F       		.byte	31
  2743 0816 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 146
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 146
 
 
  2744 0817 1F       		.byte	31
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2798 084d 11       		.byte	17
  2799 084e 11       		.byte	17
  2800 084f 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 147
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 147
 
 
  2801 0850 11       		.byte	17
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2855 0883 00       		.byte	0
  2856 0884 1F       		.byte	31
  2857 0885 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 148
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 148
 
 
  2858 0886 1F       		.byte	31
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2912 08bc FF       		.byte	-1
  2913 08bd FF       		.byte	-1
  2914 08be FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 149
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 149
 
 
  2915 08bf FF       		.byte	-1
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  2969 08f5 11       		.byte	17
  2970 08f6 11       		.byte	17
  2971 08f7 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 150
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 150
 
 
  2972              		.type	BS_UDB_DSI8_VAL.10215, %object
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3026 092b 00       		.byte	0
  3027 092c 00       		.byte	0
  3028 092d 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 151
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 151
 
 
  3029 092e 00       		.byte	0
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3083 0964 11       		.byte	17
  3084 0965 11       		.byte	17
  3085 0966 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 152
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 152
 
 
  3086 0967 11       		.byte	17
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3140 099a 1F       		.byte	31
  3141 099b 1F       		.byte	31
  3142 099c 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 153
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 153
 
 
  3143 099d 00       		.byte	0
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3197 09d3 11       		.byte	17
  3198 09d4 11       		.byte	17
  3199 09d5 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 154
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 154
 
 
  3200 09d6 11       		.byte	17
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3254 0a09 1F       		.byte	31
  3255 0a0a 1F       		.byte	31
  3256 0a0b 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 155
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 155
 
 
  3257 0a0c 1F       		.byte	31
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3311 0a42 11       		.byte	17
  3312 0a43 11       		.byte	17
  3313 0a44 11       		.byte	17
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 156
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 156
 
 
  3314 0a45 11       		.byte	17
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3368 0a78 1F       		.byte	31
  3369 0a79 1F       		.byte	31
  3370 0a7a 1F       		.byte	31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 157
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 157
 
 
  3371 0a7b 1F       		.byte	31
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3425 0ab1 FF       		.byte	-1
  3426 0ab2 FF       		.byte	-1
  3427 0ab3 FF       		.byte	-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 158
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 158
 
 
  3428 0ab4 FF       		.byte	-1
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3482              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
  3483              		.file 5 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
  3484              		.file 6 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 159
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 159
 
 
  3485              		.file 7 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/psoc63/include/psoc63_config.h"
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3539 005e 04       		.uleb128 0x4
  3540 005f 01       		.byte	0x1
  3541 0060 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 160
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 160
 
 
  3542 0061 A6130000 		.4byte	.LASF6
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3596 00ca 30       		.byte	0x30
  3597 00cb 85000000 		.4byte	0x85
  3598 00cf 06       		.uleb128 0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 161
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 161
 
 
  3599 00d0 C4000000 		.4byte	0xc4
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3653 013f 09       		.uleb128 0x9
  3654 0140 25110000 		.4byte	.LASF34
  3655 0144 0F       		.byte	0xf
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 162
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 162
 
 
  3656 0145 09       		.uleb128 0x9
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3710 01b1 09       		.uleb128 0x9
  3711 01b2 43150000 		.4byte	.LASF53
  3712 01b6 22       		.byte	0x22
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 163
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 163
 
 
  3713 01b7 09       		.uleb128 0x9
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3767 0223 09       		.uleb128 0x9
  3768 0224 E0060000 		.4byte	.LASF72
  3769 0228 35       		.byte	0x35
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 164
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 164
 
 
  3770 0229 09       		.uleb128 0x9
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3824 02a1 06       		.byte	0x6
  3825 02a2 00       		.byte	0
  3826 02a3 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 165
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 165
 
 
  3827 02a4 D4000000 		.4byte	0xd4
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3881 0313 02030000 		.4byte	0x302
  3882 0317 07       		.uleb128 0x7
  3883 0318 12030000 		.4byte	0x312
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 166
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 166
 
 
  3884 031c 03       		.uleb128 0x3
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3938 0386 39130000 		.4byte	.LASF90
  3939 038a 08       		.byte	0x8
  3940 038b 3E       		.byte	0x3e
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 167
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 167
 
 
  3941 038c CF000000 		.4byte	0xcf
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  3995 03fb 4A       		.byte	0x4a
  3996 03fc CF000000 		.4byte	0xcf
  3997 0400 24       		.byte	0x24
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 168
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 168
 
 
  3998 0401 0D       		.uleb128 0xd
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4052 0473 0009     		.2byte	0x900
  4053 0475 10       		.uleb128 0x10
  4054 0476 510C0000 		.4byte	.LASF96
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 169
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 169
 
 
  4055 047a 08       		.byte	0x8
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4109 04ef 08       		.byte	0x8
  4110 04f0 78       		.byte	0x78
  4111 04f1 D3050000 		.4byte	0x5d3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 170
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 170
 
 
  4112 04f5 0048     		.2byte	0x4800
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4166 0572 9E000000 		.4byte	0x9e
  4167 0576 7F       		.byte	0x7f
  4168 0577 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 171
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 171
 
 
  4169 0578 06       		.uleb128 0x6
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4223 05f6 09       		.byte	0x9
  4224 05f7 21       		.byte	0x21
  4225 05f8 33090000 		.4byte	0x933
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 172
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 172
 
 
  4226 05fc 0D       		.uleb128 0xd
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4280 0668 0D       		.uleb128 0xd
  4281 0669 051B0000 		.4byte	.LASF112
  4282 066d 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 173
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 173
 
 
  4283 066e 2B       		.byte	0x2b
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4337 06da 34       		.byte	0x34
  4338 06db D4000000 		.4byte	0xd4
  4339 06df 8C       		.byte	0x8c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 174
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 174
 
 
  4340 06e0 0D       		.uleb128 0xd
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4394 0751 10       		.uleb128 0x10
  4395 0752 08100000 		.4byte	.LASF129
  4396 0756 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 175
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 175
 
 
  4397 0757 3E       		.byte	0x3e
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4451 07cc 47       		.byte	0x47
  4452 07cd E1090000 		.4byte	0x9e1
  4453 07d1 D401     		.2byte	0x1d4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 176
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 176
 
 
  4454 07d3 10       		.uleb128 0x10
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4508 0848 10       		.uleb128 0x10
  4509 0849 6F000000 		.4byte	.LASF148
  4510 084d 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 177
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 177
 
 
  4511 084e 51       		.byte	0x51
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4565 08c3 5A       		.byte	0x5a
  4566 08c4 8B0A0000 		.4byte	0xa8b
  4567 08c8 0404     		.2byte	0x404
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 178
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 178
 
 
  4568 08ca 10       		.uleb128 0x10
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4622 0941 02       		.byte	0x2
  4623 0942 00       		.byte	0
  4624 0943 06       		.uleb128 0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 179
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 179
 
 
  4625 0944 33090000 		.4byte	0x933
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4679 09c8 06       		.uleb128 0x6
  4680 09c9 33090000 		.4byte	0x933
  4681 09cd 07       		.uleb128 0x7
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 180
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 180
 
 
  4682 09ce C8090000 		.4byte	0x9c8
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4736 0a52 06       		.uleb128 0x6
  4737 0a53 71090000 		.4byte	0x971
  4738 0a57 07       		.uleb128 0x7
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 181
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 181
 
 
  4739 0a58 520A0000 		.4byte	0xa52
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4793 0ada 0A       		.uleb128 0xa
  4794 0adb D4000000 		.4byte	0xd4
  4795 0adf EA0A0000 		.4byte	0xaea
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 182
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 182
 
 
  4796 0ae3 0B       		.uleb128 0xb
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4850 0b4c 2A       		.byte	0x2a
  4851 0b4d CF000000 		.4byte	0xcf
  4852 0b51 1C       		.byte	0x1c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 183
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 183
 
 
  4853 0b52 0D       		.uleb128 0xd
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4907 0bbf 37       		.byte	0x37
  4908 0bc0 CF000000 		.4byte	0xcf
  4909 0bc4 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 184
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 184
 
 
  4910 0bc5 0D       		.uleb128 0xd
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  4964 0c33 10       		.uleb128 0x10
  4965 0c34 881C0000 		.4byte	.LASF187
  4966 0c38 0A       		.byte	0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 185
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 185
 
 
  4967 0c39 41       		.byte	0x41
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5021 0cae 4A       		.byte	0x4a
  5022 0caf D4000000 		.4byte	0xd4
  5023 0cb3 0805     		.2byte	0x508
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 186
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 186
 
 
  5024 0cb5 10       		.uleb128 0x10
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5078 0d2a 10       		.uleb128 0x10
  5079 0d2b 7D070000 		.4byte	.LASF125
  5080 0d2f 0A       		.byte	0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 187
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 187
 
 
  5081 0d30 54       		.byte	0x54
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5135 0da5 5D       		.byte	0x5d
  5136 0da6 BA0F0000 		.4byte	0xfba
  5137 0daa 0006     		.2byte	0x600
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 188
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 188
 
 
  5138 0dac 10       		.uleb128 0x10
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5192 0e21 10       		.uleb128 0x10
  5193 0e22 F6120000 		.4byte	.LASF215
  5194 0e26 0A       		.byte	0xa
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 189
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 189
 
 
  5195 0e27 67       		.byte	0x67
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5249 0e9c 70       		.byte	0x70
  5250 0e9d 33100000 		.4byte	0x1033
  5251 0ea1 347F     		.2byte	0x7f34
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 190
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 190
 
 
  5252 0ea3 10       		.uleb128 0x10
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5306 0f17 D4000000 		.4byte	0xd4
  5307 0f1b 260F0000 		.4byte	0xf26
  5308 0f1f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 191
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 191
 
 
  5309 0f20 9E000000 		.4byte	0x9e
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5363 0fa1 2E0A0000 		.4byte	0xa2e
  5364 0fa5 07       		.uleb128 0x7
  5365 0fa6 A00F0000 		.4byte	0xfa0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 192
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 192
 
 
  5366 0faa 0A       		.uleb128 0xa
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5420 102d 00       		.byte	0
  5421 102e 06       		.uleb128 0x6
  5422 102f 1D100000 		.4byte	0x101d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 193
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 193
 
 
  5423 1033 07       		.uleb128 0x7
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5477 10a0 0D       		.uleb128 0xd
  5478 10a1 3D1A0000 		.4byte	.LASF235
  5479 10a5 0B       		.byte	0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 194
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 194
 
 
  5480 10a6 29       		.byte	0x29
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5534 1112 32       		.byte	0x32
  5535 1113 D4000000 		.4byte	0xd4
  5536 1117 40       		.byte	0x40
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 195
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 195
 
 
  5537 1118 0D       		.uleb128 0xd
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5591 118e 9E000000 		.4byte	0x9e
  5592 1192 7F3B     		.2byte	0x3b7f
  5593 1194 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 196
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 196
 
 
  5594 1195 06       		.uleb128 0x6
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5648 1200 CF000000 		.4byte	0xcf
  5649 1204 18       		.byte	0x18
  5650 1205 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 197
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 197
 
 
  5651 1206 9C140000 		.4byte	.LASF242
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5705 1272 41070000 		.4byte	.LASF83
  5706 1276 0C       		.byte	0xc
  5707 1277 33       		.byte	0x33
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 198
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 198
 
 
  5708 1278 83120000 		.4byte	0x1283
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5762 12ea 1B140000 		.4byte	.LASF264
  5763 12ee 0C       		.byte	0xc
  5764 12ef 40       		.byte	0x40
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 199
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 199
 
 
  5765 12f0 CF000000 		.4byte	0xcf
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5819 1365 8603     		.2byte	0x386
  5820 1367 B9000000 		.4byte	0xb9
  5821 136b 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 200
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 200
 
 
  5822 136c C1010000 		.4byte	.LASF274
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5876 13d9 BA       		.byte	0xba
  5877 13da C4000000 		.4byte	0xc4
  5878 13de 1C       		.byte	0x1c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 201
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 201
 
 
  5879 13df 0D       		.uleb128 0xd
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5933 1455 9B140000 		.4byte	0x149b
  5934 1459 09       		.uleb128 0x9
  5935 145a A11D0000 		.4byte	.LASF290
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 202
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 202
 
 
  5936 145e 00       		.byte	0
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  5990 14ce 01       		.byte	0x1
  5991 14cf 5E000000 		.4byte	0x5e
  5992 14d3 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 203
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 203
 
 
  5993 14d4 FB02     		.2byte	0x2fb
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6047 1547 02       		.byte	0x2
  6048 1548 1003     		.2byte	0x310
  6049 154a B9000000 		.4byte	0xb9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 204
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 204
 
 
  6050 154e 08       		.byte	0x8
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6104 15be A3090000 		.4byte	.LASF325
  6105 15c2 02       		.byte	0x2
  6106 15c3 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 205
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 205
 
 
  6107 15c4 BF090000 		.4byte	.LASF326
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6161 1632 C1200000 		.4byte	.LASF341
  6162 1636 01       		.byte	0x1
  6163 1637 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 206
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 206
 
 
  6164 1638 DD200000 		.4byte	.LASF342
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6218 16a8 12       		.uleb128 0x12
  6219 16a9 54040000 		.4byte	.LASF354
  6220 16ad 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 207
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 207
 
 
  6221 16ae 0809     		.2byte	0x908
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6275 1721 42180000 		.4byte	.LASF367
  6276 1725 06       		.byte	0x6
  6277 1726 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 208
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 208
 
 
  6278 1727 5D180000 		.4byte	.LASF368
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6332 1795 12       		.uleb128 0x12
  6333 1796 E90E0000 		.4byte	.LASF383
  6334 179a 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 209
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 209
 
 
  6335 179b F709     		.2byte	0x9f7
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6389 180a 00       		.byte	0
  6390 180b 03       		.uleb128 0x3
  6391 180c 471A0000 		.4byte	.LASF394
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 210
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 210
 
 
  6392 1810 10       		.byte	0x10
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6446 1879 630E0000 		.4byte	.LASF404
  6447 187d 10       		.byte	0x10
  6448 187e 8F       		.byte	0x8f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 211
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 211
 
 
  6449 187f 41180000 		.4byte	0x1841
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6503 18f2 03       		.byte	0x3
  6504 18f3 1C190000 		.4byte	0x191c
  6505 18f7 19       		.uleb128 0x19
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 212
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 212
 
 
  6506 18f8 D2190000 		.4byte	.LASF411
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6560 1974 03       		.byte	0x3
  6561 1975 86190000 		.4byte	0x1986
  6562 1979 19       		.uleb128 0x19
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 213
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 213
 
 
  6563 197a 52110000 		.4byte	.LASF412
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6617 19f2 2608     		.2byte	0x826
  6618 19f4 40140000 		.4byte	0x1440
  6619 19f8 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 214
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 214
 
 
  6620 19f9 18       		.uleb128 0x18
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6674 1a78 40140000 		.4byte	0x1440
  6675 1a7c 00       		.byte	0
  6676 1a7d 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 215
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 215
 
 
  6677 1a7e E4160000 		.4byte	.LASF427
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6731 1aef 150A     		.2byte	0xa15
  6732 1af1 5D170000 		.4byte	0x175d
  6733 1af5 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 216
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 216
 
 
  6734 1af6 1C       		.uleb128 0x1c
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6788 1b66 50       		.byte	0x50
  6789 1b67 00       		.byte	0
  6790 1b68 20       		.uleb128 0x20
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 217
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 217
 
 
  6791 1b69 700D0000 		.4byte	.LASF444
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6845 1be0 07       		.uleb128 0x7
  6846 1be1 6B130000 		.4byte	0x136b
  6847 1be5 24       		.uleb128 0x24
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 218
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 218
 
 
  6848 1be6 04       		.byte	0x4
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6902 1c65 00       		.byte	0
  6903 1c66 2A       		.uleb128 0x2a
  6904 1c67 30000000 		.4byte	.LBB72
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 219
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 219
 
 
  6905 1c6b 14000000 		.4byte	.LBE72-.LBB72
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  6959 1cce 26       		.uleb128 0x26
  6960 1ccf 6C190000 		.4byte	0x196c
  6961 1cd3 50000000 		.4byte	.LBB75
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 220
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 220
 
 
  6962 1cd7 0E000000 		.4byte	.LBE75-.LBB75
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7016 1d67 70000000 		.4byte	.LBB82
  7017 1d6b 08000000 		.4byte	.LBE82-.LBB82
  7018 1d6f 2D       		.uleb128 0x2d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 221
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 221
 
 
  7019 1d70 0F190000 		.4byte	0x190f
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7073 1de8 00       		.byte	0
  7074 1de9 26       		.uleb128 0x26
  7075 1dea 191B0000 		.4byte	0x1b19
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 222
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 222
 
 
  7076 1dee E0000000 		.4byte	.LBB86
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7130 1e7d 2F       		.uleb128 0x2f
  7131 1e7e 9F1A0000 		.4byte	0x1a9f
  7132 1e82 20010000 		.4byte	.LBB98
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 223
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 223
 
 
  7133 1e86 10000000 		.4byte	.LBE98-.LBB98
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7187 1f1a 0C01     		.2byte	0x10c
  7188 1f1c 4F1F0000 		.4byte	0x1f4f
  7189 1f20 29       		.uleb128 0x29
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 224
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 224
 
 
  7190 1f21 221A0000 		.4byte	0x1a22
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7244 1fb9 74010000 		.4byte	.LBB111
  7245 1fbd 04000000 		.4byte	.LBE111-.LBB111
  7246 1fc1 2D       		.uleb128 0x2d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 225
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 225
 
 
  7247 1fc2 701A0000 		.4byte	0x1a70
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7301 2057 1101     		.2byte	0x111
  7302 2059 8C200000 		.4byte	0x208c
  7303 205d 29       		.uleb128 0x29
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 226
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 226
 
 
  7304 205e 641A0000 		.4byte	0x1a64
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7358 20f6 A2010000 		.4byte	.LBB121
  7359 20fa 06000000 		.4byte	.LBE121-.LBB121
  7360 20fe 2D       		.uleb128 0x2d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 227
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 227
 
 
  7361 20ff EC190000 		.4byte	0x19ec
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7415 215f 01       		.uleb128 0x1
  7416 2160 50       		.byte	0x50
  7417 2161 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 228
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 228
 
 
  7418 2162 34       		.byte	0x34
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7472 21bf 50010000 		.4byte	.LVL47
  7473 21c3 17280000 		.4byte	0x2817
  7474 21c7 28       		.uleb128 0x28
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 229
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 229
 
 
  7475 21c8 01       		.uleb128 0x1
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7529 2221 F3       		.byte	0xf3
  7530 2222 01       		.uleb128 0x1
  7531 2223 51       		.byte	0x51
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 230
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 230
 
 
  7532 2224 00       		.byte	0
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7586 2285 00       		.byte	0
  7587 2286 24       		.uleb128 0x24
  7588 2287 04       		.byte	0x4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 231
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 231
 
 
  7589 2288 8C220000 		.4byte	0x228c
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7643 230a 17       		.uleb128 0x17
  7644 230b F7150000 		.4byte	.LASF455
  7645 230f 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 232
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 232
 
 
  7646 2310 6A01     		.2byte	0x16a
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7700 2384 18000000 		.4byte	cfg_memset_list.10200
  7701 2388 07       		.uleb128 0x7
  7702 2389 61230000 		.4byte	0x2361
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 233
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 233
 
 
  7703 238d 35       		.uleb128 0x35
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7757 2406 03       		.byte	0x3
  7758 2407 18050000 		.4byte	BS_UDB_DSI0_VAL.10207
  7759 240b 35       		.uleb128 0x35
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 234
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 234
 
 
  7760 240c E6110000 		.4byte	.LASF466
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7814 2485 7C080000 		.4byte	BS_UDB_DSI7_VAL.10214
  7815 2489 35       		.uleb128 0x35
  7816 248a D90E0000 		.4byte	.LASF473
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 235
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 235
 
 
  7817 248e 01       		.byte	0x1
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7871 2507 20050000 		.4byte	.LLST61
  7872 250b 2A       		.uleb128 0x2a
  7873 250c 58000000 		.4byte	.LBB127
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 236
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 236
 
 
  7874 2510 18000000 		.4byte	.LBE127-.LBB127
@@ -14158,7 +14158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7928 257d 01       		.uleb128 0x1
  7929 257e 50       		.byte	0x50
  7930 257f 10       		.uleb128 0x10
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 237
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 237
 
 
  7931 2580 74       		.byte	0x74
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  7985 25c5 50       		.byte	0x50
  7986 25c6 03       		.uleb128 0x3
  7987 25c7 75       		.byte	0x75
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 238
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 238
 
 
  7988 25c8 C400     		.sleb128 68
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8042 262e 01       		.uleb128 0x1
  8043 262f 50       		.byte	0x50
  8044 2630 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 239
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 239
 
 
  8045 2631 0C       		.byte	0xc
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8099 2699 AF260000 		.4byte	0x26af
  8100 269d 28       		.uleb128 0x28
  8101 269e 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 240
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 240
 
 
  8102 269f 50       		.byte	0x50
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8156 26f0 44280000 		.4byte	0x2844
  8157 26f4 2C       		.uleb128 0x2c
  8158 26f5 1E000000 		.4byte	.LVL65
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 241
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 241
 
 
  8159 26f9 50280000 		.4byte	0x2850
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8213 2777 0A       		.uleb128 0xa
  8214 2778 54270000 		.4byte	0x2754
  8215 277c 87270000 		.4byte	0x2787
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 242
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 242
 
 
  8216 2780 0B       		.uleb128 0xb
@@ -14518,7 +14518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8270 2801 93120000 		.4byte	.LASF486
  8271 2805 93120000 		.4byte	.LASF486
  8272 2809 02       		.byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 243
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 243
 
 
  8273 280a 2003     		.2byte	0x320
@@ -14578,7 +14578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8327 0011 00       		.byte	0
  8328 0012 00       		.byte	0
  8329 0013 02       		.uleb128 0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 244
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 244
 
 
  8330 0014 24       		.uleb128 0x24
@@ -14638,7 +14638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8384 004a 00       		.byte	0
  8385 004b 08       		.uleb128 0x8
  8386 004c 04       		.uleb128 0x4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 245
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 245
 
 
  8387 004d 01       		.byte	0x1
@@ -14698,7 +14698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8441 0083 0D       		.uleb128 0xd
  8442 0084 00       		.byte	0
  8443 0085 03       		.uleb128 0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 246
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 246
 
 
  8444 0086 0E       		.uleb128 0xe
@@ -14758,7 +14758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8498 00bc 11       		.uleb128 0x11
  8499 00bd 21       		.uleb128 0x21
  8500 00be 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 247
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 247
 
 
  8501 00bf 49       		.uleb128 0x49
@@ -14818,7 +14818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8555 00f5 01       		.byte	0x1
  8556 00f6 0B       		.uleb128 0xb
  8557 00f7 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 248
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 248
 
 
  8558 00f8 3A       		.uleb128 0x3a
@@ -14878,7 +14878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8612 012e 00       		.byte	0
  8613 012f 1A       		.uleb128 0x1a
  8614 0130 34       		.uleb128 0x34
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 249
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 249
 
 
  8615 0131 00       		.byte	0
@@ -14938,7 +14938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8669 0167 00       		.byte	0
  8670 0168 00       		.byte	0
  8671 0169 1E       		.uleb128 0x1e
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 250
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 250
 
 
  8672 016a 2E       		.uleb128 0x2e
@@ -14998,7 +14998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8726 01a2 40       		.uleb128 0x40
  8727 01a3 18       		.uleb128 0x18
  8728 01a4 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 251
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 251
 
 
  8729 01a6 19       		.uleb128 0x19
@@ -15058,7 +15058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8783 01dc 2E       		.uleb128 0x2e
  8784 01dd 00       		.byte	0
  8785 01de 03       		.uleb128 0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 252
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 252
 
 
  8786 01df 0E       		.uleb128 0xe
@@ -15118,7 +15118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8840 021b 00       		.byte	0
  8841 021c 31       		.uleb128 0x31
  8842 021d 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 253
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 253
 
 
  8843 021e 02       		.uleb128 0x2
@@ -15178,7 +15178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8897 0256 13       		.uleb128 0x13
  8898 0257 11       		.uleb128 0x11
  8899 0258 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 254
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 254
 
 
  8900 0259 12       		.uleb128 0x12
@@ -15238,7 +15238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  8954 028f 00       		.byte	0
  8955 0290 32       		.uleb128 0x32
  8956 0291 05       		.uleb128 0x5
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 255
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 255
 
 
  8957 0292 00       		.byte	0
@@ -15298,7 +15298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9011 02c9 02       		.uleb128 0x2
  9012 02ca 18       		.uleb128 0x18
  9013 02cb 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 256
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 256
 
 
  9014 02cc 00       		.byte	0
@@ -15358,7 +15358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9068 0304 05       		.uleb128 0x5
  9069 0305 00       		.byte	0
  9070 0306 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 257
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 257
 
 
  9071 0307 3A       		.uleb128 0x3a
@@ -15418,7 +15418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9125 0035 55       		.byte	0x55
  9126 0036 00000000 		.4byte	0
  9127 003a 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 258
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 258
 
 
  9128              	.LLST2:
@@ -15478,7 +15478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9182 00cb 50000000 		.4byte	.LVL18
  9183 00cf 5E000000 		.4byte	.LVL19
  9184 00d3 0200     		.2byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 259
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 259
 
 
  9185 00d5 31       		.byte	0x31
@@ -15538,7 +15538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9239              	.LLST16:
  9240 015f 78000000 		.4byte	.LVL22
  9241 0163 7E000000 		.4byte	.LVL23
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 260
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 260
 
 
  9242 0167 0600     		.2byte	0x6
@@ -15598,7 +15598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9296              	.LLST23:
  9297 01ef 50010000 		.4byte	.LVL47
  9298 01f3 58010000 		.4byte	.LVL48
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 261
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 261
 
 
  9299 01f7 0200     		.2byte	0x2
@@ -15658,7 +15658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9353 027c 00000000 		.4byte	0
  9354 0280 00000000 		.4byte	0
  9355              	.LLST33:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 262
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 262
 
 
  9356 0284 6A010000 		.4byte	.LVL49
@@ -15718,7 +15718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9410 030e 0200     		.2byte	0x2
  9411 0310 31       		.byte	0x31
  9412 0311 9F       		.byte	0x9f
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 263
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 263
 
 
  9413 0312 00000000 		.4byte	0
@@ -15778,7 +15778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9467 039e 92010000 		.4byte	.LVL54
  9468 03a2 0200     		.2byte	0x2
  9469 03a4 31       		.byte	0x31
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 264
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 264
 
 
  9470 03a5 9F       		.byte	0x9f
@@ -15838,7 +15838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9524              	.LLST53:
  9525 0430 A2010000 		.4byte	.LVL55
  9526 0434 A8010000 		.4byte	.LVL56
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 265
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 265
 
 
  9527 0438 0200     		.2byte	0x2
@@ -15898,7 +15898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9581              	.LLST58:
  9582 04bd 00000000 		.4byte	.LVL60
  9583 04c1 05000000 		.4byte	.LVL61-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 266
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 266
 
 
  9584 04c5 0100     		.2byte	0x1
@@ -15958,7 +15958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9638 0546 00000000 		.4byte	0
  9639              	.LLST62:
  9640 054a 58000000 		.4byte	.LVL68
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 267
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 267
 
 
  9641 054e 72000000 		.4byte	.LVL70
@@ -16018,7 +16018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9695 0008 00000000 		.4byte	.LFB175
  9696 000c 32000000 		.4byte	.LFE175
  9697 0010 00000000 		.4byte	.LFB177
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 268
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 268
 
 
  9698 0014 28000000 		.4byte	.LFE177
@@ -16078,7 +16078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9727      4F434B00 
  9728              	.LASF148:
  9729 006f 53595354 		.ascii	"SYSTICK_CTL\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 269
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 269
 
 
  9729      49434B5F 
@@ -16138,7 +16138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9749 014b 52414D5F 		.ascii	"RAM_PWR_DELAY_CTL\000"
  9749      5057525F 
  9749      44454C41 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 270
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 270
 
 
  9749      595F4354 
@@ -16198,7 +16198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9769      524F5554 
  9770              	.LASF456:
  9771 0214 6366675F 		.ascii	"cfg_memset_t\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 271
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 271
 
 
  9771      6D656D73 
@@ -16258,7 +16258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9793 02d4 43795F53 		.ascii	"Cy_SysClk_ClkFastSetDivider\000"
  9793      7973436C 
  9793      6B5F436C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 272
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 272
 
 
  9793      6B466173 
@@ -16318,7 +16318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9815      705F696E 
  9815      5F736F75 
  9816              	.LASF484:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 273
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 273
 
 
  9817 039e 43795F53 		.ascii	"Cy_SysClk_FllManualConfigure\000"
@@ -16378,7 +16378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9839      6E5F636C 
  9839      6B6C665F 
  9839      696E5F73 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 274
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 274
 
 
  9839      6F757263 
@@ -16438,7 +16438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9859      54797065 
  9859      00
  9860              	.LASF257:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 275
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 275
 
 
  9861 0569 4346475F 		.ascii	"CFG_IN_GPIO5V\000"
@@ -16498,7 +16498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9882              	.LASF468:
  9883 061e 42535F55 		.ascii	"BS_UDB_DSI3_VAL\000"
  9883      44425F44 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 276
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 276
 
 
  9883      5349335F 
@@ -16558,7 +16558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9902              	.LASF203:
  9903 06fb 434C4B5F 		.ascii	"CLK_FLL_CONFIG\000"
  9903      464C4C5F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 277
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 277
 
 
  9903      434F4E46 
@@ -16618,7 +16618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9930              	.LASF139:
  9931 079b 5544425F 		.ascii	"UDB_PWR_CTL\000"
  9931      5057525F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 278
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 278
 
 
  9931      43544C00 
@@ -16678,7 +16678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9952              	.LASF338:
  9953 088b 43595F53 		.ascii	"CY_SYSCLK_CLKHF_IN_CLKPATH15\000"
  9953      5953434C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 279
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 279
 
 
  9953      4B5F434C 
@@ -16738,7 +16738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9975 0944 50434C4B 		.ascii	"PCLK_TCPWM1_CLOCKS17\000"
  9975      5F544350 
  9975      574D315F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 280
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 280
 
 
  9975      434C4F43 
@@ -16798,7 +16798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  9993      4B48465F 
  9993      494E5F43 
  9994              	.LASF331:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 281
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 281
 
 
  9995 0a4b 43595F53 		.ascii	"CY_SYSCLK_CLKHF_IN_CLKPATH8\000"
@@ -16858,7 +16858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10019      56414C00 
  10020              	.LASF162:
  10021 0afe 4D424953 		.ascii	"MBIST_STAT\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 282
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 282
 
 
  10021      545F5354 
@@ -16918,7 +16918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10043 0bbd 43795F53 		.ascii	"Cy_SysClk_ClkHfEnable\000"
  10043      7973436C 
  10043      6B5F436C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 283
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 283
 
 
  10043      6B486645 
@@ -16978,7 +16978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10065      50415448 
  10065      5F53454C 
  10065      45435400 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 284
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 284
 
 
  10066              	.LASF198:
@@ -17038,7 +17038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10089      4B454400 
  10090              	.LASF316:
  10091 0d2e 69676169 		.ascii	"igain\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 285
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 285
 
 
  10091      6E00
@@ -17098,7 +17098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10115      75744D6F 
  10115      646500
  10116              	.LASF287:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 286
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 286
 
 
  10117 0ddb 43595F53 		.ascii	"CY_SYSCLK_TIMEOUT\000"
@@ -17158,7 +17158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10139      5F45434F 
  10139      5F465245 
  10140              	.LASF118:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 287
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 287
 
 
  10141 0e99 434D345F 		.ascii	"CM4_PWR_DELAY_CTL\000"
@@ -17218,7 +17218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10161      79734C69 
  10161      625F5265 
  10161      73657442 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 288
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 288
 
 
  10161      61636B75 
@@ -17278,7 +17278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10182              	.LASF253:
  10183 1015 494E5452 		.ascii	"INTR_CFG\000"
  10183      5F434647 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 289
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 289
 
 
  10183      00
@@ -17338,7 +17338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10209 10b1 6C6F6E67 		.ascii	"long long int\000"
  10209      206C6F6E 
  10209      6720696E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 290
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 290
 
 
  10209      7400
@@ -17398,7 +17398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10229 1152 64697669 		.ascii	"divider\000"
  10229      64657200 
  10230              	.LASF340:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 291
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 291
 
 
  10231 115a 43595F53 		.ascii	"CY_SYSCLK_CLKHF_NO_DIVIDE\000"
@@ -17458,7 +17458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10253 1214 6C6F636B 		.ascii	"lockTolerance\000"
  10253      546F6C65 
  10253      72616E63 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 292
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 292
 
 
  10253      6500
@@ -17518,7 +17518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10277      676E6564 
  10277      20696E74 
  10277      00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 293
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 293
 
 
  10278              	.LASF85:
@@ -17578,7 +17578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10303      5F494E54 
  10303      525F4D41 
  10303      534B00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 294
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 294
 
 
  10304              	.LASF349:
@@ -17638,7 +17638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10325      4C455F53 
  10325      59535F45 
  10325      434F5F43 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 295
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 295
 
 
  10325      4C4B5F44 
@@ -17698,7 +17698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10348              	.LASF49:
  10349 14f3 50434C4B 		.ascii	"PCLK_TCPWM1_CLOCKS3\000"
  10349      5F544350 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 296
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 296
 
 
  10349      574D315F 
@@ -17758,7 +17758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10367      5F564F4C 
  10367      54414745 
  10368              	.LASF492:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 297
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 297
 
 
  10369 15bc 43795F53 		.ascii	"Cy_SysLib_GetResetReason\000"
@@ -17818,7 +17818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10393      4B5F4449 
  10393      565F3136 
  10393      5F355F42 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 298
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 298
 
 
  10394              	.LASF433:
@@ -17878,7 +17878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10419 1713 63795F65 		.ascii	"cy_en_clkhf_dividers_t\000"
  10419      6E5F636C 
  10419      6B68665F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 299
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 299
 
 
  10419      64697669 
@@ -17938,7 +17938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10437              	.LASF366:
  10438 1827 43595F53 		.ascii	"CY_SYSCLK_PUMP_IN_CLKPATH5\000"
  10438      5953434C 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 300
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 300
 
 
  10438      4B5F5055 
@@ -17998,7 +17998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10457              	.LASF155:
  10458 190a 52455345 		.ascii	"RESERVED21\000"
  10458      52564544 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 301
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 301
 
 
  10458      323100
@@ -18058,7 +18058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10482 19cd 64657374 		.ascii	"dest\000"
  10482      00
  10483              	.LASF411:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 302
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 302
 
 
  10484 19d2 636C6B48 		.ascii	"clkHf\000"
@@ -18118,7 +18118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10506      4952335F 
  10506      524F5554 
  10507              	.LASF220:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 303
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 303
 
 
  10508 1a8e 434C4B5F 		.ascii	"CLK_TRIM_CCO_CTL2\000"
@@ -18178,7 +18178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10530      494E545F 
  10530      43544C35 
  10530      00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 304
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 304
 
 
  10531              	.LASF115:
@@ -18238,7 +18238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10554      6174615F 
  10554      7461626C 
  10554      6500
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 305
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 305
 
 
  10555              	.LASF281:
@@ -18298,7 +18298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10577              	.LASF156:
  10578 1c9d 4944454E 		.ascii	"IDENTITY\000"
  10578      54495459 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 306
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 306
 
 
  10578      00
@@ -18358,7 +18358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10600      5953434C 
  10600      4B5F5055 
  10600      4D505F44 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 307
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 307
 
 
  10600      49565F34 
@@ -18418,7 +18418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10622 1e25 43595F53 		.ascii	"CY_SYSTICK_CLOCK_SOURCE_CLK_ECO\000"
  10622      59535449 
  10622      434B5F43 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 308
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 308
 
 
  10622      4C4F434B 
@@ -18478,7 +18478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10642 1f12 43595F53 		.ascii	"CY_SYSCLK_PUMP_IN_CLKPATH15\000"
  10642      5953434C 
  10642      4B5F5055 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 309
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 309
 
 
  10642      4D505F49 
@@ -18538,7 +18538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10662      4C56445F 
  10662      53544154 
  10662      555300
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 310
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 310
 
 
  10663              	.LASF82:
@@ -18598,7 +18598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10684      00
  10685              	.LASF341:
  10686 20c1 43595F53 		.ascii	"CY_SYSCLK_CLKHF_DIVIDE_BY_2\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 311
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 311
 
 
  10686      5953434C 
@@ -18658,7 +18658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 1
  10706      41424C45 
  10706      5F424153 
  10707              	.LASF273:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc6LEcg0.s 			page 312
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\cc5xzHCU.s 			page 312
 
 
  10708 21a7 75696E74 		.ascii	"uint16\000"

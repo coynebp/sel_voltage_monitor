@@ -385,7 +385,7 @@ void store_recent_event(void)
             ramData[i] = 0;
         }
         ramData[0] = 1; // This indicates that an event has been written at this location
-        memcpy(ramData + 2, events[num_events], 288);
+        memcpy(ramData + 2, events[num_events - 1], 288);
         bool success;
         success = store_flash(flashPtrs[num_events], ramData);
         if (success)

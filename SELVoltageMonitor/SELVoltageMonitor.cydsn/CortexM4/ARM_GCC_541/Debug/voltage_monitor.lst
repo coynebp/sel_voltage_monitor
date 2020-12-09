@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
   27:voltage_monitor.c **** 
   28:voltage_monitor.c **** // Averaging filter
   29:voltage_monitor.c **** int32 averaging_samples[FILTER_LENGTH];
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 2
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 2
 
 
   30:voltage_monitor.c **** int16 averaging_taps[FILTER_LENGTH];
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
   84:voltage_monitor.c ****     for(uint8_t i = 0; i < FILTER_LENGTH; ++i)
   85:voltage_monitor.c ****     {
   86:voltage_monitor.c ****         averaging_samples[i] = 0;
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 3
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 3
 
 
   87:voltage_monitor.c ****     }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  141:voltage_monitor.c ****                 // Overvoltage Condition
  142:voltage_monitor.c ****                 if(voltage_normal || voltage_low)
  143:voltage_monitor.c ****                 {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 4
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 4
 
 
  144:voltage_monitor.c ****                     printf("OVERVOLGATE DETECTED\r\n");
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  198:voltage_monitor.c ****                 {
  199:voltage_monitor.c ****                     clear_trigger();
  200:voltage_monitor.c ****                 }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 5
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 5
 
 
  201:voltage_monitor.c ****             }
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
   73 0004 504C     		ldr	r4, .L19+8
   74 0006 5149     		ldr	r1, .L19+12
   75 0008 2046     		mov	r0, r4
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 6
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 6
 
 
   76 000a FFF7FEFF 		bl	Cy_SysInt_Init
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
   46:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
   47:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****    \li Required Rule 18.4, declaration of union type or object of union type: '{...}'.<br>
   48:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****      Unions are used for effective representation of core registers.
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 7
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 7
 
 
   49:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  103:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****       #error "Compiler generates FPU instructions for a device without an FPU (check __FPU_PRESENT)
  104:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****       #define __FPU_USED       0U
  105:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****     #endif
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 8
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 8
 
 
  106:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   #else
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  160:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #include "cmsis_compiler.h"               /* CMSIS compiler specific defines */
  161:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  162:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 9
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 9
 
 
  163:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #ifdef __cplusplus
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  217:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   #define   __I     volatile const       /*!< Defines 'read only' permissions */
  218:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #endif
  219:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define     __O     volatile             /*!< Defines 'write only' permissions */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 10
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 10
 
 
  220:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define     __IO    volatile             /*!< Defines 'read / write' permissions */
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  274:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define APSR_N_Pos                         31U                                            /*!< APSR
  275:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define APSR_N_Msk                         (1UL << APSR_N_Pos)                            /*!< APSR
  276:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 11
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 11
 
 
  277:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define APSR_Z_Pos                         30U                                            /*!< APSR
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  331:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   uint32_t w;                            /*!< Type      used for word access */
  332:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** } xPSR_Type;
  333:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 12
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 12
 
 
  334:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /* xPSR Register Definitions */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  388:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define CONTROL_nPRIV_Pos                   0U                                            /*!< CONT
  389:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define CONTROL_nPRIV_Msk                  (1UL /*<< CONTROL_nPRIV_Pos*/)                 /*!< CONT
  390:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 13
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 13
 
 
  391:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /*@} end of group CMSIS_CORE */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  445:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IOM uint32_t CCR;                    /*!< Offset: 0x014 (R/W)  Configuration Control Register *
  446:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IOM uint8_t  SHP[12U];               /*!< Offset: 0x018 (R/W)  System Handlers Priority Registe
  447:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IOM uint32_t SHCSR;                  /*!< Offset: 0x024 (R/W)  System Handler Control and State
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 14
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 14
 
 
  448:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IOM uint32_t CFSR;                   /*!< Offset: 0x028 (R/W)  Configurable Fault Status Regist
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  502:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_ICSR_VECTPENDING_Msk           (0x1FFUL << SCB_ICSR_VECTPENDING_Pos)          /*!< SCB 
  503:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  504:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_ICSR_RETTOBASE_Pos             11U                                            /*!< SCB 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 15
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 15
 
 
  505:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_ICSR_RETTOBASE_Msk             (1UL << SCB_ICSR_RETTOBASE_Pos)                /*!< SCB 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  559:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CCR_USERSETMPEND_Pos            1U                                            /*!< SCB 
  560:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CCR_USERSETMPEND_Msk           (1UL << SCB_CCR_USERSETMPEND_Pos)              /*!< SCB 
  561:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 16
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 16
 
 
  562:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CCR_NONBASETHRDENA_Pos          0U                                            /*!< SCB 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  616:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CFSR_MEMFAULTSR_Msk            (0xFFUL /*<< SCB_CFSR_MEMFAULTSR_Pos*/)        /*!< SCB 
  617:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  618:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /* MemManage Fault Status Register (part of SCB Configurable Fault Status Register) */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 17
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 17
 
 
  619:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CFSR_MMARVALID_Pos             (SCB_SHCSR_MEMFAULTACT_Pos + 7U)               /*!< SCB 
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  673:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CFSR_INVSTATE_Msk             (1UL << SCB_CFSR_INVSTATE_Pos)                  /*!< SCB 
  674:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  675:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CFSR_UNDEFINSTR_Pos           (SCB_CFSR_USGFAULTSR_Pos + 0U)                  /*!< SCB 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 18
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 18
 
 
  676:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCB_CFSR_UNDEFINSTR_Msk           (1UL << SCB_CFSR_UNDEFINSTR_Pos)                /*!< SCB 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  730:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCnSCB_ACTLR_DISOOFP_Msk           (1UL << SCnSCB_ACTLR_DISOOFP_Pos)           /*!< ACTLR: 
  731:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  732:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCnSCB_ACTLR_DISFPCA_Pos            8U                                         /*!< ACTLR: 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 19
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 19
 
 
  733:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SCnSCB_ACTLR_DISFPCA_Msk           (1UL << SCnSCB_ACTLR_DISFPCA_Pos)           /*!< ACTLR: 
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  787:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SysTick_CALIB_NOREF_Pos            31U                                            /*!< SysT
  788:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SysTick_CALIB_NOREF_Msk            (1UL << SysTick_CALIB_NOREF_Pos)               /*!< SysT
  789:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 20
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 20
 
 
  790:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define SysTick_CALIB_SKEW_Pos             30U                                            /*!< SysT
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  844:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  845:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /* ITM Trace Privilege Register Definitions */
  846:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define ITM_TPR_PRIVMASK_Pos                0U                                            /*!< ITM 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 21
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 21
 
 
  847:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define ITM_TPR_PRIVMASK_Msk               (0xFUL /*<< ITM_TPR_PRIVMASK_Pos*/)            /*!< ITM 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  901:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
  902:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /**
  903:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \ingroup  CMSIS_core_register
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 22
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 22
 
 
  904:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \defgroup CMSIS_DWT     Data Watchpoint and Trace (DWT)
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  958:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define DWT_CTRL_FOLDEVTENA_Pos            21U                                         /*!< DWT CTR
  959:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define DWT_CTRL_FOLDEVTENA_Msk            (0x1UL << DWT_CTRL_FOLDEVTENA_Pos)          /*!< DWT CTR
  960:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 23
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 23
 
 
  961:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define DWT_CTRL_LSUEVTENA_Pos             20U                                         /*!< DWT CTR
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1015:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define DWT_MASK_MASK_Pos                   0U                                         /*!< DWT MAS
 1016:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define DWT_MASK_MASK_Msk                  (0x1FUL /*<< DWT_MASK_MASK_Pos*/)           /*!< DWT MAS
 1017:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 24
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 24
 
 
 1018:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /* DWT Comparator Function Register Definitions */
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1072:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IM  uint32_t TRIGGER;                /*!< Offset: 0xEE8 (R/ )  TRIGGER */
 1073:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IM  uint32_t FIFO0;                  /*!< Offset: 0xEEC (R/ )  Integration ETM Data */
 1074:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IM  uint32_t ITATBCTR2;              /*!< Offset: 0xEF0 (R/ )  ITATBCTR2 */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 25
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 25
 
 
 1075:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****         uint32_t RESERVED4[1U];
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1129:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define TPI_FIFO0_ETM_bytecount_Pos        24U                                         /*!< TPI FIF
 1130:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define TPI_FIFO0_ETM_bytecount_Msk        (0x3UL << TPI_FIFO0_ETM_bytecount_Pos)      /*!< TPI FIF
 1131:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 26
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 26
 
 
 1132:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define TPI_FIFO0_ETM2_Pos                 16U                                         /*!< TPI FIF
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1186:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define TPI_DEVID_MinBufSz_Msk             (0x7UL << TPI_DEVID_MinBufSz_Pos)           /*!< TPI DEV
 1187:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
 1188:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define TPI_DEVID_AsynClkIn_Pos             5U                                         /*!< TPI DEV
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 27
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 27
 
 
 1189:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define TPI_DEVID_AsynClkIn_Msk            (0x1UL << TPI_DEVID_AsynClkIn_Pos)          /*!< TPI DEV
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1243:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
 1244:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define MPU_CTRL_HFNMIENA_Pos               1U                                            /*!< MPU 
 1245:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define MPU_CTRL_HFNMIENA_Msk              (1UL << MPU_CTRL_HFNMIENA_Pos)                 /*!< MPU 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 28
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 28
 
 
 1246:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1300:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \ingroup  CMSIS_core_register
 1301:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \defgroup CMSIS_FPU     Floating Point Unit (FPU)
 1302:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \brief    Type definitions for the Floating Point Unit (FPU)
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 29
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 29
 
 
 1303:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   @{
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1357:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
 1358:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define FPU_FPDSCR_FZ_Pos                  24U                                            /*!< FPDS
 1359:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define FPU_FPDSCR_FZ_Msk                  (1UL << FPU_FPDSCR_FZ_Pos)                     /*!< FPDS
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 30
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 30
 
 
 1360:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1414:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****  */
 1415:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** typedef struct
 1416:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** {
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 31
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 31
 
 
 1417:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   __IOM uint32_t DHCSR;                  /*!< Offset: 0x000 (R/W)  Debug Halting Control and Status
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1471:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define CoreDebug_DEMCR_MON_REQ_Pos        19U                                            /*!< Core
 1472:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define CoreDebug_DEMCR_MON_REQ_Msk        (1UL << CoreDebug_DEMCR_MON_REQ_Pos)           /*!< Core
 1473:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 32
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 32
 
 
 1474:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define CoreDebug_DEMCR_MON_STEP_Pos       18U                                            /*!< Core
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1528:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \param[in] value  Value of register. This parameter is interpreted as an uint32_t type.
 1529:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   \return           Masked and shifted bit field value.
 1530:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** */
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 33
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 33
 
 
 1531:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** #define _FLD2VAL(field, value)    (((uint32_t)(value) & field ## _Msk) >> field ## _Pos)
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1585:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
 1586:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
 1587:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 34
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 34
 
 
 1588:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** /* ##########################   NVIC functions  #################################### */
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
 1642:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   uint32_t PriorityGroupTmp = (PriorityGroup & (uint32_t)0x07UL);             /* only values 0..7 a
 1643:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h **** 
 1644:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   reg_value  =  SCB->AIRCR;                                                   /* read old register 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 35
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 35
 
 
 1645:Generated_Source\PSoC6\pdl\cmsis/include/core_cm4.h ****   reg_value &= ~((uint32_t)(SCB_AIRCR_VECTKEY_Msk | SCB_AIRCR_PRIGROUP_Msk)); /* clear bits to chan
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  106 0032 B4F90030 		ldrsh	r3, [r4]
  107              	.LVL6:
  108              	.LBB28:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 36
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 36
 
 
  109              	.LBB29:
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
   35:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __ASM
   36:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __ASM                     __asm
   37:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 37
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 37
 
 
   38:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __INLINE
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  134              		.syntax unified
  135              	.LBE31:
  136              	.LBE30:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 38
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 38
 
 
   58:voltage_monitor.c ****     lower_threshold = 0;
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  182              	.LVL15:
  183 008c 0022     		movs	r2, #0
  184 008e 374B     		ldr	r3, .L19+44
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 39
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 39
 
 
  185 0090 FFF7FEFF 		bl	__aeabi_ddiv
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  233 00d2 2420     		movs	r0, #36
  234 00d4 FFF7FEFF 		bl	initialize_filter
  235              	.LVL26:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 40
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 40
 
 
  236              	.LBB35:
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  282 0108 1D49     		ldr	r1, .L19+64
  283 010a 1046     		mov	r0, r2
  284 010c FFF7FEFF 		bl	initialize_filter
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 41
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 41
 
 
  285              	.LVL35:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  329 014c 00000000 		.word	ADC_Interrupt
  330 0150 00E100E0 		.word	-536813312
  331 0154 00000000 		.word	SCAN_INT_cfg
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 42
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 42
 
 
  332 0158 00000000 		.word	SCAN_Interrupt
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  215:voltage_monitor.c ****     samples_to_extract = CYCLE_LENGTH * 9;
  380              		.loc 1 215 0
  381 000e 4FF4A272 		mov	r2, #324
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 43
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 43
 
 
  382 0012 034B     		ldr	r3, .L23+8
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  413              	.LBB37:
  239:voltage_monitor.c ****     uint16_t event_index = 0;
  240:voltage_monitor.c ****     
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 44
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 44
 
 
  241:voltage_monitor.c ****     for(uint16_t index = (rbuf->head + rbuf->maxlen - (CYCLE_LENGTH * 12)) % rbuf->maxlen; index !=
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  247:voltage_monitor.c **** }
  459              		.loc 1 247 0 is_stmt 1
  460 0040 30BC     		pop	{r4, r5}
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 45
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 45
 
 
  461              		.cfi_restore 5
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  509              		.loc 1 226 0 discriminator 3
  510 002a 0333     		adds	r3, r3, #3
  511              	.LVL53:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 46
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 46
 
 
  512 002c 9BB2     		uxth	r3, r3
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  560              		.align	2
  561              		.global	set_upper_threshold
  562              		.thumb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 47
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 47
 
 
  563              		.thumb_func
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  607              		.loc 1 257 0
  608              		.cfi_startproc
  609              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 48
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 48
 
 
  610              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  656              		.loc 1 265 0
  657 0002 054B     		ldr	r3, .L49
  658 0004 1870     		strb	r0, [r3]
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 49
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 49
 
 
  266:voltage_monitor.c ****     if (val)
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
    1:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /***************************************************************************//**
    2:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \file cy_gpio.h
    3:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \version 1.10.1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 50
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 50
 
 
    4:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
   58:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * - Port output data set register
   59:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * - Port output data clear register
   60:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 51
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 51
 
 
   61:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \snippet gpio/gpio_v1_10_sut_01.cydsn/main_cm4.c Cy_GPIO_Snippet
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  115:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *   \defgroup group_gpio_functions_interrupt  Port Interrupt Functions
  116:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \}
  117:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \defgroup group_gpio_data_structures Data Structures
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 52
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 52
 
 
  118:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \defgroup group_gpio_enums Enumerated Types
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  172:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
  173:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \addtogroup group_gpio_data_structures
  174:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 53
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 53
 
 
  175:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** */
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  229:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_MASKED_MASK               (0x01UL)   /**< Single pin mask for masked interrupt
  230:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_SET_MASK                  (0x01UL)   /**< Single pin mask for setting the inte
  231:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_EDGE_MASK                 (0x03UL)   /**< Single pin mask for interrupt edge t
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 54
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 54
 
 
  232:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_INTR_FLT_EDGE_MASK             (0x07UL)   /**< Single pin mask for setting filtered
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  286:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 (CY_GPIO_INTR_BOTH     == (intEdge)))
  287:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  288:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_GPIO_IS_DRIVE_SEL_VALID(driveSel)   ((CY_GPIO_DRIVE_FULL    == (driveSel)) || \
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 55
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 55
 
 
  289:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****                                                 (CY_GPIO_DRIVE_1_2     == (driveSel)) || \
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  343:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \} */
  344:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
  345:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 56
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 56
 
 
  346:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \defgroup group_gpio_vtrip Voltage trip mode
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  400:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** #define CY_SIO_IBUF_DIFFERENTIAL               (0x01UL) /**< \brief Differential input buffer */
  401:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /** \} */
  402:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 57
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 57
 
 
  403:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /**
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  457:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** cy_en_gpio_status_t Cy_GPIO_Port_Init(GPIO_PRT_Type* base, const cy_stc_gpio_prt_config_t *config);
  458:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** void Cy_GPIO_Pin_FastInit(GPIO_PRT_Type* base, uint32_t pinNum, uint32_t driveMode, uint32_t outVal
  459:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** void Cy_GPIO_Port_Deinit(GPIO_PRT_Type* base);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 58
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 58
 
 
  460:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE void Cy_GPIO_SetHSIOM(GPIO_PRT_Type* base, uint32_t pinNum, en_hsiom_sel_t value);
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  514:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE uint32_t Cy_GPIO_GetInterruptMask(GPIO_PRT_Type* base, uint32_t pinNum);
  515:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE uint32_t Cy_GPIO_GetInterruptStatusMasked(GPIO_PRT_Type* base, uint32_t pinNum);
  516:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE void Cy_GPIO_SetSwInterrupt(GPIO_PRT_Type* base, uint32_t pinNum);
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 59
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 59
 
 
  517:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** __STATIC_INLINE void Cy_GPIO_SetInterruptEdge(GPIO_PRT_Type* base, uint32_t pinNum, uint32_t value)
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  571:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \funcusage
  572:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \snippet gpio/gpio_v1_10_sut_01.cydsn/main_cm4.c snippet_Cy_GPIO_SetHSIOM
  573:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 60
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 60
 
 
  574:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** *******************************************************************************/
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  628:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     portNum = ((uint32_t)(base) - GPIO_BASE) / GPIO_PRT_SECTION_SIZE;
  629:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     portAddrHSIOM = (HSIOM_PRT_Type*)(HSIOM_BASE + (HSIOM_PRT_SECTION_SIZE * portNum));
  630:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 61
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 61
 
 
  631:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     if(pinNum < CY_GPIO_PRT_HALF)
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  685:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** * \{
  686:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** */
  687:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 62
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 62
 
 
  688:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** /*******************************************************************************
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  742:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** {
  743:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     CY_ASSERT_L2(CY_GPIO_IS_PIN_VALID(pinNum));
  744:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     CY_ASSERT_L2(CY_GPIO_IS_VALUE_VALID(value));
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 63
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 63
 
 
  745:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h **** 
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  743              		.loc 4 747 0
  744 0020 1AB9     		cbnz	r2, .L56
  749:Generated_Source\PSoC6\pdl\drivers/peripheral/gpio/cy_gpio.h ****     }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 64
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 64
 
 
  745              		.loc 4 749 0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  285:voltage_monitor.c ****     return pow(real, 2) + pow(imag, 2);
  792              		.loc 1 285 0
  793 0006 0024     		movs	r4, #0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 65
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 65
 
 
  794 0008 4FF08045 		mov	r5, #1073741824
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  845 0006 1B68     		ldr	r3, [r3]
  846 0008 13B1     		cbz	r3, .L63
  116:voltage_monitor.c ****     }
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 66
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 66
 
 
  847              		.loc 1 116 0
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  894              		.loc 1 128 0
  895 0062 03F2DE33 		addw	r3, r3, #990
  896 0066 82FB0321 		smull	r2, r1, r2, r3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 67
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 67
 
 
  897 006a DA17     		asrs	r2, r3, #31
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  946 00ca 23F8020D 		strh	r0, [r3, #-2]!	@ movhi
  137:voltage_monitor.c ****             // Check average RMS for threshold crossings and LED behavior
  947              		.loc 1 137 0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 68
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 68
 
 
  948 00ce 1846     		mov	r0, r3
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  992 010e 424A     		ldr	r2, .L77+56
  993 0110 1288     		ldrh	r2, [r2]
  994 0112 9342     		cmp	r3, r2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 69
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 69
 
 
  995 0114 16D8     		bhi	.L69
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  178:voltage_monitor.c ****                 voltage_high = false;
  1039              		.loc 1 178 0
  1040 0150 0122     		movs	r2, #1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 70
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 70
 
 
  1041 0152 2C4B     		ldr	r3, .L77+36
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  192:voltage_monitor.c ****             }
  1088              		.loc 1 192 0
  1089 01ae 114A     		ldr	r2, .L77+20
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 71
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 71
 
 
  1090 01b0 1168     		ldr	r1, [r2]
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1138 021c 98000000 		.word	.LC8
  1139 0220 B0000000 		.word	.LC9
  1140 0224 00000000 		.word	trigger_set
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 72
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 72
 
 
  1141 0228 00000000 		.word	samples_to_extract
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1190      74205472 
  1190      69676765 
  1190      7265640D 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 73
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 73
 
 
  1190      00
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1217      4F4B0D00 
  1218              		.text
  1219              	.Letext0:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 74
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 74
 
 
  1220              		.file 5 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/psoc63/include/cyble_416045_02.h"
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1274 004f 03       		.uleb128 0x3
  1275 0050 80170000 		.4byte	.LASF5
  1276 0054 76       		.sleb128 -10
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 75
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 75
 
 
  1277 0055 03       		.uleb128 0x3
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1331 00c1 04       		.uleb128 0x4
  1332 00c2 2C110000 		.4byte	.LASF24
  1333 00c6 0E       		.byte	0xe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 76
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 76
 
 
  1334 00c7 04       		.uleb128 0x4
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1388 0133 04       		.uleb128 0x4
  1389 0134 58050000 		.4byte	.LASF43
  1390 0138 21       		.byte	0x21
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 77
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 77
 
 
  1391 0139 04       		.uleb128 0x4
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1445 01a5 04       		.uleb128 0x4
  1446 01a6 7A010000 		.4byte	.LASF62
  1447 01aa 34       		.byte	0x34
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 78
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 78
 
 
  1448 01ab 04       		.uleb128 0x4
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1502 0217 04       		.uleb128 0x4
  1503 0218 02070000 		.4byte	.LASF81
  1504 021c 47       		.byte	0x47
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 79
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 79
 
 
  1505 021d 04       		.uleb128 0x4
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1559 0289 04       		.uleb128 0x4
  1560 028a 031C0000 		.4byte	.LASF100
  1561 028e 5A       		.byte	0x5a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 80
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 80
 
 
  1562 028f 04       		.uleb128 0x4
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1616 02fb 04       		.uleb128 0x4
  1617 02fc 29100000 		.4byte	.LASF119
  1618 0300 6D       		.byte	0x6d
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 81
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 81
 
 
  1619 0301 04       		.uleb128 0x4
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1673 036d 04       		.uleb128 0x4
  1674 036e 68120000 		.4byte	.LASF138
  1675 0372 80       		.byte	0x80
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 82
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 82
 
 
  1676 0373 04       		.uleb128 0x4
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1730 03df 04       		.uleb128 0x4
  1731 03e0 960C0000 		.4byte	.LASF157
  1732 03e4 F0       		.byte	0xf0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 83
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 83
 
 
  1733 03e5 00       		.byte	0
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1787 044e 63160000 		.4byte	.LASF169
  1788 0452 05       		.uleb128 0x5
  1789 0453 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 84
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 84
 
 
  1790 0454 05       		.byte	0x5
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1844 04c4 82050000 		.4byte	0x582
  1845 04c8 20       		.byte	0x20
  1846 04c9 09       		.uleb128 0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 85
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 85
 
 
  1847 04ca EA180000 		.4byte	.LASF180
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1901 0545 0C130000 		.4byte	.LASF188
  1902 0549 02       		.byte	0x2
  1903 054a A101     		.2byte	0x1a1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 86
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 86
 
 
  1904 054c D0050000 		.4byte	0x5d0
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  1958 05c7 6E040000 		.4byte	0x46e
  1959 05cb 0E       		.uleb128 0xe
  1960 05cc B6050000 		.4byte	0x5b6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 87
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 87
 
 
  1961 05d0 0C       		.uleb128 0xc
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2015 064a 13       		.uleb128 0x13
  2016 064b 4F555400 		.ascii	"OUT\000"
  2017 064f 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 88
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 88
 
 
  2018 0650 23       		.byte	0x23
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2072 06bb 2C       		.byte	0x2c
  2073 06bc 78050000 		.4byte	0x578
  2074 06c0 24       		.byte	0x24
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 89
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 89
 
 
  2075 06c1 13       		.uleb128 0x13
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2129 072e 08       		.byte	0x8
  2130 072f 39       		.byte	0x39
  2131 0730 B6070000 		.4byte	0x7b6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 90
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 90
 
 
  2132 0734 13       		.uleb128 0x13
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2186 07a8 16       		.uleb128 0x16
  2187 07a9 0C120000 		.4byte	.LASF215
  2188 07ad 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 91
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 91
 
 
  2189 07ae 43       		.byte	0x43
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2243 081c 27       		.byte	0x27
  2244 081d 78050000 		.4byte	0x578
  2245 0821 18       		.byte	0x18
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 92
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 92
 
 
  2246 0822 14       		.uleb128 0x14
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2300 0891 16       		.uleb128 0x16
  2301 0892 02130000 		.4byte	.LASF187
  2302 0896 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 93
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 93
 
 
  2303 0897 31       		.byte	0x31
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2357 090c 3A       		.byte	0x3a
  2358 090d 78050000 		.4byte	0x578
  2359 0911 2002     		.2byte	0x220
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 94
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 94
 
 
  2360 0913 16       		.uleb128 0x16
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2414 0988 16       		.uleb128 0x16
  2415 0989 C7080000 		.4byte	.LASF241
  2416 098d 09       		.byte	0x9
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 95
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 95
 
 
  2417 098e 44       		.byte	0x44
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2471 0a03 4D       		.byte	0x4d
  2472 0a04 F10A0000 		.4byte	0xaf1
  2473 0a08 0803     		.2byte	0x308
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 96
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 96
 
 
  2474 0a0a 16       		.uleb128 0x16
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2528 0a82 0E       		.uleb128 0xe
  2529 0a83 22060000 		.4byte	0x622
  2530 0a87 11       		.uleb128 0x11
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 97
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 97
 
 
  2531 0a88 820A0000 		.4byte	0xa82
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2585 0b0d 070B0000 		.4byte	0xb07
  2586 0b11 06       		.uleb128 0x6
  2587 0b12 19050000 		.4byte	.LASF257
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 98
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 98
 
 
  2588 0b16 09       		.byte	0x9
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2642 0b82 0B       		.byte	0xb
  2643 0b83 F1       		.byte	0xf1
  2644 0b84 5C0B0000 		.4byte	0xb5c
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 99
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 99
 
 
  2645 0b88 17       		.uleb128 0x17
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2699 0bfb 10       		.byte	0x10
  2700 0bfc 09       		.uleb128 0x9
  2701 0bfd 6C0C0000 		.4byte	.LASF275
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 100
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 100
 
 
  2702 0c01 0C       		.byte	0xc
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2756 0c73 9B060000 		.4byte	.LASF284
  2757 0c77 0C       		.byte	0xc
  2758 0c78 6302     		.2byte	0x263
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 101
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 101
 
 
  2759 0c7a AE0B0000 		.4byte	0xbae
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2813 0cec 04       		.byte	0x4
  2814 0ced 09       		.uleb128 0x9
  2815 0cee 7E120000 		.4byte	.LASF294
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 102
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 102
 
 
  2816 0cf2 0D       		.byte	0xd
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2870 0d67 0D       		.byte	0xd
  2871 0d68 0105     		.2byte	0x501
  2872 0d6a 9A040000 		.4byte	0x49a
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 103
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 103
 
 
  2873 0d6e 68       		.byte	0x68
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2927 0dde 3F       		.byte	0x3f
  2928 0ddf FD0D0000 		.4byte	0xdfd
  2929 0de3 08       		.byte	0x8
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 104
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 104
 
 
  2930 0de4 14       		.uleb128 0x14
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  2984 0e4d 130E0000 		.4byte	0xe13
  2985 0e51 12       		.uleb128 0x12
  2986 0e52 14       		.byte	0x14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 105
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 105
 
 
  2987 0e53 10       		.byte	0x10
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3041 0ebc 3B170000 		.4byte	.LASF325
  3042 0ec0 02       		.byte	0x2
  3043 0ec1 8606     		.2byte	0x686
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 106
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 106
 
 
  3044 0ec3 03       		.byte	0x3
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3098 0f37 01       		.uleb128 0x1
  3099 0f38 30       		.byte	0x30
  3100 0f39 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 107
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 107
 
 
  3101 0f3a 00       		.byte	0
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3155 0fc2 6900     		.ascii	"i\000"
  3156 0fc4 01       		.byte	0x1
  3157 0fc5 45       		.byte	0x45
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 108
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 108
 
 
  3158 0fc6 6E040000 		.4byte	0x46e
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3212 1041 00000000 		.4byte	ADC_Interrupt
  3213 1045 00       		.byte	0
  3214 1046 2B       		.uleb128 0x2b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 109
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 109
 
 
  3215 1047 32000000 		.4byte	.LVL5
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3269 10a2 00000000 		.4byte	cosine_taps
  3270 10a6 23       		.uleb128 0x23
  3271 10a7 01       		.uleb128 0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 110
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 110
 
 
  3272 10a8 52       		.byte	0x52
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3326 10f7 2B       		.uleb128 0x2b
  3327 10f8 38010000 		.4byte	.LVL36
  3328 10fc 37180000 		.4byte	0x1837
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 111
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 111
 
 
  3329 1100 0F110000 		.4byte	0x110f
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3383 1169 01       		.byte	0x1
  3384 116a ED       		.byte	0xed
  3385 116b 400E0000 		.4byte	0xe40
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 112
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 112
 
 
  3386 116f 01       		.uleb128 0x1
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3440 11e1 84040000 		.4byte	0x484
  3441 11e5 4D010000 		.4byte	.LLST9
  3442 11e9 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 113
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 113
 
 
  3443 11ea 28       		.uleb128 0x28
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3497 1255 AF01     		.2byte	0x1af
  3498 1257 00       		.byte	0
  3499 1258 0C       		.uleb128 0xc
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 114
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 114
 
 
  3500 1259 79040000 		.4byte	0x479
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3554 12d2 01       		.byte	0x1
  3555 12d3 0001     		.2byte	0x100
  3556 12d5 84040000 		.4byte	0x484
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 115
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 115
 
 
  3557 12d9 C5010000 		.4byte	.LLST12
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3611 1350 50       		.byte	0x50
  3612 1351 05       		.uleb128 0x5
  3613 1352 03       		.byte	0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 116
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 116
 
 
  3614 1353 6C000000 		.4byte	.LC6
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3668 13e3 26       		.uleb128 0x26
  3669 13e4 FA0E0000 		.4byte	0xefa
  3670 13e8 71030000 		.4byte	.LLST20
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 117
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 117
 
 
  3671 13ec 26       		.uleb128 0x26
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3725 147a 22170000 		.4byte	.LASF352
  3726 147e 01       		.byte	0x1
  3727 147f 70       		.byte	0x70
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 118
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 118
 
 
  3728 1480 00000000 		.4byte	.LFB523
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3782 1507 B9       		.byte	0xb9
  3783 1508 84040000 		.4byte	0x484
  3784 150c 22050000 		.4byte	.LLST33
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 119
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 119
 
 
  3785 1510 2B       		.uleb128 0x2b
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3839 1582 32010000 		.4byte	.LVL118
  3840 1586 19110000 		.4byte	0x1119
  3841 158a 2B       		.uleb128 0x2b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 120
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 120
 
 
  3842 158b 50010000 		.4byte	.LVL119
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3896 15f7 18000000 		.4byte	.LVL95
  3897 15fb C0180000 		.4byte	0x18c0
  3898 15ff 12160000 		.4byte	0x1612
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 121
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 121
 
 
  3899 1603 23       		.uleb128 0x23
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  3953 1669 11       		.byte	0x11
  3954 166a 26       		.byte	0x26
  3955 166b B30D0000 		.4byte	0xdb3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 122
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 122
 
 
  3956 166f 3A       		.uleb128 0x3a
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4010 16ea 05       		.uleb128 0x5
  4011 16eb 03       		.byte	0x3
  4012 16ec 00000000 		.4byte	rb_buffer
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 123
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 123
 
 
  4013 16f0 3B       		.uleb128 0x3b
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4067 1765 3B       		.uleb128 0x3b
  4068 1766 C0140000 		.4byte	.LASF374
  4069 176a 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 124
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 124
 
 
  4070 176b 1E       		.byte	0x1e
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4124 17dd 99050000 		.4byte	.LASF381
  4125 17e1 01       		.byte	0x1
  4126 17e2 29       		.byte	0x29
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 125
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 125
 
 
  4127 17e3 84040000 		.4byte	0x484
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4181 185d B70E0000 		.4byte	.LASF389
  4182 1861 B70E0000 		.4byte	.LASF389
  4183 1865 14       		.byte	0x14
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 126
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 126
 
 
  4184 1866 BB       		.byte	0xbb
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4238 0005 13       		.uleb128 0x13
  4239 0006 0B       		.uleb128 0xb
  4240 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 127
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 127
 
 
  4241 0008 0E       		.uleb128 0xe
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4295 003e 00       		.byte	0
  4296 003f 06       		.uleb128 0x6
  4297 0040 16       		.uleb128 0x16
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 128
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 128
 
 
  4298 0041 00       		.byte	0
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4352 0077 0E       		.uleb128 0xe
  4353 0078 3A       		.uleb128 0x3a
  4354 0079 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 129
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 129
 
 
  4355 007a 3B       		.uleb128 0x3b
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4409 00b0 05       		.uleb128 0x5
  4410 00b1 00       		.byte	0
  4411 00b2 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 130
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 130
 
 
  4412 00b3 10       		.uleb128 0x10
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4466 00e9 0B       		.uleb128 0xb
  4467 00ea 3B       		.uleb128 0x3b
  4468 00eb 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 131
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 131
 
 
  4469 00ec 49       		.uleb128 0x49
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4523 0122 19       		.uleb128 0x19
  4524 0123 01       		.uleb128 0x1
  4525 0124 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 132
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 132
 
 
  4526 0125 00       		.byte	0
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4580 015b 00       		.byte	0
  4581 015c 03       		.uleb128 0x3
  4582 015d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 133
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 133
 
 
  4583 015e 3A       		.uleb128 0x3a
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4637 0194 01       		.uleb128 0x1
  4638 0195 12       		.uleb128 0x12
  4639 0196 06       		.uleb128 0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 134
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 134
 
 
  4640 0197 40       		.uleb128 0x40
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4694 01d4 31       		.uleb128 0x31
  4695 01d5 13       		.uleb128 0x13
  4696 01d6 11       		.uleb128 0x11
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 135
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 135
 
 
  4697 01d7 01       		.uleb128 0x1
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4751 020d 0B       		.uleb128 0xb
  4752 020e 49       		.uleb128 0x49
  4753 020f 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 136
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 136
 
 
  4754 0210 02       		.uleb128 0x2
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4808 024a 2E       		.uleb128 0x2e
  4809 024b 0B       		.uleb128 0xb
  4810 024c 01       		.byte	0x1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 137
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 137
 
 
  4811 024d 55       		.uleb128 0x55
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4865 0284 19       		.uleb128 0x19
  4866 0285 01       		.uleb128 0x1
  4867 0286 13       		.uleb128 0x13
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 138
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 138
 
 
  4868 0287 00       		.byte	0
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4922 02bd 11       		.uleb128 0x11
  4923 02be 01       		.uleb128 0x1
  4924 02bf 12       		.uleb128 0x12
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 139
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 139
 
 
  4925 02c0 06       		.uleb128 0x6
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  4979 02f7 3A       		.uleb128 0x3a
  4980 02f8 0B       		.uleb128 0xb
  4981 02f9 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 140
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 140
 
 
  4982 02fa 05       		.uleb128 0x5
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5036 0330 02       		.uleb128 0x2
  5037 0331 18       		.uleb128 0x18
  5038 0332 00       		.byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 141
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 141
 
 
  5039 0333 00       		.byte	0
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5093 0369 00       		.byte	0
  5094 036a 3F       		.uleb128 0x3f
  5095 036b 19       		.uleb128 0x19
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 142
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 142
 
 
  5096 036c 3C       		.uleb128 0x3c
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5150 005d 76000000 		.4byte	.LVL12
  5151 0061 7A000000 		.4byte	.LVL13
  5152 0065 0200     		.2byte	0x2
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 143
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 143
 
 
  5153 0067 30       		.byte	0x30
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5207 00f7 30       		.byte	0x30
  5208 00f8 9F       		.byte	0x9f
  5209 00f9 1A000000 		.4byte	.LVL43
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 144
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 144
 
 
  5210 00fd 32000000 		.4byte	.LVL46
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5264 018c 54       		.byte	0x54
  5265 018d 00000000 		.4byte	0
  5266 0191 00000000 		.4byte	0
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 145
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 145
 
 
  5267              	.LLST11:
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5321 021c 9F       		.byte	0x9f
  5322 021d 10000000 		.4byte	.LVL72
  5323 0221 12000000 		.4byte	.LVL73
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 146
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 146
 
 
  5324 0225 0100     		.2byte	0x1
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5378 02a4 1C000000 		.4byte	.LVL82
  5379 02a8 0100     		.2byte	0x1
  5380 02aa 51       		.byte	0x51
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 147
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 147
 
 
  5381 02ab 1C000000 		.4byte	.LVL82
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5435 031c 0A000000 		.4byte	.LVL77
  5436 0320 0C000000 		.4byte	.LVL78
  5437 0324 0600     		.2byte	0x6
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 148
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 148
 
 
  5438 0326 70       		.byte	0x70
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5492 0391 9F       		.byte	0x9f
  5493 0392 1A000000 		.4byte	.LVL81
  5494 0396 1C000000 		.4byte	.LVL82
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 149
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 149
 
 
  5495 039a 0600     		.2byte	0x6
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5549 0406 1A       		.byte	0x1a
  5550 0407 9F       		.byte	0x9f
  5551 0408 2A000000 		.4byte	.LVL85
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 150
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 150
 
 
  5552 040c 2C000000 		.4byte	.LVL86
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5606 0486 0100     		.2byte	0x1
  5607 0488 51       		.byte	0x51
  5608 0489 0F000000 		.4byte	.LVL89-1
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 151
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 151
 
 
  5609 048d 3E000000 		.4byte	.LFE532
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5663 051a 00000000 		.4byte	0
  5664 051e 00000000 		.4byte	0
  5665              	.LLST33:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 152
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 152
 
 
  5666 0522 8C010000 		.4byte	.LVL121
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5720 0030 00000000 		.4byte	.LFB527
  5721 0034 44000000 		.4byte	.LFE527
  5722 0038 00000000 		.4byte	.LFB526
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 153
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 153
 
 
  5723 003c 68000000 		.4byte	.LFE526
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5756      53453200 
  5757              	.LASF210:
  5758 0061 494E5452 		.ascii	"INTR_CAUSE3\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 154
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 154
 
 
  5758      5F434155 
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5780      5F454E00 
  5781              	.LASF84:
  5782 0124 63707573 		.ascii	"cpuss_interrupts_dw1_8_IRQn\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 155
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 155
 
 
  5782      735F696E 
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5804      534500
  5805              	.LASF290:
  5806 01ee 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 156
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 156
 
 
  5806      41525F52 
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5828      6770696F 
  5829              	.LASF193:
  5830 02bb 4F55545F 		.ascii	"OUT_SET\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 157
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 157
 
 
  5830      53455400 
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5851              	.LASF243:
  5852 0384 494E4A5F 		.ascii	"INJ_RESULT\000"
  5852      52455355 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 158
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 158
 
 
  5852      4C5400
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5873      37373135 
  5874 048e 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
  5874      70202D6D 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 159
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 159
 
 
  5874      6670753D 
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5895 0584 7363625F 		.ascii	"scb_8_interrupt_IRQn\000"
  5895      385F696E 
  5895      74657272 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 160
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 160
 
 
  5895      7570745F 
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5915      74735F31 
  5915      355F4952 
  5916              	.LASF178:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 161
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 161
 
 
  5917 0665 49534552 		.ascii	"ISER\000"
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5942              	.LASF87:
  5943 071e 63707573 		.ascii	"cpuss_interrupts_dw1_11_IRQn\000"
  5943      735F696E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 162
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 162
 
 
  5943      74657272 
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5965      65546872 
  5965      657300
  5966              	.LASF164:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 163
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 163
 
 
  5967 07e8 5F5F7569 		.ascii	"__uint16_t\000"
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  5987      7074735F 
  5987      6770696F 
  5988              	.LASF388:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 164
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 164
 
 
  5989 08af 4144435F 		.ascii	"ADC_Start\000"
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6010      74735F31 
  6010      315F4952 
  6011              	.LASF37:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 165
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 165
 
 
  6012 09a6 63707573 		.ascii	"cpuss_interrupts_ipc_2_IRQn\000"
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6038 0a46 5644445F 		.ascii	"VDD_INTR\000"
  6038      494E5452 
  6038      00
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 166
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 166
 
 
  6039              	.LASF156:
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6058      656400
  6059              	.LASF320:
  6060 0b33 6761696E 		.ascii	"gain\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 167
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 167
 
 
  6060      00
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6080      534B4544 
  6081              	.LASF83:
  6082 0c08 63707573 		.ascii	"cpuss_interrupts_dw1_7_IRQn\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 168
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 168
 
 
  6082      735F696E 
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6102      745F6C6F 
  6102      5F495251 
  6103              	.LASF378:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 169
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 169
 
 
  6104 0cd9 766F6C74 		.ascii	"voltage_high\000"
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6124      6E5F7075 
  6124      747300
  6125              	.LASF127:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 170
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 170
 
 
  6126 0d9d 74637077 		.ascii	"tcpwm_1_interrupts_19_IRQn\000"
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6146      6C657300 
  6147              	.LASF128:
  6148 0e74 74637077 		.ascii	"tcpwm_1_interrupts_20_IRQn\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 171
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 171
 
 
  6148      6D5F315F 
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6170      735F696E 
  6170      74657272 
  6170      75707473 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 172
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 172
 
 
  6170      5F697063 
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6192      00
  6193              	.LASF153:
  6194 0ff3 7573625F 		.ascii	"usb_interrupt_hi_IRQn\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 173
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 173
 
 
  6194      696E7465 
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6212      75707473 
  6212      5F647730 
  6213              	.LASF11:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 174
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 174
 
 
  6214 10e5 696F7373 		.ascii	"ioss_interrupts_gpio_1_IRQn\000"
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6236 11ae 6C6F7765 		.ascii	"lower_threshold\000"
  6236      725F7468 
  6236      72657368 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 175
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 175
 
 
  6236      6F6C6400 
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6260 1268 7564625F 		.ascii	"udb_interrupts_6_IRQn\000"
  6260      696E7465 
  6260      72727570 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 176
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 176
 
 
  6260      74735F36 
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6284      52564544 
  6284      3600
  6285              	.LASF22:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 177
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 177
 
 
  6286 1320 696F7373 		.ascii	"ioss_interrupts_gpio_12_IRQn\000"
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6306      6E745F49 
  6306      52516E00 
  6307              	.LASF402:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 178
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 178
 
 
  6308 13dc 5F5F656E 		.ascii	"__enable_irq\000"
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6330 148d 72696E67 		.ascii	"ring_buf_t\000"
  6330      5F627566 
  6330      5F7400
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 179
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 179
 
 
  6331              	.LASF18:
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6352      6770696F 
  6353              	.LASF74:
  6354 1550 63707573 		.ascii	"cpuss_interrupts_dw0_14_IRQn\000"
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 180
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 180
 
 
  6354      735F696E 
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6374      74735F31 
  6374      325F4952 
  6375              	.LASF9:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 181
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 181
 
 
  6376 162c 53797354 		.ascii	"SysTick_IRQn\000"
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6397              	.LASF113:
  6398 16e6 74637077 		.ascii	"tcpwm_1_interrupts_5_IRQn\000"
  6398      6D5F315F 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 182
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 182
 
 
  6398      696E7465 
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6419              	.LASF135:
  6420 17aa 7564625F 		.ascii	"udb_interrupts_3_IRQn\000"
  6420      696E7465 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 183
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 183
 
 
  6420      72727570 
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6440      75707473 
  6440      5F697063 
  6441              	.LASF234:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 184
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 184
 
 
  6442 1889 53415455 		.ascii	"SATURATE_INTR_MASK\000"
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6464      70745F76 
  6464      64645F49 
  6465              	.LASF161:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 185
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 185
 
 
  6466 194f 5F5F7569 		.ascii	"__uint8_t\000"
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6488 1a06 73686F72 		.ascii	"short unsigned int\000"
  6488      7420756E 
  6488      7369676E 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 186
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 186
 
 
  6488      65642069 
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6510      5F524553 
  6510      554C545F 
  6510      55504441 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 187
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 187
 
 
  6510      54454400 
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6531              	.LASF291:
  6532 1ba4 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
  6532      6E5F7361 
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 188
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 188
 
 
  6532      725F7261 
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 1
  6554 1c6b 4354524C 		.ascii	"CTRL\000"
  6554      00
  6555              	.LASF98:
-ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccTLmyPA.s 			page 189
+ARM GAS  C:\Users\Brian\AppData\Local\Temp\ccVq6hix.s 			page 189
 
 
  6556 1c70 63707573 		.ascii	"cpuss_interrupts_cm4_cti_0_IRQn\000"
